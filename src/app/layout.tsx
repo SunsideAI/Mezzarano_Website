@@ -1,16 +1,8 @@
 import type { Metadata } from 'next'
-import { Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
-
-// Wüstenrot uses a clean sans-serif font similar to Source Sans Pro
-const sourceSans = Source_Sans_3({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  weight: ['300', '400', '600', '700'],
-})
 
 export const metadata: Metadata = {
   title: 'Sandro Mezzarano | Wüstenrot Immobilien Hermeskeil',
@@ -35,7 +27,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <SchemaMarkup data={generateLocalBusinessSchema()} />
       </head>
-      <body className={`${sourceSans.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen">
           {children}

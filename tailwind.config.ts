@@ -10,24 +10,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Wüstenrot Brand Colors
+        // Wüstenrot Brand Colors (Official)
         wuestenrot: {
-          red: '#E30613',
-          'red-dark': '#C00510',
-          'red-light': '#FF1A27',
+          orange: '#F84914',
+          'orange-dark': '#D93D0F',
+          'orange-light': '#FF5C2A',
         },
         primary: {
-          50: '#FEF2F2',
-          100: '#FEE2E2',
-          200: '#FECACA',
-          300: '#FCA5A5',
-          400: '#F87171',
-          500: '#E30613',  // Wüstenrot Red
-          600: '#C00510',
-          700: '#A00410',
-          800: '#7F0308',
-          900: '#5C0206',
-          950: '#450105',
+          50: '#FFF7F5',
+          100: '#FFEDE8',
+          200: '#FFD4C7',
+          300: '#FFB199',
+          400: '#FF8A66',
+          500: '#F84914',  // Wüstenrot Orange
+          600: '#D93D0F',
+          700: '#B5320C',
+          800: '#8F2709',
+          900: '#6B1D07',
+          950: '#4A1305',
         },
         secondary: {
           50: '#F8FAFC',
@@ -56,7 +56,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Helvetica', 'Helvetica Neue', 'Arial', 'sans-serif'],
         serif: ['Georgia', 'Cambria', 'serif'],
       },
       typography: {
@@ -73,9 +73,9 @@ const config: Config = {
               fontWeight: '600',
             },
             a: {
-              color: '#E30613',
+              color: '#F84914',
               '&:hover': {
-                color: '#C00510',
+                color: '#D93D0F',
               },
             },
             strong: {
