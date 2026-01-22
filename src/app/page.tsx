@@ -28,28 +28,28 @@ const services = [
 ]
 
 const stats = [
-  { value: '20+', label: 'Jahre Erfahrung' },
-  { value: '1.500+', label: 'Vermittelte Objekte' },
-  { value: '98%', label: 'Zufriedene Kunden' },
-  { value: '50+', label: 'Experten im Team' },
+  { value: '10+', label: 'Jahre Erfahrung' },
+  { value: '200+', label: 'Vermittelte Objekte' },
+  { value: '100%', label: 'Persönliche Betreuung' },
+  { value: '4', label: 'Regionen betreut' },
 ]
 
 const testimonials = [
   {
-    name: 'Familie Müller',
-    location: 'Berlin-Zehlendorf',
-    text: 'Dank Mezzarano haben wir unser Traumhaus gefunden. Die professionelle Beratung und der persönliche Service haben uns überzeugt.',
+    name: 'Familie Schneider',
+    location: 'Hermeskeil',
+    text: 'Herr Mezzarano hat uns kompetent beim Hauskauf beraten. Seine Ortskenntnis im Hochwald ist unschlagbar!',
     rating: 5,
   },
   {
     name: 'Thomas Weber',
-    location: 'Berlin-Mitte',
+    location: 'Trier',
     text: 'Schnelle Vermittlung meiner Eigentumswohnung zu einem hervorragenden Preis. Absolute Empfehlung!',
     rating: 5,
   },
   {
-    name: 'Dr. Anna Schmidt',
-    location: 'Potsdam',
+    name: 'Petra Hoffmann',
+    location: 'Schweich',
     text: 'Kompetent, zuverlässig und immer erreichbar. So stelle ich mir Immobilienservice vor.',
     rating: 5,
   },
@@ -79,8 +79,8 @@ export default function HomePage() {
               Ihr Zuhause beginnt mit der richtigen Entscheidung
             </h1>
             <p className="text-xl text-gray-200 mb-8">
-              Mezzarano Immobilien – Ihr vertrauenswürdiger Partner für den Kauf, Verkauf
-              und die Vermietung von erstklassigen Immobilien in Berlin und Umgebung.
+              Sandro Mezzarano – Ihr Wüstenrot Immobilienexperte für den Kauf, Verkauf
+              und die Vermietung von Immobilien in Hermeskeil, Trier und der gesamten Mosel-Region.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/immobilien" className="btn-gold text-lg">
@@ -120,7 +120,7 @@ export default function HomePage() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Standort</label>
                   <input
                     type="text"
-                    placeholder="z.B. Berlin-Mitte"
+                    placeholder="z.B. Hermeskeil, Trier"
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   />
                 </div>
@@ -196,12 +196,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-                Über 20 Jahre Erfahrung in der Immobilienbranche
+                Ihr lokaler Wüstenrot Immobilienpartner
               </h2>
               <p className="text-gray-300 mb-6">
-                Seit unserer Gründung haben wir uns zu einem der führenden Immobilienunternehmen
-                in Berlin entwickelt. Unser Erfolg basiert auf Vertrauen, Kompetenz und
-                persönlichem Service.
+                Als Ihr Wüstenrot Immobilienexperte in Hermeskeil biete ich Ihnen persönliche
+                Beratung mit umfassender Marktkenntnis. Mein Erfolg basiert auf Vertrauen,
+                Kompetenz und individuellem Service für jeden Kunden.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
