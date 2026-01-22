@@ -278,7 +278,7 @@ function convertMarkdownToHtml(markdown: string): string {
 
   // Lists
   html = html.replace(/^\- (.*$)/gim, '<li>$1</li>')
-  html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+  html = html.replace(/(<li>[\s\S]*<\/li>)/, '<ul>$1</ul>')
 
   // Paragraphs
   html = html.replace(/\n\n/gim, '</p><p>')
