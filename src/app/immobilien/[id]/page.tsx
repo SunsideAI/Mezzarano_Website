@@ -29,7 +29,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
         <div className="container-custom py-4">
           <Link
             href="/immobilien"
-            className="inline-flex items-center text-gray-600 hover:text-primary-700 transition-colors"
+            className="inline-flex items-center text-gray-600 hover:text-primary-500 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
             Zurück zur Übersicht
@@ -97,7 +97,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <p className="text-3xl font-bold text-primary-700">
+                  <p className="text-3xl font-bold text-primary-500">
                     {formatPrice(property.price, property.type)}
                   </p>
                   <div className="flex gap-2">
@@ -117,22 +117,22 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               {/* Key Features */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-xl shadow-sm">
                 <div className="text-center p-4">
-                  <Bed className="h-8 w-8 text-primary-700 mx-auto mb-2" />
+                  <Bed className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{property.bedrooms}</p>
                   <p className="text-sm text-gray-500">Zimmer</p>
                 </div>
                 <div className="text-center p-4">
-                  <Bath className="h-8 w-8 text-primary-700 mx-auto mb-2" />
+                  <Bath className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{property.bathrooms}</p>
                   <p className="text-sm text-gray-500">Badezimmer</p>
                 </div>
                 <div className="text-center p-4">
-                  <Square className="h-8 w-8 text-primary-700 mx-auto mb-2" />
+                  <Square className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{property.area}</p>
                   <p className="text-sm text-gray-500">m² Fläche</p>
                 </div>
                 <div className="text-center p-4">
-                  <Calendar className="h-8 w-8 text-primary-700 mx-auto mb-2" />
+                  <Calendar className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{property.yearBuilt}</p>
                   <p className="text-sm text-gray-500">Baujahr</p>
                 </div>
@@ -178,7 +178,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   Lage
                 </h2>
                 <div className="flex items-start gap-3 mb-6">
-                  <MapPin className="h-5 w-5 text-primary-700 mt-1 flex-shrink-0" />
+                  <MapPin className="h-5 w-5 text-primary-500 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-900">{property.address}</p>
                     <p className="text-gray-500">{property.location}</p>
@@ -250,28 +250,35 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                     Ihr Ansprechpartner
                   </h3>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gray-400">MS</span>
+                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary-500">SM</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Max Schmidt</p>
-                      <p className="text-sm text-gray-500">Senior Immobilienberater</p>
+                      <p className="font-semibold text-gray-900">Sandro Mezzarano</p>
+                      <p className="text-sm text-gray-500">Wüstenrot Immobilienberater</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <a
-                      href="tel:+491234567890"
-                      className="flex items-center gap-3 text-gray-600 hover:text-primary-700 transition-colors"
+                      href="tel:01776542977"
+                      className="flex items-center gap-3 text-gray-600 hover:text-primary-500 transition-colors"
                     >
                       <Phone className="h-5 w-5" />
-                      <span>+49 123 456 7890</span>
+                      <span>0177 6542977</span>
                     </a>
                     <a
-                      href="mailto:m.schmidt@mezzarano.de"
-                      className="flex items-center gap-3 text-gray-600 hover:text-primary-700 transition-colors"
+                      href="tel:065039523963"
+                      className="flex items-center gap-3 text-gray-600 hover:text-primary-500 transition-colors"
+                    >
+                      <Phone className="h-5 w-5" />
+                      <span>06503 9523963</span>
+                    </a>
+                    <a
+                      href="mailto:sandro.mezzarano@wuestenrot.de"
+                      className="flex items-center gap-3 text-gray-600 hover:text-primary-500 transition-colors"
                     >
                       <Mail className="h-5 w-5" />
-                      <span>m.schmidt@mezzarano.de</span>
+                      <span>sandro.mezzarano@wuestenrot.de</span>
                     </a>
                   </div>
                 </div>

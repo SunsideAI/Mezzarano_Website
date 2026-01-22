@@ -1,9 +1,11 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { Search, SlidersHorizontal, Grid, List, X } from 'lucide-react'
+import { useState, useMemo, useEffect } from 'react'
+import { Search, SlidersHorizontal, Grid, List, X, Loader2 } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
-import { properties, Property } from '@/data/properties'
+import AirtablePropertyCard from '@/components/AirtablePropertyCard'
+import { properties as staticProperties, Property } from '@/data/properties'
+import { AirtableProperty } from '@/lib/airtable'
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
 
@@ -21,8 +23,38 @@ export default function ImmobilienPage() {
   const [sortBy, setSortBy] = useState<SortOption>('newest')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
-  const filteredProperties = useMemo(() => {
-    let result = [...properties]
+  // Airtable data
+  const [airtableProperties, setAirtableProperties] = useState<AirtableProperty[]>([])
+  const [isLoadingAirtable, setIsLoadingAirtable] = useState(true)
+  const [airtableError, setAirtableError] = useState(false)
+
+  // Fetch Airtable properties
+  useEffect(() => {
+    const fetchAirtableData = async () => {
+      setIsLoadingAirtable(true)
+      try {
+        const response = await fetch('/api/properties')
+        if (response.ok) {
+          const data = await response.json()
+          setAirtableProperties(data.properties || [])
+          setAirtableError(false)
+        } else {
+          setAirtableError(true)
+        }
+      } catch (error) {
+        console.error('Error fetching Airtable:', error)
+        setAirtableError(true)
+      } finally {
+        setIsLoadingAirtable(false)
+      }
+    }
+
+    fetchAirtableData()
+  }, [])
+
+  // Filter static properties
+  const filteredStaticProperties = useMemo(() => {
+    let result = [...staticProperties]
 
     if (filters.type) {
       result = result.filter(p => p.type === filters.type)
@@ -63,12 +95,67 @@ export default function ImmobilienPage() {
         result.sort((a, b) => b.area - a.area)
         break
       default:
-        // newest first (by id in this case)
         result.sort((a, b) => parseInt(b.id) - parseInt(a.id))
     }
 
     return result
   }, [filters, sortBy])
+
+  // Filter Airtable properties
+  const filteredAirtableProperties = useMemo(() => {
+    let result = [...airtableProperties]
+
+    if (filters.type) {
+      const kategorie = filters.type === 'kauf' ? 'Kauf' : 'Miete'
+      result = result.filter(p => p.kategorie === kategorie)
+    }
+    if (filters.category) {
+      const rsTypeMap: Record<string, string[]> = {
+        'wohnung': ['APARTMENT'],
+        'haus': ['HOUSE'],
+        'villa': ['HOUSE'],
+        'gewerbe': ['OFFICE', 'STORE', 'GASTRONOMY', 'INDUSTRY', 'COMMERCIAL'],
+      }
+      const matchingTypes = rsTypeMap[filters.category] || []
+      result = result.filter(p => matchingTypes.includes(p.rs_typ || ''))
+    }
+    if (filters.minPrice) {
+      result = result.filter(p => (p.preis || 0) >= parseInt(filters.minPrice))
+    }
+    if (filters.maxPrice) {
+      result = result.filter(p => (p.preis || Infinity) <= parseInt(filters.maxPrice))
+    }
+    if (filters.minArea) {
+      result = result.filter(p => (p.wohnflaeche || 0) >= parseInt(filters.minArea))
+    }
+    if (filters.bedrooms) {
+      result = result.filter(p => (p.zimmer || 0) >= parseInt(filters.bedrooms))
+    }
+    if (filters.location) {
+      result = result.filter(p =>
+        (p.ort || '').toLowerCase().includes(filters.location.toLowerCase()) ||
+        (p.kurz_adresse || '').toLowerCase().includes(filters.location.toLowerCase())
+      )
+    }
+
+    // Sort
+    switch (sortBy) {
+      case 'price-asc':
+        result.sort((a, b) => (a.preis || 0) - (b.preis || 0))
+        break
+      case 'price-desc':
+        result.sort((a, b) => (b.preis || 0) - (a.preis || 0))
+        break
+      case 'area-asc':
+        result.sort((a, b) => (a.wohnflaeche || 0) - (b.wohnflaeche || 0))
+        break
+      case 'area-desc':
+        result.sort((a, b) => (b.wohnflaeche || 0) - (a.wohnflaeche || 0))
+        break
+    }
+
+    return result
+  }, [airtableProperties, filters, sortBy])
 
   const resetFilters = () => {
     setFilters({
@@ -84,16 +171,22 @@ export default function ImmobilienPage() {
 
   const activeFilterCount = Object.values(filters).filter(v => v !== '').length
 
+  // Use Airtable properties if available, otherwise static
+  const hasAirtableData = airtableProperties.length > 0
+  const totalCount = hasAirtableData
+    ? filteredAirtableProperties.length
+    : filteredStaticProperties.length
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-primary-900 py-16">
+      <section className="bg-secondary-900 py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Immobilien
           </h1>
           <p className="text-xl text-gray-300">
-            Finden Sie Ihr perfektes Zuhause aus unserem exklusiven Portfolio
+            Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel
           </p>
         </div>
       </section>
@@ -120,14 +213,14 @@ export default function ImmobilienPage() {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'bg-primary-700 text-white border-primary-700'
+                    ? 'bg-primary-500 text-white border-primary-500'
                     : 'bg-white text-gray-700 border-gray-200 hover:border-primary-300'
                 }`}
               >
                 <SlidersHorizontal className="h-5 w-5" />
                 <span>Filter</span>
                 {activeFilterCount > 0 && (
-                  <span className="bg-gold-400 text-white text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-white text-primary-500 text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -150,13 +243,13 @@ export default function ImmobilienPage() {
               <div className="hidden md:flex items-center border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-primary-700 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-primary-500 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
                 >
                   <Grid className="h-5 w-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2.5 ${viewMode === 'list' ? 'bg-primary-700 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`p-2.5 ${viewMode === 'list' ? 'bg-primary-500 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
                 >
                   <List className="h-5 w-5" />
                 </button>
@@ -249,7 +342,7 @@ export default function ImmobilienPage() {
               {activeFilterCount > 0 && (
                 <button
                   onClick={resetFilters}
-                  className="mt-4 text-sm text-primary-700 hover:text-primary-800 flex items-center gap-1"
+                  className="mt-4 text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1"
                 >
                   <X className="h-4 w-4" />
                   Filter zurücksetzen
@@ -263,23 +356,49 @@ export default function ImmobilienPage() {
       {/* Results */}
       <section className="py-12">
         <div className="container-custom">
-          <div className="mb-6">
+          <div className="mb-6 flex items-center justify-between">
             <p className="text-gray-600">
-              <span className="font-semibold text-gray-900">{filteredProperties.length}</span> Immobilien gefunden
+              <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
+              {hasAirtableData && (
+                <span className="ml-2 text-sm text-primary-500">(Live-Daten)</span>
+              )}
             </p>
+            {isLoadingAirtable && (
+              <div className="flex items-center gap-2 text-gray-500 text-sm">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Lade aktuelle Daten...
+              </div>
+            )}
           </div>
 
-          {filteredProperties.length > 0 ? (
+          {/* Show Airtable properties if available */}
+          {hasAirtableData && filteredAirtableProperties.length > 0 && (
+            <div className={
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12'
+                : 'flex flex-col gap-6 mb-12'
+            }>
+              {filteredAirtableProperties.map((property) => (
+                <AirtablePropertyCard key={property.id} property={property} />
+              ))}
+            </div>
+          )}
+
+          {/* Show static properties if no Airtable data or as fallback */}
+          {!hasAirtableData && filteredStaticProperties.length > 0 && (
             <div className={
               viewMode === 'grid'
                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
                 : 'flex flex-col gap-6'
             }>
-              {filteredProperties.map((property) => (
+              {filteredStaticProperties.map((property) => (
                 <PropertyCard key={property.id} property={property} />
               ))}
             </div>
-          ) : (
+          )}
+
+          {/* No results */}
+          {totalCount === 0 && !isLoadingAirtable && (
             <div className="text-center py-16">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="h-8 w-8 text-gray-400" />
