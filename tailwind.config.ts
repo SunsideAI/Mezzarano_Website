@@ -56,8 +56,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        serif: ['Georgia', 'Cambria', 'serif'],
       },
       typography: {
         DEFAULT: {

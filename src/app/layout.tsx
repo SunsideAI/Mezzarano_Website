@@ -1,23 +1,27 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
 
-const inter = Inter({
+// Wüstenrot uses a clean sans-serif font similar to Source Sans Pro
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-sans',
+  weight: ['300', '400', '600', '700'],
 })
 
 export const metadata: Metadata = {
-  title: 'Mezzarano Immobilien | Ihr Partner für Immobilien',
-  description: 'Mezzarano Immobilien - Ihr vertrauenswürdiger Partner für den Kauf, Verkauf und die Vermietung von Immobilien. Wir bieten erstklassige Beratung und persönlichen Service.',
-  keywords: 'Immobilien, Häuser, Wohnungen, Kaufen, Verkaufen, Mieten, Mezzarano',
+  title: 'Sandro Mezzarano | Wüstenrot Immobilien Hermeskeil',
+  description: 'Sandro Mezzarano - Ihr Wüstenrot Immobilien-Experte in Hermeskeil. Professionelle Beratung für Kauf, Verkauf und Vermietung von Immobilien in der Region Trier.',
+  keywords: 'Immobilien Hermeskeil, Wüstenrot, Immobilienmakler Trier, Haus kaufen Hermeskeil, Wohnung mieten, Sandro Mezzarano',
+  openGraph: {
+    title: 'Sandro Mezzarano | Wüstenrot Immobilien',
+    description: 'Ihr Immobilien-Experte in Hermeskeil und Umgebung',
+    type: 'website',
+    locale: 'de_DE',
+  },
 }
 
 export default function RootLayout({
@@ -27,7 +31,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <SchemaMarkup data={generateLocalBusinessSchema()} />
+      </head>
+      <body className={`${sourceSans.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">
           {children}
