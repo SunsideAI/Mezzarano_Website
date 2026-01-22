@@ -89,7 +89,7 @@ export default function ImmobilienPage() {
       {/* Header */}
       <section className="bg-primary-900 py-16">
         <div className="container-custom">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Immobilien
           </h1>
           <p className="text-xl text-gray-300">

@@ -110,7 +110,7 @@ export default function BlogPostPage({ params }: Props) {
                 )}
               </div>
 
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                 {post.title}
               </h1>
 
@@ -212,7 +212,7 @@ export default function BlogPostPage({ params }: Props) {
               <div className="sticky top-28 space-y-8">
                 {/* CTA Box */}
                 <div className="bg-primary-500 text-white rounded-2xl p-8">
-                  <h3 className="font-serif text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-4">
                     Kostenlose Beratung
                   </h3>
                   <p className="text-white/90 mb-6">

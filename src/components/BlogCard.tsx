@@ -31,7 +31,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
               />
             ) : (
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-                <span className="text-6xl font-serif font-bold text-white/20">M</span>
+                <span className="text-6xl font-bold text-white/20">M</span>
               </div>
             )}
             <div className="absolute top-4 left-4">
@@ -53,7 +53,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
               </span>
             </div>
 
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary-900 mb-4 group-hover:text-primary-500 transition-colors">
+            <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4 group-hover:text-primary-500 transition-colors">
               <Link href={`/ratgeber/${post.slug}`}>
                 {post.title}
               </Link>
@@ -88,7 +88,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-            <span className="text-4xl font-serif font-bold text-white/20">M</span>
+            <span className="text-4xl font-bold text-white/20">M</span>
           </div>
         )}
         <div className="absolute top-3 left-3">
@@ -110,7 +110,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           </span>
         </div>
 
-        <h3 className="font-serif text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-500 transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-500 transition-colors line-clamp-2">
           <Link href={`/ratgeber/${post.slug}`}>
             {post.title}
           </Link>

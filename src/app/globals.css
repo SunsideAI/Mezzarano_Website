@@ -38,9 +38,9 @@
            focus:ring-accent-400 focus:ring-offset-2;
   }
 
-  /* Section Styles */
+  /* Section Styles - Wüstenrot uses clean sans-serif */
   .section-title {
-    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900;
   }
 
   .section-subtitle {
@@ -112,7 +112,7 @@
   /* Blog Prose Styles */
   .prose-blog {
     @apply prose prose-lg max-w-none;
-    @apply prose-headings:font-serif prose-headings:text-secondary-900;
+    @apply prose-headings:font-sans prose-headings:text-secondary-900 prose-headings:font-bold;
     @apply prose-p:text-secondary-700 prose-p:leading-relaxed;
     @apply prose-a:text-primary-500 prose-a:no-underline hover:prose-a:underline;
     @apply prose-strong:text-secondary-800;

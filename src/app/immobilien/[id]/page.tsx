@@ -87,7 +87,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   </span>
                 </div>
 
-                <h1 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   {property.title}
                 </h1>
 
@@ -140,7 +140,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
               {/* Description */}
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Beschreibung
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
@@ -159,7 +159,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
               {/* Features */}
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Ausstattung
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -174,7 +174,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
               {/* Location */}
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Lage
                 </h2>
                 <div className="flex items-start gap-3 mb-6">
@@ -195,7 +195,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               <div className="sticky top-28 space-y-6">
                 {/* Contact Form */}
                 <div className="bg-white p-6 rounded-xl shadow-lg">
-                  <h3 className="font-serif text-xl font-bold text-gray-900 mb-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6">
                     Interesse an dieser Immobilie?
                   </h3>
                   <form className="space-y-4">
@@ -246,7 +246,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
                 {/* Agent Info */}
                 <div className="bg-white p-6 rounded-xl shadow-lg">
-                  <h3 className="font-serif text-lg font-bold text-gray-900 mb-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">
                     Ihr Ansprechpartner
                   </h3>
                   <div className="flex items-center gap-4 mb-4">

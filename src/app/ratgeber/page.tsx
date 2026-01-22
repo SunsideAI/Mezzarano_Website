@@ -25,7 +25,7 @@ export default function RatgeberPage() {
               <BookOpen className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wider">Wissen & Expertise</span>
             </div>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Immobilien-Ratgeber
             </h1>
             <p className="text-xl text-secondary-300 mb-8">
@@ -118,7 +118,7 @@ export default function RatgeberPage() {
       {/* Newsletter CTA */}
       <section className="py-16 bg-primary-500">
         <div className="container-custom text-center">
-          <h2 className="font-serif text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Immer informiert bleiben
           </h2>
           <p className="text-white/90 mb-8 max-w-xl mx-auto">

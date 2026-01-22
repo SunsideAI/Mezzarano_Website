@@ -72,7 +72,7 @@ export default function KontaktPage() {
       <section className="bg-primary-900 py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Kontaktieren Sie uns
             </h1>
             <p className="text-xl text-gray-300">
