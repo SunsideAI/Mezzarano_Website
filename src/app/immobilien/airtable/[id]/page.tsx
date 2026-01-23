@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Bed, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer, ChevronLeft, ChevronRight } from 'lucide-react'
+import { MapPin, Bed, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer } from 'lucide-react'
 import { fetchPropertyById } from '@/lib/airtable'
 import ImageGallery from '@/components/ImageGallery'
+import PropertyMap from '@/components/PropertyMap'
 
 // Contact info for Sandro Mezzarano
 const agent = {
@@ -215,25 +216,13 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                 </div>
               )}
 
-              {/* Address */}
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Adresse
-                </h2>
-                <div className="flex items-start gap-3 mb-6">
-                  <MapPin className="h-5 w-5 text-primary-500 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-gray-900">
-                      {property.adresse_komplett || property.kurz_adresse || 'Adresse auf Anfrage'}
-                    </p>
-                    {property.ort && <p className="text-gray-500">{property.plz} {property.ort}</p>}
-                    {property.region && <p className="text-gray-500">Region: {property.region}</p>}
-                  </div>
-                </div>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  <p className="text-gray-500">Karte wird geladen...</p>
-                </div>
-              </div>
+              {/* Map */}
+              <PropertyMap
+                address={property.adresse_komplett || property.kurz_adresse || ''}
+                city={property.ort || ''}
+                plz={property.plz}
+                region={property.region}
+              />
             </div>
 
             {/* Sidebar */}
