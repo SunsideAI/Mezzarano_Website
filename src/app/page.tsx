@@ -1,9 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Home, Key, TrendingUp, Users, Award, CheckCircle, ArrowRight, Star } from 'lucide-react'
+import { Home, Key, TrendingUp, Users, Award, CheckCircle, ArrowRight, Star, MapPin, Bed, Square } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
 import { getFeaturedProperties } from '@/data/properties'
 import HeroSlider from '@/components/HeroSlider'
+import { fetchProperties, AirtableProperty } from '@/lib/airtable'
+
+// Force dynamic rendering to fetch fresh Airtable data
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 const services = [
   {
@@ -63,8 +68,91 @@ const regions = [
   { name: 'Schweich', href: '/regionen/schweich' },
 ]
 
-export default function HomePage() {
-  const featuredProperties = getFeaturedProperties()
+// Airtable Property Card for homepage
+function AirtablePropertyCard({ property }: { property: AirtableProperty }) {
+  const formatPrice = (price: number | undefined, kategorie?: string) => {
+    if (!price) return 'Preis auf Anfrage'
+    const formatted = new Intl.NumberFormat('de-DE').format(price)
+    return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
+  }
+
+  const imageUrl = property.cover || property.bilder[0] || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
+  const isRent = property.kategorie === 'Miete'
+  const propertyType = property.objekt_typ || property.unterkategorie
+
+  return (
+    <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+      <div className="relative h-64 overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt={property.titel}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute top-4 left-4 flex gap-2">
+          <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
+            !isRent ? 'bg-secondary-900 text-white' : 'bg-white text-secondary-900'
+          }`}>
+            {isRent ? 'Mieten' : 'Kaufen'}
+          </span>
+          {propertyType && (
+            <span className="px-3 py-1 rounded-lg text-sm font-semibold bg-primary-500 text-white">
+              {propertyType}
+            </span>
+          )}
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-500 transition-colors line-clamp-2 mb-3">
+          <Link href={`/immobilien/airtable/${property.id}`}>
+            {property.titel}
+          </Link>
+        </h3>
+        <div className="flex items-center gap-2 text-gray-500 mb-4">
+          <MapPin className="h-4 w-4 flex-shrink-0" />
+          <span className="text-sm">{property.ort || property.kurz_adresse || 'Standort auf Anfrage'}</span>
+        </div>
+        <div className="flex items-center gap-4 py-4 border-t border-b border-gray-100 mb-4">
+          {property.zimmer && property.zimmer > 0 && (
+            <div className="flex items-center gap-1.5 text-gray-600">
+              <Bed className="h-4 w-4" />
+              <span className="text-sm">{property.zimmer} Zi.</span>
+            </div>
+          )}
+          {property.wohnflaeche && property.wohnflaeche > 0 && (
+            <div className="flex items-center gap-1.5 text-gray-600">
+              <Square className="h-4 w-4" />
+              <span className="text-sm">{property.wohnflaeche} m²</span>
+            </div>
+          )}
+        </div>
+        <div className="flex items-center justify-between">
+          <p className="text-2xl font-bold text-primary-500">
+            {formatPrice(property.preis, property.kategorie)}
+          </p>
+          <Link
+            href={`/immobilien/airtable/${property.id}`}
+            className="text-primary-500 font-medium hover:text-primary-600 transition-colors"
+          >
+            Details →
+          </Link>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export default async function HomePage() {
+  // Fetch from Airtable, fall back to static data
+  let airtableProperties: AirtableProperty[] = []
+  try {
+    airtableProperties = await fetchProperties({ show_all: true })
+  } catch (error) {
+    console.error('Failed to fetch Airtable properties:', error)
+  }
+
+  const staticFeaturedProperties = getFeaturedProperties()
+  const hasAirtableData = airtableProperties.length > 0
 
   return (
     <>
@@ -109,8 +197,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
             <div>
-              <h2 className="section-title mb-2">Ausgewählte Immobilien</h2>
-              <p className="text-secondary-600">Entdecken Sie unsere Top-Angebote</p>
+              <h2 className="section-title mb-2">Aktuelle Immobilien</h2>
+              <p className="text-secondary-600">
+                {hasAirtableData ? 'Live aus unserem Angebot' : 'Entdecken Sie unsere Top-Angebote'}
+              </p>
             </div>
             <Link href="/immobilien" className="btn-secondary group">
               Alle Immobilien
@@ -119,9 +209,15 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {featuredProperties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
-            ))}
+            {hasAirtableData ? (
+              airtableProperties.slice(0, 4).map((property) => (
+                <AirtablePropertyCard key={property.id} property={property} />
+              ))
+            ) : (
+              staticFeaturedProperties.map((property) => (
+                <PropertyCard key={property.id} property={property} />
+              ))
+            )}
           </div>
         </div>
       </section>
