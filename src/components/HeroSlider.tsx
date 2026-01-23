@@ -13,19 +13,19 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=80',
     headline: 'Immobilien verkaufen – ',
     highlightedText: 'kompetent und persönlich',
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&q=80',
     headline: 'Ihr Traumhaus finden – ',
     highlightedText: 'mit lokaler Expertise',
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1920&q=80',
     headline: 'Wüstenrot Partner – ',
     highlightedText: 'Finanzierung aus einer Hand',
     subheadline: 'Profitieren Sie von attraktiven Finanzierungslösungen und umfassender Beratung durch das Wüstenrot-Netzwerk.',
