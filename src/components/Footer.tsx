@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ExternalLink } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { WuestenrotLogoCompact } from './WuestenrotLogo'
 
 // Sandro Mezzarano's contact info
@@ -41,30 +41,6 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-secondary-900 text-secondary-300">
-      {/* Wüstenrot Partner Banner */}
-      <div className="bg-primary-500 py-4">
-        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-primary-500 font-bold text-lg">W</span>
-            </div>
-            <div className="text-white">
-              <span className="font-semibold">Wüstenrot Immobilien Partner</span>
-              <span className="block text-sm text-white/80">Ihre Immobilie in guten Händen</span>
-            </div>
-          </div>
-          <a
-            href="https://www.wuestenrot-immobilien.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-          >
-            Mehr erfahren
-            <ExternalLink className="h-4 w-4" />
-          </a>
-        </div>
-      </div>
-
       {/* Main footer content */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">

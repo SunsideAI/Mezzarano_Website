@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
+import ScrollAnimations from '@/components/ScrollAnimations'
 
 export const metadata: Metadata = {
   title: 'Sandro Mezzarano | Wüstenrot Immobilien Hermeskeil',
@@ -28,6 +29,7 @@ export default function RootLayout({
         <SchemaMarkup data={generateLocalBusinessSchema()} />
       </head>
       <body className="font-sans antialiased">
+        <ScrollAnimations />
         <Header />
         <main className="min-h-screen">
           {children}

@@ -255,4 +255,247 @@
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
+
+  /* ========== SCROLL ANIMATIONS ========== */
+
+  /* Initial states - elements start invisible */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Fade variants */
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-down {
+    opacity: 0;
+    transform: translateY(-60px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-fade-down.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-fade-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-fade-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-fade-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Zoom variants */
+  .animate-zoom-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Flip variants */
+  .animate-flip-up {
+    opacity: 0;
+    transform: perspective(2500px) rotateX(-60deg);
+    transform-origin: bottom;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-flip-up.visible {
+    opacity: 1;
+    transform: perspective(2500px) rotateX(0);
+  }
+
+  /* Blur variant */
+  .animate-blur-in {
+    opacity: 0;
+    filter: blur(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-blur-in.visible {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  /* Stagger children animation */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(7) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(8) { transition-delay: 700ms; opacity: 1; transform: translateY(0); }
+
+  /* Animation delay utilities */
+  .anim-delay-100 { transition-delay: 100ms !important; }
+  .anim-delay-200 { transition-delay: 200ms !important; }
+  .anim-delay-300 { transition-delay: 300ms !important; }
+  .anim-delay-400 { transition-delay: 400ms !important; }
+  .anim-delay-500 { transition-delay: 500ms !important; }
+  .anim-delay-600 { transition-delay: 600ms !important; }
+
+  /* Smooth hover transitions */
+  .smooth-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .smooth-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Card entrance animation */
+  .card-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-animate.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Text reveal animation */
+  .text-reveal {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .text-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Counter animation */
+  .counter-animate {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .counter-animate.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Glowing effect on hover */
+  .glow-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(248, 73, 20, 0.4);
+  }
+
+  /* Underline animation */
+  .underline-animate {
+    position: relative;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #F84914, #FF6B3D);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 2px;
+  }
+
+  .underline-animate:hover::after {
+    width: 100%;
+  }
+
+  /* Parallax effect placeholder */
+  .parallax-slow {
+    transition: transform 0.1s linear;
+  }
+
+  /* Image zoom on hover */
+  .img-zoom {
+    overflow: hidden;
+  }
+
+  .img-zoom img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .img-zoom:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Magnetic button effect base */
+  .magnetic-btn {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Ripple effect on click */
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+  }
+
+  .ripple:active::after {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
 }

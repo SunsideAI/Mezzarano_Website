@@ -162,7 +162,7 @@ export default async function HomePage() {
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-up">
             <h2 className="section-title mb-4">Unsere Leistungen</h2>
             <p className="section-subtitle mx-auto">
               Umfassende Dienstleistungen rund um Immobilien –
@@ -170,12 +170,11 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group smooth-hover"
               >
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500 transition-colors duration-300">
                   <service.icon className="h-7 w-7 text-primary-600 group-hover:text-white transition-colors duration-300" />
@@ -195,20 +194,20 @@ export default async function HomePage() {
       {/* Featured Properties */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12 animate-fade-up">
             <div>
               <h2 className="section-title mb-2">Aktuelle Immobilien</h2>
               <p className="text-secondary-600">
                 {hasAirtableData ? 'Live aus unserem Angebot' : 'Entdecken Sie unsere Top-Angebote'}
               </p>
             </div>
-            <Link href="/immobilien" className="btn-secondary group">
+            <Link href="/immobilien" className="btn-secondary group ripple">
               Alle Immobilien
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 stagger-children">
             {hasAirtableData ? (
               airtableProperties.slice(0, 4).map((property) => (
                 <AirtablePropertyCard key={property.id} property={property} />
@@ -226,7 +225,7 @@ export default async function HomePage() {
       <section className="py-20 bg-secondary-900 text-white overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="animate-fade-right">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ihr lokaler <span className="text-primary-500">Wüstenrot</span> Immobilienpartner
               </h2>
@@ -254,12 +253,11 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6 stagger-children animate-fade-left">
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 counter-animate"
                 >
                   <div className="text-4xl font-bold text-primary-500 mb-2">
                     {stat.value}
@@ -275,20 +273,19 @@ export default async function HomePage() {
       {/* Regions Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-up">
             <h2 className="section-title mb-4">Unsere Regionen</h2>
             <p className="section-subtitle mx-auto">
               Aktiv in Hermeskeil, Trier, an der Mosel und im gesamten Hochwald
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-children">
             {regions.map((region, index) => (
               <Link
                 key={region.name}
                 href={region.href}
-                className="relative group overflow-hidden rounded-xl aspect-[4/3]"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="relative group overflow-hidden rounded-xl aspect-[4/3] img-zoom"
               >
                 <Image
                   src={`https://images.unsplash.com/photo-156400${index + 1}3799919-ab600027ffc6?w=600&q=80`}
@@ -313,19 +310,18 @@ export default async function HomePage() {
       {/* Testimonials */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-up">
             <h2 className="section-title mb-4">Was Kunden sagen</h2>
             <p className="section-subtitle mx-auto">
               Ihre Zufriedenheit ist mein größter Erfolg
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 smooth-hover"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
