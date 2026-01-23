@@ -75,18 +75,18 @@ export default function BernkastelKuesPage() {
 
         <div className="container-custom relative z-10 py-20">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4 animate-fade-up">
+            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">Moselregion</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fade-up anim-delay-100">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
               Immobilien in Bernkastel-Kues
             </h1>
-            <p className="text-xl text-gray-200 mb-8 animate-fade-up anim-delay-200">
+            <p className="text-xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">
               Traumhafte Immobilien an der Mosel – von der historischen Fachwerk-Altstadt
               bis zu Häusern mit Weinbergsblick. Ihr Wüstenrot Partner für die Moselregion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up anim-delay-300">
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
               <Link href="/kontakt" className="btn-primary">
                 Beratung anfragen
               </Link>
@@ -119,7 +119,7 @@ export default function BernkastelKuesPage() {
       {/* Introduction */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto animate-fade-up">
+          <div className="max-w-4xl mx-auto" data-aos="fade-up">
             <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
               Immobilien an der Mosel – Einzigartig schön
             </h2>
@@ -147,12 +147,12 @@ export default function BernkastelKuesPage() {
       {/* Highlights */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Warum Immobilien an der Mosel?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
-            {highlights.map((item) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {highlights.map((item, index) => (
+              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
@@ -167,32 +167,32 @@ export default function BernkastelKuesPage() {
       {/* Property Types */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Immobilientypen an der Mosel
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto stagger-children">
-            <div className="border border-gray-200 rounded-xl p-6 smooth-hover">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="border border-gray-200 rounded-xl p-6 smooth-hover" data-aos="fade-up">
               <h3 className="text-lg font-bold text-secondary-900 mb-3">Fachwerkhäuser</h3>
               <p className="text-secondary-600 text-sm">
                 Historische Häuser in den Altstädten von Bernkastel, Traben-Trarbach und anderen Weinorten –
                 teilweise denkmalgeschützt mit besonderen Fördermöglichkeiten.
               </p>
             </div>
-            <div className="border border-gray-200 rounded-xl p-6 smooth-hover">
+            <div className="border border-gray-200 rounded-xl p-6 smooth-hover" data-aos="fade-up" data-aos-delay="100">
               <h3 className="text-lg font-bold text-secondary-900 mb-3">Häuser mit Moselblick</h3>
               <p className="text-secondary-600 text-sm">
                 Einfamilienhäuser in Hanglagen mit Panoramablick auf den Fluss und die Weinberge –
                 besonders gefragt und wertstabil.
               </p>
             </div>
-            <div className="border border-gray-200 rounded-xl p-6 smooth-hover">
+            <div className="border border-gray-200 rounded-xl p-6 smooth-hover" data-aos="fade-up" data-aos-delay="200">
               <h3 className="text-lg font-bold text-secondary-900 mb-3">Ferienimmobilien</h3>
               <p className="text-secondary-600 text-sm">
                 Ferienwohnungen und -häuser als Kapitalanlage mit Vermietungspotenzial in der
                 beliebten Tourismusregion.
               </p>
             </div>
-            <div className="border border-gray-200 rounded-xl p-6 smooth-hover">
+            <div className="border border-gray-200 rounded-xl p-6 smooth-hover" data-aos="fade-up" data-aos-delay="300">
               <h3 className="text-lg font-bold text-secondary-900 mb-3">Winzerhöfe & Weingüter</h3>
               <p className="text-secondary-600 text-sm">
                 Historische Anwesen mit Charakter, teilweise mit Rebflächen – ideal für Weinliebhaber
@@ -206,18 +206,20 @@ export default function BernkastelKuesPage() {
       {/* Orte */}
       <section className="py-16 bg-secondary-900 text-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold mb-8 text-center" data-aos="fade-up">
             Orte an der Mosel
           </h2>
-          <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12 animate-fade-up anim-delay-100">
+          <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
             Ich betreue Immobilien entlang der gesamten Mittelmosel –
             von Bernkastel-Kues bis Traben-Trarbach.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 stagger-children">
-            {orte.map((ort) => (
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {orte.map((ort, index) => (
               <div
                 key={ort}
                 className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors smooth-hover"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
               >
                 <span className="text-white text-sm">{ort}</span>
               </div>
@@ -229,12 +231,12 @@ export default function BernkastelKuesPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Häufige Fragen zu Mosel-Immobilien
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6 stagger-children">
+          <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
                 <h3 className="text-lg font-semibold text-secondary-900 mb-3">
                   {item.question}
                 </h3>
@@ -247,7 +249,7 @@ export default function BernkastelKuesPage() {
 
       {/* CTA */}
       <section className="py-16 bg-primary-500">
-        <div className="container-custom text-center animate-fade-up">
+        <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">
             Ihre Traumimmobilie an der Mosel finden
           </h2>

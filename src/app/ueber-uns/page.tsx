@@ -41,10 +41,10 @@ export default function UeberUnsPage() {
       <section className="relative py-24 bg-secondary-900">
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-up">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
               Über mich
             </h1>
-            <p className="text-xl text-gray-300 animate-fade-up anim-delay-100">
+            <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
               Ihr persönlicher Wüstenrot Immobilienpartner in Hermeskeil und der Region Trier-Mosel.
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function UeberUnsPage() {
       <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative animate-fade-right">
+            <div className="relative" data-aos="fade-right">
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
@@ -72,7 +72,7 @@ export default function UeberUnsPage() {
               </div>
             </div>
 
-            <div className="animate-fade-left">
+            <div data-aos="fade-left">
               <h2 className="section-title mb-6">Sandro Mezzarano</h2>
               <p className="text-primary-500 font-semibold mb-4">Wüstenrot Immobilienberater</p>
               <p className="text-gray-600 mb-6">
@@ -85,8 +85,8 @@ export default function UeberUnsPage() {
                 Diese lokale Expertise kombiniere ich mit dem bundesweiten Wüstenrot-Netzwerk,
                 um Ihnen den bestmöglichen Service zu bieten – von der Bewertung bis zur Finanzierung.
               </p>
-              <ul className="space-y-3 stagger-children">
-                {services.map((item) => (
+              <ul className="space-y-3">
+                {services.map((item, index) => (
                   <li key={item} className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary-500 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
@@ -101,18 +101,20 @@ export default function UeberUnsPage() {
       {/* Values */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16 animate-fade-up">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Meine Werte</h2>
             <p className="section-subtitle mx-auto">
               Diese Prinzipien leiten mich bei jedem Kundenkontakt
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
-            {values.map((value) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
               <div
                 key={value.title}
                 className="bg-white p-8 rounded-xl text-center group hover:shadow-xl transition-all smooth-hover"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-500 transition-colors">
                   <value.icon className="h-8 w-8 text-primary-500 group-hover:text-white transition-colors" />
@@ -131,7 +133,7 @@ export default function UeberUnsPage() {
       <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-right">
+            <div data-aos="fade-right">
               <h2 className="section-title mb-6">Warum Wüstenrot?</h2>
               <p className="text-gray-600 mb-6">
                 Wüstenrot ist seit über 100 Jahren einer der führenden Finanzdienstleister in Deutschland.
@@ -168,7 +170,7 @@ export default function UeberUnsPage() {
               </div>
             </div>
 
-            <div className="animate-fade-left">
+            <div data-aos="fade-left">
               <div className="bg-secondary-900 p-8 rounded-2xl text-white">
                 <h3 className="text-2xl font-bold mb-6">Kontaktieren Sie mich</h3>
                 <div className="space-y-4 mb-8">
@@ -212,7 +214,7 @@ export default function UeberUnsPage() {
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-600">
-        <div className="container-custom text-center animate-fade-up">
+        <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Lassen Sie uns gemeinsam Ihre Immobilienziele erreichen
           </h2>

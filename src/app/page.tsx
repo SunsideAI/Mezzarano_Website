@@ -189,7 +189,7 @@ export default async function HomePage() {
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16 animate-fade-up">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Unsere Leistungen</h2>
             <p className="section-subtitle mx-auto">
               Umfassende Dienstleistungen rund um Immobilien –
@@ -197,11 +197,13 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group smooth-hover"
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500 transition-colors duration-300">
                   <service.icon className="h-7 w-7 text-primary-600 group-hover:text-white transition-colors duration-300" />
@@ -221,7 +223,7 @@ export default async function HomePage() {
       {/* Featured Properties */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12 animate-fade-up">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12" data-aos="fade-up">
             <div>
               <h2 className="section-title mb-2">Aktuelle Immobilien</h2>
               <p className="text-secondary-600">
@@ -234,14 +236,18 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 stagger-children">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {hasAirtableData ? (
-              airtableProperties.slice(0, 4).map((property) => (
-                <AirtablePropertyCard key={property.id} property={property} />
+              airtableProperties.slice(0, 4).map((property, index) => (
+                <div key={property.id} data-aos="fade-up" data-aos-delay={index * 100}>
+                  <AirtablePropertyCard property={property} />
+                </div>
               ))
             ) : (
-              staticFeaturedProperties.map((property) => (
-                <PropertyCard key={property.id} property={property} />
+              staticFeaturedProperties.map((property, index) => (
+                <div key={property.id} data-aos="fade-up" data-aos-delay={index * 100}>
+                  <PropertyCard property={property} />
+                </div>
               ))
             )}
           </div>
@@ -252,7 +258,7 @@ export default async function HomePage() {
       <section className="py-20 bg-secondary-900 text-white overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-right">
+            <div data-aos="fade-right">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ihr lokaler <span className="text-primary-500">Wüstenrot</span> Immobilienpartner
               </h2>
@@ -280,11 +286,13 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 stagger-children animate-fade-left">
+            <div className="grid grid-cols-2 gap-6" data-aos="fade-left">
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 counter-animate"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
                 >
                   <div className="text-4xl font-bold text-primary-500 mb-2">
                     {stat.value}
@@ -300,19 +308,21 @@ export default async function HomePage() {
       {/* Regions Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-up">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="section-title mb-4">Unsere Regionen</h2>
             <p className="section-subtitle mx-auto">
               Aktiv in Hermeskeil, Trier, an der Mosel und im gesamten Hochwald
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-children">
-            {regions.map((region) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {regions.map((region, index) => (
               <Link
                 key={region.name}
                 href={region.href}
                 className="relative group overflow-hidden rounded-xl aspect-[4/3] img-zoom"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <Image
                   src={region.image}
@@ -337,18 +347,20 @@ export default async function HomePage() {
       {/* Testimonials */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16 animate-fade-up">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Was Kunden sagen</h2>
             <p className="section-subtitle mx-auto">
               Ihre Zufriedenheit ist mein größter Erfolg
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 smooth-hover"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -375,18 +387,18 @@ export default async function HomePage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
         </div>
         <div className="container-custom text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-primary-500/20 text-primary-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-primary-500/20 text-primary-400 px-4 py-2 rounded-full text-sm font-medium mb-6" data-aos="fade-up">
             <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
             Jetzt kostenlos beraten lassen
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
             Bereit, Ihre Traumimmobilie zu finden?
           </h2>
-          <p className="text-xl text-secondary-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary-300 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Kontaktieren Sie mich noch heute für eine unverbindliche Beratung.
             Ich stehe Ihnen persönlich zur Verfügung.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
             <Link href="/kontakt" className="btn-primary btn-shine group text-lg px-8 py-4">
               Jetzt Kontakt aufnehmen
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

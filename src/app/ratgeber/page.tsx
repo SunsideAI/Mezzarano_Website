@@ -21,20 +21,20 @@ export default function RatgeberPage() {
       <section className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4 animate-fade-up">
+            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
               <BookOpen className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wider">Wissen & Expertise</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-up anim-delay-100">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
               Immobilien-Ratgeber
             </h1>
-            <p className="text-xl text-secondary-300 mb-8 animate-fade-up anim-delay-200">
+            <p className="text-xl text-secondary-300 mb-8" data-aos="fade-up" data-aos-delay="200">
               Expertenwissen rund um Immobilien in der Region Heilbronn.
               Tipps zum Kauf, Verkauf, zur Finanzierung und aktuelle Marktanalysen.
             </p>
 
             {/* Search Box */}
-            <div className="relative max-w-xl animate-fade-up anim-delay-300">
+            <div className="relative max-w-xl" data-aos="fade-up" data-aos-delay="300">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary-400" />
               <input
                 type="search"
@@ -73,11 +73,11 @@ export default function RatgeberPage() {
       {featuredPosts.length > 0 && (
         <section className="py-12">
           <div className="container-custom">
-            <div className="flex items-center gap-2 text-primary-500 mb-6 animate-fade-up">
+            <div className="flex items-center gap-2 text-primary-500 mb-6" data-aos="fade-up">
               <TrendingUp className="h-5 w-5" />
               <span className="font-semibold">Aktueller Artikel</span>
             </div>
-            <div className="animate-fade-up anim-delay-100">
+            <div data-aos="fade-up" data-aos-delay="100">
                 <BlogCard post={featuredPosts[0]} featured />
             </div>
           </div>
@@ -87,12 +87,14 @@ export default function RatgeberPage() {
       {/* All Posts Grid */}
       <section className="py-12">
         <div className="container-custom">
-          <h2 className="section-title mb-8 animate-fade-up">Alle Artikel</h2>
+          <h2 className="section-title mb-8" data-aos="fade-up">Alle Artikel</h2>
 
           {recentPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
-              {recentPosts.map(post => (
-                <BlogCard key={post.slug} post={post} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {recentPosts.map((post, index) => (
+                <div key={post.slug} data-aos="fade-up" data-aos-delay={index * 100}>
+                  <BlogCard post={post} />
+                </div>
               ))}
             </div>
           ) : (
@@ -119,7 +121,7 @@ export default function RatgeberPage() {
 
       {/* Newsletter CTA */}
       <section className="py-16 bg-primary-500">
-        <div className="container-custom text-center animate-fade-up">
+        <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-4">
             Immer informiert bleiben
           </h2>

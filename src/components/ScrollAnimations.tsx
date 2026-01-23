@@ -1,37 +1,40 @@
 'use client'
 
 import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 /**
- * ScrollAnimations - triggers animations when elements scroll into view
- * CSS animations run automatically on page load for above-fold content.
- * This component adds 'in-view' class for scroll-triggered enhancements.
+ * ScrollAnimations - initializes AOS (Animate On Scroll) library
+ * AOS is the industry standard for reliable scroll animations
  */
 export default function ScrollAnimations() {
   useEffect(() => {
-    // Only run IntersectionObserver for scroll-triggered animations
-    const scrollElements = document.querySelectorAll('.animate-on-scroll')
+    AOS.init({
+      // Animation settings
+      duration: 600,        // Animation duration in ms
+      easing: 'ease-out-cubic', // Smooth easing
+      once: true,           // Only animate once
+      offset: 50,           // Offset from viewport
+      delay: 0,             // Default delay
 
-    if (scrollElements.length === 0) return
+      // Disable on mobile for better performance (optional)
+      // disable: 'mobile',
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view')
-            observer.unobserve(entry.target) // Only animate once
-          }
-        })
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    )
+      // Start event
+      startEvent: 'DOMContentLoaded',
+    })
 
-    scrollElements.forEach((el) => observer.observe(el))
+    // Refresh AOS when images load (important for proper positioning)
+    window.addEventListener('load', () => {
+      AOS.refresh()
+    })
 
-    return () => observer.disconnect()
+    return () => {
+      window.removeEventListener('load', () => {
+        AOS.refresh()
+      })
+    }
   }, [])
 
   return null

@@ -186,10 +186,10 @@ export default function ImmobilienPage() {
       {/* Header */}
       <section className="bg-secondary-900 py-16">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-up">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">
             Immobilien
           </h1>
-          <p className="text-xl text-gray-300 animate-fade-up anim-delay-100">
+          <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
             Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel
           </p>
         </div>

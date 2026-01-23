@@ -99,7 +99,7 @@ export default function BlogPostPage({ params }: Props) {
             </Link>
 
             <div className="max-w-4xl">
-              <div className="flex items-center gap-3 mb-6 animate-fade-up">
+              <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
                 <span className="badge bg-primary-500 text-white">
                   {post.category}
                 </span>
@@ -110,15 +110,15 @@ export default function BlogPostPage({ params }: Props) {
                 )}
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 animate-fade-up anim-delay-100">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
                 {post.title}
               </h1>
 
-              <p className="text-xl text-secondary-300 mb-8 animate-fade-up anim-delay-200">
+              <p className="text-xl text-secondary-300 mb-8" data-aos="fade-up" data-aos-delay="200">
                 {post.description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 text-secondary-400 animate-fade-up anim-delay-300">
+              <div className="flex flex-wrap items-center gap-6 text-secondary-400" data-aos="fade-up" data-aos-delay="300">
                 <span className="flex items-center gap-2">
                   <User className="h-5 w-5" />
                   {post.author}
@@ -140,7 +140,7 @@ export default function BlogPostPage({ params }: Props) {
         <div className="container-custom py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-8 animate-fade-right">
+            <div className="lg:col-span-8" data-aos="fade-right">
               <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                 <div
                   className="prose-blog"
@@ -208,7 +208,7 @@ export default function BlogPostPage({ params }: Props) {
             </div>
 
             {/* Sidebar */}
-            <aside className="lg:col-span-4 animate-fade-left">
+            <aside className="lg:col-span-4" data-aos="fade-left">
               <div className="sticky top-28 space-y-8">
                 {/* CTA Box */}
                 <div className="bg-primary-500 text-white rounded-2xl p-8">
@@ -245,10 +245,12 @@ export default function BlogPostPage({ params }: Props) {
         {relatedPosts.length > 0 && (
           <section className="py-16 bg-white">
             <div className="container-custom">
-              <h2 className="section-title mb-8 animate-fade-up">Weitere Artikel</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
-                {relatedPosts.map(post => (
-                  <BlogCard key={post.slug} post={post} />
+              <h2 className="section-title mb-8" data-aos="fade-up">Weitere Artikel</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {relatedPosts.map((post, index) => (
+                  <div key={post.slug} data-aos="fade-up" data-aos-delay={index * 100}>
+                    <BlogCard post={post} />
+                  </div>
                 ))}
               </div>
             </div>

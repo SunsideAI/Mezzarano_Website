@@ -58,18 +58,18 @@ export default function TrierPage() {
 
         <div className="container-custom relative z-10 py-20">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4 animate-fade-up">
+            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">Trier & Trier-Saarburg</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fade-up anim-delay-100">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
               Ihr Immobilienmakler für Trier
             </h1>
-            <p className="text-xl text-gray-200 mb-8 animate-fade-up anim-delay-200">
+            <p className="text-xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">
               Sandro Mezzarano von Wüstenrot Immobilien – Ihr Experte für den Immobilienmarkt
               in Trier und dem Landkreis Trier-Saarburg. Kompetent, persönlich, erfolgreich.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up anim-delay-300">
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
               <Link href="/kontakt" className="btn-primary">
                 Kostenlose Beratung anfragen
               </Link>
@@ -102,7 +102,7 @@ export default function TrierPage() {
       {/* Introduction */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto animate-fade-up">
+          <div className="max-w-4xl mx-auto" data-aos="fade-up">
             <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
               Immobilienmarkt Trier – Tradition trifft Moderne
             </h2>
@@ -130,18 +130,20 @@ export default function TrierPage() {
       {/* Stadtteile */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-8 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-8 text-center" data-aos="fade-up">
             Immobilien in allen Trierer Stadtteilen
           </h2>
-          <p className="text-secondary-600 text-center max-w-2xl mx-auto mb-12 animate-fade-up anim-delay-100">
+          <p className="text-secondary-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
             Ich kenne die Besonderheiten jedes Trierer Stadtteils und finde die passende
             Immobilie für Ihre individuellen Anforderungen.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 stagger-children">
-            {stadtteile.map((stadtteil) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            {stadtteile.map((stadtteil, index) => (
               <div
                 key={stadtteil}
                 className="bg-white rounded-lg p-4 text-center shadow-sm smooth-hover"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
               >
                 <span className="text-secondary-700 text-sm">{stadtteil}</span>
               </div>
@@ -153,11 +155,11 @@ export default function TrierPage() {
       {/* Services Grid */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Meine Leistungen für Trier
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
-            <div className="bg-gray-50 p-8 rounded-xl smooth-hover">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up">
               <Home className="h-10 w-10 text-primary-500 mb-4" />
               <h3 className="text-xl font-bold text-secondary-900 mb-3">Immobilien kaufen</h3>
               <p className="text-secondary-600 mb-4">
@@ -178,7 +180,7 @@ export default function TrierPage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl smooth-hover">
+            <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up" data-aos-delay="100">
               <TrendingUp className="h-10 w-10 text-primary-500 mb-4" />
               <h3 className="text-xl font-bold text-secondary-900 mb-3">Immobilien verkaufen</h3>
               <p className="text-secondary-600 mb-4">
@@ -199,7 +201,7 @@ export default function TrierPage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl smooth-hover">
+            <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up" data-aos-delay="200">
               <Building2 className="h-10 w-10 text-primary-500 mb-4" />
               <h3 className="text-xl font-bold text-secondary-900 mb-3">Kapitalanlage</h3>
               <p className="text-secondary-600 mb-4">
@@ -227,14 +229,14 @@ export default function TrierPage() {
       {/* Regional Network */}
       <section className="py-16 bg-secondary-900 text-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold mb-8 text-center" data-aos="fade-up">
             Auch aktiv im Landkreis Trier-Saarburg
           </h2>
-          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12 animate-fade-up anim-delay-100">
+          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
             Neben der Stadt Trier betreue ich Immobilien im gesamten Landkreis und
             angrenzenden Regionen.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-children">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               'Konz',
               'Schweich',
@@ -244,11 +246,13 @@ export default function TrierPage() {
               'Longuich',
               'Fell',
               'Waldrach',
-            ].map((ort) => (
+            ].map((ort, index) => (
               <Link
                 key={ort}
                 href={ort === 'Hermeskeil' ? '/regionen/hermeskeil' : ort === 'Schweich' ? '/regionen/schweich' : '/immobilien'}
                 className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
               >
                 <span className="text-white">{ort}</span>
               </Link>
@@ -260,12 +264,12 @@ export default function TrierPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Häufige Fragen zum Immobilienmarkt Trier
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6 stagger-children">
+          <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
                 <h3 className="text-lg font-semibold text-secondary-900 mb-3">
                   {item.question}
                 </h3>
@@ -278,7 +282,7 @@ export default function TrierPage() {
 
       {/* CTA */}
       <section className="py-16 bg-primary-500">
-        <div className="container-custom text-center animate-fade-up">
+        <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">
             Immobilie in Trier kaufen oder verkaufen?
           </h2>
