@@ -4,6 +4,9 @@ import { useEffect } from 'react'
 
 export default function ScrollAnimations() {
   useEffect(() => {
+    // Add js-enabled class to enable animations (content is visible by default without JS)
+    document.documentElement.classList.add('js-enabled')
+
     // Select all elements with animation classes
     const animatedElements = document.querySelectorAll(
       '.animate-on-scroll, .animate-fade-up, .animate-fade-down, .animate-fade-left, .animate-fade-right, .animate-zoom-in, .animate-flip-up, .animate-blur-in, .stagger-children, .card-animate, .text-reveal, .counter-animate'
@@ -11,19 +14,30 @@ export default function ScrollAnimations() {
 
     if (animatedElements.length === 0) return
 
+    // Immediately make elements in viewport visible
+    const checkInitialVisibility = () => {
+      animatedElements.forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible')
+        }
+      })
+    }
+
+    // Run immediately to show above-fold content
+    checkInitialVisibility()
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible')
-            // Optionally unobserve after animation (for one-time animations)
-            // observer.unobserve(entry.target)
           }
         })
       },
       {
-        threshold: 0.1, // Trigger when 10% of element is visible
-        rootMargin: '0px 0px -50px 0px', // Trigger slightly before element enters viewport
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
       }
     )
 

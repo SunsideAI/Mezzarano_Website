@@ -270,81 +270,87 @@
     transform: translateY(0);
   }
 
-  /* Fade variants */
-  .animate-fade-up {
+  /* Fade variants - only hide when JS is enabled */
+  .js-enabled .animate-fade-up {
     opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(40px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .animate-fade-up.visible,
   .animate-fade-up.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .animate-fade-down {
+  .js-enabled .animate-fade-down {
     opacity: 0;
-    transform: translateY(-60px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-40px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .animate-fade-down.visible,
   .animate-fade-down.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .animate-fade-left {
+  .js-enabled .animate-fade-left {
     opacity: 0;
-    transform: translateX(-60px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-40px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .animate-fade-left.visible,
   .animate-fade-left.visible {
     opacity: 1;
     transform: translateX(0);
   }
 
-  .animate-fade-right {
+  .js-enabled .animate-fade-right {
     opacity: 0;
-    transform: translateX(60px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(40px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .animate-fade-right.visible,
   .animate-fade-right.visible {
     opacity: 1;
     transform: translateX(0);
   }
 
   /* Zoom variants */
-  .animate-zoom-in {
+  .js-enabled .animate-zoom-in {
     opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.9);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .animate-zoom-in.visible,
   .animate-zoom-in.visible {
     opacity: 1;
     transform: scale(1);
   }
 
   /* Flip variants */
-  .animate-flip-up {
+  .js-enabled .animate-flip-up {
     opacity: 0;
-    transform: perspective(2500px) rotateX(-60deg);
+    transform: perspective(2500px) rotateX(-40deg);
     transform-origin: bottom;
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .animate-flip-up.visible,
   .animate-flip-up.visible {
     opacity: 1;
     transform: perspective(2500px) rotateX(0);
   }
 
   /* Blur variant */
-  .animate-blur-in {
+  .js-enabled .animate-blur-in {
     opacity: 0;
-    filter: blur(20px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: blur(10px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .animate-blur-in.visible {
@@ -353,20 +359,28 @@
   }
 
   /* Stagger children animation */
-  .stagger-children > * {
+  .js-enabled .stagger-children > * {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .js-enabled .stagger-children.visible > *:nth-child(1),
   .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(7) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
-  .stagger-children.visible > *:nth-child(8) { transition-delay: 700ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(2),
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(3),
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(4),
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(5),
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(6),
+  .stagger-children.visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(7),
+  .stagger-children.visible > *:nth-child(7) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+  .js-enabled .stagger-children.visible > *:nth-child(8),
+  .stagger-children.visible > *:nth-child(8) { transition-delay: 560ms; opacity: 1; transform: translateY(0); }
 
   /* Animation delay utilities */
   .anim-delay-100 { transition-delay: 100ms !important; }
