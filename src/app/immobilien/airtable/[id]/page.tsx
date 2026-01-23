@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Bed, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer } from 'lucide-react'
+import { MapPin, Bed, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer, ChevronLeft, ChevronRight } from 'lucide-react'
 import { fetchPropertyById } from '@/lib/airtable'
+import ImageGallery from '@/components/ImageGallery'
 
 // Contact info for Sandro Mezzarano
 const agent = {
@@ -26,8 +27,10 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
     return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
   }
 
-  const mainImage = property.cover || property.bilder[0] || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
-  const additionalImages = property.bilder.slice(1, 3)
+  // Combine cover image with other images
+  const allImages = property.cover
+    ? [property.cover, ...property.bilder.filter(img => img !== property.cover)]
+    : property.bilder
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -47,40 +50,7 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
       {/* Image Gallery */}
       <section className="bg-secondary-900">
         <div className="container-custom py-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[500px]">
-            <div className="md:col-span-2 relative rounded-xl overflow-hidden">
-              <Image
-                src={mainImage}
-                alt={property.titel}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="hidden md:grid grid-rows-2 gap-4">
-              {additionalImages.length > 0 ? (
-                additionalImages.map((image, index) => (
-                  <div key={index} className="relative rounded-xl overflow-hidden">
-                    <Image
-                      src={image}
-                      alt={`${property.titel} - Bild ${index + 2}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))
-              ) : (
-                <>
-                  <div className="relative rounded-xl overflow-hidden bg-secondary-800 flex items-center justify-center">
-                    <Building className="h-16 w-16 text-secondary-600" />
-                  </div>
-                  <div className="relative rounded-xl overflow-hidden bg-secondary-800 flex items-center justify-center">
-                    <Building className="h-16 w-16 text-secondary-600" />
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
+          <ImageGallery images={allImages} title={property.titel} />
         </div>
       </section>
 

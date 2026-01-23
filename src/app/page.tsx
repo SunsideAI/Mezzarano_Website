@@ -62,10 +62,26 @@ const testimonials = [
 ]
 
 const regions = [
-  { name: 'Hermeskeil', href: '/regionen/hermeskeil' },
-  { name: 'Trier', href: '/regionen/trier' },
-  { name: 'Bernkastel-Kues', href: '/regionen/bernkastel-kues' },
-  { name: 'Schweich', href: '/regionen/schweich' },
+  {
+    name: 'Hermeskeil',
+    href: '/regionen/hermeskeil',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80' // Beautiful house in countryside
+  },
+  {
+    name: 'Trier',
+    href: '/regionen/trier',
+    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80' // German city view
+  },
+  {
+    name: 'Bernkastel-Kues',
+    href: '/regionen/bernkastel-kues',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80' // Vineyard landscape
+  },
+  {
+    name: 'Schweich',
+    href: '/regionen/schweich',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80' // Modern home
+  },
 ]
 
 // Airtable Property Card for homepage
@@ -281,14 +297,14 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-children">
-            {regions.map((region, index) => (
+            {regions.map((region) => (
               <Link
                 key={region.name}
                 href={region.href}
                 className="relative group overflow-hidden rounded-xl aspect-[4/3] img-zoom"
               >
                 <Image
-                  src={`https://images.unsplash.com/photo-156400${index + 1}3799919-ab600027ffc6?w=600&q=80`}
+                  src={region.image}
                   alt={region.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

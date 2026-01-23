@@ -363,9 +363,6 @@ export default function ImmobilienPage() {
           <div className="mb-6 flex items-center justify-between">
             <p className="text-gray-600">
               <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
-              {hasAirtableData && (
-                <span className="ml-2 text-sm text-primary-500">(Live-Daten)</span>
-              )}
             </p>
             {isLoadingAirtable && (
               <div className="flex items-center gap-2 text-gray-500 text-sm">
