@@ -183,10 +183,7 @@ function buildFilterFormula(filters: {
 }): string {
   const conditions: string[] = []
 
-  // Default: only show available properties
-  if (!filters.show_all) {
-    conditions.push('OR({status}="Verfügbar", {status}="vermarktung", {status}="aktiv")')
-  }
+  // Note: Removed default status filter to show all properties
 
   if (filters.ort) {
     conditions.push(`FIND("${filters.ort}", {ort})`)
