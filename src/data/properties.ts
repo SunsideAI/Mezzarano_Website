@@ -31,7 +31,7 @@ export const properties: Property[] = [
     yearBuilt: 1995,
     features: ['Garten', 'Garage', 'Keller', 'Terrasse', 'Einbauküche'],
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80',
+      'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     ],
@@ -52,8 +52,8 @@ export const properties: Property[] = [
     yearBuilt: 2018,
     features: ['Balkon', 'Einbauküche', 'Tiefgarage', 'Fußbodenheizung', 'Aufzug'],
     images: [
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
     ],
     featured: true,
     category: 'wohnung',
@@ -72,7 +72,7 @@ export const properties: Property[] = [
     yearBuilt: 1750,
     features: ['Moselblick', 'Denkmalschutz', 'Terrasse', 'Weinkeller', 'Fachwerk'],
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1592595896616-c37162298647?w=800&q=80',
       'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80',
     ],
     featured: true,
@@ -92,7 +92,7 @@ export const properties: Property[] = [
     yearBuilt: 2020,
     features: ['Garten', 'Carport', 'Fußbodenheizung', 'Gäste-WC', 'Smart Home'],
     images: [
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80',
+      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80',
       'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80',
     ],
     featured: true,

@@ -6,6 +6,7 @@ import PropertyCard from '@/components/PropertyCard'
 import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { properties as staticProperties, Property } from '@/data/properties'
 import { AirtableProperty } from '@/lib/airtable'
+import AOS from 'aos'
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
 
@@ -180,6 +181,15 @@ export default function ImmobilienPage() {
   const totalCount = hasAirtableData
     ? filteredAirtableProperties.length
     : filteredStaticProperties.length
+
+  // Refresh AOS when properties change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setTimeout(() => {
+        AOS.refresh()
+      }, 100)
+    }
+  }, [airtableProperties, filteredStaticProperties, filteredAirtableProperties])
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -379,8 +389,10 @@ export default function ImmobilienPage() {
                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12'
                 : 'flex flex-col gap-6 mb-12'
             }>
-              {filteredAirtableProperties.map((property) => (
-                <AirtablePropertyCard key={property.id} property={property} />
+              {filteredAirtableProperties.map((property, index) => (
+                <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
+                  <AirtablePropertyCard property={property} />
+                </div>
               ))}
             </div>
           )}
@@ -392,15 +404,17 @@ export default function ImmobilienPage() {
                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
                 : 'flex flex-col gap-6'
             }>
-              {filteredStaticProperties.map((property) => (
-                <PropertyCard key={property.id} property={property} />
+              {filteredStaticProperties.map((property, index) => (
+                <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
+                  <PropertyCard property={property} />
+                </div>
               ))}
             </div>
           )}
 
           {/* No results */}
           {totalCount === 0 && !isLoadingAirtable && (
-            <div className="text-center py-16">
+            <div className="text-center py-16" data-aos="fade-up">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="h-8 w-8 text-gray-400" />
               </div>
