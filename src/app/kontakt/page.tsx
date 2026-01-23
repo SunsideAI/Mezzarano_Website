@@ -7,25 +7,25 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Adresse',
-    lines: ['Musterstraße 123', '12345 Berlin'],
-    link: 'https://maps.google.com',
+    lines: ['Saarstraße 1', '54411 Hermeskeil'],
+    link: 'https://maps.google.com/?q=Saarstraße+1+54411+Hermeskeil',
   },
   {
     icon: Phone,
     title: 'Telefon',
-    lines: ['+49 123 456 7890', '+49 123 456 7891'],
-    link: 'tel:+491234567890',
+    lines: ['0177 6542977', '06503 9523963'],
+    link: 'tel:01776542977',
   },
   {
     icon: Mail,
     title: 'E-Mail',
-    lines: ['info@mezzarano.de', 'beratung@mezzarano.de'],
-    link: 'mailto:info@mezzarano.de',
+    lines: ['sandro.mezzarano@wuestenrot.de'],
+    link: 'mailto:sandro.mezzarano@wuestenrot.de',
   },
   {
     icon: Clock,
-    title: 'Öffnungszeiten',
-    lines: ['Mo - Fr: 9:00 - 18:00', 'Sa: 10:00 - 14:00'],
+    title: 'Erreichbarkeit',
+    lines: ['Mo - Fr: 9:00 - 18:00', 'Termine nach Vereinbarung'],
   },
 ]
 
@@ -69,15 +69,15 @@ export default function KontaktPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-primary-900 py-20">
+      <section className="bg-secondary-900 py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Kontaktieren Sie uns
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-up">
+              Kontaktieren Sie mich
             </h1>
-            <p className="text-xl text-gray-300">
-              Wir sind für Sie da. Kontaktieren Sie uns für eine persönliche Beratung
-              oder besuchen Sie uns in unserem Büro.
+            <p className="text-xl text-gray-300 animate-fade-up anim-delay-100">
+              Ich bin persönlich für Sie da. Kontaktieren Sie mich für eine unverbindliche Beratung
+              rund um Ihre Immobilie.
             </p>
           </div>
         </div>
@@ -86,11 +86,11 @@ export default function KontaktPage() {
       {/* Contact Info Cards */}
       <section className="py-12 bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-20 stagger-children">
             {contactInfo.map((info) => (
               <div
                 key={info.title}
-                className="bg-white p-6 rounded-xl shadow-lg text-center group hover:shadow-xl transition-shadow"
+                className="bg-white p-6 rounded-xl shadow-lg text-center group hover:shadow-xl transition-shadow smooth-hover"
               >
                 <div className="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-700 transition-colors">
                   <info.icon className="h-7 w-7 text-primary-700 group-hover:text-white transition-colors" />
@@ -118,10 +118,10 @@ export default function KontaktPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div>
+            <div className="animate-fade-right">
               <div className="flex items-center gap-3 mb-6">
-                <MessageSquare className="h-8 w-8 text-primary-700" />
-                <h2 className="section-title">Schreiben Sie uns</h2>
+                <MessageSquare className="h-8 w-8 text-primary-500" />
+                <h2 className="section-title">Schreiben Sie mir</h2>
               </div>
               <p className="text-gray-600 mb-8">
                 Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
@@ -276,10 +276,10 @@ export default function KontaktPage() {
             </div>
 
             {/* Map and Additional Info */}
-            <div>
-              <h2 className="section-title mb-6">Besuchen Sie uns</h2>
+            <div className="animate-fade-left">
+              <h2 className="section-title mb-6">Besuchen Sie mich</h2>
               <p className="text-gray-600 mb-8">
-                Unser Büro befindet sich im Herzen von Berlin. Wir freuen uns auf Ihren Besuch!
+                Mein Büro befindet sich in Hermeskeil. Ich freue mich auf Ihren Besuch oder einen Termin vor Ort!
               </p>
 
               {/* Map Placeholder */}
@@ -318,14 +318,14 @@ export default function KontaktPage() {
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-up">
             <h2 className="section-title mb-4">Häufig gestellte Fragen</h2>
             <p className="section-subtitle mx-auto">
               Finden Sie hier Antworten auf die häufigsten Fragen
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-6 stagger-children">
             {[
               {
                 q: 'Wie schnell erhalte ich eine Antwort auf meine Anfrage?',
@@ -344,7 +344,7 @@ export default function KontaktPage() {
                 a: 'Für eine fundierte Bewertung benötigen wir Grundrisse, Energieausweis, Grundbuchauszug und Informationen zur Ausstattung.',
               },
             ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm smooth-hover">
                 <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
                 <p className="text-gray-600">{faq.a}</p>
               </div>

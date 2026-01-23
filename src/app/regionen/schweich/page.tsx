@@ -75,18 +75,18 @@ export default function SchweichPage() {
 
         <div className="container-custom relative z-10 py-20">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4">
+            <div className="flex items-center gap-2 text-primary-400 mb-4 animate-fade-up">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">Trier-Saarburg</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fade-up anim-delay-100">
               Immobilienmakler Schweich
             </h1>
-            <p className="text-xl text-gray-200 mb-8">
+            <p className="text-xl text-gray-200 mb-8 animate-fade-up anim-delay-200">
               Schweich an der Mosel – Ihr idealer Wohnort zwischen Trier und Luxemburg.
               Sandro Mezzarano von Wüstenrot Immobilien berät Sie beim Kauf und Verkauf.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up anim-delay-300">
               <Link href="/kontakt" className="btn-primary">
                 Beratung anfragen
               </Link>
@@ -119,7 +119,7 @@ export default function SchweichPage() {
       {/* Introduction */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto animate-fade-up">
             <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
               Schweich – Wohnen mit Mosel-Flair und Top-Anbindung
             </h2>
@@ -147,12 +147,12 @@ export default function SchweichPage() {
       {/* Highlights */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
             Warum Schweich?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
             {highlights.map((item) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover">
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
@@ -168,7 +168,7 @@ export default function SchweichPage() {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-right">
               <h2 className="text-3xl font-bold text-secondary-900 mb-6">
                 Ideal für Pendler nach Luxemburg
               </h2>
@@ -192,7 +192,7 @@ export default function SchweichPage() {
                 ))}
               </ul>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden">
+            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden animate-fade-left img-zoom">
               <Image
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
                 alt="Pendeln nach Luxemburg"
@@ -207,18 +207,18 @@ export default function SchweichPage() {
       {/* Gemeinden */}
       <section className="py-16 bg-secondary-900 text-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center animate-fade-up">
             Verbandsgemeinde Schweich an der Römischen Weinstraße
           </h2>
-          <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
+          <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12 animate-fade-up anim-delay-100">
             Ich betreue Immobilien in der gesamten Verbandsgemeinde –
             von der Weinstadt bis zum idyllischen Moseldorf.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 stagger-children">
             {gemeinden.map((gemeinde) => (
               <div
                 key={gemeinde}
-                className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors"
+                className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors smooth-hover"
               >
                 <span className="text-white text-sm">{gemeinde}</span>
               </div>
@@ -230,12 +230,12 @@ export default function SchweichPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
             Häufige Fragen zu Immobilien in Schweich
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-6 stagger-children">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover">
                 <h3 className="text-lg font-semibold text-secondary-900 mb-3">
                   {item.question}
                 </h3>
@@ -248,7 +248,7 @@ export default function SchweichPage() {
 
       {/* Weitere Regionen */}
       <section className="py-16 bg-white">
-        <div className="container-custom text-center">
+        <div className="container-custom text-center animate-fade-up">
           <h2 className="text-2xl font-bold text-secondary-900 mb-8">
             Auch aktiv in der Region
           </h2>
@@ -268,7 +268,7 @@ export default function SchweichPage() {
 
       {/* CTA */}
       <section className="py-16 bg-primary-500">
-        <div className="container-custom text-center">
+        <div className="container-custom text-center animate-fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">
             Immobilie in Schweich gesucht?
           </h2>

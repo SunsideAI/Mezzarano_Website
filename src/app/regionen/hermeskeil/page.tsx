@@ -70,18 +70,18 @@ export default function HermeskeilPage() {
 
         <div className="container-custom relative z-10 py-20">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4">
+            <div className="flex items-center gap-2 text-primary-400 mb-4 animate-fade-up">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">Hermeskeil & Hochwald</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fade-up anim-delay-100">
               Ihr Immobilienmakler in Hermeskeil
             </h1>
-            <p className="text-xl text-gray-200 mb-8">
+            <p className="text-xl text-gray-200 mb-8 animate-fade-up anim-delay-200">
               Sandro Mezzarano – Ihr lokaler Wüstenrot Immobilienexperte für den Kauf,
               Verkauf und die Vermietung von Immobilien in Hermeskeil und der gesamten Hochwald-Region.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up anim-delay-300">
               <Link href="/kontakt" className="btn-primary">
                 Kostenlose Beratung anfragen
               </Link>
@@ -114,7 +114,7 @@ export default function HermeskeilPage() {
       {/* Introduction */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto animate-fade-up">
             <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
               Immobilien in Hermeskeil – Ihre lokale Expertise
             </h2>
@@ -143,12 +143,12 @@ export default function HermeskeilPage() {
       {/* Highlights */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
             Ihre Vorteile mit Wüstenrot Immobilien Hermeskeil
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
             {highlights.map((item) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover">
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
@@ -164,7 +164,7 @@ export default function HermeskeilPage() {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-right">
               <h2 className="text-3xl font-bold text-secondary-900 mb-6">
                 Umfassende Immobilienservices in Hermeskeil
               </h2>
@@ -189,7 +189,7 @@ export default function HermeskeilPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden">
+            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden animate-fade-left img-zoom">
               <Image
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
                 alt="Immobilienberatung"
@@ -204,14 +204,14 @@ export default function HermeskeilPage() {
       {/* Region Overview */}
       <section className="py-16 bg-secondary-900 text-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center animate-fade-up">
             Immobilien in der Hochwald-Region
           </h2>
-          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12 animate-fade-up anim-delay-100">
             Neben Hermeskeil betreue ich auch Immobilien in den umliegenden Ortschaften
             und Gemeinden der Verbandsgemeinde Hermeskeil.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-children">
             {[
               'Kell am See',
               'Reinsfeld',
@@ -222,7 +222,7 @@ export default function HermeskeilPage() {
               'Bescheid',
               'Geisfeld',
             ].map((ort) => (
-              <div key={ort} className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors">
+              <div key={ort} className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors smooth-hover">
                 <span className="text-white">{ort}</span>
               </div>
             ))}
@@ -239,12 +239,12 @@ export default function HermeskeilPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center animate-fade-up">
             Häufige Fragen zu Immobilien in Hermeskeil
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-6 stagger-children">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover">
                 <h3 className="text-lg font-semibold text-secondary-900 mb-3">
                   {item.question}
                 </h3>
@@ -257,7 +257,7 @@ export default function HermeskeilPage() {
 
       {/* CTA */}
       <section className="py-16 bg-primary-500">
-        <div className="container-custom text-center">
+        <div className="container-custom text-center animate-fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">
             Bereit für Ihr Immobilienprojekt in Hermeskeil?
           </h2>
