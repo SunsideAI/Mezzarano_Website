@@ -48,8 +48,8 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
       </div>
 
       {/* Image Gallery */}
-      <section className="bg-secondary-900">
-        <div className="container-custom py-6">
+      <section className="bg-gray-100 py-6">
+        <div className="container-custom">
           <ImageGallery images={allImages} title={property.titel} />
         </div>
       </section>
