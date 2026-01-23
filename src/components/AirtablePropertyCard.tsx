@@ -91,9 +91,18 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
         {/* Price and CTA */}
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-2xl font-bold text-primary-700">
-              {formatPrice(property.preis, property.kategorie)}
-            </p>
+            {isRent ? (
+              <>
+                <p className="text-2xl font-bold text-primary-700">
+                  {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Auf Anfrage'}
+                </p>
+                <p className="text-sm text-gray-500">pro Monat</p>
+              </>
+            ) : (
+              <p className="text-2xl font-bold text-primary-700">
+                {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Preis auf Anfrage'}
+              </p>
+            )}
           </div>
           <Link
             href={`/immobilien/airtable/${property.id}`}

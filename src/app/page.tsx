@@ -65,22 +65,22 @@ const regions = [
   {
     name: 'Hermeskeil',
     href: '/regionen/hermeskeil',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80' // Beautiful house in countryside
+    image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&q=80' // German forest landscape
   },
   {
     name: 'Trier',
     href: '/regionen/trier',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80' // German city view
+    image: 'https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=600&q=80' // German historic town
   },
   {
     name: 'Bernkastel-Kues',
     href: '/regionen/bernkastel-kues',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80' // Vineyard landscape
+    image: 'https://images.unsplash.com/photo-1535756430765-e52b53f0d3d8?w=600&q=80' // Vineyard/wine region
   },
   {
     name: 'Schweich',
     href: '/regionen/schweich',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80' // Modern home
+    image: 'https://images.unsplash.com/photo-1605123728216-e58c04ac1999?w=600&q=80' // German riverside town
   },
 ]
 
@@ -143,9 +143,20 @@ function AirtablePropertyCard({ property }: { property: AirtableProperty }) {
           )}
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-2xl font-bold text-primary-500">
-            {formatPrice(property.preis, property.kategorie)}
-          </p>
+          <div>
+            {isRent ? (
+              <>
+                <p className="text-2xl font-bold text-primary-500">
+                  {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Auf Anfrage'}
+                </p>
+                <p className="text-sm text-gray-500">pro Monat</p>
+              </>
+            ) : (
+              <p className="text-2xl font-bold text-primary-500">
+                {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Preis auf Anfrage'}
+              </p>
+            )}
+          </div>
           <Link
             href={`/immobilien/airtable/${property.id}`}
             className="text-primary-500 font-medium hover:text-primary-600 transition-colors"
