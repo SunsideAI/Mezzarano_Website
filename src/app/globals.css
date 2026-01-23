@@ -256,50 +256,129 @@
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
 
-  /* ========== SCROLL ANIMATIONS ========== */
+  /* ========== RELIABLE CSS ANIMATIONS ========== */
+  /* Using @keyframes - runs on page load, no JS dependency */
 
-  /*
-   * SAFE ANIMATIONS - Content is ALWAYS visible
-   * Animations only add visual polish, never hide content
-   */
-
-  /* All animated elements are visible by default */
-  .animate-on-scroll,
-  .animate-fade-up,
-  .animate-fade-down,
-  .animate-fade-left,
-  .animate-fade-right,
-  .animate-zoom-in,
-  .animate-flip-up,
-  .animate-blur-in,
-  .stagger-children > * {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
+  /* Keyframe definitions */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  /* Animation delays for staggered appearance */
-  .anim-delay-100 { animation-delay: 100ms; }
-  .anim-delay-200 { animation-delay: 200ms; }
-  .anim-delay-300 { animation-delay: 300ms; }
-  .anim-delay-400 { animation-delay: 400ms; }
-  .anim-delay-500 { animation-delay: 500ms; }
-  /* Smooth hover transitions - only visual enhancement */
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Animation classes - play once on load */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-down {
+    animation: fadeDown 0.6s ease-out forwards;
+  }
+
+  .animate-fade-left {
+    animation: fadeLeft 0.6s ease-out forwards;
+  }
+
+  .animate-fade-right {
+    animation: fadeRight 0.6s ease-out forwards;
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.6s ease-out forwards;
+  }
+
+  /* Stagger children - each child animates with delay */
+  .stagger-children > *:nth-child(1) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 80ms; }
+  .stagger-children > *:nth-child(3) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 160ms; }
+  .stagger-children > *:nth-child(4) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 240ms; }
+  .stagger-children > *:nth-child(5) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 320ms; }
+  .stagger-children > *:nth-child(6) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 400ms; }
+  .stagger-children > *:nth-child(7) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 480ms; }
+  .stagger-children > *:nth-child(8) { animation: fadeUp 0.5s ease-out forwards; animation-delay: 560ms; }
+
+  /* Animation delays */
+  .anim-delay-100 { animation-delay: 100ms !important; }
+  .anim-delay-200 { animation-delay: 200ms !important; }
+  .anim-delay-300 { animation-delay: 300ms !important; }
+  .anim-delay-400 { animation-delay: 400ms !important; }
+  .anim-delay-500 { animation-delay: 500ms !important; }
+
+  /* Counter animation */
+  .counter-animate {
+    animation: zoomIn 0.6s ease-out forwards;
+  }
+
+  /* Smooth hover transitions */
   .smooth-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .smooth-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.2);
   }
 
-  /* Card and counter animations - always visible */
-  .card-animate,
-  .text-reveal,
-  .counter-animate {
-    opacity: 1 !important;
-    transform: none !important;
+  /* Image zoom on hover */
+  .img-zoom {
+    overflow: hidden;
+  }
+
+  .img-zoom img {
+    transition: transform 0.5s ease;
+  }
+
+  .img-zoom:hover img {
+    transform: scale(1.05);
   }
 
   /* Glowing effect on hover */

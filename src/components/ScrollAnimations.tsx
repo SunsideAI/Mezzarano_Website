@@ -3,23 +3,35 @@
 import { useEffect } from 'react'
 
 /**
- * ScrollAnimations - adds 'visible' class to elements when they enter viewport
- * Note: All content is visible by default. This only adds visual enhancements.
+ * ScrollAnimations - triggers animations when elements scroll into view
+ * CSS animations run automatically on page load for above-fold content.
+ * This component adds 'in-view' class for scroll-triggered enhancements.
  */
 export default function ScrollAnimations() {
   useEffect(() => {
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      const elements = document.querySelectorAll(
-        '.animate-on-scroll, .animate-fade-up, .animate-fade-down, .animate-fade-left, .animate-fade-right, .animate-zoom-in, .stagger-children'
-      )
+    // Only run IntersectionObserver for scroll-triggered animations
+    const scrollElements = document.querySelectorAll('.animate-on-scroll')
 
-      // Add visible class to all elements immediately
-      // This ensures content is always shown even if IntersectionObserver has issues
-      elements.forEach((el) => el.classList.add('visible'))
-    }, 100)
+    if (scrollElements.length === 0) return
 
-    return () => clearTimeout(timer)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view')
+            observer.unobserve(entry.target) // Only animate once
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    )
+
+    scrollElements.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
   }, [])
 
   return null
