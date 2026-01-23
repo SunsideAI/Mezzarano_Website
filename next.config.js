@@ -6,6 +6,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'pictures.immobilienscout24.de',
+      },
+      {
+        protocol: 'https',
+        hostname: 'v5.airtableusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.airtableusercontent.com',
+      },
     ],
   },
 }
