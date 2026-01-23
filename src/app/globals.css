@@ -258,182 +258,48 @@
 
   /* ========== SCROLL ANIMATIONS ========== */
 
-  /* Initial states - elements start invisible */
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  /*
+   * SAFE ANIMATIONS - Content is ALWAYS visible
+   * Animations only add visual polish, never hide content
+   */
+
+  /* All animated elements are visible by default */
+  .animate-on-scroll,
+  .animate-fade-up,
+  .animate-fade-down,
+  .animate-fade-left,
+  .animate-fade-right,
+  .animate-zoom-in,
+  .animate-flip-up,
+  .animate-blur-in,
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 
-  .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Fade variants - only hide when JS is enabled */
-  .js-enabled .animate-fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .animate-fade-up.visible,
-  .animate-fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .js-enabled .animate-fade-down {
-    opacity: 0;
-    transform: translateY(-40px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .animate-fade-down.visible,
-  .animate-fade-down.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .js-enabled .animate-fade-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .animate-fade-left.visible,
-  .animate-fade-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .js-enabled .animate-fade-right {
-    opacity: 0;
-    transform: translateX(40px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .animate-fade-right.visible,
-  .animate-fade-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  /* Zoom variants */
-  .js-enabled .animate-zoom-in {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .animate-zoom-in.visible,
-  .animate-zoom-in.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* Flip variants */
-  .js-enabled .animate-flip-up {
-    opacity: 0;
-    transform: perspective(2500px) rotateX(-40deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .animate-flip-up.visible,
-  .animate-flip-up.visible {
-    opacity: 1;
-    transform: perspective(2500px) rotateX(0);
-  }
-
-  /* Blur variant */
-  .js-enabled .animate-blur-in {
-    opacity: 0;
-    filter: blur(10px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .animate-blur-in.visible {
-    opacity: 1;
-    filter: blur(0);
-  }
-
-  /* Stagger children animation */
-  .js-enabled .stagger-children > * {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js-enabled .stagger-children.visible > *:nth-child(1),
-  .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(2),
-  .stagger-children.visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(3),
-  .stagger-children.visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(4),
-  .stagger-children.visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(5),
-  .stagger-children.visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(6),
-  .stagger-children.visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(7),
-  .stagger-children.visible > *:nth-child(7) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
-  .js-enabled .stagger-children.visible > *:nth-child(8),
-  .stagger-children.visible > *:nth-child(8) { transition-delay: 560ms; opacity: 1; transform: translateY(0); }
-
-  /* Animation delay utilities */
-  .anim-delay-100 { transition-delay: 100ms !important; }
-  .anim-delay-200 { transition-delay: 200ms !important; }
-  .anim-delay-300 { transition-delay: 300ms !important; }
-  .anim-delay-400 { transition-delay: 400ms !important; }
-  .anim-delay-500 { transition-delay: 500ms !important; }
-  .anim-delay-600 { transition-delay: 600ms !important; }
-
-  /* Smooth hover transitions */
+  /* Animation delays for staggered appearance */
+  .anim-delay-100 { animation-delay: 100ms; }
+  .anim-delay-200 { animation-delay: 200ms; }
+  .anim-delay-300 { animation-delay: 300ms; }
+  .anim-delay-400 { animation-delay: 400ms; }
+  .anim-delay-500 { animation-delay: 500ms; }
+  /* Smooth hover transitions - only visual enhancement */
   .smooth-hover {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .smooth-hover:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
   }
 
-  /* Card entrance animation */
-  .card-animate {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .card-animate.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  /* Text reveal animation */
-  .text-reveal {
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .text-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Counter animation */
+  /* Card and counter animations - always visible */
+  .card-animate,
+  .text-reveal,
   .counter-animate {
-    opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .counter-animate.visible {
-    opacity: 1;
-    transform: scale(1);
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   /* Glowing effect on hover */

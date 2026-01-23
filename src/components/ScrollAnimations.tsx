@@ -2,50 +2,24 @@
 
 import { useEffect } from 'react'
 
+/**
+ * ScrollAnimations - adds 'visible' class to elements when they enter viewport
+ * Note: All content is visible by default. This only adds visual enhancements.
+ */
 export default function ScrollAnimations() {
   useEffect(() => {
-    // Add js-enabled class to enable animations (content is visible by default without JS)
-    document.documentElement.classList.add('js-enabled')
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      const elements = document.querySelectorAll(
+        '.animate-on-scroll, .animate-fade-up, .animate-fade-down, .animate-fade-left, .animate-fade-right, .animate-zoom-in, .stagger-children'
+      )
 
-    // Select all elements with animation classes
-    const animatedElements = document.querySelectorAll(
-      '.animate-on-scroll, .animate-fade-up, .animate-fade-down, .animate-fade-left, .animate-fade-right, .animate-zoom-in, .animate-flip-up, .animate-blur-in, .stagger-children, .card-animate, .text-reveal, .counter-animate'
-    )
+      // Add visible class to all elements immediately
+      // This ensures content is always shown even if IntersectionObserver has issues
+      elements.forEach((el) => el.classList.add('visible'))
+    }, 100)
 
-    if (animatedElements.length === 0) return
-
-    // Immediately make elements in viewport visible
-    const checkInitialVisibility = () => {
-      animatedElements.forEach((el) => {
-        const rect = el.getBoundingClientRect()
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          el.classList.add('visible')
-        }
-      })
-    }
-
-    // Run immediately to show above-fold content
-    checkInitialVisibility()
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-          }
-        })
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    )
-
-    animatedElements.forEach((el) => observer.observe(el))
-
-    return () => {
-      animatedElements.forEach((el) => observer.unobserve(el))
-    }
+    return () => clearTimeout(timer)
   }, [])
 
   return null
