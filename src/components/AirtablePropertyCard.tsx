@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Bed, Square, Heart } from 'lucide-react'
-import { AirtableProperty, getRsTypeLabel } from '@/lib/airtable'
+import { AirtableProperty } from '@/lib/airtable'
 
 interface AirtablePropertyCardProps {
   property: AirtableProperty
@@ -16,6 +16,8 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
 
   const imageUrl = property.cover || property.bilder[0] || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
   const isRent = property.kategorie === 'Miete'
+  // Property type from objekt_typ or unterkategorie
+  const propertyType = property.objekt_typ || property.unterkategorie
 
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
@@ -35,9 +37,9 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
           }`}>
             {isRent ? 'Mieten' : 'Kaufen'}
           </span>
-          {property.rs_typ && (
+          {propertyType && (
             <span className="px-3 py-1 rounded-lg text-sm font-semibold bg-primary-500 text-white">
-              {getRsTypeLabel(property.rs_typ)}
+              {propertyType}
             </span>
           )}
         </div>

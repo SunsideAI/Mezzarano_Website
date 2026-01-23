@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Bed, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer } from 'lucide-react'
-import { fetchPropertyById, getRsTypeLabel } from '@/lib/airtable'
+import { fetchPropertyById } from '@/lib/airtable'
 
 // Contact info for Sandro Mezzarano
 const agent = {
@@ -100,9 +100,9 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                   }`}>
                     {property.kategorie === 'Miete' ? 'Zur Miete' : 'Zum Kauf'}
                   </span>
-                  {property.rs_typ && (
+                  {(property.objekt_typ || property.unterkategorie) && (
                     <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
-                      {getRsTypeLabel(property.rs_typ)}
+                      {property.objekt_typ || property.unterkategorie}
                     </span>
                   )}
                   {property.status && property.status !== 'Verfügbar' && (

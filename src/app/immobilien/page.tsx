@@ -110,14 +110,18 @@ export default function ImmobilienPage() {
       result = result.filter(p => p.kategorie === kategorie)
     }
     if (filters.category) {
-      const rsTypeMap: Record<string, string[]> = {
-        'wohnung': ['APARTMENT'],
-        'haus': ['HOUSE'],
-        'villa': ['HOUSE'],
-        'gewerbe': ['OFFICE', 'STORE', 'GASTRONOMY', 'INDUSTRY', 'COMMERCIAL'],
+      // Match against objekt_typ or unterkategorie (German labels from Airtable)
+      const typeMap: Record<string, string[]> = {
+        'wohnung': ['Wohnung'],
+        'haus': ['Haus'],
+        'villa': ['Haus', 'Villa'],
+        'gewerbe': ['Büro/Praxis', 'Gastronomie/Hotel', 'Gewerbe', 'Industrie'],
       }
-      const matchingTypes = rsTypeMap[filters.category] || []
-      result = result.filter(p => matchingTypes.includes(p.rs_typ || ''))
+      const matchingTypes = typeMap[filters.category] || []
+      result = result.filter(p => {
+        const propType = p.objekt_typ || p.unterkategorie || ''
+        return matchingTypes.some(t => propType.includes(t))
+      })
     }
     if (filters.minPrice) {
       result = result.filter(p => (p.preis || 0) >= parseInt(filters.minPrice))
