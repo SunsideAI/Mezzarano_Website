@@ -2,31 +2,54 @@
   "topics": [
     {
       "title": "Immobilienmarkt Trier-Mosel 2024: Preise, Trends und Prognosen",
-      "keywords": ["Trier", "Mosel", "Immobilienmarkt", "Preise", "Trends", "2024"],
+      "keywords": [
+        "Trier",
+        "Mosel",
+        "Immobilienmarkt",
+        "Preise",
+        "Trends",
+        "2024"
+      ],
       "category": "Marktberichte",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-01-24T13:00:02.387Z"
     },
     {
       "title": "Immobilie verkaufen in Hermeskeil: Der komplette Ratgeber",
-      "keywords": ["Immobilie verkaufen", "Hermeskeil", "Ratgeber", "Tipps"],
+      "keywords": [
+        "Immobilie verkaufen",
+        "Hermeskeil",
+        "Ratgeber",
+        "Tipps"
+      ],
       "category": "Immobilienverkauf",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-01-24T13:01:18.290Z"
     },
     {
       "title": "Immobilienbewertung Trier: Kostenlos und professionell",
-      "keywords": ["Immobilienbewertung", "Trier", "kostenlos", "Wertermittlung"],
+      "keywords": [
+        "Immobilienbewertung",
+        "Trier",
+        "kostenlos",
+        "Wertermittlung"
+      ],
       "category": "Immobilienbewertung",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-01-24T13:02:30.524Z"
     },
     {
       "title": "Schweich Immobilien: Der perfekte Standort für Familien",
-      "keywords": ["Schweich", "Immobilien", "Familie", "Wohnen", "Mosel"],
+      "keywords": [
+        "Schweich",
+        "Immobilien",
+        "Familie",
+        "Wohnen",
+        "Mosel"
+      ],
       "category": "Regionen",
       "priority": "high",
       "used": false,
@@ -34,7 +57,12 @@
     },
     {
       "title": "Hermeskeil Immobilienmarkt: Leben und Wohnen im Hochwald",
-      "keywords": ["Hermeskeil", "Immobilien", "Hochwald", "Wohnen"],
+      "keywords": [
+        "Hermeskeil",
+        "Immobilien",
+        "Hochwald",
+        "Wohnen"
+      ],
       "category": "Regionen",
       "priority": "high",
       "used": false,
@@ -42,7 +70,13 @@
     },
     {
       "title": "Bernkastel-Kues: Historische Weinstadt mit Wohnpotenzial",
-      "keywords": ["Bernkastel-Kues", "Mosel", "Immobilien", "Wein", "Geschichte"],
+      "keywords": [
+        "Bernkastel-Kues",
+        "Mosel",
+        "Immobilien",
+        "Wein",
+        "Geschichte"
+      ],
       "category": "Regionen",
       "priority": "medium",
       "used": false,
@@ -50,7 +84,13 @@
     },
     {
       "title": "Baufinanzierung 2024: Zinsen, Förderprogramme und Tipps",
-      "keywords": ["Baufinanzierung", "Zinsen", "Förderung", "KfW", "Wüstenrot"],
+      "keywords": [
+        "Baufinanzierung",
+        "Zinsen",
+        "Förderung",
+        "KfW",
+        "Wüstenrot"
+      ],
       "category": "Finanzierung",
       "priority": "high",
       "used": false,
@@ -58,7 +98,12 @@
     },
     {
       "title": "Eigenkapital bei der Immobilienfinanzierung: Wie viel brauche ich?",
-      "keywords": ["Eigenkapital", "Finanzierung", "Immobilienkauf", "Tipps"],
+      "keywords": [
+        "Eigenkapital",
+        "Finanzierung",
+        "Immobilienkauf",
+        "Tipps"
+      ],
       "category": "Finanzierung",
       "priority": "medium",
       "used": false,
@@ -66,7 +111,12 @@
     },
     {
       "title": "Mietrendite berechnen: Lohnt sich die Kapitalanlage?",
-      "keywords": ["Mietrendite", "Kapitalanlage", "Berechnung", "Investment"],
+      "keywords": [
+        "Mietrendite",
+        "Kapitalanlage",
+        "Berechnung",
+        "Investment"
+      ],
       "category": "Kapitalanlage",
       "priority": "high",
       "used": false,
@@ -74,7 +124,12 @@
     },
     {
       "title": "Spekulationssteuer Immobilien: So vermeiden Sie Steuerfallen",
-      "keywords": ["Spekulationssteuer", "Steuern", "Immobilienverkauf", "Frist"],
+      "keywords": [
+        "Spekulationssteuer",
+        "Steuern",
+        "Immobilienverkauf",
+        "Frist"
+      ],
       "category": "Recht & Steuern",
       "priority": "high",
       "used": false,
@@ -82,7 +137,12 @@
     },
     {
       "title": "Grunderwerbsteuer Rheinland-Pfalz: Alles Wichtige",
-      "keywords": ["Grunderwerbsteuer", "Rheinland-Pfalz", "Nebenkosten", "Kauf"],
+      "keywords": [
+        "Grunderwerbsteuer",
+        "Rheinland-Pfalz",
+        "Nebenkosten",
+        "Kauf"
+      ],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -90,7 +150,12 @@
     },
     {
       "title": "Energieausweis Pflicht: Was Verkäufer und Käufer wissen müssen",
-      "keywords": ["Energieausweis", "Pflicht", "Verkauf", "Energieeffizienz"],
+      "keywords": [
+        "Energieausweis",
+        "Pflicht",
+        "Verkauf",
+        "Energieeffizienz"
+      ],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -98,7 +163,12 @@
     },
     {
       "title": "Haus sanieren oder verkaufen: Die richtige Entscheidung treffen",
-      "keywords": ["Sanierung", "Verkauf", "Entscheidung", "Altbau"],
+      "keywords": [
+        "Sanierung",
+        "Verkauf",
+        "Entscheidung",
+        "Altbau"
+      ],
       "category": "Tipps & Ratgeber",
       "priority": "medium",
       "used": false,
@@ -106,7 +176,12 @@
     },
     {
       "title": "Home Staging: So verkaufen Sie Ihre Immobilie schneller",
-      "keywords": ["Home Staging", "Verkauf", "Präsentation", "Tipps"],
+      "keywords": [
+        "Home Staging",
+        "Verkauf",
+        "Präsentation",
+        "Tipps"
+      ],
       "category": "Immobilienverkauf",
       "priority": "medium",
       "used": false,
@@ -114,7 +189,12 @@
     },
     {
       "title": "Neubau vs. Bestandsimmobilie: Vor- und Nachteile im Vergleich",
-      "keywords": ["Neubau", "Bestand", "Vergleich", "Kaufentscheidung"],
+      "keywords": [
+        "Neubau",
+        "Bestand",
+        "Vergleich",
+        "Kaufentscheidung"
+      ],
       "category": "Immobilienkauf",
       "priority": "medium",
       "used": false,
@@ -122,7 +202,13 @@
     },
     {
       "title": "Grundstückspreise Region Trier: Aktuelle Entwicklung",
-      "keywords": ["Grundstückspreise", "Trier", "Mosel", "Bauland", "Preise"],
+      "keywords": [
+        "Grundstückspreise",
+        "Trier",
+        "Mosel",
+        "Bauland",
+        "Preise"
+      ],
       "category": "Marktberichte",
       "priority": "medium",
       "used": false,
@@ -130,7 +216,13 @@
     },
     {
       "title": "Kapitalanlage Immobilien Trier-Mosel: Renditestarke Standorte",
-      "keywords": ["Kapitalanlage", "Trier", "Mosel", "Rendite", "Investment"],
+      "keywords": [
+        "Kapitalanlage",
+        "Trier",
+        "Mosel",
+        "Rendite",
+        "Investment"
+      ],
       "category": "Kapitalanlage",
       "priority": "high",
       "used": false,
@@ -138,7 +230,13 @@
     },
     {
       "title": "Erbschaft Immobilie: Verkaufen, Behalten oder Vermieten?",
-      "keywords": ["Erbschaft", "Immobilie", "Verkauf", "Vermietung", "Entscheidung"],
+      "keywords": [
+        "Erbschaft",
+        "Immobilie",
+        "Verkauf",
+        "Vermietung",
+        "Entscheidung"
+      ],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -146,7 +244,12 @@
     },
     {
       "title": "Wüstenrot Bausparvertrag: Optimal für Immobilienfinanzierung",
-      "keywords": ["Wüstenrot", "Bausparvertrag", "Finanzierung", "Vorteile"],
+      "keywords": [
+        "Wüstenrot",
+        "Bausparvertrag",
+        "Finanzierung",
+        "Vorteile"
+      ],
       "category": "Finanzierung",
       "priority": "high",
       "used": false,
@@ -154,7 +257,13 @@
     },
     {
       "title": "Scheidungsimmobilie: Rechtliche und finanzielle Aspekte",
-      "keywords": ["Scheidung", "Immobilie", "Recht", "Finanzen", "Verkauf"],
+      "keywords": [
+        "Scheidung",
+        "Immobilie",
+        "Recht",
+        "Finanzen",
+        "Verkauf"
+      ],
       "category": "Recht & Steuern",
       "priority": "low",
       "used": false,
@@ -162,7 +271,13 @@
     },
     {
       "title": "Hochwald Region: Naturnahe Immobilien mit Zukunft",
-      "keywords": ["Hochwald", "Natur", "Immobilien", "Wohnen", "Ländlich"],
+      "keywords": [
+        "Hochwald",
+        "Natur",
+        "Immobilien",
+        "Wohnen",
+        "Ländlich"
+      ],
       "category": "Regionen",
       "priority": "low",
       "used": false,
@@ -170,7 +285,13 @@
     },
     {
       "title": "Moseltal: Weinregion mit Charme und Wohnpotenzial",
-      "keywords": ["Mosel", "Wein", "Immobilien", "Tourismus", "Lebensqualität"],
+      "keywords": [
+        "Mosel",
+        "Wein",
+        "Immobilien",
+        "Tourismus",
+        "Lebensqualität"
+      ],
       "category": "Regionen",
       "priority": "low",
       "used": false,
@@ -178,7 +299,12 @@
     },
     {
       "title": "Immobilienfinanzierung ohne Eigenkapital: Chancen und Risiken",
-      "keywords": ["Vollfinanzierung", "ohne Eigenkapital", "Risiken", "Tipps"],
+      "keywords": [
+        "Vollfinanzierung",
+        "ohne Eigenkapital",
+        "Risiken",
+        "Tipps"
+      ],
       "category": "Finanzierung",
       "priority": "medium",
       "used": false,
@@ -186,7 +312,12 @@
     },
     {
       "title": "Altersgerecht Wohnen: Immobilien für die Zukunft planen",
-      "keywords": ["Altersgerecht", "Barrierefreiheit", "Wohnen", "Planung"],
+      "keywords": [
+        "Altersgerecht",
+        "Barrierefreiheit",
+        "Wohnen",
+        "Planung"
+      ],
       "category": "Tipps & Ratgeber",
       "priority": "low",
       "used": false,
@@ -194,7 +325,12 @@
     },
     {
       "title": "Mietspiegel Trier 2024: Mietpreise nach Stadtteilen",
-      "keywords": ["Mietspiegel", "Trier", "Mietpreise", "Stadtteile"],
+      "keywords": [
+        "Mietspiegel",
+        "Trier",
+        "Mietpreise",
+        "Stadtteile"
+      ],
       "category": "Marktberichte",
       "priority": "medium",
       "used": false,
