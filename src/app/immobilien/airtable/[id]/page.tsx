@@ -337,22 +337,6 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                   </div>
                 </div>
 
-                {/* Wüstenrot Link */}
-                {property.url && (
-                  <div className="bg-primary-50 p-6 rounded-xl border border-primary-100">
-                    <p className="text-sm text-gray-600 mb-3">
-                      Diese Immobilie auf Wüstenrot ansehen:
-                    </p>
-                    <a
-                      href={property.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-500 hover:text-primary-600 font-medium text-sm"
-                    >
-                      Zum Wüstenrot-Exposé →
-                    </a>
-                  </div>
-                )}
               </div>
             </div>
           </div>
