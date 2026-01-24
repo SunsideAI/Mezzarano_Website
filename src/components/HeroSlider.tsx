@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Star, ArrowRight } from 'lucide-react'
 
 interface Slide {
@@ -13,19 +14,19 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=80&auto=format',
     headline: 'Immobilien verkaufen – ',
     highlightedText: 'kompetent und persönlich',
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&q=80&auto=format',
     headline: 'Ihr Traumhaus finden – ',
     highlightedText: 'mit lokaler Expertise',
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1920&q=80&auto=format',
     headline: 'Wüstenrot Partner – ',
     highlightedText: 'Finanzierung aus einer Hand',
     subheadline: 'Profitieren Sie von attraktiven Finanzierungslösungen und umfassender Beratung durch das Wüstenrot-Netzwerk.',
@@ -87,12 +88,17 @@ export default function HeroSlider() {
           }`}
         >
           {/* Background Image with Ken Burns */}
-          <div
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${
-              index === currentSlide ? 'animate-ken-burns' : ''
-            }`}
-            style={{ backgroundImage: `url(${slide.image})` }}
-          />
+          <div className={`absolute inset-0 ${index === currentSlide ? 'animate-ken-burns' : ''}`}>
+            <Image
+              src={slide.image}
+              alt={`${slide.headline} ${slide.highlightedText}`}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
+              quality={80}
+            />
+          </div>
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/95 via-secondary-900/80 to-secondary-900/50" />
         </div>

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Home, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
+import SchemaMarkup, { generateFAQSchema } from '@/components/SchemaMarkup'
 
 export const metadata: Metadata = {
   title: 'Immobilienmakler Hermeskeil | Sandro Mezzarano | Wüstenrot Immobilien',
@@ -53,8 +54,12 @@ const faqItems = [
 ]
 
 export default function HermeskeilPage() {
+  const faqSchema = generateFAQSchema(faqItems)
+
   return (
     <>
+      <SchemaMarkup data={faqSchema} />
+
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">

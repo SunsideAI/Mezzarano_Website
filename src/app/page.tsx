@@ -337,8 +337,9 @@ export default async function HomePage() {
               >
                 <Image
                   src={region.image}
-                  alt={region.name}
+                  alt={`Immobilien in ${region.name} - Mezzarano Immobilien`}
                   fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 to-transparent" />
