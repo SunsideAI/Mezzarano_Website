@@ -159,6 +159,16 @@ tags: ${JSON.stringify(tags)}
 async function main() {
   console.log('🚀 Auto Blog Generator Starting...\n');
 
+  // Validate API key before starting
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('❌ ANTHROPIC_API_KEY environment variable is not set!');
+    console.error('   Please add it to your GitHub repository secrets.');
+    console.error('   Go to: Repository Settings > Secrets and Variables > Actions > New repository secret');
+    process.exit(1);
+  }
+
+  console.log('✅ API key found');
+
   const data = loadTopics();
   const unusedTopics = getUnusedTopics(data);
 
@@ -195,6 +205,14 @@ async function main() {
       }
     } catch (error) {
       console.error(`   ❌ Failed: ${error.message}`);
+      // Log full error details for debugging
+      if (error.status) {
+        console.error(`   Status: ${error.status}`);
+      }
+      if (error.error) {
+        console.error(`   Details: ${JSON.stringify(error.error)}`);
+      }
+      console.error(`   Stack: ${error.stack}`);
       results.failed++;
     }
   }
@@ -221,6 +239,13 @@ async function main() {
 }
 
 main().catch(error => {
-  console.error('Fatal error:', error);
+  console.error('❌ Fatal error:', error.message);
+  if (error.status) {
+    console.error(`   Status: ${error.status}`);
+  }
+  if (error.error) {
+    console.error(`   Details: ${JSON.stringify(error.error)}`);
+  }
+  console.error(`   Stack: ${error.stack}`);
   process.exit(1);
 });
