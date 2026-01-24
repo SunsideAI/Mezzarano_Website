@@ -35,8 +35,13 @@ export interface AirtableProperty {
 
   // Features
   zimmer?: number
+  schlafzimmer?: number
+  badezimmer?: number
   balkone?: number
   terrassen?: number
+  etagen?: number
+  garagen?: number
+  stellplaetze?: number
   baujahr?: number
   heizung?: string
 
@@ -166,8 +171,13 @@ function transformRecord(record: any): AirtableProperty {
 
     // Features
     zimmer: parseGermanNumber(fields.zimmer),
-    balkone: parseGermanNumber(fields.balkone),
-    terrassen: parseGermanNumber(fields.terrassen),
+    schlafzimmer: parseGermanNumber(fields.schlafzimmer),
+    badezimmer: parseGermanNumber(fields.badezimmer || fields.bäder || fields.baeder),
+    balkone: parseGermanNumber(fields.balkone || fields.balkon),
+    terrassen: parseGermanNumber(fields.terrassen || fields.terrasse),
+    etagen: parseGermanNumber(fields.etagen || fields.geschosse),
+    garagen: parseGermanNumber(fields.garagen || fields.garage),
+    stellplaetze: parseGermanNumber(fields.stellplätze || fields.stellplaetze || fields.parkplätze),
     baujahr: parseGermanNumber(fields.baujahr),
     heizung: fields.heizung,
 

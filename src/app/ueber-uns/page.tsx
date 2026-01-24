@@ -58,10 +58,10 @@ export default function UeberUnsPage() {
             <div className="relative" data-aos="fade-right">
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
                   alt="Sandro Mezzarano - Wüstenrot Immobilien"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary-500 rounded-2xl flex items-center justify-center shadow-xl counter-animate">

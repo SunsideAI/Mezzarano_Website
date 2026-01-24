@@ -250,8 +250,14 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                     Ihr Ansprechpartner
                   </h3>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary-500">SM</span>
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,h_200,c_fill,g_face,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
+                        alt="Sandro Mezzarano"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Sandro Mezzarano</p>

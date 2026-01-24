@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Bed, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer } from 'lucide-react'
+import { MapPin, Bed, Bath, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer, Trees, Home, Fence, Car, Layers } from 'lucide-react'
 import { fetchPropertyById } from '@/lib/airtable'
 import ImageGallery from '@/components/ImageGallery'
 import PropertyMap from '@/components/PropertyMap'
@@ -13,6 +13,7 @@ const agent = {
   phone1: '0177 6542977',
   phone2: '06503 9523963',
   email: 'sandro.mezzarano@wuestenrot.de',
+  image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_200,h_200,c_fill,g_face,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg',
 }
 
 // Helper to get proxy URL for Airtable images (prevents URL expiration issues)
@@ -138,6 +139,20 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                     <p className="text-sm text-gray-500">Zimmer</p>
                   </div>
                 )}
+                {property.schlafzimmer !== undefined && property.schlafzimmer > 0 && (
+                  <div className="text-center p-4">
+                    <Bed className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{property.schlafzimmer}</p>
+                    <p className="text-sm text-gray-500">Schlafzimmer</p>
+                  </div>
+                )}
+                {property.badezimmer !== undefined && property.badezimmer > 0 && (
+                  <div className="text-center p-4">
+                    <Bath className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{property.badezimmer}</p>
+                    <p className="text-sm text-gray-500">{property.badezimmer === 1 ? 'Badezimmer' : 'Badezimmer'}</p>
+                  </div>
+                )}
                 {property.wohnflaeche !== undefined && property.wohnflaeche > 0 && (
                   <div className="text-center p-4">
                     <Square className="h-8 w-8 text-primary-500 mx-auto mb-2" />
@@ -147,9 +162,16 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                 )}
                 {property.grundstueck !== undefined && property.grundstueck > 0 && (
                   <div className="text-center p-4">
-                    <Building className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <Fence className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">{property.grundstueck}</p>
                     <p className="text-sm text-gray-500">m² Grundstück</p>
+                  </div>
+                )}
+                {property.etagen !== undefined && property.etagen > 0 && (
+                  <div className="text-center p-4">
+                    <Layers className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{property.etagen}</p>
+                    <p className="text-sm text-gray-500">{property.etagen === 1 ? 'Etage' : 'Etagen'}</p>
                   </div>
                 )}
                 {property.baujahr !== undefined && property.baujahr > 0 && (
@@ -157,6 +179,27 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                     <Calendar className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">{property.baujahr}</p>
                     <p className="text-sm text-gray-500">Baujahr</p>
+                  </div>
+                )}
+                {property.balkone !== undefined && property.balkone > 0 && (
+                  <div className="text-center p-4">
+                    <Home className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{property.balkone}</p>
+                    <p className="text-sm text-gray-500">{property.balkone === 1 ? 'Balkon' : 'Balkone'}</p>
+                  </div>
+                )}
+                {property.terrassen !== undefined && property.terrassen > 0 && (
+                  <div className="text-center p-4">
+                    <Trees className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{property.terrassen}</p>
+                    <p className="text-sm text-gray-500">{property.terrassen === 1 ? 'Terrasse' : 'Terrassen'}</p>
+                  </div>
+                )}
+                {((property.garagen !== undefined && property.garagen > 0) || (property.stellplaetze !== undefined && property.stellplaetze > 0)) && (
+                  <div className="text-center p-4">
+                    <Car className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{(property.garagen || 0) + (property.stellplaetze || 0)}</p>
+                    <p className="text-sm text-gray-500">Stellplätze</p>
                   </div>
                 )}
               </div>
@@ -304,8 +347,14 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
                     Ihr Ansprechpartner
                   </h3>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary-500">SM</span>
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src={agent.image}
+                        alt={agent.name}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">{agent.name}</p>
