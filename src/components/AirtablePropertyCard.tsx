@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Bed, Square, Heart } from 'lucide-react'
+import { MapPin, Bed, Square, Heart, ImageOff } from 'lucide-react'
 import { AirtableProperty } from '@/lib/airtable'
 
 interface AirtablePropertyCardProps {
@@ -19,57 +19,64 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
 
-  // Reset image state when property changes to prevent showing old image
+  // Check if property has real images (no fallbacks!)
+  const hasRealImages = property.cover || (property.bilder && property.bilder.length > 0)
+
+  // Only create image URL if we have real images
+  const imageUrl = hasRealImages
+    ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
+    : null
+
+  // Reset image state when property changes
   useEffect(() => {
     setImageLoaded(false)
     setImageError(false)
   }, [property.id])
 
-  const formatPrice = (price: number | undefined, kategorie?: string) => {
-    if (!price) return 'Preis auf Anfrage'
-    const formatted = new Intl.NumberFormat('de-DE').format(price)
-    return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
-  }
-
-  // Use proxy URL for Airtable images to avoid expiration
-  const hasAirtableImages = property.cover || (property.bilder && property.bilder.length > 0)
-  const imageUrl = hasAirtableImages && !imageError
-    ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
-    : 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
-
   const isRent = property.kategorie === 'Miete'
-  // Property type from objekt_typ or unterkategorie
   const propertyType = property.objekt_typ || property.unterkategorie
+
+  // Show image only when we have a real URL and it's loaded
+  const showImage = imageUrl && imageLoaded && !imageError
+  // Show loading spinner only when we have a URL but image isn't loaded yet
+  const showLoading = imageUrl && !imageLoaded && !imageError
+  // Show placeholder icon only when there's no image at all or error
+  const showPlaceholder = !imageUrl || imageError
 
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-gray-100">
-        {/* Loading skeleton - z-20 to stay above image until loaded */}
-        <div
-          className={`absolute inset-0 z-20 bg-gray-100 flex items-center justify-center transition-opacity duration-300 ${
-            imageLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-        >
-          <div className="w-10 h-10 border-4 border-gray-300 border-t-primary-500 rounded-full animate-spin" />
-        </div>
-        {/* Image with z-10, hidden until loaded */}
-        <Image
-          key={`${property.id}-${imageUrl}`}
-          src={imageUrl}
-          alt={property.titel}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          unoptimized={imageUrl.startsWith('/api/')}
-          className={`object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
-            imageLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoad={() => setImageLoaded(true)}
-          onError={() => {
-            setImageError(true)
-            setImageLoaded(true)
-          }}
-        />
+        {/* Loading spinner - only when loading real image */}
+        {showLoading && (
+          <div className="absolute inset-0 z-20 bg-gray-100 flex items-center justify-center">
+            <div className="w-10 h-10 border-4 border-gray-300 border-t-primary-500 rounded-full animate-spin" />
+          </div>
+        )}
+
+        {/* Placeholder - only when no image available */}
+        {showPlaceholder && (
+          <div className="absolute inset-0 z-20 bg-gray-100 flex items-center justify-center">
+            <ImageOff className="w-12 h-12 text-gray-300" />
+          </div>
+        )}
+
+        {/* Real image - only render if we have a URL */}
+        {imageUrl && (
+          <Image
+            key={`${property.id}-image`}
+            src={imageUrl}
+            alt={property.titel}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            unoptimized
+            className={`object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
+              showImage ? 'opacity-100' : 'opacity-0'
+            }`}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        )}
         <div className="absolute top-4 left-4 flex gap-2">
           <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
             !isRent
