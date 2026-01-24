@@ -1,10 +1,6 @@
 ---
 title: "Immobilienmarkt Trier-Mosel 2024: Preise & Trends"
-description: "**SEO-Meta-Description:**
-
-Immobilienmarkt Trier-Mosel 2024: Aktuelle Preise & Trends. Mezzarano Immobilien - Ihr Experte in Hermeskeil, Trier & Moselregion. Jetzt informieren!
-
-**(154 Zeichen)**"
+description: "Immobilienmarkt Trier-Mosel 2024: Aktuelle Preise & Trends. Mezzarano Immobilien - Ihr Experte in Hermeskeil, Trier & Moselregion. Jetzt informieren!"
 pubDate: 2026-01-24
 category: "Marktberichte"
 author: "Mezzarano Immobilien"

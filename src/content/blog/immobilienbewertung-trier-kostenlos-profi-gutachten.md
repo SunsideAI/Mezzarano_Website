@@ -1,8 +1,6 @@
 ---
 title: "Immobilienbewertung Trier kostenlos | Profi-Gutachten"
-description: "Kostenlose Immobilienbewertung in Trier & Moselregion von Mezzarano Immobilien. Professionelle Wertermittlung in Hermeskeil & Umgebung. Jetzt anfragen!
-
-(Zeichen: 155)"
+description: "Kostenlose Immobilienbewertung in Trier & Moselregion von Mezzarano Immobilien. Professionelle Wertermittlung in Hermeskeil & Umgebung. Jetzt anfragen!"
 pubDate: 2026-01-24
 category: "Immobilienbewertung"
 author: "Mezzarano Immobilien"

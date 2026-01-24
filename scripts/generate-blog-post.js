@@ -82,11 +82,18 @@ async function generateSEOTitle(topic) {
     max_tokens: 100,
     messages: [{
       role: 'user',
-      content: `Erstelle einen SEO-optimierten Titel (max 60 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Nur den Titel ausgeben, ohne Anführungszeichen.`
+      content: `Erstelle einen SEO-optimierten Titel (max 60 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}".
+
+WICHTIG: Gib NUR den Titel aus - keine Anführungszeichen, keine Erklärungen, keine Zeichenanzahl.`
     }]
   });
 
-  return response.content[0].text.trim();
+  // Clean title: remove quotes and any extra text
+  return response.content[0].text
+    .trim()
+    .replace(/^["'„"»«]|["'„"»«]$/g, '')
+    .split('\n')[0]
+    .trim();
 }
 
 async function generateDescription(topic) {
@@ -97,17 +104,28 @@ async function generateDescription(topic) {
     max_tokens: 200,
     messages: [{
       role: 'user',
-      content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel. Gib NUR die Description aus, ohne Anführungszeichen, ohne Zeichenanzahl, ohne zusätzlichen Text.`
+      content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel.
+
+WICHTIG: Gib NUR den Description-Text aus. KEINE Anführungszeichen, KEINE Zeichenanzahl, KEINE Labels wie "SEO-Meta-Description:", KEINE Formatierung wie **fett**.`
     }]
   });
 
-  // Clean description: remove quotes, character counts, and extra formatting
+  // Clean description: remove quotes, character counts, labels, and extra formatting
   return response.content[0].text
     .trim()
-    .replace(/^["']|["']$/g, '')
-    .replace(/\*\*Zeichenanzahl:?\s*\d+\*\*/gi, '')
-    .replace(/Zeichenanzahl:?\s*\d+/gi, '')
-    .replace(/\(\d+\s*Zeichen\)/gi, '')
+    .replace(/^\*\*SEO[^*]*\*\*:?\s*/gi, '') // Remove **SEO-Meta-Description:** etc.
+    .replace(/^SEO[^:]*:\s*/gi, '') // Remove "SEO-Meta-Description:" etc.
+    .replace(/^Meta[- ]?Description:?\s*/gi, '') // Remove "Meta-Description:" etc.
+    .replace(/^Description:?\s*/gi, '') // Remove "Description:" etc.
+    .replace(/^["'„"»«]|["'„"»«]$/g, '') // Remove quotes
+    .replace(/\*\*\(?[\d\s]*Zeichen\)?\*\*/gi, '') // Remove **(154 Zeichen)** etc.
+    .replace(/\*\*Zeichenanzahl:?\s*\d+\*\*/gi, '') // Remove **Zeichenanzahl: 154**
+    .replace(/\(Zeichen:?\s*\d+\)/gi, '') // Remove (Zeichen: 155)
+    .replace(/\(\d+\s*Zeichen\)/gi, '') // Remove (155 Zeichen)
+    .replace(/Zeichenanzahl:?\s*\d+/gi, '') // Remove Zeichenanzahl: 155
+    .replace(/\[\d+\s*Zeichen\]/gi, '') // Remove [155 Zeichen]
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .replace(/\s+/g, ' ') // Normalize whitespace
     .trim();
 }
 
