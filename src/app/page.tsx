@@ -65,22 +65,22 @@ const regions = [
   {
     name: 'Hermeskeil',
     href: '/regionen/hermeskeil',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Hermeskeil'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png'
   },
   {
     name: 'Trier',
     href: '/regionen/trier',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Trier'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png'
   },
   {
     name: 'Bernkastel-Kues',
     href: '/regionen/bernkastel-kues',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Bernkastel'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png'
   },
   {
     name: 'Schweich',
     href: '/regionen/schweich',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Schweich'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png'
   },
 ]
 

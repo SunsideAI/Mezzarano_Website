@@ -64,7 +64,7 @@ export default function BernkastelKuesPage() {
       <section className="relative min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://res.cloudinary.com/djqviyb2c/image/upload/w_1920,q_80/mezzarano/cities/Bernkastel"
+            src="https://res.cloudinary.com/djqviyb2c/image/upload/w_1920,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png"
             alt="Moselregion Bernkastel-Kues"
             fill
             className="object-cover"

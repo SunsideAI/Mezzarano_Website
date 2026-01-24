@@ -59,7 +59,7 @@ export default function HermeskeilPage() {
       <section className="relative min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://res.cloudinary.com/djqviyb2c/image/upload/w_1920,q_80/mezzarano/cities/Hermeskeil"
+            src="https://res.cloudinary.com/djqviyb2c/image/upload/w_1920,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png"
             alt="Immobilien in Hermeskeil"
             fill
             className="object-cover"
