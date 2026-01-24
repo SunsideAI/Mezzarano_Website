@@ -88,10 +88,13 @@ export default function RootLayout({
     <html lang="de">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://res.cloudinary.com" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
+        {/* Preconnect for faster image loading */}
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.airtable.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://api.airtable.com" />
+        {/* Prefetch API data for faster page loads */}
+        <link rel="prefetch" href="/api/properties" as="fetch" crossOrigin="anonymous" />
         <SchemaMarkup data={generateLocalBusinessSchema()} />
       </head>
       <body className="font-sans antialiased">

@@ -392,7 +392,7 @@ export default function ImmobilienPage() {
             }>
               {filteredAirtableProperties.map((property, index) => (
                 <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
-                  <AirtablePropertyCard property={property} />
+                  <AirtablePropertyCard property={property} priority={index < 4} />
                 </div>
               ))}
             </div>

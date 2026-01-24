@@ -18,7 +18,7 @@ interface AirtableRecord {
 
 // Cache for image URLs (in-memory, resets on cold start)
 const imageCache = new Map<string, { url: string; timestamp: number }>()
-const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes (Airtable URLs last ~2 hours)
+const CACHE_DURATION = 60 * 60 * 1000 // 1 hour (Airtable URLs last ~2 hours, Cloudinary permanent)
 
 // Return 404 response for missing images (no fallback!)
 function return404() {
@@ -109,14 +109,24 @@ export async function GET(
       return return404()
     }
 
+    // Optimize Cloudinary URLs with transformations
+    let optimizedUrl = imageUrl
+    if (imageUrl.includes('res.cloudinary.com') && !imageUrl.includes('/w_') && !imageUrl.includes('/q_')) {
+      // Add automatic format, quality, and size optimization
+      optimizedUrl = imageUrl.replace(
+        '/upload/',
+        '/upload/f_auto,q_auto,w_800,c_limit/'
+      )
+    }
+
     // Cache the fresh URL
     imageCache.set(cacheKey, {
-      url: imageUrl,
+      url: optimizedUrl,
       timestamp: Date.now(),
     })
 
     // Fetch and stream the actual image
-    return fetchAndStreamImage(imageUrl)
+    return fetchAndStreamImage(optimizedUrl)
   } catch (error) {
     console.error('Image proxy error:', error)
     return return404()
@@ -142,8 +152,9 @@ async function fetchAndStreamImage(imageUrl: string): Promise<NextResponse> {
       status: 200,
       headers: {
         'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=3600, s-maxage=3600', // Cache for 1 hour
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800', // Cache 24h, stale 7 days
         'Access-Control-Allow-Origin': '*',
+        'Vary': 'Accept',
       },
     })
   } catch (error) {

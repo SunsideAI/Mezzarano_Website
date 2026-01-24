@@ -8,6 +8,7 @@ import { AirtableProperty } from '@/lib/airtable'
 
 interface AirtablePropertyCardProps {
   property: AirtableProperty
+  priority?: boolean // Load image with priority (for above-the-fold images)
 }
 
 // Helper to get proxy URL for Airtable images (prevents URL expiration issues)
@@ -15,7 +16,7 @@ function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 
   return `/api/image/${recordId}?index=${index}&type=${type}`
 }
 
-export default function AirtablePropertyCard({ property }: AirtablePropertyCardProps) {
+export default function AirtablePropertyCard({ property, priority = false }: AirtablePropertyCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
 
@@ -70,6 +71,8 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             unoptimized
+            priority={priority}
+            loading={priority ? 'eager' : 'lazy'}
             className={`object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
               showImage ? 'opacity-100' : 'opacity-0'
             }`}

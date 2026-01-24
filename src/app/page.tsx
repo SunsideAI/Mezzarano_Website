@@ -156,7 +156,7 @@ export default async function HomePage() {
             {hasAirtableData ? (
               airtableProperties.slice(0, 4).map((property, index) => (
                 <div key={property.id} data-aos="fade-up" data-aos-delay={index * 100}>
-                  <AirtablePropertyCard property={property} />
+                  <AirtablePropertyCard property={property} priority={index < 2} />
                 </div>
               ))
             ) : (
