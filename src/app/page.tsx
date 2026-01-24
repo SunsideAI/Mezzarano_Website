@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Home, Key, TrendingUp, Users, Award, CheckCircle, ArrowRight, Star, MapPin, Bed, Square } from 'lucide-react'
+import { Home, Key, TrendingUp, Users, Award, CheckCircle, ArrowRight, Star } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
+import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { getFeaturedProperties } from '@/data/properties'
 import HeroSlider from '@/components/HeroSlider'
 import { fetchProperties, AirtableProperty } from '@/lib/airtable'
@@ -83,102 +84,6 @@ const regions = [
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png'
   },
 ]
-
-// Helper to get proxy URL for Airtable images (prevents URL expiration issues)
-function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder'): string {
-  return `/api/image/${recordId}?index=${index}&type=${type}`
-}
-
-// Airtable Property Card for homepage
-function AirtablePropertyCard({ property }: { property: AirtableProperty }) {
-  const formatPrice = (price: number | undefined, kategorie?: string) => {
-    if (!price) return 'Preis auf Anfrage'
-    const formatted = new Intl.NumberFormat('de-DE').format(price)
-    return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
-  }
-
-  // Use proxy URL to prevent Airtable image expiration
-  const hasAirtableImages = property.cover || (property.bilder && property.bilder.length > 0)
-  const imageUrl = hasAirtableImages
-    ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
-    : 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
-
-  const isRent = property.kategorie === 'Miete'
-  const propertyType = property.objekt_typ || property.unterkategorie
-
-  return (
-    <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-      <div className="relative h-64 overflow-hidden">
-        <Image
-          src={imageUrl}
-          alt={property.titel}
-          fill
-          unoptimized={imageUrl.startsWith('/api/')}
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute top-4 left-4 flex gap-2">
-          <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
-            !isRent ? 'bg-secondary-900 text-white' : 'bg-white text-secondary-900'
-          }`}>
-            {isRent ? 'Mieten' : 'Kaufen'}
-          </span>
-          {propertyType && (
-            <span className="px-3 py-1 rounded-lg text-sm font-semibold bg-primary-500 text-white">
-              {propertyType}
-            </span>
-          )}
-        </div>
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-500 transition-colors line-clamp-2 mb-3">
-          <Link href={`/immobilien/airtable/${property.id}`}>
-            {property.titel}
-          </Link>
-        </h3>
-        <div className="flex items-center gap-2 text-gray-500 mb-4">
-          <MapPin className="h-4 w-4 flex-shrink-0" />
-          <span className="text-sm">{property.ort || property.kurz_adresse || 'Standort auf Anfrage'}</span>
-        </div>
-        <div className="flex items-center gap-4 py-4 border-t border-b border-gray-100 mb-4">
-          {property.zimmer && property.zimmer > 0 && (
-            <div className="flex items-center gap-1.5 text-gray-600">
-              <Bed className="h-4 w-4" />
-              <span className="text-sm">{property.zimmer} Zi.</span>
-            </div>
-          )}
-          {property.wohnflaeche && property.wohnflaeche > 0 && (
-            <div className="flex items-center gap-1.5 text-gray-600">
-              <Square className="h-4 w-4" />
-              <span className="text-sm">{property.wohnflaeche} m²</span>
-            </div>
-          )}
-        </div>
-        <div className="flex items-center justify-between">
-          <div>
-            {isRent ? (
-              <>
-                <p className="text-2xl font-bold text-primary-500">
-                  {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Auf Anfrage'}
-                </p>
-                <p className="text-sm text-gray-500">pro Monat</p>
-              </>
-            ) : (
-              <p className="text-2xl font-bold text-primary-500">
-                {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Preis auf Anfrage'}
-              </p>
-            )}
-          </div>
-          <Link
-            href={`/immobilien/airtable/${property.id}`}
-            className="text-primary-500 font-medium hover:text-primary-600 transition-colors"
-          >
-            Details →
-          </Link>
-        </div>
-      </div>
-    </article>
-  )
-}
 
 export default async function HomePage() {
   // Fetch from Airtable, fall back to static data

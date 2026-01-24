@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Bed, Square, Heart } from 'lucide-react'
@@ -18,6 +18,12 @@ function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 
 export default function AirtablePropertyCard({ property }: AirtablePropertyCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
+
+  // Reset image state when property changes to prevent showing old image
+  useEffect(() => {
+    setImageLoaded(false)
+    setImageError(false)
+  }, [property.id])
 
   const formatPrice = (price: number | undefined, kategorie?: string) => {
     if (!price) return 'Preis auf Anfrage'
