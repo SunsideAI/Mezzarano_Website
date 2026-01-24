@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Bed, Square, Heart } from 'lucide-react'
@@ -13,6 +16,9 @@ function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 
 }
 
 export default function AirtablePropertyCard({ property }: AirtablePropertyCardProps) {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageError, setImageError] = useState(false)
+
   const formatPrice = (price: number | undefined, kategorie?: string) => {
     if (!price) return 'Preis auf Anfrage'
     const formatted = new Intl.NumberFormat('de-DE').format(price)
@@ -21,7 +27,7 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
 
   // Use proxy URL for Airtable images to avoid expiration
   const hasAirtableImages = property.cover || (property.bilder && property.bilder.length > 0)
-  const imageUrl = hasAirtableImages
+  const imageUrl = hasAirtableImages && !imageError
     ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
     : 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
 
@@ -32,13 +38,28 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-48 overflow-hidden bg-gray-200">
+        {/* Loading skeleton */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-12 h-12 border-4 border-gray-300 border-t-primary-500 rounded-full animate-spin" />
+            </div>
+          </div>
+        )}
         <Image
           src={imageUrl}
           alt={property.titel}
           fill
           unoptimized={imageUrl.startsWith('/api/')}
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className={`object-cover group-hover:scale-105 transition-all duration-500 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoad={() => setImageLoaded(true)}
+          onError={() => {
+            setImageError(true)
+            setImageLoaded(true)
+          }}
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
