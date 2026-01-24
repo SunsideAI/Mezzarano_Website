@@ -67,20 +67,25 @@ export async function GET(
     const title = record.fields.title || record.fields.titel || 'Unknown'
     console.log(`Image proxy: Record ${recordId}, Title: "${title}", Index: ${imageIndex}, Type: ${type}`)
 
-    // Get images - prioritize stable external URLs over Airtable attachments (which expire!)
+    // Get images - prioritize permanent URLs over expiring Airtable attachments
     let imageUrls: string[] = []
 
-    // Priority 1: bild_url (stable external URL from ImmobilienScout24 etc.)
-    if (record.fields.bild_url && typeof record.fields.bild_url === 'string') {
+    // Priority 1: cloudinary_urls (permanent, best option)
+    if (record.fields.cloudinary_urls && typeof record.fields.cloudinary_urls === 'string') {
+      imageUrls = (record.fields.cloudinary_urls as string).split('\n').filter(Boolean)
+      console.log(`Using cloudinary_urls (permanent) for "${title}": ${imageUrls.length} images`)
+    }
+    // Priority 2: bild_url (stable external URL from ImmobilienScout24 etc.)
+    else if (record.fields.bild_url && typeof record.fields.bild_url === 'string') {
       imageUrls = [record.fields.bild_url]
       console.log(`Using bild_url (stable) for "${title}"`)
     }
-    // Priority 2: bilder field (may contain multiple URLs)
+    // Priority 3: bilder field (may contain multiple URLs)
     else if (record.fields.bilder && typeof record.fields.bilder === 'string') {
       imageUrls = (record.fields.bilder as string).split('\n').filter(Boolean)
       console.log(`Using bilder field (${imageUrls.length} URLs) for "${title}"`)
     }
-    // Priority 3: bilder_attachments (Airtable attachments - these expire after ~2 hours!)
+    // Priority 4: bilder_attachments (Airtable attachments - these expire after ~2 hours!)
     else {
       const attachments = record.fields.bilder_attachments as any[]
       if (attachments && Array.isArray(attachments) && attachments.length > 0) {

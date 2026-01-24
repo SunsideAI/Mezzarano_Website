@@ -17,6 +17,7 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.1.0",
     "aos": "^2.3.4",
+    "cloudinary": "^2.9.0",
     "gray-matter": "^4.0.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.312.0",

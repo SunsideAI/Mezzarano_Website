@@ -108,19 +108,26 @@ function parseGermanNumber(value: unknown): number | undefined {
 function transformRecord(record: any): AirtableProperty {
   const fields = record.fields || record
 
-  // Resolve images with priority: bild_url > bilder (stable external URLs) > bilder_attachments (expires!)
-  // External URLs from ImmobilienScout24 etc. don't expire, while Airtable attachments expire after ~2 hours
+  // Resolve images with priority:
+  // 1. cloudinary_urls (permanent, best option)
+  // 2. bild_url (stable external URL from ImmobilienScout24 etc.)
+  // 3. bilder (may contain multiple stable URLs)
+  // 4. bilder_attachments (Airtable uploads - expire after ~2 hours!)
   let bilder: string[] = []
 
-  // Priority 1: Use bild_url (stable external URL)
-  if (fields.bild_url && typeof fields.bild_url === 'string') {
+  // Priority 1: Use cloudinary_urls (permanent storage, best option)
+  if (fields.cloudinary_urls && typeof fields.cloudinary_urls === 'string') {
+    bilder = fields.cloudinary_urls.split('\n').filter(Boolean)
+  }
+  // Priority 2: Use bild_url (stable external URL)
+  else if (fields.bild_url && typeof fields.bild_url === 'string') {
     bilder = [fields.bild_url]
   }
-  // Priority 2: Use bilder field (may contain multiple URLs, newline-separated)
+  // Priority 3: Use bilder field (may contain multiple URLs, newline-separated)
   else if (fields.bilder && typeof fields.bilder === 'string') {
     bilder = fields.bilder.split('\n').filter(Boolean)
   }
-  // Priority 3: Last resort - use bilder_attachments (these expire after ~2 hours!)
+  // Priority 4: Last resort - use bilder_attachments (these expire after ~2 hours!)
   else if (fields.bilder_attachments && Array.isArray(fields.bilder_attachments)) {
     bilder = fields.bilder_attachments
       .map((att: any) => att.url)
