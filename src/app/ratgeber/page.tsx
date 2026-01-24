@@ -9,11 +9,31 @@ export const metadata = {
   keywords: 'Immobilien Ratgeber, Hermeskeil, Trier, Mosel, Hochwald, Tipps, Finanzierung, Immobilienverkauf, Immobilienkauf'
 }
 
-export default function RatgeberPage() {
+interface Props {
+  searchParams: { kategorie?: string; tag?: string }
+}
+
+export default function RatgeberPage({ searchParams }: Props) {
   const allPosts = getAllPosts()
-  const featuredPosts = getFeaturedPosts(1)
   const categories = getAllCategories()
-  const recentPosts = allPosts.slice(0, 6)
+
+  // Get the selected category from URL params
+  const selectedCategory = searchParams.kategorie || null
+
+  // Filter posts by category if one is selected
+  const filteredPosts = selectedCategory
+    ? allPosts.filter(post => post.category === selectedCategory)
+    : allPosts
+
+  // Get featured posts (only from filtered if category is selected)
+  const featuredPosts = selectedCategory
+    ? filteredPosts.filter(post => post.featured).slice(0, 1)
+    : getFeaturedPosts(1)
+
+  // Display posts (exclude featured from grid if it's shown separately)
+  const displayPosts = featuredPosts.length > 0 && !selectedCategory
+    ? filteredPosts.filter(post => post.slug !== featuredPosts[0]?.slug).slice(0, 6)
+    : filteredPosts.slice(0, 6)
 
   return (
     <div className="min-h-screen bg-secondary-50">
@@ -52,7 +72,11 @@ export default function RatgeberPage() {
           <div className="flex items-center gap-4 overflow-x-auto pb-2 -mb-2">
             <Link
               href="/ratgeber"
-              className="px-4 py-2 rounded-full bg-primary-500 text-white font-medium whitespace-nowrap"
+              className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
+                !selectedCategory
+                  ? 'bg-primary-500 text-white'
+                  : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+              }`}
             >
               Alle Artikel
             </Link>
@@ -60,7 +84,11 @@ export default function RatgeberPage() {
               <Link
                 key={cat.name}
                 href={`/ratgeber?kategorie=${encodeURIComponent(cat.name)}`}
-                className="px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 font-medium whitespace-nowrap hover:bg-secondary-200 transition-colors"
+                className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
+                  selectedCategory === cat.name
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+                }`}
               >
                 {cat.name} ({cat.count})
               </Link>
@@ -69,8 +97,8 @@ export default function RatgeberPage() {
         </div>
       </section>
 
-      {/* Featured Post */}
-      {featuredPosts.length > 0 && (
+      {/* Featured Post (only show if no category filter and we have featured posts) */}
+      {!selectedCategory && featuredPosts.length > 0 && (
         <section className="py-12">
           <div className="container-custom">
             <div className="flex items-center gap-2 text-primary-500 mb-6" data-aos="fade-up">
@@ -84,14 +112,16 @@ export default function RatgeberPage() {
         </section>
       )}
 
-      {/* All Posts Grid */}
+      {/* Posts Grid */}
       <section className="py-12">
         <div className="container-custom">
-          <h2 className="section-title mb-8" data-aos="fade-up">Alle Artikel</h2>
+          <h2 className="section-title mb-8" data-aos="fade-up">
+            {selectedCategory ? `${selectedCategory} (${filteredPosts.length})` : 'Alle Artikel'}
+          </h2>
 
-          {recentPosts.length > 0 ? (
+          {displayPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {recentPosts.map((post, index) => (
+              {displayPosts.map((post, index) => (
                 <div key={post.slug} data-aos="fade-up" data-aos-delay={index * 100}>
                   <BlogCard post={post} />
                 </div>
@@ -101,15 +131,23 @@ export default function RatgeberPage() {
             <div className="text-center py-16 bg-white rounded-xl">
               <BookOpen className="h-16 w-16 text-secondary-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-secondary-700 mb-2">
-                Noch keine Artikel vorhanden
+                {selectedCategory ? `Keine Artikel in "${selectedCategory}"` : 'Noch keine Artikel vorhanden'}
               </h3>
               <p className="text-secondary-500">
-                Bald finden Sie hier informative Artikel rund um Immobilien.
+                {selectedCategory
+                  ? 'Schauen Sie sich andere Kategorien an oder kommen Sie bald wieder.'
+                  : 'Bald finden Sie hier informative Artikel rund um Immobilien.'
+                }
               </p>
+              {selectedCategory && (
+                <Link href="/ratgeber" className="btn-primary mt-6 inline-flex">
+                  Alle Artikel anzeigen
+                </Link>
+              )}
             </div>
           )}
 
-          {allPosts.length > 6 && (
+          {filteredPosts.length > 6 && (
             <div className="text-center mt-12">
               <button className="btn-secondary">
                 Weitere Artikel laden
