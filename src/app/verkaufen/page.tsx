@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, TrendingUp, Clock, Shield, Users, Phone, ArrowRight, Home, FileText, Handshake, Camera, BarChart3 } from 'lucide-react'
+import { CheckCircle, TrendingUp, Clock, Shield, Users, Phone, ArrowRight, Home, FileText, UserCheck, Camera, BarChart3 } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ const processSteps = [
   },
   {
     step: '05',
-    icon: Handshake,
+    icon: UserCheck,
     title: 'Erfolgreicher Abschluss',
     description: 'Begleitung zum Notar, Koordination der Übergabe und Unterstützung bei allen Formalitäten.',
   },

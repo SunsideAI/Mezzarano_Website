@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, Search, Key, Shield, Heart, Phone, ArrowRight, Home, FileSearch, Calculator, Handshake, MapPin } from 'lucide-react'
+import { CheckCircle, Search, Key, Shield, Heart, Phone, ArrowRight, Home, FileSearch, Calculator, UserCheck, MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ const processSteps = [
   },
   {
     step: '05',
-    icon: Handshake,
+    icon: UserCheck,
     title: 'Kaufabschluss',
     description: 'Begleitung zum Notar, Koordination der Übergabe und Unterstützung bei allen Formalitäten.',
   },
