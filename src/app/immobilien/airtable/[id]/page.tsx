@@ -48,10 +48,7 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
     allImages.push(getProxyImageUrl(property.id, i, 'bilder'))
   }
 
-  // Fallback if no images
-  if (allImages.length === 0) {
-    allImages.push('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80')
-  }
+  // No fallback - ImageGallery handles empty state
 
   return (
     <div className="min-h-screen bg-gray-50">

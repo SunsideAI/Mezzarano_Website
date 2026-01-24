@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, X, Grid3X3, Maximize2 } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X, Grid3X3, Maximize2, ImageOff } from 'lucide-react'
 
 interface ImageGalleryProps {
   images: string[]
@@ -18,8 +18,24 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const [isGridView, setIsGridView] = useState(false)
   const thumbnailRef = useRef<HTMLDivElement>(null)
 
-  const allImages = images.length > 0 ? images : ['https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80']
-  const useUnoptimized = allImages.some(isProxyImage)
+  // No fallback images - if no images, show placeholder
+  const hasImages = images.length > 0
+  const allImages = images
+  const useUnoptimized = hasImages && allImages.some(isProxyImage)
+
+  // If no images, show placeholder
+  if (!hasImages) {
+    return (
+      <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-gray-100 flex items-center justify-center">
+          <div className="text-center text-gray-400">
+            <ImageOff className="w-16 h-16 mx-auto mb-2" />
+            <p>Keine Bilder verfügbar</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))
