@@ -9,6 +9,9 @@ interface ImageGalleryProps {
   title: string
 }
 
+// Check if image is from our proxy API
+const isProxyImage = (url: string) => url.startsWith('/api/')
+
 export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
@@ -16,6 +19,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const thumbnailRef = useRef<HTMLDivElement>(null)
 
   const allImages = images.length > 0 ? images : ['https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80']
+  const useUnoptimized = allImages.some(isProxyImage)
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))
@@ -63,6 +67,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
             src={allImages[currentIndex]}
             alt={`${title} - Bild ${currentIndex + 1}`}
             fill
+            unoptimized={useUnoptimized}
             className="object-cover cursor-pointer"
             onClick={() => openLightbox(currentIndex)}
             priority
@@ -135,6 +140,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                     src={image}
                     alt={`Thumbnail ${index + 1}`}
                     fill
+                    unoptimized={useUnoptimized}
                     className="object-cover"
                   />
                 </button>
@@ -195,6 +201,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                       src={image}
                       alt={`${title} - Bild ${index + 1}`}
                       fill
+                      unoptimized={useUnoptimized}
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
@@ -235,6 +242,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                     src={allImages[currentIndex]}
                     alt={`${title} - Bild ${currentIndex + 1}`}
                     fill
+                    unoptimized={useUnoptimized}
                     className="object-contain"
                     priority
                   />
@@ -258,6 +266,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                         src={image}
                         alt={`Thumbnail ${index + 1}`}
                         fill
+                        unoptimized={useUnoptimized}
                         className="object-cover"
                       />
                     </button>

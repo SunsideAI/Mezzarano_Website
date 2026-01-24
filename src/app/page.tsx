@@ -113,6 +113,7 @@ function AirtablePropertyCard({ property }: { property: AirtableProperty }) {
           src={imageUrl}
           alt={property.titel}
           fill
+          unoptimized={imageUrl.startsWith('/api/')}
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4 flex gap-2">
