@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY
-const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID
-const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || 'Objekte'
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || process.env.AT_TOKEN
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || process.env.AT_BASE
+const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID || process.env.AT_TABLE || 'Objekte'
 
 interface AirtableAttachment {
   id: string
@@ -14,8 +14,9 @@ interface AirtableAttachment {
 interface AirtableRecord {
   id: string
   fields: {
-    Bilder?: AirtableAttachment[]
-    Cover?: AirtableAttachment[]
+    bilder_attachments?: AirtableAttachment[]
+    bild_url?: string
+    bilder?: string
     [key: string]: unknown
   }
 }
@@ -51,7 +52,7 @@ export async function GET(
 
   try {
     // Fetch fresh data from Airtable
-    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}/${recordId}`
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_ID)}/${recordId}`
 
     const response = await fetch(url, {
       headers: {
@@ -67,30 +68,39 @@ export async function GET(
 
     const record: AirtableRecord = await response.json()
 
-    // Get the appropriate image array
-    const images = type === 'cover'
-      ? record.fields.Cover
-      : record.fields.Bilder
+    // Get images from bilder_attachments field (same logic as airtable.ts)
+    let imageUrls: string[] = []
 
-    if (!images || images.length === 0) {
+    if (record.fields.bilder_attachments && Array.isArray(record.fields.bilder_attachments)) {
+      imageUrls = record.fields.bilder_attachments
+        .map((att: AirtableAttachment) => att.url)
+        .filter(Boolean)
+    } else if (record.fields.bild_url) {
+      imageUrls = [record.fields.bild_url]
+    } else if (record.fields.bilder && typeof record.fields.bilder === 'string') {
+      imageUrls = record.fields.bilder.split('\n').filter(Boolean)
+    }
+
+    if (imageUrls.length === 0) {
       return fetchAndStreamImage(FALLBACK_IMAGE)
     }
 
-    // Get the specific image
-    const image = images[Math.min(imageIndex, images.length - 1)]
+    // For 'cover' type, always use first image; for 'bilder', use the specified index
+    const targetIndex = type === 'cover' ? 0 : imageIndex
+    const imageUrl = imageUrls[Math.min(targetIndex, imageUrls.length - 1)]
 
-    if (!image?.url) {
+    if (!imageUrl) {
       return fetchAndStreamImage(FALLBACK_IMAGE)
     }
 
     // Cache the fresh URL
     imageCache.set(cacheKey, {
-      url: image.url,
+      url: imageUrl,
       timestamp: Date.now(),
     })
 
     // Fetch and stream the actual image
-    return fetchAndStreamImage(image.url)
+    return fetchAndStreamImage(imageUrl)
   } catch (error) {
     console.error('Image proxy error:', error)
     return fetchAndStreamImage(FALLBACK_IMAGE)
