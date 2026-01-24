@@ -15,6 +15,11 @@ const agent = {
   email: 'sandro.mezzarano@wuestenrot.de',
 }
 
+// Helper to get proxy URL for Airtable images (prevents URL expiration issues)
+function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder'): string {
+  return `/api/image/${recordId}?index=${index}&type=${type}`
+}
+
 export default async function AirtablePropertyDetailPage({ params }: { params: { id: string } }) {
   const property = await fetchPropertyById(params.id)
 
@@ -28,10 +33,24 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
     return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
   }
 
-  // Combine cover image with other images
-  const allImages = property.cover
-    ? [property.cover, ...property.bilder.filter(img => img !== property.cover)]
-    : property.bilder
+  // Generate proxy URLs for all images to prevent expiration issues
+  const imageCount = property.bilder.length + (property.cover ? 1 : 0)
+  const allImages: string[] = []
+
+  // Add cover image first if exists
+  if (property.cover) {
+    allImages.push(getProxyImageUrl(property.id, 0, 'cover'))
+  }
+
+  // Add all other images
+  for (let i = 0; i < property.bilder.length; i++) {
+    allImages.push(getProxyImageUrl(property.id, i, 'bilder'))
+  }
+
+  // Fallback if no images
+  if (allImages.length === 0) {
+    allImages.push('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80')
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">

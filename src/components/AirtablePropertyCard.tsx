@@ -7,6 +7,11 @@ interface AirtablePropertyCardProps {
   property: AirtableProperty
 }
 
+// Helper to get proxy URL for Airtable images (prevents URL expiration issues)
+function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder'): string {
+  return `/api/image/${recordId}?index=${index}&type=${type}`
+}
+
 export default function AirtablePropertyCard({ property }: AirtablePropertyCardProps) {
   const formatPrice = (price: number | undefined, kategorie?: string) => {
     if (!price) return 'Preis auf Anfrage'
@@ -14,7 +19,12 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
     return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
   }
 
-  const imageUrl = property.cover || property.bilder[0] || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
+  // Use proxy URL for Airtable images to avoid expiration
+  const hasAirtableImages = property.cover || (property.bilder && property.bilder.length > 0)
+  const imageUrl = hasAirtableImages
+    ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
+    : 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
+
   const isRent = property.kategorie === 'Miete'
   // Property type from objekt_typ or unterkategorie
   const propertyType = property.objekt_typ || property.unterkategorie

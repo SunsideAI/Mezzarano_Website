@@ -84,6 +84,11 @@ const regions = [
   },
 ]
 
+// Helper to get proxy URL for Airtable images (prevents URL expiration issues)
+function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder'): string {
+  return `/api/image/${recordId}?index=${index}&type=${type}`
+}
+
 // Airtable Property Card for homepage
 function AirtablePropertyCard({ property }: { property: AirtableProperty }) {
   const formatPrice = (price: number | undefined, kategorie?: string) => {
@@ -92,7 +97,12 @@ function AirtablePropertyCard({ property }: { property: AirtableProperty }) {
     return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
   }
 
-  const imageUrl = property.cover || property.bilder[0] || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
+  // Use proxy URL to prevent Airtable image expiration
+  const hasAirtableImages = property.cover || (property.bilder && property.bilder.length > 0)
+  const imageUrl = hasAirtableImages
+    ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
+    : 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
+
   const isRent = property.kategorie === 'Miete'
   const propertyType = property.objekt_typ || property.unterkategorie
 
