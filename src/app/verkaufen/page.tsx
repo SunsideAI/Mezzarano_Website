@@ -79,40 +79,27 @@ export default function VerkaufenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900">
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
-                Immobilie verkaufen
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-                Ihr Immobilienverkauf in besten Händen
-              </h1>
-              <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-                Als Ihr Wüstenrot-Partner in Hermeskeil begleite ich Sie persönlich durch den gesamten Verkaufsprozess - von der ersten Bewertung bis zur Schlüsselübergabe.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
-                <Link href="/kontakt" className="btn-primary">
-                  Kostenlose Bewertung anfragen
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                  <Phone className="h-5 w-5 mr-2" />
-                  0177 6542977
-                </a>
-              </div>
-            </div>
-            <div className="relative hidden lg:block" data-aos="fade-left">
-              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
-                  alt="Sandro Mezzarano - Immobilienverkauf"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+      <section className="py-24 bg-secondary-900">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
+              Immobilie verkaufen
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+              Ihr Immobilienverkauf in besten Händen
+            </h1>
+            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              Als Ihr Wüstenrot-Partner in Hermeskeil begleite ich Sie persönlich durch den gesamten Verkaufsprozess - von der ersten Bewertung bis zur Schlüsselübergabe.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+              <Link href="/kontakt" className="btn-primary">
+                Kostenlose Bewertung anfragen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
             </div>
           </div>
         </div>
@@ -157,7 +144,7 @@ export default function VerkaufenPage() {
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {processSteps.map((step, index) => (
               <div
                 key={step.step}
@@ -168,10 +155,12 @@ export default function VerkaufenPage() {
                 data-aos-delay={index * 100}
               >
                 <div className="w-full md:w-1/2">
-                  <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-5xl font-bold text-primary-100">{step.step}</span>
-                      <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+                      <div className="w-14 h-14 bg-secondary-900 rounded-xl flex items-center justify-center">
+                        <span className="text-2xl font-bold text-white">{step.step}</span>
+                      </div>
+                      <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center">
                         <step.icon className="h-6 w-6 text-white" />
                       </div>
                     </div>

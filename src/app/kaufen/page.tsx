@@ -100,40 +100,27 @@ export default function KaufenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900">
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
-                Immobilie kaufen
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-                Finden Sie Ihre Traumimmobilie
-              </h1>
-              <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-                Von der ersten Beratung bis zur Schlüsselübergabe - ich begleite Sie auf dem Weg zu Ihrem neuen Zuhause in Hermeskeil, Trier und der Moselregion.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
-                <Link href="/immobilien" className="btn-primary">
-                  Aktuelle Angebote ansehen
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                  <Phone className="h-5 w-5 mr-2" />
-                  0177 6542977
-                </a>
-              </div>
-            </div>
-            <div className="relative hidden lg:block" data-aos="fade-left">
-              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
-                  alt="Sandro Mezzarano - Immobilienkauf"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+      <section className="py-24 bg-secondary-900">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
+              Immobilie kaufen
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+              Finden Sie Ihre Traumimmobilie
+            </h1>
+            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              Von der ersten Beratung bis zur Schlüsselübergabe - ich begleite Sie auf dem Weg zu Ihrem neuen Zuhause in Hermeskeil, Trier und der Moselregion.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+              <Link href="/immobilien" className="btn-primary">
+                Aktuelle Angebote ansehen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
             </div>
           </div>
         </div>
@@ -202,9 +189,11 @@ export default function KaufenPage() {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="bg-white p-6 rounded-xl shadow-lg h-full">
+                <div className="bg-white p-6 rounded-xl shadow-lg h-full border border-gray-100">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl font-bold text-primary-200">{step.step}</span>
+                    <div className="w-10 h-10 bg-secondary-900 rounded-lg flex items-center justify-center">
+                      <span className="text-lg font-bold text-white">{step.step}</span>
+                    </div>
                     <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
                       <step.icon className="h-5 w-5 text-white" />
                     </div>
@@ -213,7 +202,7 @@ export default function KaufenPage() {
                   <p className="text-gray-600 text-sm">{step.description}</p>
                 </div>
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary-200"></div>
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-secondary-300"></div>
                 )}
               </div>
             ))}
