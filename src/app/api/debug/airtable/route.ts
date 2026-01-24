@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
     const fieldAnalysis: Record<string, { type: string; sample: unknown; isAttachment: boolean }> = {}
 
     for (const [key, value] of Object.entries(fields)) {
-      let type = typeof value
+      let type: string = typeof value
       let isAttachment = false
       let sample: unknown = value
 
