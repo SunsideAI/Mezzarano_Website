@@ -44,21 +44,24 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-gray-200">
-        {/* Loading skeleton */}
-        {!imageLoaded && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 border-4 border-gray-300 border-t-primary-500 rounded-full animate-spin" />
-            </div>
-          </div>
-        )}
+      <div className="relative h-48 overflow-hidden bg-gray-100">
+        {/* Loading skeleton - z-20 to stay above image until loaded */}
+        <div
+          className={`absolute inset-0 z-20 bg-gray-100 flex items-center justify-center transition-opacity duration-300 ${
+            imageLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
+        >
+          <div className="w-10 h-10 border-4 border-gray-300 border-t-primary-500 rounded-full animate-spin" />
+        </div>
+        {/* Image with z-10, hidden until loaded */}
         <Image
+          key={`${property.id}-${imageUrl}`}
           src={imageUrl}
           alt={property.titel}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           unoptimized={imageUrl.startsWith('/api/')}
-          className={`object-cover group-hover:scale-105 transition-all duration-500 ${
+          className={`object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={() => setImageLoaded(true)}
