@@ -47,7 +47,7 @@ export default function TrierPage() {
       <section className="relative min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+            src="https://res.cloudinary.com/djqviyb2c/image/upload/w_1920,q_80/mezzarano/cities/Trier"
             alt="Immobilien in Trier"
             fill
             className="object-cover"

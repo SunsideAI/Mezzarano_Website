@@ -65,22 +65,22 @@ const regions = [
   {
     name: 'Hermeskeil',
     href: '/regionen/hermeskeil',
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80' // Cozy home
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Hermeskeil'
   },
   {
     name: 'Trier',
     href: '/regionen/trier',
-    image: 'https://images.unsplash.com/photo-1577416412292-747c6607f055?w=600&q=80' // European city
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Trier'
   },
   {
     name: 'Bernkastel-Kues',
     href: '/regionen/bernkastel-kues',
-    image: 'https://images.unsplash.com/photo-1592595896616-c37162298647?w=600&q=80' // River landscape
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Bernkastel'
   },
   {
     name: 'Schweich',
     href: '/regionen/schweich',
-    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80' // Beautiful home
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/mezzarano/cities/Schweich'
   },
 ]
 
