@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { MapPin, Bed, Square, Heart, ImageOff } from 'lucide-react'
 import { AirtableProperty } from '@/lib/airtable'
 
@@ -12,8 +11,9 @@ interface AirtablePropertyCardProps {
 }
 
 // Helper to get proxy URL for Airtable images (prevents URL expiration issues)
-function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder'): string {
-  return `/api/image/${recordId}?index=${index}&type=${type}`
+// Width parameter allows responsive image loading: smaller on mobile, larger on desktop
+function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder', width: number = 800): string {
+  return `/api/image/${recordId}?index=${index}&type=${type}&w=${width}`
 }
 
 export default function AirtablePropertyCard({ property, priority = false }: AirtablePropertyCardProps) {
@@ -23,9 +23,14 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
   // Check if property has real images (no fallbacks!)
   const hasRealImages = property.cover || (property.bilder && property.bilder.length > 0)
 
-  // Only create image URL if we have real images
+  // Only create image URLs if we have real images - with responsive sizes for mobile optimization
+  const imageType = property.cover ? 'cover' : 'bilder'
   const imageUrl = hasRealImages
-    ? getProxyImageUrl(property.id, 0, property.cover ? 'cover' : 'bilder')
+    ? getProxyImageUrl(property.id, 0, imageType, 400) // Default to mobile size
+    : null
+  // Larger image for desktop
+  const imageUrlLarge = hasRealImages
+    ? getProxyImageUrl(property.id, 0, imageType, 800)
     : null
 
   // Reset image state when property changes
@@ -63,22 +68,27 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
         )}
 
         {/* Real image - only render if we have a URL */}
-        {imageUrl && (
-          <Image
-            key={`${property.id}-image`}
-            src={imageUrl}
-            alt={property.titel}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            unoptimized
-            priority={priority}
-            loading={priority ? 'eager' : 'lazy'}
-            className={`object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
-              showImage ? 'opacity-100' : 'opacity-0'
-            }`}
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageError(true)}
-          />
+        {/* Using picture element for true responsive images - smaller on mobile, larger on desktop */}
+        {imageUrl && imageUrlLarge && (
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet={imageUrlLarge}
+            />
+            <img
+              key={`${property.id}-image`}
+              src={imageUrl}
+              alt={property.titel}
+              loading={priority ? 'eager' : 'lazy'}
+              fetchPriority={priority ? 'high' : 'auto'}
+              decoding="async"
+              className={`absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
+                showImage ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageError(true)}
+            />
+          </picture>
         )}
         <div className="absolute top-4 left-4 flex gap-2">
           <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${

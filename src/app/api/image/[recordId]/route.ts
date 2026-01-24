@@ -33,13 +33,16 @@ export async function GET(
   const { searchParams } = new URL(request.url)
   const imageIndex = parseInt(searchParams.get('index') || '0', 10)
   const type = searchParams.get('type') || 'bilder' // 'bilder' or 'cover'
+  const width = parseInt(searchParams.get('w') || '800', 10) // Responsive width: 400 for mobile, 800 for desktop
 
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
     // Return 404 if Airtable not configured
     return return404()
   }
 
-  const cacheKey = `${recordId}-${type}-${imageIndex}`
+  // Limit width to reasonable values for security
+  const safeWidth = Math.min(Math.max(width, 200), 1600)
+  const cacheKey = `${recordId}-${type}-${imageIndex}-${safeWidth}`
 
   // Check cache first
   const cached = imageCache.get(cacheKey)
@@ -109,13 +112,13 @@ export async function GET(
       return return404()
     }
 
-    // Optimize Cloudinary URLs with transformations
+    // Optimize Cloudinary URLs with transformations (responsive width)
     let optimizedUrl = imageUrl
     if (imageUrl.includes('res.cloudinary.com') && !imageUrl.includes('/w_') && !imageUrl.includes('/q_')) {
-      // Add automatic format, quality, and size optimization
+      // Add automatic format, quality, and size optimization with responsive width
       optimizedUrl = imageUrl.replace(
         '/upload/',
-        '/upload/f_auto,q_auto,w_800,c_limit/'
+        `/upload/f_auto,q_auto,w_${safeWidth},c_limit/`
       )
     }
 
