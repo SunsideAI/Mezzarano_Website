@@ -97,11 +97,18 @@ async function generateDescription(topic) {
     max_tokens: 200,
     messages: [{
       role: 'user',
-      content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel. Nur die Description ausgeben.`
+      content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel. Gib NUR die Description aus, ohne Anführungszeichen, ohne Zeichenanzahl, ohne zusätzlichen Text.`
     }]
   });
 
-  return response.content[0].text.trim();
+  // Clean description: remove quotes, character counts, and extra formatting
+  return response.content[0].text
+    .trim()
+    .replace(/^["']|["']$/g, '')
+    .replace(/\*\*Zeichenanzahl:?\s*\d+\*\*/gi, '')
+    .replace(/Zeichenanzahl:?\s*\d+/gi, '')
+    .replace(/\(\d+\s*Zeichen\)/gi, '')
+    .trim();
 }
 
 function detectCategory(topic, keywords = []) {

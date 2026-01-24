@@ -106,14 +106,21 @@ Bitte schreibe den Artikel im Markdown-Format.`;
       max_tokens: 200,
       messages: [{
         role: 'user',
-        content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für: "${topic.title}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel.`
+        content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für: "${topic.title}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel. Gib NUR die Description aus, ohne Anführungszeichen, ohne Zeichenanzahl, ohne zusätzlichen Text.`
       }]
     })
   ]);
 
   const content = contentResponse.content[0].text;
-  const seoTitle = titleResponse.content[0].text.trim();
-  const description = descResponse.content[0].text.trim();
+  const seoTitle = titleResponse.content[0].text.trim().replace(/^["']|["']$/g, '');
+  // Clean description: remove quotes, character counts, and extra formatting
+  const description = descResponse.content[0].text
+    .trim()
+    .replace(/^["']|["']$/g, '')
+    .replace(/\*\*Zeichenanzahl:?\s*\d+\*\*/gi, '')
+    .replace(/Zeichenanzahl:?\s*\d+/gi, '')
+    .replace(/\(\d+\s*Zeichen\)/gi, '')
+    .trim();
 
   const category = topic.category;
   const date = new Date().toISOString().split('T')[0];
