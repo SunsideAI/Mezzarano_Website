@@ -53,13 +53,13 @@ async function generatePost(topic) {
   const client = new Anthropic();
 
   // Generate content
-  const SYSTEM_PROMPT = `Du bist ein erfahrener Immobilien-Content-Autor für Mezzarano Immobilien, einen Wüstenrot-Immobilienberater in der Region Heilbronn.
+  const SYSTEM_PROMPT = `Du bist ein erfahrener Immobilien-Content-Autor für Mezzarano Immobilien, einen Wüstenrot-Immobilienberater in der Region Hermeskeil, Trier, Mosel und Hochwald.
 
 Deine Aufgabe ist es, SEO-optimierte, informative Blog-Artikel auf Deutsch zu schreiben.
 
 Wichtige Richtlinien:
 - Schreibe in einem professionellen, aber zugänglichen Ton
-- Verwende die regionale Perspektive (Heilbronn, Weinsberg, Neckarsulm, etc.)
+- Verwende die regionale Perspektive (Hermeskeil, Trier, Schweich, Bernkastel-Kues, Hochwald, Mosel)
 - Integriere natürlich relevante Keywords
 - Strukturiere den Artikel mit klaren H2 und H3 Überschriften
 - Füge praktische Tipps und Handlungsempfehlungen ein
@@ -81,7 +81,7 @@ Der Artikel sollte:
 1. Eine packende Einleitung haben
 2. Mehrere H2-Abschnitte mit Unterüberschriften (H3)
 3. Praktische Tipps und Beispiele enthalten
-4. Lokale Bezüge zur Region Heilbronn haben
+4. Lokale Bezüge zur Region Hermeskeil, Trier, Mosel und Hochwald haben
 5. Mit einem Call-to-Action für Beratung enden
 
 Bitte schreibe den Artikel im Markdown-Format.`;
@@ -106,7 +106,7 @@ Bitte schreibe den Artikel im Markdown-Format.`;
       max_tokens: 200,
       messages: [{
         role: 'user',
-        content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für: "${topic.title}". Für Mezzarano Immobilien Heilbronn.`
+        content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für: "${topic.title}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel.`
       }]
     })
   ]);
@@ -117,7 +117,7 @@ Bitte schreibe den Artikel im Markdown-Format.`;
 
   const category = topic.category;
   const date = new Date().toISOString().split('T')[0];
-  const tags = [...new Set([...topic.keywords, 'Heilbronn', 'Immobilien', 'Wüstenrot'])].slice(0, 6);
+  const tags = [...new Set([...topic.keywords, 'Hermeskeil', 'Trier', 'Mosel', 'Immobilien', 'Wüstenrot'])].slice(0, 6);
 
   const slug = seoTitle
     .toLowerCase()

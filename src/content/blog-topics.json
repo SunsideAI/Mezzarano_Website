@@ -1,48 +1,48 @@
 {
   "topics": [
     {
-      "title": "Immobilienmarkt Heilbronn 2024: Preise, Trends und Prognosen",
-      "keywords": ["Heilbronn", "Immobilienmarkt", "Preise", "Trends", "2024"],
+      "title": "Immobilienmarkt Trier-Mosel 2024: Preise, Trends und Prognosen",
+      "keywords": ["Trier", "Mosel", "Immobilienmarkt", "Preise", "Trends", "2024"],
       "category": "Marktberichte",
       "priority": "high",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Immobilie verkaufen in Heilbronn: Der komplette Ratgeber",
-      "keywords": ["Immobilie verkaufen", "Heilbronn", "Ratgeber", "Tipps"],
+      "title": "Immobilie verkaufen in Hermeskeil: Der komplette Ratgeber",
+      "keywords": ["Immobilie verkaufen", "Hermeskeil", "Ratgeber", "Tipps"],
       "category": "Immobilienverkauf",
       "priority": "high",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Immobilienbewertung Heilbronn: Kostenlos und professionell",
-      "keywords": ["Immobilienbewertung", "Heilbronn", "kostenlos", "Wertermittlung"],
+      "title": "Immobilienbewertung Trier: Kostenlos und professionell",
+      "keywords": ["Immobilienbewertung", "Trier", "kostenlos", "Wertermittlung"],
       "category": "Immobilienbewertung",
       "priority": "high",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Weinsberg Immobilien: Der perfekte Standort für Familien",
-      "keywords": ["Weinsberg", "Immobilien", "Familie", "Wohnen"],
+      "title": "Schweich Immobilien: Der perfekte Standort für Familien",
+      "keywords": ["Schweich", "Immobilien", "Familie", "Wohnen", "Mosel"],
       "category": "Regionen",
       "priority": "high",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Neckarsulm Immobilienmarkt: Arbeiten und Leben im Industriestandort",
-      "keywords": ["Neckarsulm", "Immobilien", "Audi", "Wirtschaft"],
+      "title": "Hermeskeil Immobilienmarkt: Leben und Wohnen im Hochwald",
+      "keywords": ["Hermeskeil", "Immobilien", "Hochwald", "Wohnen"],
       "category": "Regionen",
       "priority": "high",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Bad Wimpfen: Historisches Kleinod mit Wohnpotenzial",
-      "keywords": ["Bad Wimpfen", "Altstadt", "Immobilien", "Geschichte"],
+      "title": "Bernkastel-Kues: Historische Weinstadt mit Wohnpotenzial",
+      "keywords": ["Bernkastel-Kues", "Mosel", "Immobilien", "Wein", "Geschichte"],
       "category": "Regionen",
       "priority": "medium",
       "used": false,
@@ -81,8 +81,8 @@
       "usedDate": null
     },
     {
-      "title": "Grunderwerbsteuer Baden-Württemberg: Alles Wichtige",
-      "keywords": ["Grunderwerbsteuer", "Baden-Württemberg", "Nebenkosten", "Kauf"],
+      "title": "Grunderwerbsteuer Rheinland-Pfalz: Alles Wichtige",
+      "keywords": ["Grunderwerbsteuer", "Rheinland-Pfalz", "Nebenkosten", "Kauf"],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -121,16 +121,16 @@
       "usedDate": null
     },
     {
-      "title": "Grundstückspreise Heilbronn Region: Aktuelle Entwicklung",
-      "keywords": ["Grundstückspreise", "Heilbronn", "Bauland", "Preise"],
+      "title": "Grundstückspreise Region Trier: Aktuelle Entwicklung",
+      "keywords": ["Grundstückspreise", "Trier", "Mosel", "Bauland", "Preise"],
       "category": "Marktberichte",
       "priority": "medium",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Kapitalanlage Immobilien Heilbronn: Renditestarke Standorte",
-      "keywords": ["Kapitalanlage", "Heilbronn", "Rendite", "Investment"],
+      "title": "Kapitalanlage Immobilien Trier-Mosel: Renditestarke Standorte",
+      "keywords": ["Kapitalanlage", "Trier", "Mosel", "Rendite", "Investment"],
       "category": "Kapitalanlage",
       "priority": "high",
       "used": false,
@@ -161,16 +161,16 @@
       "usedDate": null
     },
     {
-      "title": "Öhringen Immobilien: Leben im Hohenlohekreis",
-      "keywords": ["Öhringen", "Hohenlohekreis", "Immobilien", "Wohnen"],
+      "title": "Hochwald Region: Naturnahe Immobilien mit Zukunft",
+      "keywords": ["Hochwald", "Natur", "Immobilien", "Wohnen", "Ländlich"],
       "category": "Regionen",
       "priority": "low",
       "used": false,
       "usedDate": null
     },
     {
-      "title": "Lauffen am Neckar: Weinort mit Charme und Potenzial",
-      "keywords": ["Lauffen", "Neckar", "Wein", "Immobilien"],
+      "title": "Moseltal: Weinregion mit Charme und Wohnpotenzial",
+      "keywords": ["Mosel", "Wein", "Immobilien", "Tourismus", "Lebensqualität"],
       "category": "Regionen",
       "priority": "low",
       "used": false,
@@ -193,8 +193,8 @@
       "usedDate": null
     },
     {
-      "title": "Mietspiegel Heilbronn 2024: Mietpreise nach Stadtteilen",
-      "keywords": ["Mietspiegel", "Heilbronn", "Mietpreise", "Stadtteile"],
+      "title": "Mietspiegel Trier 2024: Mietpreise nach Stadtteilen",
+      "keywords": ["Mietspiegel", "Trier", "Mietpreise", "Stadtteile"],
       "category": "Marktberichte",
       "priority": "medium",
       "used": false,
