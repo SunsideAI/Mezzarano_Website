@@ -371,14 +371,15 @@ export default function ImmobilienPage() {
       <section className="py-12">
         <div className="container-custom">
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-gray-600">
-              <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
-            </p>
-            {isLoadingAirtable && (
-              <div className="flex items-center gap-2 text-gray-500 text-sm">
+            {isLoadingAirtable ? (
+              <div className="flex items-center gap-2 text-gray-500">
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Lade aktuelle Daten...
+                Lade Immobilien...
               </div>
+            ) : (
+              <p className="text-gray-600">
+                <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
+              </p>
             )}
           </div>
 
@@ -397,8 +398,29 @@ export default function ImmobilienPage() {
             </div>
           )}
 
-          {/* Show static properties if no Airtable data or as fallback */}
-          {!hasAirtableData && filteredStaticProperties.length > 0 && (
+          {/* Show loading skeletons while fetching */}
+          {isLoadingAirtable && (
+            <div className={
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
+                : 'flex flex-col gap-6'
+            }>
+              {[...Array(8)].map((_, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden animate-pulse">
+                  <div className="h-48 bg-gray-200" />
+                  <div className="p-6 space-y-3">
+                    <div className="h-6 bg-gray-200 rounded w-3/4" />
+                    <div className="h-4 bg-gray-200 rounded w-1/2" />
+                    <div className="h-4 bg-gray-200 rounded w-full" />
+                    <div className="h-8 bg-gray-200 rounded w-1/3 mt-4" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Show static properties ONLY if loading finished AND no Airtable data */}
+          {!isLoadingAirtable && !hasAirtableData && filteredStaticProperties.length > 0 && (
             <div className={
               viewMode === 'grid'
                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
