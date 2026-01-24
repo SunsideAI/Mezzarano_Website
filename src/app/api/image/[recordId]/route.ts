@@ -20,8 +20,10 @@ interface AirtableRecord {
 const imageCache = new Map<string, { url: string; timestamp: number }>()
 const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes (Airtable URLs last ~2 hours)
 
-// Fallback image URL
-const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80'
+// Return 404 response for missing images (no fallback!)
+function return404() {
+  return new NextResponse(null, { status: 404 })
+}
 
 export async function GET(
   request: NextRequest,
@@ -33,8 +35,8 @@ export async function GET(
   const type = searchParams.get('type') || 'bilder' // 'bilder' or 'cover'
 
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-    // Return fallback image if Airtable not configured
-    return fetchAndStreamImage(FALLBACK_IMAGE)
+    // Return 404 if Airtable not configured
+    return return404()
   }
 
   const cacheKey = `${recordId}-${type}-${imageIndex}`
@@ -58,7 +60,7 @@ export async function GET(
 
     if (!response.ok) {
       console.error('Airtable fetch error:', response.status)
-      return fetchAndStreamImage(FALLBACK_IMAGE)
+      return return404()
     }
 
     const record: AirtableRecord = await response.json()
@@ -95,8 +97,8 @@ export async function GET(
     }
 
     if (imageUrls.length === 0) {
-      console.log(`No images found for "${title}", using placeholder`)
-      return fetchAndStreamImage(FALLBACK_IMAGE)
+      console.log(`No images found for "${title}"`)
+      return return404()
     }
 
     // For 'cover' type, always use first image; for 'bilder', use the specified index
@@ -104,7 +106,7 @@ export async function GET(
     const imageUrl = imageUrls[Math.min(targetIndex, imageUrls.length - 1)]
 
     if (!imageUrl) {
-      return fetchAndStreamImage(FALLBACK_IMAGE)
+      return return404()
     }
 
     // Cache the fresh URL
@@ -117,7 +119,7 @@ export async function GET(
     return fetchAndStreamImage(imageUrl)
   } catch (error) {
     console.error('Image proxy error:', error)
-    return fetchAndStreamImage(FALLBACK_IMAGE)
+    return return404()
   }
 }
 
