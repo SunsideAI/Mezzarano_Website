@@ -63,67 +63,31 @@ export async function GET(
 
     const record: AirtableRecord = await response.json()
 
-    // Debug: Log all field names to identify the correct image field
-    console.log('Airtable record fields:', Object.keys(record.fields))
+    // Log for debugging
+    const title = record.fields.title || record.fields.titel || 'Unknown'
+    console.log(`Image proxy: Record ${recordId}, Title: "${title}", Index: ${imageIndex}, Type: ${type}`)
 
-    // Get images from various possible field names
-    // Airtable field names can vary - check multiple possibilities
+    // Get images - prioritize bilder_attachments (confirmed field name)
     let imageUrls: string[] = []
 
-    // Check for attachment fields (could be named differently)
-    const possibleAttachmentFields = [
-      'bilder_attachments',
-      'Bilder',
-      'bilder',
-      'Bild',
-      'bild',
-      'images',
-      'Images',
-      'Fotos',
-      'fotos',
-      'Attachments',
-      'attachments'
-    ]
+    // Primary: bilder_attachments (attachment field)
+    const attachments = record.fields.bilder_attachments as any[]
+    if (attachments && Array.isArray(attachments) && attachments.length > 0) {
+      imageUrls = attachments.map((att: any) => att?.url).filter(Boolean)
+      console.log(`Found ${imageUrls.length} images in bilder_attachments for "${title}"`)
+    }
 
-    for (const fieldName of possibleAttachmentFields) {
-      const fieldValue = record.fields[fieldName]
-      if (fieldValue && Array.isArray(fieldValue) && fieldValue.length > 0) {
-        // Check if it's an attachment array (objects with url property)
-        if (typeof fieldValue[0] === 'object' && fieldValue[0].url) {
-          imageUrls = fieldValue.map((att: any) => att.url).filter(Boolean)
-          console.log(`Found images in field "${fieldName}":`, imageUrls.length)
-          break
-        }
-        // Check if it's a string array
-        if (typeof fieldValue[0] === 'string') {
-          imageUrls = fieldValue.filter(Boolean)
-          console.log(`Found image URLs in field "${fieldName}":`, imageUrls.length)
-          break
-        }
+    // Fallback: bild_url (single URL string)
+    if (imageUrls.length === 0 && record.fields.bild_url) {
+      const url = record.fields.bild_url as string
+      if (url && typeof url === 'string') {
+        imageUrls = [url]
+        console.log(`Using bild_url fallback for "${title}"`)
       }
     }
 
-    // Fallback: check for single image URL fields
     if (imageUrls.length === 0) {
-      const possibleUrlFields = ['bild_url', 'Bild_URL', 'image_url', 'cover_url']
-      for (const fieldName of possibleUrlFields) {
-        const fieldValue = record.fields[fieldName]
-        if (fieldValue && typeof fieldValue === 'string') {
-          imageUrls = [fieldValue]
-          console.log(`Found single image URL in field "${fieldName}"`)
-          break
-        }
-      }
-    }
-
-    // Last resort: check 'bilder' as newline-separated string
-    if (imageUrls.length === 0 && record.fields.bilder && typeof record.fields.bilder === 'string') {
-      imageUrls = record.fields.bilder.split('\n').filter(Boolean)
-      console.log('Found images in bilder string field:', imageUrls.length)
-    }
-
-    if (imageUrls.length === 0) {
-      console.log('No images found in any field, using fallback')
+      console.log(`No images found for "${title}", using placeholder`)
       return fetchAndStreamImage(FALLBACK_IMAGE)
     }
 
