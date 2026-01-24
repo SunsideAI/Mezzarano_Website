@@ -227,8 +227,14 @@ export default function BlogPostPage({ params }: Props) {
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <h4 className="font-semibold text-secondary-900 mb-4">Über den Autor</h4>
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary-500">M</span>
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="https://res.cloudinary.com/djqviyb2c/image/upload/w_128,h_128,c_fill,g_face,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
+                        alt="Sandro Mezzarano"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="font-semibold text-secondary-900">{post.author}</p>
@@ -265,6 +271,42 @@ export default function BlogPostPage({ params }: Props) {
 function convertMarkdownToHtml(markdown: string): string {
   let html = markdown
 
+  // Process tables first (before other transformations)
+  html = html.replace(/(\|.+\|[\r\n]+\|[-:\| ]+\|[\r\n]+((\|.+\|[\r\n]?)+))/gm, (match) => {
+    const lines = match.trim().split('\n').filter(line => line.trim())
+    if (lines.length < 2) return match
+
+    // Parse header row
+    const headerCells = lines[0].split('|').filter(cell => cell.trim()).map(cell => cell.trim())
+
+    // Skip separator row (lines[1])
+
+    // Parse data rows
+    const dataRows = lines.slice(2).map(line =>
+      line.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
+    )
+
+    // Build HTML table
+    let tableHtml = '<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse">'
+    tableHtml += '<thead><tr class="bg-secondary-100">'
+    headerCells.forEach(cell => {
+      tableHtml += `<th class="border border-secondary-200 px-4 py-3 text-left font-semibold text-secondary-700">${cell}</th>`
+    })
+    tableHtml += '</tr></thead><tbody>'
+
+    dataRows.forEach((row, index) => {
+      const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-secondary-50'
+      tableHtml += `<tr class="${rowClass}">`
+      row.forEach(cell => {
+        tableHtml += `<td class="border border-secondary-200 px-4 py-3 text-secondary-600">${cell}</td>`
+      })
+      tableHtml += '</tr>'
+    })
+
+    tableHtml += '</tbody></table></div>'
+    return tableHtml
+  })
+
   // Headers
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>')
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>')
@@ -278,9 +320,15 @@ function convertMarkdownToHtml(markdown: string): string {
   // Links
   html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>')
 
-  // Lists
+  // Numbered lists
+  html = html.replace(/^(\d+)\. (.*$)/gim, '<li>$2</li>')
+
+  // Unordered lists
   html = html.replace(/^\- (.*$)/gim, '<li>$1</li>')
-  html = html.replace(/(<li>[\s\S]*<\/li>)/, '<ul>$1</ul>')
+
+  // Wrap consecutive li elements in ul/ol
+  html = html.replace(/(<li>[\s\S]*?<\/li>)/g, '<ul>$1</ul>')
+  html = html.replace(/<\/ul>\s*<ul>/g, '')
 
   // Paragraphs
   html = html.replace(/\n\n/gim, '</p><p>')
@@ -291,6 +339,8 @@ function convertMarkdownToHtml(markdown: string): string {
   html = html.replace(/<\/h(\d)><\/p>/g, '</h$1>')
   html = html.replace(/<p><ul>/g, '<ul>')
   html = html.replace(/<\/ul><\/p>/g, '</ul>')
+  html = html.replace(/<p><div/g, '<div')
+  html = html.replace(/<\/div><\/p>/g, '</div>')
   html = html.replace(/<p><\/p>/g, '')
 
   return html
