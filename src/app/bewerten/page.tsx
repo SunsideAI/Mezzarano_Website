@@ -90,8 +90,8 @@ export default function BewertenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900">
-        <div className="container-custom relative z-10">
+      <section className="py-24 bg-secondary-900">
+        <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">

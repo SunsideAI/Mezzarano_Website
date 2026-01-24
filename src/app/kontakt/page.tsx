@@ -284,12 +284,18 @@ export default function KontaktPage() {
                 Mein Büro befindet sich in Hermeskeil. Ich freue mich auf Ihren Besuch oder einen Termin vor Ort!
               </p>
 
-              {/* Map Placeholder */}
-              <div className="bg-gray-200 h-80 rounded-xl mb-8 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Karte wird geladen...</p>
-                </div>
+              {/* Google Maps Embed */}
+              <div className="h-80 rounded-xl mb-8 overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.9877!2d6.9381!3d49.6553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47957e4c7c8d2b3d%3A0x4b0e5e7a8a9b0c1d!2sSaarstra%C3%9Fe%201%2C%2054411%20Hermeskeil!5e0!3m2!1sde!2sde!4v1704000000000!5m2!1sde!2sde"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Standort Mezzarano Immobilien - Saarstraße 1, Hermeskeil"
+                ></iframe>
               </div>
 
               {/* Parking & Transport Info */}
@@ -297,17 +303,23 @@ export default function KontaktPage() {
                 <h3 className="font-semibold text-gray-900 mb-4">Anfahrt</h3>
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h4 className="font-medium text-gray-700">Mit öffentlichen Verkehrsmitteln:</h4>
+                    <h4 className="font-medium text-gray-700">Mit dem Auto:</h4>
                     <p className="text-gray-600">
-                      U-Bahn: Linie U2, Station Musterplatz (5 Min. Fußweg)<br />
-                      Bus: Linien 100, 200, Haltestelle Musterstraße
+                      Über die B52 erreichen Sie Hermeskeil aus Richtung Trier oder Saarbrücken.<br />
+                      Kostenlose Parkmöglichkeiten direkt vor dem Büro.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-700">Mit dem Auto:</h4>
+                    <h4 className="font-medium text-gray-700">Aus Trier:</h4>
                     <p className="text-gray-600">
-                      Parkplätze stehen in unserem Hof zur Verfügung.<br />
-                      Bitte bei Ankunft im Büro melden.
+                      Ca. 30 Minuten Fahrtzeit über die B52 Richtung Hermeskeil.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-700">Termin vereinbaren:</h4>
+                    <p className="text-gray-600">
+                      Für eine persönliche Beratung vereinbaren Sie gerne einen Termin.<br />
+                      Hausbesuche in der gesamten Region sind möglich.
                     </p>
                   </div>
                 </div>

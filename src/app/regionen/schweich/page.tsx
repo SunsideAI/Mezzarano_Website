@@ -90,7 +90,7 @@ export default function SchweichPage() {
               <Link href="/kontakt" className="btn-primary">
                 Beratung anfragen
               </Link>
-              <Link href="/immobilien?ort=Schweich" className="btn-secondary border-white text-white hover:bg-white/10">
+              <Link href="/immobilien?ort=Schweich" className="btn-outline">
                 Immobilien in Schweich
               </Link>
             </div>
@@ -282,7 +282,7 @@ export default function SchweichPage() {
             <Link href="/kontakt" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
               Beratung anfragen
             </Link>
-            <a href="tel:01776542977" className="btn-secondary border-white text-white hover:bg-white/10">
+            <a href="tel:01776542977" className="btn-outline">
               <Phone className="h-5 w-5 mr-2" />
               0177 6542977
             </a>

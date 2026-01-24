@@ -73,7 +73,7 @@ export default function TrierPage() {
               <Link href="/kontakt" className="btn-primary">
                 Kostenlose Beratung anfragen
               </Link>
-              <Link href="/immobilien?ort=Trier" className="btn-secondary border-white text-white hover:bg-white/10">
+              <Link href="/immobilien?ort=Trier" className="btn-outline">
                 Immobilien in Trier
               </Link>
             </div>
@@ -293,7 +293,7 @@ export default function TrierPage() {
             <Link href="/kontakt" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
               Beratung anfragen
             </Link>
-            <a href="tel:01776542977" className="btn-secondary border-white text-white hover:bg-white/10">
+            <a href="tel:01776542977" className="btn-outline">
               <Phone className="h-5 w-5 mr-2" />
               0177 6542977
             </a>
