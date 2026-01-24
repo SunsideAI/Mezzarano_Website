@@ -5,8 +5,8 @@ import { getAllPosts, getAllCategories, getFeaturedPosts } from '@/lib/blog'
 
 export const metadata = {
   title: 'Ratgeber | Mezzarano Immobilien - Tipps & Wissen',
-  description: 'Ihr Immobilien-Ratgeber für die Region Heilbronn. Expertenwissen zu Kauf, Verkauf, Finanzierung und aktuellen Markttrends.',
-  keywords: 'Immobilien Ratgeber, Heilbronn, Tipps, Finanzierung, Immobilienverkauf, Immobilienkauf'
+  description: 'Ihr Immobilien-Ratgeber für Trier, Mosel und Hochwald. Expertenwissen zu Kauf, Verkauf, Finanzierung und aktuellen Markttrends.',
+  keywords: 'Immobilien Ratgeber, Trier, Mosel, Hochwald, Tipps, Finanzierung, Immobilienverkauf, Immobilienkauf'
 }
 
 export default function RatgeberPage() {
@@ -18,28 +18,28 @@ export default function RatgeberPage() {
   return (
     <div className="min-h-screen bg-secondary-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-20">
+      <section className="bg-primary-500 py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+            <div className="flex items-center gap-2 text-white/80 mb-4" data-aos="fade-up">
               <BookOpen className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wider">Wissen & Expertise</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
               Immobilien-Ratgeber
             </h1>
-            <p className="text-xl text-secondary-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-              Expertenwissen rund um Immobilien in der Region Heilbronn.
+            <p className="text-xl text-white/90 mb-8" data-aos="fade-up" data-aos-delay="200">
+              Expertenwissen rund um Immobilien in der Region Trier, Mosel und Hochwald.
               Tipps zum Kauf, Verkauf, zur Finanzierung und aktuelle Marktanalysen.
             </p>
 
             {/* Search Box */}
             <div className="relative max-w-xl" data-aos="fade-up" data-aos-delay="300">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-700" />
               <input
                 type="search"
                 placeholder="Artikel durchsuchen..."
-                className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full pl-12 pr-4 py-4 rounded-xl bg-white border-0 text-secondary-900 placeholder:text-secondary-400 focus:outline-none focus:ring-2 focus:ring-white shadow-lg"
               />
             </div>
           </div>

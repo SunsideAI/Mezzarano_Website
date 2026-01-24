@@ -1,12 +1,11 @@
 ---
-title: "Immobilienmarkt Heilbronn 2024: Preise, Trends und Prognosen"
-description: "Aktuelle Analyse des Immobilienmarkts in Heilbronn. Preisentwicklung, Trends und Prognosen für Käufer und Verkäufer in der Region."
+title: "Immobilienmarkt Trier-Mosel 2024: Preise, Trends und Prognosen"
+description: "Aktuelle Analyse des Immobilienmarkts in Trier und an der Mosel. Preisentwicklung, Trends und Prognosen für Käufer und Verkäufer in der Region."
 pubDate: 2026-01-22
 category: "Marktberichte"
 author: "Mezzarano Immobilien"
-image: "/blog/marktberichte.svg"
 featured: true
-tags: ["Heilbronn", "Immobilienmarkt", "Preise", "Trends", "2024"]
+tags: ["Trier", "Mosel", "Immobilienmarkt", "Preise", "Trends", "2024"]
 ---
 
 ## Der Immobilienmarkt in Heilbronn: Ein Überblick

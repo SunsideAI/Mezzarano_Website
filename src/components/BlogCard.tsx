@@ -1,7 +1,26 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, Tag, TrendingUp, Home, Key, Building, Lightbulb, BookOpen, FileText, PiggyBank, Scale, MapPin, Users } from 'lucide-react'
 import type { BlogPostMeta } from '@/lib/blog'
+
+// Category to icon mapping
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  'Marktberichte': TrendingUp,
+  'Kaufen': Home,
+  'Verkaufen': Key,
+  'Finanzierung': PiggyBank,
+  'Tipps': Lightbulb,
+  'Recht': Scale,
+  'Region': MapPin,
+  'Ratgeber': BookOpen,
+  'News': FileText,
+  'Über uns': Users,
+}
+
+// Get icon component for category
+function getCategoryIcon(category: string) {
+  return categoryIcons[category] || BookOpen
+}
 
 interface BlogCardProps {
   post: BlogPostMeta
@@ -18,11 +37,13 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
   }
 
   if (featured) {
+    const IconComponent = getCategoryIcon(post.category)
+
     return (
       <article className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
         <div className="grid md:grid-cols-2 gap-0">
           <div className="relative h-64 md:h-full min-h-[300px]">
-            {post.image ? (
+            {post.image && !post.image.endsWith('.svg') ? (
               <Image
                 src={post.image}
                 alt={post.title}
@@ -30,12 +51,12 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-                <span className="text-6xl font-bold text-white/20">M</span>
+              <div className="absolute inset-0 bg-primary-500 flex items-center justify-center">
+                <IconComponent className="h-32 w-32 text-white/30" />
               </div>
             )}
             <div className="absolute top-4 left-4">
-              <span className="badge badge-primary">
+              <span className="badge badge-primary bg-white text-primary-500">
                 {post.category}
               </span>
             </div>
@@ -76,10 +97,12 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
     )
   }
 
+  const IconComponent = getCategoryIcon(post.category)
+
   return (
     <article className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 card-hover">
       <div className="relative h-48">
-        {post.image ? (
+        {post.image && !post.image.endsWith('.svg') ? (
           <Image
             src={post.image}
             alt={post.title}
@@ -87,12 +110,12 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-            <span className="text-4xl font-bold text-white/20">M</span>
+          <div className="absolute inset-0 bg-primary-500 flex items-center justify-center">
+            <IconComponent className="h-20 w-20 text-white/30" />
           </div>
         )}
         <div className="absolute top-3 left-3">
-          <span className="badge badge-primary text-xs">
+          <span className="badge badge-primary bg-white text-primary-500 text-xs">
             {post.category}
           </span>
         </div>
