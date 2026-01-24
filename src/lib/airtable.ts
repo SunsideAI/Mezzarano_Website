@@ -108,17 +108,23 @@ function parseGermanNumber(value: unknown): number | undefined {
 function transformRecord(record: any): AirtableProperty {
   const fields = record.fields || record
 
-  // Resolve images with priority: bilder_attachments > bild_url > bilder
+  // Resolve images with priority: bild_url > bilder (stable external URLs) > bilder_attachments (expires!)
+  // External URLs from ImmobilienScout24 etc. don't expire, while Airtable attachments expire after ~2 hours
   let bilder: string[] = []
 
-  if (fields.bilder_attachments && Array.isArray(fields.bilder_attachments)) {
+  // Priority 1: Use bild_url (stable external URL)
+  if (fields.bild_url && typeof fields.bild_url === 'string') {
+    bilder = [fields.bild_url]
+  }
+  // Priority 2: Use bilder field (may contain multiple URLs, newline-separated)
+  else if (fields.bilder && typeof fields.bilder === 'string') {
+    bilder = fields.bilder.split('\n').filter(Boolean)
+  }
+  // Priority 3: Last resort - use bilder_attachments (these expire after ~2 hours!)
+  else if (fields.bilder_attachments && Array.isArray(fields.bilder_attachments)) {
     bilder = fields.bilder_attachments
       .map((att: any) => att.url)
       .filter(Boolean)
-  } else if (fields.bild_url) {
-    bilder = [fields.bild_url]
-  } else if (fields.bilder && typeof fields.bilder === 'string') {
-    bilder = fields.bilder.split('\n').filter(Boolean)
   }
 
   return {
