@@ -172,7 +172,7 @@ export const properties: Property[] = [
     yearBuilt: 2021,
     features: ['Pool', 'Sauna', 'Weinkeller', 'Smart Home', 'Doppelgarage', 'Einliegerwohnung'],
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
     ],
     featured: true,
