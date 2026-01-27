@@ -281,7 +281,7 @@ export default function BewertenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-600">
+      <section className="py-20 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Jetzt kostenlose Bewertung anfragen

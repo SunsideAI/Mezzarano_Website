@@ -69,7 +69,7 @@ export default function KontaktPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-secondary-900 py-20">
+      <section className="bg-secondary-900 py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
@@ -284,19 +284,26 @@ export default function KontaktPage() {
                 Mein Büro befindet sich in Hermeskeil. Ich freue mich auf Ihren Besuch oder einen Termin vor Ort!
               </p>
 
-              {/* Google Maps Embed */}
+              {/* Map Embed */}
               <div className="h-80 rounded-xl mb-8 overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.9877!2d6.9381!3d49.6553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47957e4c7c8d2b3d%3A0x4b0e5e7a8a9b0c1d!2sSaarstra%C3%9Fe%201%2C%2054411%20Hermeskeil!5e0!3m2!1sde!2sde!4v1704000000000!5m2!1sde!2sde"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=6.9350%2C49.6530%2C6.9500%2C49.6600&layer=mapnik&marker=49.6565%2C6.9425"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Standort Mezzarano Immobilien - Saarstraße 1, Hermeskeil"
+                  title="Standort Mezzarano Immobilien - Saarstraße 1, 54411 Hermeskeil"
                 ></iframe>
               </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Saarstraße+1,+54411+Hermeskeil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium mb-8"
+              >
+                <MapPin className="h-4 w-4" />
+                In Google Maps öffnen
+              </a>
 
               {/* Parking & Transport Info */}
               <div className="bg-gray-50 p-6 rounded-xl">

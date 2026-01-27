@@ -72,7 +72,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-20">
+      <section className="bg-secondary-900 py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
@@ -89,13 +89,13 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
 
             {/* Search Box */}
             <div className="relative max-w-xl" data-aos="fade-up" data-aos-delay="300">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
                 type="search"
                 placeholder="Artikel durchsuchen..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full pl-12 pr-4 py-4 rounded-xl bg-secondary-800 border border-secondary-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
             </div>
           </div>
