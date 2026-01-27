@@ -122,15 +122,15 @@ function transformRecord(record: any): AirtableProperty {
 
   // Priority 1: Use cloudinary_urls (permanent storage, best option)
   if (fields.cloudinary_urls && typeof fields.cloudinary_urls === 'string') {
-    bilder = fields.cloudinary_urls.split('\n').filter(Boolean)
+    bilder = fields.cloudinary_urls.split('\n').map((url: string) => url.trim()).filter(Boolean)
   }
   // Priority 2: Use bild_url (stable external URL)
   else if (fields.bild_url && typeof fields.bild_url === 'string') {
-    bilder = [fields.bild_url]
+    bilder = [fields.bild_url.trim()]
   }
   // Priority 3: Use bilder field (may contain multiple URLs, newline-separated)
   else if (fields.bilder && typeof fields.bilder === 'string') {
-    bilder = fields.bilder.split('\n').filter(Boolean)
+    bilder = fields.bilder.split('\n').map((url: string) => url.trim()).filter(Boolean)
   }
   // Priority 4: Last resort - use bilder_attachments (these expire after ~2 hours!)
   else if (fields.bilder_attachments && Array.isArray(fields.bilder_attachments)) {
@@ -139,8 +139,19 @@ function transformRecord(record: any): AirtableProperty {
       .filter(Boolean)
   }
 
-  // Remove duplicate images (can occur in Airtable data)
+  // Remove duplicate images - deduplicate by URL and by filename
+  // First pass: remove exact URL duplicates
   bilder = bilder.filter((url, index) => bilder.indexOf(url) === index)
+  // Second pass: remove duplicates with same filename (e.g., same image uploaded twice)
+  const seenFilenames = new Set<string>()
+  bilder = bilder.filter((url) => {
+    const filename = url.split('/').pop()?.split('?')[0] || url
+    if (seenFilenames.has(filename)) {
+      return false
+    }
+    seenFilenames.add(filename)
+    return true
+  })
 
   return {
     id: record.id || fields.id,

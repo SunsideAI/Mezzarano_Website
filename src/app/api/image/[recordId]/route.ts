@@ -77,17 +77,17 @@ export async function GET(
 
     // Priority 1: cloudinary_urls (permanent, best option)
     if (record.fields.cloudinary_urls && typeof record.fields.cloudinary_urls === 'string') {
-      imageUrls = (record.fields.cloudinary_urls as string).split('\n').filter(Boolean)
+      imageUrls = (record.fields.cloudinary_urls as string).split('\n').map(url => url.trim()).filter(Boolean)
       console.log(`Using cloudinary_urls (permanent) for "${title}": ${imageUrls.length} images`)
     }
     // Priority 2: bild_url (stable external URL from ImmobilienScout24 etc.)
     else if (record.fields.bild_url && typeof record.fields.bild_url === 'string') {
-      imageUrls = [record.fields.bild_url]
+      imageUrls = [(record.fields.bild_url as string).trim()]
       console.log(`Using bild_url (stable) for "${title}"`)
     }
     // Priority 3: bilder field (may contain multiple URLs)
     else if (record.fields.bilder && typeof record.fields.bilder === 'string') {
-      imageUrls = (record.fields.bilder as string).split('\n').filter(Boolean)
+      imageUrls = (record.fields.bilder as string).split('\n').map(url => url.trim()).filter(Boolean)
       console.log(`Using bilder field (${imageUrls.length} URLs) for "${title}"`)
     }
     // Priority 4: bilder_attachments (Airtable attachments - these expire after ~2 hours!)
@@ -98,6 +98,21 @@ export async function GET(
         console.log(`Using bilder_attachments (expires!) for "${title}": ${imageUrls.length} images`)
       }
     }
+
+    // Remove duplicate images - same logic as airtable.ts
+    // First pass: remove exact URL duplicates
+    imageUrls = imageUrls.filter((url, index) => imageUrls.indexOf(url) === index)
+    // Second pass: remove duplicates with same filename
+    const seenFilenames = new Set<string>()
+    imageUrls = imageUrls.filter((url) => {
+      const filename = url.split('/').pop()?.split('?')[0] || url
+      if (seenFilenames.has(filename)) {
+        return false
+      }
+      seenFilenames.add(filename)
+      return true
+    })
+    console.log(`After deduplication: ${imageUrls.length} unique images`)
 
     if (imageUrls.length === 0) {
       console.log(`No images found for "${title}"`)
