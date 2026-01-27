@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { MapPin, Bed, Square, Heart, ImageOff } from 'lucide-react'
 import { AirtableProperty } from '@/lib/airtable'
@@ -28,9 +28,14 @@ function getProxyImageUrl(recordId: string, index: number = 0, width: number = 4
   return `/api/image/${recordId}?index=${index}&type=bilder&w=${width}`
 }
 
+const MAX_RETRIES = 3
+const RETRY_DELAY = 1000 // 1 second
+
 export default function AirtablePropertyCard({ property, priority = false }: AirtablePropertyCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const [retryCount, setRetryCount] = useState(0)
+  const [currentImageUrl, setCurrentImageUrl] = useState<string | null>(null)
 
   // Get the first image URL directly from property data
   const directImageUrl = property.cover || (property.bilder && property.bilder[0]) || null
@@ -38,39 +43,78 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
   // Check if it's a Cloudinary URL (fast, permanent) or needs proxy (slow, for expiring URLs)
   const isCloudinaryUrl = directImageUrl?.includes('res.cloudinary.com')
 
-  // Use direct Cloudinary URLs for speed, proxy only as fallback for non-Cloudinary
-  const imageUrl = directImageUrl
+  // Base URLs (without cache buster)
+  const baseImageUrl = directImageUrl
     ? isCloudinaryUrl
-      ? getOptimizedCloudinaryUrl(directImageUrl, 400) // Direct Cloudinary - fast!
-      : getProxyImageUrl(property.id, 0, 400) // Fallback proxy for expiring URLs
+      ? getOptimizedCloudinaryUrl(directImageUrl, 400)
+      : getProxyImageUrl(property.id, 0, 400)
     : null
 
-  // Larger image for desktop
-  const imageUrlLarge = directImageUrl
+  const baseImageUrlLarge = directImageUrl
     ? isCloudinaryUrl
       ? getOptimizedCloudinaryUrl(directImageUrl, 800)
       : getProxyImageUrl(property.id, 0, 800)
     : null
 
-  // Reset image state when property changes
+  // Add cache buster on retry to force reload
+  const imageUrl = baseImageUrl
+    ? retryCount > 0
+      ? `${baseImageUrl}${baseImageUrl.includes('?') ? '&' : '?'}_r=${retryCount}`
+      : baseImageUrl
+    : null
+
+  const imageUrlLarge = baseImageUrlLarge
+    ? retryCount > 0
+      ? `${baseImageUrlLarge}${baseImageUrlLarge.includes('?') ? '&' : '?'}_r=${retryCount}`
+      : baseImageUrlLarge
+    : null
+
+  // Reset state when property changes
   useEffect(() => {
     setImageLoaded(false)
     setImageError(false)
-  }, [property.id])
+    setRetryCount(0)
+    setCurrentImageUrl(baseImageUrl)
+  }, [property.id, baseImageUrl])
 
-  // Timeout: show error if image doesn't load within 10 seconds
+  // Handle image load success
+  const handleLoad = useCallback(() => {
+    setImageLoaded(true)
+    setImageError(false)
+  }, [])
+
+  // Handle image load error with retry logic
+  const handleError = useCallback(() => {
+    if (retryCount < MAX_RETRIES) {
+      console.log(`Image load failed for ${property.id}, retrying (${retryCount + 1}/${MAX_RETRIES})...`)
+      // Wait before retrying
+      setTimeout(() => {
+        setRetryCount(prev => prev + 1)
+        setImageLoaded(false)
+        setImageError(false)
+      }, RETRY_DELAY)
+    } else {
+      console.warn(`Image failed after ${MAX_RETRIES} retries for property ${property.id}:`, imageUrl)
+      setImageError(true)
+    }
+  }, [retryCount, property.id, imageUrl])
+
+  // Timeout: show error if image doesn't load within 15 seconds (increased for retries)
   useEffect(() => {
     if (!imageUrl || imageLoaded || imageError) return
 
     const timeout = setTimeout(() => {
-      if (!imageLoaded) {
+      if (!imageLoaded && retryCount >= MAX_RETRIES) {
         console.warn(`Image timeout for property ${property.id}:`, imageUrl)
         setImageError(true)
+      } else if (!imageLoaded && retryCount < MAX_RETRIES) {
+        // Trigger a retry on timeout
+        handleError()
       }
-    }, 10000)
+    }, 15000)
 
     return () => clearTimeout(timeout)
-  }, [imageUrl, imageLoaded, imageError, property.id])
+  }, [imageUrl, imageLoaded, imageError, property.id, retryCount, handleError])
 
   const isRent = property.kategorie === 'Miete'
   const propertyType = property.objekt_typ || property.unterkategorie
@@ -79,8 +123,8 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
   const showImage = imageUrl && imageLoaded && !imageError
   // Show loading spinner only when we have a URL but image isn't loaded yet
   const showLoading = imageUrl && !imageLoaded && !imageError
-  // Show placeholder icon only when there's no image at all or error
-  const showPlaceholder = !imageUrl || imageError
+  // Show placeholder icon only when there's no image at all or error after retries
+  const showPlaceholder = !imageUrl || (imageError && retryCount >= MAX_RETRIES)
 
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
@@ -101,7 +145,6 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
         )}
 
         {/* Real image - only render if we have a URL */}
-        {/* Using picture element for true responsive images - smaller on mobile, larger on desktop */}
         {imageUrl && imageUrlLarge && (
           <picture>
             <source
@@ -109,7 +152,7 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
               srcSet={imageUrlLarge}
             />
             <img
-              key={`${property.id}-image`}
+              key={`${property.id}-image-${retryCount}`}
               src={imageUrl}
               alt={property.titel}
               loading={priority ? 'eager' : 'lazy'}
@@ -118,12 +161,12 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
               className={`absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
                 showImage ? 'opacity-100' : 'opacity-0'
               }`}
-              onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
+              onLoad={handleLoad}
+              onError={handleError}
             />
           </picture>
         )}
-        <div className="absolute top-4 left-4 flex gap-2">
+        <div className="absolute top-4 left-4 flex gap-2 z-30">
           <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
             !isRent
               ? 'bg-secondary-900 text-white'
@@ -138,7 +181,7 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
           )}
         </div>
         <button
-          className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
+          className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors z-30"
           aria-label="Zu Favoriten hinzufügen"
         >
           <Heart className="h-5 w-5 text-gray-600 hover:text-red-500 transition-colors" />
