@@ -57,6 +57,20 @@ export default function AirtablePropertyCard({ property, priority = false }: Air
     setImageError(false)
   }, [property.id])
 
+  // Timeout: show error if image doesn't load within 10 seconds
+  useEffect(() => {
+    if (!imageUrl || imageLoaded || imageError) return
+
+    const timeout = setTimeout(() => {
+      if (!imageLoaded) {
+        console.warn(`Image timeout for property ${property.id}:`, imageUrl)
+        setImageError(true)
+      }
+    }, 10000)
+
+    return () => clearTimeout(timeout)
+  }, [imageUrl, imageLoaded, imageError, property.id])
+
   const isRent = property.kategorie === 'Miete'
   const propertyType = property.objekt_typ || property.unterkategorie
 
