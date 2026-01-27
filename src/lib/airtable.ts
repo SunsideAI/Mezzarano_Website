@@ -121,8 +121,18 @@ function transformRecord(record: any): AirtableProperty {
   let bilder: string[] = []
 
   // Priority 1: Use cloudinary_urls (permanent storage, best option)
-  if (fields.cloudinary_urls && typeof fields.cloudinary_urls === 'string') {
-    bilder = fields.cloudinary_urls.split('\n').map((url: string) => url.trim()).filter(Boolean)
+  // Support various field names and formats
+  const cloudinaryField = fields.cloudinary_urls || fields['Cloudinary URLs'] || fields['cloudinary urls'] || fields.cloudinary_images
+  if (cloudinaryField) {
+    if (typeof cloudinaryField === 'string') {
+      // Handle newline-separated, comma-separated, or single URL
+      bilder = cloudinaryField.split(/[\n,]/).map((url: string) => url.trim()).filter(Boolean)
+    } else if (Array.isArray(cloudinaryField)) {
+      // Handle array of strings or array of objects with url property
+      bilder = cloudinaryField.map((item: any) =>
+        typeof item === 'string' ? item.trim() : item?.url?.trim()
+      ).filter(Boolean)
+    }
   }
   // Priority 2: Use bild_url (stable external URL)
   else if (fields.bild_url && typeof fields.bild_url === 'string') {

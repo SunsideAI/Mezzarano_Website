@@ -80,11 +80,35 @@ export async function GET(request: NextRequest) {
       .filter(([_, info]) => info.isAttachment)
       .map(([name]) => name)
 
+    // Find cloudinary-related fields
+    const cloudinaryFields = Object.entries(fields)
+      .filter(([name]) => name.toLowerCase().includes('cloudinary'))
+      .map(([name, value]) => ({
+        name,
+        type: typeof value,
+        isArray: Array.isArray(value),
+        sample: typeof value === 'string'
+          ? value.substring(0, 200) + (value.length > 200 ? '...' : '')
+          : Array.isArray(value)
+            ? { count: value.length, first: value[0] }
+            : value
+      }))
+
+    // Find any field containing cloudinary URLs
+    const fieldsWithCloudinaryUrls = Object.entries(fields)
+      .filter(([_, value]) => {
+        const str = JSON.stringify(value)
+        return str.includes('cloudinary.com') || str.includes('res.cloudinary')
+      })
+      .map(([name]) => name)
+
     return NextResponse.json({
       success: true,
       recordId: record.id,
       allFieldNames: Object.keys(fields),
       imageFields,
+      cloudinaryFields,
+      fieldsWithCloudinaryUrls,
       fieldAnalysis,
     })
   } catch (error) {

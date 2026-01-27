@@ -76,9 +76,20 @@ export async function GET(
     let imageUrls: string[] = []
 
     // Priority 1: cloudinary_urls (permanent, best option)
-    if (record.fields.cloudinary_urls && typeof record.fields.cloudinary_urls === 'string') {
-      imageUrls = (record.fields.cloudinary_urls as string).split('\n').map(url => url.trim()).filter(Boolean)
-      console.log(`Using cloudinary_urls (permanent) for "${title}": ${imageUrls.length} images`)
+    // Support various field names and formats
+    const cloudinaryField = record.fields.cloudinary_urls || record.fields['Cloudinary URLs'] || record.fields['cloudinary urls'] || record.fields.cloudinary_images
+    if (cloudinaryField) {
+      if (typeof cloudinaryField === 'string') {
+        // Handle newline-separated, comma-separated, or single URL
+        imageUrls = (cloudinaryField as string).split(/[\n,]/).map(url => url.trim()).filter(Boolean)
+        console.log(`Using cloudinary_urls (permanent) for "${title}": ${imageUrls.length} images`)
+      } else if (Array.isArray(cloudinaryField)) {
+        // Handle array of strings or array of objects with url property
+        imageUrls = (cloudinaryField as any[]).map((item: any) =>
+          typeof item === 'string' ? item.trim() : item?.url?.trim()
+        ).filter(Boolean)
+        console.log(`Using cloudinary_urls array (permanent) for "${title}": ${imageUrls.length} images`)
+      }
     }
     // Priority 2: bild_url (stable external URL from ImmobilienScout24 etc.)
     else if (record.fields.bild_url && typeof record.fields.bild_url === 'string') {
