@@ -142,7 +142,7 @@ export default function HeilbronnPage() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+                    src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&q=80"
                     alt="Heilbronn Stadtansicht"
                     fill
                     className="object-cover"

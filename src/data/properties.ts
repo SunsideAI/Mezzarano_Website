@@ -32,7 +32,7 @@ export const properties: Property[] = [
     features: ['Garten', 'Garage', 'Smart Home', 'Fußbodenheizung', 'Terrasse', 'Photovoltaik'],
     images: [
       'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1600585154526-5ee89d4d8b1d?w=800&q=80',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     ],
     featured: true,
@@ -172,7 +172,7 @@ export const properties: Property[] = [
     yearBuilt: 2021,
     features: ['Pool', 'Sauna', 'Weinkeller', 'Smart Home', 'Doppelgarage', 'Einliegerwohnung'],
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
     ],
     featured: true,

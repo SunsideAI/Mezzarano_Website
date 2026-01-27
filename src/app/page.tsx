@@ -64,7 +64,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80"
             alt="Luxuriöses Haus"
             fill
             className="object-cover"
