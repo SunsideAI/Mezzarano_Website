@@ -1,171 +1,72 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { MapPin, Bed, Square, Heart, ImageOff } from 'lucide-react'
 import { AirtableProperty } from '@/lib/airtable'
 
 interface AirtablePropertyCardProps {
   property: AirtableProperty
-  priority?: boolean // Load image with priority (for above-the-fold images)
+  priority?: boolean
 }
 
 // Optimize Cloudinary URL with responsive width and auto format/quality
 function getOptimizedCloudinaryUrl(url: string, width: number = 400): string {
   if (!url.includes('res.cloudinary.com')) {
-    return url // Not a Cloudinary URL, return as-is
+    return url
   }
-  // Add transformations if not already present
-  // Using c_limit (don't upscale, limit to width) - works on all Cloudinary plans
   if (url.includes('/upload/') && !url.includes('/f_auto') && !url.includes('/w_')) {
     return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_limit/`)
   }
   return url
 }
 
-// Fallback: proxy URL for non-Cloudinary images (e.g., expiring Airtable attachments)
-function getProxyImageUrl(recordId: string, index: number = 0, width: number = 400): string {
-  return `/api/image/${recordId}?index=${index}&type=bilder&w=${width}`
-}
-
-const MAX_RETRIES = 3
-const RETRY_DELAY = 1000 // 1 second
-
-export default function AirtablePropertyCard({ property, priority = false }: AirtablePropertyCardProps) {
-  const [imageLoaded, setImageLoaded] = useState(false)
+export default function AirtablePropertyCard({ property }: AirtablePropertyCardProps) {
   const [imageError, setImageError] = useState(false)
-  const [retryCount, setRetryCount] = useState(0)
-  const [currentImageUrl, setCurrentImageUrl] = useState<string | null>(null)
 
   // Get the first image URL directly from property data
   const directImageUrl = property.cover || (property.bilder && property.bilder[0]) || null
 
-  // Check if it's a Cloudinary URL (fast, permanent) or needs proxy (slow, for expiring URLs)
-  const isCloudinaryUrl = directImageUrl?.includes('res.cloudinary.com')
+  // Optimize for mobile (400px) - Cloudinary will serve WebP automatically
+  const imageUrl = directImageUrl?.includes('res.cloudinary.com')
+    ? getOptimizedCloudinaryUrl(directImageUrl, 600)
+    : directImageUrl
 
-  // Base URLs (without cache buster)
-  const baseImageUrl = directImageUrl
-    ? isCloudinaryUrl
-      ? getOptimizedCloudinaryUrl(directImageUrl, 400)
-      : getProxyImageUrl(property.id, 0, 400)
-    : null
-
-  const baseImageUrlLarge = directImageUrl
-    ? isCloudinaryUrl
-      ? getOptimizedCloudinaryUrl(directImageUrl, 800)
-      : getProxyImageUrl(property.id, 0, 800)
-    : null
-
-  // Add cache buster on retry to force reload
-  const imageUrl = baseImageUrl
-    ? retryCount > 0
-      ? `${baseImageUrl}${baseImageUrl.includes('?') ? '&' : '?'}_r=${retryCount}`
-      : baseImageUrl
-    : null
-
-  const imageUrlLarge = baseImageUrlLarge
-    ? retryCount > 0
-      ? `${baseImageUrlLarge}${baseImageUrlLarge.includes('?') ? '&' : '?'}_r=${retryCount}`
-      : baseImageUrlLarge
-    : null
-
-  // Reset state when property changes
+  // Reset error state when property changes
   useEffect(() => {
-    setImageLoaded(false)
     setImageError(false)
-    setRetryCount(0)
-    setCurrentImageUrl(baseImageUrl)
-  }, [property.id, baseImageUrl])
-
-  // Handle image load success
-  const handleLoad = useCallback(() => {
-    setImageLoaded(true)
-    setImageError(false)
-  }, [])
-
-  // Handle image load error with retry logic
-  const handleError = useCallback(() => {
-    if (retryCount < MAX_RETRIES) {
-      console.log(`Image load failed for ${property.id}, retrying (${retryCount + 1}/${MAX_RETRIES})...`)
-      // Wait before retrying
-      setTimeout(() => {
-        setRetryCount(prev => prev + 1)
-        setImageLoaded(false)
-        setImageError(false)
-      }, RETRY_DELAY)
-    } else {
-      console.warn(`Image failed after ${MAX_RETRIES} retries for property ${property.id}:`, imageUrl)
-      setImageError(true)
-    }
-  }, [retryCount, property.id, imageUrl])
-
-  // Timeout: show error if image doesn't load within 15 seconds (increased for retries)
-  useEffect(() => {
-    if (!imageUrl || imageLoaded || imageError) return
-
-    const timeout = setTimeout(() => {
-      if (!imageLoaded && retryCount >= MAX_RETRIES) {
-        console.warn(`Image timeout for property ${property.id}:`, imageUrl)
-        setImageError(true)
-      } else if (!imageLoaded && retryCount < MAX_RETRIES) {
-        // Trigger a retry on timeout
-        handleError()
-      }
-    }, 15000)
-
-    return () => clearTimeout(timeout)
-  }, [imageUrl, imageLoaded, imageError, property.id, retryCount, handleError])
+  }, [property.id])
 
   const isRent = property.kategorie === 'Miete'
   const propertyType = property.objekt_typ || property.unterkategorie
 
-  // Show image only when we have a real URL and it's loaded
-  const showImage = imageUrl && imageLoaded && !imageError
-  // Show loading spinner only when we have a URL but image isn't loaded yet
-  const showLoading = imageUrl && !imageLoaded && !imageError
-  // Show placeholder icon only when there's no image at all or error after retries
-  const showPlaceholder = !imageUrl || (imageError && retryCount >= MAX_RETRIES)
-
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-      {/* Image */}
+      {/* Image - using CSS background for instant loading */}
       <div className="relative h-48 overflow-hidden bg-gray-100">
-        {/* Loading spinner - only when loading real image */}
-        {showLoading && (
-          <div className="absolute inset-0 z-20 bg-gray-100 flex items-center justify-center">
-            <div className="w-10 h-10 border-4 border-gray-300 border-t-primary-500 rounded-full animate-spin" />
+        {/* Image as background - loads immediately without React state issues */}
+        {imageUrl && !imageError ? (
+          <div
+            className="absolute inset-0 bg-cover bg-center z-10 group-hover:scale-105 transition-transform duration-300"
+            style={{ backgroundImage: `url(${imageUrl})` }}
+            role="img"
+            aria-label={property.titel}
+          >
+            {/* Hidden img to detect load errors */}
+            <img
+              src={imageUrl}
+              alt=""
+              className="hidden"
+              onError={() => setImageError(true)}
+            />
           </div>
-        )}
-
-        {/* Placeholder - only when no image available */}
-        {showPlaceholder && (
-          <div className="absolute inset-0 z-20 bg-gray-100 flex items-center justify-center">
+        ) : (
+          <div className="absolute inset-0 z-10 bg-gray-100 flex items-center justify-center">
             <ImageOff className="w-12 h-12 text-gray-300" />
           </div>
         )}
 
-        {/* Real image - only render if we have a URL */}
-        {imageUrl && imageUrlLarge && (
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet={imageUrlLarge}
-            />
-            <img
-              key={`${property.id}-image-${retryCount}`}
-              src={imageUrl}
-              alt={property.titel}
-              loading={priority ? 'eager' : 'lazy'}
-              fetchPriority={priority ? 'high' : 'auto'}
-              decoding="async"
-              className={`absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-105 transition-all duration-300 ${
-                showImage ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoad={handleLoad}
-              onError={handleError}
-            />
-          </picture>
-        )}
+        {/* Badges */}
         <div className="absolute top-4 left-4 flex gap-2 z-30">
           <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
             !isRent
