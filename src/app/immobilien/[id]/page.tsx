@@ -16,9 +16,20 @@ const agent = {
   image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_200,h_200,c_fill,g_face,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg',
 }
 
-// Helper to get proxy URL for Airtable images (prevents URL expiration issues)
-function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder'): string {
-  return `/api/image/${recordId}?index=${index}&type=${type}`
+// Optimize Cloudinary URL with responsive size
+function getOptimizedCloudinaryUrl(url: string, width: number = 1200): string {
+  if (!url.includes('res.cloudinary.com')) {
+    return url
+  }
+  if (url.includes('/upload/') && !url.includes('/f_auto') && !url.includes('/w_')) {
+    return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_limit/`)
+  }
+  return url
+}
+
+// Fallback: proxy URL for non-Cloudinary images
+function getProxyImageUrl(recordId: string, index: number = 0): string {
+  return `/api/image/${recordId}?index=${index}&type=bilder`
 }
 
 export default async function PropertyDetailPage({ params }: { params: { id: string } }) {
@@ -34,11 +45,31 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
     return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
   }
 
-  // Generate proxy URLs for all images to prevent expiration issues
-  // Note: cover is always bilder[0], so we only use the bilder array to avoid duplicates
-  const allImages: string[] = property.bilder.map((_, i) =>
-    getProxyImageUrl(property.id, i, 'bilder')
-  )
+  // Use direct Cloudinary URLs for speed, proxy only as fallback
+  // Deduplicate by extracting unique images based on content hash in filename
+  const seenImages = new Set<string>()
+  const allImages: string[] = property.bilder
+    .filter(url => {
+      // Extract a unique identifier from the URL
+      // For Cloudinary: use the public_id (path after version)
+      // For others: use the full URL
+      const match = url.match(/\/v\d+\/(.+)$/)
+      const identifier = match ? match[1] : url
+      if (seenImages.has(identifier)) {
+        return false
+      }
+      seenImages.add(identifier)
+      return true
+    })
+    .map(url => {
+      // Use direct Cloudinary URL if available, otherwise use proxy
+      if (url.includes('res.cloudinary.com')) {
+        return getOptimizedCloudinaryUrl(url, 1200)
+      }
+      // For non-Cloudinary URLs, find the index and use proxy
+      const index = property.bilder.indexOf(url)
+      return getProxyImageUrl(property.id, index)
+    })
 
   return (
     <div className="min-h-screen bg-gray-50">

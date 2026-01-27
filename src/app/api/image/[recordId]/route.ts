@@ -110,17 +110,29 @@ export async function GET(
       }
     }
 
-    // Remove duplicate images - same logic as airtable.ts
-    // First pass: remove exact URL duplicates
+    // Remove duplicate images - multi-pass deduplication
+    // Pass 1: remove exact URL duplicates
     imageUrls = imageUrls.filter((url, index) => imageUrls.indexOf(url) === index)
-    // Second pass: remove duplicates with same filename
-    const seenFilenames = new Set<string>()
+
+    // Pass 2: for Cloudinary URLs, deduplicate by public_id (ignoring version)
+    const seenPublicIds = new Set<string>()
     imageUrls = imageUrls.filter((url) => {
+      if (url.includes('res.cloudinary.com')) {
+        // Extract public_id: everything after /v{version}/ and before the extension
+        const match = url.match(/\/v\d+\/(.+?)(?:\.[^.]+)?$/)
+        const publicId = match ? match[1] : url
+        if (seenPublicIds.has(publicId)) {
+          return false
+        }
+        seenPublicIds.add(publicId)
+        return true
+      }
+      // For non-Cloudinary URLs, use filename
       const filename = url.split('/').pop()?.split('?')[0] || url
-      if (seenFilenames.has(filename)) {
+      if (seenPublicIds.has(filename)) {
         return false
       }
-      seenFilenames.add(filename)
+      seenPublicIds.add(filename)
       return true
     })
     console.log(`After deduplication: ${imageUrls.length} unique images`)

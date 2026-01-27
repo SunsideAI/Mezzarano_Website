@@ -149,17 +149,30 @@ function transformRecord(record: any): AirtableProperty {
       .filter(Boolean)
   }
 
-  // Remove duplicate images - deduplicate by URL and by filename
-  // First pass: remove exact URL duplicates
+  // Remove duplicate images - multi-pass deduplication
+  // Pass 1: remove exact URL duplicates
   bilder = bilder.filter((url, index) => bilder.indexOf(url) === index)
-  // Second pass: remove duplicates with same filename (e.g., same image uploaded twice)
-  const seenFilenames = new Set<string>()
+
+  // Pass 2: for Cloudinary URLs, deduplicate by public_id (ignoring version)
+  // This catches the same image uploaded multiple times with different versions
+  const seenPublicIds = new Set<string>()
   bilder = bilder.filter((url) => {
+    if (url.includes('res.cloudinary.com')) {
+      // Extract public_id: everything after /v{version}/ and before the extension
+      const match = url.match(/\/v\d+\/(.+?)(?:\.[^.]+)?$/)
+      const publicId = match ? match[1] : url
+      if (seenPublicIds.has(publicId)) {
+        return false
+      }
+      seenPublicIds.add(publicId)
+      return true
+    }
+    // For non-Cloudinary URLs, use filename
     const filename = url.split('/').pop()?.split('?')[0] || url
-    if (seenFilenames.has(filename)) {
+    if (seenPublicIds.has(filename)) {
       return false
     }
-    seenFilenames.add(filename)
+    seenPublicIds.add(filename)
     return true
   })
 

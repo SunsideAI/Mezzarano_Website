@@ -16,8 +16,9 @@ function getOptimizedCloudinaryUrl(url: string, width: number = 400): string {
     return url // Not a Cloudinary URL, return as-is
   }
   // Add transformations if not already present
+  // Using c_limit (don't upscale, limit to width) - works on all Cloudinary plans
   if (url.includes('/upload/') && !url.includes('/f_auto') && !url.includes('/w_')) {
-    return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_fill,g_auto/`)
+    return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_limit/`)
   }
   return url
 }
