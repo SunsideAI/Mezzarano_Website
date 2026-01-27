@@ -10,27 +10,45 @@ interface AirtablePropertyCardProps {
   priority?: boolean // Load image with priority (for above-the-fold images)
 }
 
-// Helper to get proxy URL for Airtable images (prevents URL expiration issues)
-// Width parameter allows responsive image loading: smaller on mobile, larger on desktop
-function getProxyImageUrl(recordId: string, index: number = 0, type: 'bilder' | 'cover' = 'bilder', width: number = 800): string {
-  return `/api/image/${recordId}?index=${index}&type=${type}&w=${width}`
+// Optimize Cloudinary URL with responsive width and auto format/quality
+function getOptimizedCloudinaryUrl(url: string, width: number = 400): string {
+  if (!url.includes('res.cloudinary.com')) {
+    return url // Not a Cloudinary URL, return as-is
+  }
+  // Add transformations if not already present
+  if (url.includes('/upload/') && !url.includes('/f_auto') && !url.includes('/w_')) {
+    return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_fill,g_auto/`)
+  }
+  return url
+}
+
+// Fallback: proxy URL for non-Cloudinary images (e.g., expiring Airtable attachments)
+function getProxyImageUrl(recordId: string, index: number = 0, width: number = 400): string {
+  return `/api/image/${recordId}?index=${index}&type=bilder&w=${width}`
 }
 
 export default function AirtablePropertyCard({ property, priority = false }: AirtablePropertyCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
 
-  // Check if property has real images (no fallbacks!)
-  const hasRealImages = property.cover || (property.bilder && property.bilder.length > 0)
+  // Get the first image URL directly from property data
+  const directImageUrl = property.cover || (property.bilder && property.bilder[0]) || null
 
-  // Only create image URLs if we have real images - with responsive sizes for mobile optimization
-  const imageType = property.cover ? 'cover' : 'bilder'
-  const imageUrl = hasRealImages
-    ? getProxyImageUrl(property.id, 0, imageType, 400) // Default to mobile size
+  // Check if it's a Cloudinary URL (fast, permanent) or needs proxy (slow, for expiring URLs)
+  const isCloudinaryUrl = directImageUrl?.includes('res.cloudinary.com')
+
+  // Use direct Cloudinary URLs for speed, proxy only as fallback for non-Cloudinary
+  const imageUrl = directImageUrl
+    ? isCloudinaryUrl
+      ? getOptimizedCloudinaryUrl(directImageUrl, 400) // Direct Cloudinary - fast!
+      : getProxyImageUrl(property.id, 0, 400) // Fallback proxy for expiring URLs
     : null
+
   // Larger image for desktop
-  const imageUrlLarge = hasRealImages
-    ? getProxyImageUrl(property.id, 0, imageType, 800)
+  const imageUrlLarge = directImageUrl
+    ? isCloudinaryUrl
+      ? getOptimizedCloudinaryUrl(directImageUrl, 800)
+      : getProxyImageUrl(property.id, 0, 800)
     : null
 
   // Reset image state when property changes
