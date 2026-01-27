@@ -35,20 +35,10 @@ export default async function AirtablePropertyDetailPage({ params }: { params: {
   }
 
   // Generate proxy URLs for all images to prevent expiration issues
-  const imageCount = property.bilder.length + (property.cover ? 1 : 0)
-  const allImages: string[] = []
-
-  // Add cover image first if exists
-  if (property.cover) {
-    allImages.push(getProxyImageUrl(property.id, 0, 'cover'))
-  }
-
-  // Add all other images
-  for (let i = 0; i < property.bilder.length; i++) {
-    allImages.push(getProxyImageUrl(property.id, i, 'bilder'))
-  }
-
-  // No fallback - ImageGallery handles empty state
+  // Note: cover is always bilder[0], so we only use the bilder array to avoid duplicates
+  const allImages: string[] = property.bilder.map((_, i) =>
+    getProxyImageUrl(property.id, i, 'bilder')
+  )
 
   return (
     <div className="min-h-screen bg-gray-50">
