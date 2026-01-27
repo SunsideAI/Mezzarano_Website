@@ -274,7 +274,7 @@ export default function HermeskeilPage() {
             <Link href="/kontakt" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
               Kontakt aufnehmen
             </Link>
-            <a href="tel:01776542977" className="btn-outline">
+            <a href="tel:01776542977" className="btn-outline-dark">
               <Phone className="h-5 w-5 mr-2" />
               0177 6542977
             </a>

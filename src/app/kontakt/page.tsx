@@ -284,14 +284,16 @@ export default function KontaktPage() {
                 Mein Büro befindet sich in Hermeskeil. Ich freue mich auf Ihren Besuch oder einen Termin vor Ort!
               </p>
 
-              {/* Map Embed */}
+              {/* Map Embed - Google Maps */}
               <div className="h-80 rounded-xl mb-8 overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=6.9350%2C49.6530%2C6.9500%2C49.6600&layer=mapnik&marker=49.6565%2C6.9425"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.5!2d6.9414!3d49.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b8c5a5a5a5a5%3A0x0!2sSaarstra%C3%9Fe%201%2C%2054411%20Hermeskeil!5e0!3m2!1sde!2sde!4v1706000000000!5m2!1sde!2sde"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
+                  allowFullScreen
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                   title="Standort Mezzarano Immobilien - Saarstraße 1, 54411 Hermeskeil"
                 ></iframe>
               </div>

@@ -290,10 +290,10 @@ export default function BewertenPage() {
             Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - unverbindlich und kostenfrei.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+            <Link href="/kontakt" className="btn-primary bg-white text-primary-500 hover:bg-gray-100">
               Bewertung anfragen
             </Link>
-            <a href="tel:01776542977" className="btn-primary bg-white text-primary-500 hover:bg-gray-100">
+            <a href="tel:01776542977" className="btn-outline-dark">
               <Phone className="h-5 w-5 mr-2" />
               0177 6542977
             </a>

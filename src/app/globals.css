@@ -56,9 +56,9 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white/15 text-white font-semibold rounded-lg
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white/25 text-white font-semibold rounded-lg
            border-2 border-white hover:bg-white hover:text-primary-500 transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 relative overflow-hidden backdrop-blur-sm;
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 relative overflow-hidden backdrop-blur-sm shadow-lg;
   }
 
   .btn-outline::before {
@@ -69,6 +69,24 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: btnShine 3s infinite;
+    animation-delay: 1s;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-secondary-900 text-white font-semibold rounded-lg
+           border-2 border-secondary-900 hover:bg-secondary-800 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 relative overflow-hidden shadow-lg;
+  }
+
+  .btn-outline-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: btnShine 3s infinite;
     animation-delay: 1s;
   }

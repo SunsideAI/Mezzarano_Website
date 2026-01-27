@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { Search, BookOpen, TrendingUp } from 'lucide-react'
 import BlogCard from '@/components/BlogCard'
@@ -32,6 +32,29 @@ interface Props {
 export default function RatgeberContent({ allPosts, categories, featuredPost }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+
+  // Handle category selection without scroll jumping
+  const handleCategoryClick = useCallback((category: string | null) => {
+    // Temporarily disable smooth scroll
+    const html = document.documentElement
+    const originalScrollBehavior = html.style.scrollBehavior
+    html.style.scrollBehavior = 'auto'
+
+    // Save current scroll position
+    const scrollY = window.scrollY
+
+    // Update category
+    setSelectedCategory(category)
+
+    // Restore scroll position immediately
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY)
+      // Restore smooth scroll after a short delay
+      setTimeout(() => {
+        html.style.scrollBehavior = originalScrollBehavior
+      }, 100)
+    })
+  }, [])
 
   // Filter posts by category and search query
   const filteredPosts = useMemo(() => {
@@ -89,7 +112,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
 
             {/* Search Box */}
             <div className="relative max-w-xl" data-aos="fade-up" data-aos-delay="300">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/70" />
               <input
                 type="search"
                 placeholder="Artikel durchsuchen..."
@@ -107,7 +130,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
         <div className="container-custom py-4">
           <div className="flex items-center gap-4 overflow-x-auto pb-2 -mb-2 scrollbar-hide">
             <button
-              onClick={() => setSelectedCategory(null)}
+              onClick={() => handleCategoryClick(null)}
               className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
                 !selectedCategory
                   ? 'bg-primary-500 text-white'
@@ -119,7 +142,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
             {categories.map(cat => (
               <button
                 key={cat.name}
-                onClick={() => setSelectedCategory(cat.name)}
+                onClick={() => handleCategoryClick(cat.name)}
                 className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === cat.name
                     ? 'bg-primary-500 text-white'
