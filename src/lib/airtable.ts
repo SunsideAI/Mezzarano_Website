@@ -139,6 +139,9 @@ function transformRecord(record: any): AirtableProperty {
       .filter(Boolean)
   }
 
+  // Remove duplicate images (can occur in Airtable data)
+  bilder = bilder.filter((url, index) => bilder.indexOf(url) === index)
+
   return {
     id: record.id || fields.id,
     expose_id: fields.expose_id || '',
