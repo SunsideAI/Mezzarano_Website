@@ -131,9 +131,14 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <p className="text-3xl font-bold text-primary-500">
-                    {formatPrice(property.preis, property.kategorie)}
-                  </p>
+                  <div>
+                    <p className="text-3xl font-bold text-primary-500">
+                      {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Preis auf Anfrage'}
+                    </p>
+                    {property.kategorie === 'Miete' && property.preis && (
+                      <p className="text-sm text-gray-500">pro Monat</p>
+                    )}
+                  </div>
                   <div className="flex gap-2">
                     <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Teilen">
                       <Share2 className="h-5 w-5 text-gray-500" />
