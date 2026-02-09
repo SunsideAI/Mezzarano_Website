@@ -17,7 +17,7 @@ const videos: VideoData[] = [
     id: 'maklerkosten',
     title: 'Maklerkosten',
     description: 'Am 23.12.2020 trat das neue Gesetz zur Verteilung der Maklerkosten in Kraft. Erfahren Sie, was das für Verkäufer, Käufer und Immobilienmakler konkret bedeutet und wie die Kosten fair aufgeteilt werden.',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual Wüstenrot video ID
+    youtubeId: 'oaJBZd-kCx0',
     icon: <Euro className="w-8 h-8" />,
     duration: '2:30'
   },
@@ -25,7 +25,7 @@ const videos: VideoData[] = [
     id: 'widerrufsrecht',
     title: 'Widerrufsrecht',
     description: 'Die Widerrufsbelehrung ist ein wichtiger Bestandteil des Maklervertrags. Erfahren Sie, weshalb die gesetzliche Belehrungspflicht eingehalten werden muss und welche Rechte Sie als Kunde haben.',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual Wüstenrot video ID
+    youtubeId: 'LqBfsfTaoYI',
     icon: <FileText className="w-8 h-8" />,
     duration: '2:15'
   },
@@ -33,7 +33,7 @@ const videos: VideoData[] = [
     id: 'preisermittlung',
     title: 'Preisermittlung',
     description: 'Wie wird ein marktgerechter Preis für Ihre Immobilie ermittelt? Unser Erklärvideo zeigt Ihnen die wichtigsten Faktoren und Methoden der professionellen Immobilienbewertung.',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual Wüstenrot video ID
+    youtubeId: 'fEQ-SkOf8xo',
     icon: <Home className="w-8 h-8" />,
     duration: '3:00'
   },
@@ -41,7 +41,7 @@ const videos: VideoData[] = [
     id: 'profivermietung',
     title: 'Sicherheit beim Vermieten',
     description: 'Professionelle Vermietung durch zuverlässige Partner. Erfahren Sie, wie Sie Ihre Immobilie sicher vermieten und welche Vorteile eine professionelle Verwaltung bietet.',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual Wüstenrot video ID
+    youtubeId: 't5NGOTqnjPU',
     icon: <Shield className="w-8 h-8" />,
     duration: '2:45'
   }
