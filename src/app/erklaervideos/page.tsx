@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Play, X, Info, Euro, FileText, Home, Shield } from 'lucide-react'
+import Link from 'next/link'
+import { Play, X, Info, Euro, FileText, Home, Shield, CheckCircle, Phone, ArrowRight } from 'lucide-react'
 
 interface VideoData {
   id: string
@@ -59,28 +60,64 @@ export default function ErklaervideosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-secondary-900 text-white py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-medium mb-6">
-              Wissen kompakt erklärt
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Erklärvideos
-            </h1>
-            <p className="text-lg md:text-xl text-secondary-300 leading-relaxed">
-              Immobilienthemen auf den Punkt gebracht. Informieren Sie sich bequem per Video –
-              wann und wo Sie möchten.
-            </p>
+      <section className="py-24 bg-secondary-900">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
+                Wissen kompakt erklärt
+              </span>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+                Erklärvideos
+              </h1>
+              <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+                Immobilienthemen auf den Punkt gebracht. Informieren Sie sich bequem per Video – wann und wo Sie möchten.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+                <Link href="/kontakt" className="btn-primary">
+                  Beratung anfragen
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                  <Phone className="h-5 w-5 mr-2" />
+                  0177 6542977
+                </a>
+              </div>
+            </div>
+            <div className="relative hidden lg:block" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-6">Unsere Video-Themen</h3>
+                <ul className="space-y-4 text-white mb-6">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <span>Maklerkosten & Provisionen</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <span>Widerrufsrecht erklärt</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <span>Preisermittlung verstehen</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <span>Sicherheit beim Vermieten</span>
+                  </li>
+                </ul>
+                <a href="#videos" className="btn-primary w-full justify-center bg-white text-primary-500 hover:bg-gray-100">
+                  Videos ansehen
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Videos Grid */}
-      <section className="py-16 lg:py-24">
+      <section id="videos" className="py-20 bg-gray-50">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {videos.map((video) => (
