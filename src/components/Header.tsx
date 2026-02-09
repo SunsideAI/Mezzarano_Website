@@ -5,14 +5,25 @@ import Link from 'next/link'
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react'
 import { WuestenrotLogoCompact } from './WuestenrotLogo'
 
-const navigation = [
+type NavItem = {
+  name: string
+  href?: string
+  children?: { name: string; href: string }[]
+}
+
+const navigation: NavItem[] = [
   { name: 'Startseite', href: '/' },
   { name: 'Immobilien', href: '/immobilien' },
   { name: 'Verkaufen', href: '/verkaufen' },
   { name: 'Kaufen', href: '/kaufen' },
   { name: 'Bewerten', href: '/bewerten' },
-  { name: 'Erklärvideos', href: '/erklaervideos' },
-  { name: 'Ratgeber', href: '/ratgeber' },
+  {
+    name: 'Wissen',
+    children: [
+      { name: 'Erklärvideos', href: '/erklaervideos' },
+      { name: 'Ratgeber', href: '/ratgeber' },
+    ]
+  },
   { name: 'Kontakt', href: '/kontakt' },
 ]
 
@@ -29,6 +40,8 @@ const contact = {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [wissenOpen, setWissenOpen] = useState(false)
+  const [mobileWissenOpen, setMobileWissenOpen] = useState(false)
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -69,14 +82,44 @@ export default function Header() {
           {/* Desktop navigation */}
           <div className="hidden lg:flex items-center gap-5">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-secondary-700 hover:text-primary-500 font-medium transition-colors py-2 relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
-              </Link>
+              item.children ? (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setWissenOpen(true)}
+                  onMouseLeave={() => setWissenOpen(false)}
+                >
+                  <button
+                    className="text-secondary-700 hover:text-primary-500 font-medium transition-colors py-2 relative group flex items-center gap-1"
+                  >
+                    {item.name}
+                    <ChevronDown className={`h-4 w-4 transition-transform ${wissenOpen ? 'rotate-180' : ''}`} />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
+                  </button>
+                  {wissenOpen && (
+                    <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-secondary-100 py-2 min-w-[180px] animate-fade-in">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          className="block px-4 py-2 text-secondary-700 hover:text-primary-500 hover:bg-secondary-50 transition-colors"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href!}
+                  className="text-secondary-700 hover:text-primary-500 font-medium transition-colors py-2 relative group"
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
+                </Link>
+              )
             ))}
             <Link href="/kontakt" className="btn-primary ml-2">
               Beratung anfragen
@@ -103,14 +146,40 @@ export default function Header() {
           <div className="lg:hidden py-4 border-t animate-fade-in">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.children ? (
+                  <div key={item.name}>
+                    <button
+                      onClick={() => setMobileWissenOpen(!mobileWissenOpen)}
+                      className="flex items-center justify-between w-full text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                    >
+                      {item.name}
+                      <ChevronDown className={`h-4 w-4 transition-transform ${mobileWissenOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {mobileWissenOpen && (
+                      <div className="ml-4 border-l-2 border-secondary-200 pl-4 mt-1 space-y-1">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className="block text-secondary-600 hover:text-primary-500 font-medium py-2 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href!}
+                    className="block text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <Link
                 href="/kontakt"
