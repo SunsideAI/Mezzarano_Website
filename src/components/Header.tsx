@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Verkaufen', href: '/verkaufen' },
   { name: 'Kaufen', href: '/kaufen' },
   { name: 'Bewerten', href: '/bewerten' },
+  { name: 'Erklärvideos', href: '/erklaervideos' },
   { name: 'Ratgeber', href: '/ratgeber' },
   { name: 'Kontakt', href: '/kontakt' },
 ]

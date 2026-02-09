@@ -24,7 +24,8 @@ const footerLinks = {
     { name: 'Immobilie verkaufen', href: '/verkaufen' },
     { name: 'Immobilie kaufen', href: '/kaufen' },
     { name: 'Immobilienbewertung', href: '/bewerten' },
-    { name: 'Finanzierung', href: '/finanzierung' },
+    { name: 'Erklärvideos', href: '/erklaervideos' },
+    { name: 'Ratgeber', href: '/ratgeber' },
   ],
   regionen: [
     { name: 'Hermeskeil', href: '/regionen/hermeskeil' },
