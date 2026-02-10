@@ -14,19 +14,19 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: 'https://cdn.meinimmoportal.eu/wp-content/uploads/sites/67/2025/06/Junges-Paar-vor-ihrem-neuen-Zuhause-lachend-und-gluecklich-im-Garten-2048x1180.jpg',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1770755468/Junges-Paar-vor-ihrem-neuen-Zuhause-lachend-und-gluecklich-im-Garten-2048x1180_rf6uvn.jpg',
     headline: 'Immobilien verkaufen – ',
     highlightedText: 'kompetent und persönlich',
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
   {
-    image: 'https://cdn.meinimmoportal.eu/wp-content/uploads/sites/67/2025/06/Ein-Paar-informiert-sich-online-ueber-den-Wert-ihrer-Immobilie-2048x1180.jpg',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1770755465/Ein-Paar-informiert-sich-online-ueber-den-Wert-ihrer-Immobilie-2048x1180_e9ukmv.jpg',
     headline: 'Ihr Traumhaus finden – ',
     highlightedText: 'mit lokaler Expertise',
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
   {
-    image: 'https://cdn.meinimmoportal.eu/wp-content/uploads/sites/67/2025/06/Junges-Paar-freut-sich-ueber-die-gekaufte-Immobilie-2048x1180.jpg',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1770755444/Junges-Paar-freut-sich-ueber-die-gekaufte-Immobilie-2048x1180_ftna2g.jpg',
     headline: 'Wüstenrot Partner – ',
     highlightedText: 'Finanzierung aus einer Hand',
     subheadline: 'Profitieren Sie von attraktiven Finanzierungslösungen und umfassender Beratung durch das Wüstenrot-Netzwerk.',
