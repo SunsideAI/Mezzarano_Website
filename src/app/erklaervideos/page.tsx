@@ -23,6 +23,14 @@ const videos: VideoData[] = [
     duration: '2:30'
   },
   {
+    id: 'profivermietung',
+    title: 'Sicherheit beim Vermieten',
+    description: 'Professionelle Vermietung durch zuverlässige Partner. Erfahren Sie, wie Sie Ihre Immobilie sicher vermieten und welche Vorteile eine professionelle Verwaltung bietet.',
+    youtubeId: 't5NGOTqnjPU',
+    icon: <Shield className="w-8 h-8" />,
+    duration: '2:45'
+  },
+  {
     id: 'widerrufsrecht',
     title: 'Widerrufsrecht',
     description: 'Die Widerrufsbelehrung ist ein wichtiger Bestandteil des Maklervertrags. Erfahren Sie, weshalb die gesetzliche Belehrungspflicht eingehalten werden muss und welche Rechte Sie als Kunde haben.',
@@ -37,14 +45,6 @@ const videos: VideoData[] = [
     youtubeId: 'fEQ-SkOf8xo',
     icon: <Home className="w-8 h-8" />,
     duration: '3:00'
-  },
-  {
-    id: 'profivermietung',
-    title: 'Sicherheit beim Vermieten',
-    description: 'Professionelle Vermietung durch zuverlässige Partner. Erfahren Sie, wie Sie Ihre Immobilie sicher vermieten und welche Vorteile eine professionelle Verwaltung bietet.',
-    youtubeId: 't5NGOTqnjPU',
-    icon: <Shield className="w-8 h-8" />,
-    duration: '2:45'
   }
 ]
 
