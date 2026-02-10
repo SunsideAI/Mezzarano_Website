@@ -114,36 +114,37 @@ function transformRecord(record: any): AirtableProperty {
   const fields = record.fields || record
 
   // Resolve images with priority:
-  // 1. cloudinary_urls (permanent, best option)
-  // 2. bild_url (stable external URL from ImmobilienScout24 etc.)
-  // 3. bilder (may contain multiple stable URLs)
+  // 1. bilder (newline-separated Cloudinary URLs - primary source for multiple images)
+  // 2. cloudinary_urls (alternative permanent storage field)
+  // 3. bild_url (single cover image URL as fallback)
   // 4. bilder_attachments (Airtable uploads - expire after ~2 hours!)
   let bilder: string[] = []
 
-  // Priority 1: Use cloudinary_urls (permanent storage, best option)
-  // Support various field names and formats
-  const cloudinaryField = fields.cloudinary_urls || fields['Cloudinary URLs'] || fields['cloudinary urls'] || fields.cloudinary_images
-  if (cloudinaryField) {
-    if (typeof cloudinaryField === 'string') {
-      // Handle newline-separated, comma-separated, or single URL
-      bilder = cloudinaryField.split(/[\n,]/).map((url: string) => url.trim()).filter(Boolean)
-    } else if (Array.isArray(cloudinaryField)) {
-      // Handle array of strings or array of objects with url property
-      bilder = cloudinaryField.map((item: any) =>
-        typeof item === 'string' ? item.trim() : item?.url?.trim()
-      ).filter(Boolean)
-    }
-  }
-  // Priority 2: Use bild_url (stable external URL)
-  else if (fields.bild_url && typeof fields.bild_url === 'string') {
-    bilder = [fields.bild_url.trim()]
-  }
-  // Priority 3: Use bilder field (may contain multiple URLs, newline-separated)
-  else if (fields.bilder && typeof fields.bilder === 'string') {
+  // Priority 1: Use bilder field (newline-separated Cloudinary URLs - best for multiple images)
+  if (fields.bilder && typeof fields.bilder === 'string') {
     bilder = fields.bilder.split('\n').map((url: string) => url.trim()).filter(Boolean)
   }
+  // Priority 2: Use cloudinary_urls (alternative permanent storage field)
+  else {
+    const cloudinaryField = fields.cloudinary_urls || fields['Cloudinary URLs'] || fields['cloudinary urls'] || fields.cloudinary_images
+    if (cloudinaryField) {
+      if (typeof cloudinaryField === 'string') {
+        // Handle newline-separated, comma-separated, or single URL
+        bilder = cloudinaryField.split(/[\n,]/).map((url: string) => url.trim()).filter(Boolean)
+      } else if (Array.isArray(cloudinaryField)) {
+        // Handle array of strings or array of objects with url property
+        bilder = cloudinaryField.map((item: any) =>
+          typeof item === 'string' ? item.trim() : item?.url?.trim()
+        ).filter(Boolean)
+      }
+    }
+  }
+  // Priority 3: Use bild_url (single cover image as fallback)
+  if (bilder.length === 0 && fields.bild_url && typeof fields.bild_url === 'string') {
+    bilder = [fields.bild_url.trim()]
+  }
   // Priority 4: Last resort - use bilder_attachments (these expire after ~2 hours!)
-  else if (fields.bilder_attachments && Array.isArray(fields.bilder_attachments)) {
+  if (bilder.length === 0 && fields.bilder_attachments && Array.isArray(fields.bilder_attachments)) {
     bilder = fields.bilder_attachments
       .map((att: any) => att.url)
       .filter(Boolean)
