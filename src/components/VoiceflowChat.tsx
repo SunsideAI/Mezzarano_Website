@@ -69,14 +69,14 @@ export default function VoiceflowChat() {
             window.voiceflow.chat.proactive.push({
               type: 'text',
               payload: {
-                message: 'Diese Immobilie könnte Ihr neues Zuhause sein! Ich beantworte alle Fragen und sende Ihnen alle Details – starten Sie jetzt!'
+                message: 'Diese Immobilie könnte Ihr neues Zuhause sein! Ich beantworte alle Fragen und sende Ihnen alle Details – starten Sie jetzt! 😊🏡'
               }
             })
           } else {
             window.voiceflow.chat.proactive.push({
               type: 'text',
               payload: {
-                message: 'Ich bin Ihr intelligenter Assistentin Sophia! Immobilien kaufen, verkaufen oder bewerten? Ich helfe Ihnen sofort – starten Sie jetzt!'
+                message: 'Ich bin Ihre intelligente Assistentin Sophia! Immobilien kaufen, verkaufen oder bewerten? Ich helfe Ihnen sofort – starten Sie jetzt! 😊🏡'
               }
             })
           }
