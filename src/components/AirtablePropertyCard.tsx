@@ -93,7 +93,7 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-3">
           <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors line-clamp-2">
-            <Link href={`/immobilie/${property.id}`}>
+            <Link href={`/immobilie/${property.expose_id}`}>
               {property.titel}
             </Link>
           </h3>
@@ -143,7 +143,7 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
             )}
           </div>
           <Link
-            href={`/immobilie/${property.id}`}
+            href={`/immobilie/${property.expose_id}`}
             className="text-primary-700 font-medium hover:text-primary-800 transition-colors"
           >
             Details →

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Bed, Bath, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer, Trees, Home, Fence, Car, Layers } from 'lucide-react'
-import { fetchPropertyById } from '@/lib/airtable'
+import { fetchPropertyByExposeId } from '@/lib/airtable'
 import ImageGallery from '@/components/ImageGallery'
 import PropertyMap from '@/components/PropertyMap'
 
@@ -33,7 +33,7 @@ function getProxyImageUrl(recordId: string, index: number = 0): string {
 }
 
 export default async function PropertyDetailPage({ params }: { params: { id: string } }) {
-  const property = await fetchPropertyById(params.id)
+  const property = await fetchPropertyByExposeId(params.id)
 
   if (!property) {
     notFound()
