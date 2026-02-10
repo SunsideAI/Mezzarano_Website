@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Star, ArrowRight } from 'lucide-react'
@@ -14,19 +14,19 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=80&auto=format',
+    image: 'https://cdn.meinimmoportal.eu/wp-content/uploads/sites/67/2025/06/Junges-Paar-vor-ihrem-neuen-Zuhause-lachend-und-gluecklich-im-Garten-2048x1180.jpg',
     headline: 'Immobilien verkaufen – ',
     highlightedText: 'kompetent und persönlich',
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&q=80&auto=format',
+    image: 'https://cdn.meinimmoportal.eu/wp-content/uploads/sites/67/2025/06/Ein-Paar-informiert-sich-online-ueber-den-Wert-ihrer-Immobilie-2048x1180.jpg',
     headline: 'Ihr Traumhaus finden – ',
     highlightedText: 'mit lokaler Expertise',
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1920&q=80&auto=format',
+    image: 'https://cdn.meinimmoportal.eu/wp-content/uploads/sites/67/2025/06/Junges-Paar-freut-sich-ueber-die-gekaufte-Immobilie-2048x1180.jpg',
     headline: 'Wüstenrot Partner – ',
     highlightedText: 'Finanzierung aus einer Hand',
     subheadline: 'Profitieren Sie von attraktiven Finanzierungslösungen und umfassender Beratung durch das Wüstenrot-Netzwerk.',
@@ -53,26 +53,28 @@ export default function HeroSlider() {
     goToSlide((currentSlide + 1) % slides.length)
   }, [currentSlide, goToSlide])
 
-  // Progress animation
-  useEffect(() => {
-    const startTime = Date.now()
-    let animationFrame: number
+  // Progress animation with performance.now() for smooth, precise timing
+  const startTimeRef = useRef<number>(0)
+  const animationFrameRef = useRef<number>(0)
 
-    const animate = () => {
-      const elapsed = Date.now() - startTime
+  useEffect(() => {
+    startTimeRef.current = performance.now()
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTimeRef.current
       const newProgress = Math.min((elapsed / SLIDE_DURATION) * 100, 100)
       setProgress(newProgress)
 
       if (newProgress < 100) {
-        animationFrame = requestAnimationFrame(animate)
+        animationFrameRef.current = requestAnimationFrame(animate)
       } else {
         nextSlide()
       }
     }
 
-    animationFrame = requestAnimationFrame(animate)
+    animationFrameRef.current = requestAnimationFrame(animate)
 
-    return () => cancelAnimationFrame(animationFrame)
+    return () => cancelAnimationFrame(animationFrameRef.current)
   }, [currentSlide, nextSlide])
 
   const circumference = 2 * Math.PI * 18 // radius = 18
@@ -192,13 +194,13 @@ export default function HeroSlider() {
                 fill="none"
                 stroke="#F84914"
                 strokeWidth="2"
+                strokeLinecap="round"
                 strokeDasharray={circumference}
                 strokeDashoffset={
                   index === currentSlide
                     ? circumference - (progress / 100) * circumference
                     : circumference
                 }
-                className="transition-all duration-100"
               />
             </svg>
             <span
