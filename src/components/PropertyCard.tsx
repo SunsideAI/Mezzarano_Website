@@ -49,7 +49,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-3">
           <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
-            <Link href={`/immobilien/${property.id}`}>
+            <Link href={`/immobilie/${property.id}`}>
               {property.title}
             </Link>
           </h3>
@@ -88,7 +88,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
             </p>
           </div>
           <Link
-            href={`/immobilien/${property.id}`}
+            href={`/immobilie/${property.id}`}
             className="text-primary-700 font-medium hover:text-primary-800 transition-colors"
           >
             Details →
