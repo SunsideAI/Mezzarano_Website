@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import VoiceflowChat from '@/components/VoiceflowChat'
 
 const siteUrl = 'https://mezzarano-immobilien.de'
 
@@ -104,6 +105,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <VoiceflowChat />
       </body>
     </html>
   )
