@@ -61,38 +61,45 @@ export default function HermeskeilPage() {
       <SchemaMarkup data={faqSchema} />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://res.cloudinary.com/djqviyb2c/image/upload/w_1920,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png"
-            alt="Immobilien in Hermeskeil"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 to-secondary-900/60" />
-        </div>
-
-        <div className="container-custom relative z-10 py-20">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
-              <MapPin className="h-5 w-5" />
-              <span className="font-medium">Hermeskeil & Hochwald</span>
+      <section className="bg-secondary-900 py-16 md:py-20">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Text Content */}
+            <div data-aos="fade-right">
+              <div className="flex items-center gap-2 text-primary-400 mb-4">
+                <MapPin className="h-5 w-5" />
+                <span className="font-medium">Hermeskeil & Hochwald</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Ihr Immobilienmakler in Hermeskeil
+              </h1>
+              <p className="text-lg text-gray-300 mb-8">
+                Sandro Mezzarano – Ihr lokaler Wüstenrot Immobilienexperte für den Kauf,
+                Verkauf und die Vermietung von Immobilien in Hermeskeil und der gesamten Hochwald-Region.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/kontakt" className="btn-primary">
+                  Kostenlose Beratung anfragen
+                </Link>
+                <Link href="/immobilien?ort=Hermeskeil" className="btn-outline">
+                  Immobilien in Hermeskeil
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
-              Ihr Immobilienmakler in Hermeskeil
-            </h1>
-            <p className="text-xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">
-              Sandro Mezzarano – Ihr lokaler Wüstenrot Immobilienexperte für den Kauf,
-              Verkauf und die Vermietung von Immobilien in Hermeskeil und der gesamten Hochwald-Region.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
-              <Link href="/kontakt" className="btn-primary">
-                Kostenlose Beratung anfragen
-              </Link>
-              <Link href="/immobilien?ort=Hermeskeil" className="btn-outline">
-                Immobilien in Hermeskeil
-              </Link>
+
+            {/* Image */}
+            <div className="relative" data-aos="fade-left">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_90/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png"
+                  alt="Hermeskeil - Marktplatz mit Fachwerkhäusern"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-500 rounded-2xl -z-10 hidden md:block" />
             </div>
           </div>
         </div>
