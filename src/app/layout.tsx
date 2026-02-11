@@ -11,7 +11,7 @@ const siteUrl = 'https://mezzarano-immobilien.de'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#F84914',
+  themeColor: '#f84914', // wüstenrot
 }
 
 export const metadata: Metadata = {
@@ -98,7 +98,7 @@ export default function RootLayout({
         <link rel="prefetch" href="/api/properties" as="fetch" crossOrigin="anonymous" />
         <SchemaMarkup data={generateLocalBusinessSchema()} />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-ww antialiased bg-wohnraum text-wuestennacht">
         <ScrollAnimations />
         <Header />
         <main className="min-h-screen">

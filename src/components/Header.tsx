@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react'
+import { Menu, X, Phone, Mail, MapPin, ChevronDown, ArrowRight } from 'lucide-react'
 import { WuestenrotLogoCompact } from './WuestenrotLogo'
 
 type NavItem = {
@@ -45,15 +45,15 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Top bar - Wüstenrot Style */}
-      <div className="bg-secondary-900 text-white py-2 hidden md:block">
+      {/* Top bar - Wüstenrot Styleguide: wüstennacht */}
+      <div className="bg-wuestennacht text-white py-2 hidden md:block">
         <div className="container-custom flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+            <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-wuestenrot-light transition-colors">
               <Phone className="h-4 w-4" />
               <span>{contact.phone1}</span>
             </a>
-            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-wuestenrot-light transition-colors">
               <Mail className="h-4 w-4" />
               <span>{contact.email}</span>
             </a>
@@ -70,16 +70,16 @@ export default function Header() {
       {/* Main navigation */}
       <nav className="container-custom" aria-label="Hauptnavigation">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - Styleguide: wüstenrot in Kleinschreibung */}
           <Link href="/" className="flex items-center gap-3">
             <WuestenrotLogoCompact />
             <div>
-              <span className="font-semibold text-lg text-secondary-900 leading-tight block">wüstenrot</span>
-              <span className="text-xs text-secondary-500 tracking-wider uppercase">Immobilien</span>
+              <span className="font-bold text-lg text-wuestennacht leading-tight block lowercase">wüstenrot</span>
+              <span className="text-xs text-wuestennacht-light tracking-wider uppercase">Immobilien</span>
             </div>
           </Link>
 
-          {/* Desktop navigation */}
+          {/* Desktop navigation - Styleguide: wüstenrot Hover */}
           <div className="hidden lg:flex items-center gap-5">
             {navigation.map((item) => (
               item.children ? (
@@ -90,19 +90,19 @@ export default function Header() {
                   onMouseLeave={() => setWissenOpen(false)}
                 >
                   <button
-                    className="text-secondary-700 hover:text-primary-500 font-medium transition-colors py-2 relative group flex items-center gap-1"
+                    className="text-wuestennacht hover:text-wuestenrot font-medium transition-colors py-2 relative group flex items-center gap-1"
                   >
                     {item.name}
                     <ChevronDown className={`h-4 w-4 transition-transform ${wissenOpen ? 'rotate-180' : ''}`} />
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
                   </button>
                   {wissenOpen && (
-                    <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-secondary-100 py-2 min-w-[180px] animate-fade-in">
+                    <div className="absolute top-full left-0 mt-1 bg-white rounded-fenster shadow-lg border border-warmgrau py-2 min-w-[180px] animate-fade-in">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-secondary-700 hover:text-primary-500 hover:bg-secondary-50 transition-colors"
+                          className="block px-4 py-2 text-wuestennacht hover:text-wuestenrot hover:bg-warmgrau transition-colors"
                         >
                           {child.name}
                         </Link>
@@ -114,22 +114,24 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href!}
-                  className="text-secondary-700 hover:text-primary-500 font-medium transition-colors py-2 relative group"
+                  className="text-wuestennacht hover:text-wuestenrot font-medium transition-colors py-2 relative group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
                 </Link>
               )
             ))}
+            {/* CTA Button mit Pfeil-Icon (Styleguide) */}
             <Link href="/kontakt" className="btn-primary ml-2">
               Beratung anfragen
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2 text-secondary-700"
+            className="lg:hidden p-2 text-wuestennacht hover:text-wuestenrot transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Menü öffnen</span>
@@ -141,27 +143,27 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile navigation */}
+        {/* Mobile navigation - Styleguide Farben */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-warmgrau animate-fade-in">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 item.children ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setMobileWissenOpen(!mobileWissenOpen)}
-                      className="flex items-center justify-between w-full text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                      className="flex items-center justify-between w-full text-wuestennacht hover:text-wuestenrot font-medium py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                     >
                       {item.name}
                       <ChevronDown className={`h-4 w-4 transition-transform ${mobileWissenOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {mobileWissenOpen && (
-                      <div className="ml-4 border-l-2 border-secondary-200 pl-4 mt-1 space-y-1">
+                      <div className="ml-4 border-l-2 border-wuestenrot pl-4 mt-1 space-y-1">
                         {item.children.map((child) => (
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="block text-secondary-600 hover:text-primary-500 font-medium py-2 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                            className="block text-wuestennacht-light hover:text-wuestenrot font-medium py-2 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {child.name}
@@ -174,7 +176,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href!}
-                    className="block text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                    className="block text-wuestennacht hover:text-wuestenrot font-medium py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -187,20 +189,21 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Beratung anfragen
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
             {/* Mobile contact info */}
-            <div className="mt-6 pt-6 border-t space-y-3 text-sm text-secondary-600">
-              <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-primary-500">
+            <div className="mt-6 pt-6 border-t border-warmgrau space-y-3 text-sm text-wuestennacht-light">
+              <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-wuestenrot transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>{contact.phone1}</span>
               </a>
-              <a href={`tel:${contact.phone2.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-primary-500">
+              <a href={`tel:${contact.phone2.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-wuestenrot transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>{contact.phone2}</span>
               </a>
-              <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-primary-500">
+              <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-wuestenrot transition-colors">
                 <Mail className="h-4 w-4" />
                 <span>{contact.email}</span>
               </a>

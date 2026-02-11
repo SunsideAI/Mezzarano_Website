@@ -2,22 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Wüstenrot Corporate Design - CSS Custom Properties */
+:root {
+  /* === FARBEN === */
+  /* Primär */
+  --color-wuestenrot: #f84914;
+  --color-wuestenrot-hover: #c03700;
+  --color-wuestenrot-light: #fc7e51;
+  --color-wuestennacht: #141414;
+  --color-wuestennacht-hover: #484848;
+  --color-wuestennacht-light: #333333;
+  --color-wohnraum: #ffffff;
+
+  /* Sekundär */
+  --color-warmgrau: #eeeeee;
+
+  /* Funktionsfarben */
+  --color-wuestenwald: #94c23c;
+  --color-wuestenwald-hover: #65882a;
+  --color-wuestenwein: #a90064;
+  --color-wuestenwein-hover: #70003f;
+
+  /* Abstufungen wüstenrot */
+  --color-wuestenrot-80: #f0aa00;
+  --color-wuestenrot-60: #d17d00;
+  --color-wuestenrot-25: #fde0d4;
+
+  /* === TYPOGRAFIE === */
+  --font-ww-bold: 'WW Type Bold', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-ww-regular: 'WW Type Regular', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Schriftgrößen */
+  --font-size-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --font-size-h1: clamp(2rem, 4vw, 3.5rem);
+  --font-size-h2: clamp(1.5rem, 3vw, 2.5rem);
+  --font-size-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-legal: 0.75rem;
+
+  /* Zeilenabstände */
+  --line-height-headline: 1.1;
+  --line-height-headline-lg: 1.2;
+  --line-height-body: 1.5;
+  --line-height-copy: 1.4;
+
+  /* === ABSTÄNDE === */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+
+  /* === BORDER-RADIUS === */
+  --radius-haus: 0px;
+  --radius-fenster: 16px;
+  --radius-muenze: 50%;
+  --radius-button: 24px;
+  --radius-input: 8px;
+
+  /* === SCHATTEN === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-wuestenrot: 0 0 30px rgba(248, 73, 20, 0.4);
+
+  /* === MAX-WIDTH === */
+  --max-width-content: 1200px;
+  --max-width-text: 720px;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white text-secondary-800;
+    @apply bg-wohnraum text-wuestennacht;
+    font-family: var(--font-ww-regular);
+  }
+
+  /* Sichtbare Focus-States für Barrierefreiheit */
+  *:focus-visible {
+    outline: 2px solid var(--color-wuestenrot);
+    outline-offset: 2px;
+  }
+
+  /* Skip-Link für Barrierefreiheit */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4
+           focus:z-50 focus:bg-wuestenrot focus:text-white focus:px-4 focus:py-2;
+    border-radius: var(--radius-button);
   }
 }
 
 @layer components {
-  /* Wüstenrot Style Buttons with Auto-Shine Effect */
+  /* === WÜSTENROT BUTTONS (Styleguide) === */
+
+  /* Primär-CTA: wüstenrot Hintergrund, weiß, Pill-Form */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-primary-500 text-white font-semibold rounded-lg
-           hover:bg-primary-600 transition-all duration-200 focus:outline-none focus:ring-2
-           focus:ring-primary-400 focus:ring-offset-2 shadow-sm hover:shadow-md relative overflow-hidden;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-wuestenrot text-white font-semibold
+           hover:bg-wuestenrot-hover transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestenrot focus:ring-offset-2
+           shadow-sm hover:shadow-md relative overflow-hidden;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
   }
 
   .btn-primary::before {
@@ -37,10 +130,16 @@
     100% { left: 100%; }
   }
 
+  /* Sekundär-CTA: Outline-Style, Pill-Form */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-primary-500 font-semibold rounded-lg
-           border-2 border-primary-500 hover:bg-primary-50 transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 relative overflow-hidden;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-transparent text-wuestennacht font-semibold
+           border-2 border-wuestennacht
+           hover:bg-wuestennacht hover:text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestennacht focus:ring-offset-2
+           relative overflow-hidden;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
   }
 
   .btn-secondary::before {
@@ -50,15 +149,31 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(248, 73, 20, 0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(20, 20, 20, 0.1), transparent);
     animation: btnShine 3s infinite;
     animation-delay: 0.5s;
   }
 
+  /* wüstenrot Outline Button */
+  .btn-outline-wuestenrot {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-transparent text-wuestenrot font-semibold
+           border-2 border-wuestenrot
+           hover:bg-wuestenrot hover:text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestenrot focus:ring-offset-2;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
+  }
+
+  /* Outline Button (weiß) für dunkle Hintergründe */
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white/25 text-white font-semibold rounded-lg
-           border-2 border-white hover:bg-white hover:text-primary-500 transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 relative overflow-hidden backdrop-blur-sm shadow-lg;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-white/10 text-white font-semibold
+           border-2 border-white hover:bg-white hover:text-wuestenrot transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
+           relative overflow-hidden backdrop-blur-sm shadow-lg;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
   }
 
   .btn-outline::before {
@@ -73,10 +188,15 @@
     animation-delay: 1s;
   }
 
+  /* Dunkler Button (wüstennacht) */
   .btn-outline-dark {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-secondary-900 text-white font-semibold rounded-lg
-           border-2 border-secondary-900 hover:bg-secondary-800 transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 relative overflow-hidden shadow-lg;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-wuestennacht text-white font-semibold
+           border-2 border-wuestennacht hover:bg-wuestennacht-hover transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestennacht focus:ring-offset-2
+           relative overflow-hidden shadow-lg;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
   }
 
   .btn-outline-dark::before {
@@ -91,10 +211,33 @@
     animation-delay: 1s;
   }
 
+  /* Funktionsfarben-Buttons */
+  .btn-wuestenwald {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-wuestenwald text-white font-semibold
+           hover:bg-wuestenwald-hover transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestenwald focus:ring-offset-2;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
+  }
+
+  .btn-wuestenwein {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-wuestenwein text-white font-semibold
+           hover:bg-wuestenwein-hover transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestenwein focus:ring-offset-2;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
+  }
+
   .btn-accent {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg
-           hover:bg-accent-600 transition-all duration-200 focus:outline-none focus:ring-2
-           focus:ring-accent-400 focus:ring-offset-2 relative overflow-hidden;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-accent-500 text-white font-semibold
+           hover:bg-accent-600 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2
+           relative overflow-hidden;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
   }
 
   .btn-accent::before {
@@ -109,26 +252,43 @@
     animation-delay: 1.5s;
   }
 
-  /* Section Styles - Wüstenrot uses clean sans-serif */
+  /* Disabled State für alle Buttons */
+  .btn-primary:disabled,
+  .btn-secondary:disabled,
+  .btn-outline:disabled,
+  .btn-outline-dark:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* === SECTION STYLES === */
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-wuestennacht;
+    font-family: var(--font-ww-bold);
+    line-height: var(--line-height-headline);
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-secondary-600 max-w-2xl;
+    @apply text-lg md:text-xl text-wuestennacht-light max-w-2xl;
+    font-family: var(--font-ww-regular);
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Card Styles with Animation */
+  /* === CARD STYLES (Fenster-Form) === */
   .card {
-    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+    @apply bg-white shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+    border-radius: var(--radius-fenster);
   }
 
   .card-hover {
     @apply hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  /* warmgrau Section-Hintergrund */
+  .section-warmgrau {
+    @apply bg-warmgrau;
   }
 
   /* Button Shine Effect */
@@ -147,11 +307,15 @@
     left: 100%;
   }
 
-  /* Gold Button */
+  /* Gold Button (Alternative für Primär) */
   .btn-gold {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-primary-500 text-white font-semibold rounded-lg
-           hover:bg-primary-600 transition-all duration-200 focus:outline-none focus:ring-2
-           focus:ring-primary-400 focus:ring-offset-2 shadow-lg hover:shadow-xl relative overflow-hidden;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-wuestenrot text-white font-semibold
+           hover:bg-wuestenrot-hover transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-wuestenrot focus:ring-offset-2
+           shadow-lg hover:shadow-xl relative overflow-hidden;
+    border-radius: var(--radius-button);
+    font-family: var(--font-ww-bold);
   }
 
   .btn-gold::before {
@@ -166,61 +330,157 @@
     animation-delay: 0.25s;
   }
 
-  /* Badge Styles */
+  /* === BADGE STYLES (Fenster/Münze-Form) === */
   .badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium;
+    border-radius: var(--radius-fenster);
+    font-family: var(--font-ww-bold);
   }
 
   .badge-primary {
-    @apply bg-primary-100 text-primary-700;
+    @apply bg-wuestenrot text-white;
   }
 
   .badge-secondary {
-    @apply bg-secondary-100 text-secondary-700;
+    @apply bg-warmgrau text-wuestennacht;
   }
 
   .badge-accent {
     @apply bg-accent-100 text-accent-700;
   }
 
-  /* Wüstenrot Specific Styles */
+  .badge-wuestenwald {
+    @apply bg-wuestenwald text-white;
+  }
+
+  .badge-wuestenwein {
+    @apply bg-wuestenwein text-white;
+  }
+
+  /* Runde Badge (Münze-Form) */
+  .badge-circle {
+    @apply inline-flex items-center justify-center w-10 h-10 text-sm font-bold;
+    border-radius: var(--radius-muenze);
+  }
+
+  /* === WÜSTENROT GRADIENTS === */
   .wuestenrot-gradient {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500;
+    background: linear-gradient(135deg, var(--color-wuestenrot) 0%, var(--color-wuestenrot-hover) 100%);
   }
 
   .wuestenrot-hero {
-    @apply bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900;
+    background: linear-gradient(135deg, var(--color-wuestennacht) 0%, #1a1a1a 50%, var(--color-wuestenrot-hover) 100%);
   }
 
-  /* Blog Prose Styles */
+  /* === BLOG PROSE STYLES === */
   .prose-blog {
     @apply prose prose-lg max-w-none;
-    @apply prose-headings:font-sans prose-headings:text-secondary-900 prose-headings:font-bold;
-    @apply prose-p:text-secondary-700 prose-p:leading-relaxed;
-    @apply prose-a:text-primary-500 prose-a:no-underline hover:prose-a:underline;
-    @apply prose-strong:text-secondary-800;
-    @apply prose-ul:text-secondary-700 prose-ol:text-secondary-700;
-    @apply prose-li:marker:text-primary-500;
-    @apply prose-blockquote:border-l-primary-500 prose-blockquote:bg-primary-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg;
-    @apply prose-table:border-collapse prose-th:bg-secondary-100 prose-th:p-3;
-    @apply prose-td:border prose-td:border-secondary-200 prose-td:p-3;
+    @apply prose-headings:text-wuestennacht prose-headings:font-bold;
+    @apply prose-p:text-wuestennacht-light prose-p:leading-relaxed;
+    @apply prose-a:text-wuestenrot prose-a:no-underline hover:prose-a:underline;
+    @apply prose-strong:text-wuestennacht;
+    @apply prose-ul:text-wuestennacht-light prose-ol:text-wuestennacht-light;
+    @apply prose-li:marker:text-wuestenrot;
+    @apply prose-blockquote:border-l-wuestenrot prose-blockquote:bg-wuestenrot-25 prose-blockquote:py-2 prose-blockquote:px-4;
+    @apply prose-table:border-collapse prose-th:bg-warmgrau prose-th:p-3;
+    @apply prose-td:border prose-td:border-warmgrau prose-td:p-3;
   }
 
-  /* Form Styles */
+  .prose-blog blockquote {
+    border-radius: 0 var(--radius-fenster) var(--radius-fenster) 0;
+  }
+
+  /* === FORMULAR STYLES (Styleguide) === */
   .form-input {
-    @apply w-full px-4 py-3 border border-secondary-200 rounded-lg
-           focus:ring-2 focus:ring-primary-500 focus:border-transparent
+    @apply w-full px-4 py-3 text-wuestennacht
            transition-all duration-200 placeholder:text-secondary-400;
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    border-radius: var(--radius-input) var(--radius-input) 0 0;
+    font-family: var(--font-ww-regular);
+    font-size: 16px;
+  }
+
+  .form-input:focus {
+    border-bottom-color: var(--color-wuestenrot);
+    outline: none;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-3 text-wuestennacht
+           transition-all duration-200;
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    border-radius: var(--radius-input) var(--radius-input) 0 0;
+    font-family: var(--font-ww-regular);
+    font-size: 16px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 48px;
+  }
+
+  .form-select:focus {
+    border-bottom-color: var(--color-wuestenrot);
+    outline: none;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 text-wuestennacht
+           transition-all duration-200 placeholder:text-secondary-400 resize-y min-h-[120px];
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    border-radius: var(--radius-input) var(--radius-input) 0 0;
+    font-family: var(--font-ww-regular);
+    font-size: 16px;
+  }
+
+  .form-textarea:focus {
+    border-bottom-color: var(--color-wuestenrot);
+    outline: none;
   }
 
   .form-label {
-    @apply block text-sm font-medium text-secondary-700 mb-2;
+    @apply block text-sm text-wuestennacht mb-2;
+    font-family: var(--font-ww-regular);
   }
 
-  /* Link Styles */
+  /* Radio & Checkbox mit wüstenrot Akzent */
+  input[type="radio"],
+  input[type="checkbox"] {
+    accent-color: var(--color-wuestenrot);
+  }
+
+  /* === LINK STYLES === */
   .link-hover {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0
-           after:bg-primary-500 after:transition-all after:duration-300 hover:after:w-full;
+           after:bg-wuestenrot after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* === TOOLTIP === */
+  .tooltip {
+    @apply text-white text-sm px-3 py-2;
+    background-color: var(--color-wuestennacht);
+    border-radius: var(--radius-input);
+  }
+
+  /* === WW GRID SYSTEM === */
+  .WW_col-12-sm { @apply w-full; }
+  .WW_col-6-sm { @apply w-1/2; }
+  .WW_col-4-sm { @apply w-1/3; }
+  .WW_col-3-sm { @apply w-1/4; }
+
+  @media (max-width: 640px) {
+    .WW_col-6-sm,
+    .WW_col-4-sm,
+    .WW_col-3-sm {
+      @apply w-full;
+    }
   }
 }
 
@@ -375,16 +635,16 @@
     transform: scale(1.05);
   }
 
-  /* Glowing effect on hover */
+  /* Glowing effect on hover (wüstenrot) */
   .glow-hover {
     transition: all 0.3s ease;
   }
 
   .glow-hover:hover {
-    box-shadow: 0 0 30px rgba(248, 73, 20, 0.4);
+    box-shadow: var(--shadow-wuestenrot);
   }
 
-  /* Underline animation */
+  /* Underline animation (wüstenrot) */
   .underline-animate {
     position: relative;
   }
@@ -396,7 +656,7 @@
     left: 0;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #F84914, #FF6B3D);
+    background: linear-gradient(90deg, var(--color-wuestenrot), var(--color-wuestenrot-light));
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     border-radius: 2px;
   }

@@ -40,7 +40,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
     const IconComponent = getCategoryIcon(post.category)
 
     return (
-      <article className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+      <article className="group relative bg-white rounded-fenster shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
         <div className="grid md:grid-cols-2 gap-0">
           <div className="relative h-64 md:h-full min-h-[300px]">
             {post.image && !post.image.endsWith('.svg') ? (
@@ -51,19 +51,19 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             ) : (
-              <div className="absolute inset-0 bg-primary-500 flex items-center justify-center">
+              <div className="absolute inset-0 bg-wuestenrot flex items-center justify-center">
                 <IconComponent className="h-32 w-32 text-white/30" />
               </div>
             )}
             <div className="absolute top-4 left-4">
-              <span className="badge badge-primary bg-white text-primary-500">
+              <span className="badge badge-primary bg-white text-wuestenrot">
                 {post.category}
               </span>
             </div>
           </div>
 
           <div className="p-8 flex flex-col justify-center">
-            <div className="flex items-center gap-4 text-sm text-secondary-500 mb-4">
+            <div className="flex items-center gap-4 text-sm text-wuestennacht-light mb-4">
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 {formatDate(post.pubDate)}
@@ -74,19 +74,19 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
               </span>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4 group-hover:text-primary-500 transition-colors">
+            <h2 className="text-2xl md:text-3xl font-bold text-wuestennacht mb-4 group-hover:text-wuestenrot transition-colors">
               <Link href={`/ratgeber/${post.slug}`}>
                 {post.title}
               </Link>
             </h2>
 
-            <p className="text-secondary-600 mb-6 line-clamp-3">
+            <p className="text-wuestennacht-light mb-6 line-clamp-3">
               {post.description}
             </p>
 
             <Link
               href={`/ratgeber/${post.slug}`}
-              className="inline-flex items-center text-primary-500 font-semibold hover:text-primary-600 transition-colors"
+              className="inline-flex items-center text-wuestenrot font-bold hover:text-wuestenrot-hover transition-colors"
             >
               Artikel lesen
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -100,7 +100,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
   const IconComponent = getCategoryIcon(post.category)
 
   return (
-    <article className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 card-hover">
+    <article className="group bg-white rounded-fenster shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 card-hover">
       <div className="relative h-48">
         {post.image && !post.image.endsWith('.svg') ? (
           <Image
@@ -110,19 +110,19 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
-          <div className="absolute inset-0 bg-primary-500 flex items-center justify-center">
+          <div className="absolute inset-0 bg-wuestenrot flex items-center justify-center">
             <IconComponent className="h-20 w-20 text-white/30" />
           </div>
         )}
         <div className="absolute top-3 left-3">
-          <span className="badge badge-primary bg-white text-primary-500 text-xs">
+          <span className="badge badge-primary bg-white text-wuestenrot text-xs">
             {post.category}
           </span>
         </div>
       </div>
 
       <div className="p-6">
-        <div className="flex items-center gap-3 text-sm text-secondary-500 mb-3">
+        <div className="flex items-center gap-3 text-sm text-wuestennacht-light mb-3">
           <span className="flex items-center gap-1">
             <Calendar className="h-3.5 w-3.5" />
             {formatDate(post.pubDate)}
@@ -133,20 +133,20 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-500 transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold text-wuestennacht mb-3 group-hover:text-wuestenrot transition-colors line-clamp-2">
           <Link href={`/ratgeber/${post.slug}`}>
             {post.title}
           </Link>
         </h3>
 
-        <p className="text-secondary-600 text-sm mb-4 line-clamp-2">
+        <p className="text-wuestennacht-light text-sm mb-4 line-clamp-2">
           {post.description}
         </p>
 
         {post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {post.tags.slice(0, 3).map(tag => (
-              <span key={tag} className="text-xs text-secondary-500 flex items-center gap-1">
+              <span key={tag} className="text-xs text-wuestennacht-light flex items-center gap-1">
                 <Tag className="h-3 w-3" />
                 {tag}
               </span>
@@ -156,7 +156,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
 
         <Link
           href={`/ratgeber/${post.slug}`}
-          className="inline-flex items-center text-primary-500 font-medium text-sm hover:text-primary-600 transition-colors"
+          className="inline-flex items-center text-wuestenrot font-bold text-sm hover:text-wuestenrot-hover transition-colors"
         >
           Weiterlesen
           <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />

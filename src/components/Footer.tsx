@@ -41,7 +41,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary-900 text-secondary-300">
+    <footer className="bg-wuestennacht text-gray-300">
       {/* Main footer content */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -50,44 +50,44 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6">
               <WuestenrotLogoCompact />
               <div>
-                <span className="font-semibold text-lg text-white leading-tight block">wüstenrot</span>
-                <span className="text-xs text-secondary-400 tracking-wider uppercase">Immobilien</span>
+                <span className="font-bold text-lg text-white leading-tight block lowercase">wüstenrot</span>
+                <span className="text-xs text-gray-400 tracking-wider uppercase">Immobilien</span>
               </div>
             </Link>
 
             {/* Agent Info */}
             <div className="mb-6">
-              <h3 className="text-white font-semibold text-lg mb-1">{contact.name}</h3>
-              <p className="text-secondary-400 text-sm">{contact.title}</p>
+              <h3 className="text-white font-bold text-lg mb-1">{contact.name}</h3>
+              <p className="text-gray-400 text-sm">{contact.title}</p>
             </div>
 
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Phone className="h-5 w-5 text-primary-500" />
+              <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-3 hover:text-wuestenrot-light transition-colors">
+                <Phone className="h-5 w-5 text-wuestenrot" />
                 <span>{contact.phone1}</span>
               </a>
-              <a href={`tel:${contact.phone2.replace(/\s/g, '')}`} className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Phone className="h-5 w-5 text-primary-500" />
+              <a href={`tel:${contact.phone2.replace(/\s/g, '')}`} className="flex items-center gap-3 hover:text-wuestenrot-light transition-colors">
+                <Phone className="h-5 w-5 text-wuestenrot" />
                 <span>{contact.phone2}</span>
               </a>
-              <a href={`mailto:${contact.email}`} className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Mail className="h-5 w-5 text-primary-500" />
+              <a href={`mailto:${contact.email}`} className="flex items-center gap-3 hover:text-wuestenrot-light transition-colors">
+                <Mail className="h-5 w-5 text-wuestenrot" />
                 <span>{contact.email}</span>
               </a>
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary-500 mt-0.5" />
+                <MapPin className="h-5 w-5 text-wuestenrot mt-0.5" />
                 <span>{contact.street}<br />{contact.city}</span>
               </div>
             </div>
 
-            {/* Social Media */}
+            {/* Social Media - Münze-Form (Kreis) */}
             <div className="flex gap-3">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
+                className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -96,7 +96,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
+                className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -105,7 +105,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
+                className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -115,11 +115,11 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-white font-semibold mb-6">Immobilien</h3>
+            <h3 className="text-white font-bold mb-6">Immobilien</h3>
             <ul className="space-y-3">
               {footerLinks.immobilien.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-primary-400 transition-colors">
+                  <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -128,11 +128,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-6">Leistungen</h3>
+            <h3 className="text-white font-bold mb-6">Leistungen</h3>
             <ul className="space-y-3">
               {footerLinks.leistungen.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-primary-400 transition-colors">
+                  <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -141,11 +141,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-6">Regionen</h3>
+            <h3 className="text-white font-bold mb-6">Regionen</h3>
             <ul className="space-y-3">
               {footerLinks.regionen.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-primary-400 transition-colors">
+                  <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -155,10 +155,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-secondary-800">
+      {/* Bottom bar - Legal Lines */}
+      <div className="border-t border-wuestennacht-light">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-secondary-500">
+          <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} {contact.name} - Wüstenrot Immobilien. Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
@@ -166,7 +166,7 @@ export default function Footer() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-secondary-500 hover:text-primary-400 transition-colors"
+                className="text-gray-500 hover:text-wuestenrot-light transition-colors"
               >
                 {link.name}
               </Link>

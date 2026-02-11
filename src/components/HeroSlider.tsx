@@ -101,8 +101,8 @@ export default function HeroSlider() {
               quality={80}
             />
           </div>
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/95 via-secondary-900/80 to-secondary-900/50" />
+          {/* Gradient Overlay - Styleguide: wüstennacht */}
+          <div className="absolute inset-0 bg-gradient-to-r from-wuestennacht/95 via-wuestennacht/80 to-wuestennacht/50" />
         </div>
       ))}
 
@@ -118,21 +118,21 @@ export default function HeroSlider() {
           >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-primary-500 text-primary-500" />
+                <Star key={i} className="w-5 h-5 fill-wuestenrot text-wuestenrot" />
               ))}
             </div>
             <span className="text-white/80 text-sm">Ihr vertrauensvoller Partner</span>
           </div>
 
-          {/* Headline */}
+          {/* Headline - Styleguide: wüstenrot Akzent */}
           <h1
-            className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight transition-all duration-500 ${
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-headline transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
             style={{ transitionDelay: '150ms' }}
           >
             {slides[currentSlide].headline}
-            <span className="text-primary-500">{slides[currentSlide].highlightedText}</span>
+            <span className="text-wuestenrot">{slides[currentSlide].highlightedText}</span>
           </h1>
 
           {/* Subheadline */}
@@ -214,15 +214,15 @@ export default function HeroSlider() {
         ))}
       </div>
 
-      {/* Mobile Progress Dots */}
+      {/* Mobile Progress Dots - Münze-Form */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex md:hidden gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`w-3 h-3 rounded-muenze transition-all ${
               index === currentSlide
-                ? 'bg-primary-500 w-8'
+                ? 'bg-wuestenrot w-8'
                 : 'bg-white/50 hover:bg-white/80'
             }`}
           />

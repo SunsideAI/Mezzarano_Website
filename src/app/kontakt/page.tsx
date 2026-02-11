@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare, ArrowRight } from 'lucide-react'
 
 const contactInfo = [
   {
@@ -68,12 +68,12 @@ export default function KontaktPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="bg-secondary-900 py-24">
+      {/* Hero - Styleguide: wüstennacht */}
+      <section className="bg-wuestennacht py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
-              Kontaktieren Sie mich
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-headline" data-aos="fade-up">
+              kontaktieren sie mich
             </h1>
             <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
               Ich bin persönlich für Sie da. Kontaktieren Sie mich für eine unverbindliche Beratung
@@ -83,25 +83,25 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section className="py-12 bg-gray-50">
+      {/* Contact Info Cards - Fenster-Form */}
+      <section className="py-12 bg-warmgrau">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-20">
             {contactInfo.map((info, index) => (
               <div
                 key={info.title}
-                className="bg-white p-6 rounded-xl shadow-lg text-center group hover:shadow-xl transition-shadow smooth-hover"
+                className="bg-white p-6 rounded-fenster shadow-lg text-center group hover:shadow-xl transition-shadow smooth-hover"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-700 transition-colors">
-                  <info.icon className="h-7 w-7 text-primary-700 group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 bg-wuestenrot-25 rounded-muenze flex items-center justify-center mx-auto mb-4 group-hover:bg-wuestenrot transition-colors">
+                  <info.icon className="h-7 w-7 text-wuestenrot group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                <h3 className="font-bold text-wuestennacht mb-2">{info.title}</h3>
                 {info.lines.map((line, index) => (
-                  <p key={index} className="text-gray-600 text-sm">
+                  <p key={index} className="text-wuestennacht-light text-sm">
                     {info.link && index === 0 ? (
-                      <a href={info.link} className="hover:text-primary-700 transition-colors">
+                      <a href={info.link} className="hover:text-wuestenrot transition-colors">
                         {line}
                       </a>
                     ) : (
@@ -122,10 +122,10 @@ export default function KontaktPage() {
             {/* Contact Form */}
             <div data-aos="fade-right">
               <div className="flex items-center gap-3 mb-6">
-                <MessageSquare className="h-8 w-8 text-primary-500" />
+                <MessageSquare className="h-8 w-8 text-wuestenrot" />
                 <h2 className="section-title">Schreiben Sie mir</h2>
               </div>
-              <p className="text-gray-600 mb-8">
+              <p className="text-wuestennacht-light mb-8">
                 Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
               </p>
 
@@ -160,7 +160,7 @@ export default function KontaktPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="form-label">
                         Name *
                       </label>
                       <input
@@ -170,12 +170,12 @@ export default function KontaktPage() {
                         required
                         value={formState.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="form-input"
                         placeholder="Ihr vollständiger Name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="form-label">
                         E-Mail *
                       </label>
                       <input
@@ -185,7 +185,7 @@ export default function KontaktPage() {
                         required
                         value={formState.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="form-input"
                         placeholder="ihre@email.de"
                       />
                     </div>
@@ -193,7 +193,7 @@ export default function KontaktPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="form-label">
                         Telefon
                       </label>
                       <input
@@ -202,12 +202,12 @@ export default function KontaktPage() {
                         name="phone"
                         value={formState.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="form-input"
                         placeholder="+49 123 456 7890"
                       />
                     </div>
                     <div>
-                      <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="inquiryType" className="form-label">
                         Art der Anfrage
                       </label>
                       <select
@@ -215,7 +215,7 @@ export default function KontaktPage() {
                         name="inquiryType"
                         value={formState.inquiryType}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="form-select"
                       >
                         <option value="">Bitte auswählen</option>
                         {inquiryTypes.map((type) => (
@@ -228,7 +228,7 @@ export default function KontaktPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="form-label">
                       Ihre Nachricht *
                     </label>
                     <textarea
@@ -238,7 +238,7 @@ export default function KontaktPage() {
                       rows={6}
                       value={formState.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                      className="form-textarea"
                       placeholder="Wie können wir Ihnen helfen?"
                     />
                   </div>
@@ -250,9 +250,9 @@ export default function KontaktPage() {
                       required
                       className="mt-1"
                     />
-                    <label htmlFor="privacy" className="text-sm text-gray-600">
+                    <label htmlFor="privacy" className="text-sm text-wuestennacht-light">
                       Ich habe die{' '}
-                      <a href="/datenschutz" className="text-primary-700 hover:underline">
+                      <a href="/datenschutz" className="text-wuestenrot hover:underline">
                         Datenschutzerklärung
                       </a>{' '}
                       gelesen und stimme der Verarbeitung meiner Daten zu.
@@ -268,8 +268,8 @@ export default function KontaktPage() {
                       'Wird gesendet...'
                     ) : (
                       <>
-                        <Send className="h-5 w-5 mr-2" />
                         Nachricht senden
+                        <ArrowRight className="h-5 w-5" />
                       </>
                     )}
                   </button>
@@ -280,12 +280,12 @@ export default function KontaktPage() {
             {/* Map and Additional Info */}
             <div data-aos="fade-left">
               <h2 className="section-title mb-6">Besuchen Sie mich</h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-wuestennacht-light mb-8">
                 Mein Büro befindet sich in Hermeskeil. Ich freue mich auf Ihren Besuch oder einen Termin vor Ort!
               </p>
 
-              {/* Map Embed - Google Maps */}
-              <div className="h-80 rounded-xl mb-8 overflow-hidden shadow-lg">
+              {/* Map Embed - Google Maps - Fenster-Form */}
+              <div className="h-80 rounded-fenster mb-8 overflow-hidden shadow-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.5!2d6.9414!3d49.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b8c5a5a5a5a5%3A0x0!2sSaarstra%C3%9Fe%201%2C%2054411%20Hermeskeil!5e0!3m2!1sde!2sde!4v1706000000000!5m2!1sde!2sde"
                   width="100%"
@@ -301,32 +301,32 @@ export default function KontaktPage() {
                 href="https://www.google.com/maps/search/?api=1&query=Saarstraße+1,+54411+Hermeskeil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium mb-8"
+                className="inline-flex items-center gap-2 text-wuestenrot hover:text-wuestenrot-hover font-bold mb-8"
               >
                 <MapPin className="h-4 w-4" />
                 In Google Maps öffnen
               </a>
 
-              {/* Parking & Transport Info */}
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="font-semibold text-gray-900 mb-4">Anfahrt</h3>
+              {/* Parking & Transport Info - warmgrau Box */}
+              <div className="bg-warmgrau p-6 rounded-fenster">
+                <h3 className="font-bold text-wuestennacht mb-4">Anfahrt</h3>
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h4 className="font-medium text-gray-700">Mit dem Auto:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-wuestennacht">Mit dem Auto:</h4>
+                    <p className="text-wuestennacht-light">
                       Über die B52 erreichen Sie Hermeskeil aus Richtung Trier oder Saarbrücken.<br />
                       Kostenlose Parkmöglichkeiten direkt vor dem Büro.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-700">Aus Trier:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-wuestennacht">Aus Trier:</h4>
+                    <p className="text-wuestennacht-light">
                       Ca. 30 Minuten Fahrtzeit über die B52 Richtung Hermeskeil.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-700">Termin vereinbaren:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-wuestennacht">Termin vereinbaren:</h4>
+                    <p className="text-wuestennacht-light">
                       Für eine persönliche Beratung vereinbaren Sie gerne einen Termin.<br />
                       Hausbesuche in der gesamten Region sind möglich.
                     </p>
@@ -338,8 +338,8 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      {/* FAQ Section - warmgrau */}
+      <section className="py-20 bg-warmgrau">
         <div className="container-custom">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="section-title mb-4">Häufig gestellte Fragen</h2>
@@ -367,9 +367,9 @@ export default function KontaktPage() {
                 a: 'Für eine fundierte Bewertung benötigen wir Grundrisse, Energieausweis, Grundbuchauszug und Informationen zur Ausstattung.',
               },
             ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+              <div key={index} className="bg-white p-6 rounded-fenster shadow-sm smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
+                <h3 className="font-bold text-wuestennacht mb-2">{faq.q}</h3>
+                <p className="text-wuestennacht-light">{faq.a}</p>
               </div>
             ))}
           </div>
