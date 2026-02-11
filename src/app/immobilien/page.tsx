@@ -192,14 +192,14 @@ export default function ImmobilienPage() {
   }, [airtableProperties, filteredStaticProperties, filteredAirtableProperties])
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-warmgrau">
       {/* Header */}
-      <section className="bg-secondary-900 py-16">
+      <section className="bg-wuestennacht py-16">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">
+          <h1 className="text-4xl md:text-5xl font-bold font-ww-bold text-white mb-4" data-aos="fade-up">
             Immobilien
           </h1>
-          <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
+          <p className="text-xl text-white/70" data-aos="fade-up" data-aos-delay="100">
             Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel
           </p>
         </div>
@@ -211,13 +211,13 @@ export default function ImmobilienPage() {
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-wuestennacht-hover" />
               <input
                 type="text"
                 placeholder="Standort suchen..."
                 value={filters.location}
                 onChange={(e) => setFilters({ ...filters, location: e.target.value })}
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2.5 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot focus:border-transparent"
               />
             </div>
 
@@ -225,16 +225,16 @@ export default function ImmobilienPage() {
               {/* Filter Toggle */}
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border transition-colors ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-fenster border transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'bg-primary-500 text-white border-primary-500'
-                    : 'bg-white text-gray-700 border-gray-200 hover:border-primary-300'
+                    ? 'bg-wuestenrot text-white border-wuestenrot'
+                    : 'bg-white text-wuestennacht-light border-warmgrau hover:border-wuestenrot/30'
                 }`}
               >
                 <SlidersHorizontal className="h-5 w-5" />
                 <span>Filter</span>
                 {activeFilterCount > 0 && (
-                  <span className="bg-white text-primary-500 text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-white text-wuestenrot text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -244,7 +244,7 @@ export default function ImmobilienPage() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="px-4 py-2.5 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot focus:border-transparent"
               >
                 <option value="newest">Neueste zuerst</option>
                 <option value="price-asc">Preis aufsteigend</option>
@@ -254,16 +254,16 @@ export default function ImmobilienPage() {
               </select>
 
               {/* View Toggle */}
-              <div className="hidden md:flex items-center border border-gray-200 rounded-lg overflow-hidden">
+              <div className="hidden md:flex items-center border border-warmgrau rounded-fenster overflow-hidden">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-primary-500 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-wuestenrot text-white' : 'text-wuestennacht-light hover:bg-warmgrau'}`}
                 >
                   <Grid className="h-5 w-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2.5 ${viewMode === 'list' ? 'bg-primary-500 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`p-2.5 ${viewMode === 'list' ? 'bg-wuestenrot text-white' : 'text-wuestennacht-light hover:bg-warmgrau'}`}
                 >
                   <List className="h-5 w-5" />
                 </button>
@@ -276,11 +276,11 @@ export default function ImmobilienPage() {
             <div className="mt-4 pt-4 border-t">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Art</label>
+                  <label className="block text-sm font-medium text-wuestennacht-light mb-1">Art</label>
                   <select
                     value={filters.type}
                     onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot"
                   >
                     <option value="">Alle</option>
                     <option value="kauf">Kaufen</option>
@@ -289,11 +289,11 @@ export default function ImmobilienPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Typ</label>
+                  <label className="block text-sm font-medium text-wuestennacht-light mb-1">Typ</label>
                   <select
                     value={filters.category}
                     onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot"
                   >
                     <option value="">Alle</option>
                     <option value="wohnung">Wohnung</option>
@@ -304,44 +304,44 @@ export default function ImmobilienPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Min. Preis</label>
+                  <label className="block text-sm font-medium text-wuestennacht-light mb-1">Min. Preis</label>
                   <input
                     type="number"
                     placeholder="€"
                     value={filters.minPrice}
                     onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Max. Preis</label>
+                  <label className="block text-sm font-medium text-wuestennacht-light mb-1">Max. Preis</label>
                   <input
                     type="number"
                     placeholder="€"
                     value={filters.maxPrice}
                     onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Min. Fläche</label>
+                  <label className="block text-sm font-medium text-wuestennacht-light mb-1">Min. Fläche</label>
                   <input
                     type="number"
                     placeholder="m²"
                     value={filters.minArea}
                     onChange={(e) => setFilters({ ...filters, minArea: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Min. Zimmer</label>
+                  <label className="block text-sm font-medium text-wuestennacht-light mb-1">Min. Zimmer</label>
                   <select
                     value={filters.bedrooms}
                     onChange={(e) => setFilters({ ...filters, bedrooms: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot"
                   >
                     <option value="">Alle</option>
                     <option value="1">1+</option>
@@ -356,7 +356,7 @@ export default function ImmobilienPage() {
               {activeFilterCount > 0 && (
                 <button
                   onClick={resetFilters}
-                  className="mt-4 text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1"
+                  className="mt-4 text-sm text-wuestenrot hover:text-wuestenrot flex items-center gap-1"
                 >
                   <X className="h-4 w-4" />
                   Filter zurücksetzen
@@ -372,13 +372,13 @@ export default function ImmobilienPage() {
         <div className="container-custom">
           <div className="mb-6 flex items-center justify-between">
             {isLoadingAirtable ? (
-              <div className="flex items-center gap-2 text-gray-500">
+              <div className="flex items-center gap-2 text-wuestennacht-hover">
                 <Loader2 className="h-4 w-4 animate-spin" />
                 Lade Immobilien...
               </div>
             ) : (
-              <p className="text-gray-600">
-                <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
+              <p className="text-wuestennacht-light">
+                <span className="font-semibold text-wuestennacht">{totalCount}</span> Immobilien gefunden
               </p>
             )}
           </div>
@@ -406,13 +406,13 @@ export default function ImmobilienPage() {
                 : 'flex flex-col gap-6'
             }>
               {[...Array(8)].map((_, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden animate-pulse">
-                  <div className="h-48 bg-gray-200" />
+                <div key={index} className="bg-white rounded-fenster shadow-lg overflow-hidden animate-pulse">
+                  <div className="h-48 bg-warmgrau" />
                   <div className="p-6 space-y-3">
-                    <div className="h-6 bg-gray-200 rounded w-3/4" />
-                    <div className="h-4 bg-gray-200 rounded w-1/2" />
-                    <div className="h-4 bg-gray-200 rounded w-full" />
-                    <div className="h-8 bg-gray-200 rounded w-1/3 mt-4" />
+                    <div className="h-6 bg-warmgrau rounded w-3/4" />
+                    <div className="h-4 bg-warmgrau rounded w-1/2" />
+                    <div className="h-4 bg-warmgrau rounded w-full" />
+                    <div className="h-8 bg-warmgrau rounded w-1/3 mt-4" />
                   </div>
                 </div>
               ))}
@@ -437,13 +437,13 @@ export default function ImmobilienPage() {
           {/* No results */}
           {totalCount === 0 && !isLoadingAirtable && (
             <div className="text-center py-16" data-aos="fade-up">
-              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="h-8 w-8 text-gray-400" />
+              <div className="w-16 h-16 bg-warmgrau rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="h-8 w-8 text-wuestennacht-hover" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold font-ww-bold text-wuestennacht mb-2">
                 Keine Ergebnisse gefunden
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-wuestennacht-light mb-4">
                 Versuchen Sie, Ihre Filterkriterien anzupassen
               </p>
               <button onClick={resetFilters} className="btn-primary">

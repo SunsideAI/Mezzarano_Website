@@ -41,7 +41,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-wuestennacht text-gray-300">
+    <footer className="bg-wuestennacht text-white/70">
       {/* Main footer content */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -51,14 +51,14 @@ export default function Footer() {
               <WuestenrotLogoCompact />
               <div>
                 <span className="font-bold text-lg text-white leading-tight block lowercase">wüstenrot</span>
-                <span className="text-xs text-gray-400 tracking-wider uppercase">Immobilien</span>
+                <span className="text-xs text-white/50 tracking-wider uppercase">Immobilien</span>
               </div>
             </Link>
 
             {/* Agent Info */}
             <div className="mb-6">
               <h3 className="text-white font-bold text-lg mb-1">{contact.name}</h3>
-              <p className="text-gray-400 text-sm">{contact.title}</p>
+              <p className="text-white/50 text-sm">{contact.title}</p>
             </div>
 
             {/* Contact Info */}
@@ -158,7 +158,7 @@ export default function Footer() {
       {/* Bottom bar - Legal Lines */}
       <div className="border-t border-wuestennacht-light">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-white/40">
             &copy; {new Date().getFullYear()} {contact.name} - Wüstenrot Immobilien. Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
@@ -166,7 +166,7 @@ export default function Footer() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-500 hover:text-wuestenrot-light transition-colors"
+                className="text-white/40 hover:text-wuestenrot-light transition-colors"
               >
                 {link.name}
               </Link>

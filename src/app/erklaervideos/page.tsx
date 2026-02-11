@@ -62,17 +62,17 @@ export default function ErklaervideosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 bg-secondary-900">
+      <section className="py-24 bg-wuestennacht">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
+              <span className="inline-block px-4 py-2 bg-wuestenrot/20 text-wuestenrot-light rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
                 Wissen kompakt erklärt
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+              <h1 className="text-4xl md:text-5xl font-bold font-ww-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
                 Erklärvideos
               </h1>
-              <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-xl text-white/70 mb-8" data-aos="fade-up" data-aos-delay="200">
                 Immobilienthemen auf den Punkt gebracht. Informieren Sie sich bequem per Video – wann und wo Sie möchten.
               </p>
               <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
@@ -80,34 +80,34 @@ export default function ErklaervideosPage() {
                   Beratung anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                   <Phone className="h-5 w-5 mr-2" />
                   0177 6542977
                 </a>
               </div>
             </div>
             <div className="relative hidden lg:block" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-white mb-6">Unsere Video-Themen</h3>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-fenster">
+                <h3 className="text-2xl font-bold font-ww-bold text-white mb-6">Unsere Video-Themen</h3>
                 <ul className="space-y-4 text-white mb-6">
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Maklerkosten & Provisionen</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Widerrufsrecht erklärt</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Preisermittlung verstehen</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Sicherheit beim Vermieten</span>
                   </li>
                 </ul>
-                <a href="#videos" className="btn-primary w-full justify-center bg-white text-primary-500 hover:bg-gray-100">
+                <a href="#videos" className="btn-primary w-full justify-center bg-white text-wuestenrot hover:bg-warmgrau">
                   Videos ansehen
                 </a>
               </div>
@@ -117,17 +117,17 @@ export default function ErklaervideosPage() {
       </section>
 
       {/* Videos Grid */}
-      <section id="videos" className="py-20 bg-gray-50">
+      <section id="videos" className="py-20 bg-warmgrau">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {videos.map((video) => (
               <div
                 key={video.id}
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="group bg-white rounded-fenster shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 {/* Video Thumbnail */}
                 <div
-                  className="relative aspect-video bg-secondary-900 cursor-pointer overflow-hidden"
+                  className="relative aspect-video bg-wuestennacht cursor-pointer overflow-hidden"
                   onClick={() => openVideo(video)}
                 >
                   <img
@@ -139,13 +139,13 @@ export default function ErklaervideosPage() {
 
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-primary-600 transition-all duration-300 shadow-lg">
+                    <div className="w-20 h-20 bg-wuestenrot rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-wuestenrot-hover transition-all duration-300 shadow-lg">
                       <Play className="w-8 h-8 text-white ml-1" fill="white" />
                     </div>
                   </div>
 
                   {/* Duration Badge */}
-                  <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm px-3 py-1 rounded-lg">
+                  <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm px-3 py-1 rounded-fenster">
                     {video.duration}
                   </div>
                 </div>
@@ -153,14 +153,14 @@ export default function ErklaervideosPage() {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-14 h-14 bg-primary-50 text-primary-500 rounded-xl flex items-center justify-center">
+                    <div className="flex-shrink-0 w-14 h-14 bg-wuestenrot-25 text-wuestenrot rounded-fenster flex items-center justify-center">
                       {video.icon}
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold text-secondary-900 mb-2 group-hover:text-primary-500 transition-colors">
+                      <h2 className="text-xl font-bold font-ww-bold text-wuestennacht mb-2 group-hover:text-wuestenrot transition-colors">
                         {video.title}
                       </h2>
-                      <p className="text-secondary-600 leading-relaxed">
+                      <p className="text-wuestennacht-light leading-relaxed">
                         {video.description}
                       </p>
                     </div>
@@ -184,13 +184,13 @@ export default function ErklaervideosPage() {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-500 rounded-2xl mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-wuestenrot-25 text-wuestenrot rounded-fenster mb-6">
               <Info className="w-8 h-8" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-ww-bold text-wuestennacht mb-4">
               Haben Sie noch Fragen?
             </h2>
-            <p className="text-lg text-secondary-600 mb-8">
+            <p className="text-lg text-wuestennacht-light mb-8">
               Unsere Erklärvideos geben Ihnen einen ersten Überblick. Für eine persönliche
               Beratung zu Ihrer individuellen Situation stehe ich Ihnen gerne zur Verfügung.
             </p>
@@ -208,12 +208,12 @@ export default function ErklaervideosPage() {
           onClick={closeVideo}
         >
           <div
-            className="relative w-full max-w-5xl aspect-video bg-black rounded-lg overflow-hidden"
+            className="relative w-full max-w-5xl aspect-video bg-black rounded-fenster overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeVideo}
-              className="absolute -top-12 right-0 text-white hover:text-primary-400 transition-colors z-10"
+              className="absolute -top-12 right-0 text-white hover:text-wuestenrot-light transition-colors z-10"
             >
               <X className="w-8 h-8" />
             </button>

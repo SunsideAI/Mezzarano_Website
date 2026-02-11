@@ -37,8 +37,8 @@ export default function WuestenrotLogo({ className = '', showText = true }: Wues
 
       {showText && (
         <div className="hidden sm:block">
-          <span className="block text-lg font-semibold text-secondary-900 leading-tight">wüstenrot</span>
-          <span className="block text-xs text-secondary-500 tracking-wider uppercase">Immobilien</span>
+          <span className="block text-lg font-semibold text-wuestennacht leading-tight">wüstenrot</span>
+          <span className="block text-xs text-wuestennacht-hover tracking-wider uppercase">Immobilien</span>
         </div>
       )}
     </div>

@@ -69,7 +69,7 @@ export default function RegionsGrid() {
           <Link
             key={region.name}
             href={region.href}
-            className="relative group overflow-hidden rounded-xl aspect-[4/3] img-zoom bg-secondary-800"
+            className="relative group overflow-hidden rounded-fenster aspect-[4/3] img-zoom bg-wuestennacht-light"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
@@ -83,10 +83,10 @@ export default function RegionsGrid() {
               placeholder="blur"
               blurDataURL={BLUR_PLACEHOLDER}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-wuestennacht/80 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4">
               <h3 className="text-white font-bold text-lg">{region.name}</h3>
-              <span className="text-white/70 text-sm flex items-center gap-1 group-hover:text-primary-400 transition-colors">
+              <span className="text-white/70 text-sm flex items-center gap-1 group-hover:text-wuestenrot-light transition-colors">
                 Immobilien entdecken
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
@@ -99,7 +99,7 @@ export default function RegionsGrid() {
         <div className="text-center mt-8">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-medium rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-warmgrau hover:bg-warmgrau text-wuestennacht-light font-medium rounded-fenster transition-colors"
           >
             {expanded ? (
               <>

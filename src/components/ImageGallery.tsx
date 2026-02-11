@@ -26,9 +26,9 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   // If no images, show placeholder
   if (!hasImages) {
     return (
-      <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
-        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-gray-100 flex items-center justify-center">
-          <div className="text-center text-gray-400">
+      <div className="bg-white rounded-fenster overflow-hidden shadow-xl">
+        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-warmgrau flex items-center justify-center">
+          <div className="text-center text-wuestennacht-hover">
             <ImageOff className="w-16 h-16 mx-auto mb-2" />
             <p>Keine Bilder verfügbar</p>
           </div>
@@ -76,9 +76,9 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   return (
     <>
       {/* Main Gallery Container */}
-      <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+      <div className="bg-white rounded-fenster overflow-hidden shadow-xl">
         {/* Main Image */}
-        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-secondary-100">
+        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-warmgrau">
           <Image
             src={allImages[currentIndex]}
             alt={`${title} - Bild ${currentIndex + 1}`}
@@ -94,17 +94,17 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
             <>
               <button
                 onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105 group"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 hover:bg-white rounded-muenze flex items-center justify-center shadow-lg transition-all hover:scale-105 group"
                 aria-label="Vorheriges Bild"
               >
-                <ChevronLeft className="w-6 h-6 text-secondary-700 group-hover:text-primary-500 transition-colors" />
+                <ChevronLeft className="w-6 h-6 text-wuestennacht-light group-hover:text-wuestenrot transition-colors" />
               </button>
               <button
                 onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105 group"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 hover:bg-white rounded-muenze flex items-center justify-center shadow-lg transition-all hover:scale-105 group"
                 aria-label="Nächstes Bild"
               >
-                <ChevronRight className="w-6 h-6 text-secondary-700 group-hover:text-primary-500 transition-colors" />
+                <ChevronRight className="w-6 h-6 text-wuestennacht-light group-hover:text-wuestenrot transition-colors" />
               </button>
             </>
           )}
@@ -114,7 +114,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
             {allImages.length > 1 && (
               <button
                 onClick={() => { setIsLightboxOpen(true); setIsGridView(true); }}
-                className="bg-white/95 hover:bg-white text-secondary-700 hover:text-primary-500 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg transition-all text-sm font-medium"
+                className="bg-white/95 hover:bg-white text-wuestennacht-light hover:text-wuestenrot px-4 py-2 rounded-muenze flex items-center gap-2 shadow-lg transition-all text-sm font-medium"
               >
                 <Grid3X3 className="w-4 h-4" />
                 Alle {allImages.length} Fotos
@@ -122,7 +122,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
             )}
             <button
               onClick={() => openLightbox(currentIndex)}
-              className="bg-white/95 hover:bg-white text-secondary-700 hover:text-primary-500 p-2 rounded-full shadow-lg transition-all"
+              className="bg-white/95 hover:bg-white text-wuestennacht-light hover:text-wuestenrot p-2 rounded-muenze shadow-lg transition-all"
               aria-label="Vollbild"
             >
               <Maximize2 className="w-5 h-5" />
@@ -130,14 +130,14 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
           </div>
 
           {/* Image Counter - Bottom Left */}
-          <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+          <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 rounded-muenze text-sm font-medium backdrop-blur-sm">
             {currentIndex + 1} / {allImages.length}
           </div>
         </div>
 
         {/* Thumbnail Strip */}
         {allImages.length > 1 && (
-          <div className="p-4 bg-secondary-50 border-t border-secondary-100">
+          <div className="p-4 bg-warmgrau border-t border-warmgrau">
             <div
               ref={thumbnailRef}
               className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-secondary-300 scrollbar-track-transparent"
@@ -146,7 +146,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`relative flex-shrink-0 w-24 h-16 md:w-32 md:h-20 rounded-lg overflow-hidden transition-all duration-200 ${
+                  className={`relative flex-shrink-0 w-24 h-16 md:w-32 md:h-20 rounded-fenster overflow-hidden transition-all duration-200 ${
                     index === currentIndex
                       ? 'ring-2 ring-primary-500 ring-offset-2 scale-105'
                       : 'opacity-70 hover:opacity-100 hover:scale-102'
@@ -182,9 +182,9 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 {allImages.length > 1 && (
                   <button
                     onClick={() => setIsGridView(!isGridView)}
-                    className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all text-sm font-medium ${
+                    className={`px-4 py-2 rounded-muenze flex items-center gap-2 transition-all text-sm font-medium ${
                       isGridView
-                        ? 'bg-white text-secondary-900'
+                        ? 'bg-white text-wuestennacht'
                         : 'bg-white/20 text-white hover:bg-white/30'
                     }`}
                   >
@@ -194,7 +194,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 )}
                 <button
                   onClick={() => setIsLightboxOpen(false)}
-                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-muenze flex items-center justify-center transition-colors"
                   aria-label="Schließen"
                 >
                   <X className="w-5 h-5 text-white" />
@@ -211,7 +211,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                   <button
                     key={index}
                     onClick={() => { setCurrentIndex(index); setIsGridView(false); }}
-                    className="relative aspect-[4/3] rounded-xl overflow-hidden group"
+                    className="relative aspect-[4/3] rounded-fenster overflow-hidden group"
                   >
                     <Image
                       src={image}
@@ -221,7 +221,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                    <span className="absolute bottom-3 left-3 bg-black/70 text-white text-sm px-3 py-1 rounded-full">
+                    <span className="absolute bottom-3 left-3 bg-black/70 text-white text-sm px-3 py-1 rounded-muenze">
                       {index + 1}
                     </span>
                   </button>
@@ -236,14 +236,14 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 <>
                   <button
                     onClick={goToPrevious}
-                    className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                    className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-muenze flex items-center justify-center transition-all"
                     aria-label="Vorheriges Bild"
                   >
                     <ChevronLeft className="w-8 h-8 text-white" />
                   </button>
                   <button
                     onClick={goToNext}
-                    className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                    className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-muenze flex items-center justify-center transition-all"
                     aria-label="Nächstes Bild"
                   >
                     <ChevronRight className="w-8 h-8 text-white" />
@@ -272,7 +272,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                     <button
                       key={index}
                       onClick={() => setCurrentIndex(index)}
-                      className={`relative flex-shrink-0 w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden transition-all duration-200 ${
+                      className={`relative flex-shrink-0 w-20 h-14 md:w-24 md:h-16 rounded-fenster overflow-hidden transition-all duration-200 ${
                         index === currentIndex
                           ? 'ring-2 ring-white scale-110'
                           : 'opacity-50 hover:opacity-100'

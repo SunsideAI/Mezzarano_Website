@@ -90,18 +90,18 @@ export default function BewertenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 bg-secondary-900">
+      <section className="py-24 bg-wuestennacht">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+              <div className="flex items-center gap-2 text-wuestenrot-light mb-4" data-aos="fade-up">
                 <BarChart3 className="h-5 w-5" />
                 <span className="text-sm font-medium uppercase tracking-wider">Immobilienbewertung</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+              <h1 className="text-4xl md:text-5xl font-ww-bold font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
                 Was ist Ihre Immobilie wert?
               </h1>
-              <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-xl text-white/70 mb-8" data-aos="fade-up" data-aos-delay="200">
                 Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - kostenlos, unverbindlich und von einem lokalen Experten mit fundierter Marktkenntnis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
@@ -109,34 +109,34 @@ export default function BewertenPage() {
                   Kostenlose Bewertung anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                   <Phone className="h-5 w-5 mr-2" />
                   0177 6542977
                 </a>
               </div>
             </div>
             <div className="relative hidden lg:block" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-white mb-6">Jetzt Bewertung starten</h3>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-fenster">
+                <h3 className="text-2xl font-ww-bold font-bold text-white mb-6">Jetzt Bewertung starten</h3>
                 <ul className="space-y-4 text-white mb-6">
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Termin innerhalb von 48 Stunden</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Persönliche Vor-Ort-Besichtigung</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>Schriftliches Wertgutachten</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot-light" />
                     <span>100% kostenlos & unverbindlich</span>
                   </li>
                 </ul>
-                <Link href="/kontakt" className="btn-primary w-full justify-center bg-white text-primary-500 hover:bg-gray-100">
+                <Link href="/kontakt" className="btn-primary w-full justify-center bg-white text-wuestenrot hover:bg-warmgrau">
                   Bewertung anfragen
                 </Link>
               </div>
@@ -146,7 +146,7 @@ export default function BewertenPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-warmgrau">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Ihre Vorteile</h2>
@@ -159,15 +159,15 @@ export default function BewertenPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="bg-white p-8 rounded-xl text-center group hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-fenster text-center group hover:shadow-xl transition-all"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-500 transition-colors">
-                  <benefit.icon className="h-8 w-8 text-primary-500 group-hover:text-white transition-colors" />
+                <div className="w-16 h-16 bg-wuestenrot-25 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-wuestenrot transition-colors">
+                  <benefit.icon className="h-8 w-8 text-wuestenrot group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-xl font-ww-bold font-bold text-wuestennacht mb-3">{benefit.title}</h3>
+                <p className="text-wuestennacht-light">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -180,18 +180,18 @@ export default function BewertenPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
               <h2 className="section-title mb-6">Was beeinflusst den Immobilienwert?</h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-wuestennacht-light mb-8">
                 Eine fundierte Immobilienbewertung berücksichtigt zahlreiche Faktoren. Als lokaler Experte kenne ich die Besonderheiten der Region Hermeskeil, Trier und Mosel genau.
               </p>
               <div className="space-y-6">
                 {valuationFactors.map((factor) => (
                   <div key={factor.title} className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <factor.icon className="h-6 w-6 text-primary-500" />
+                    <div className="w-12 h-12 bg-wuestenrot-25 rounded-fenster flex items-center justify-center flex-shrink-0">
+                      <factor.icon className="h-6 w-6 text-wuestenrot" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{factor.title}</h4>
-                      <p className="text-gray-600 text-sm">{factor.description}</p>
+                      <h4 className="font-semibold text-wuestennacht mb-1">{factor.title}</h4>
+                      <p className="text-wuestennacht-light text-sm">{factor.description}</p>
                     </div>
                   </div>
                 ))}
@@ -199,7 +199,7 @@ export default function BewertenPage() {
             </div>
 
             <div data-aos="fade-left">
-              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/3] relative rounded-fenster overflow-hidden shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
                   alt="Immobilienbewertung"
@@ -213,7 +213,7 @@ export default function BewertenPage() {
       </section>
 
       {/* Price Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-warmgrau">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Preisübersicht Region Trier-Mosel</h2>
@@ -223,26 +223,26 @@ export default function BewertenPage() {
           </div>
 
           <div className="overflow-x-auto" data-aos="fade-up">
-            <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-              <thead className="bg-secondary-900 text-white">
+            <table className="w-full bg-white rounded-fenster shadow-lg overflow-hidden">
+              <thead className="bg-wuestennacht text-white">
                 <tr>
                   <th className="px-6 py-4 text-left font-semibold">Region</th>
                   <th className="px-6 py-4 text-left font-semibold">Haus (€/m²)</th>
                   <th className="px-6 py-4 text-left font-semibold">Wohnung (€/m²)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-warmgrau">
                 {priceRanges.map((row, index) => (
-                  <tr key={row.region} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="px-6 py-4 font-medium text-gray-900">{row.region}</td>
-                    <td className="px-6 py-4 text-gray-600">{row.house} €</td>
-                    <td className="px-6 py-4 text-gray-600">{row.apartment} €</td>
+                  <tr key={row.region} className={index % 2 === 0 ? 'bg-white' : 'bg-warmgrau'}>
+                    <td className="px-6 py-4 font-medium text-wuestennacht">{row.region}</td>
+                    <td className="px-6 py-4 text-wuestennacht-light">{row.house} €</td>
+                    <td className="px-6 py-4 text-wuestennacht-light">{row.apartment} €</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-center text-gray-500 text-sm mt-4">
+          <p className="text-center text-wuestennacht-hover text-sm mt-4">
             * Richtwerte können je nach Lage, Zustand und Ausstattung abweichen
           </p>
         </div>
@@ -262,15 +262,15 @@ export default function BewertenPage() {
             {valuationTypes.map((type, index) => (
               <div
                 key={type.title}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-fenster shadow-lg hover:shadow-xl transition-all"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{type.title}</h3>
-                <p className="text-gray-600 mb-4">{type.description}</p>
+                <h3 className="text-xl font-ww-bold font-bold text-wuestennacht mb-3">{type.title}</h3>
+                <p className="text-wuestennacht-light mb-4">{type.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {type.suitable.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
+                    <span key={tag} className="px-3 py-1 bg-wuestenrot-25 text-wuestenrot-hover rounded-full text-sm">
                       {tag}
                     </span>
                   ))}
@@ -282,16 +282,16 @@ export default function BewertenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary-500">
+      <section className="py-20 bg-wuestenrot">
         <div className="container-custom text-center" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-ww-bold font-bold text-white mb-6">
             Jetzt kostenlose Bewertung anfragen
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - unverbindlich und kostenfrei.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt" className="btn-primary bg-white text-primary-500 hover:bg-gray-100">
+            <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau">
               Bewertung anfragen
             </Link>
             <a href="tel:01776542977" className="btn-outline-dark">

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Home, Key, TrendingUp, Users, Award, CheckCircle, ArrowRight, Star } from 'lucide-react'
+import { Home, Key, TrendingUp, Users, Award, CheckCircle, ArrowRight, Star, Phone } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
 import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { getFeaturedProperties } from '@/data/properties'
@@ -81,7 +81,7 @@ export default async function HomePage() {
       <HeroSlider />
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-warmgrau">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Unsere Leistungen</h2>
@@ -95,17 +95,17 @@ export default async function HomePage() {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-white p-8 rounded-fenster shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500 transition-colors duration-300">
-                  <service.icon className="h-7 w-7 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-14 h-14 bg-wuestenrot-25 rounded-muenze flex items-center justify-center mb-6 group-hover:bg-wuestenrot transition-colors duration-300">
+                  <service.icon className="h-7 w-7 text-wuestenrot group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">
+                <h3 className="text-xl font-bold text-wuestennacht mb-3 font-ww-bold">
                   {service.title}
                 </h3>
-                <p className="text-secondary-600">
+                <p className="text-wuestennacht-light">
                   {service.description}
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default async function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12" data-aos="fade-up">
             <div>
               <h2 className="section-title mb-2">Aktuelle Immobilien</h2>
-              <p className="text-secondary-600">
+              <p className="text-wuestennacht-light">
                 {hasAirtableData ? 'Live aus unserem Angebot' : 'Entdecken Sie unsere Top-Angebote'}
               </p>
             </div>
@@ -149,14 +149,14 @@ export default async function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-secondary-900 text-white overflow-hidden">
+      <section className="py-20 bg-wuestennacht text-white overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ihr lokaler <span className="text-primary-500">Wüstenrot</span> Immobilienpartner
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-ww-bold">
+                Ihr lokaler <span className="text-wuestenrot">Wüstenrot</span> Immobilienpartner
               </h2>
-              <p className="text-gray-300 mb-6 text-lg">
+              <p className="text-white/80 mb-6 text-lg font-ww-regular">
                 Als Ihr Wüstenrot Immobilienexperte in Hermeskeil biete ich Ihnen persönliche
                 Beratung mit umfassender Marktkenntnis. Mein Erfolg basiert auf Vertrauen,
                 Kompetenz und individuellem Service für jeden Kunden.
@@ -169,7 +169,7 @@ export default async function HomePage() {
                   'Wüstenrot Finanzierungsnetzwerk',
                 ].map((item, index) => (
                   <li key={item} className="flex items-center gap-3" style={{ animationDelay: `${index * 100}ms` }}>
-                    <CheckCircle className="h-5 w-5 text-primary-500 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -184,14 +184,14 @@ export default async function HomePage() {
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white/10 backdrop-blur-sm rounded-fenster p-6 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
                   data-aos="zoom-in"
                   data-aos-delay={index * 100}
                 >
-                  <div className="text-4xl font-bold text-primary-500 mb-2">
+                  <div className="text-4xl font-bold text-wuestenrot mb-2 font-ww-bold">
                     {stat.value}
                   </div>
-                  <div className="text-gray-300">{stat.label}</div>
+                  <div className="text-white/70">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -214,7 +214,7 @@ export default async function HomePage() {
       </section>
 
       {/* Trust Section - Makler Portrait & Auszeichnungen */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-20 bg-gradient-to-b from-white to-warmgrau">
         <div className="container-custom">
           {/* Header */}
           <div className="text-center mb-12" data-aos="fade-up">
@@ -226,7 +226,7 @@ export default async function HomePage() {
 
           {/* Portrait Card */}
           <div className="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-white rounded-fenster shadow-xl overflow-hidden">
               <div className="flex flex-col md:flex-row">
                 {/* Image */}
                 <div className="md:w-2/5 relative">
@@ -241,23 +241,23 @@ export default async function HomePage() {
                 </div>
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-wuestennacht mb-2 font-ww-bold">
                     Sandro Mezzarano
                   </h3>
-                  <p className="text-primary-600 font-semibold mb-4">
+                  <p className="text-wuestenrot font-semibold mb-4 font-ww-bold">
                     Wüstenrot Immobilienberater
                   </p>
-                  <p className="text-secondary-600 mb-4 leading-relaxed">
+                  <p className="text-wuestennacht-light mb-4 leading-relaxed font-ww-regular">
                     Mit über 16 Jahren Erfahrung in der Immobilienbranche bin ich Ihr verlässlicher Partner
                     für alle Fragen rund um Kauf, Verkauf und Bewertung von Immobilien in der Region
                     Trier-Saarburg und im Hochwald.
                   </p>
-                  <p className="text-secondary-600 leading-relaxed">
+                  <p className="text-wuestennacht-light leading-relaxed font-ww-regular">
                     Persönliche Beratung, transparente Prozesse und die Stärke eines großen Netzwerks –
                     dafür stehe ich mit meinem Namen.
                   </p>
                   <div className="mt-6">
-                    <Link href="/ueber-uns" className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2 group">
+                    <Link href="/ueber-uns" className="text-wuestenrot font-semibold hover:text-wuestenrot-hover inline-flex items-center gap-2 group font-ww-bold">
                       Mehr erfahren
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
@@ -268,8 +268,8 @@ export default async function HomePage() {
           </div>
 
           {/* Awards - Simple Logo Bar */}
-          <div className="mt-12 pt-12 border-t border-gray-200" data-aos="fade-up" data-aos-delay="200">
-            <p className="text-center text-secondary-400 text-sm mb-6">
+          <div className="mt-12 pt-12 border-t border-warmgrau" data-aos="fade-up" data-aos-delay="200">
+            <p className="text-center text-wuestennacht-hover text-sm mb-6">
               Ausgezeichnet für höchste Beratungsqualität
             </p>
             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
@@ -313,30 +313,30 @@ export default async function HomePage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative"
+                className="bg-warmgrau p-6 rounded-fenster border border-warmgrau relative"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
                 {/* Quote Icon */}
                 <div className="absolute -top-3 left-6">
-                  <div className="bg-primary-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-serif">
+                  <div className="bg-wuestenrot text-white w-8 h-8 rounded-muenze flex items-center justify-center text-xl font-serif">
                     &ldquo;
                   </div>
                 </div>
 
                 <div className="pt-4">
-                  <p className="text-secondary-700 mb-4 leading-relaxed">
+                  <p className="text-wuestennacht-light mb-4 leading-relaxed font-ww-regular">
                     {testimonial.text}
                   </p>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div className="flex items-center justify-between pt-4 border-t border-white/50">
                     <div>
-                      <div className="font-semibold text-secondary-900">{testimonial.name}</div>
-                      <div className="text-sm text-secondary-500">{testimonial.location}</div>
+                      <div className="font-semibold text-wuestennacht font-ww-bold">{testimonial.name}</div>
+                      <div className="text-sm text-wuestennacht-hover">{testimonial.location}</div>
                     </div>
                     <div className="flex gap-0.5">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-primary-500 text-primary-500" />
+                        <Star key={i} className="h-4 w-4 fill-wuestenrot text-wuestenrot" />
                       ))}
                     </div>
                   </div>
@@ -351,7 +351,7 @@ export default async function HomePage() {
               href="https://www.google.com/maps/place/W%C3%BCstenrot+Immobilien+Sandro+Mezzarano"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
+              className="inline-flex items-center gap-2 text-wuestennacht-light hover:text-wuestenrot transition-colors"
             >
               <span>Mehr Bewertungen auf Google</span>
               <ArrowRight className="h-4 w-4" />
@@ -361,22 +361,22 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-500">
+      <section className="py-20 bg-wuestenrot">
         <div className="container-custom text-center" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-ww-bold">
             Bereit, Ihre Traumimmobilie zu finden?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-ww-regular">
             Kontaktieren Sie mich noch heute für eine unverbindliche Beratung.
             Ich stehe Ihnen persönlich zur Verfügung.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt" className="btn-primary bg-white text-primary-600 hover:bg-gray-100 group">
+            <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau group">
               Jetzt Kontakt aufnehmen
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <a href="tel:01776542977" className="btn-outline-dark">
-              <span className="mr-2">📞</span>
+            <a href="tel:01776542977" className="btn-outline">
+              <Phone className="mr-2 h-5 w-5" />
               0177 6542977
             </a>
           </div>

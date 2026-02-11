@@ -172,12 +172,12 @@ export default function PropertyMap({ address, city, plz, region }: PropertyMapP
 
   if (isLoading) {
     return (
-      <div className="bg-white p-8 rounded-xl shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Standort</h2>
-        <div className="h-72 bg-gray-100 rounded-xl flex items-center justify-center">
+      <div className="bg-white p-8 rounded-fenster shadow-sm">
+        <h2 className="text-2xl font-bold text-wuestennacht mb-4">Standort</h2>
+        <div className="h-72 bg-warmgrau rounded-fenster flex items-center justify-center">
           <div className="text-center">
-            <div className="w-10 h-10 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-            <p className="text-gray-500">Karte wird geladen...</p>
+            <div className="w-10 h-10 border-4 border-wuestenrot border-t-transparent rounded-muenze animate-spin mx-auto mb-3"></div>
+            <p className="text-wuestennacht-hover">Karte wird geladen...</p>
           </div>
         </div>
       </div>
@@ -186,18 +186,18 @@ export default function PropertyMap({ address, city, plz, region }: PropertyMapP
 
   if (error || !coordinates) {
     return (
-      <div className="bg-white p-8 rounded-xl shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Standort</h2>
-        <div className="h-72 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+      <div className="bg-white p-8 rounded-fenster shadow-sm">
+        <h2 className="text-2xl font-bold text-wuestennacht mb-4">Standort</h2>
+        <div className="h-72 bg-gradient-to-br from-warmgrau to-warmgrau rounded-fenster flex items-center justify-center">
           <div className="text-center px-6">
-            <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-            <p className="text-gray-600 font-medium mb-1">{city}</p>
-            <p className="text-gray-500 text-sm mb-4">{plz ? `${plz} ` : ''}{region || ''}</p>
+            <MapPin className="w-12 h-12 text-wuestennacht-hover mx-auto mb-3" />
+            <p className="text-wuestennacht-light font-medium mb-1">{city}</p>
+            <p className="text-wuestennacht-hover text-sm mb-4">{plz ? `${plz} ` : ''}{region || ''}</p>
             <a
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium text-sm"
+              className="inline-flex items-center gap-2 text-wuestenrot hover:text-wuestenrot-hover font-medium text-sm"
             >
               <ExternalLink className="w-4 h-4" />
               In Google Maps öffnen
@@ -209,14 +209,14 @@ export default function PropertyMap({ address, city, plz, region }: PropertyMapP
   }
 
   return (
-    <div className="bg-white p-8 rounded-xl shadow-sm">
+    <div className="bg-white p-8 rounded-fenster shadow-sm">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-bold text-gray-900">Standort</h2>
+        <h2 className="text-2xl font-bold text-wuestennacht">Standort</h2>
         <a
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium text-sm transition-colors"
+          className="inline-flex items-center gap-2 text-wuestenrot hover:text-wuestenrot-hover font-medium text-sm transition-colors"
         >
           <Navigation className="w-4 h-4" />
           Route planen
@@ -226,16 +226,16 @@ export default function PropertyMap({ address, city, plz, region }: PropertyMapP
       {/* Map Container */}
       <div
         ref={mapRef}
-        className="h-72 md:h-80 rounded-xl overflow-hidden z-0"
+        className="h-72 md:h-80 rounded-fenster overflow-hidden z-0"
         style={{ background: '#e5e7eb' }}
       />
 
       {/* Address Info Below Map */}
-      <div className="mt-4 flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-        <MapPin className="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" />
+      <div className="mt-4 flex items-start gap-3 p-4 bg-warmgrau rounded-fenster">
+        <MapPin className="w-5 h-5 text-wuestenrot mt-0.5 flex-shrink-0" />
         <div>
-          <p className="font-medium text-gray-900">{address || 'Adresse auf Anfrage'}</p>
-          <p className="text-gray-500 text-sm">{plz ? `${plz} ` : ''}{city}{region ? `, ${region}` : ''}</p>
+          <p className="font-medium text-wuestennacht">{address || 'Adresse auf Anfrage'}</p>
+          <p className="text-wuestennacht-hover text-sm">{plz ? `${plz} ` : ''}{city}{region ? `, ${region}` : ''}</p>
         </div>
       </div>
     </div>

@@ -72,10 +72,10 @@ export default function KontaktPage() {
       <section className="bg-wuestennacht py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-headline" data-aos="fade-up">
+            <h1 className="text-4xl md:text-5xl font-ww-bold text-white mb-6 leading-headline" data-aos="fade-up">
               kontaktieren sie mich
             </h1>
-            <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xl text-white/70" data-aos="fade-up" data-aos-delay="100">
               Ich bin persönlich für Sie da. Kontaktieren Sie mich für eine unverbindliche Beratung
               rund um Ihre Immobilie.
             </p>
@@ -130,14 +130,14 @@ export default function KontaktPage() {
               </p>
 
               {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
+                <div className="bg-wuestenwald/10 border border-wuestenwald/30 rounded-fenster p-8 text-center">
+                  <div className="w-16 h-16 bg-wuestenwald/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-wuestenwald" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-ww-bold text-wuestennacht mb-2">
                     Vielen Dank für Ihre Nachricht!
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-wuestennacht-light mb-6">
                     Wir haben Ihre Anfrage erhalten und werden uns schnellstmöglich bei Ihnen melden.
                   </p>
                   <button

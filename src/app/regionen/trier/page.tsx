@@ -44,19 +44,19 @@ export default function TrierPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-16 md:py-20">
+      <section className="bg-wuestennacht py-16 md:py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div data-aos="fade-right">
-              <div className="flex items-center gap-2 text-primary-400 mb-4">
+              <div className="flex items-center gap-2 text-wuestenrot-light mb-4">
                 <MapPin className="h-5 w-5" />
                 <span className="font-medium">Trier & Trier-Saarburg</span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-ww-bold text-white mb-6 leading-tight">
                 Ihr Immobilienmakler für Trier
               </h1>
-              <p className="text-lg text-gray-300 mb-8">
+              <p className="text-lg text-white/70 mb-8">
                 Sandro Mezzarano von Wüstenrot Immobilien – Ihr Experte für den Immobilienmarkt
                 in Trier und dem Landkreis Trier-Saarburg. Kompetent, persönlich, erfolgreich.
               </p>
@@ -72,7 +72,7 @@ export default function TrierPage() {
 
             {/* Image */}
             <div className="relative" data-aos="fade-left">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] rounded-fenster overflow-hidden shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png"
                   alt="Trier - Historische Altstadt"
@@ -84,20 +84,20 @@ export default function TrierPage() {
                 />
               </div>
               {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-500 rounded-2xl -z-10 hidden md:block" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-wuestenrot rounded-fenster -z-10 hidden md:block" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Bar */}
-      <section className="bg-primary-500 text-white py-4">
+      <section className="bg-wuestenrot text-white py-4">
         <div className="container-custom flex flex-wrap justify-center gap-6 md:gap-12 text-sm md:text-base">
-          <a href="tel:01776542977" className="flex items-center gap-2 hover:text-primary-100 transition-colors">
+          <a href="tel:01776542977" className="flex items-center gap-2 hover:text-wuestenrot-25 transition-colors">
             <Phone className="h-4 w-4" />
             <span>0177 6542977</span>
           </a>
-          <a href="mailto:sandro.mezzarano@wuestenrot.de" className="flex items-center gap-2 hover:text-primary-100 transition-colors">
+          <a href="mailto:sandro.mezzarano@wuestenrot.de" className="flex items-center gap-2 hover:text-wuestenrot-25 transition-colors">
             <Mail className="h-4 w-4" />
             <span>sandro.mezzarano@wuestenrot.de</span>
           </a>
@@ -112,10 +112,10 @@ export default function TrierPage() {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
+            <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-6 text-center">
               Immobilienmarkt Trier – Tradition trifft Moderne
             </h2>
-            <div className="prose prose-lg max-w-none text-secondary-700">
+            <div className="prose prose-lg max-w-none text-wuestennacht-light">
               <p>
                 <strong>Trier</strong>, die älteste Stadt Deutschlands, vereint römisches Erbe mit modernem
                 Stadtleben. Als Oberzentrum der Region bietet Trier exzellente Infrastruktur, eine renommierte
@@ -137,12 +137,12 @@ export default function TrierPage() {
       </section>
 
       {/* Stadtteile */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-warmgrau">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-8 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-8 text-center" data-aos="fade-up">
             Immobilien in allen Trierer Stadtteilen
           </h2>
-          <p className="text-secondary-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+          <p className="text-wuestennacht-light text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
             Ich kenne die Besonderheiten jedes Trierer Stadtteils und finde die passende
             Immobilie für Ihre individuellen Anforderungen.
           </p>
@@ -150,11 +150,11 @@ export default function TrierPage() {
             {stadtteile.map((stadtteil, index) => (
               <div
                 key={stadtteil}
-                className="bg-white rounded-lg p-4 text-center shadow-sm smooth-hover"
+                className="bg-white rounded-fenster p-4 text-center shadow-sm smooth-hover"
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
               >
-                <span className="text-secondary-700 text-sm">{stadtteil}</span>
+                <span className="text-wuestennacht-light text-sm">{stadtteil}</span>
               </div>
             ))}
           </div>
@@ -164,69 +164,69 @@ export default function TrierPage() {
       {/* Services Grid */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-12 text-center" data-aos="fade-up">
             Meine Leistungen für Trier
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up">
-              <Home className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">Immobilien kaufen</h3>
-              <p className="text-secondary-600 mb-4">
+            <div className="bg-warmgrau p-8 rounded-fenster smooth-hover" data-aos="fade-up">
+              <Home className="h-10 w-10 text-wuestenrot mb-4" />
+              <h3 className="text-xl font-bold font-ww-bold text-wuestennacht mb-3">Immobilien kaufen</h3>
+              <p className="text-wuestennacht-light mb-4">
                 Profitieren Sie von meiner Marktkenntnis bei der Suche nach Ihrer Traumimmobilie in Trier.
               </p>
-              <ul className="space-y-2 text-secondary-700 text-sm">
+              <ul className="space-y-2 text-wuestennacht-light text-sm">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Bedarfsanalyse
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Objektvorauswahl
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Besichtigungsbegleitung
                 </li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up" data-aos-delay="100">
-              <TrendingUp className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">Immobilien verkaufen</h3>
-              <p className="text-secondary-600 mb-4">
+            <div className="bg-warmgrau p-8 rounded-fenster smooth-hover" data-aos="fade-up" data-aos-delay="100">
+              <TrendingUp className="h-10 w-10 text-wuestenrot mb-4" />
+              <h3 className="text-xl font-bold font-ww-bold text-wuestennacht mb-3">Immobilien verkaufen</h3>
+              <p className="text-wuestennacht-light mb-4">
                 Ich verkaufe Ihre Immobilie in Trier zum bestmöglichen Preis – diskret oder mit voller Vermarktung.
               </p>
-              <ul className="space-y-2 text-secondary-700 text-sm">
+              <ul className="space-y-2 text-wuestennacht-light text-sm">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Kostenlose Bewertung
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Professionelles Exposé
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Bonitätsprüfung Käufer
                 </li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up" data-aos-delay="200">
-              <Building2 className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">Kapitalanlage</h3>
-              <p className="text-secondary-600 mb-4">
+            <div className="bg-warmgrau p-8 rounded-fenster smooth-hover" data-aos="fade-up" data-aos-delay="200">
+              <Building2 className="h-10 w-10 text-wuestenrot mb-4" />
+              <h3 className="text-xl font-bold font-ww-bold text-wuestennacht mb-3">Kapitalanlage</h3>
+              <p className="text-wuestennacht-light mb-4">
                 Renditestarke Anlageimmobilien in Trier – ideal für Investoren und Vermieter.
               </p>
-              <ul className="space-y-2 text-secondary-700 text-sm">
+              <ul className="space-y-2 text-wuestennacht-light text-sm">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Renditeberechnung
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Studentenwohnungen
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                  <CheckCircle className="h-4 w-4 text-wuestenrot" />
                   Mehrfamilienhäuser
                 </li>
               </ul>
@@ -236,12 +236,12 @@ export default function TrierPage() {
       </section>
 
       {/* Regional Network */}
-      <section className="py-16 bg-secondary-900 text-white">
+      <section className="py-16 bg-wuestennacht text-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold mb-8 text-center" data-aos="fade-up">
             Auch aktiv im Landkreis Trier-Saarburg
           </h2>
-          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+          <p className="text-white/70 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
             Neben der Stadt Trier betreue ich Immobilien im gesamten Landkreis und
             angrenzenden Regionen.
           </p>
@@ -259,7 +259,7 @@ export default function TrierPage() {
               <Link
                 key={ort}
                 href={ort === 'Hermeskeil' ? '/regionen/hermeskeil' : ort === 'Schweich' ? '/regionen/schweich' : '/immobilien'}
-                className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors"
+                className="bg-white/10 rounded-fenster p-4 text-center hover:bg-white/20 transition-colors"
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
               >
@@ -271,18 +271,18 @@ export default function TrierPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-warmgrau">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-12 text-center" data-aos="fade-up">
             Häufige Fragen zum Immobilienmarkt Trier
           </h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-3">
+              <div key={index} className="bg-white rounded-fenster p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
+                <h3 className="text-lg font-semibold font-ww-bold text-wuestennacht mb-3">
                   {item.question}
                 </h3>
-                <p className="text-secondary-600">{item.answer}</p>
+                <p className="text-wuestennacht-light">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -290,16 +290,16 @@ export default function TrierPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary-500">
+      <section className="py-16 bg-wuestenrot">
         <div className="container-custom text-center" data-aos="fade-up">
-          <h2 className="text-3xl font-bold text-white mb-6">
+          <h2 className="text-3xl font-bold font-ww-bold text-white mb-6">
             Immobilie in Trier kaufen oder verkaufen?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie mich für eine persönliche Beratung – kostenlos und unverbindlich.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
+            <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau">
               Beratung anfragen
             </Link>
             <a href="tel:01776542977" className="btn-outline-dark">

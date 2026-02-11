@@ -14,7 +14,7 @@ export default function RatgeberPage() {
   const featuredPost = featuredPosts.length > 0 ? featuredPosts[0] : null
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-warmgrau">
       <RatgeberContent
         allPosts={allPosts}
         categories={categories}

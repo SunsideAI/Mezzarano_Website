@@ -86,13 +86,13 @@ export default function BlogPostPage({ params }: Props) {
     <>
       <SchemaMarkup data={articleSchema} />
 
-      <article className="min-h-screen bg-secondary-50">
+      <article className="min-h-screen bg-warmgrau">
         {/* Header */}
-        <header className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-16">
+        <header className="bg-gradient-to-br from-wuestennacht via-wuestennacht to-wuestenrot-hover py-16">
           <div className="container-custom">
             <Link
               href="/ratgeber"
-              className="inline-flex items-center text-secondary-300 hover:text-white transition-colors mb-8"
+              className="inline-flex items-center text-white/70 hover:text-white transition-colors mb-8"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Zurück zum Ratgeber
@@ -100,7 +100,7 @@ export default function BlogPostPage({ params }: Props) {
 
             <div className="max-w-4xl">
               <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
-                <span className="badge bg-primary-500 text-white">
+                <span className="badge bg-wuestenrot text-white">
                   {post.category}
                 </span>
                 {post.featured && (
@@ -110,15 +110,15 @@ export default function BlogPostPage({ params }: Props) {
                 )}
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-ww-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
                 {post.title}
               </h1>
 
-              <p className="text-xl text-secondary-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-xl text-white/70 mb-8" data-aos="fade-up" data-aos-delay="200">
                 {post.description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 text-secondary-400" data-aos="fade-up" data-aos-delay="300">
+              <div className="flex flex-wrap items-center gap-6 text-white/70" data-aos="fade-up" data-aos-delay="300">
                 <span className="flex items-center gap-2">
                   <User className="h-5 w-5" />
                   {post.author}
@@ -141,7 +141,7 @@ export default function BlogPostPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-8" data-aos="fade-right">
-              <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+              <div className="bg-white rounded-fenster shadow-lg p-8 md:p-12">
                 <div
                   className="prose-blog"
                   dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(post.content) }}
@@ -149,17 +149,17 @@ export default function BlogPostPage({ params }: Props) {
 
                 {/* Tags */}
                 {post.tags.length > 0 && (
-                  <div className="mt-12 pt-8 border-t border-secondary-200">
+                  <div className="mt-12 pt-8 border-t border-warmgrau">
                     <div className="flex items-center gap-2 mb-4">
-                      <Tag className="h-5 w-5 text-secondary-400" />
-                      <span className="font-medium text-secondary-700">Tags:</span>
+                      <Tag className="h-5 w-5 text-wuestennacht-hover" />
+                      <span className="font-medium text-wuestennacht-light">Tags:</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {post.tags.map(tag => (
                         <Link
                           key={tag}
                           href={`/ratgeber?tag=${encodeURIComponent(tag)}`}
-                          className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm hover:bg-secondary-200 transition-colors"
+                          className="px-3 py-1 bg-warmgrau text-wuestennacht-light rounded-full text-sm hover:bg-warmgrau/80 transition-colors"
                         >
                           {tag}
                         </Link>
@@ -169,9 +169,9 @@ export default function BlogPostPage({ params }: Props) {
                 )}
 
                 {/* Share */}
-                <div className="mt-8 pt-8 border-t border-secondary-200">
+                <div className="mt-8 pt-8 border-t border-warmgrau">
                   <div className="flex items-center gap-4">
-                    <span className="flex items-center gap-2 text-secondary-700">
+                    <span className="flex items-center gap-2 text-wuestennacht-light">
                       <Share2 className="h-5 w-5" />
                       Artikel teilen:
                     </span>
@@ -180,7 +180,7 @@ export default function BlogPostPage({ params }: Props) {
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors text-secondary-600"
+                        className="w-10 h-10 bg-warmgrau rounded-full flex items-center justify-center hover:bg-wuestenrot hover:text-white transition-colors text-wuestennacht-light"
                         aria-label="Auf LinkedIn teilen"
                       >
                         <Linkedin className="h-5 w-5" />
@@ -189,14 +189,14 @@ export default function BlogPostPage({ params }: Props) {
                         href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors text-secondary-600"
+                        className="w-10 h-10 bg-warmgrau rounded-full flex items-center justify-center hover:bg-wuestenrot hover:text-white transition-colors text-wuestennacht-light"
                         aria-label="Auf X teilen"
                       >
                         <Twitter className="h-5 w-5" />
                       </a>
                       <a
                         href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(shareUrl)}`}
-                        className="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors text-secondary-600"
+                        className="w-10 h-10 bg-warmgrau rounded-full flex items-center justify-center hover:bg-wuestenrot hover:text-white transition-colors text-wuestennacht-light"
                         aria-label="Per E-Mail teilen"
                       >
                         <Mail className="h-5 w-5" />
@@ -211,21 +211,21 @@ export default function BlogPostPage({ params }: Props) {
             <aside className="lg:col-span-4" data-aos="fade-left">
               <div className="sticky top-28 space-y-8">
                 {/* CTA Box */}
-                <div className="bg-primary-500 text-white rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold mb-4">
+                <div className="bg-wuestenrot text-white rounded-fenster p-8">
+                  <h3 className="text-2xl font-ww-bold mb-4">
                     Kostenlose Beratung
                   </h3>
                   <p className="text-white/90 mb-6">
                     Haben Sie Fragen zu diesem Thema? Herr Mezzarano berät Sie gerne persönlich.
                   </p>
-                  <Link href="/kontakt" className="btn-primary bg-white text-primary-500 hover:bg-secondary-100 w-full justify-center">
+                  <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau w-full justify-center">
                     Jetzt Termin vereinbaren
                   </Link>
                 </div>
 
                 {/* Author Box */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <h4 className="font-semibold text-secondary-900 mb-4">Über den Autor</h4>
+                <div className="bg-white rounded-fenster p-6 shadow-lg">
+                  <h4 className="font-semibold text-wuestennacht mb-4">Über den Autor</h4>
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
                       <Image
@@ -237,8 +237,8 @@ export default function BlogPostPage({ params }: Props) {
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-secondary-900">{post.author}</p>
-                      <p className="text-sm text-secondary-500">Wüstenrot Immobilienberater</p>
+                      <p className="font-semibold text-wuestennacht">{post.author}</p>
+                      <p className="text-sm text-wuestennacht-hover">Wüstenrot Immobilienberater</p>
                     </div>
                   </div>
                 </div>
@@ -288,17 +288,17 @@ function convertMarkdownToHtml(markdown: string): string {
 
     // Build HTML table
     let tableHtml = '<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse">'
-    tableHtml += '<thead><tr class="bg-secondary-100">'
+    tableHtml += '<thead><tr class="bg-warmgrau">'
     headerCells.forEach(cell => {
-      tableHtml += `<th class="border border-secondary-200 px-4 py-3 text-left font-semibold text-secondary-700">${cell}</th>`
+      tableHtml += `<th class="border border-warmgrau px-4 py-3 text-left font-semibold text-wuestennacht-light">${cell}</th>`
     })
     tableHtml += '</tr></thead><tbody>'
 
     dataRows.forEach((row, index) => {
-      const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-secondary-50'
+      const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-warmgrau'
       tableHtml += `<tr class="${rowClass}">`
       row.forEach(cell => {
-        tableHtml += `<td class="border border-secondary-200 px-4 py-3 text-secondary-600">${cell}</td>`
+        tableHtml += `<td class="border border-warmgrau px-4 py-3 text-wuestennacht-light">${cell}</td>`
       })
       tableHtml += '</tr>'
     })

@@ -62,7 +62,7 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
           </div>
         ) : (
           <div className="absolute inset-0 z-10 bg-warmgrau flex items-center justify-center">
-            <ImageOff className="w-12 h-12 text-gray-300" />
+            <ImageOff className="w-12 h-12 text-wuestennacht-hover" />
           </div>
         )}
 

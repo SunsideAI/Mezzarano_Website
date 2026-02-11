@@ -61,19 +61,19 @@ export default function HochwaldPage() {
       <SchemaMarkup data={faqSchema} />
 
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-16 md:py-20">
+      <section className="bg-wuestennacht py-16 md:py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div data-aos="fade-right">
-              <div className="flex items-center gap-2 text-primary-400 mb-4">
+              <div className="flex items-center gap-2 text-wuestenrot-light mb-4">
                 <MapPin className="h-5 w-5" />
                 <span className="font-medium">Hochwald & Hunsrück</span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-ww-bold text-white mb-6 leading-tight">
                 Ihr Immobilienmakler im Hochwald
               </h1>
-              <p className="text-lg text-gray-300 mb-8">
+              <p className="text-lg text-white/70 mb-8">
                 Sandro Mezzarano – Ihr lokaler Wüstenrot Immobilienexperte für den Kauf,
                 Verkauf und die Vermietung von Immobilien im Hochwald und Hunsrück.
               </p>
@@ -88,7 +88,7 @@ export default function HochwaldPage() {
             </div>
             {/* Image */}
             <div className="relative" data-aos="fade-left">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] rounded-fenster overflow-hidden shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1770805355/Wald_pxfoka.png"
                   alt="Immobilien im Hochwald"
@@ -99,20 +99,20 @@ export default function HochwaldPage() {
                   blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCA0MCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIGZpbGw9IiM0YjU1NjMiLz48cmVjdCB5PSIxNSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMWYyOTM3Ii8+PC9zdmc+"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-500 rounded-2xl -z-10 hidden md:block" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-wuestenrot rounded-fenster -z-10 hidden md:block" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Bar */}
-      <section className="bg-primary-500 text-white py-4">
+      <section className="bg-wuestenrot text-white py-4">
         <div className="container-custom flex flex-wrap justify-center gap-6 md:gap-12 text-sm md:text-base">
-          <a href="tel:01776542977" className="flex items-center gap-2 hover:text-primary-100 transition-colors">
+          <a href="tel:01776542977" className="flex items-center gap-2 hover:text-wuestenrot-25 transition-colors">
             <Phone className="h-4 w-4" />
             <span>0177 6542977</span>
           </a>
-          <a href="mailto:sandro.mezzarano@wuestenrot.de" className="flex items-center gap-2 hover:text-primary-100 transition-colors">
+          <a href="mailto:sandro.mezzarano@wuestenrot.de" className="flex items-center gap-2 hover:text-wuestenrot-25 transition-colors">
             <Mail className="h-4 w-4" />
             <span>sandro.mezzarano@wuestenrot.de</span>
           </a>
@@ -127,10 +127,10 @@ export default function HochwaldPage() {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
+            <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-6 text-center">
               Immobilien im Hochwald – Natur pur vor den Toren Triers
             </h2>
-            <div className="prose prose-lg max-w-none text-secondary-700">
+            <div className="prose prose-lg max-w-none text-wuestennacht-light">
               <p>
                 Der <strong>Hochwald</strong> ist ein Höhenzug im Hunsrück und gehört zu den
                 waldreichsten und natürlichsten Regionen in Rheinland-Pfalz. Als Teil des
@@ -154,19 +154,19 @@ export default function HochwaldPage() {
       </section>
 
       {/* Highlights */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-warmgrau">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-12 text-center" data-aos="fade-up">
             Ihre Vorteile mit Wüstenrot Immobilien im Hochwald
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((item, index) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="h-7 w-7 text-primary-600" />
+              <div key={item.title} className="bg-white p-8 rounded-fenster shadow-lg smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className="w-14 h-14 bg-wuestenrot-25 rounded-fenster flex items-center justify-center mb-6">
+                  <item.icon className="h-7 w-7 text-wuestenrot" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">{item.title}</h3>
-                <p className="text-secondary-600">{item.description}</p>
+                <h3 className="text-xl font-bold font-ww-bold text-wuestennacht mb-3">{item.title}</h3>
+                <p className="text-wuestennacht-light">{item.description}</p>
               </div>
             ))}
           </div>
@@ -178,7 +178,7 @@ export default function HochwaldPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
-              <h2 className="text-3xl font-bold text-secondary-900 mb-6">
+              <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-6">
                 Umfassende Immobilienservices im Hochwald
               </h2>
               <ul className="space-y-4">
@@ -191,8 +191,8 @@ export default function HochwaldPage() {
                   'Beratung bei Erbimmobilien und Scheidungen',
                 ].map((service) => (
                   <li key={service} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-secondary-700">{service}</span>
+                    <CheckCircle className="h-6 w-6 text-wuestenrot flex-shrink-0 mt-0.5" />
+                    <span className="text-wuestennacht-light">{service}</span>
                   </li>
                 ))}
               </ul>
@@ -202,7 +202,7 @@ export default function HochwaldPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden img-zoom" data-aos="fade-left">
+            <div className="relative h-80 lg:h-96 rounded-fenster overflow-hidden img-zoom" data-aos="fade-left">
               <Image
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
                 alt="Immobilienberatung"
@@ -215,12 +215,12 @@ export default function HochwaldPage() {
       </section>
 
       {/* Region Overview */}
-      <section className="py-16 bg-secondary-900 text-white">
+      <section className="py-16 bg-wuestennacht text-white">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold mb-8 text-center" data-aos="fade-up">
             Immobilien in der Hochwald-Region
           </h2>
-          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+          <p className="text-white/70 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
             Als Einheimischer betreue ich Immobilien im gesamten Hochwald
             und den angrenzenden Gemeinden.
           </p>
@@ -238,7 +238,7 @@ export default function HochwaldPage() {
               <Link
                 key={ort}
                 href={ort === 'Hermeskeil' ? '/regionen/hermeskeil' : '/immobilien'}
-                className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-colors smooth-hover"
+                className="bg-white/10 rounded-fenster p-4 text-center hover:bg-white/20 transition-colors smooth-hover"
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
               >
@@ -256,18 +256,18 @@ export default function HochwaldPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-warmgrau">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold font-ww-bold text-wuestennacht mb-12 text-center" data-aos="fade-up">
             Häufige Fragen zu Immobilien im Hochwald
           </h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-3">
+              <div key={index} className="bg-white rounded-fenster p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
+                <h3 className="text-lg font-semibold font-ww-bold text-wuestennacht mb-3">
                   {item.question}
                 </h3>
-                <p className="text-secondary-600">{item.answer}</p>
+                <p className="text-wuestennacht-light">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -275,9 +275,9 @@ export default function HochwaldPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary-500">
+      <section className="py-16 bg-wuestenrot">
         <div className="container-custom text-center" data-aos="fade-up">
-          <h2 className="text-3xl font-bold text-white mb-6">
+          <h2 className="text-3xl font-bold font-ww-bold text-white mb-6">
             Bereit für Ihr Immobilienprojekt im Hochwald?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -285,7 +285,7 @@ export default function HochwaldPage() {
             Als Ihr lokaler Wüstenrot Partner bin ich gerne für Sie da.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
+            <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau">
               Kontakt aufnehmen
             </Link>
             <a href="tel:01776542977" className="btn-outline-dark">

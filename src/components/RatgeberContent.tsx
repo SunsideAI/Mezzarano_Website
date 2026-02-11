@@ -95,17 +95,17 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-24">
+      <section className="bg-wuestennacht py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+            <div className="flex items-center gap-2 text-wuestenrot mb-4" data-aos="fade-up">
               <BookOpen className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wider">Wissen & Expertise</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+            <h1 className="text-4xl md:text-5xl font-ww-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
               Immobilien-Ratgeber
             </h1>
-            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+            <p className="text-xl text-white/70 mb-8" data-aos="fade-up" data-aos-delay="200">
               Expertenwissen rund um Immobilien in Hermeskeil, Trier, an der Mosel und im Hochwald.
               Tipps zum Kauf, Verkauf, zur Finanzierung und aktuelle Marktanalysen.
             </p>
@@ -118,7 +118,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
                 placeholder="Artikel durchsuchen..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-xl bg-secondary-800 border border-secondary-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full pl-12 pr-4 py-4 rounded-fenster bg-wuestennacht-light border border-wuestennacht-hover text-white placeholder:text-wuestennacht-hover focus:outline-none focus:ring-2 focus:ring-wuestenrot"
               />
             </div>
           </div>
@@ -133,8 +133,8 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
               onClick={() => handleCategoryClick(null)}
               className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
                 !selectedCategory
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+                  ? 'bg-wuestenrot text-white'
+                  : 'bg-warmgrau text-wuestennacht-light hover:bg-warmgrau/80'
               }`}
             >
               Alle Artikel
@@ -145,8 +145,8 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
                 onClick={() => handleCategoryClick(cat.name)}
                 className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === cat.name
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+                    ? 'bg-wuestenrot text-white'
+                    : 'bg-warmgrau text-wuestennacht-light hover:bg-warmgrau/80'
                 }`}
               >
                 {cat.name} ({cat.count})
@@ -160,7 +160,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
       {displayFeaturedPost && (
         <section className="py-12">
           <div className="container-custom">
-            <div className="flex items-center gap-2 text-primary-500 mb-6" data-aos="fade-up">
+            <div className="flex items-center gap-2 text-wuestenrot mb-6" data-aos="fade-up">
               <TrendingUp className="h-5 w-5" />
               <span className="font-semibold">Aktueller Artikel</span>
             </div>
@@ -192,9 +192,9 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 bg-white rounded-xl">
-              <BookOpen className="h-16 w-16 text-secondary-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-secondary-700 mb-2">
+            <div className="text-center py-16 bg-white rounded-fenster">
+              <BookOpen className="h-16 w-16 text-wuestennacht-hover mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-wuestennacht-light mb-2">
                 {selectedCategory
                   ? `Keine Artikel in "${selectedCategory}"`
                   : searchQuery
@@ -202,7 +202,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
                     : 'Noch keine Artikel vorhanden'
                 }
               </h3>
-              <p className="text-secondary-500">
+              <p className="text-wuestennacht-hover">
                 {selectedCategory || searchQuery
                   ? 'Versuchen Sie eine andere Suche oder schauen Sie sich andere Kategorien an.'
                   : 'Bald finden Sie hier informative Artikel rund um Immobilien.'
@@ -233,9 +233,9 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-primary-500">
+      <section className="py-16 bg-wuestenrot">
         <div className="container-custom text-center" data-aos="fade-up">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-ww-bold text-white mb-4">
             Immer informiert bleiben
           </h2>
           <p className="text-white/90 mb-8 max-w-xl mx-auto">
@@ -245,9 +245,9 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
             <input
               type="email"
               placeholder="Ihre E-Mail-Adresse"
-              className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+              className="flex-1 px-4 py-3 rounded-fenster focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button type="submit" className="btn-primary bg-secondary-900 hover:bg-secondary-800">
+            <button type="submit" className="btn-primary bg-wuestennacht hover:bg-wuestennacht-hover">
               Anmelden
             </button>
           </form>
