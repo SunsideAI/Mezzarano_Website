@@ -23,20 +23,6 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-4 left-4 flex gap-2">
-          <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
-            property.type === 'kauf'
-              ? 'bg-secondary-900 text-white'
-              : 'bg-white text-secondary-900'
-          }`}>
-            {property.type === 'kauf' ? 'Kaufen' : 'Mieten'}
-          </span>
-          {property.featured && (
-            <span className="px-3 py-1 rounded-lg text-sm font-semibold bg-primary-500 text-white">
-              Top-Angebot
-            </span>
-          )}
-        </div>
         <button
           className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
           aria-label="Zu Favoriten hinzufügen"
