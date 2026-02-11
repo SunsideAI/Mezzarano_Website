@@ -4,7 +4,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
 import ScrollAnimations from '@/components/ScrollAnimations'
-import ScrollProgress from '@/components/ScrollProgress'
 import VoiceflowChat from '@/components/VoiceflowChat'
 
 const siteUrl = 'https://mezzarano-immobilien.de'
@@ -100,7 +99,6 @@ export default function RootLayout({
         <SchemaMarkup data={generateLocalBusinessSchema()} />
       </head>
       <body className="font-sans antialiased">
-        <ScrollProgress />
         <ScrollAnimations />
         <Header />
         <main className="min-h-screen">

@@ -9,47 +9,56 @@ const regions = [
   {
     name: 'Hermeskeil',
     href: '/regionen/hermeskeil',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png'
   },
   {
     name: 'Trier',
     href: '/regionen/trier',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png'
   },
   {
     name: 'Bernkastel-Kues',
     href: '/regionen/bernkastel-kues',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png'
   },
   {
     name: 'Schweich',
     href: '/regionen/schweich',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png'
   },
   {
     name: 'Saarburg',
     href: '/regionen/saarburg',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805375/Saarburg_elmn8i.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805375/Saarburg_elmn8i.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805375/Saarburg_elmn8i.png'
   },
   {
     name: 'Bitburg',
     href: '/regionen/bitburg',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805358/Bittburg_tejpzq.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805358/Bittburg_tejpzq.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805358/Bittburg_tejpzq.png'
   },
   {
     name: 'Konz',
     href: '/regionen/konz',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805357/Konz_eqrxqw.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805357/Konz_eqrxqw.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805357/Konz_eqrxqw.png'
   },
   {
     name: 'Wittlich',
     href: '/regionen/wittlich',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805357/Wittlich_c5qqd9.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805357/Wittlich_c5qqd9.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805357/Wittlich_c5qqd9.png'
   },
   {
     name: 'Hochwald',
     href: '/regionen/hochwald',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805355/Wald_pxfoka.png'
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805355/Wald_pxfoka.png',
+    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805355/Wald_pxfoka.png'
   },
 ]
 
@@ -76,6 +85,9 @@ export default function RegionsGrid() {
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
               className="object-cover transition-transform duration-500 group-hover:scale-110"
+              priority={index < 4}
+              placeholder="blur"
+              blurDataURL={region.blurUrl}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4">

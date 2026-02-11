@@ -90,11 +90,13 @@ export default function SchweichPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_90/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png"
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png"
                   alt="Schweich an der Mosel"
                   fill
                   className="object-cover"
                   priority
+                  placeholder="blur"
+                  blurDataURL="https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-500 rounded-2xl -z-10 hidden md:block" />
