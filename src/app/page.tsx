@@ -300,37 +300,62 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-secondary-900">
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title mb-4 text-white">Was Kunden sagen</h2>
-            <p className="section-subtitle mx-auto text-gray-300">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="section-title mb-4">Was Kunden sagen</h2>
+            <p className="section-subtitle mx-auto">
               Ihre Zufriedenheit ist mein größter Erfolg
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 smooth-hover"
+                className="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary-500 text-primary-500" />
-                  ))}
+                {/* Quote Icon */}
+                <div className="absolute -top-3 left-6">
+                  <div className="bg-primary-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-serif">
+                    &ldquo;
+                  </div>
                 </div>
-                <p className="text-secondary-600 mb-6 italic">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <div>
-                  <div className="font-semibold text-secondary-900">{testimonial.name}</div>
-                  <div className="text-sm text-secondary-500">{testimonial.location}</div>
+
+                <div className="pt-4">
+                  <p className="text-secondary-700 mb-4 leading-relaxed">
+                    {testimonial.text}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <div>
+                      <div className="font-semibold text-secondary-900">{testimonial.name}</div>
+                      <div className="text-sm text-secondary-500">{testimonial.location}</div>
+                    </div>
+                    <div className="flex gap-0.5">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-primary-500 text-primary-500" />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Google Reviews Link */}
+          <div className="text-center mt-10" data-aos="fade-up">
+            <a
+              href="https://www.google.com/maps/place/W%C3%BCstenrot+Immobilien+Sandro+Mezzarano"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
+            >
+              <span>Mehr Bewertungen auf Google</span>
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
