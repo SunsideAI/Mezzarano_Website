@@ -267,39 +267,33 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Awards */}
-          <div className="mt-16" data-aos="fade-up" data-aos-delay="200">
-            <p className="text-center text-secondary-500 text-sm uppercase tracking-wider mb-8">
+          {/* Awards - Simple Logo Bar */}
+          <div className="mt-12 pt-12 border-t border-gray-200" data-aos="fade-up" data-aos-delay="200">
+            <p className="text-center text-secondary-400 text-sm mb-6">
               Ausgezeichnet für höchste Beratungsqualität
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
-                <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Focus_Money_H%C3%B6chste_Kompetenz_WUESTENROT_IMMOBILIEN_2025_gnwd3c.jpg"
-                  alt="Focus Money - Höchste Kompetenz 2025"
-                  width={140}
-                  height={180}
-                  className="object-contain"
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
-                <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Handelsblatt_Exzellente_Kundenberatung_WUESTENROT_IMMOBILIEN_2025_z9rek4.jpg"
-                  alt="Handelsblatt - Exzellente Kundenberatung 2025"
-                  width={140}
-                  height={180}
-                  className="object-contain"
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
-                <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/LOGO_Fachmakler_Geb%C3%A4udemodernisierung_p0gwkj.png"
-                  alt="Fachmakler Gebäudemodernisierung"
-                  width={140}
-                  height={180}
-                  className="object-contain"
-                />
-              </div>
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+              <Image
+                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Focus_Money_H%C3%B6chste_Kompetenz_WUESTENROT_IMMOBILIEN_2025_gnwd3c.jpg"
+                alt="Focus Money - Höchste Kompetenz 2025"
+                width={100}
+                height={130}
+                className="object-contain opacity-90"
+              />
+              <Image
+                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Handelsblatt_Exzellente_Kundenberatung_WUESTENROT_IMMOBILIEN_2025_z9rek4.jpg"
+                alt="Handelsblatt - Exzellente Kundenberatung 2025"
+                width={100}
+                height={130}
+                className="object-contain opacity-90"
+              />
+              <Image
+                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/LOGO_Fachmakler_Geb%C3%A4udemodernisierung_p0gwkj.png"
+                alt="Fachmakler Gebäudemodernisierung"
+                width={100}
+                height={130}
+                className="object-contain opacity-90"
+              />
             </div>
           </div>
         </div>
