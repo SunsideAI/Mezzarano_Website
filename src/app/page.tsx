@@ -214,75 +214,92 @@ export default async function HomePage() {
       </section>
 
       {/* Trust Section - Makler Portrait & Auszeichnungen */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Portrait & Info */}
-            <div className="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-right">
-              <div className="relative w-64 h-64 md:w-72 md:h-72 flex-shrink-0">
-                <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770806323/Lebenskunst-Photography_-078_-_Sandro_-_11.09.2025_-_Business_fotografie-_Trier-13__2_r18b6c.jpg"
-                  alt="Sandro Mezzarano - Ihr Immobilienmakler"
-                  fill
-                  className="object-cover rounded-2xl shadow-xl"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
-                  Sandro Mezzarano
-                </h2>
-                <p className="text-primary-600 font-semibold mb-3">
-                  Wüstenrot Immobilienberater
-                </p>
-                <p className="text-secondary-600 mb-4">
-                  Mit über 16 Jahren Erfahrung in der Immobilienbranche bin ich Ihr verlässlicher Partner
-                  für alle Fragen rund um Kauf, Verkauf und Bewertung von Immobilien in der Region
-                  Trier-Saarburg und im Hochwald.
-                </p>
-                <p className="text-secondary-600">
-                  Persönliche Beratung, transparente Prozesse und die Stärke eines großen Netzwerks –
-                  dafür stehe ich mit meinem Namen.
-                </p>
+          {/* Header */}
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="section-title mb-4">Ihr Ansprechpartner</h2>
+            <p className="section-subtitle mx-auto">
+              Kompetenz und Vertrauen aus einer Hand
+            </p>
+          </div>
+
+          {/* Portrait Card */}
+          <div className="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="flex flex-col md:flex-row">
+                {/* Image */}
+                <div className="md:w-2/5 relative">
+                  <div className="aspect-[3/4] md:aspect-auto md:h-full relative">
+                    <Image
+                      src="https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770806323/Lebenskunst-Photography_-078_-_Sandro_-_11.09.2025_-_Business_fotografie-_Trier-13__2_r18b6c.jpg"
+                      alt="Sandro Mezzarano - Ihr Immobilienmakler"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">
+                    Sandro Mezzarano
+                  </h3>
+                  <p className="text-primary-600 font-semibold mb-4">
+                    Wüstenrot Immobilienberater
+                  </p>
+                  <p className="text-secondary-600 mb-4 leading-relaxed">
+                    Mit über 16 Jahren Erfahrung in der Immobilienbranche bin ich Ihr verlässlicher Partner
+                    für alle Fragen rund um Kauf, Verkauf und Bewertung von Immobilien in der Region
+                    Trier-Saarburg und im Hochwald.
+                  </p>
+                  <p className="text-secondary-600 leading-relaxed">
+                    Persönliche Beratung, transparente Prozesse und die Stärke eines großen Netzwerks –
+                    dafür stehe ich mit meinem Namen.
+                  </p>
+                  <div className="mt-6">
+                    <Link href="/ueber-uns" className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2 group">
+                      Mehr erfahren
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Right: Awards */}
-            <div data-aos="fade-left">
-              <h3 className="text-xl font-bold text-secondary-900 mb-6 text-center lg:text-left">
-                Ausgezeichnete Qualität
-              </h3>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                  <Image
-                    src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,q_80/v1770805619/Focus_Money_H%C3%B6chste_Kompetenz_WUESTENROT_IMMOBILIEN_2025_gnwd3c.jpg"
-                    alt="Focus Money - Höchste Kompetenz 2025"
-                    width={150}
-                    height={150}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                  <Image
-                    src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,q_80/v1770805619/Handelsblatt_Exzellente_Kundenberatung_WUESTENROT_IMMOBILIEN_2025_z9rek4.jpg"
-                    alt="Handelsblatt - Exzellente Kundenberatung 2025"
-                    width={150}
-                    height={150}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                  <Image
-                    src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,q_80/v1770805619/LOGO_Fachmakler_Geb%C3%A4udemodernisierung_p0gwkj.png"
-                    alt="Fachmakler Gebäudemodernisierung"
-                    width={150}
-                    height={150}
-                    className="object-contain"
-                  />
-                </div>
+          {/* Awards */}
+          <div className="mt-16" data-aos="fade-up" data-aos-delay="200">
+            <p className="text-center text-secondary-500 text-sm uppercase tracking-wider mb-8">
+              Ausgezeichnet für höchste Beratungsqualität
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+                <Image
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Focus_Money_H%C3%B6chste_Kompetenz_WUESTENROT_IMMOBILIEN_2025_gnwd3c.jpg"
+                  alt="Focus Money - Höchste Kompetenz 2025"
+                  width={140}
+                  height={180}
+                  className="object-contain"
+                />
               </div>
-              <p className="text-secondary-500 text-sm mt-4 text-center lg:text-left">
-                Zertifiziert und ausgezeichnet für höchste Beratungsqualität
-              </p>
+              <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+                <Image
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Handelsblatt_Exzellente_Kundenberatung_WUESTENROT_IMMOBILIEN_2025_z9rek4.jpg"
+                  alt="Handelsblatt - Exzellente Kundenberatung 2025"
+                  width={140}
+                  height={180}
+                  className="object-contain"
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+                <Image
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/LOGO_Fachmakler_Geb%C3%A4udemodernisierung_p0gwkj.png"
+                  alt="Fachmakler Gebäudemodernisierung"
+                  width={140}
+                  height={180}
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
