@@ -5,60 +5,54 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
 
+// Base64 encoded tiny placeholder - loads instantly without network request
+const BLUR_PLACEHOLDER = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCA0MCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIGZpbGw9IiM0YjU1NjMiLz48cmVjdCB5PSIxNSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMWYyOTM3Ii8+PC9zdmc+'
+
 const regions = [
   {
     name: 'Hermeskeil',
     href: '/regionen/hermeskeil',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png'
   },
   {
     name: 'Trier',
     href: '/regionen/trier',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png'
   },
   {
     name: 'Bernkastel-Kues',
     href: '/regionen/bernkastel-kues',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png'
   },
   {
     name: 'Schweich',
     href: '/regionen/schweich',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png'
   },
   {
     name: 'Saarburg',
     href: '/regionen/saarburg',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805375/Saarburg_elmn8i.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805375/Saarburg_elmn8i.png'
   },
   {
     name: 'Bitburg',
     href: '/regionen/bitburg',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805358/Bittburg_tejpzq.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805358/Bittburg_tejpzq.png'
   },
   {
     name: 'Konz',
     href: '/regionen/konz',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805357/Konz_eqrxqw.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805357/Konz_eqrxqw.png'
   },
   {
     name: 'Wittlich',
     href: '/regionen/wittlich',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805357/Wittlich_c5qqd9.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805357/Wittlich_c5qqd9.png'
   },
   {
     name: 'Hochwald',
     href: '/regionen/hochwald',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805355/Wald_pxfoka.png',
-    blurUrl: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1770805355/Wald_pxfoka.png'
   },
 ]
 
@@ -75,7 +69,7 @@ export default function RegionsGrid() {
           <Link
             key={region.name}
             href={region.href}
-            className="relative group overflow-hidden rounded-xl aspect-[4/3] img-zoom"
+            className="relative group overflow-hidden rounded-xl aspect-[4/3] img-zoom bg-secondary-800"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
@@ -87,7 +81,7 @@ export default function RegionsGrid() {
               className="object-cover transition-transform duration-500 group-hover:scale-110"
               priority={index < 4}
               placeholder="blur"
-              blurDataURL={region.blurUrl}
+              blurDataURL={BLUR_PLACEHOLDER}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4">

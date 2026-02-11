@@ -80,7 +80,7 @@ export default function TrierPage() {
                   className="object-cover"
                   priority
                   placeholder="blur"
-                  blurDataURL="https://res.cloudinary.com/djqviyb2c/image/upload/w_20,q_20,e_blur:500,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCA0MCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIGZpbGw9IiM0YjU1NjMiLz48cmVjdCB5PSIxNSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMWYyOTM3Ii8+PC9zdmc+"
                 />
               </div>
               {/* Decorative element */}
