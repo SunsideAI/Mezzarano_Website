@@ -1,4 +1,4 @@
-# Mezzarano Immobilien Website
+# Mezzarano Immobilien Website 
 
 Eine moderne, responsive Website für Mezzarano Immobilien - gebaut mit Next.js 14, TypeScript und Tailwind CSS.
 
