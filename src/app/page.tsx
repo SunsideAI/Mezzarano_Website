@@ -35,10 +35,10 @@ const services = [
 ]
 
 const stats = [
-  { value: '10+', label: 'Jahre Erfahrung' },
+  { value: '16+', label: 'Jahre Erfahrung' },
   { value: '200+', label: 'Vermittelte Objekte' },
   { value: '100%', label: 'Persönliche Betreuung' },
-  { value: '4', label: 'Regionen betreut' },
+  { value: '6+', label: 'Regionen betreut' },
 ]
 
 const testimonials = [
@@ -82,6 +82,31 @@ const regions = [
     name: 'Schweich',
     href: '/regionen/schweich',
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png'
+  },
+  {
+    name: 'Saarburg',
+    href: '/regionen/saarburg',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805375/Saarburg_elmn8i.png'
+  },
+  {
+    name: 'Bitburg',
+    href: '/regionen/bitburg',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805358/Bittburg_tejpzq.png'
+  },
+  {
+    name: 'Konz',
+    href: '/regionen/konz',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805357/Konz_eqrxqw.png'
+  },
+  {
+    name: 'Wittlich',
+    href: '/regionen/wittlich',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805357/Wittlich_c5qqd9.png'
+  },
+  {
+    name: 'Hochwald',
+    href: '/regionen/hochwald',
+    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770805355/Wald_pxfoka.png'
   },
 ]
 
