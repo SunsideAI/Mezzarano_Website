@@ -98,7 +98,7 @@ const config: Config = {
         'h1': ['clamp(2rem, 4vw, 3.5rem)', { lineHeight: '1.1' }],
         'h2': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1.2' }],
         'h3': ['clamp(1.25rem, 2vw, 1.75rem)', { lineHeight: '1.2' }],
-        'body': ['1rem', { lineHeight: '1.5' }],
+        'body': ['1.125rem', { lineHeight: '1.44' }],
         'small': ['0.875rem', { lineHeight: '1.5' }],
         'legal': ['0.75rem', { lineHeight: '1.4' }],
       },
@@ -115,7 +115,7 @@ const config: Config = {
         'wuestenrot': '0 0 30px rgba(248, 73, 20, 0.4)',
       },
       maxWidth: {
-        'content': '1200px',
+        'content': '1600px',
         'text': '720px',
       },
       typography: {
