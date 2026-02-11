@@ -10,30 +10,24 @@ import 'aos/dist/aos.css'
  */
 export default function ScrollAnimations() {
   useEffect(() => {
+    // BFSG: Reduzierte Bewegung respektieren
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     AOS.init({
-      // Animation settings
-      duration: 600,        // Animation duration in ms
-      easing: 'ease-out-cubic', // Smooth easing
-      once: true,           // Only animate once
-      offset: 50,           // Offset from viewport
-      delay: 0,             // Default delay
-
-      // Disable on mobile for better performance (optional)
-      // disable: 'mobile',
-
-      // Start event
+      duration: prefersReducedMotion ? 0 : 600,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+      delay: 0,
+      disable: prefersReducedMotion,
       startEvent: 'DOMContentLoaded',
     })
 
-    // Refresh AOS when images load (important for proper positioning)
-    window.addEventListener('load', () => {
-      AOS.refresh()
-    })
+    const handleLoad = () => AOS.refresh()
+    window.addEventListener('load', handleLoad)
 
     return () => {
-      window.removeEventListener('load', () => {
-        AOS.refresh()
-      })
+      window.removeEventListener('load', handleLoad)
     }
   }, [])
 

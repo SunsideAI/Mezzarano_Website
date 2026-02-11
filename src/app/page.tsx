@@ -360,13 +360,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-wuestenrot">
+      {/* CTA Section - BFSG: Gradient für besseren Kontrast */}
+      <section className="py-20 bg-gradient-to-br from-wuestenrot to-wuestenrot-hover">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-ww-bold">
             Bereit, Ihre Traumimmobilie zu finden?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-ww-regular">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto font-ww-regular">
             Kontaktieren Sie mich noch heute für eine unverbindliche Beratung.
             Ich stehe Ihnen persönlich zur Verfügung.
           </p>

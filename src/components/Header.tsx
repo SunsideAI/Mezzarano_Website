@@ -90,6 +90,8 @@ export default function Header() {
                   onMouseLeave={() => setWissenOpen(false)}
                 >
                   <button
+                    aria-expanded={wissenOpen}
+                    aria-haspopup="true"
                     className="text-wuestennacht hover:text-wuestenrot font-medium transition-colors py-2 relative group flex items-center gap-1"
                   >
                     {item.name}
@@ -133,8 +135,10 @@ export default function Header() {
             type="button"
             className="lg:hidden p-2 text-wuestennacht hover:text-wuestenrot transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <span className="sr-only">Menü öffnen</span>
+            <span className="sr-only">{mobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}</span>
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
@@ -145,13 +149,14 @@ export default function Header() {
 
         {/* Mobile navigation - Styleguide Farben */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-warmgrau animate-fade-in">
+          <div id="mobile-menu" className="lg:hidden py-4 border-t border-warmgrau animate-fade-in" role="navigation" aria-label="Mobile Navigation">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 item.children ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setMobileWissenOpen(!mobileWissenOpen)}
+                      aria-expanded={mobileWissenOpen}
                       className="flex items-center justify-between w-full text-wuestennacht hover:text-wuestenrot font-medium py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                     >
                       {item.name}

@@ -320,39 +320,45 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   </h3>
                   <form className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-wuestennacht-light mb-1">
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-wuestennacht-light mb-1">
                         Name *
                       </label>
                       <input
                         type="text"
+                        id="contact-name"
                         required
+                        aria-required="true"
                         className="w-full px-4 py-2.5 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot focus:border-transparent"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-wuestennacht-light mb-1">
+                      <label htmlFor="contact-email" className="block text-sm font-medium text-wuestennacht-light mb-1">
                         E-Mail *
                       </label>
                       <input
                         type="email"
+                        id="contact-email"
                         required
+                        aria-required="true"
                         className="w-full px-4 py-2.5 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot focus:border-transparent"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-wuestennacht-light mb-1">
+                      <label htmlFor="contact-phone" className="block text-sm font-medium text-wuestennacht-light mb-1">
                         Telefon
                       </label>
                       <input
                         type="tel"
+                        id="contact-phone"
                         className="w-full px-4 py-2.5 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot focus:border-transparent"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-wuestennacht-light mb-1">
+                      <label htmlFor="contact-message" className="block text-sm font-medium text-wuestennacht-light mb-1">
                         Nachricht
                       </label>
                       <textarea
+                        id="contact-message"
                         rows={4}
                         defaultValue={`Ich interessiere mich für "${property.titel}" und bitte um weitere Informationen.`}
                         className="w-full px-4 py-2.5 border border-warmgrau rounded-fenster focus:ring-2 focus:ring-wuestenrot focus:border-transparent resize-none"

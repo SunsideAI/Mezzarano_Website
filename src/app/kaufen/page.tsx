@@ -157,12 +157,12 @@ export default function KaufenPage() {
       </section>
 
       {/* Current Listings CTA */}
-      <section className="py-16 bg-wuestenrot">
+      <section className="py-16 bg-gradient-to-br from-wuestenrot to-wuestenrot-hover">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-white">
               <h2 className="text-2xl md:text-3xl font-bold font-ww-bold mb-2">Aktuelle Immobilienangebote</h2>
-              <p className="text-white/90">Entdecken Sie unser aktuelles Portfolio an Häusern und Wohnungen</p>
+              <p className="text-white">Entdecken Sie unser aktuelles Portfolio an Häusern und Wohnungen</p>
             </div>
             <Link href="/immobilien" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau flex-shrink-0">
               Alle Immobilien ansehen
@@ -302,7 +302,7 @@ export default function KaufenPage() {
           <h2 className="text-3xl md:text-4xl font-bold font-ww-bold text-white mb-6">
             Auf der Suche nach Ihrer Traumimmobilie?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Lassen Sie mich wissen, was Sie suchen - ich finde das passende Objekt für Sie!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

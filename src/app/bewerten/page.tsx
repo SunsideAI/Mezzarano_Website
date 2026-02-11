@@ -282,12 +282,12 @@ export default function BewertenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-wuestenrot">
+      <section className="py-20 bg-gradient-to-br from-wuestenrot to-wuestenrot-hover">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-ww-bold font-bold text-white mb-6">
             Jetzt kostenlose Bewertung anfragen
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - unverbindlich und kostenfrei.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

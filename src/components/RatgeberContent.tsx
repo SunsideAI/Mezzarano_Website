@@ -112,9 +112,11 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
 
             {/* Search Box */}
             <div className="relative max-w-xl" data-aos="fade-up" data-aos-delay="300">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/70" />
+              <label htmlFor="ratgeber-search" className="sr-only">Artikel durchsuchen</label>
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/70" aria-hidden="true" />
               <input
                 type="search"
+                id="ratgeber-search"
                 placeholder="Artikel durchsuchen..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -232,19 +234,22 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-16 bg-wuestenrot">
+      {/* Newsletter CTA - BFSG: Gradient für besseren Kontrast */}
+      <section className="py-16 bg-gradient-to-br from-wuestenrot to-wuestenrot-hover">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-ww-bold text-white mb-4">
             Immer informiert bleiben
           </h2>
-          <p className="text-white/90 mb-8 max-w-xl mx-auto">
+          <p className="text-white mb-8 max-w-xl mx-auto">
             Erhalten Sie regelmäßig Tipps und aktuelle Marktberichte direkt in Ihr Postfach.
           </p>
           <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <label htmlFor="newsletter-email" className="sr-only">E-Mail-Adresse für Newsletter</label>
             <input
               type="email"
+              id="newsletter-email"
               placeholder="Ihre E-Mail-Adresse"
+              aria-required="true"
               className="flex-1 px-4 py-3 rounded-fenster focus:outline-none focus:ring-2 focus:ring-white"
             />
             <button type="submit" className="btn-primary bg-wuestennacht hover:bg-wuestennacht-hover">

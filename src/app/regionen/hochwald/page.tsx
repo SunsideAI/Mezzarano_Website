@@ -106,7 +106,7 @@ export default function HochwaldPage() {
       </section>
 
       {/* Contact Bar */}
-      <section className="bg-wuestenrot text-white py-4">
+      <section className="bg-gradient-to-r from-wuestenrot to-wuestenrot-hover text-white py-4">
         <div className="container-custom flex flex-wrap justify-center gap-6 md:gap-12 text-sm md:text-base">
           <a href="tel:01776542977" className="flex items-center gap-2 hover:text-wuestenrot-25 transition-colors">
             <Phone className="h-4 w-4" />
@@ -275,12 +275,12 @@ export default function HochwaldPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-wuestenrot">
+      <section className="py-16 bg-gradient-to-br from-wuestenrot to-wuestenrot-hover">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold font-ww-bold text-white mb-6">
             Bereit für Ihr Immobilienprojekt im Hochwald?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie mich für eine unverbindliche Beratung.
             Als Ihr lokaler Wüstenrot Partner bin ich gerne für Sie da.
           </p>

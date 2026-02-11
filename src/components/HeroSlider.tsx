@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Star, ArrowRight } from 'lucide-react'
+import { Phone, Star, ArrowRight, Pause, Play } from 'lucide-react'
 
 interface Slide {
   image: string
@@ -39,6 +39,7 @@ export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [progress, setProgress] = useState(0)
   const [textVisible, setTextVisible] = useState(true)
+  const [isPaused, setIsPaused] = useState(false)
 
   const goToSlide = useCallback((index: number) => {
     setTextVisible(false)
@@ -58,6 +59,8 @@ export default function HeroSlider() {
   const animationFrameRef = useRef<number>(0)
 
   useEffect(() => {
+    if (isPaused) return
+
     startTimeRef.current = performance.now()
 
     const animate = (currentTime: number) => {
@@ -75,12 +78,12 @@ export default function HeroSlider() {
     animationFrameRef.current = requestAnimationFrame(animate)
 
     return () => cancelAnimationFrame(animationFrameRef.current)
-  }, [currentSlide, nextSlide])
+  }, [currentSlide, nextSlide, isPaused])
 
   const circumference = 2 * Math.PI * 18 // radius = 18
 
   return (
-    <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden" aria-roledescription="Karussell" aria-label="Startseiten-Slider">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -169,11 +172,25 @@ export default function HeroSlider() {
 
       {/* Circular Progress Indicators */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 hidden md:flex flex-col items-center gap-4">
+        {/* BFSG: Pause/Play Button (WCAG 2.2.2) */}
+        <button
+          onClick={() => setIsPaused(!isPaused)}
+          className="w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-muenze flex items-center justify-center transition-all mb-2"
+          aria-label={isPaused ? 'Slideshow fortsetzen' : 'Slideshow pausieren'}
+        >
+          {isPaused ? (
+            <Play className="w-5 h-5 text-white" />
+          ) : (
+            <Pause className="w-5 h-5 text-white" />
+          )}
+        </button>
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className="relative w-12 h-12 flex items-center justify-center group"
+            aria-label={`Slide ${index + 1} von ${slides.length}: ${slides[index].headline}${slides[index].highlightedText}`}
+            aria-current={index === currentSlide ? 'true' : undefined}
           >
             <svg className="absolute inset-0 w-12 h-12 -rotate-90" viewBox="0 0 48 48">
               {/* Background circle */}
@@ -220,6 +237,8 @@ export default function HeroSlider() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
+            aria-label={`Slide ${index + 1} von ${slides.length}`}
+            aria-current={index === currentSlide ? 'true' : undefined}
             className={`w-3 h-3 rounded-muenze transition-all ${
               index === currentSlide
                 ? 'bg-wuestenrot w-8'

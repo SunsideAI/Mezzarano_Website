@@ -99,9 +99,12 @@ export default function RootLayout({
         <SchemaMarkup data={generateLocalBusinessSchema()} />
       </head>
       <body className="font-ww antialiased bg-wohnraum text-wuestennacht">
+        <a href="#main-content" className="skip-link">
+          Zum Hauptinhalt springen
+        </a>
         <ScrollAnimations />
         <Header />
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         <Footer />

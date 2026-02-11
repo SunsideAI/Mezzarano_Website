@@ -168,6 +168,7 @@ export default function KontaktPage() {
                         id="name"
                         name="name"
                         required
+                        aria-required="true"
                         value={formState.name}
                         onChange={handleChange}
                         className="form-input"
@@ -183,6 +184,7 @@ export default function KontaktPage() {
                         id="email"
                         name="email"
                         required
+                        aria-required="true"
                         value={formState.email}
                         onChange={handleChange}
                         className="form-input"
@@ -235,6 +237,7 @@ export default function KontaktPage() {
                       id="message"
                       name="message"
                       required
+                      aria-required="true"
                       rows={6}
                       value={formState.message}
                       onChange={handleChange}
@@ -248,6 +251,7 @@ export default function KontaktPage() {
                       type="checkbox"
                       id="privacy"
                       required
+                      aria-required="true"
                       className="mt-1"
                     />
                     <label htmlFor="privacy" className="text-sm text-wuestennacht-light">

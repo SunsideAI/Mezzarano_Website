@@ -43,6 +43,8 @@ export default function FAQSection({
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
                 className={`w-full flex items-start justify-between gap-4 p-6 rounded-fenster text-left transition-all ${
                   openIndex === index
                     ? 'bg-white shadow-lg'
@@ -56,16 +58,23 @@ export default function FAQSection({
                   className={`h-5 w-5 text-wuestenrot flex-shrink-0 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
+                  aria-hidden="true"
                 />
               </button>
 
-              {openIndex === index && (
-                <div className="bg-white px-6 pb-6 rounded-b-fenster -mt-2 pt-2 shadow-lg animate-fade-in">
+              <div
+                id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+                hidden={openIndex !== index}
+                className={openIndex === index ? "bg-white px-6 pb-6 rounded-b-fenster -mt-2 pt-2 shadow-lg animate-fade-in" : undefined}
+              >
+                {openIndex === index && (
                   <p className="text-wuestennacht-light leading-relaxed">
                     {faq.answer}
                   </p>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           ))}
         </div>

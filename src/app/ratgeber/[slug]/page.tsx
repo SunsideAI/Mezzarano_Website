@@ -211,11 +211,11 @@ export default function BlogPostPage({ params }: Props) {
             <aside className="lg:col-span-4" data-aos="fade-left">
               <div className="sticky top-28 space-y-8">
                 {/* CTA Box */}
-                <div className="bg-wuestenrot text-white rounded-fenster p-8">
+                <div className="bg-gradient-to-br from-wuestenrot to-wuestenrot-hover text-white rounded-fenster p-8">
                   <h3 className="text-2xl font-ww-bold mb-4">
                     Kostenlose Beratung
                   </h3>
-                  <p className="text-white/90 mb-6">
+                  <p className="text-white mb-6">
                     Haben Sie Fragen zu diesem Thema? Herr Mezzarano berät Sie gerne persönlich.
                   </p>
                   <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-warmgrau w-full justify-center">

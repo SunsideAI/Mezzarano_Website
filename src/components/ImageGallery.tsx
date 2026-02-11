@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, X, Grid3X3, Maximize2, ImageOff } from 'lucide-react'
 
@@ -17,6 +17,8 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
   const [isGridView, setIsGridView] = useState(false)
   const thumbnailRef = useRef<HTMLDivElement>(null)
+  const lightboxRef = useRef<HTMLDivElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
 
   // No fallback images - if no images, show placeholder
   const hasImages = images.length > 0
@@ -45,11 +47,17 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
     setCurrentIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1))
   }
 
-  const openLightbox = (index: number) => {
+  const openLightbox = useCallback((index: number) => {
+    previousFocusRef.current = document.activeElement as HTMLElement
     setCurrentIndex(index)
     setIsLightboxOpen(true)
     setIsGridView(false)
-  }
+  }, [])
+
+  const closeLightbox = useCallback(() => {
+    setIsLightboxOpen(false)
+    previousFocusRef.current?.focus()
+  }, [])
 
   // Scroll thumbnail into view
   useEffect(() => {
@@ -61,17 +69,43 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
     }
   }, [currentIndex])
 
-  // Keyboard navigation
+  // Keyboard navigation + focus trap for lightbox
   useEffect(() => {
+    if (!isLightboxOpen) return
+
+    // Focus the lightbox container on open
+    lightboxRef.current?.focus()
+
+    // Prevent body scroll when lightbox is open
+    document.body.style.overflow = 'hidden'
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isLightboxOpen) return
       if (e.key === 'ArrowLeft') goToPrevious()
       if (e.key === 'ArrowRight') goToNext()
-      if (e.key === 'Escape') setIsLightboxOpen(false)
+      if (e.key === 'Escape') closeLightbox()
+
+      // Focus trap
+      if (e.key === 'Tab' && lightboxRef.current) {
+        const focusable = lightboxRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last?.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first?.focus()
+        }
+      }
     }
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isLightboxOpen])
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [isLightboxOpen, closeLightbox])
 
   return (
     <>
@@ -148,7 +182,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                   onClick={() => setCurrentIndex(index)}
                   className={`relative flex-shrink-0 w-24 h-16 md:w-32 md:h-20 rounded-fenster overflow-hidden transition-all duration-200 ${
                     index === currentIndex
-                      ? 'ring-2 ring-primary-500 ring-offset-2 scale-105'
+                      ? 'ring-2 ring-wuestenrot ring-offset-2 scale-105'
                       : 'opacity-70 hover:opacity-100 hover:scale-102'
                   }`}
                 >
@@ -168,7 +202,14 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
 
       {/* Lightbox / Fullscreen View */}
       {isLightboxOpen && (
-        <div className="fixed inset-0 z-50 bg-black">
+        <div
+          ref={lightboxRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Bildergalerie: ${title}`}
+          tabIndex={-1}
+          className="fixed inset-0 z-50 bg-black"
+        >
           {/* Header */}
           <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/80 to-transparent">
             <div className="flex items-center justify-between px-6 py-4">
@@ -193,9 +234,9 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                   </button>
                 )}
                 <button
-                  onClick={() => setIsLightboxOpen(false)}
+                  onClick={closeLightbox}
                   className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-muenze flex items-center justify-center transition-colors"
-                  aria-label="Schließen"
+                  aria-label="Bildergalerie schließen"
                 >
                   <X className="w-5 h-5 text-white" />
                 </button>
