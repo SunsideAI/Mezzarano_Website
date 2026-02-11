@@ -57,10 +57,8 @@ export default function VoiceflowChat() {
           }
         }
       }).then(() => {
-        const currentUrl = window.location.href
-        const siteBase = 'https://mezzarano-immobilien.de'
-        const isHomePage = currentUrl === siteBase || currentUrl === siteBase + '/'
-        const isPropertyPage = currentUrl.includes('/immobilie/')
+        const isHomePage = window.location.href === 'https://mezzarano-website.netlify.app/'
+        const isPropertyPage = window.location.href.startsWith('https://mezzarano-website.netlify.app/immobilie/')
 
         // Proaktive Nachricht je nach Seitenart
         setTimeout(() => {
@@ -69,14 +67,14 @@ export default function VoiceflowChat() {
             window.voiceflow.chat.proactive.push({
               type: 'text',
               payload: {
-                message: 'Diese Immobilie könnte Ihr neues Zuhause sein! Ich beantworte alle Fragen und sende Ihnen alle Details – starten Sie jetzt! 😊🏡'
+                message: 'Diese Immobilie könnte Ihr neues Zuhause sein! Ich beantworte alle Fragen und sende Ihnen alle Details – starten Sie jetzt!🏡😊'
               }
             })
           } else {
             window.voiceflow.chat.proactive.push({
               type: 'text',
               payload: {
-                message: 'Ich bin Ihre intelligente Assistentin Sophia! Immobilien kaufen, verkaufen oder bewerten? Ich helfe Ihnen sofort – starten Sie jetzt! 😊🏡'
+                message: 'Ich bin Ihr intelligenter Assistentin Sophia! Immobilien kaufen, verkaufen oder bewerten? Ich helfe Ihnen sofort – starten Sie jetzt!🏡😊'
               }
             })
           }
@@ -92,7 +90,7 @@ export default function VoiceflowChat() {
             localStorage.setItem('chatOpenCount', String(openCount + 1))
           }, 5000)
         } else if (openCount < 2) {
-          // Zweites Öffnen nach 12 Sekunden
+          // Zweites Öffnen nach 10 Sekunden
           setTimeout(() => {
             window.voiceflow.chat.open()
             localStorage.setItem('chatOpenCount', String(openCount + 1))
