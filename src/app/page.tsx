@@ -213,12 +213,87 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Trust Section - Makler Portrait & Auszeichnungen */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Portrait & Info */}
+            <div className="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-right">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 flex-shrink-0">
+                <Image
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_600,q_80/v1770806323/Lebenskunst-Photography_-078_-_Sandro_-_11.09.2025_-_Business_fotografie-_Trier-13__2_r18b6c.jpg"
+                  alt="Sandro Mezzarano - Ihr Immobilienmakler"
+                  fill
+                  className="object-cover rounded-2xl shadow-xl"
+                />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
+                  Sandro Mezzarano
+                </h2>
+                <p className="text-primary-600 font-semibold mb-3">
+                  Wüstenrot Immobilienberater
+                </p>
+                <p className="text-secondary-600 mb-4">
+                  Mit über 16 Jahren Erfahrung in der Immobilienbranche bin ich Ihr verlässlicher Partner
+                  für alle Fragen rund um Kauf, Verkauf und Bewertung von Immobilien in der Region
+                  Trier-Saarburg und im Hochwald.
+                </p>
+                <p className="text-secondary-600">
+                  Persönliche Beratung, transparente Prozesse und die Stärke eines großen Netzwerks –
+                  dafür stehe ich mit meinem Namen.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: Awards */}
+            <div data-aos="fade-left">
+              <h3 className="text-xl font-bold text-secondary-900 mb-6 text-center lg:text-left">
+                Ausgezeichnete Qualität
+              </h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
+                  <Image
+                    src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,q_80/v1770805619/Focus_Money_H%C3%B6chste_Kompetenz_WUESTENROT_IMMOBILIEN_2025_gnwd3c.jpg"
+                    alt="Focus Money - Höchste Kompetenz 2025"
+                    width={150}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
+                  <Image
+                    src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,q_80/v1770805619/Handelsblatt_Exzellente_Kundenberatung_WUESTENROT_IMMOBILIEN_2025_z9rek4.jpg"
+                    alt="Handelsblatt - Exzellente Kundenberatung 2025"
+                    width={150}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
+                  <Image
+                    src="https://res.cloudinary.com/djqviyb2c/image/upload/w_200,q_80/v1770805619/LOGO_Fachmakler_Geb%C3%A4udemodernisierung_p0gwkj.png"
+                    alt="Fachmakler Gebäudemodernisierung"
+                    width={150}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              <p className="text-secondary-500 text-sm mt-4 text-center lg:text-left">
+                Zertifiziert und ausgezeichnet für höchste Beratungsqualität
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-secondary-900">
+        <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title mb-4">Was Kunden sagen</h2>
-            <p className="section-subtitle mx-auto">
+            <h2 className="section-title mb-4 text-white">Was Kunden sagen</h2>
+            <p className="section-subtitle mx-auto text-gray-300">
               Ihre Zufriedenheit ist mein größter Erfolg
             </p>
           </div>
@@ -227,7 +302,7 @@ export default async function HomePage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 smooth-hover"
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 smooth-hover"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
