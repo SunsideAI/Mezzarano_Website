@@ -103,9 +103,10 @@ export default function KaufenPage() {
       <section className="py-24 bg-secondary-900">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
-              Immobilie kaufen
-            </span>
+            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+              <Key className="h-5 w-5" />
+              <span className="text-sm font-medium uppercase tracking-wider">Immobilie kaufen</span>
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
               Finden Sie Ihre Traumimmobilie
             </h1>

@@ -94,9 +94,10 @@ export default function BewertenPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
-                Immobilienbewertung
-              </span>
+              <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+                <BarChart3 className="h-5 w-5" />
+                <span className="text-sm font-medium uppercase tracking-wider">Immobilienbewertung</span>
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
                 Was ist Ihre Immobilie wert?
               </h1>
