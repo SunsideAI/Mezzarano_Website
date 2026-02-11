@@ -66,21 +66,14 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
           </div>
         )}
 
-        {/* Badges */}
-        <div className="absolute top-4 left-4 flex gap-2 z-30">
-          <span className={`px-3 py-1 rounded-lg text-sm font-semibold ${
-            !isRent
-              ? 'bg-secondary-900 text-white'
-              : 'bg-white text-secondary-900'
-          }`}>
-            {isRent ? 'Mieten' : 'Kaufen'}
-          </span>
-          {propertyType && (
+        {/* Property Type Badge only */}
+        {propertyType && (
+          <div className="absolute top-4 left-4 z-30">
             <span className="px-3 py-1 rounded-lg text-sm font-semibold bg-primary-500 text-white">
               {propertyType}
             </span>
-          )}
-        </div>
+          </div>
+        )}
         <button
           className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors z-30"
           aria-label="Zu Favoriten hinzufügen"
