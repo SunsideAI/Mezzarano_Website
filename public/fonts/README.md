@@ -1,19 +1,31 @@
-# WW Type Schriftart
+# Wüstenrot Fonts
 
-Die WW Type Schriftart ist eine proprietäre Schrift von Wüstenrot und erfordert einen Lizenzvertrag.
+Dieses Verzeichnis enthält alle Schriftarten für das Wüstenrot Corporate Design.
 
-## Font-Dateien platzieren
+## Installierte Fonts
 
-Platziere die folgenden Dateien in diesem Verzeichnis:
-- `WW-Type-Regular.woff2` (oder .woff)
-- `WW-Type-Bold.woff2` (oder .woff)
+### Text-Schriftarten (WW Type)
+- `wwtypeweb-bold.woff2` - WW Type Bold (Überschriften)
+- `wwtypeweb-regular.woff2` - WW Type Regular (Fließtext)
+
+### Icon-Fonts
+- `font-awesome.woff2` - FontAwesome Icons
+- `fontawesome-webfont.woff2` - FontAwesome Webfont
+- `ww-redesign-icons-2025-02.woff2` - Wüstenrot Redesign Icons (aktuell)
+- `ww-redesign-icons-2025.woff2` - Wüstenrot Redesign Icons
+- `ww-redesign-icons.woff2` - Wüstenrot Redesign Icons (Legacy)
+
+## Verwendung
+
+Die Fonts sind in `globals.css` via `@font-face` eingebunden und über CSS-Variablen verfügbar:
+
+```css
+/* Text-Fonts */
+font-family: var(--font-ww-bold);    /* WW Type Bold */
+font-family: var(--font-ww-regular); /* WW Type Regular */
+```
 
 ## Lizenz
 
-Lizenzvertrag anfordern unter: marke@wuestenrot.de
-
-## Fallback
-
-Ohne die Schriftdateien werden automatisch diese Fallback-Fonts verwendet:
-- Bold: Arial Black, Helvetica Neue, Arial
-- Regular: Helvetica Neue, Arial
+Die WW Type Schriftart ist proprietär und erfordert einen Lizenzvertrag.
+Kontakt: marke@wuestenrot.de
