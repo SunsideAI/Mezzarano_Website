@@ -131,8 +131,16 @@ export default function ErklaervideosPage() {
                   onClick={() => openVideo(video)}
                 >
                   <img
-                    src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                    src={`https://img.youtube.com/vi/${video.youtubeId}/sddefault.jpg`}
                     alt={video.title}
+                    width={640}
+                    height={480}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`
+                    }}
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
