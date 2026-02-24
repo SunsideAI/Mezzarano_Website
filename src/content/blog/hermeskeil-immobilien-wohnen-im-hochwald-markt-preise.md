@@ -48,9 +48,9 @@ Der Immobilienmarkt in Hermeskeil hat in den vergangenen fünf Jahren eine bemer
 | 2021 | 1.720 | 1.480 | +8,7% |
 | 2022 | 1.890 | 1.620 | +9,3% |
 | 2023 | 2.050 | 1.750 | +8,5% |
-| 2024 | 2.180 | 1.850 | +6,3% |
+| 2026 | 2.180 | 1.850 | +6,3% |
 
-Die Tabelle zeigt deutlich, dass sowohl Einfamilienhäuser (EFH) als auch Eigentumswohnungen (ETW) kontinuierliche Preissteigerungen erfahren haben. Interessant ist jedoch, dass sich der Anstieg 2024 etwas verlangsamt hat, was auf eine gewisse Marktberuhigung hindeutet.
+Die Tabelle zeigt deutlich, dass sowohl Einfamilienhäuser (EFH) als auch Eigentumswohnungen (ETW) kontinuierliche Preissteigerungen erfahren haben. Interessant ist jedoch, dass sich der Anstieg 2026 etwas verlangsamt hat, was auf eine gewisse Marktberuhigung hindeutet.
 
 ### Marktsegmente im Detail
 

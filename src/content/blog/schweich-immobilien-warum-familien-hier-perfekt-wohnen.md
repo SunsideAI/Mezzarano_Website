@@ -76,7 +76,7 @@ Das Vereinsleben in Schweich ist besonders vielfältig und bietet für jedes Fam
 
 Der Immobilienmarkt in Schweich zeigt eine stabile und positive Entwicklung. Die Nachfrage nach Wohneigentum ist in den letzten Jahren kontinuierlich gestiegen, was die Attraktivität des Standorts unterstreicht. Besonders gefragt sind Einfamilienhäuser mit Garten und moderne Eigentumswohnungen in zentraler Lage.
 
-**Durchschnittliche Immobilienpreise in Schweich (Stand 2024):**
+**Durchschnittliche Immobilienpreise in Schweich (Stand 2026):**
 
 | Immobilientyp | Preis pro m² | Besonderheiten |
 |---------------|-------------|----------------|

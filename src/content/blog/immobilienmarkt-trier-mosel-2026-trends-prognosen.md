@@ -1,16 +1,16 @@
 ---
-title: "Immobilienmarkt Trier-Mosel 2024: Preise, Trends und Prognosen"
+title: "Immobilienmarkt Trier-Mosel 2026: Preise, Trends und Prognosen"
 description: "Aktuelle Analyse des Immobilienmarkts in Trier und an der Mosel. Preisentwicklung, Trends und Prognosen für Käufer und Verkäufer in der Region."
 pubDate: 2026-01-22
 category: "Marktberichte"
 author: "Mezzarano Immobilien"
 featured: true
-tags: ["Trier", "Mosel", "Immobilienmarkt", "Preise", "Trends", "2024"]
+tags: ["Trier", "Mosel", "Immobilienmarkt", "Preise", "Trends", "2026"]
 ---
 
 ## Der Immobilienmarkt in Trier und an der Mosel: Ein Überblick
 
-Der Immobilienmarkt in der Region Trier-Mosel zeigt sich auch im Jahr 2024 als einer der stabilsten in Rheinland-Pfalz. Die älteste Stadt Deutschlands mit ihrer reichen Geschichte und die malerische Moselregion bieten eine einzigartige Kombination aus urbanem Leben, Weinkultur und naturnahem Wohnen.
+Der Immobilienmarkt in der Region Trier-Mosel zeigt sich auch im Jahr 2026 als einer der stabilsten in Rheinland-Pfalz. Die älteste Stadt Deutschlands mit ihrer reichen Geschichte und die malerische Moselregion bieten eine einzigartige Kombination aus urbanem Leben, Weinkultur und naturnahem Wohnen.
 
 Die wirtschaftliche Stärke der Region, geprägt durch die Universität Trier, den Tourismus an der Mosel, die Nähe zu Luxemburg und zahlreiche mittelständische Unternehmen, sorgt für eine stabile Nachfrage nach Wohnraum. Doch wie entwickeln sich die Preise konkret, und was bedeutet das für Käufer und Verkäufer?
 
@@ -20,7 +20,7 @@ Die wirtschaftliche Stärke der Region, geprägt durch die Universität Trier, d
 
 Die durchschnittlichen Quadratmeterpreise für Eigentumswohnungen in der Region haben sich wie folgt entwickelt:
 
-| Lage | Preis/m² 2023 | Preis/m² 2024 | Veränderung |
+| Lage | Preis/m² 2023 | Preis/m² 2026 | Veränderung |
 |------|---------------|---------------|-------------|
 | Trier Innenstadt | 3.200 € | 3.350 € | +4,7% |
 | Trier Süd | 2.800 € | 2.950 € | +5,4% |
@@ -57,7 +57,7 @@ Die Bauzinsen spielen eine entscheidende Rolle bei der Kaufentscheidung. Als Wü
 
 ## Prognose für die kommenden Jahre
 
-### Kurzfristige Entwicklung (2024-2025)
+### Kurzfristige Entwicklung (2026-2025)
 
 Für die nächsten 12-18 Monate erwarten wir:
 

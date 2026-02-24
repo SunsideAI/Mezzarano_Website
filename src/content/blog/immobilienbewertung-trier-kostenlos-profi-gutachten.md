@@ -82,7 +82,7 @@ Ein Einfamilienhaus in Hermeskeil mit 120 m² Wohnfläche wird mit ähnlichen Ob
 
 Bei vermieteten Objekten oder Mehrfamilienhäusern in Trier kommt das **Ertragswertverfahren** zum Einsatz. Hier wird der Wert aus den erzielbaren Mieterträgen abgeleitet.
 
-**Mietpreisspiegel Region Trier (Stand 2024):**
+**Mietpreisspiegel Region Trier (Stand 2026):**
 
 | Lage | Miete/m² (einfach) | Miete/m² (mittel) | Miete/m² (gut) |
 |------|-------------------|-------------------|----------------|
@@ -178,7 +178,7 @@ Die Objektbesichtigung ist das Herzstück der **Wertermittlung**. Dabei werden s
 
 Die **Immobilienbewertung** stützt sich auf aktuelle Marktdaten:
 
-**Kaufpreise 2024 - Einfamilienhäuser (€/m² Wohnfläche):**
+**Kaufpreise 2026 - Einfamilienhäuser (€/m² Wohnfläche):**
 
 | Region | Durchschnittspreis | Preisspanne |
 |--------|-------------------|-------------|
@@ -254,7 +254,7 @@ Banken ermitteln oft einen konservativeren **Beleihungswert**:
 
 ### Finanzierungsmöglichkeiten in der Region Trier
 
-**Aktuelle Konditionen (Stand 2024):**
+**Aktuelle Konditionen (Stand 2026):**
 - **10 Jahre Zinsbindung:** 3,8% - 4,2%
 - **15 Jahre Zinsbindung:** 4,0% - 4,4%
 - **20 Jahre Zinsbindung:** 4,2% - 4,6%
