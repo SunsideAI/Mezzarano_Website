@@ -6,6 +6,7 @@ import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { getFeaturedProperties } from '@/data/properties'
 import HeroSlider from '@/components/HeroSlider'
 import RegionsGrid from '@/components/RegionsGrid'
+import InstagramFeed from '@/components/InstagramFeed'
 import { fetchProperties, AirtableProperty } from '@/lib/airtable'
 
 // Force dynamic rendering to fetch fresh Airtable data
@@ -359,6 +360,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Instagram Feed */}
+      <InstagramFeed username="mezzarano.immobilien" />
 
       {/* CTA Section */}
       <section className="py-12 md:py-20 bg-primary-500">

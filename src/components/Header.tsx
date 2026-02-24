@@ -16,6 +16,7 @@ const navigation: NavItem[] = [
   { name: 'Immobilien', href: '/immobilien' },
   { name: 'Verkaufen', href: '/verkaufen' },
   { name: 'Kaufen', href: '/kaufen' },
+  { name: 'Finanzierung', href: '/finanzierung' },
   { name: 'Bewerten', href: '/bewerten' },
   {
     name: 'Wissen',
