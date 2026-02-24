@@ -9,7 +9,7 @@ import { properties as staticProperties, Property } from '@/data/properties'
 import { AirtableProperty } from '@/lib/airtable'
 import AOS from 'aos'
 
-const ITEMS_PER_PAGE = 9
+const ITEMS_PER_PAGE = 8
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
 
