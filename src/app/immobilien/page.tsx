@@ -227,14 +227,16 @@ export default function ImmobilienPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-secondary-900 py-24">
+      <section className="bg-secondary-900 py-24 min-h-[400px] flex items-center">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">
-            Immobilien
-          </h1>
-          <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
-            Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel
-          </p>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
+              Immobilien
+            </h1>
+            <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
+              Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel
+            </p>
+          </div>
         </div>
       </section>
 

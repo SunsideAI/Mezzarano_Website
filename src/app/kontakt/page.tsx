@@ -69,7 +69,7 @@ export default function KontaktPage() {
   return (
     <div className="min-h-screen">
       {/* Hero - Styleguide: wüstennacht */}
-      <section className="bg-wuestennacht py-24">
+      <section className="bg-wuestennacht py-24 min-h-[400px] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-headline" data-aos="fade-up">

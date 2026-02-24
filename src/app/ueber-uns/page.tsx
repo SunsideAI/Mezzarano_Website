@@ -38,7 +38,7 @@ export default function UeberUnsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-24 bg-secondary-900">
+      <section className="relative py-24 bg-secondary-900 min-h-[400px] flex items-center">
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
