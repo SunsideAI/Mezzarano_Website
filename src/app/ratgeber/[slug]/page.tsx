@@ -88,7 +88,7 @@ export default function BlogPostPage({ params }: Props) {
 
       <article className="min-h-screen bg-secondary-50">
         {/* Header */}
-        <header className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-16">
+        <header className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-10 md:py-16">
           <div className="container-custom">
             <Link
               href="/ratgeber"
@@ -249,7 +249,7 @@ export default function BlogPostPage({ params }: Props) {
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <section className="py-16 bg-white">
+          <section className="py-10 md:py-16 bg-white">
             <div className="container-custom">
               <h2 className="section-title mb-8" data-aos="fade-up">Weitere Artikel</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

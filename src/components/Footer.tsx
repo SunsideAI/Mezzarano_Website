@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <footer className="bg-wuestennacht text-gray-300">
       {/* Main footer content */}
-      <div className="container-custom py-16">
+      <div className="container-custom py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company info */}
           <div className="lg:col-span-2">

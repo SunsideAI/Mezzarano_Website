@@ -9,7 +9,7 @@ export default function ImpressumPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white">Impressum</h1>
@@ -18,7 +18,7 @@ export default function ImpressumPage() {
       </section>
 
       {/* Content */}
-      <section className="py-16">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
 

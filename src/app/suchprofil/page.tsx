@@ -431,7 +431,7 @@ export default function SuchprofilPage() {
     <div className="min-h-screen">
 
       {/* Hero – same pattern as kaufen / verkaufen */}
-      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
@@ -459,7 +459,7 @@ export default function SuchprofilPage() {
       </section>
 
       {/* Funnel */}
-      <section id="funnel" className="py-20 bg-gray-50">
+      <section id="funnel" className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
@@ -535,7 +535,7 @@ export default function SuchprofilPage() {
       </section>
 
       {/* Sandro Portrait – identical markup to homepage */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="section-title mb-4">Ihr persönlicher Ansprechpartner</h2>
@@ -598,7 +598,7 @@ export default function SuchprofilPage() {
       </section>
 
       {/* CTA – same pattern as kaufen / verkaufen */}
-      <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-600">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-primary-500 to-primary-600">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Lieber direkt sprechen?

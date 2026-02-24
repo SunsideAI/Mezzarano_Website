@@ -61,7 +61,7 @@ export default function WittlichPage() {
       <SchemaMarkup data={faqSchema} />
 
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-24 min-h-[50vh] flex items-center">
+      <section className="bg-secondary-900 py-16 md:py-24 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
@@ -124,7 +124,7 @@ export default function WittlichPage() {
       </section>
 
       {/* Introduction */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto" data-aos="fade-up">
             <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
@@ -152,7 +152,7 @@ export default function WittlichPage() {
       </section>
 
       {/* Highlights */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 md:py-16 bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Ihre Vorteile mit Wüstenrot Immobilien Wittlich
@@ -172,7 +172,7 @@ export default function WittlichPage() {
       </section>
 
       {/* Services */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
@@ -213,7 +213,7 @@ export default function WittlichPage() {
       </section>
 
       {/* Region Overview */}
-      <section className="py-16 bg-secondary-900 text-white">
+      <section className="py-10 md:py-16 bg-secondary-900 text-white">
         <div className="container-custom">
           <h2 className="text-3xl font-bold mb-8 text-center" data-aos="fade-up">
             Immobilien in der Region Wittlich
@@ -248,7 +248,7 @@ export default function WittlichPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 md:py-16 bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
             Häufige Fragen zu Immobilien in Wittlich
@@ -267,7 +267,7 @@ export default function WittlichPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary-500">
+      <section className="py-10 md:py-16 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">
             Bereit für Ihr Immobilienprojekt in Wittlich?

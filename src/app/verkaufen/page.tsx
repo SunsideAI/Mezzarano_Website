@@ -79,7 +79,7 @@ export default function VerkaufenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
@@ -107,7 +107,7 @@ export default function VerkaufenPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Ihre Vorteile beim Verkauf mit mir</h2>
@@ -136,7 +136,7 @@ export default function VerkaufenPage() {
       </section>
 
       {/* Process */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">So verkaufen wir Ihre Immobilie</h2>
@@ -181,7 +181,7 @@ export default function VerkaufenPage() {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 bg-secondary-900 text-white">
+      <section className="py-12 md:py-20 bg-secondary-900 text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
@@ -232,7 +232,7 @@ export default function VerkaufenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-600">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-primary-500 to-primary-600">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Bereit, Ihre Immobilie zu verkaufen?

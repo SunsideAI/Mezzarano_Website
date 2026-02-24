@@ -69,7 +69,7 @@ export default function KontaktPage() {
   return (
     <div className="min-h-screen">
       {/* Hero - Styleguide: wüstennacht */}
-      <section className="bg-wuestennacht py-24 min-h-[50vh] flex items-center">
+      <section className="bg-wuestennacht py-16 md:py-24 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-headline" data-aos="fade-up">
@@ -116,7 +116,7 @@ export default function KontaktPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -339,7 +339,7 @@ export default function KontaktPage() {
       </section>
 
       {/* FAQ Section - warmgrau */}
-      <section className="py-20 bg-warmgrau">
+      <section className="py-12 md:py-20 bg-warmgrau">
         <div className="container-custom">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="section-title mb-4">Häufig gestellte Fragen</h2>

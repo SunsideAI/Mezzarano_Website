@@ -227,7 +227,7 @@ export default function ImmobilienPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-secondary-900 py-24 min-h-[50vh] flex items-center">
+      <section className="bg-secondary-900 py-16 md:py-24 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">

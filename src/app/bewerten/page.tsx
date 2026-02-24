@@ -90,7 +90,7 @@ export default function BewertenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -146,7 +146,7 @@ export default function BewertenPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Ihre Vorteile</h2>
@@ -175,7 +175,7 @@ export default function BewertenPage() {
       </section>
 
       {/* Valuation Factors */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
@@ -213,7 +213,7 @@ export default function BewertenPage() {
       </section>
 
       {/* Price Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Preisübersicht Region Trier-Mosel</h2>
@@ -249,7 +249,7 @@ export default function BewertenPage() {
       </section>
 
       {/* Valuation Types */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Bewertungsanlässe</h2>
@@ -282,7 +282,7 @@ export default function BewertenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary-500">
+      <section className="py-12 md:py-20 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Jetzt kostenlose Bewertung anfragen

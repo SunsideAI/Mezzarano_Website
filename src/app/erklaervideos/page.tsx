@@ -62,7 +62,7 @@ export default function ErklaervideosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -117,7 +117,7 @@ export default function ErklaervideosPage() {
       </section>
 
       {/* Videos Grid */}
-      <section id="videos" className="py-20 bg-gray-50">
+      <section id="videos" className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {videos.map((video) => (
@@ -181,7 +181,7 @@ export default function ErklaervideosPage() {
       </section>
 
       {/* Info Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-500 rounded-2xl mb-6">

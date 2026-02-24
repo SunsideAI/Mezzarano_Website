@@ -100,7 +100,7 @@ export default function KaufenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
@@ -128,7 +128,7 @@ export default function KaufenPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Ihre Vorteile beim Immobilienkauf</h2>
@@ -157,7 +157,7 @@ export default function KaufenPage() {
       </section>
 
       {/* Current Listings CTA */}
-      <section className="py-16 bg-primary-500">
+      <section className="py-10 md:py-16 bg-primary-500">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-white">
@@ -173,7 +173,7 @@ export default function KaufenPage() {
       </section>
 
       {/* Process */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Ihr Weg zur Traumimmobilie</h2>
@@ -212,7 +212,7 @@ export default function KaufenPage() {
       </section>
 
       {/* Regions */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Unsere Regionen</h2>
@@ -244,7 +244,7 @@ export default function KaufenPage() {
       </section>
 
       {/* Buying Tips */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
@@ -297,7 +297,7 @@ export default function KaufenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-600">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-primary-500 to-primary-600">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Auf der Suche nach Ihrer Traumimmobilie?

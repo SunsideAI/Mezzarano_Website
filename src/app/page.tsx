@@ -81,7 +81,7 @@ export default async function HomePage() {
       <HeroSlider />
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title mb-4">Unsere Leistungen</h2>
@@ -115,7 +115,7 @@ export default async function HomePage() {
       </section>
 
       {/* Featured Properties */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12" data-aos="fade-up">
             <div>
@@ -149,7 +149,7 @@ export default async function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-secondary-900 text-white overflow-hidden">
+      <section className="py-12 md:py-20 bg-secondary-900 text-white overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
@@ -200,7 +200,7 @@ export default async function HomePage() {
       </section>
 
       {/* Regions Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="section-title mb-4">Unsere Regionen</h2>
@@ -214,7 +214,7 @@ export default async function HomePage() {
       </section>
 
       {/* Trust Section - Makler Portrait & Auszeichnungen */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">
           {/* Header */}
           <div className="text-center mb-12" data-aos="fade-up">
@@ -300,7 +300,7 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="section-title mb-4">Was Kunden sagen</h2>
@@ -361,7 +361,7 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-500">
+      <section className="py-12 md:py-20 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Bereit, Ihre Traumimmobilie zu finden?

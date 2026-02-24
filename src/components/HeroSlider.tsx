@@ -107,7 +107,7 @@ export default function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="container-custom relative z-20 py-20">
+      <div className="container-custom relative z-20 py-12 md:py-20">
         <div className="max-w-3xl">
           {/* Rating Badge */}
           <div
