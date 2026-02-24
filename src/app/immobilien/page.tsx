@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useMemo, useEffect } from 'react'
-import { Search, SlidersHorizontal, Grid, List, X, Loader2 } from 'lucide-react'
+import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
 import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { properties as staticProperties, Property } from '@/data/properties'
 import { AirtableProperty } from '@/lib/airtable'
 import AOS from 'aos'
+
+const ITEMS_PER_PAGE = 12
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
 
@@ -23,6 +25,7 @@ export default function ImmobilienPage() {
   })
   const [sortBy, setSortBy] = useState<SortOption>('newest')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [currentPage, setCurrentPage] = useState(1)
 
   // Airtable data
   const [airtableProperties, setAirtableProperties] = useState<AirtableProperty[]>([])
@@ -162,6 +165,18 @@ export default function ImmobilienPage() {
     return result
   }, [airtableProperties, filters, sortBy])
 
+  // Reset to page 1 when filters or sort change
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [filters, sortBy])
+
+  // Scroll to results top when page changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && currentPage > 1) {
+      document.getElementById('immobilien-results')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [currentPage])
+
   const resetFilters = () => {
     setFilters({
       type: '',
@@ -178,9 +193,26 @@ export default function ImmobilienPage() {
 
   // Use Airtable properties if available, otherwise static
   const hasAirtableData = airtableProperties.length > 0
-  const totalCount = hasAirtableData
-    ? filteredAirtableProperties.length
-    : filteredStaticProperties.length
+  const allFiltered = hasAirtableData ? filteredAirtableProperties : filteredStaticProperties
+  const totalCount = allFiltered.length
+  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE)
+
+  const paginatedAirtable = filteredAirtableProperties.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+  const paginatedStatic = filteredStaticProperties.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+
+  // Page numbers with ellipsis
+  const getPageNumbers = (): (number | '...')[] => {
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1)
+    if (currentPage <= 4) return [1, 2, 3, 4, 5, '...', totalPages]
+    if (currentPage >= totalPages - 3) return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages]
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages]
+  }
 
   // Refresh AOS when properties change
   useEffect(() => {
@@ -368,7 +400,7 @@ export default function ImmobilienPage() {
       </section>
 
       {/* Results */}
-      <section className="py-12">
+      <section id="immobilien-results" className="py-12">
         <div className="container-custom">
           <div className="mb-6 flex items-center justify-between">
             {isLoadingAirtable ? (
@@ -379,18 +411,23 @@ export default function ImmobilienPage() {
             ) : (
               <p className="text-gray-600">
                 <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
+                {totalPages > 1 && (
+                  <span className="ml-2 text-sm text-gray-400">
+                    (Seite {currentPage} von {totalPages})
+                  </span>
+                )}
               </p>
             )}
           </div>
 
           {/* Show Airtable properties if available */}
-          {hasAirtableData && filteredAirtableProperties.length > 0 && (
+          {hasAirtableData && paginatedAirtable.length > 0 && (
             <div className={
               viewMode === 'grid'
                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12'
                 : 'flex flex-col gap-6 mb-12'
             }>
-              {filteredAirtableProperties.map((property, index) => (
+              {paginatedAirtable.map((property, index) => (
                 <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
                   <AirtablePropertyCard property={property} priority={index < 4} />
                 </div>
@@ -420,17 +457,58 @@ export default function ImmobilienPage() {
           )}
 
           {/* Show static properties ONLY if loading finished AND no Airtable data */}
-          {!isLoadingAirtable && !hasAirtableData && filteredStaticProperties.length > 0 && (
+          {!isLoadingAirtable && !hasAirtableData && paginatedStatic.length > 0 && (
             <div className={
               viewMode === 'grid'
                 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
                 : 'flex flex-col gap-6'
             }>
-              {filteredStaticProperties.map((property, index) => (
+              {paginatedStatic.map((property, index) => (
                 <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
                   <PropertyCard property={property} />
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Pagination */}
+          {!isLoadingAirtable && totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-10">
+              <button
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="p-2 rounded-lg border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                aria-label="Vorherige Seite"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              {getPageNumbers().map((page, idx) =>
+                page === '...' ? (
+                  <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">…</span>
+                ) : (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page as number)}
+                    className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                      currentPage === page
+                        ? 'bg-primary-500 text-white'
+                        : 'border border-gray-200 hover:border-primary-500 hover:text-primary-500'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+
+              <button
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className="p-2 rounded-lg border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                aria-label="Nächste Seite"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           )}
 
