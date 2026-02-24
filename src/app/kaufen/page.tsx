@@ -108,7 +108,7 @@ export default function KaufenPage() {
               <span className="text-sm font-medium uppercase tracking-wider">Immobilie kaufen</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-              Finden Sie Ihre Traumimmobilie
+              Finden Sie mit uns Ihre Traumimmobilie
             </h1>
             <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
               Von der ersten Beratung bis zur Schlüsselübergabe - ich begleite Sie auf dem Weg zu Ihrem neuen Zuhause in Hermeskeil, Trier und der Moselregion.
