@@ -1,14 +1,15 @@
 'use client'
 
 import { useState, useMemo, useEffect } from 'react'
-import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
+import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight, Bell } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
 import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { properties as staticProperties, Property } from '@/data/properties'
 import { AirtableProperty } from '@/lib/airtable'
 import AOS from 'aos'
 
-const ITEMS_PER_PAGE = 12
+const ITEMS_PER_PAGE = 9
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
 
@@ -424,7 +425,7 @@ export default function ImmobilienPage() {
           {hasAirtableData && paginatedAirtable.length > 0 && (
             <div className={
               viewMode === 'grid'
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'
                 : 'flex flex-col gap-6 mb-12'
             }>
               {paginatedAirtable.map((property, index) => (
@@ -432,6 +433,10 @@ export default function ImmobilienPage() {
                   <AirtablePropertyCard property={property} priority={index < 4} />
                 </div>
               ))}
+              {/* Suchprofil CTA tile – always last in grid */}
+              <div data-aos="fade-up" data-aos-delay={Math.min(paginatedAirtable.length * 50, 300)}>
+                <SuchprofilTile />
+              </div>
             </div>
           )}
 
@@ -460,7 +465,7 @@ export default function ImmobilienPage() {
           {!isLoadingAirtable && !hasAirtableData && paginatedStatic.length > 0 && (
             <div className={
               viewMode === 'grid'
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
                 : 'flex flex-col gap-6'
             }>
               {paginatedStatic.map((property, index) => (
@@ -468,6 +473,10 @@ export default function ImmobilienPage() {
                   <PropertyCard property={property} />
                 </div>
               ))}
+              {/* Suchprofil CTA tile */}
+              <div data-aos="fade-up" data-aos-delay={Math.min(paginatedStatic.length * 50, 300)}>
+                <SuchprofilTile />
+              </div>
             </div>
           )}
 
@@ -532,5 +541,28 @@ export default function ImmobilienPage() {
         </div>
       </section>
     </div>
+  )
+}
+
+function SuchprofilTile() {
+  return (
+    <Link
+      href="/suchprofil"
+      className="group flex flex-col items-center justify-center text-center h-full min-h-[320px] rounded-fenster border-2 border-dashed border-wuestenrot/30 bg-gradient-to-br from-wuestenrot-25 to-white hover:from-wuestenrot/10 hover:border-wuestenrot transition-all duration-300 p-8"
+    >
+      <div className="w-16 h-16 rounded-muenze bg-wuestenrot/10 flex items-center justify-center mb-5 group-hover:bg-wuestenrot group-hover:scale-110 transition-all duration-300">
+        <Bell className="h-8 w-8 text-wuestenrot group-hover:text-white transition-colors" />
+      </div>
+      <h3 className="text-xl font-bold text-wuestennacht mb-3 group-hover:text-wuestenrot transition-colors">
+        Nicht das Passende dabei?
+      </h3>
+      <p className="text-wuestennacht-light text-sm leading-relaxed mb-5 max-w-xs">
+        Legen Sie jetzt Ihr persönliches Suchprofil an – ich benachrichtige Sie sofort, wenn die richtige Immobilie verfügbar ist.
+      </p>
+      <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-button bg-wuestenrot text-white text-sm font-bold group-hover:bg-wuestenrot-hover transition-colors">
+        Suchprofil anlegen
+        <Bell className="h-4 w-4" />
+      </span>
+    </Link>
   )
 }
