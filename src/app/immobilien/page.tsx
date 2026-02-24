@@ -548,21 +548,34 @@ function SuchprofilTile() {
   return (
     <Link
       href="/suchprofil"
-      className="group flex flex-col items-center justify-center text-center h-full min-h-[320px] rounded-fenster border-2 border-dashed border-wuestenrot/30 bg-gradient-to-br from-wuestenrot-25 to-white hover:from-wuestenrot/10 hover:border-wuestenrot transition-all duration-300 p-8"
+      className="group relative flex flex-col h-full min-h-[320px] rounded-[16px] border-2 border-dashed border-wuestenrot/40 bg-[#fde0d4] hover:border-wuestenrot hover:shadow-lg transition-all duration-300 p-6 overflow-hidden"
     >
-      <div className="w-16 h-16 rounded-muenze bg-wuestenrot/10 flex items-center justify-center mb-5 group-hover:bg-wuestenrot group-hover:scale-110 transition-all duration-300">
-        <Bell className="h-8 w-8 text-wuestenrot group-hover:text-white transition-colors" />
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-wuestenrot/5 pointer-events-none" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Icon */}
+        <div className="w-12 h-12 rounded-full bg-wuestenrot flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <Bell className="h-6 w-6 text-white" />
+        </div>
+
+        {/* Text */}
+        <h3 className="text-lg font-bold text-wuestennacht mb-2 leading-tight">
+          Nicht das Passende<br />dabei?
+        </h3>
+        <p className="text-wuestennacht/70 text-sm leading-relaxed mb-auto">
+          Legen Sie jetzt Ihr persönliches Suchprofil an – ich benachrichtige Sie sofort, wenn die richtige Immobilie verfügbar ist.
+        </p>
+
+        {/* Button */}
+        <div className="mt-4">
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-wuestenrot text-white text-sm font-bold group-hover:bg-wuestenrot-hover transition-colors">
+            <Bell className="h-4 w-4" />
+            Suchprofil anlegen
+          </span>
+        </div>
       </div>
-      <h3 className="text-xl font-bold text-wuestennacht mb-3 group-hover:text-wuestenrot transition-colors">
-        Nicht das Passende dabei?
-      </h3>
-      <p className="text-wuestennacht-light text-sm leading-relaxed mb-5 max-w-xs">
-        Legen Sie jetzt Ihr persönliches Suchprofil an – ich benachrichtige Sie sofort, wenn die richtige Immobilie verfügbar ist.
-      </p>
-      <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-button bg-wuestenrot text-white text-sm font-bold group-hover:bg-wuestenrot-hover transition-colors">
-        Suchprofil anlegen
-        <Bell className="h-4 w-4" />
-      </span>
     </Link>
   )
 }
