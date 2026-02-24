@@ -61,7 +61,7 @@ export default function HermeskeilPage() {
       <SchemaMarkup data={faqSchema} />
 
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-16 md:py-20">
+      <section className="bg-secondary-900 py-24">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}

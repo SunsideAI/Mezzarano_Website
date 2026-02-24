@@ -9,7 +9,7 @@ export default function DatenschutzPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="py-16 bg-secondary-900">
+      <section className="py-24 bg-secondary-900">
         <div className="container-custom">
           <h1 className="text-3xl md:text-4xl font-bold text-white">Datenschutzerklärung</h1>
         </div>
