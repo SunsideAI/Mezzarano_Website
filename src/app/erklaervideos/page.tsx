@@ -62,7 +62,7 @@ export default function ErklaervideosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-secondary-900 min-h-[50vh] flex items-center">
+      <section className="py-16 md:py-24 bg-secondary-900 flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
