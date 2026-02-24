@@ -203,7 +203,10 @@ export default function KaufenPage() {
                   <p className="text-gray-600 text-sm">{step.description}</p>
                 </div>
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-secondary-300"></div>
+                  <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-full items-center justify-center w-6 z-10">
+                    <div className="w-full h-0.5 bg-primary-300"></div>
+                    <div className="absolute w-2 h-2 bg-primary-400 rounded-full"></div>
+                  </div>
                 )}
               </div>
             ))}

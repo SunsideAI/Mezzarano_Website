@@ -252,7 +252,10 @@ export default function FinanzierungPage() {
               >
                 {/* Connection Line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-primary-200" />
+                  <div className="hidden lg:flex absolute top-12 left-full items-center justify-center w-8 z-0">
+                    <div className="w-full h-0.5 bg-primary-300"></div>
+                    <div className="absolute w-2 h-2 bg-primary-400 rounded-full"></div>
+                  </div>
                 )}
 
                 <div className="bg-white rounded-xl p-6 shadow-lg relative z-10">

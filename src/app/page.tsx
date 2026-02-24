@@ -362,7 +362,7 @@ export default async function HomePage() {
       </section>
 
       {/* Instagram Feed */}
-      <InstagramFeed username="mezzarano.immobilien" />
+      <InstagramFeed username="mezzarano.wuestenrotimmobilien" />
 
       {/* CTA Section */}
       <section className="py-12 md:py-20 bg-primary-500">

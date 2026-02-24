@@ -9,7 +9,7 @@ interface InstagramFeedProps {
 }
 
 export default function InstagramFeed({
-  username = 'mezzarano.immobilien',
+  username = 'mezzarano.wuestenrotimmobilien',
   elfsightWidgetId
 }: InstagramFeedProps) {
   const containerRef = useRef<HTMLDivElement>(null)
