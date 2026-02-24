@@ -1,11 +1,14 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { Search, SlidersHorizontal, Grid, List, X } from 'lucide-react'
+import { useState, useMemo, useEffect } from 'react'
+import Link from 'next/link'
+import { Search, SlidersHorizontal, Grid, List, X, ChevronLeft, ChevronRight, Bell } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
-import { properties, Property } from '@/data/properties'
+import { properties } from '@/data/properties'
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
+
+const ITEMS_PER_PAGE = 9
 
 export default function ImmobilienPage() {
   const [showFilters, setShowFilters] = useState(false)
@@ -20,6 +23,7 @@ export default function ImmobilienPage() {
   })
   const [sortBy, setSortBy] = useState<SortOption>('newest')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [currentPage, setCurrentPage] = useState(1)
 
   const filteredProperties = useMemo(() => {
     let result = [...properties]
@@ -48,7 +52,6 @@ export default function ImmobilienPage() {
       )
     }
 
-    // Sort
     switch (sortBy) {
       case 'price-asc':
         result.sort((a, b) => a.price - b.price)
@@ -63,12 +66,21 @@ export default function ImmobilienPage() {
         result.sort((a, b) => b.area - a.area)
         break
       default:
-        // newest first (by id in this case)
         result.sort((a, b) => parseInt(b.id) - parseInt(a.id))
     }
 
     return result
   }, [filters, sortBy])
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [filters, sortBy])
+
+  const totalPages = Math.ceil(filteredProperties.length / ITEMS_PER_PAGE)
+  const paginatedProperties = filteredProperties.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
 
   const resetFilters = () => {
     setFilters({
@@ -83,6 +95,19 @@ export default function ImmobilienPage() {
   }
 
   const activeFilterCount = Object.values(filters).filter(v => v !== '').length
+
+  const getPageNumbers = () => {
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1)
+    const pages: (number | '...')[] = []
+    if (currentPage <= 4) {
+      pages.push(1, 2, 3, 4, 5, '...', totalPages)
+    } else if (currentPage >= totalPages - 3) {
+      pages.push(1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
+    } else {
+      pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages)
+    }
+    return pages
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -263,22 +288,98 @@ export default function ImmobilienPage() {
       {/* Results */}
       <section className="py-12">
         <div className="container-custom">
-          <div className="mb-6">
+          <div className="flex items-center justify-between mb-6">
             <p className="text-gray-600">
               <span className="font-semibold text-gray-900">{filteredProperties.length}</span> Immobilien gefunden
             </p>
+            {totalPages > 1 && (
+              <p className="text-sm text-gray-500">
+                Seite {currentPage} von {totalPages}
+              </p>
+            )}
           </div>
 
           {filteredProperties.length > 0 ? (
-            <div className={
-              viewMode === 'grid'
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
-                : 'flex flex-col gap-6'
-            }>
-              {filteredProperties.map((property) => (
-                <PropertyCard key={property.id} property={property} />
-              ))}
-            </div>
+            <>
+              <div className={
+                viewMode === 'grid'
+                  ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                  : 'flex flex-col gap-6'
+              }>
+                {paginatedProperties.map((property) => (
+                  <PropertyCard key={property.id} property={property} />
+                ))}
+
+                {/* Suchprofil Tile */}
+                <Link
+                  href="/suchprofil"
+                  className={`group relative bg-gradient-to-br from-primary-700 to-primary-900 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+                    viewMode === 'list' ? 'p-10 min-h-[160px]' : 'p-8 min-h-[360px]'
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className={`relative flex ${viewMode === 'list' ? 'flex-row items-center gap-8' : 'flex-col items-center'}`}>
+                    <div className={`bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors flex-shrink-0 ${
+                      viewMode === 'list' ? 'w-14 h-14' : 'w-16 h-16 mb-5'
+                    }`}>
+                      <Bell className={viewMode === 'list' ? 'h-7 w-7 text-white' : 'h-8 w-8 text-white'} />
+                    </div>
+                    <div className={viewMode === 'list' ? 'text-left' : ''}>
+                      <h3 className={`font-serif font-bold text-white mb-2 ${viewMode === 'list' ? 'text-xl' : 'text-2xl mb-3'}`}>
+                        Nicht das Passende gefunden?
+                      </h3>
+                      <p className={`text-white/80 leading-relaxed ${viewMode === 'list' ? 'text-sm mb-4' : 'text-sm mb-6'}`}>
+                        Legen Sie jetzt Ihr persönliches Suchprofil an und wir melden uns, sobald ein passendes Objekt verfügbar ist.
+                      </p>
+                      <span className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-6 py-2.5 rounded-full group-hover:bg-gold-50 transition-colors text-sm">
+                        Suchprofil anlegen
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-2 mt-12">
+                  <button
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className="p-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    aria-label="Vorherige Seite"
+                  >
+                    <ChevronLeft className="h-5 w-5 text-gray-700" />
+                  </button>
+
+                  {getPageNumbers().map((page, idx) =>
+                    page === '...' ? (
+                      <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">...</span>
+                    ) : (
+                      <button
+                        key={page}
+                        onClick={() => setCurrentPage(page as number)}
+                        className={`w-10 h-10 rounded-lg font-medium transition-colors ${
+                          currentPage === page
+                            ? 'bg-primary-700 text-white shadow-sm'
+                            : 'border border-gray-200 text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    )
+                  )}
+
+                  <button
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                    className="p-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    aria-label="Nächste Seite"
+                  >
+                    <ChevronRight className="h-5 w-5 text-gray-700" />
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <div className="text-center py-16">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -287,12 +388,17 @@ export default function ImmobilienPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Keine Ergebnisse gefunden
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-6">
                 Versuchen Sie, Ihre Filterkriterien anzupassen
               </p>
-              <button onClick={resetFilters} className="btn-primary">
-                Filter zurücksetzen
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onClick={resetFilters} className="btn-primary">
+                  Filter zurücksetzen
+                </button>
+                <Link href="/suchprofil" className="btn-secondary">
+                  Suchprofil anlegen
+                </Link>
+              </div>
             </div>
           )}
         </div>
