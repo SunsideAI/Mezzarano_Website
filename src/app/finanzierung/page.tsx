@@ -16,6 +16,7 @@ import {
   Clock
 } from 'lucide-react'
 import type { Metadata } from 'next'
+import ProcessSteps from '@/components/ProcessSteps'
 
 export const metadata: Metadata = {
   title: 'Baufinanzierung & Immobilienfinanzierung | Mezzarano Immobilien',
@@ -47,25 +48,21 @@ const finanzierungsarten = [
 
 const processSteps = [
   {
-    step: '01',
     icon: Calculator,
     title: 'Bedarfsanalyse',
     description: 'Gemeinsam ermitteln wir Ihr Budget, Ihre Wünsche und die optimale Finanzierungssumme für Ihr Vorhaben.',
   },
   {
-    step: '02',
     icon: FileCheck,
     title: 'Angebote vergleichen',
     description: 'Wir prüfen über 400 Banken und Sparkassen, um für Sie die besten Konditionen zu finden.',
   },
   {
-    step: '03',
     icon: Percent,
     title: 'Förderungen nutzen',
     description: 'Wir identifizieren alle verfügbaren KfW-Programme und Fördermittel für Ihre Situation.',
   },
   {
-    step: '04',
     icon: Shield,
     title: 'Finanzierung sichern',
     description: 'Nach Ihrer Zusage begleiten wir Sie bis zur Auszahlung und darüber hinaus.',
@@ -233,46 +230,11 @@ export default function FinanzierungPage() {
       </section>
 
       {/* Prozess */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title mb-4">So läuft Ihre Finanzierung ab</h2>
-            <p className="section-subtitle mx-auto">
-              In vier einfachen Schritten zu Ihrer Traumimmobilie
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div
-                key={step.step}
-                className="relative"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                {/* Connection Line */}
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-12 left-full items-center justify-center w-8 z-0">
-                    <div className="w-full h-0.5 bg-primary-300"></div>
-                    <div className="absolute w-2 h-2 bg-primary-400 rounded-full"></div>
-                  </div>
-                )}
-
-                <div className="bg-white rounded-xl p-6 shadow-lg relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold">
-                      {step.step}
-                    </div>
-                    <step.icon className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <h3 className="text-lg font-bold text-secondary-900 mb-2">{step.title}</h3>
-                  <p className="text-secondary-600 text-sm">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSteps
+        steps={processSteps}
+        title="So läuft Ihre Finanzierung ab"
+        subtitle="In vier einfachen Schritten zu Ihrer Traumimmobilie"
+      />
 
       {/* Vorteile */}
       <section className="py-12 md:py-20 bg-secondary-900 text-white">

@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, TrendingUp, Clock, Shield, Users, Phone, ArrowRight, Home, FileText, UserCheck, Camera, BarChart3 } from 'lucide-react'
 import type { Metadata } from 'next'
+import ProcessSteps from '@/components/ProcessSteps'
 
 export const metadata: Metadata = {
   title: 'Immobilie verkaufen in Hermeskeil, Trier & Mosel | Mezzarano Immobilien',
@@ -33,31 +33,26 @@ const benefits = [
 
 const processSteps = [
   {
-    step: '01',
     icon: Home,
     title: 'Kostenlose Erstberatung',
     description: 'Wir besichtigen Ihre Immobilie, analysieren den lokalen Markt und erstellen eine fundierte Wertermittlung.',
   },
   {
-    step: '02',
     icon: FileText,
     title: 'Verkaufsvorbereitung',
     description: 'Professionelle Fotos, Erstellung des Exposés, Beschaffung aller notwendigen Unterlagen wie Energieausweis.',
   },
   {
-    step: '03',
     icon: TrendingUp,
     title: 'Aktive Vermarktung',
     description: 'Präsentation auf führenden Immobilienportalen, in unserem Netzwerk und durch gezielte Direktansprache.',
   },
   {
-    step: '04',
     icon: Users,
     title: 'Besichtigungen & Verhandlung',
     description: 'Professionelle Durchführung aller Besichtigungen und Preisverhandlungen in Ihrem Interesse.',
   },
   {
-    step: '05',
     icon: UserCheck,
     title: 'Erfolgreicher Abschluss',
     description: 'Begleitung zum Notar, Koordination der Übergabe und Unterstützung bei allen Formalitäten.',
@@ -136,49 +131,11 @@ export default function VerkaufenPage() {
       </section>
 
       {/* Process */}
-      <section className="py-12 md:py-20">
-        <div className="container-custom">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title mb-4">So verkaufen wir Ihre Immobilie</h2>
-            <p className="section-subtitle mx-auto">
-              Ein transparenter Prozess für Ihren erfolgreichen Immobilienverkauf
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {processSteps.map((step, index) => (
-              <div
-                key={step.step}
-                className={`flex flex-col md:flex-row gap-8 items-center ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                }`}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="w-full md:w-1/2">
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 bg-secondary-900 rounded-xl flex items-center justify-center">
-                        <span className="text-2xl font-bold text-white">{step.step}</span>
-                      </div>
-                      <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center">
-                        <step.icon className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                </div>
-                <div className="hidden md:block w-1/2">
-                  <div className={`h-1 bg-gradient-to-r ${
-                    index % 2 === 0 ? 'from-primary-500 to-transparent' : 'from-transparent to-primary-500'
-                  }`}></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSteps
+        steps={processSteps}
+        title="So verkaufen wir Ihre Immobilie"
+        subtitle="Ein transparenter Prozess für Ihren erfolgreichen Immobilienverkauf"
+      />
 
       {/* Why Us */}
       <section className="py-12 md:py-20 bg-secondary-900 text-white">

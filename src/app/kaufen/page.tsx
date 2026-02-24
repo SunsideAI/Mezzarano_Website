@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, Search, Key, Shield, Heart, Phone, ArrowRight, Home, FileSearch, Calculator, UserCheck, MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
+import ProcessSteps from '@/components/ProcessSteps'
 
 export const metadata: Metadata = {
   title: 'Immobilie kaufen in Hermeskeil, Trier & Mosel | Mezzarano Immobilien',
@@ -33,31 +33,26 @@ const benefits = [
 
 const processSteps = [
   {
-    step: '01',
     icon: FileSearch,
     title: 'Bedarfsanalyse',
     description: 'Gemeinsam ermitteln wir Ihre Wünsche, Anforderungen und finanziellen Möglichkeiten für Ihre Traumimmobilie.',
   },
   {
-    step: '02',
     icon: Search,
     title: 'Objektsuche',
     description: 'Ich durchsuche unser Portfolio, Netzwerk und den Markt nach passenden Immobilien für Sie.',
   },
   {
-    step: '03',
     icon: Home,
     title: 'Besichtigungen',
     description: 'Professionell organisierte Besichtigungstermine mit allen relevanten Informationen zum Objekt.',
   },
   {
-    step: '04',
     icon: Calculator,
     title: 'Finanzierung',
     description: 'Unterstützung bei der Finanzierung durch unser Wüstenrot-Netzwerk mit attraktiven Konditionen.',
   },
   {
-    step: '05',
     icon: UserCheck,
     title: 'Kaufabschluss',
     description: 'Begleitung zum Notar, Koordination der Übergabe und Unterstützung bei allen Formalitäten.',
@@ -173,46 +168,11 @@ export default function KaufenPage() {
       </section>
 
       {/* Process */}
-      <section className="py-12 md:py-20">
-        <div className="container-custom">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title mb-4">Ihr Weg zur Traumimmobilie</h2>
-            <p className="section-subtitle mx-auto">
-              Ein strukturierter Prozess für Ihren erfolgreichen Immobilienkauf
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {processSteps.map((step, index) => (
-              <div
-                key={step.step}
-                className="relative"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="bg-white p-6 rounded-xl shadow-lg h-full border border-gray-100">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-secondary-900 rounded-lg flex items-center justify-center">
-                      <span className="text-lg font-bold text-white">{step.step}</span>
-                    </div>
-                    <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                      <step.icon className="h-5 w-5 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-full items-center justify-center w-6 z-10">
-                    <div className="w-full h-0.5 bg-primary-300"></div>
-                    <div className="absolute w-2 h-2 bg-primary-400 rounded-full"></div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSteps
+        steps={processSteps}
+        title="Ihr Weg zur Traumimmobilie"
+        subtitle="Ein strukturierter Prozess für Ihren erfolgreichen Immobilienkauf"
+      />
 
       {/* Regions */}
       <section className="py-12 md:py-20 bg-gray-50">
