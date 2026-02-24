@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight, Bell } from 'lucide-react'
+import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight, Bell, ArrowRight, Phone } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
 import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { properties as staticProperties, Property } from '@/data/properties'
@@ -230,12 +230,26 @@ export default function ImmobilienPage() {
       <section className="bg-secondary-900 py-16 md:py-24 flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
+            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+              <Search className="h-5 w-5" />
+              <span className="text-sm font-medium uppercase tracking-wider">Immobiliensuche</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
               Immobilien
             </h1>
-            <p className="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
-              Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel
+            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel – aktuelle Angebote aus dem Wüstenrot-Netzwerk.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+              <Link href="/kontakt" className="btn-primary">
+                Beratung anfragen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
+            </div>
           </div>
         </div>
       </section>

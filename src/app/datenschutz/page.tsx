@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Shield, Phone, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung | Mezzarano Immobilien',
@@ -12,7 +14,24 @@ export default function DatenschutzPage() {
       <section className="py-16 md:py-24 bg-secondary-900 flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white">Datenschutzerklärung</h1>
+            <div className="flex items-center gap-2 text-primary-400 mb-4">
+              <Shield className="h-5 w-5" />
+              <span className="text-sm font-medium uppercase tracking-wider">Datenschutz</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Datenschutzerklärung</h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Informationen zum Umgang mit Ihren personenbezogenen Daten gemäß DSGVO auf der Website von Mezzarano Immobilien.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/kontakt" className="btn-primary">
+                Kontakt aufnehmen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
+            </div>
           </div>
         </div>
       </section>
