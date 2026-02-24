@@ -1,12 +1,12 @@
 {
   "topics": [
     {
-      "title": "Immobilienmarkt Heilbronn 2024: Preise, Trends und Prognosen",
-      "keywords": ["Heilbronn", "Immobilienmarkt", "Preise", "Trends", "2024"],
+      "title": "Immobilienmarkt Heilbronn 2026: Preise, Trends und Prognosen",
+      "keywords": ["Heilbronn", "Immobilienmarkt", "Preise", "Trends", "2026"],
       "category": "Marktberichte",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-02-01T00:00:00.000Z"
     },
     {
       "title": "Immobilie verkaufen in Heilbronn: Der komplette Ratgeber",
@@ -49,7 +49,7 @@
       "usedDate": null
     },
     {
-      "title": "Baufinanzierung 2024: Zinsen, Förderprogramme und Tipps",
+      "title": "Baufinanzierung 2026: Zinsen, Förderprogramme und Tipps",
       "keywords": ["Baufinanzierung", "Zinsen", "Förderung", "KfW", "Wüstenrot"],
       "category": "Finanzierung",
       "priority": "high",
@@ -193,7 +193,7 @@
       "usedDate": null
     },
     {
-      "title": "Mietspiegel Heilbronn 2024: Mietpreise nach Stadtteilen",
+      "title": "Mietspiegel Heilbronn 2026: Mietpreise nach Stadtteilen",
       "keywords": ["Mietspiegel", "Heilbronn", "Mietpreise", "Stadtteile"],
       "category": "Marktberichte",
       "priority": "medium",
