@@ -90,7 +90,7 @@ export default function BewertenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-secondary-900 flex items-center">
+      <section className="py-16 md:py-24 min-h-[400px] md:min-h-[500px] bg-secondary-900 flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
