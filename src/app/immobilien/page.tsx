@@ -548,29 +548,29 @@ function SuchprofilTile() {
   return (
     <Link
       href="/suchprofil"
-      className="group relative flex flex-col h-full min-h-[320px] rounded-[16px] border-2 border-dashed border-wuestenrot/40 bg-[#fde0d4] hover:border-wuestenrot hover:shadow-lg transition-all duration-300 p-6 overflow-hidden"
+      className="group relative flex flex-col h-full min-h-[320px] rounded-[16px] bg-wuestenrot hover:bg-wuestenrot-hover hover:shadow-xl transition-all duration-300 p-6 overflow-hidden"
     >
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-wuestenrot/5 pointer-events-none" />
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
         {/* Icon */}
-        <div className="w-12 h-12 rounded-full bg-wuestenrot flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-          <Bell className="h-6 w-6 text-white" />
+        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <Bell className="h-6 w-6 text-wuestenrot" />
         </div>
 
         {/* Text */}
-        <h3 className="text-lg font-bold text-wuestennacht mb-2 leading-tight">
+        <h3 className="text-lg font-bold text-white mb-2 leading-tight">
           Nicht das Passende<br />dabei?
         </h3>
-        <p className="text-wuestennacht/70 text-sm leading-relaxed mb-auto">
+        <p className="text-white/80 text-sm leading-relaxed mb-auto">
           Legen Sie jetzt Ihr persönliches Suchprofil an – ich benachrichtige Sie sofort, wenn die richtige Immobilie verfügbar ist.
         </p>
 
         {/* Button */}
         <div className="mt-4">
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-wuestenrot text-white text-sm font-bold group-hover:bg-wuestenrot-hover transition-colors">
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-wuestenrot text-sm font-bold group-hover:bg-warmgrau transition-colors">
             <Bell className="h-4 w-4" />
             Suchprofil anlegen
           </span>
