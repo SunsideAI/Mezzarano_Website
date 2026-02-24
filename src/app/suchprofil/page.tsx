@@ -439,7 +439,7 @@ export default function SuchprofilPage() {
               <span className="text-sm font-medium uppercase tracking-wider">Suchprofil</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-              Die richtige Immobilie – auch wenn sie noch nicht im Angebot ist
+              Die richtige Immobilie –<br />auch wenn sie noch nicht im Angebot ist
             </h1>
             <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
               Legen Sie Ihr persönliches Suchprofil an. Ich melde mich sofort, wenn die passende Immobilie verfügbar wird.
