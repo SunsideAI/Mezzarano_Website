@@ -61,7 +61,7 @@ export default function BitburgPage() {
       <SchemaMarkup data={faqSchema} />
 
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-16 md:py-24 min-h-[400px] md:min-h-[500px] flex items-center">
+      <section className="bg-secondary-900 h-[400px] md:h-[480px] flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
