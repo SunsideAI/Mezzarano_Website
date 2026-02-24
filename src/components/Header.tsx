@@ -1,29 +1,58 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react'
 
 const navigation = [
   { name: 'Startseite', href: '/' },
   { name: 'Immobilien', href: '/immobilien' },
-  { name: 'Leistungen', href: '/leistungen', submenu: [
-    { name: 'Immobilienbewertung', href: '/leistungen/bewertung' },
-    { name: 'Finanzierung', href: '/leistungen/finanzierung' },
-    { name: 'Verkaufsberatung', href: '/leistungen/verkauf' },
-  ]},
-  { name: 'Ratgeber', href: '/ratgeber' },
+  {
+    name: 'Leistungen',
+    href: '/leistungen',
+    submenu: [
+      { name: 'Immobilienbewertung', href: '/leistungen/bewertung' },
+      { name: 'Finanzierung', href: '/leistungen/finanzierung' },
+      { name: 'Verkaufsberatung', href: '/leistungen/verkauf' },
+    ],
+  },
+  {
+    name: 'Wissen',
+    href: '/ratgeber',
+    submenu: [
+      { name: 'Alle Artikel', href: '/ratgeber' },
+      { name: 'Ratgeber & Tipps', href: '/ratgeber?kategorie=Tipps+%26+Ratgeber' },
+      { name: 'Marktberichte', href: '/ratgeber?kategorie=Marktberichte' },
+      { name: 'Erklärvideos', href: '/ratgeber?kategorie=Erklaervideos' },
+    ],
+  },
   { name: 'Über uns', href: '/ueber-uns' },
   { name: 'Kontakt', href: '/kontakt' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const [openMenu, setOpenMenu] = useState<string | null>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleMouseEnter = (name: string) => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current)
+      closeTimer.current = null
+    }
+    setOpenMenu(name)
+  }
+
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => {
+      setOpenMenu(null)
+    }, 150)
+  }
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Top bar - Wüstenrot Style */}
+      {/* Top bar – Wüstenrot Style */}
       <div className="bg-secondary-900 text-white py-2 hidden md:block">
         <div className="container-custom flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
@@ -64,25 +93,53 @@ export default function Header() {
           {/* Desktop navigation */}
           <div className="hidden lg:flex items-center gap-6">
             {navigation.map((item) => (
-              <div key={item.name} className="relative group">
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.submenu && handleMouseEnter(item.name)}
+                onMouseLeave={() => item.submenu && handleMouseLeave()}
+              >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-secondary-700 hover:text-primary-500 font-medium transition-colors py-2"
+                  className={`flex items-center gap-1 font-medium transition-colors py-2 ${
+                    openMenu === item.name
+                      ? 'text-primary-500'
+                      : 'text-secondary-700 hover:text-primary-500'
+                  }`}
                 >
                   {item.name}
-                  {item.submenu && <ChevronDown className="h-4 w-4" />}
+                  {item.submenu && (
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-200 ${
+                        openMenu === item.name ? 'rotate-180' : ''
+                      }`}
+                    />
+                  )}
                 </Link>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
 
-                {/* Submenu */}
+                {/* Animated underline */}
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-primary-500 transition-all duration-300 ${
+                    openMenu === item.name ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+
+                {/* Dropdown */}
                 {item.submenu && (
-                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="bg-white rounded-lg shadow-xl border border-secondary-100 py-2 min-w-[200px]">
+                  <div
+                    className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
+                      openMenu === item.name
+                        ? 'opacity-100 visible translate-y-0'
+                        : 'opacity-0 invisible -translate-y-1 pointer-events-none'
+                    }`}
+                  >
+                    <div className="bg-white rounded-lg shadow-xl border border-secondary-100 py-2 min-w-[220px]">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           href={subitem.href}
-                          className="block px-4 py-2 text-secondary-700 hover:bg-primary-50 hover:text-primary-500 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-secondary-700 hover:bg-primary-50 hover:text-primary-500 transition-colors"
+                          onClick={() => setOpenMenu(null)}
                         >
                           {subitem.name}
                         </Link>
@@ -92,6 +149,7 @@ export default function Header() {
                 )}
               </div>
             ))}
+
             <Link href="/kontakt" className="btn-primary ml-4">
               Beratung anfragen
             </Link>
@@ -104,46 +162,61 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Menü öffnen</span>
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t animate-fade-in">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               {navigation.map((item) => (
                 <div key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
-                    onClick={() => !item.submenu && setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.submenu && (
-                    <div className="pl-4 space-y-1">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.name}
-                          href={subitem.href}
-                          className="block text-secondary-600 hover:text-primary-500 py-2 px-2 text-sm"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {subitem.name}
-                        </Link>
-                      ))}
-                    </div>
+                  {item.submenu ? (
+                    <>
+                      <button
+                        className="w-full flex items-center justify-between text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                        onClick={() =>
+                          setMobileExpanded(mobileExpanded === item.name ? null : item.name)
+                        }
+                      >
+                        {item.name}
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            mobileExpanded === item.name ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      {mobileExpanded === item.name && (
+                        <div className="pl-4 pb-1 space-y-1">
+                          {item.submenu.map((subitem) => (
+                            <Link
+                              key={subitem.name}
+                              href={subitem.href}
+                              className="block text-secondary-600 hover:text-primary-500 py-2 px-2 text-sm rounded-lg hover:bg-secondary-50 transition-colors"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {subitem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block text-secondary-700 hover:text-primary-500 font-medium py-3 px-2 rounded-lg hover:bg-secondary-50 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
               ))}
+
               <Link
                 href="/kontakt"
-                className="btn-primary mt-4"
+                className="btn-primary mt-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Beratung anfragen
@@ -160,9 +233,7 @@ export default function Header() {
                 <Mail className="h-4 w-4" />
                 <span>info@mezzarano-immobilien.de</span>
               </a>
-              <div className="pt-2 text-primary-500 font-medium">
-                Wüstenrot Partner
-              </div>
+              <div className="pt-2 text-primary-500 font-medium">Wüstenrot Partner</div>
             </div>
           </div>
         )}
