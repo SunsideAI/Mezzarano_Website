@@ -95,7 +95,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-secondary-900 py-24 min-h-[400px] flex items-center">
+      <section className="bg-secondary-900 py-24 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">

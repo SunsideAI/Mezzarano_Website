@@ -100,7 +100,7 @@ export default function KaufenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 bg-secondary-900 min-h-[400px] flex items-center">
+      <section className="py-24 bg-secondary-900 min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
