@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import type { Metadata } from 'next'
 import ProcessSteps from '@/components/ProcessSteps'
+import FinancingCalculator from '@/components/FinancingCalculator'
 
 export const metadata: Metadata = {
   title: 'Baufinanzierung & Immobilienfinanzierung | Mezzarano Immobilien',
@@ -193,37 +194,8 @@ export default function FinanzierungPage() {
               </p>
             </div>
 
-            <div className="bg-secondary-900 text-white p-8 md:p-10 rounded-2xl" data-aos="fade-left">
-              <h3 className="text-2xl font-bold mb-6">Schnell-Check: Was kann ich mir leisten?</h3>
-
-              <div className="space-y-6">
-                <div className="bg-white/10 p-4 rounded-lg">
-                  <div className="text-sm text-gray-300 mb-1">Monatliche Rate</div>
-                  <div className="text-3xl font-bold text-primary-400">1.500 €</div>
-                </div>
-
-                <div className="flex items-center gap-2 text-gray-300">
-                  <ArrowRight className="h-5 w-5 text-primary-400" />
-                  <span>entspricht ca.</span>
-                </div>
-
-                <div className="bg-white/10 p-4 rounded-lg">
-                  <div className="text-sm text-gray-300 mb-1">Möglicher Kaufpreis</div>
-                  <div className="text-3xl font-bold text-primary-400">~ 350.000 €</div>
-                </div>
-
-                <p className="text-sm text-gray-400">
-                  Bei 10 Jahren Zinsbindung, 2% Tilgung und durchschnittlichen Konditionen.
-                  Individuelle Berechnung auf Anfrage.
-                </p>
-              </div>
-
-              <Link
-                href="/kontakt"
-                className="btn-primary w-full mt-6 justify-center"
-              >
-                Individuelles Angebot anfordern
-              </Link>
+            <div data-aos="fade-left">
+              <FinancingCalculator />
             </div>
           </div>
         </div>
