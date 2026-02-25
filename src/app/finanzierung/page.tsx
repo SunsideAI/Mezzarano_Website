@@ -12,8 +12,7 @@ import {
   ArrowRight,
   Phone,
   Building2,
-  Percent,
-  Clock
+  Percent
 } from 'lucide-react'
 import type { Metadata } from 'next'
 import ProcessSteps from '@/components/ProcessSteps'
@@ -81,12 +80,6 @@ const vorteile = [
   'Langjährige Erfahrung in der Region',
 ]
 
-const zinssaetze = [
-  { laufzeit: '5 Jahre', zins: 'ab 3,2%', empfehlung: false },
-  { laufzeit: '10 Jahre', zins: 'ab 3,4%', empfehlung: true },
-  { laufzeit: '15 Jahre', zins: 'ab 3,6%', empfehlung: false },
-  { laufzeit: '20 Jahre', zins: 'ab 3,8%', empfehlung: false },
-]
 
 export default function FinanzierungPage() {
   return (
@@ -152,52 +145,10 @@ export default function FinanzierungPage() {
         </div>
       </section>
 
-      {/* Aktuelle Zinsen */}
+      {/* Aktuelle Zinsen & Calculator */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-right">
-              <h2 className="section-title mb-6">Aktuelle Zinsen</h2>
-              <p className="text-secondary-600 mb-8">
-                Die Zinsen für Baufinanzierungen sind aktuell wieder attraktiver. Sichern Sie sich jetzt
-                günstige Konditionen für Ihr Vorhaben. Als Ihr Wüstenrot-Partner vergleiche ich für Sie
-                über 400 Anbieter und finde die beste Lösung.
-              </p>
-
-              <div className="space-y-4">
-                {zinssaetze.map((item) => (
-                  <div
-                    key={item.laufzeit}
-                    className={`flex items-center justify-between p-4 rounded-lg border ${
-                      item.empfehlung
-                        ? 'border-primary-500 bg-primary-50'
-                        : 'border-gray-200 bg-gray-50'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <Clock className="h-5 w-5 text-secondary-400" />
-                      <span className="font-medium text-secondary-900">{item.laufzeit} Zinsbindung</span>
-                      {item.empfehlung && (
-                        <span className="text-xs bg-primary-500 text-white px-2 py-1 rounded-full">
-                          Empfohlen
-                        </span>
-                      )}
-                    </div>
-                    <span className="text-xl font-bold text-primary-600">{item.zins}</span>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-sm text-secondary-500 mt-4">
-                * Beispielhafte Zinssätze, abhängig von Bonität und Beleihungsauslauf.
-                Stand: Februar 2026. Unverbindlich.
-              </p>
-            </div>
-
-            <div data-aos="fade-left">
-              <FinancingCalculator />
-            </div>
-          </div>
+          <FinancingCalculator />
         </div>
       </section>
 
