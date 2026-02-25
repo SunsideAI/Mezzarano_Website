@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, ArrowRight } from 'lucide-react'
 import { WuestenrotLogoCompact } from './WuestenrotLogo'
@@ -43,6 +43,21 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [wissenOpen, setWissenOpen] = useState(false)
   const [mobileWissenOpen, setMobileWissenOpen] = useState(false)
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
+    setWissenOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setWissenOpen(false)
+    }, 300) // 300ms delay before closing
+  }
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -87,8 +102,8 @@ export default function Header() {
                 <div
                   key={item.name}
                   className="relative"
-                  onMouseEnter={() => setWissenOpen(true)}
-                  onMouseLeave={() => setWissenOpen(false)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <button
                     className="text-wuestennacht hover:text-wuestenrot font-medium transition-colors py-2 relative group flex items-center gap-1"
@@ -98,16 +113,18 @@ export default function Header() {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
                   </button>
                   {wissenOpen && (
-                    <div className="absolute top-full left-0 mt-1 bg-white rounded-fenster shadow-lg border border-warmgrau py-2 min-w-[180px] animate-fade-in">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="block px-4 py-2 text-wuestennacht hover:text-wuestenrot hover:bg-warmgrau transition-colors"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 pt-2 -ml-4">
+                      <div className="bg-white rounded-fenster shadow-lg border border-warmgrau py-2 min-w-[180px] animate-fade-in">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className="block px-4 py-3 text-wuestennacht hover:text-wuestenrot hover:bg-warmgrau transition-colors"
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

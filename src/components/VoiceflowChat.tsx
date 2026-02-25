@@ -72,7 +72,9 @@ export default function VoiceflowChat() {
           }
         }
       }).then(() => {
-        const isPropertyPage = window.location.pathname.startsWith('/immobilie/')
+        const isPropertyPage = window.location.pathname.startsWith('/immobilien/') &&
+          window.location.pathname !== '/immobilien/' &&
+          window.location.pathname !== '/immobilien'
 
         // Proaktive Nachricht je nach Seitenart
         setTimeout(() => {
@@ -95,23 +97,33 @@ export default function VoiceflowChat() {
           }
         }, 1000)
 
-        // Chat-Öffnungszähler aus localStorage
-        let openCount = parseInt(localStorage.getItem('chatOpenCount') || '0', 10)
+        // Immobilien-Detailseiten: Immer nach 10 Sekunden öffnen
+        if (isPropertyPage) {
+          setTimeout(() => {
+            if (window.voiceflow?.chat) {
+              window.voiceflow.chat.open()
+            }
+          }, 10000)
+        } else {
+          // Alle anderen Seiten: Max 2x automatisch öffnen
+          // 1. Mal nach 5 Sekunden, 2. Mal nach 15 Sekunden
+          const openCount = parseInt(localStorage.getItem('chatOpenCount') || '0', 10)
 
-        if (openCount < 1) {
-          setTimeout(() => {
-            if (window.voiceflow?.chat) {
-              window.voiceflow.chat.open()
-              localStorage.setItem('chatOpenCount', String(openCount + 1))
-            }
-          }, 5000)
-        } else if (openCount < 2) {
-          setTimeout(() => {
-            if (window.voiceflow?.chat) {
-              window.voiceflow.chat.open()
-              localStorage.setItem('chatOpenCount', String(openCount + 1))
-            }
-          }, 12000)
+          if (openCount < 1) {
+            setTimeout(() => {
+              if (window.voiceflow?.chat) {
+                window.voiceflow.chat.open()
+                localStorage.setItem('chatOpenCount', '1')
+              }
+            }, 5000)
+          } else if (openCount < 2) {
+            setTimeout(() => {
+              if (window.voiceflow?.chat) {
+                window.voiceflow.chat.open()
+                localStorage.setItem('chatOpenCount', '2')
+              }
+            }, 15000)
+          }
         }
       })
     }
