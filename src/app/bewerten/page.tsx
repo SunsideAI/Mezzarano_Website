@@ -201,8 +201,8 @@ export default function BewertenPage() {
             <div data-aos="fade-left">
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
-                  alt="Immobilienbewertung"
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1770806323/Lebenskunst-Photography_-078_-_Sandro_-_11.09.2025_-_Business_fotografie-_Trier-13__2_r18b6c.jpg"
+                  alt="Sandro Mezzarano - Ihr Immobilienexperte für Bewertungen"
                   fill
                   className="object-cover"
                 />
