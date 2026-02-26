@@ -2,7 +2,13 @@
   "topics": [
     {
       "title": "Immobilienmarkt Heilbronn 2026: Preise, Trends und Prognosen",
-      "keywords": ["Heilbronn", "Immobilienmarkt", "Preise", "Trends", "2026"],
+      "keywords": [
+        "Heilbronn",
+        "Immobilienmarkt",
+        "Preise",
+        "Trends",
+        "2026"
+      ],
       "category": "Marktberichte",
       "priority": "high",
       "used": true,
@@ -10,31 +16,51 @@
     },
     {
       "title": "Immobilie verkaufen in Heilbronn: Der komplette Ratgeber",
-      "keywords": ["Immobilie verkaufen", "Heilbronn", "Ratgeber", "Tipps"],
+      "keywords": [
+        "Immobilie verkaufen",
+        "Heilbronn",
+        "Ratgeber",
+        "Tipps"
+      ],
       "category": "Immobilienverkauf",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-02-26T09:52:46.395Z"
     },
     {
       "title": "Immobilienbewertung Heilbronn: Kostenlos und professionell",
-      "keywords": ["Immobilienbewertung", "Heilbronn", "kostenlos", "Wertermittlung"],
+      "keywords": [
+        "Immobilienbewertung",
+        "Heilbronn",
+        "kostenlos",
+        "Wertermittlung"
+      ],
       "category": "Immobilienbewertung",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-02-26T09:54:01.131Z"
     },
     {
       "title": "Weinsberg Immobilien: Der perfekte Standort für Familien",
-      "keywords": ["Weinsberg", "Immobilien", "Familie", "Wohnen"],
+      "keywords": [
+        "Weinsberg",
+        "Immobilien",
+        "Familie",
+        "Wohnen"
+      ],
       "category": "Regionen",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-02-26T09:55:11.879Z"
     },
     {
       "title": "Neckarsulm Immobilienmarkt: Arbeiten und Leben im Industriestandort",
-      "keywords": ["Neckarsulm", "Immobilien", "Audi", "Wirtschaft"],
+      "keywords": [
+        "Neckarsulm",
+        "Immobilien",
+        "Audi",
+        "Wirtschaft"
+      ],
       "category": "Regionen",
       "priority": "high",
       "used": false,
@@ -42,7 +68,12 @@
     },
     {
       "title": "Bad Wimpfen: Historisches Kleinod mit Wohnpotenzial",
-      "keywords": ["Bad Wimpfen", "Altstadt", "Immobilien", "Geschichte"],
+      "keywords": [
+        "Bad Wimpfen",
+        "Altstadt",
+        "Immobilien",
+        "Geschichte"
+      ],
       "category": "Regionen",
       "priority": "medium",
       "used": false,
@@ -50,7 +81,13 @@
     },
     {
       "title": "Baufinanzierung 2026: Zinsen, Förderprogramme und Tipps",
-      "keywords": ["Baufinanzierung", "Zinsen", "Förderung", "KfW", "Wüstenrot"],
+      "keywords": [
+        "Baufinanzierung",
+        "Zinsen",
+        "Förderung",
+        "KfW",
+        "Wüstenrot"
+      ],
       "category": "Finanzierung",
       "priority": "high",
       "used": false,
@@ -58,7 +95,12 @@
     },
     {
       "title": "Eigenkapital bei der Immobilienfinanzierung: Wie viel brauche ich?",
-      "keywords": ["Eigenkapital", "Finanzierung", "Immobilienkauf", "Tipps"],
+      "keywords": [
+        "Eigenkapital",
+        "Finanzierung",
+        "Immobilienkauf",
+        "Tipps"
+      ],
       "category": "Finanzierung",
       "priority": "medium",
       "used": false,
@@ -66,7 +108,12 @@
     },
     {
       "title": "Mietrendite berechnen: Lohnt sich die Kapitalanlage?",
-      "keywords": ["Mietrendite", "Kapitalanlage", "Berechnung", "Investment"],
+      "keywords": [
+        "Mietrendite",
+        "Kapitalanlage",
+        "Berechnung",
+        "Investment"
+      ],
       "category": "Kapitalanlage",
       "priority": "high",
       "used": false,
@@ -74,7 +121,12 @@
     },
     {
       "title": "Spekulationssteuer Immobilien: So vermeiden Sie Steuerfallen",
-      "keywords": ["Spekulationssteuer", "Steuern", "Immobilienverkauf", "Frist"],
+      "keywords": [
+        "Spekulationssteuer",
+        "Steuern",
+        "Immobilienverkauf",
+        "Frist"
+      ],
       "category": "Recht & Steuern",
       "priority": "high",
       "used": false,
@@ -82,7 +134,12 @@
     },
     {
       "title": "Grunderwerbsteuer Baden-Württemberg: Alles Wichtige",
-      "keywords": ["Grunderwerbsteuer", "Baden-Württemberg", "Nebenkosten", "Kauf"],
+      "keywords": [
+        "Grunderwerbsteuer",
+        "Baden-Württemberg",
+        "Nebenkosten",
+        "Kauf"
+      ],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -90,7 +147,12 @@
     },
     {
       "title": "Energieausweis Pflicht: Was Verkäufer und Käufer wissen müssen",
-      "keywords": ["Energieausweis", "Pflicht", "Verkauf", "Energieeffizienz"],
+      "keywords": [
+        "Energieausweis",
+        "Pflicht",
+        "Verkauf",
+        "Energieeffizienz"
+      ],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -98,7 +160,12 @@
     },
     {
       "title": "Haus sanieren oder verkaufen: Die richtige Entscheidung treffen",
-      "keywords": ["Sanierung", "Verkauf", "Entscheidung", "Altbau"],
+      "keywords": [
+        "Sanierung",
+        "Verkauf",
+        "Entscheidung",
+        "Altbau"
+      ],
       "category": "Tipps & Ratgeber",
       "priority": "medium",
       "used": false,
@@ -106,7 +173,12 @@
     },
     {
       "title": "Home Staging: So verkaufen Sie Ihre Immobilie schneller",
-      "keywords": ["Home Staging", "Verkauf", "Präsentation", "Tipps"],
+      "keywords": [
+        "Home Staging",
+        "Verkauf",
+        "Präsentation",
+        "Tipps"
+      ],
       "category": "Immobilienverkauf",
       "priority": "medium",
       "used": false,
@@ -114,7 +186,12 @@
     },
     {
       "title": "Neubau vs. Bestandsimmobilie: Vor- und Nachteile im Vergleich",
-      "keywords": ["Neubau", "Bestand", "Vergleich", "Kaufentscheidung"],
+      "keywords": [
+        "Neubau",
+        "Bestand",
+        "Vergleich",
+        "Kaufentscheidung"
+      ],
       "category": "Immobilienkauf",
       "priority": "medium",
       "used": false,
@@ -122,7 +199,12 @@
     },
     {
       "title": "Grundstückspreise Heilbronn Region: Aktuelle Entwicklung",
-      "keywords": ["Grundstückspreise", "Heilbronn", "Bauland", "Preise"],
+      "keywords": [
+        "Grundstückspreise",
+        "Heilbronn",
+        "Bauland",
+        "Preise"
+      ],
       "category": "Marktberichte",
       "priority": "medium",
       "used": false,
@@ -130,7 +212,12 @@
     },
     {
       "title": "Kapitalanlage Immobilien Heilbronn: Renditestarke Standorte",
-      "keywords": ["Kapitalanlage", "Heilbronn", "Rendite", "Investment"],
+      "keywords": [
+        "Kapitalanlage",
+        "Heilbronn",
+        "Rendite",
+        "Investment"
+      ],
       "category": "Kapitalanlage",
       "priority": "high",
       "used": false,
@@ -138,7 +225,13 @@
     },
     {
       "title": "Erbschaft Immobilie: Verkaufen, Behalten oder Vermieten?",
-      "keywords": ["Erbschaft", "Immobilie", "Verkauf", "Vermietung", "Entscheidung"],
+      "keywords": [
+        "Erbschaft",
+        "Immobilie",
+        "Verkauf",
+        "Vermietung",
+        "Entscheidung"
+      ],
       "category": "Recht & Steuern",
       "priority": "medium",
       "used": false,
@@ -146,7 +239,12 @@
     },
     {
       "title": "Wüstenrot Bausparvertrag: Optimal für Immobilienfinanzierung",
-      "keywords": ["Wüstenrot", "Bausparvertrag", "Finanzierung", "Vorteile"],
+      "keywords": [
+        "Wüstenrot",
+        "Bausparvertrag",
+        "Finanzierung",
+        "Vorteile"
+      ],
       "category": "Finanzierung",
       "priority": "high",
       "used": false,
@@ -154,7 +252,13 @@
     },
     {
       "title": "Scheidungsimmobilie: Rechtliche und finanzielle Aspekte",
-      "keywords": ["Scheidung", "Immobilie", "Recht", "Finanzen", "Verkauf"],
+      "keywords": [
+        "Scheidung",
+        "Immobilie",
+        "Recht",
+        "Finanzen",
+        "Verkauf"
+      ],
       "category": "Recht & Steuern",
       "priority": "low",
       "used": false,
@@ -162,7 +266,12 @@
     },
     {
       "title": "Öhringen Immobilien: Leben im Hohenlohekreis",
-      "keywords": ["Öhringen", "Hohenlohekreis", "Immobilien", "Wohnen"],
+      "keywords": [
+        "Öhringen",
+        "Hohenlohekreis",
+        "Immobilien",
+        "Wohnen"
+      ],
       "category": "Regionen",
       "priority": "low",
       "used": false,
@@ -170,7 +279,12 @@
     },
     {
       "title": "Lauffen am Neckar: Weinort mit Charme und Potenzial",
-      "keywords": ["Lauffen", "Neckar", "Wein", "Immobilien"],
+      "keywords": [
+        "Lauffen",
+        "Neckar",
+        "Wein",
+        "Immobilien"
+      ],
       "category": "Regionen",
       "priority": "low",
       "used": false,
@@ -178,7 +292,12 @@
     },
     {
       "title": "Immobilienfinanzierung ohne Eigenkapital: Chancen und Risiken",
-      "keywords": ["Vollfinanzierung", "ohne Eigenkapital", "Risiken", "Tipps"],
+      "keywords": [
+        "Vollfinanzierung",
+        "ohne Eigenkapital",
+        "Risiken",
+        "Tipps"
+      ],
       "category": "Finanzierung",
       "priority": "medium",
       "used": false,
@@ -186,7 +305,12 @@
     },
     {
       "title": "Altersgerecht Wohnen: Immobilien für die Zukunft planen",
-      "keywords": ["Altersgerecht", "Barrierefreiheit", "Wohnen", "Planung"],
+      "keywords": [
+        "Altersgerecht",
+        "Barrierefreiheit",
+        "Wohnen",
+        "Planung"
+      ],
       "category": "Tipps & Ratgeber",
       "priority": "low",
       "used": false,
@@ -194,7 +318,12 @@
     },
     {
       "title": "Mietspiegel Heilbronn 2026: Mietpreise nach Stadtteilen",
-      "keywords": ["Mietspiegel", "Heilbronn", "Mietpreise", "Stadtteile"],
+      "keywords": [
+        "Mietspiegel",
+        "Heilbronn",
+        "Mietpreise",
+        "Stadtteile"
+      ],
       "category": "Marktberichte",
       "priority": "medium",
       "used": false,
