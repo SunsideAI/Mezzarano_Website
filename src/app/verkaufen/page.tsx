@@ -74,20 +74,20 @@ export default function VerkaufenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="h-[400px] md:h-[480px] bg-secondary-900 flex items-center">
+      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
+            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
               <TrendingUp className="h-5 w-5" />
               <span className="text-sm font-medium uppercase tracking-wider">Immobilie verkaufen</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
               Ihr Immobilienverkauf in besten Händen
             </h1>
-            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
               Als Ihr Wüstenrot-Partner in Hermeskeil begleite ich Sie persönlich durch den gesamten Verkaufsprozess - von der ersten Bewertung bis zur Schlüsselübergabe.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
               <Link href="/kontakt" className="btn-primary">
                 Kostenlose Bewertung anfragen
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -102,28 +102,28 @@ export default function VerkaufenPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-10 md:py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title mb-4">Ihre Vorteile beim Verkauf mit mir</h2>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-up">
+            <h2 className="section-title mb-3 md:mb-4">Ihre Vorteile beim Verkauf mit mir</h2>
             <p className="section-subtitle mx-auto">
               Profitieren Sie von meiner Erfahrung und dem starken Wüstenrot-Netzwerk
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="bg-white p-8 rounded-xl text-center group hover:shadow-xl transition-all"
+                className="bg-white p-6 md:p-8 rounded-xl text-center group hover:shadow-xl transition-all"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-500 transition-colors">
-                  <benefit.icon className="h-8 w-8 text-primary-500 group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:bg-primary-500 transition-colors">
+                  <benefit.icon className="h-7 w-7 md:h-8 md:w-8 text-primary-500 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -138,17 +138,17 @@ export default function VerkaufenPage() {
       />
 
       {/* Why Us */}
-      <section className="py-12 md:py-20 bg-secondary-900 text-white">
+      <section className="py-10 md:py-20 bg-secondary-900 text-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <div data-aos="fade-right">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">
                 Warum Sie mit mir verkaufen sollten
               </h2>
-              <p className="text-gray-300 mb-8">
+              <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-base">
                 Als Ihr lokaler Wüstenrot-Immobilienberater kenne ich den Markt in Hermeskeil, Trier und der Moselregion wie kaum ein anderer. Diese Expertise kombiniere ich mit persönlicher Betreuung und einem starken Netzwerk.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {sellingPoints.map((point) => (
                   <div key={point} className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary-500 flex-shrink-0" />
@@ -159,12 +159,12 @@ export default function VerkaufenPage() {
             </div>
 
             <div data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold mb-6">Kostenlose Immobilienbewertung</h3>
-                <p className="text-gray-300 mb-6">
+              <div className="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-2xl">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Kostenlose Immobilienbewertung</h3>
+                <p className="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
                   Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - unverbindlich und kostenfrei.
                 </p>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   <li className="flex items-center gap-3">
                     <Clock className="h-5 w-5 text-primary-500" />
                     <span>Termin innerhalb von 48 Stunden</span>
@@ -189,15 +189,15 @@ export default function VerkaufenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-primary-500 to-primary-600">
+      <section className="py-10 md:py-20 bg-gradient-to-br from-primary-500 to-primary-600">
         <div className="container-custom text-center" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
             Bereit, Ihre Immobilie zu verkaufen?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
             Lassen Sie uns gemeinsam den besten Preis für Ihre Immobilie erzielen. Ich freue mich auf Ihren Anruf!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <Link href="/kontakt" className="btn-primary bg-white text-primary-500 hover:bg-gray-100">
               Kontakt aufnehmen
             </Link>
