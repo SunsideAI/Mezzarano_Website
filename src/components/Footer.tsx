@@ -89,7 +89,7 @@ export default function Footer() {
             {/* Social Media - Münze-Form (Kreis) */}
             <div className="flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/Mezzarano.wuestenrotimmobilien/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
@@ -98,7 +98,7 @@ export default function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/mezzarano.wuestenrotimmobilien/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
@@ -107,7 +107,7 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sandro-mezzarano/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"

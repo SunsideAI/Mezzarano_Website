@@ -379,6 +379,22 @@ export default function KontaktPage() {
                 q: 'Welche Unterlagen benötige ich für eine Immobilienbewertung?',
                 a: 'Für eine fundierte Bewertung benötigen wir Grundrisse, Energieausweis, Grundbuchauszug und Informationen zur Ausstattung.',
               },
+              {
+                q: 'Was kostet mich die Vermittlung meiner Immobilie?',
+                a: 'Die Provision wird nur im Erfolgsfall fällig. Die genauen Konditionen besprechen wir gerne in einem persönlichen Gespräch.',
+              },
+              {
+                q: 'In welchen Regionen sind Sie tätig?',
+                a: 'Ich bin in Hermeskeil, Trier, Schweich, Bernkastel-Kues, Saarburg, Konz, Bitburg, Wittlich und dem gesamten Hochwald aktiv.',
+              },
+              {
+                q: 'Wie lange dauert der Verkauf einer Immobilie?',
+                a: 'Die Verkaufsdauer hängt von vielen Faktoren ab. In der Regel dauert ein Verkauf zwischen 3 und 6 Monaten, kann aber auch schneller gehen.',
+              },
+              {
+                q: 'Bieten Sie auch Finanzierungsberatung an?',
+                a: 'Ja, als Wüstenrot-Partner biete ich Ihnen über unser Netzwerk kompetente Finanzierungsberatung an.',
+              },
             ].map((faq, index) => (
               <div key={index} className="bg-white p-6 rounded-fenster shadow-sm smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
                 <h3 className="font-bold text-wuestennacht mb-2">{faq.q}</h3>
