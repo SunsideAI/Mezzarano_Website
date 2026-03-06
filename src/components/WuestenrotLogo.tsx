@@ -48,13 +48,15 @@ export default function WuestenrotLogo({ className = '', showText = true }: Wues
 // Official Wüstenrot logo (red square with W) - extracted from official SVG
 export function WuestenrotLogoCompact({ className = '' }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 41.7 41.7"
-      className={`h-10 w-10 ${className}`}
-      aria-label="Wüstenrot Logo"
-    >
-      {/* Official Wüstenrot W logo from wuestenrot-logo.svg */}
-      <path fill="#F84914" d="M0,0v41.7h41.7V0H0z M20.4,33.3l1.9,2.1c-0.6,1-1.5,1-1.5,1s-1.3,0.1-1.5-1.2C19.2,34.4,19.9,33.8,20.4,33.3z M20,30.4c0-0.5,0.2-1,0.8-1.1c0.5-0.1,0.9,0.3,1,0.7c0.2,0.9-0.9,1.5-0.9,1.5S20,31.1,20,30.4z M36,36.3h-4.8L29,26.9L27,36.3h-1.7l-1.2-1.3c0,0,0.6-1.1,0.8-2.3h-1.3c-0.1,0.6-0.5,1.2-0.5,1.2l-1.4-1.5c0,0,1.7-1,1.3-2.6c-0.2-1-1.2-2-2.6-1.7c-1.2,0.2-2.1,1.4-1.8,2.8c0.2,0.8,0.9,1.4,0.9,1.4s-2.2,1.3-1.9,3.4c0,0.2,0.1,0.5,0.3,0.7h-3.2l-2.2-9.5L10.6,36.3H5.8L2.3,22.3h4.3l2,9.6l2.2-9.6h3.8l2.2,9.6l2-9.6H23l2,9.6l2.2-9.6H31l2.2,9.6l2-9.6h4.3L36,36.3z"/>
-    </svg>
+    <div className={`h-10 w-10 bg-white rounded-sm flex-shrink-0 ${className}`}>
+      <svg
+        viewBox="0 0 41.7 41.7"
+        className="h-full w-full"
+        aria-label="Wüstenrot Logo"
+      >
+        {/* Official Wüstenrot W logo from wuestenrot-logo.svg */}
+        <path fill="#F84914" d="M0,0v41.7h41.7V0H0z M20.4,33.3l1.9,2.1c-0.6,1-1.5,1-1.5,1s-1.3,0.1-1.5-1.2C19.2,34.4,19.9,33.8,20.4,33.3z M20,30.4c0-0.5,0.2-1,0.8-1.1c0.5-0.1,0.9,0.3,1,0.7c0.2,0.9-0.9,1.5-0.9,1.5S20,31.1,20,30.4z M36,36.3h-4.8L29,26.9L27,36.3h-1.7l-1.2-1.3c0,0,0.6-1.1,0.8-2.3h-1.3c-0.1,0.6-0.5,1.2-0.5,1.2l-1.4-1.5c0,0,1.7-1,1.3-2.6c-0.2-1-1.2-2-2.6-1.7c-1.2,0.2-2.1,1.4-1.8,2.8c0.2,0.8,0.9,1.4,0.9,1.4s-2.2,1.3-1.9,3.4c0,0.2,0.1,0.5,0.3,0.7h-3.2l-2.2-9.5L10.6,36.3H5.8L2.3,22.3h4.3l2,9.6l2.2-9.6h3.8l2.2,9.6l2-9.6H23l2,9.6l2.2-9.6H31l2.2,9.6l2-9.6h4.3L36,36.3z"/>
+      </svg>
+    </div>
   )
 }

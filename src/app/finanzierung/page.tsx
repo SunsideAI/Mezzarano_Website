@@ -84,26 +84,22 @@ const vorteile = [
 export default function FinanzierungPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="h-[400px] md:h-[480px] bg-secondary-900 flex items-center">
+      {/* Hero – Wüstenrot Styleguide: wuestenrot background */}
+      <section className="min-h-[400px] md:min-h-[480px] bg-wuestenrot flex items-center py-12 md:py-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
-              <Banknote className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Finanzierung</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-up">
               Ihre Baufinanzierung – persönlich & unabhängig
             </h1>
-            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+            <p className="text-lg md:text-xl text-white/90 mb-8" data-aos="fade-up" data-aos-delay="100">
               Als Wüstenrot-Partner biete ich Ihnen Zugang zu über 400 Banken und finde die optimale Finanzierung für Ihre Traumimmobilie in der Region Trier-Mosel.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
-              <Link href="/kontakt" className="btn-primary">
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
+              <Link href="/kontakt" className="btn-primary bg-white text-wuestenrot hover:bg-gray-100">
                 Kostenlose Beratung anfragen
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestenrot">
                 <Phone className="h-5 w-5 mr-2" />
                 0177 6542977
               </a>
