@@ -84,12 +84,12 @@ export default function Header() {
       {/* Main navigation */}
       <nav className="container-custom" aria-label="Hauptnavigation">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Styleguide: wüstenrot in Kleinschreibung */}
+          {/* Logo - Exakt wie auf der offiziellen Wüstenrot Seite */}
           <Link href="/" className="flex items-center gap-3">
             <WuestenrotLogoCompact />
-            <div>
-              <span className="font-bold text-lg text-wuestennacht leading-tight block lowercase">wüstenrot</span>
-              <span className="text-xs text-wuestennacht-light tracking-wider uppercase">Immobilien</span>
+            <div className="flex flex-col">
+              <span className="font-semibold text-base text-black leading-tight">wüstenrot</span>
+              <span className="text-xs text-gray-500 tracking-wide uppercase">Immobilien</span>
             </div>
           </Link>
 

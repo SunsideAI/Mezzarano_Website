@@ -54,9 +54,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <WuestenrotLogoCompact />
-              <div>
-                <span className="font-bold text-lg text-white leading-tight block lowercase">wüstenrot</span>
-                <span className="text-xs text-gray-400 tracking-wider uppercase">Immobilien</span>
+              <div className="flex flex-col">
+                <span className="font-semibold text-base text-white leading-tight">wüstenrot</span>
+                <span className="text-xs text-gray-400 tracking-wide uppercase">Immobilien</span>
               </div>
             </Link>
 

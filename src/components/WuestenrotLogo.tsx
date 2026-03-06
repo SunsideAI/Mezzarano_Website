@@ -45,19 +45,26 @@ export default function WuestenrotLogo({ className = '', showText = true }: Wues
   )
 }
 
-// Compact W logo only for small spaces
+// Compact W&W logo matching official Wüstenrot Immobilien branding
 export function WuestenrotLogoCompact({ className = '' }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 44 44"
-      className={`h-10 w-10 ${className}`}
-      aria-label="Wüstenrot Logo"
+      viewBox="0 0 40 40"
+      className={`h-11 w-11 ${className}`}
+      aria-label="Wüstenrot W&W Logo"
     >
-      <rect fill="#FFFFFF" width="44" height="44" rx="2"/>
-      <path
-        fill="#F84914"
-        d="M0,0v44h44V0H0z M21.4,36l1.9,2.1c-0.6,1-1.5,1-1.5,1s-1.3,0.1-1.5-1.2C20.2,37.1,20.9,36.5,21.4,36z M21,33.1c0-0.5,0.2-1,0.8-1.1c0.5-0.1,0.9,0.3,1,0.7c0.2,0.9-0.9,1.5-0.9,1.5S21,33.8,21,33.1z M37,39h-4.8L30,29.6L28,39h-1.7l-1.2-1.3c0,0,0.6-1.1,0.8-2.3h-1.3c-0.1,0.6-0.5,1.2-0.5,1.2l-1.4-1.5c0,0,1.7-1,1.3-2.6c-0.2-1-1.2-2-2.6-1.7c-1.2,0.2-2.1,1.4-1.8,2.8c0.2,0.8,0.9,1.4,0.9,1.4s-2.2,1.3-1.9,3.4c0,0.2,0.1,0.5,0.3,0.7h-3.2l-2.2-9.5L11.6,39H6.8L3.3,25h4.3l2,9.6l2.2-9.6h3.8l2.2,9.6l2-9.6H24l2,9.6l2.2-9.6H32l2.2,9.6l2-9.6h4.3L37,39z"
-      />
+      {/* Orange background - Wüstenrot brand orange #E30613 */}
+      <rect fill="#E30613" width="40" height="40"/>
+
+      {/* W&W logo - matching official Wüstenrot CI guidelines */}
+      <g fill="#FFFFFF">
+        {/* W on left */}
+        <path d="M5,12 L7.2,12 L9.5,22.5 L11.8,12 L14,12 L10.5,28 L8.5,28 L7,19 L5.5,28 L3.5,28 Z"/>
+        {/* & in middle - clean vector */}
+        <path d="M19.5,20.5 C19.5,19.8 19.8,19.2 20.3,18.8 C19.7,18.3 19.3,17.6 19.3,16.8 C19.3,15.3 20.5,14.2 22,14.2 C23,14.2 23.8,14.7 24.3,15.4 L23,16.4 C22.7,16 22.4,15.7 21.9,15.7 C21.3,15.7 20.8,16.2 20.8,16.8 C20.8,17.2 21,17.5 21.3,17.8 L23.3,15.8 L24.3,16.8 L22.5,18.6 C23,18.9 23.3,19.5 23.3,20.2 C23.3,20.8 23,21.4 22.5,21.8 L24,23.5 L22.5,23.5 L21.7,22.6 C21.2,23 20.5,23.3 19.8,23.3 C18.5,23.3 17.5,22.3 17.5,21 C17.5,20.3 17.9,19.6 18.5,19.2 C18.2,18.8 18,18.3 18,17.7 Z M20.5,19.5 C20,19.8 19.7,20.3 19.7,20.9 C19.7,21.6 20.2,22.1 20.9,22.1 C21.3,22.1 21.7,21.9 22,21.6 L20.5,19.5 Z"/>
+        {/* W on right */}
+        <path d="M26,12 L28.2,12 L30.5,22.5 L32.8,12 L35,12 L31.5,28 L29.5,28 L28,19 L26.5,28 L24.5,28 Z"/>
+      </g>
     </svg>
   )
 }
