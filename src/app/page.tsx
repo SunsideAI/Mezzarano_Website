@@ -349,7 +349,7 @@ export default async function HomePage() {
           {/* Google Reviews Link */}
           <div className="text-center mt-10" data-aos="fade-up">
             <a
-              href="https://www.google.com/maps/place/W%C3%BCstenrot+Immobilien+Sandro+Mezzarano"
+              href="https://www.google.com/search?q=Mezzarano+Sandro+Rezensionen&rldimm=5940643087853021481&tbm=lcl&hl=de-DE#lkt=LocalPoiReviews"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
