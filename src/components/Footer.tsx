@@ -30,13 +30,13 @@ const footerLinks = {
   regionen: [
     { name: 'Hermeskeil', href: '/regionen/hermeskeil' },
     { name: 'Trier', href: '/regionen/trier' },
-    { name: 'Bernkastel-Kues', href: '/regionen/bernkastel-kues' },
     { name: 'Schweich', href: '/regionen/schweich' },
     { name: 'Saarburg', href: '/regionen/saarburg' },
     { name: 'Konz', href: '/regionen/konz' },
     { name: 'Bitburg', href: '/regionen/bitburg' },
     { name: 'Wittlich', href: '/regionen/wittlich' },
     { name: 'Hochwald', href: '/regionen/hochwald' },
+    { name: 'Bernkastel-Kues', href: '/regionen/bernkastel-kues' },
   ],
   rechtliches: [
     { name: 'Impressum', href: '/impressum' },
