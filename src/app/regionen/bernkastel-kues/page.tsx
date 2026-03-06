@@ -132,7 +132,7 @@ export default function BernkastelKuesPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-secondary-700">
               <p>
-                <strong>Bernkastel-Kues</strong> ist das Herz der Mittelmosel und einer der malerischsten
+                Bernkastel-Kues ist das Herz der Mittelmosel und einer der malerischsten
                 Orte Deutschlands. Die historische Fachwerk-Altstadt, die steilen Weinberge und der Fluss
                 machen diese Region zu einem begehrten Wohn- und Ferienstandort.
               </p>
@@ -163,7 +163,7 @@ export default function BernkastelKuesPage() {
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
                 <p className="text-secondary-600">{item.description}</p>
               </div>
             ))}

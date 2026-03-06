@@ -27,7 +27,7 @@ export default function FAQSection({
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 text-wuestenrot mb-4">
             <HelpCircle className="h-5 w-5" />
-            <span className="text-sm font-bold uppercase tracking-wider">FAQ</span>
+            <span className="text-sm font-semibold uppercase tracking-wider">FAQ</span>
           </div>
           <h2 className="section-title mb-4">{title}</h2>
           {subtitle && (
@@ -49,7 +49,7 @@ export default function FAQSection({
                     : 'bg-white/50 hover:bg-white hover:shadow-md'
                 }`}
               >
-                <span className="font-bold text-wuestennacht pr-4">
+                <span className="font-semibold text-wuestennacht pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown

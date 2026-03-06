@@ -51,7 +51,7 @@ export default function ProcessSteps({ steps, title, subtitle }: ProcessStepsPro
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
                   <step.icon className="h-7 w-7 text-primary-600" />
                 </div>
-                <h3 className="text-lg font-bold text-secondary-900 mb-2">{step.title}</h3>
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
                 <p className="text-secondary-600 text-sm leading-relaxed">{step.description}</p>
               </div>
             </div>

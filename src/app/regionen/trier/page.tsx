@@ -117,7 +117,7 @@ export default function TrierPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-secondary-700">
               <p>
-                <strong>Trier</strong>, die älteste Stadt Deutschlands, vereint römisches Erbe mit modernem
+                Trier, die älteste Stadt Deutschlands, vereint römisches Erbe mit modernem
                 Stadtleben. Als Oberzentrum der Region bietet Trier exzellente Infrastruktur, eine renommierte
                 Universität, vielfältige Kulturangebote und eine traumhafte Lage an der Mosel.
               </p>
@@ -170,7 +170,7 @@ export default function TrierPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up">
               <Home className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">Immobilien kaufen</h3>
+              <h3 className="text-xl font-semibold text-secondary-900 mb-3">Immobilien kaufen</h3>
               <p className="text-secondary-600 mb-4">
                 Profitieren Sie von meiner Marktkenntnis bei der Suche nach Ihrer Traumimmobilie in Trier.
               </p>
@@ -191,7 +191,7 @@ export default function TrierPage() {
             </div>
             <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up" data-aos-delay="100">
               <TrendingUp className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">Immobilien verkaufen</h3>
+              <h3 className="text-xl font-semibold text-secondary-900 mb-3">Immobilien verkaufen</h3>
               <p className="text-secondary-600 mb-4">
                 Ich verkaufe Ihre Immobilie in Trier zum bestmöglichen Preis – diskret oder mit voller Vermarktung.
               </p>
@@ -212,7 +212,7 @@ export default function TrierPage() {
             </div>
             <div className="bg-gray-50 p-8 rounded-xl smooth-hover" data-aos="fade-up" data-aos-delay="200">
               <Building2 className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-bold text-secondary-900 mb-3">Kapitalanlage</h3>
+              <h3 className="text-xl font-semibold text-secondary-900 mb-3">Kapitalanlage</h3>
               <p className="text-secondary-600 mb-4">
                 Renditestarke Anlageimmobilien in Trier – ideal für Investoren und Vermieter.
               </p>

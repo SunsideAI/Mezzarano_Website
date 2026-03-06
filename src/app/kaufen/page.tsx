@@ -143,7 +143,7 @@ export default function KaufenPage() {
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-500 transition-colors">
                   <benefit.icon className="h-8 w-8 text-primary-500 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
@@ -195,7 +195,7 @@ export default function KaufenPage() {
               >
                 <div className="flex items-center gap-3 mb-3">
                   <MapPin className="h-5 w-5 text-primary-500" />
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-500 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
                     {region.name}
                   </h3>
                 </div>
@@ -227,7 +227,7 @@ export default function KaufenPage() {
 
             <div data-aos="fade-left">
               <div className="bg-secondary-900 p-8 rounded-2xl text-white">
-                <h3 className="text-2xl font-bold mb-6">Finanzierung mit Wüstenrot</h3>
+                <h3 className="text-2xl font-semibold mb-6">Finanzierung mit Wüstenrot</h3>
                 <p className="text-gray-300 mb-6">
                   Als Wüstenrot-Partner biete ich Ihnen eine umfassende Finanzierungsberatung - direkt und unkompliziert.
                 </p>

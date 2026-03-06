@@ -110,7 +110,7 @@ export default function KontaktPage() {
                 <div className="w-14 h-14 bg-wuestenrot-25 rounded-muenze flex items-center justify-center mx-auto mb-4 group-hover:bg-wuestenrot transition-colors">
                   <info.icon className="h-7 w-7 text-wuestenrot group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-bold text-wuestennacht mb-2">{info.title}</h3>
+                <h3 className="font-semibold text-wuestennacht mb-2">{info.title}</h3>
                 {info.lines.map((line, index) => (
                   <p key={index} className="text-wuestennacht-light text-sm">
                     {info.link && index === 0 ? (
@@ -314,7 +314,7 @@ export default function KontaktPage() {
                 href="https://www.google.com/maps/place/W%C3%BCstenrot+Immobilien+Sandro+Mezzarano"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-wuestenrot hover:text-wuestenrot-hover font-bold mb-8"
+                className="inline-flex items-center gap-2 text-wuestenrot hover:text-wuestenrot-hover font-semibold mb-8"
               >
                 <MapPin className="h-4 w-4" />
                 In Google Maps öffnen
@@ -322,23 +322,23 @@ export default function KontaktPage() {
 
               {/* Parking & Transport Info - warmgrau Box */}
               <div className="bg-warmgrau p-6 rounded-fenster">
-                <h3 className="font-bold text-wuestennacht mb-4">Anfahrt</h3>
+                <h3 className="font-semibold text-wuestennacht mb-4">Anfahrt</h3>
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h4 className="font-bold text-wuestennacht">Mit dem Auto:</h4>
+                    <h4 className="font-medium text-wuestennacht">Mit dem Auto:</h4>
                     <p className="text-wuestennacht-light">
                       Über die B52 erreichen Sie Hermeskeil aus Richtung Trier oder Saarbrücken.<br />
                       Kostenlose Parkmöglichkeiten direkt vor dem Büro.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-wuestennacht">Aus Trier:</h4>
+                    <h4 className="font-medium text-wuestennacht">Aus Trier:</h4>
                     <p className="text-wuestennacht-light">
                       Ca. 30 Minuten Fahrtzeit über die B52 Richtung Hermeskeil.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-wuestennacht">Termin vereinbaren:</h4>
+                    <h4 className="font-medium text-wuestennacht">Termin vereinbaren:</h4>
                     <p className="text-wuestennacht-light">
                       Für eine persönliche Beratung vereinbaren Sie gerne einen Termin.<br />
                       Hausbesuche in der gesamten Region sind möglich.
@@ -397,7 +397,7 @@ export default function KontaktPage() {
               },
             ].map((faq, index) => (
               <div key={index} className="bg-white p-6 rounded-fenster shadow-sm smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="font-bold text-wuestennacht mb-2">{faq.q}</h3>
+                <h3 className="font-semibold text-wuestennacht mb-2">{faq.q}</h3>
                 <p className="text-wuestennacht-light">{faq.a}</p>
               </div>
             ))}

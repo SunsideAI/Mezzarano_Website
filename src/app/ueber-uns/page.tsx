@@ -133,7 +133,7 @@ export default function UeberUnsPage() {
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-500 transition-colors">
                   <value.icon className="h-8 w-8 text-primary-500 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {value.title}
                 </h3>
                 <p className="text-gray-600">{value.description}</p>

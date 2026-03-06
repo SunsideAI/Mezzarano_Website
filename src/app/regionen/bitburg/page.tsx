@@ -132,7 +132,7 @@ export default function BitburgPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-secondary-700">
               <p>
-                <strong>Bitburg</strong> ist die Kreisstadt des Eifelkreises Bitburg-Prüm und
+                Bitburg ist die Kreisstadt des Eifelkreises Bitburg-Prüm und
                 das wirtschaftliche Zentrum der Südeifel. Die Stadt verbindet ländliche Lebensqualität
                 mit guter Infrastruktur und ist bekannt für die Bitburger Brauerei sowie den
                 nahegelegenen Flugplatz Spangdahlem.
@@ -163,7 +163,7 @@ export default function BitburgPage() {
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
                 <p className="text-secondary-600">{item.description}</p>
               </div>
             ))}

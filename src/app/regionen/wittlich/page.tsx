@@ -132,7 +132,7 @@ export default function WittlichPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-secondary-700">
               <p>
-                <strong>Wittlich</strong> ist die Kreisstadt des Landkreises Bernkastel-Wittlich
+                Wittlich ist die Kreisstadt des Landkreises Bernkastel-Wittlich
                 und bildet das wirtschaftliche und kulturelle Zentrum der Moseleifel. Die Stadt
                 verbindet urbane Infrastruktur mit der Nähe zum Moseltal und der Vulkaneifel.
               </p>
@@ -163,7 +163,7 @@ export default function WittlichPage() {
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
                 <p className="text-secondary-600">{item.description}</p>
               </div>
             ))}

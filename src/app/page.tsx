@@ -103,7 +103,7 @@ export default async function HomePage() {
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500 transition-colors duration-300">
                   <service.icon className="h-7 w-7 text-primary-600 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-secondary-600">

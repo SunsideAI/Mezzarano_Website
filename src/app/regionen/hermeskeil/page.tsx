@@ -134,7 +134,7 @@ export default function HermeskeilPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-secondary-700">
               <p>
-                <strong>Hermeskeil</strong>, das Tor zum Hochwald, bietet eine attraktive Mischung aus
+                Hermeskeil, das Tor zum Hochwald, bietet eine attraktive Mischung aus
                 ländlicher Idylle und guter Infrastruktur. Als Mittelzentrum der Region verfügt die Stadt
                 über alle wichtigen Einrichtungen des täglichen Bedarfs, Schulen, Ärzte und eine gute
                 Verkehrsanbindung nach Trier und in den Hunsrück.
@@ -166,7 +166,7 @@ export default function HermeskeilPage() {
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
                 <p className="text-secondary-600">{item.description}</p>
               </div>
             ))}

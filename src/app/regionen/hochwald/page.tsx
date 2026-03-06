@@ -132,7 +132,7 @@ export default function HochwaldPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-secondary-700">
               <p>
-                Der <strong>Hochwald</strong> ist ein Höhenzug im Hunsrück und gehört zu den
+                Der Hochwald ist ein Höhenzug im Hunsrück und gehört zu den
                 waldreichsten und natürlichsten Regionen in Rheinland-Pfalz. Als Teil des
                 Naturparks Saar-Hunsrück bietet die Region eine einzigartige Kombination aus
                 unberührter Natur und guter Erreichbarkeit der Stadt Trier.
@@ -165,7 +165,7 @@ export default function HochwaldPage() {
                 <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="h-7 w-7 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
                 <p className="text-secondary-600">{item.description}</p>
               </div>
             ))}
