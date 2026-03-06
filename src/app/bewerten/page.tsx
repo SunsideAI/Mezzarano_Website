@@ -90,21 +90,21 @@ export default function BewertenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="h-[400px] md:h-[480px] bg-secondary-900 flex items-center">
+      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
-                <BarChart3 className="h-6 w-6" />
-                <span className="text-base md:text-lg font-medium uppercase tracking-wider">Immobilienbewertung</span>
+              <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
+                <BarChart3 className="h-5 w-5" />
+                <span className="text-sm font-medium uppercase tracking-wider">Immobilienbewertung</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
                 Was ist Ihre Immobilie wert?
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
                 Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - kostenlos, unverbindlich und von einem lokalen Experten mit fundierter Marktkenntnis.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
                 <Link href="/kontakt" className="btn-primary">
                   Kostenlose Bewertung anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
