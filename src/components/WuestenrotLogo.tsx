@@ -45,26 +45,19 @@ export default function WuestenrotLogo({ className = '', showText = true }: Wues
   )
 }
 
-// Compact W&W logo matching official Wüstenrot Immobilien branding
+// Simplified inline logo for small spaces - Original W logo
 export function WuestenrotLogoCompact({ className = '' }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 40 40"
-      className={`h-11 w-11 ${className}`}
-      aria-label="Wüstenrot W&W Logo"
+      viewBox="0 0 44 44"
+      className={`h-10 w-10 ${className}`}
+      aria-label="Wüstenrot Logo"
     >
-      {/* Orange background - Wüstenrot brand orange #E30613 */}
-      <rect fill="#E30613" width="40" height="40"/>
-
-      {/* W&W logo - matching official Wüstenrot CI guidelines */}
-      <g fill="#FFFFFF">
-        {/* W on left */}
-        <path d="M5,12 L7.2,12 L9.5,22.5 L11.8,12 L14,12 L10.5,28 L8.5,28 L7,19 L5.5,28 L3.5,28 Z"/>
-        {/* & in middle - clean vector */}
-        <path d="M19.5,20.5 C19.5,19.8 19.8,19.2 20.3,18.8 C19.7,18.3 19.3,17.6 19.3,16.8 C19.3,15.3 20.5,14.2 22,14.2 C23,14.2 23.8,14.7 24.3,15.4 L23,16.4 C22.7,16 22.4,15.7 21.9,15.7 C21.3,15.7 20.8,16.2 20.8,16.8 C20.8,17.2 21,17.5 21.3,17.8 L23.3,15.8 L24.3,16.8 L22.5,18.6 C23,18.9 23.3,19.5 23.3,20.2 C23.3,20.8 23,21.4 22.5,21.8 L24,23.5 L22.5,23.5 L21.7,22.6 C21.2,23 20.5,23.3 19.8,23.3 C18.5,23.3 17.5,22.3 17.5,21 C17.5,20.3 17.9,19.6 18.5,19.2 C18.2,18.8 18,18.3 18,17.7 Z M20.5,19.5 C20,19.8 19.7,20.3 19.7,20.9 C19.7,21.6 20.2,22.1 20.9,22.1 C21.3,22.1 21.7,21.9 22,21.6 L20.5,19.5 Z"/>
-        {/* W on right */}
-        <path d="M26,12 L28.2,12 L30.5,22.5 L32.8,12 L35,12 L31.5,28 L29.5,28 L28,19 L26.5,28 L24.5,28 Z"/>
-      </g>
+      <rect fill="#E30613" width="44" height="44" rx="4" />
+      <path
+        fill="#FFFFFF"
+        d="M8 12h5l3.5 14 3.5-14h5l3.5 14 3.5-14h5l-6 20h-5l-3.5-12-3.5 12h-5z"
+      />
     </svg>
   )
 }

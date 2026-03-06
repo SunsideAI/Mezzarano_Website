@@ -2,8 +2,8 @@
 
 import { useState, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, ArrowRight } from 'lucide-react'
+import { WuestenrotLogoCompact } from './WuestenrotLogo'
 
 type NavItem = {
   name: string
@@ -86,16 +86,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/wuestenrot-logo.png"
-              alt="Wüstenrot Logo"
-              width={50}
-              height={50}
-              className="h-12 w-auto"
-            />
-            <div className="flex flex-col">
-              <span className="font-semibold text-base text-wuestennacht leading-tight tracking-tight">wüstenrot</span>
-              <span className="text-xs text-gray-500 tracking-wider uppercase">Immobilien</span>
+            <WuestenrotLogoCompact />
+            <div>
+              <span className="font-bold text-lg text-wuestennacht leading-tight block lowercase">wüstenrot</span>
+              <span className="text-xs text-wuestennacht-light tracking-wider uppercase">Immobilien</span>
             </div>
           </Link>
 
