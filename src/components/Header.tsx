@@ -8,7 +8,7 @@ import { WuestenrotLogoCompact } from './WuestenrotLogo'
 type NavItem = {
   name: string
   href?: string
-  children?: { name: string; href: string }[]
+  children?: { name: string; href: string; description?: string }[]
 }
 
 const navigation: NavItem[] = [
@@ -22,17 +22,19 @@ const navigation: NavItem[] = [
   {
     name: 'Kaufen',
     children: [
-      { name: 'Immobilie kaufen', href: '/kaufen' },
       { name: 'Immobilienangebote', href: '/immobilien' },
+      { name: 'Haus kaufen', href: '/immobilien?category=haus' },
+      { name: 'Wohnung kaufen', href: '/immobilien?category=wohnung' },
       { name: 'Suchprofil anlegen', href: '/suchprofil' },
+      { name: 'Finanzierungsberatung', href: '/finanzierung' },
     ]
   },
   { name: 'Finanzierung', href: '/finanzierung' },
   {
     name: 'Ratgeber',
     children: [
-      { name: 'Erklärvideos', href: '/erklaervideos' },
       { name: 'Ratgeber & Blog', href: '/ratgeber' },
+      { name: 'Erklärvideos', href: '/erklaervideos' },
     ]
   },
   {
@@ -80,7 +82,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
       {/* Top bar - Wüstenrot Styleguide: wüstennacht */}
       <div className="bg-wuestennacht text-white py-2 hidden md:block">
         <div className="container-custom flex justify-between items-center text-sm">
@@ -115,8 +117,8 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop navigation - centered */}
-          <div className="hidden lg:flex items-center justify-center flex-1 gap-8">
+          {/* Desktop navigation - clean Wüstenrot style */}
+          <div className="hidden lg:flex items-center justify-center flex-1 gap-1">
             {navigation.map((item) => (
               item.children ? (
                 <div
@@ -126,20 +128,23 @@ export default function Header() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
-                    className="text-wuestennacht hover:text-wuestenrot font-normal transition-colors py-2 relative group flex items-center gap-1"
+                    className={`flex items-center gap-1 px-4 py-2 text-[15px] transition-colors ${
+                      openDropdown === item.name
+                        ? 'text-wuestenrot'
+                        : 'text-wuestennacht hover:text-wuestenrot'
+                    }`}
                   >
                     {item.name}
-                    <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === item.name ? 'rotate-180' : ''}`} />
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`} />
                   </button>
                   {openDropdown === item.name && (
-                    <div className="absolute top-full left-0 pt-2 -ml-4">
-                      <div className="bg-white rounded-fenster shadow-lg border border-warmgrau py-2 min-w-[180px] animate-fade-in">
+                    <div className="absolute top-full left-0 pt-2">
+                      <div className="bg-white shadow-lg py-3 min-w-[220px] animate-dropdown">
                         {item.children.map((child) => (
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="block px-4 py-3 text-wuestennacht font-normal hover:text-wuestenrot hover:bg-warmgrau transition-colors"
+                            className="block px-5 py-2.5 text-[15px] text-wuestennacht hover:text-wuestenrot transition-colors duration-150"
                           >
                             {child.name}
                           </Link>
@@ -152,10 +157,9 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href!}
-                  className="text-wuestennacht hover:text-wuestenrot font-normal transition-colors py-2 relative group"
+                  className="px-4 py-2 text-[15px] text-wuestennacht hover:text-wuestenrot transition-colors"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
                 </Link>
               )
             ))}
