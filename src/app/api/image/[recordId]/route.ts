@@ -68,9 +68,7 @@ export async function GET(
 
     const record: AirtableRecord = await response.json()
 
-    // Log for debugging
     const title = record.fields.title || record.fields.titel || 'Unknown'
-    console.log(`Image proxy: Record ${recordId}, Title: "${title}", Index: ${imageIndex}, Type: ${type}`)
 
     // Get images - prioritize permanent URLs over expiring Airtable attachments
     let imageUrls: string[] = []
@@ -82,31 +80,26 @@ export async function GET(
       if (typeof cloudinaryField === 'string') {
         // Handle newline-separated, comma-separated, or single URL
         imageUrls = (cloudinaryField as string).split(/[\n,]/).map(url => url.trim()).filter(Boolean)
-        console.log(`Using cloudinary_urls (permanent) for "${title}": ${imageUrls.length} images`)
       } else if (Array.isArray(cloudinaryField)) {
         // Handle array of strings or array of objects with url property
         imageUrls = (cloudinaryField as any[]).map((item: any) =>
           typeof item === 'string' ? item.trim() : item?.url?.trim()
         ).filter(Boolean)
-        console.log(`Using cloudinary_urls array (permanent) for "${title}": ${imageUrls.length} images`)
       }
     }
     // Priority 2: bild_url (stable external URL from ImmobilienScout24 etc.)
     else if (record.fields.bild_url && typeof record.fields.bild_url === 'string') {
       imageUrls = [(record.fields.bild_url as string).trim()]
-      console.log(`Using bild_url (stable) for "${title}"`)
     }
     // Priority 3: bilder field (may contain multiple URLs)
     else if (record.fields.bilder && typeof record.fields.bilder === 'string') {
       imageUrls = (record.fields.bilder as string).split('\n').map(url => url.trim()).filter(Boolean)
-      console.log(`Using bilder field (${imageUrls.length} URLs) for "${title}"`)
     }
     // Priority 4: bilder_attachments (Airtable attachments - these expire after ~2 hours!)
     else {
       const attachments = record.fields.bilder_attachments as any[]
       if (attachments && Array.isArray(attachments) && attachments.length > 0) {
         imageUrls = attachments.map((att: any) => att?.url).filter(Boolean)
-        console.log(`Using bilder_attachments (expires!) for "${title}": ${imageUrls.length} images`)
       }
     }
 
@@ -135,10 +128,8 @@ export async function GET(
       seenPublicIds.add(filename)
       return true
     })
-    console.log(`After deduplication: ${imageUrls.length} unique images`)
 
     if (imageUrls.length === 0) {
-      console.log(`No images found for "${title}"`)
       return return404()
     }
 

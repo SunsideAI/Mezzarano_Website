@@ -23,20 +23,6 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const allImages = images
   const useUnoptimized = hasImages && allImages.some(isProxyImage)
 
-  // If no images, show placeholder
-  if (!hasImages) {
-    return (
-      <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
-        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-gray-100 flex items-center justify-center">
-          <div className="text-center text-gray-400">
-            <ImageOff className="w-16 h-16 mx-auto mb-2" />
-            <p>Keine Bilder verfügbar</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))
   }
@@ -53,16 +39,18 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
 
   // Scroll thumbnail into view
   useEffect(() => {
+    if (!hasImages) return
     if (thumbnailRef.current) {
       const thumbnail = thumbnailRef.current.children[currentIndex] as HTMLElement
       if (thumbnail) {
         thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
       }
     }
-  }, [currentIndex])
+  }, [currentIndex, hasImages])
 
   // Keyboard navigation
   useEffect(() => {
+    if (!hasImages) return
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isLightboxOpen) return
       if (e.key === 'ArrowLeft') goToPrevious()
@@ -71,7 +59,21 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isLightboxOpen])
+  }, [isLightboxOpen, hasImages])
+
+  // If no images, show placeholder
+  if (!hasImages) {
+    return (
+      <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+        <div className="relative aspect-[16/9] md:aspect-[21/9] bg-gray-100 flex items-center justify-center">
+          <div className="text-center text-gray-400">
+            <ImageOff className="w-16 h-16 mx-auto mb-2" />
+            <p>Keine Bilder verfügbar</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>
