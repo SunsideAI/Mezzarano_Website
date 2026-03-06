@@ -12,9 +12,21 @@ type NavItem = {
 }
 
 const navigation: NavItem[] = [
-  { name: 'Verkaufen', href: '/verkaufen' },
-  { name: 'Kaufen', href: '/kaufen' },
-  { name: 'Bewerten', href: '/bewerten' },
+  {
+    name: 'Verkaufen',
+    children: [
+      { name: 'Immobilie verkaufen', href: '/verkaufen' },
+      { name: 'Kostenlose Bewertung', href: '/bewerten' },
+    ]
+  },
+  {
+    name: 'Kaufen',
+    children: [
+      { name: 'Immobilie kaufen', href: '/kaufen' },
+      { name: 'Immobilienangebote', href: '/immobilien' },
+      { name: 'Suchprofil anlegen', href: '/suchprofil' },
+    ]
+  },
   { name: 'Finanzierung', href: '/finanzierung' },
   {
     name: 'Ratgeber',
@@ -23,7 +35,13 @@ const navigation: NavItem[] = [
       { name: 'Ratgeber & Blog', href: '/ratgeber' },
     ]
   },
-  { name: 'Über mich', href: '/ueber-uns' },
+  {
+    name: 'Über mich',
+    children: [
+      { name: 'Über mich', href: '/ueber-uns' },
+      { name: 'Kontakt', href: '/kontakt' },
+    ]
+  },
 ]
 
 // Sandro Mezzarano's contact info
@@ -39,22 +57,26 @@ const contact = {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [wissenOpen, setWissenOpen] = useState(false)
-  const [mobileWissenOpen, setMobileWissenOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null)
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (name: string) => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current)
       closeTimeoutRef.current = null
     }
-    setWissenOpen(true)
+    setOpenDropdown(name)
   }
 
   const handleMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
-      setWissenOpen(false)
-    }, 300) // 300ms delay before closing
+      setOpenDropdown(null)
+    }, 300)
+  }
+
+  const toggleMobileDropdown = (name: string) => {
+    setMobileOpenDropdown(mobileOpenDropdown === name ? null : name)
   }
 
   return (
@@ -100,17 +122,17 @@ export default function Header() {
                 <div
                   key={item.name}
                   className="relative"
-                  onMouseEnter={handleMouseEnter}
+                  onMouseEnter={() => handleMouseEnter(item.name)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
                     className="text-wuestennacht hover:text-wuestenrot font-normal transition-colors py-2 relative group flex items-center gap-1"
                   >
                     {item.name}
-                    <ChevronDown className={`h-4 w-4 transition-transform ${wissenOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === item.name ? 'rotate-180' : ''}`} />
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
                   </button>
-                  {wissenOpen && (
+                  {openDropdown === item.name && (
                     <div className="absolute top-full left-0 pt-2 -ml-4">
                       <div className="bg-white rounded-fenster shadow-lg border border-warmgrau py-2 min-w-[180px] animate-fade-in">
                         {item.children.map((child) => (
@@ -168,13 +190,13 @@ export default function Header() {
                 item.children ? (
                   <div key={item.name}>
                     <button
-                      onClick={() => setMobileWissenOpen(!mobileWissenOpen)}
+                      onClick={() => toggleMobileDropdown(item.name)}
                       className="flex items-center justify-between w-full text-wuestennacht hover:text-wuestenrot py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                     >
                       {item.name}
-                      <ChevronDown className={`h-4 w-4 transition-transform ${mobileWissenOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`h-4 w-4 transition-transform ${mobileOpenDropdown === item.name ? 'rotate-180' : ''}`} />
                     </button>
-                    {mobileWissenOpen && (
+                    {mobileOpenDropdown === item.name && (
                       <div className="ml-4 border-l-2 border-wuestenrot pl-4 mt-1 space-y-1">
                         {item.children.map((child) => (
                           <Link
