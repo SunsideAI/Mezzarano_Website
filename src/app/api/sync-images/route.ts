@@ -16,8 +16,8 @@ const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || process.env.AT_TOKEN
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || process.env.AT_BASE
 const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID || process.env.AT_TABLE
 
-// Simple auth token for the sync endpoint
-const SYNC_SECRET = process.env.SYNC_SECRET || 'mezzarano-sync-2024'
+// Simple auth token for the sync endpoint (required in production)
+const SYNC_SECRET = process.env.SYNC_SECRET
 
 interface SyncResult {
   recordId: string
@@ -28,7 +28,10 @@ interface SyncResult {
 }
 
 export async function POST(request: NextRequest) {
-  // Check authorization
+  // Check authorization - SYNC_SECRET must be configured
+  if (!SYNC_SECRET) {
+    return NextResponse.json({ error: 'SYNC_SECRET not configured' }, { status: 500 })
+  }
   const authHeader = request.headers.get('authorization')
   if (authHeader !== `Bearer ${SYNC_SECRET}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -77,6 +80,10 @@ export async function POST(request: NextRequest) {
 
 // GET endpoint to check sync status
 export async function GET(request: NextRequest) {
+  // Check authorization - SYNC_SECRET must be configured
+  if (!SYNC_SECRET) {
+    return NextResponse.json({ error: 'SYNC_SECRET not configured' }, { status: 500 })
+  }
   const authHeader = request.headers.get('authorization')
   if (authHeader !== `Bearer ${SYNC_SECRET}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
