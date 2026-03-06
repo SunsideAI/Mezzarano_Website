@@ -12,21 +12,18 @@ type NavItem = {
 }
 
 const navigation: NavItem[] = [
-  { name: 'Startseite', href: '/' },
-  { name: 'Immobilien', href: '/immobilien' },
   { name: 'Verkaufen', href: '/verkaufen' },
   { name: 'Kaufen', href: '/kaufen' },
-  { name: 'Finanzierung', href: '/finanzierung' },
   { name: 'Bewerten', href: '/bewerten' },
+  { name: 'Finanzierung', href: '/finanzierung' },
   {
-    name: 'Wissen',
+    name: 'Ratgeber',
     children: [
       { name: 'Erklärvideos', href: '/erklaervideos' },
-      { name: 'Ratgeber', href: '/ratgeber' },
-      { name: 'Über mich', href: '/ueber-uns' },
+      { name: 'Ratgeber & Blog', href: '/ratgeber' },
     ]
   },
-  { name: 'Kontakt', href: '/kontakt' },
+  { name: 'Über mich', href: '/ueber-uns' },
 ]
 
 // Sandro Mezzarano's contact info
