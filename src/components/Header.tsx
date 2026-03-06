@@ -87,9 +87,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <WuestenrotLogoCompact />
-            <div>
-              <span className="font-bold text-lg text-wuestennacht leading-tight block">wüstenrot</span>
-              <span className="text-lg text-gray-500 block">Immobilien</span>
+            <div className="-space-y-1">
+              <span className="font-bold text-lg text-wuestennacht block">wüstenrot</span>
+              <span className="text-lg text-wuestennacht block">Immobilien</span>
             </div>
           </Link>
 
