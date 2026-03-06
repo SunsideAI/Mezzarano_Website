@@ -107,7 +107,7 @@ export default function Header() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
-                    className="text-wuestennacht hover:text-wuestenrot font-medium transition-colors py-2 relative group flex items-center gap-1"
+                    className="text-wuestennacht hover:text-wuestenrot transition-colors py-2 relative group flex items-center gap-1"
                   >
                     {item.name}
                     <ChevronDown className={`h-4 w-4 transition-transform ${wissenOpen ? 'rotate-180' : ''}`} />
@@ -133,7 +133,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href!}
-                  className="text-wuestennacht hover:text-wuestenrot font-medium transition-colors py-2 relative group"
+                  className="text-wuestennacht hover:text-wuestenrot transition-colors py-2 relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
@@ -171,7 +171,7 @@ export default function Header() {
                   <div key={item.name}>
                     <button
                       onClick={() => setMobileWissenOpen(!mobileWissenOpen)}
-                      className="flex items-center justify-between w-full text-wuestennacht hover:text-wuestenrot font-medium py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
+                      className="flex items-center justify-between w-full text-wuestennacht hover:text-wuestenrot py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                     >
                       {item.name}
                       <ChevronDown className={`h-4 w-4 transition-transform ${mobileWissenOpen ? 'rotate-180' : ''}`} />
@@ -182,7 +182,7 @@ export default function Header() {
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="block text-wuestennacht-light hover:text-wuestenrot font-medium py-2 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
+                            className="block text-wuestennacht-light hover:text-wuestenrot py-2 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {child.name}
@@ -195,7 +195,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href!}
-                    className="block text-wuestennacht hover:text-wuestenrot font-medium py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
+                    className="block text-wuestennacht hover:text-wuestenrot py-3 px-2 rounded-fenster hover:bg-warmgrau transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
