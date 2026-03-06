@@ -4,190 +4,356 @@ This file provides guidance for AI assistants working on this codebase.
 
 ## Project Overview
 
-**Mezzarano Website** - A web application project for Mezzarano.
+**Mezzarano Immobilien Website** - A modern real estate (Immobilien) web application for Mezzarano Immobilien, a Wüstenrot real estate partner in the Heilbronn region of Germany.
 
-### Repository Status
+### Key Features
+- Property listings with advanced filtering (buy/rent, category, price, area)
+- AI-powered blog content generation system
+- Regional information pages for Heilbronn area
+- Contact forms and property inquiry system
+- SEO-optimized with structured data markup
+- Fully German-language interface
 
-This is a new repository that is being initialized. As the project develops, this document should be updated to reflect the actual codebase structure, technologies used, and development practices.
+### Technology Stack
+
+| Package | Purpose | Version |
+|---------|---------|---------|
+| Next.js | React framework with App Router | ^14.1.0 |
+| TypeScript | Type-safe language | ^5.3.3 |
+| Tailwind CSS | Utility-first CSS framework | ^3.4.1 |
+| React | UI library | ^18.2.0 |
+| Lucide React | Icon library | ^0.312.0 |
+| MDX | Markdown with React components | ^3.0.0 |
+| Anthropic SDK | Claude AI integration for blog generation | ^0.39.0 |
+| gray-matter | YAML frontmatter parser | ^4.0.3 |
+| React-Leaflet | Interactive maps | ^4.2.1 |
+| next-mdx-remote | MDX rendering | ^4.4.1 |
 
 ## Codebase Structure
 
 ```
 Mezzarano_Website/
-├── CLAUDE.md           # AI assistant guidance (this file)
-├── README.md           # Project documentation (to be created)
-├── src/                # Source code (to be created)
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components/routes
-│   ├── styles/         # Stylesheets (CSS/SCSS/Tailwind)
-│   ├── assets/         # Static assets (images, fonts, icons)
-│   ├── utils/          # Utility functions
-│   ├── hooks/          # Custom hooks (if React)
-│   └── services/       # API services and external integrations
-├── public/             # Public static files
-├── tests/              # Test files
-├── config/             # Configuration files
-└── docs/               # Additional documentation
+├── src/
+│   ├── app/                          # Next.js App Router pages
+│   │   ├── layout.tsx               # Root layout with Header/Footer
+│   │   ├── page.tsx                 # Homepage
+│   │   ├── globals.css              # Global styles with Tailwind
+│   │   ├── immobilien/
+│   │   │   ├── page.tsx             # Properties listing (filterable)
+│   │   │   └── [id]/page.tsx        # Property detail page
+│   │   ├── ratgeber/
+│   │   │   ├── page.tsx             # Blog listing
+│   │   │   └── [slug]/page.tsx      # Blog post detail
+│   │   ├── kontakt/page.tsx         # Contact page
+│   │   ├── ueber-uns/page.tsx       # About page
+│   │   └── regionen/                # Regional pages
+│   │       ├── heilbronn/page.tsx
+│   │       └── weinsberg/page.tsx
+│   │
+│   ├── components/
+│   │   ├── Header.tsx               # Navigation with dropdowns
+│   │   ├── Footer.tsx               # Footer with links
+│   │   ├── PropertyCard.tsx         # Reusable property card
+│   │   ├── BlogCard.tsx             # Featured/regular blog cards
+│   │   ├── FAQSection.tsx           # Accordion FAQ component
+│   │   └── SchemaMarkup.tsx         # Structured data markup
+│   │
+│   ├── data/
+│   │   └── properties.ts            # Property data with interfaces
+│   │
+│   ├── lib/
+│   │   └── blog.ts                  # Blog post utilities
+│   │
+│   └── content/
+│       ├── blog/                    # Markdown blog posts
+│       └── blog-topics.json         # Pre-planned blog topics
+│
+├── scripts/
+│   ├── generate-blog-post.js        # Single blog post generator
+│   ├── generate-batch.js            # Batch generator with filtering
+│   └── auto-generate.js             # GitHub Actions automation
+│
+├── .github/workflows/
+│   └── generate-blog-posts.yml      # CI/CD for blog generation
+│
+├── Configuration Files
+│   ├── package.json                 # Dependencies & scripts
+│   ├── tsconfig.json                # TypeScript config (ES2018)
+│   ├── tailwind.config.ts           # Tailwind theme customization
+│   ├── next.config.js               # Next.js config
+│   └── postcss.config.js            # PostCSS plugins
+│
+└── Documentation
+    ├── CLAUDE.md                    # AI assistant guidelines (this file)
+    └── README.md                    # Project documentation
 ```
 
-*Note: This structure is a template. Update as the actual project structure evolves.*
+## Key Data Models
+
+### Property Interface (`src/data/properties.ts`)
+```typescript
+interface Property {
+  id: string;
+  title: string;
+  description: string;
+  type: 'kauf' | 'miete';           // Buy or Rent
+  price: number;
+  location: string;
+  address: string;
+  bedrooms: number;
+  bathrooms: number;
+  area: number;
+  yearBuilt: number;
+  features: string[];
+  images: string[];
+  featured: boolean;
+  category: 'wohnung' | 'haus' | 'villa' | 'gewerbe';
+}
+```
+
+### BlogPost Interface (`src/lib/blog.ts`)
+```typescript
+interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  pubDate: string;
+  category: string;
+  author: string;
+  image: string;
+  featured: boolean;
+  tags: string[];
+  content: string;
+  readingTime: number;  // Calculated at ~200 words/minute
+}
+```
+
+## Key Components
+
+| Component | Purpose | Client/Server |
+|-----------|---------|---------------|
+| `Header.tsx` | Navigation with dropdowns, mobile menu | Client |
+| `Footer.tsx` | Links, contact info, Wüstenrot branding | Server |
+| `PropertyCard.tsx` | Property listing card with image, specs | Server |
+| `BlogCard.tsx` | Blog post card (featured/regular variants) | Server |
+| `FAQSection.tsx` | Accordion FAQ with animations | Client |
+| `SchemaMarkup.tsx` | JSON-LD structured data | Server |
+
+## Styling & Theming
+
+### Wüstenrot Brand Colors (in `tailwind.config.ts`)
+- **Primary**: Red (#E30613) - Wüstenrot brand color
+- **Secondary**: Dark slate grays
+- **Accent**: Amber/Gold
+
+### Custom Tailwind Classes
+- `.btn-primary` - Primary button style
+- `.btn-secondary` - Secondary button style
+- `.section-title` - Section heading style
+- `.container-custom` - Custom container width
+- `.prose-blog` - Blog content typography
+
+### Fonts
+- **Sans**: Inter
+- **Serif**: Playfair Display
+
+## Common Commands
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server (http://localhost:3000)
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+
+# Blog generation commands
+npm run blog:generate    # Generate single blog post
+npm run blog:batch       # Generate multiple posts with filters
+npm run blog:auto        # Auto-generate (used by GitHub Actions)
+```
+
+## Blog Generation System
+
+The project includes an AI-powered blog generation system using Claude:
+
+### Scripts
+- **`generate-blog-post.js`**: Generate a single blog post from a topic
+- **`generate-batch.js`**: Process multiple topics with priority filtering
+- **`auto-generate.js`**: Automated generation for GitHub Actions
+
+### Usage
+```bash
+# Generate a single post
+npm run blog:generate -- --topic "Your topic here" --keywords "keyword1,keyword2"
+
+# Batch generate (high priority topics, limit 3)
+npm run blog:batch -- --priority high --limit 3
+
+# Dry run (preview without generating)
+npm run blog:batch -- --priority high --dry-run
+```
+
+### Blog Topics (`src/content/blog-topics.json`)
+Pre-planned topics across 9 categories:
+- Marktberichte (Market Reports)
+- Immobilienverkauf (Property Sales)
+- Immobilienkauf (Property Purchase)
+- Immobilienbewertung (Valuation)
+- Regionen (Regional Guides)
+- Finanzierung (Financing)
+- Kapitalanlage (Investment)
+- Recht & Steuern (Legal & Taxes)
+- Tipps & Ratgeber (Tips & Guides)
+
+### GitHub Actions Workflow
+Automated blog generation runs on:
+- **Schedule**: Mondays & Thursdays at 9 AM UTC
+- **Manual trigger**: Via workflow_dispatch
+
+## Environment Variables
+
+Create a `.env.local` file for local development:
+
+```env
+# Required for blog generation
+ANTHROPIC_API_KEY=your-anthropic-api-key
+
+# Optional: Deployment webhook
+DEPLOY_WEBHOOK_URL=https://your-deployment-webhook
+```
+
+**Important**: Never commit API keys. The `.env.local` file is in `.gitignore`.
 
 ## Development Workflows
 
 ### Getting Started
-
 1. Clone the repository
-2. Install dependencies (command will depend on package manager used)
-3. Start the development server
-4. Make changes and test locally
+2. Run `npm install`
+3. Create `.env.local` with your API keys (if using blog generation)
+4. Run `npm run dev`
+5. Open http://localhost:3000
 
 ### Branch Strategy
-
 - `main` - Production-ready code
-- `develop` - Integration branch for features
+- `claude/*` - AI-assisted development branches
 - `feature/*` - Feature development branches
 - `bugfix/*` - Bug fix branches
-- `claude/*` - AI-assisted development branches
 
 ### Commit Conventions
-
 Use conventional commit messages:
 - `feat:` - New features
 - `fix:` - Bug fixes
 - `docs:` - Documentation changes
-- `style:` - Code style changes (formatting, etc.)
+- `style:` - Code style changes
 - `refactor:` - Code refactoring
-- `test:` - Adding or updating tests
-- `chore:` - Maintenance tasks
+- `content:` - Blog/content additions
 
-Example: `feat: add contact form to homepage`
+Example: `feat: add property comparison feature`
 
-### Pull Request Process
-
-1. Create a feature branch from the appropriate base branch
-2. Make changes and commit with clear messages
-3. Push the branch and create a pull request
-4. Request review and address feedback
-5. Merge after approval
-
-## Key Conventions
-
-### Code Style
-
-- Use consistent indentation (2 or 4 spaces, based on project config)
-- Follow the established linting rules (ESLint, Prettier, etc.)
-- Write descriptive variable and function names
-- Keep functions small and focused
-- Add comments for complex logic only
+## Code Conventions
 
 ### File Naming
+- Components: **PascalCase** (`PropertyCard.tsx`)
+- Utilities: **camelCase** (`formatPrice.ts`)
+- Pages: **kebab-case** folders with `page.tsx`
 
-- Use kebab-case for file names: `my-component.tsx`
-- Use PascalCase for component names: `MyComponent`
-- Use camelCase for utility functions: `formatDate.ts`
-- Test files should match source: `my-component.test.tsx`
+### Component Structure
+- Use functional components with hooks
+- Mark client components with `'use client'` directive
+- Server components are default (no directive needed)
+- Use TypeScript interfaces for props
 
-### Component Guidelines
+### Styling Approach
+- Use Tailwind CSS utilities
+- Use custom classes for reusable patterns
+- Mobile-first responsive design
+- Follow Wüstenrot brand guidelines
 
-- Keep components small and reusable
-- Separate concerns: logic, presentation, styling
-- Use TypeScript for type safety when applicable
-- Handle loading and error states appropriately
+## Key Files Reference
+
+| Purpose | File Path |
+|---------|-----------|
+| Homepage | `src/app/page.tsx` |
+| Property Data | `src/data/properties.ts` |
+| Blog Utilities | `src/lib/blog.ts` |
+| Root Layout | `src/app/layout.tsx` |
+| Global Styles | `src/app/globals.css` |
+| Theme Config | `tailwind.config.ts` |
+| TypeScript Config | `tsconfig.json` |
+| Blog Generator | `scripts/generate-blog-post.js` |
+| CI/CD Workflow | `.github/workflows/generate-blog-posts.yml` |
 
 ## AI Assistant Guidelines
 
 ### When Working on This Codebase
 
-1. **Always read before editing** - Understand existing code before making changes
-2. **Follow existing patterns** - Match the coding style and conventions already in use
-3. **Keep changes focused** - Only modify what's necessary for the task
-4. **Test your changes** - Run tests and verify functionality
-5. **Document significant changes** - Update this file when adding major features or changing structure
+1. **Always read before editing** - Understand existing code patterns
+2. **Follow Wüstenrot branding** - Use established colors and styling
+3. **Keep content in German** - All user-facing text should be German
+4. **Maintain TypeScript types** - Add proper interfaces for new data
+5. **Test responsive design** - Verify changes work on mobile
 
-### Task Approach
+### Key Patterns to Follow
 
-1. **Understand the request** - Clarify requirements if needed
-2. **Explore the codebase** - Find relevant files and understand context
-3. **Plan the implementation** - Break down complex tasks
-4. **Implement incrementally** - Make small, testable changes
-5. **Verify and commit** - Test changes and commit with clear messages
+- Use `'use client'` only when needed (state, effects, event handlers)
+- Import icons from `lucide-react`
+- Use the established Property and BlogPost interfaces
+- Format prices with German locale (€ symbol, thousands separator)
+- Use Tailwind's responsive prefixes (`md:`, `lg:`) for layouts
 
 ### Things to Avoid
 
-- Over-engineering simple solutions
-- Adding unnecessary dependencies
-- Making changes outside the scope of the task
-- Ignoring existing patterns and conventions
-- Committing without testing
+- Adding English text to UI (keep German)
+- Breaking the Wüstenrot brand color scheme
+- Over-engineering simple features
+- Adding dependencies without clear need
+- Committing API keys or secrets
 
 ### Security Considerations
 
-- Never commit secrets or API keys
-- Validate user input
-- Sanitize data before rendering
-- Use HTTPS for external requests
-- Follow OWASP guidelines for web security
-
-## Common Commands
-
-*Update these as the project develops:*
-
-```bash
-# Install dependencies
-npm install          # or yarn install, pnpm install
-
-# Start development server
-npm run dev          # or yarn dev, pnpm dev
-
-# Build for production
-npm run build        # or yarn build, pnpm build
-
-# Run tests
-npm test             # or yarn test, pnpm test
-
-# Lint code
-npm run lint         # or yarn lint, pnpm lint
-
-# Format code
-npm run format       # or yarn format, pnpm format
-```
-
-## Environment Variables
-
-Create a `.env.local` file for local development (never commit this file):
-
-```env
-# Example environment variables
-NEXT_PUBLIC_API_URL=https://api.example.com
-DATABASE_URL=your-database-url
-SECRET_KEY=your-secret-key
-```
-
-## Dependencies
-
-*Document major dependencies as they are added:*
-
-| Package | Purpose | Version |
-|---------|---------|---------|
-| TBD | TBD | TBD |
+- Never commit `.env.local` or API keys
+- Validate user input in forms
+- Sanitize markdown content before rendering
+- Use HTTPS for all external requests
 
 ## Troubleshooting
 
 ### Common Issues
 
-*Document common issues and solutions as they arise:*
+1. **Build fails with regex error**
+   - Ensure `tsconfig.json` has `"target": "ES2018"` or higher
+   - This is needed for regex dotall flag support
 
-1. **Issue**: Description
-   - **Solution**: Steps to resolve
+2. **Blog generation fails**
+   - Check `ANTHROPIC_API_KEY` is set in `.env.local`
+   - Verify API key has sufficient credits
 
-## Contact & Resources
+3. **Images not loading**
+   - Check `next.config.js` includes the image domain
+   - Currently configured for `images.unsplash.com`
 
-- **Repository**: SunsideAI/Mezzarano_Website
-- **Documentation**: (link to docs when available)
-- **Issue Tracker**: (link to issues when available)
+4. **TypeScript path alias not working**
+   - Use `@/` prefix for imports from `src/`
+   - Example: `import { Property } from '@/data/properties'`
+
+## Deployment
+
+The project is configured for Netlify deployment:
+- `@netlify/plugin-nextjs` handles Next.js optimizations
+- GitHub Actions can trigger deployment webhooks
+- Production builds run on push to `main`
 
 ---
 
 *Last Updated: January 2026*
 
-*This document should be updated as the project evolves. When adding new features, changing architecture, or establishing new conventions, please update the relevant sections.*
+*This document should be updated when adding major features or changing architecture.*
