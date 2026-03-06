@@ -99,7 +99,7 @@ export default function KontaktPage() {
       {/* Contact Info Cards - Fenster-Form */}
       <section className="py-12 bg-warmgrau">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={info.title}
