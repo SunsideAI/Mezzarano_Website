@@ -1,6 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
-import { WuestenrotLogoCompact } from './WuestenrotLogo'
 
 // Sandro Mezzarano's contact info
 const contact = {
@@ -53,10 +53,16 @@ export default function Footer() {
           {/* Company info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <WuestenrotLogoCompact />
+              <Image
+                src="/images/wuestenrot-logo.png"
+                alt="Wüstenrot Logo"
+                width={50}
+                height={50}
+                className="h-12 w-auto"
+              />
               <div className="flex flex-col">
-                <span className="font-semibold text-base text-white leading-tight">wüstenrot</span>
-                <span className="text-xs text-gray-400 tracking-wide uppercase">Immobilien</span>
+                <span className="font-semibold text-base text-white leading-tight tracking-tight">wüstenrot</span>
+                <span className="text-xs text-gray-400 tracking-wider uppercase">Immobilien</span>
               </div>
             </Link>
 
