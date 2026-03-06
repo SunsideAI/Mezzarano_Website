@@ -147,7 +147,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-white font-bold mb-6">Regionen</h3>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
               {footerLinks.regionen.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
