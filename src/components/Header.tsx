@@ -89,7 +89,7 @@ export default function Header() {
             <WuestenrotLogoCompact />
             <div>
               <span className="font-bold text-lg text-wuestennacht leading-tight block">wüstenrot</span>
-              <span className="text-base text-gray-500 block">Immobilien</span>
+              <span className="text-lg text-gray-500 block">Immobilien</span>
             </div>
           </Link>
 
