@@ -80,7 +80,7 @@ export default function UeberUnsPage() {
               </div>
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary-500 rounded-2xl flex items-center justify-center shadow-xl counter-animate">
                 <div className="text-center text-white">
-                  <div className="text-5xl font-bold">10+</div>
+                  <div className="text-5xl font-bold">16+</div>
                   <div className="text-sm">Jahre Erfahrung</div>
                 </div>
               </div>

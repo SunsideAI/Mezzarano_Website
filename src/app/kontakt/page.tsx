@@ -8,7 +8,7 @@ const contactInfo = [
     icon: MapPin,
     title: 'Adresse',
     lines: ['Saarstraße 1', '54411 Hermeskeil'],
-    link: 'https://maps.google.com/?q=Saarstraße+1+54411+Hermeskeil',
+    link: 'https://www.google.com/maps/place/W%C3%BCstenrot+Immobilien+Sandro+Mezzarano',
   },
   {
     icon: Phone,
@@ -77,7 +77,7 @@ export default function KontaktPage() {
               <span className="text-sm font-medium uppercase tracking-wider">Kontakt</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-headline" data-aos="fade-up" data-aos-delay="100">
-              kontaktieren sie mich
+              Kontaktieren Sie mich
             </h1>
             <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
               Ich bin persönlich für Sie da. Kontaktieren Sie mich für eine unverbindliche Beratung rund um Ihre Immobilie in Hermeskeil und der Region.
@@ -133,7 +133,7 @@ export default function KontaktPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div data-aos="fade-right">
+            <div id="kontaktformular" data-aos="fade-right">
               <div className="flex items-center gap-3 mb-6">
                 <MessageSquare className="h-8 w-8 text-wuestenrot" />
                 <h2 className="section-title">Schreiben Sie mir</h2>
@@ -311,7 +311,7 @@ export default function KontaktPage() {
                 ></iframe>
               </div>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Saarstraße+1,+54411+Hermeskeil"
+                href="https://www.google.com/maps/place/W%C3%BCstenrot+Immobilien+Sandro+Mezzarano"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-wuestenrot hover:text-wuestenrot-hover font-bold mb-8"

@@ -97,33 +97,16 @@ export default function VoiceflowChat() {
           }
         }, 1000)
 
-        // Immobilien-Detailseiten: Immer nach 10 Sekunden öffnen
-        if (isPropertyPage) {
+        // Chat nur 1x pro Session automatisch öffnen (nach 5 Sekunden)
+        const hasOpenedThisSession = sessionStorage.getItem('chatOpenedOnce')
+
+        if (!hasOpenedThisSession) {
           setTimeout(() => {
             if (window.voiceflow?.chat) {
               window.voiceflow.chat.open()
+              sessionStorage.setItem('chatOpenedOnce', 'true')
             }
-          }, 10000)
-        } else {
-          // Alle anderen Seiten: Max 2x automatisch öffnen
-          // 1. Mal nach 5 Sekunden, 2. Mal nach 15 Sekunden
-          const openCount = parseInt(localStorage.getItem('chatOpenCount') || '0', 10)
-
-          if (openCount < 1) {
-            setTimeout(() => {
-              if (window.voiceflow?.chat) {
-                window.voiceflow.chat.open()
-                localStorage.setItem('chatOpenCount', '1')
-              }
-            }, 5000)
-          } else if (openCount < 2) {
-            setTimeout(() => {
-              if (window.voiceflow?.chat) {
-                window.voiceflow.chat.open()
-                localStorage.setItem('chatOpenCount', '2')
-              }
-            }, 15000)
-          }
+          }, 5000)
         }
       })
     }
@@ -142,14 +125,6 @@ export default function VoiceflowChat() {
     }
   }, [pathname])
 
-  // Reset chatOpenCount after 5 minutes (once)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      localStorage.removeItem('chatOpenCount')
-    }, 300000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   return null
 }

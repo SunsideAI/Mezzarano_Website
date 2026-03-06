@@ -60,7 +60,7 @@ const processSteps = [
 ]
 
 const sellingPoints = [
-  'Über 10 Jahre Erfahrung in der Region',
+  'Über 16 Jahre Erfahrung in der Region',
   'Wüstenrot-Partner mit starkem Netzwerk',
   'Lokale Marktkenntnis in Hermeskeil, Trier & Mosel',
   'Persönliche Betreuung von A bis Z',

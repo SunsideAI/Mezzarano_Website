@@ -159,8 +159,8 @@ export default async function HomePage() {
               </h2>
               <p className="text-gray-300 mb-6 text-lg">
                 Als Ihr Wüstenrot Immobilienexperte in Hermeskeil biete ich Ihnen persönliche
-                Beratung mit umfassender Marktkenntnis. Mein Erfolg basiert auf Vertrauen,
-                Kompetenz und individuellem Service für jeden Kunden.
+                Beratung mit umfassender Marktkenntnis. Ihr Erfolg ist mein Ziel – durch Vertrauen,
+                Kompetenz und individuellen Service.
               </p>
               <ul className="space-y-4 mb-8">
                 {[

@@ -23,6 +23,7 @@ const navigation: NavItem[] = [
     children: [
       { name: 'Erklärvideos', href: '/erklaervideos' },
       { name: 'Ratgeber', href: '/ratgeber' },
+      { name: 'Über mich', href: '/ueber-uns' },
     ]
   },
   { name: 'Kontakt', href: '/kontakt' },
