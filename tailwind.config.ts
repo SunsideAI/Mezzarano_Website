@@ -69,10 +69,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // WW Type mit Fallbacks
-        ww: ['"WW Type Bold"', '"WW Type Regular"', 'Arial Black', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        'ww-regular': ['"WW Type Regular"', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        'ww-bold': ['"WW Type Bold"', 'Arial Black', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        // WW Type - eine Familie mit font-weight für normal/bold
+        ww: ['"WW Type"', 'Helvetica Neue', 'Arial', 'sans-serif'],
         sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
         serif: ['Georgia', 'Cambria', 'serif'],
       },
