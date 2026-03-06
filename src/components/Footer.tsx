@@ -107,7 +107,7 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/sandro-mezzarano/"
+                href="https://www.linkedin.com/in/sandro-mezzarano-1619ab277/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
