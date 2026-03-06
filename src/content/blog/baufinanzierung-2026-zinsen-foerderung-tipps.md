@@ -1,8 +1,6 @@
 ---
 title: "Baufinanzierung 2026: Zinsen, Förderung & Tipps"
-description: "**Baufinanzierung 2026: Aktuelle Zinsen & Förderprogramme. Professionelle Beratung von Mezzarano Immobilien Heilbronn. Jetzt informieren!**
-
-(149 Zeichen)"
+description: "Baufinanzierung 2026: Aktuelle Zinsen & Förderprogramme. Professionelle Beratung von Mezzarano Immobilien Heilbronn. Jetzt informieren!"
 pubDate: 2026-03-02
 category: "Finanzierung"
 author: "Mezzarano Immobilien"
