@@ -93,8 +93,8 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop navigation - Styleguide: wüstenrot Hover */}
-          <div className="hidden lg:flex items-center gap-5">
+          {/* Desktop navigation - centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1 gap-8">
             {navigation.map((item) => (
               item.children ? (
                 <div
@@ -104,7 +104,7 @@ export default function Header() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
-                    className="text-wuestennacht hover:text-wuestenrot transition-colors py-2 relative group flex items-center gap-1"
+                    className="text-wuestennacht hover:text-wuestenrot font-normal transition-colors py-2 relative group flex items-center gap-1"
                   >
                     {item.name}
                     <ChevronDown className={`h-4 w-4 transition-transform ${wissenOpen ? 'rotate-180' : ''}`} />
@@ -117,7 +117,7 @@ export default function Header() {
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="block px-4 py-3 text-wuestennacht hover:text-wuestenrot hover:bg-warmgrau transition-colors"
+                            className="block px-4 py-3 text-wuestennacht font-normal hover:text-wuestenrot hover:bg-warmgrau transition-colors"
                           >
                             {child.name}
                           </Link>
@@ -130,19 +130,20 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href!}
-                  className="text-wuestennacht hover:text-wuestenrot transition-colors py-2 relative group"
+                  className="text-wuestennacht hover:text-wuestenrot font-normal transition-colors py-2 relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-wuestenrot group-hover:w-full transition-all duration-300" />
                 </Link>
               )
             ))}
-            {/* CTA Button mit Pfeil-Icon (Styleguide) */}
-            <Link href="/kontakt" className="btn-primary ml-2">
-              Beratung anfragen
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
+
+          {/* CTA Button */}
+          <Link href="/kontakt" className="hidden lg:flex btn-primary">
+            Beratung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </Link>
 
           {/* Mobile menu button */}
           <button
