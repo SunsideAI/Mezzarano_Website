@@ -240,16 +240,14 @@ export async function createContact(data: ContactFormData): Promise<{ success: b
         actionid: client.ACTION_ID.CREATE,
         resourcetype: client.RESOURCE_TYPE.ADDRESS,
         parameters: {
-          data: {
-            Vorname: vorname,
-            Name: nachname,
-            Email: data.email,
-            Telefon1: data.phone || '',
-            HerkunftKontakt: [mapInquiryType(data.inquiryType)],
-            Bemerkung: data.message,
-            newsletter: false,
-            Status: 1, // Active
-          },
+          Vorname: vorname,
+          Name: nachname,
+          Email: data.email,
+          Telefon1: data.phone || '',
+          HerkunftKontakt: [mapInquiryType(data.inquiryType)],
+          Bemerkung: data.message,
+          newsletter: false,
+          Status: 1, // Active
         },
       },
     ])
@@ -265,12 +263,10 @@ export async function createContact(data: ContactFormData): Promise<{ success: b
           actionid: client.ACTION_ID.CREATE,
           resourcetype: client.RESOURCE_TYPE.AGENTS_LOG,
           parameters: {
-            data: {
-              Typ: 'Webformular',
-              Bemerkung: `Website-Kontaktanfrage (${data.inquiryType || 'allgemein'}):\n\n${data.message}`,
-              Adresse: addressId,
-              Quelle: data.source || 'Website Kontaktformular',
-            },
+            Typ: 'Webformular',
+            Bemerkung: `Website-Kontaktanfrage (${data.inquiryType || 'allgemein'}):\n\n${data.message}`,
+            Adresse: addressId,
+            Quelle: data.source || 'Website Kontaktformular',
           },
         },
       ])
@@ -299,14 +295,12 @@ export async function createSearchProfile(data: SearchProfileData): Promise<{ su
         resourcetype: client.RESOURCE_TYPE.ADDRESS,
         identifier: 'create_address',
         parameters: {
-          data: {
-            Vorname: data.vorname,
-            Name: data.nachname,
-            Email: data.email,
-            Telefon1: data.telefon || '',
-            HerkunftKontakt: ['Suchprofil Website'],
-            Status: 1,
-          },
+          Vorname: data.vorname,
+          Name: data.nachname,
+          Email: data.email,
+          Telefon1: data.telefon || '',
+          HerkunftKontakt: ['Suchprofil Website'],
+          Status: 1,
         },
       },
     ])
@@ -361,7 +355,7 @@ export async function createSearchProfile(data: SearchProfileData): Promise<{ su
         identifier: 'create_searchcriteria',
         parameters: {
           addressid: addressId,
-          data: searchCriteriaData,
+          ...searchCriteriaData,
         },
       },
     ])
@@ -388,12 +382,10 @@ export async function createSearchProfile(data: SearchProfileData): Promise<{ su
         actionid: client.ACTION_ID.CREATE,
         resourcetype: client.RESOURCE_TYPE.AGENTS_LOG,
         parameters: {
-          data: {
-            Typ: 'Webformular',
-            Bemerkung: `Neues Suchprofil über Website:\n\nArt: ${data.art === 'kaufen' ? 'Kaufen' : 'Mieten'}\nTyp: ${data.typ}\nRegion: ${regionen.join(', ')}\nBudget: max. ${data.budgetMax?.toLocaleString('de-DE')} EUR${featuresText}${anmerkungenText}`,
-            Adresse: addressId,
-            Quelle: 'Website Suchprofil',
-          },
+          Typ: 'Webformular',
+          Bemerkung: `Neues Suchprofil über Website:\n\nArt: ${data.art === 'kaufen' ? 'Kaufen' : 'Mieten'}\nTyp: ${data.typ}\nRegion: ${regionen.join(', ')}\nBudget: max. ${data.budgetMax?.toLocaleString('de-DE')} EUR${featuresText}${anmerkungenText}`,
+          Adresse: addressId,
+          Quelle: 'Website Suchprofil',
         },
       },
     ])

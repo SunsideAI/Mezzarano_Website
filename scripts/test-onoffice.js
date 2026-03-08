@@ -108,15 +108,13 @@ async function testCreateContact() {
           hmac,
           hmac_version: '2',
           parameters: {
-            data: {
-              Vorname: 'Test',
-              Name: 'Website-Integration',
-              Email: 'test@mezzarano-website.de',
-              Telefon1: '0177 1234567',
-              HerkunftKontakt: ['Website Anfrage'],
-              Bemerkung: 'Dies ist ein Testdatensatz der Website-Integration. Kann geloescht werden.',
-              Status: 1
-            }
+            Vorname: 'Test',
+            Name: 'Website-Integration',
+            Email: 'test@mezzarano-website.de',
+            Telefon1: '0177 1234567',
+            HerkunftKontakt: ['Website Anfrage'],
+            Bemerkung: 'Dies ist ein Testdatensatz der Website-Integration. Kann geloescht werden.',
+            Status: 1
           }
         }
       ]
