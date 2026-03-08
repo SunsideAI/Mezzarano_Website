@@ -32,6 +32,7 @@ export default function FinancingCalculator({ onSubmit }: FinancingCalculatorPro
   const [phone, setPhone] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   // Calculation
   const jahreszins = selectedZinsbindung.zins / 100
@@ -48,14 +49,41 @@ export default function FinancingCalculator({ onSubmit }: FinancingCalculatorPro
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    setErrorMessage('')
 
-    if (onSubmit) {
-      onSubmit({ name, email, phone, rate: monatlicheRate, kaufpreis: moeglichesKaufpreis })
+    try {
+      const message = `Finanzierungsanfrage:\n\nGewuenschte monatliche Rate: ${formatCurrency(monatlicheRate)}\nEigenkapital: ${formatCurrency(eigenkapital)}\nMoeglicher Kaufpreis: ${formatCurrency(moeglichesKaufpreis)}\nDarlehen: ${formatCurrency(moeglichesDarlehen)}\nZinsbindung: ${selectedZinsbindung.jahre} Jahre (${selectedZinsbindung.zins.toFixed(1).replace('.', ',')}%)`
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          inquiryType: 'finanzierung',
+          source: 'Finanzierungsrechner',
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        if (onSubmit) {
+          onSubmit({ name, email, phone, rate: monatlicheRate, kaufpreis: moeglichesKaufpreis })
+        }
+        setIsSubmitted(true)
+      } else {
+        setErrorMessage(result.error || 'Ein Fehler ist aufgetreten.')
+      }
+    } catch {
+      setErrorMessage('Verbindungsfehler. Bitte versuchen Sie es spaeter erneut.')
+    } finally {
+      setIsSubmitting(false)
     }
-
-    setIsSubmitting(false)
-    setIsSubmitted(true)
   }
 
   return (
@@ -285,6 +313,12 @@ export default function FinancingCalculator({ onSubmit }: FinancingCalculatorPro
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                {errorMessage && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-red-700 text-sm">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-sm text-secondary-600 mb-1.5">
                     <User className="h-4 w-4 inline mr-1.5 text-secondary-400" />

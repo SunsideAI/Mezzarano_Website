@@ -5,6 +5,7 @@ import { MapPin, Bed, Bath, Square, Calendar, CheckCircle, Phone, Mail, ArrowLef
 import { fetchPropertyByExposeId } from '@/lib/airtable'
 import ImageGallery from '@/components/ImageGallery'
 import PropertyMap from '@/components/PropertyMap'
+import PropertyInquiryForm from '@/components/PropertyInquiryForm'
 
 // Contact info for Sandro Mezzarano
 const agent = {
@@ -318,50 +319,10 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <h3 className="text-xl font-bold text-gray-900 mb-6">
                     Interesse an dieser Immobilie?
                   </h3>
-                  <form className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        E-Mail *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Telefon
-                      </label>
-                      <input
-                        type="tel"
-                        className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Nachricht
-                      </label>
-                      <textarea
-                        rows={4}
-                        defaultValue={`Ich interessiere mich für "${property.titel}" und bitte um weitere Informationen.`}
-                        className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      />
-                    </div>
-                    <button type="submit" className="btn-primary w-full">
-                      Anfrage senden
-                    </button>
-                  </form>
+                  <PropertyInquiryForm
+                    propertyId={property.expose_id}
+                    propertyTitle={property.titel}
+                  />
                 </div>
 
                 {/* Agent Info */}

@@ -24,6 +24,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Build message with property info if present
+    const { propertyId, propertyTitle, source: customSource } = body
+    let finalMessage = message
+    if (propertyId && propertyTitle) {
+      finalMessage = `[Immobilie: ${propertyTitle} (${propertyId})]\n\n${message}`
+    }
+
+    // Determine source
+    const source = customSource || (propertyId ? `Immobilien-Anfrage: ${propertyId}` : 'Website Kontaktformular')
+
     // Check if onOffice is configured
     if (!isOnOfficeConfigured()) {
       console.warn('onOffice API not configured - contact form submission logged only')
@@ -33,7 +43,10 @@ export async function POST(request: NextRequest) {
         email,
         phone: body.phone,
         inquiryType: body.inquiryType,
-        message,
+        propertyId,
+        propertyTitle,
+        message: finalMessage,
+        source,
         timestamp: new Date().toISOString(),
       })
 
@@ -50,8 +63,8 @@ export async function POST(request: NextRequest) {
       email,
       phone: body.phone,
       inquiryType: body.inquiryType,
-      message,
-      source: 'Website Kontaktformular',
+      message: finalMessage,
+      source,
     })
 
     if (result.success) {

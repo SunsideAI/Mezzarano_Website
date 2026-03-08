@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { Search, BookOpen, TrendingUp } from 'lucide-react'
 import BlogCard from '@/components/BlogCard'
+import NewsletterForm from '@/components/NewsletterForm'
 
 interface BlogPostMeta {
   slug: string
@@ -241,16 +242,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
           <p className="text-white/90 mb-8 max-w-xl mx-auto">
             Erhalten Sie regelmäßig Tipps und aktuelle Marktberichte direkt in Ihr Postfach.
           </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <button type="submit" className="btn-primary bg-secondary-900 hover:bg-secondary-800">
-              Anmelden
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
     </>
