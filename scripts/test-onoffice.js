@@ -112,7 +112,6 @@ async function testCreateContact() {
             Name: 'Website-Integration',
             Email: 'test@mezzarano-website.de',
             Telefon1: '0177 1234567',
-            HerkunftKontakt: ['Website Anfrage'],
             Bemerkung: 'Dies ist ein Testdatensatz der Website-Integration. Kann geloescht werden.',
             Status: 1
           }

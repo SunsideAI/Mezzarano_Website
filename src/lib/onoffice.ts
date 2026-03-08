@@ -244,8 +244,7 @@ export async function createContact(data: ContactFormData): Promise<{ success: b
           Name: nachname,
           Email: data.email,
           Telefon1: data.phone || '',
-          HerkunftKontakt: [mapInquiryType(data.inquiryType)],
-          Bemerkung: data.message,
+          Bemerkung: `[${data.inquiryType || 'Allgemein'}] ${data.message}`,
           newsletter: false,
           Status: 1, // Active
         },
@@ -299,7 +298,7 @@ export async function createSearchProfile(data: SearchProfileData): Promise<{ su
           Name: data.nachname,
           Email: data.email,
           Telefon1: data.telefon || '',
-          HerkunftKontakt: ['Suchprofil Website'],
+          Bemerkung: 'Suchprofil ueber Website erstellt',
           Status: 1,
         },
       },
