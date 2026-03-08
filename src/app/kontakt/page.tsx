@@ -48,15 +48,34 @@ export default function KontaktPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const [submitError, setSubmitError] = useState<string | null>(null)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitError(null)
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      })
 
-    setIsSubmitted(true)
-    setIsSubmitting(false)
+      const result = await response.json()
+
+      if (result.success) {
+        setIsSubmitted(true)
+      } else {
+        setSubmitError(result.error || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.')
+      }
+    } catch {
+      setSubmitError('Verbindungsfehler. Bitte pruefen Sie Ihre Internetverbindung.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -142,6 +161,12 @@ export default function KontaktPage() {
                 Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
               </p>
 
+              {submitError && (
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+                  <p className="text-red-700 text-sm">{submitError}</p>
+                </div>
+              )}
+
               {isSubmitted ? (
                 <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -156,6 +181,7 @@ export default function KontaktPage() {
                   <button
                     onClick={() => {
                       setIsSubmitted(false)
+                      setSubmitError(null)
                       setFormState({
                         name: '',
                         email: '',

@@ -219,6 +219,40 @@ Automated blog generation runs on:
 - **Schedule**: Mondays & Thursdays at 9 AM UTC
 - **Manual trigger**: Via workflow_dispatch
 
+## onOffice CRM Integration
+
+The website integrates with onOffice enterprise CRM for lead management.
+
+### Integrated Forms
+
+| Form | API Route | onOffice Modules |
+|------|-----------|------------------|
+| Kontaktformular | `/api/contact` | `address`, `agentslog` |
+| Suchprofil | `/api/suchprofil` | `address`, `searchcriteria`, `agentslog` |
+
+### API Library
+
+The onOffice integration is implemented in `src/lib/onoffice.ts`:
+
+- **HMAC v2 Authentication**: Secure request signing
+- **createContact()**: Create lead from contact form
+- **createSearchProfile()**: Create address + search criteria from search profile wizard
+
+### Setup
+
+1. Log into onOffice enterprise
+2. Navigate to: **Extras > Einstellungen > Benutzer > API-Benutzer**
+3. Create new API user with rights:
+   - Adressen: Lesen, Anlegen
+   - Suchkriterien: Lesen, Anlegen
+   - Maklerbuch: Anlegen
+4. Copy Token (32 chars) and Secret (64 chars)
+5. Add to `.env.local` or production environment
+
+### API Documentation
+
+Full onOffice API documentation: `onOffice_api.md` (in repo root)
+
 ## Environment Variables
 
 Create a `.env.local` file for local development:
@@ -226,6 +260,10 @@ Create a `.env.local` file for local development:
 ```env
 # Required for blog generation
 ANTHROPIC_API_KEY=your-anthropic-api-key
+
+# Required for onOffice CRM integration (Lead forms)
+ONOFFICE_TOKEN=your-32-character-token
+ONOFFICE_SECRET=your-64-character-secret
 
 # Optional: Deployment webhook
 DEPLOY_WEBHOOK_URL=https://your-deployment-webhook

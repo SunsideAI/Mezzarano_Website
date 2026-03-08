@@ -140,6 +140,7 @@ export default function SuchprofilPage() {
   const [step,       setStep]       = useState(1)
   const [submitted,  setSubmitted]  = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const [s1, setS1] = useState<Step1Data>({ art: '', typ: '' })
   const [s2, setS2] = useState<Step2Data>({
@@ -164,9 +165,50 @@ export default function SuchprofilPage() {
   const handleSubmit = async () => {
     if (!canSubmit) return
     setSubmitting(true)
-    await new Promise(r => setTimeout(r, 1200))
-    setSubmitted(true)
-    setSubmitting(false)
+    setSubmitError(null)
+
+    try {
+      const response = await fetch('/api/suchprofil', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // Contact data
+          vorname: s4.vorname,
+          nachname: s4.nachname,
+          email: s4.email,
+          telefon: s4.telefon,
+          // Search criteria
+          art: s1.art,
+          typ: s1.typ,
+          regionen: s2.regionen,
+          ortFreitext: s2.ortFreitext,
+          zimmer: s2.zimmer,
+          wohnflaecheMin: s2.wohnflaecheMin,
+          wohnflaecheMax: s2.wohnflaecheMax,
+          grundstueckMin: s2.grundstueckMin,
+          grundstueckMax: s2.grundstueckMax,
+          nutzflaecheMin: s2.nutzflaecheMin,
+          nutzflaecheMax: s2.nutzflaecheMax,
+          budgetMax: s2.budgetMax,
+          features: s3.features,
+          anmerkungen: s3.anmerkungen,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitted(true)
+      } else {
+        setSubmitError(result.error || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.')
+      }
+    } catch {
+      setSubmitError('Verbindungsfehler. Bitte pruefen Sie Ihre Internetverbindung.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   // ── Steps ─────────────────────────────────────────────────────────────────
@@ -481,6 +523,12 @@ export default function SuchprofilPage() {
                   {step === 2 && renderStep2()}
                   {step === 3 && renderStep3()}
                   {step === 4 && renderStep4()}
+
+                  {submitError && (
+                    <div className="mt-6 bg-red-50 border border-red-200 rounded-xl p-4">
+                      <p className="text-red-700 text-sm">{submitError}</p>
+                    </div>
+                  )}
 
                   {/* Navigation */}
                   <div className="flex items-center justify-between mt-10 pt-6 border-t border-gray-100">
