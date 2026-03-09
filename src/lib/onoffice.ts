@@ -691,7 +691,7 @@ const ESTATE_FIELDS = [
   // Core
   'Id', 'objektnr_extern', 'objektnr_intern',
   // Titles & Descriptions
-  'objekttitel', 'objektbeschreibung', 'lage', 'ausstattung_beschr', 'sonstige_angaben',
+  'objekttitel', 'objektbeschreibung', 'lage', 'sonstige_angaben', 'ausstattung',
   // Location
   'strasse', 'hausnummer', 'plz', 'ort', 'land', 'regionaler_zusatz', 'bundesland',
   'breitengrad', 'laengengrad', 'flur', 'flurstk', 'gemarkung',
@@ -729,7 +729,7 @@ const ESTATE_FIELDS = [
   'als_ferienwohnung', 'gewerbliche_nutzung',
   // Additional
   'verfuegbar_ab', 'max_mietdauer', 'min_mietdauer', 'objektzustand',
-  'ausstattung', 'anzahl_betten', 'kueche', 'bad', 'boden',
+  'anzahl_betten', 'kueche', 'bad', 'boden',
   'verkehrswert', 'mieteinnahmen_ist', 'mieteinnahmen_soll', 'rendite', 'x_fache',
   // Dates
   'stand_vom', 'aktiv_bis', 'erstellt_am', 'geaendert_am',
@@ -776,7 +776,7 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     objekttitel: str('objekttitel'),
     objektbeschreibung: str('objektbeschreibung'),
     lage: str('lage'),
-    ausstattung_beschr: str('ausstattung_beschr') || str('sonstige_angaben'),
+    ausstattung_beschr: str('ausstattung') || str('sonstige_angaben'),
 
     strasse: str('strasse'),
     hausnummer: str('hausnummer'),
