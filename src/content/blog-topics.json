@@ -129,8 +129,8 @@
       ],
       "category": "Recht & Steuern",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-09T09:52:57.672Z"
     },
     {
       "title": "Grunderwerbsteuer Baden-Württemberg: Alles Wichtige",
@@ -220,8 +220,8 @@
       ],
       "category": "Kapitalanlage",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-09T09:54:17.258Z"
     },
     {
       "title": "Erbschaft Immobilie: Verkaufen, Behalten oder Vermieten?",
@@ -247,8 +247,8 @@
       ],
       "category": "Finanzierung",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-09T09:55:28.791Z"
     },
     {
       "title": "Scheidungsimmobilie: Rechtliche und finanzielle Aspekte",
