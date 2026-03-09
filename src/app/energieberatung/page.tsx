@@ -93,57 +93,26 @@ export default function EnergieberatungPage() {
       {/* Hero */}
       <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-                <Zap className="h-5 w-5" />
-                <span className="text-sm font-medium uppercase tracking-wider">Wüstenrot Energieberatung</span>
-              </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-                Energieberatung für Ihr Zuhause
-              </h1>
-              <p className="text-lg md:text-xl font-semibold text-primary-400 mb-3" data-aos="fade-up" data-aos-delay="150">
-                Nachhaltig. Effizient. Förderfähig.
-              </p>
-              <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-                Als zertifizierter Energieberater unterstütze ich Sie dabei, Ihre Immobilie zukunftssicher zu machen – mit individueller Beratung und umfassender Fördermittelberatung.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
-                <Link href="/kontakt" className="btn-primary">
-                  Kostenlose Anfrage starten
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                  <Phone className="h-5 w-5 mr-2" />
-                  0177 6542977
-                </a>
-              </div>
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
+              <Zap className="h-5 w-5" />
+              <span className="text-sm font-medium uppercase tracking-wider">Wüstenrot Energieberatung</span>
             </div>
-            <div className="relative hidden lg:block" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-white mb-6">Ihre Vorteile</h3>
-                <ul className="space-y-4 text-white mb-6">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>Bis zu 80% Förderung sichern</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>BAFA-zertifizierte Energieberater</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>Energiekosten nachhaltig senken</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>Kostenlose Erstberatung</span>
-                  </li>
-                </ul>
-                <Link href="/energieberatung/energieausweis" className="btn-primary w-full justify-center bg-white text-primary-500 hover:bg-gray-100">
-                  Online-Energieausweis ab 59 €
-                </Link>
-              </div>
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
+              Energieberatung für Ihr Zuhause
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
+              Als zertifizierter Energieberater unterstütze ich Sie dabei, Ihre Immobilie zukunftssicher zu machen – mit individueller Beratung und umfassender Fördermittelberatung.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
+              <Link href="/kontakt" className="btn-primary">
+                Kostenlose Anfrage starten
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
             </div>
           </div>
         </div>

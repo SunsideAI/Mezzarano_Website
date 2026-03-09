@@ -149,54 +149,29 @@ export default function EnergieausweisPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero - Left-aligned like other pages */}
+      {/* Hero */}
       <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-                <FileText className="h-5 w-5" />
-                <span className="text-sm font-medium uppercase tracking-wider">Online-Energieausweis</span>
-              </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-                Energieausweis online erstellen
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-                Schnell, einfach und günstig – Ihr Energieausweis ab 59 € inkl. MwSt. GEG-konform und 10 Jahre gültig.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
-                <a href="#auswahl" className="btn-primary">
-                  Jetzt Ausweis wählen
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                  <Phone className="h-5 w-5 mr-2" />
-                  0177 6542977
-                </a>
-              </div>
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
+              <FileText className="h-5 w-5" />
+              <span className="text-sm font-medium uppercase tracking-wider">Online-Energieausweis</span>
             </div>
-            <div className="relative hidden lg:block" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-white mb-6">Ihre Vorteile</h3>
-                <ul className="space-y-4 text-white">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>Auslieferung in 48h</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>GEG-konform</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>10 Jahre gültig</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                    <span>Ab 59 € inkl. MwSt.</span>
-                  </li>
-                </ul>
-              </div>
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
+              Energieausweis online erstellen
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
+              Schnell, einfach und günstig – Ihr Energieausweis ab 59 € inkl. MwSt. GEG-konform und 10 Jahre gültig.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="#auswahl" className="btn-primary">
+                Jetzt Ausweis wählen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
             </div>
           </div>
         </div>
