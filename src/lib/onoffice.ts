@@ -23,6 +23,7 @@ const ACTION_ID = {
 // Resource Types
 const RESOURCE_TYPE = {
   ESTATE: 'estate',
+  ESTATE_PICTURES: 'estatepictures',
   ADDRESS: 'address',
   SEARCH_CRITERIA: 'searchcriteria',
   AGENTS_LOG: 'agentslog',
@@ -954,6 +955,7 @@ export async function fetchEstates(filters?: EstateFilter, options?: { limit?: n
 
     // Default: only active estates published to website
     filter.status = [{ op: '=', val: 1 }]
+    filter.veroeffentlichen = [{ op: '=', val: 1 }]  // Homepage-Filter laut API-Doku
 
     if (filters?.vermarktungsart) {
       filter.vermarktungsart = [{ op: '=', val: filters.vermarktungsart }]
@@ -1095,6 +1097,7 @@ export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeP
 
 /**
  * Fetch images for an estate (Homepage-published images)
+ * Uses estatepictures resourcetype as per onOffice API documentation
  */
 export async function fetchEstateImages(estateId: number): Promise<string[]> {
   try {
@@ -1103,12 +1106,13 @@ export async function fetchEstateImages(estateId: number): Promise<string[]> {
     const response = await client.request([
       {
         actionid: client.ACTION_ID.GET,
-        resourcetype: client.RESOURCE_TYPE.ESTATE,
-        resourceid: estateId,
+        resourcetype: client.RESOURCE_TYPE.ESTATE_PICTURES,
+        resourceid: '',
         identifier: 'fetch_estate_images',
         parameters: {
-          categories: ['Foto', 'Titelbild', 'Foto_gross'],
-          language: 'DEU',
+          estateids: [estateId],
+          categories: ['Titelbild', 'Foto', 'Foto_gross', 'Grundriss', 'Lageplan', 'Panorama'],
+          size: 'original',
         },
       },
     ])
@@ -1121,16 +1125,21 @@ export async function fetchEstateImages(estateId: number): Promise<string[]> {
     }
 
     // Extract image URLs from the response
+    // Response structure: records[].elements is array or single object with url field
     const images: string[] = []
     const records = result.data.records || []
 
     for (const record of records) {
-      const elements = record.elements || {}
-      // Images are typically in 'url' or 'originalurl' fields
-      if (elements.url) {
-        images.push(String(elements.url))
-      } else if (elements.originalurl) {
-        images.push(String(elements.originalurl))
+      const elements = record.elements
+      if (Array.isArray(elements)) {
+        for (const el of elements as Array<{ url?: string; originalurl?: string }>) {
+          if (el.url) images.push(String(el.url))
+          else if (el.originalurl) images.push(String(el.originalurl))
+        }
+      } else if (elements) {
+        const el = elements as { url?: string; originalurl?: string }
+        if (el.url) images.push(String(el.url))
+        else if (el.originalurl) images.push(String(el.originalurl))
       }
     }
 
