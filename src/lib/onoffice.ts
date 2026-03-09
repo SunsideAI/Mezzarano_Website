@@ -686,53 +686,41 @@ export function getBefeuerungLabel(befeuerung?: string): string {
   return BEFEUERUNG_LABELS[befeuerung.toLowerCase()] || befeuerung
 }
 
-// Fields to request from onOffice API
+// Fields to request from onOffice API (conservative list of standard fields)
 const ESTATE_FIELDS = [
-  // Core
+  // Core identifiers
   'Id', 'objektnr_extern', 'objektnr_intern',
   // Titles & Descriptions
-  'objekttitel', 'objektbeschreibung', 'lage', 'sonstige_angaben', 'ausstattung',
+  'objekttitel', 'objektbeschreibung', 'lage', 'sonstige_angaben',
   // Location
   'strasse', 'hausnummer', 'plz', 'ort', 'land', 'regionaler_zusatz', 'bundesland',
-  'breitengrad', 'laengengrad', 'flur', 'flurstk', 'gemarkung',
+  'breitengrad', 'laengengrad',
   // Classification
   'nutzungsart', 'objektart', 'vermarktungsart', 'objekttyp', 'status',
   // Pricing
   'kaufpreis', 'kaltmiete', 'warmmiete', 'nebenkosten', 'heizkosten', 'kaution',
-  'aussen_courtage', 'courtage_hinweis', 'provisionspflichtig', 'innen_courtage',
-  'mietpreis_pro_qm', 'kaufpreis_pro_qm', 'nettokaltmiete', 'pauschalmiete',
-  'erbpacht', 'hausgeld', 'abstand', 'freitext_preis', 'mwst_satz', 'mwst_gesamt',
+  'aussen_courtage', 'courtage_hinweis', 'innen_courtage',
+  'hausgeld', 'erbpacht',
   // Areas
   'wohnflaeche', 'nutzflaeche', 'gesamtflaeche', 'grundstuecksflaeche',
-  'verkaufsflaeche', 'lagerflaeche', 'bueroflaeche', 'gastroflaeche',
-  'balkon_terrasse_flaeche', 'gartenflaeche', 'kellerflaeche', 'teilbar_ab',
+  'balkon_terrasse_flaeche', 'gartenflaeche',
   // Rooms
   'anzahl_zimmer', 'anzahl_schlafzimmer', 'anzahl_badezimmer', 'anzahl_sep_wc',
-  'anzahl_balkone', 'anzahl_terrassen', 'anzahl_loggien',
-  'anzahl_wohn_schlafzimmer', 'anzahl_wohneinheiten', 'anzahl_gewerbeeinheiten',
+  'anzahl_balkone', 'anzahl_terrassen',
   // Structure
-  'etage', 'anzahl_etagen', 'etagenzahl', 'wohnungsnr',
+  'etage', 'anzahl_etagen', 'etagenzahl',
   // Parking
-  'anzahl_garagen', 'stellplatz', 'anzahl_carport', 'stellplatzmiete', 'stellplatzpreis',
+  'anzahl_garagen', 'stellplatz',
   // Building
-  'baujahr', 'letzte_modernisierung', 'zustand', 'alter', 'bebaubar_mit',
-  'bauart', 'ausbaustufe', 'dachform', 'bodenbelag', 'erschliessung',
+  'baujahr', 'zustand', 'objektzustand',
   // Energy
-  'heizungsart', 'befeuerung', 'energieausweistyp', 'energieverbrauchskennwert',
+  'heizungsart', 'befeuerung', 'energieausweistyp',
   'endenergiebedarf', 'energieeffizienzklasse', 'primaerenergietraeger',
-  'baujahr_heizung', 'energiepass_gueltig_bis', 'stromverbrauch', 'waermelieferung',
   // Features
-  'keller', 'unterkellert', 'dachboden', 'fahrstuhl', 'rollstuhlgerecht',
-  'swimmingpool', 'sauna', 'wintergarten', 'gaestewc', 'kamin',
-  'klimaanlage', 'gartennutzung', 'einbaukueche', 'moebiliert',
-  'seniorengerecht', 'barrierefrei', 'denkmalschutzobjekt', 'haustiere',
-  'als_ferienwohnung', 'gewerbliche_nutzung',
-  // Additional
-  'verfuegbar_ab', 'max_mietdauer', 'min_mietdauer', 'objektzustand',
-  'anzahl_betten', 'kueche', 'bad', 'boden',
-  'verkehrswert', 'mieteinnahmen_ist', 'mieteinnahmen_soll', 'rendite', 'x_fache',
+  'keller', 'unterkellert', 'fahrstuhl',
+  'einbaukueche', 'balkon', 'terrasse', 'garten',
   // Dates
-  'stand_vom', 'aktiv_bis', 'erstellt_am', 'geaendert_am',
+  'erstellt_am', 'geaendert_am',
 ]
 
 // Transform onOffice API record to our Property type
@@ -776,7 +764,7 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     objekttitel: str('objekttitel'),
     objektbeschreibung: str('objektbeschreibung'),
     lage: str('lage'),
-    ausstattung_beschr: str('ausstattung') || str('sonstige_angaben'),
+    ausstattung_beschr: str('sonstige_angaben'),
 
     strasse: str('strasse'),
     hausnummer: str('hausnummer'),
@@ -898,7 +886,7 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     max_mietdauer: str('max_mietdauer'),
     min_mietdauer: str('min_mietdauer'),
     objektzustand: str('objektzustand'),
-    qualitaet_ausstattung: str('ausstattung'),
+    qualitaet_ausstattung: undefined,
     anzahl_betten: num('anzahl_betten'),
     kueche: str('kueche'),
     bad: str('bad'),
