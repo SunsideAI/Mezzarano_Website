@@ -81,16 +81,19 @@ async function fetchFields(modules = ['estate', 'address']) {
 async function main() {
   const args = process.argv.slice(2)
   const jsonOutput = args.includes('--json')
+  const rawOutput = args.includes('--raw')
   const jsonIndex = args.indexOf('--json')
   if (jsonIndex > -1) args.splice(jsonIndex, 1)
+  const rawIndex = args.indexOf('--raw')
+  if (rawIndex > -1) args.splice(rawIndex, 1)
 
   // Determine which modules to fetch
-  let modules = ['estate', 'address']
+  let modules = ['estate']
   if (args.length > 0 && !args[0].startsWith('-')) {
     modules = [args[0]]
   }
 
-  if (!jsonOutput) {
+  if (!jsonOutput && !rawOutput) {
     console.log('=== onOffice Field Explorer ===\n')
     console.log('Token:', TOKEN.substring(0, 8) + '...')
     console.log('Modules:', modules.join(', '))
@@ -104,13 +107,20 @@ async function main() {
     process.exit(1)
   }
 
-  if (jsonOutput) {
+  // Raw output for debugging
+  if (rawOutput || jsonOutput) {
     console.log(JSON.stringify(fields, null, 2))
     return
   }
 
   // Display fields by module
   for (const [module, moduleFields] of Object.entries(fields)) {
+    // Skip non-object entries
+    if (!moduleFields || typeof moduleFields !== 'object') {
+      console.log(`Skipping ${module}: not an object`)
+      continue
+    }
+
     console.log('='.repeat(80))
     console.log(`MODULE: ${module.toUpperCase()}`)
     console.log('='.repeat(80))
@@ -122,6 +132,10 @@ async function main() {
     const byType = {}
 
     for (const [fieldName, fieldInfo] of fieldEntries) {
+      // Skip null/undefined entries
+      if (!fieldInfo || typeof fieldInfo !== 'object') {
+        continue
+      }
       const type = fieldInfo.type || 'unknown'
       if (!byType[type]) byType[type] = []
       byType[type].push({ name: fieldName, ...fieldInfo })
@@ -131,7 +145,7 @@ async function main() {
     for (const [type, typeFields] of Object.entries(byType).sort()) {
       console.log(`\n--- ${type.toUpperCase()} (${typeFields.length}) ---`)
 
-      for (const field of typeFields.sort((a, b) => a.name.localeCompare(b.name))) {
+      for (const field of typeFields.sort((a, b) => String(a.name).localeCompare(String(b.name)))) {
         const label = field.label || ''
         const permittedValues = field.permittedvalues
           ? ` [${Object.keys(field.permittedvalues).slice(0, 5).join(', ')}${Object.keys(field.permittedvalues).length > 5 ? '...' : ''}]`
@@ -143,21 +157,22 @@ async function main() {
       }
     }
 
-    console.log('')
-  }
+    // Print simple list for this module
+    const validFields = fieldEntries
+      .filter(([_, info]) => info && typeof info === 'object')
+      .map(([name]) => name)
+      .sort()
 
-  // Print simple list for copy-paste
-  if (modules.includes('estate')) {
-    console.log('\n' + '='.repeat(80))
-    console.log('ESTATE FIELDS (copy-paste ready):')
-    console.log('='.repeat(80))
-
-    const estateFields = Object.keys(fields.estate || {}).sort()
-    console.log('\nconst ESTATE_FIELDS = [')
-    for (const field of estateFields) {
-      console.log(`  '${field}',`)
+    if (validFields.length > 0) {
+      console.log(`\n--- COPY-PASTE LIST for ${module} (${validFields.length} fields) ---`)
+      console.log(`const ${module.toUpperCase()}_FIELDS = [`)
+      for (const field of validFields) {
+        console.log(`  '${field}',`)
+      }
+      console.log(']')
     }
-    console.log(']')
+
+    console.log('')
   }
 }
 
