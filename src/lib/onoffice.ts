@@ -707,7 +707,7 @@ const ESTATE_FIELDS = [
   'online_vermarktungsstatus',       // WI-Homepage Status (mw_website_online)
   // Pricing
   'kaufpreis', 'kaltmiete', 'warmmiete', 'nebenkosten', 'heizkosten', 'kaution',
-  'aussen_courtage', 'courtage_hinweis', 'innen_courtage',
+  'aussen_courtage', 'innen_courtage',
   'hausgeld', 'erbpacht',
   // Areas
   'wohnflaeche', 'nutzflaeche', 'gesamtflaeche', 'grundstuecksflaeche',
