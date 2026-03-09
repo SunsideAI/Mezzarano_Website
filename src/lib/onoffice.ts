@@ -730,6 +730,8 @@ const ESTATE_FIELDS = [
   // Status
   'verkauft', 'reserviert', 'veroeffentlichen',
   'top_angebot', 'neu', 'referenz',
+  // Mezzarano Custom Homepage-Status
+  'ind_2910_Feld_ObjKategorie194',
   // Verfuegbarkeit
   'verfuegbar_ab',
   // Datum
@@ -951,9 +953,10 @@ export async function fetchEstates(filters?: EstateFilter, options?: { limit?: n
     // Build filter object for onOffice
     const filter: Record<string, Array<{ op: string; val: string | number }>> = {}
 
-    // Default: only active estates published to website
+    // Default: only active estates
+    // HINWEIS: veroeffentlichen-Filter entfernt - Mezzarano nutzt Custom-Feld ind_2910_Feld_ObjKategorie194
+    // Das Filtern nach Homepage-Status sollte in der Anwendungslogik erfolgen
     filter.status = [{ op: '=', val: 1 }]
-    filter.veroeffentlichen = [{ op: '=', val: 1 }]  // Homepage-Filter laut API-Doku
 
     if (filters?.vermarktungsart) {
       filter.vermarktungsart = [{ op: '=', val: filters.vermarktungsart }]
