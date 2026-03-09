@@ -716,7 +716,7 @@ const ESTATE_FIELDS = [
   'anzahl_zimmer', 'anzahl_schlafzimmer', 'anzahl_badezimmer', 'anzahl_sep_wc',
   'anzahl_balkone', 'anzahl_terrassen',
   // Structure
-  'etage', 'anzahl_etagen', 'etagenzahl',
+  'etage', 'etagenzahl',
   // Parking - FIX: war 'stellplatz', jetzt korrekt
   'anzahl_garagen', 'anzahl_stellplaetze', 'anzahl_carport',
   // Building
