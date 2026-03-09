@@ -145,6 +145,34 @@ export default function BewertenPage() {
         </div>
       </section>
 
+      {/* Online Bewertungs-Tool */}
+      <section className="py-12 md:py-20">
+        <div className="container-custom">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="section-title mb-4">Schnelle Online-Bewertung</h2>
+            <p className="section-subtitle mx-auto">
+              Erhalten Sie in wenigen Minuten eine erste Einschätzung zum Wert Ihrer Immobilie
+            </p>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-xl bg-white" data-aos="fade-up">
+            <iframe
+              src="https://wuestenrot-immobilien.de/makler-depot-iframe/?frame_version=wi&api=mw-mezzarano-hermeskeil&id=1699"
+              width="100%"
+              height="800"
+              style={{ border: 0 }}
+              title="Wüstenrot Immobilienbewertung - Ermitteln Sie den Wert Ihrer Immobilie"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+
+          <p className="text-center text-gray-500 text-sm mt-6">
+            Für eine präzise Vor-Ort-Bewertung kontaktieren Sie mich gerne persönlich.
+          </p>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section className="py-12 md:py-20 bg-gray-50">
         <div className="container-custom">
