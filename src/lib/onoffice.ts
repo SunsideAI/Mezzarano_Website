@@ -692,49 +692,47 @@ export function getBefeuerungLabel(befeuerung?: string): string {
 }
 
 // Fields to request from onOffice API
+// WICHTIG: Nur Felder verwenden die in ONOFFICE_API_REFERENZ.md dokumentiert sind!
 const ESTATE_FIELDS = [
-  // Core identifiers
-  'Id', 'objektnr_extern', 'objektnr_intern',
-  // Titles & Descriptions
-  'objekttitel', 'objektbeschreibung', 'lage', 'sonstige_angaben', 'ausstatt_beschr',
-  // Location
-  'strasse', 'hausnummer', 'plz', 'ort', 'land', 'regionaler_zusatz', 'bundesland',
+  // Identifikation (Doku Abschnitt 10)
+  'Id', 'objektnr_extern', 'objekttitel',
+  // Beschreibungen
+  'objektbeschreibung', 'ausstatt_beschr', 'lage', 'sonstige_angaben',
+  // Klassifizierung
+  'objektart', 'objekttyp', 'vermarktungsart', 'nutzungsart', 'status',
+  // Adresse
+  'strasse', 'hausnummer', 'plz', 'ort', 'bundesland', 'land',
   'breitengrad', 'laengengrad',
-  // Classification
-  'nutzungsart', 'objektart', 'vermarktungsart', 'objekttyp', 'status',
-  // Homepage Status - beide Felder einbinden
-  'ind_2910_Feld_ObjKategorie194',  // Homepage Status (ind_Schl_5603 = Online)
-  'online_vermarktungsstatus',       // WI-Homepage Status (mw_website_online)
-  // Pricing
-  'kaufpreis', 'kaltmiete', 'warmmiete', 'nebenkosten', 'heizkosten', 'kaution',
-  'aussen_courtage', 'innen_courtage',
-  'hausgeld', 'erbpacht',
-  // Areas
-  'wohnflaeche', 'nutzflaeche', 'gesamtflaeche', 'grundstuecksflaeche',
-  'balkon_terrasse_flaeche', 'gartenflaeche',
-  // Rooms
-  'anzahl_zimmer', 'anzahl_schlafzimmer', 'anzahl_badezimmer', 'anzahl_sep_wc',
-  'anzahl_balkone', 'anzahl_terrassen',
-  // Structure
-  'etage', 'etagenzahl',
-  // Parking - FIX: war 'stellplatz', jetzt korrekt
-  'anzahl_garagen', 'anzahl_stellplaetze', 'anzahl_carport',
-  // Building
-  'baujahr', 'zustand', 'objektzustand', 'ausstattungsqualitaet',
-  // Energy
-  'heizungsart', 'befeuerung', 'energieausweistyp',
-  'endenergiebedarf', 'energieverbrauchskennwert', 'energieeffizienzklasse', 'primaerenergietraeger', 'energyClass',
-  // Features - alle Boolean-Felder
-  'keller', 'unterkellert', 'fahrstuhl', 'dachboden',
-  'rollstuhlgerecht', 'tiefgarage', 'swimmingpool', 'sauna', 'wintergarten',
-  'gaesteWc', 'kamin', 'klimatisiert',
-  'gartennutzung', 'einbaukueche', 'moebiliert',
-  'seniorengerecht', 'barrierefrei', 'denkmalschutzobjekt',
-  'haustiere', 'als_ferien', 'gewerbliche_nutzung',
-  'balkon', 'terrasse', 'garten',
-  // Availability
+  // Preise Kauf
+  'kaufpreis', 'preisAufAnfrage',
+  // Preise Miete
+  'kaltmiete', 'warmmiete', 'nebenkosten', 'heizkosten', 'kaution', 'hausgeld',
+  // Provision
+  'aussen_courtage', 'provisionsfrei',
+  // Flaechen
+  'wohnflaeche', 'nutzflaeche', 'grundstuecksflaeche', 'gesamtflaeche',
+  'balkon_terrasse_flaeche',
+  // Zimmer
+  'anzahl_zimmer', 'anzahl_schlafzimmer', 'anzahl_badezimmer',
+  'anzahl_balkone', 'anzahl_terrassen', 'etage', 'etagen_zahl',
+  // Parking
+  'anzahl_stellplaetze',
+  // Gebaeude
+  'baujahr', 'zustand', 'ausstattungsqualitaet',
+  // Energie
+  'energieausweistyp', 'energyClass', 'endenergiebedarf', 'energieverbrauchskennwert',
+  'heizungsart', 'befeuerung', 'energietraeger',
+  // Features (Boolean)
+  'balkon', 'terrasse', 'gartennutzung', 'kamin', 'sauna', 'swimmingpool',
+  'wintergarten', 'gaesteWc', 'barrierefrei', 'fahrstuhl',
+  'klimatisiert', 'denkmalgeschuetzt', 'vermietet', 'provisionsfrei',
+  'unterkellert',
+  // Status
+  'verkauft', 'reserviert', 'veroeffentlichen',
+  'top_angebot', 'neu', 'referenz',
+  // Verfuegbarkeit
   'verfuegbar_ab',
-  // Dates
+  // Datum
   'erstellt_am', 'geaendert_am',
 ]
 
