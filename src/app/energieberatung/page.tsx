@@ -106,7 +106,7 @@ export default function EnergieberatungPage() {
                 Nachhaltig. Effizient. Förderfähig.
               </p>
               <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-                Steigende Energiepreise, neue gesetzliche Vorgaben und der Wunsch nach mehr Nachhaltigkeit stellt auch Sie als Immobilienbesitzer vor Herausforderungen? Die Wüstenrot Energieberatung unterstützt Sie dabei, Ihre Immobilie zukunftssicher zu machen – mit individueller Beratung, maßgeschneiderten Sanierungskonzepten und umfassender Fördermittelberatung.
+                Als zertifizierter Energieberater unterstütze ich Sie dabei, Ihre Immobilie zukunftssicher zu machen – mit individueller Beratung und umfassender Fördermittelberatung.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
                 <Link href="/kontakt" className="btn-primary">

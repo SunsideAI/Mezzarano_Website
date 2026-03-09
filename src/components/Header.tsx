@@ -20,13 +20,6 @@ const navigation: NavItem[] = [
     ]
   },
   {
-    name: 'Energieberatung',
-    children: [
-      { name: 'Energieberatung', href: '/energieberatung' },
-      { name: 'Online-Energieausweis', href: '/energieberatung/energieausweis' },
-    ]
-  },
-  {
     name: 'Kaufen',
     children: [
       { name: 'Immobilienangebote', href: '/immobilien' },
@@ -37,6 +30,13 @@ const navigation: NavItem[] = [
     ]
   },
   { name: 'Finanzierung', href: '/finanzierung' },
+  {
+    name: 'Energieberatung',
+    children: [
+      { name: 'Energieberatung', href: '/energieberatung' },
+      { name: 'Online-Energieausweis', href: '/energieberatung/energieausweis' },
+    ]
+  },
   {
     name: 'Ratgeber',
     children: [

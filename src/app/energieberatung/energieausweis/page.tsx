@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Clock, FileCheck, Check, ArrowRight, Phone, X, CheckCircle, AlertCircle, HelpCircle } from 'lucide-react'
+import { Clock, FileCheck, Check, ArrowRight, Phone, CheckCircle, AlertCircle, FileText, ArrowLeft } from 'lucide-react'
 
 const energieausweisTypes = [
   {
@@ -68,7 +68,7 @@ const faqItems = [
 
 export default function EnergieausweisPage() {
   const [selectedType, setSelectedType] = useState<string | null>(null)
-  const [showModal, setShowModal] = useState(false)
+  const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,7 +82,13 @@ export default function EnergieausweisPage() {
 
   const handleSelectType = (typeId: string) => {
     setSelectedType(typeId)
-    setShowModal(true)
+    setShowForm(true)
+    setSubmitStatus('idle')
+  }
+
+  const handleBack = () => {
+    setShowForm(false)
+    setSelectedType(null)
     setSubmitStatus('idle')
   }
 
@@ -117,96 +123,241 @@ export default function EnergieausweisPage() {
     }
   }
 
+  const selectedProduct = energieausweisTypes.find(t => t.id === selectedType)
+
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="py-12 md:py-20 bg-secondary-900">
-        <div className="container-custom text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">
-            Online-Energieausweis
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-            Schnell, einfach und günstig – Ihr Energieausweis ab 59 € inkl. MwSt. GEG-konform und 10 Jahre gültig.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-white/80" data-aos="fade-up" data-aos-delay="200">
-            <span className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary-400" />
-              Auslieferung in 48h
-            </span>
-            <span className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary-400" />
-              GEG-konform
-            </span>
-            <span className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary-400" />
-              10 Jahre gültig
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Help Section */}
-      <section className="py-8 bg-primary-50 border-b border-primary-100">
+      {/* Hero - Left-aligned like other pages */}
+      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
-            <div className="flex items-center gap-2 text-primary-700">
-              <HelpCircle className="h-5 w-5" />
-              <span className="font-medium">Welchen Online-Energieausweis benötigen Sie?</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
+                <FileText className="h-5 w-5" />
+                <span className="text-sm font-medium uppercase tracking-wider">Online-Energieausweis</span>
+              </div>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
+                Energieausweis online erstellen
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
+                Schnell, einfach und günstig – Ihr Energieausweis ab 59 € inkl. MwSt. GEG-konform und 10 Jahre gültig.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#auswahl" className="btn-primary">
+                  Jetzt Ausweis wählen
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                  <Phone className="h-5 w-5 mr-2" />
+                  0177 6542977
+                </a>
+              </div>
             </div>
-            <Link href="/kontakt" className="text-primary-600 hover:text-primary-700 underline">
-              Gerne übernehmen wir die Erstellung Ihres Energieausweises.
-            </Link>
+            <div className="relative hidden lg:block" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-white mb-6">Ihre Vorteile</h3>
+                <ul className="space-y-4 text-white">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
+                    <span>Auslieferung in 48h</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
+                    <span>GEG-konform</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
+                    <span>10 Jahre gültig</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-400 flex-shrink-0" />
+                    <span>Ab 59 € inkl. MwSt.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-12 md:py-20">
+      {/* Pricing Cards OR Contact Form */}
+      <section id="auswahl" className="py-12 md:py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {energieausweisTypes.map((type, index) => (
-              <div
-                key={type.id}
-                className={`relative rounded-2xl overflow-hidden shadow-lg ${type.popular ? 'ring-2 ring-primary-500' : ''}`}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                {type.popular && (
-                  <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    Empfohlen
+          {!showForm ? (
+            // Price Cards
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {energieausweisTypes.map((type, index) => (
+                <div
+                  key={type.id}
+                  className={`relative rounded-2xl overflow-hidden shadow-lg ${type.popular ? 'ring-2 ring-primary-500' : ''}`}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  {type.popular && (
+                    <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                      Empfohlen
+                    </div>
+                  )}
+                  {/* Orange Header */}
+                  <div className="bg-primary-500 p-6 text-white">
+                    <h3 className="text-xl font-bold mb-1">{type.title}</h3>
+                    <p className="text-white/90 font-medium mb-2">{type.subtitle}</p>
+                    <p className="text-white/80 text-sm mb-4">{type.description}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl font-bold">{type.price} Euro</span>
+                    </div>
+                    <p className="text-white/80 text-sm">inkl. MwSt.</p>
                   </div>
-                )}
-                {/* Orange Header */}
-                <div className="bg-primary-500 p-6 text-white">
-                  <h3 className="text-xl font-bold mb-1">{type.title}</h3>
-                  <p className="text-white/90 font-medium mb-2">{type.subtitle}</p>
-                  <p className="text-white/80 text-sm mb-4">{type.description}</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold">{type.price} Euro</span>
-                  </div>
-                  <p className="text-white/80 text-sm">inkl. MwSt.</p>
-                </div>
 
-                {/* Features */}
-                <div className="bg-white p-6">
-                  <ul className="space-y-4 mb-6">
-                    {type.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3 text-gray-700">
-                        <feature.icon className="h-5 w-5 text-gray-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature.text}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Features */}
+                  <div className="bg-white p-6">
+                    <ul className="space-y-4 mb-6">
+                      {type.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3 text-gray-700">
+                          <feature.icon className="h-5 w-5 text-gray-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{feature.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <button
+                      onClick={() => handleSelectType(type.id)}
+                      className="w-full btn-primary justify-center"
+                    >
+                      Jetzt erstellen
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            // Inline Contact Form
+            <div className="max-w-2xl mx-auto">
+              {submitStatus === 'success' ? (
+                <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+                  <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Anfrage erfolgreich gesendet!</h2>
+                  <p className="text-gray-600 mb-6">
+                    Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.
+                  </p>
                   <button
-                    onClick={() => handleSelectType(type.id)}
-                    className="w-full btn-primary justify-center"
+                    onClick={handleBack}
+                    className="btn-primary"
                   >
-                    Jetzt erstellen
+                    Weitere Anfrage stellen
                   </button>
                 </div>
-              </div>
-            ))}
-          </div>
+              ) : (
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                  {/* Header with selected product */}
+                  <div className="bg-primary-500 p-6 text-white">
+                    <button
+                      onClick={handleBack}
+                      className="flex items-center gap-2 text-white/80 hover:text-white mb-4 transition-colors"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      Zurück zur Auswahl
+                    </button>
+                    <h2 className="text-2xl font-bold mb-1">Energieausweis anfragen</h2>
+                    <p className="text-white/90">
+                      {selectedProduct?.title} {selectedProduct?.subtitle} – {selectedProduct?.price} € inkl. MwSt.
+                    </p>
+                  </div>
+
+                  {/* Form */}
+                  <form onSubmit={handleSubmit} className="p-6 space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="Max Mustermann"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        E-Mail *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="max@beispiel.de"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Telefon
+                      </label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="0177 1234567"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Adresse der Immobilie *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.address}
+                        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="Musterstraße 1, 54411 Hermeskeil"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Nachricht (optional)
+                      </label>
+                      <textarea
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={3}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="Haben Sie weitere Fragen oder Anmerkungen?"
+                      />
+                    </div>
+
+                    {submitStatus === 'error' && (
+                      <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg">
+                        <AlertCircle className="h-5 w-5" />
+                        <span>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</span>
+                      </div>
+                    )}
+
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? 'Wird gesendet...' : 'Anfrage absenden'}
+                      </button>
+                    </div>
+
+                    <p className="text-xs text-gray-500 text-center">
+                      Mit dem Absenden stimmen Sie unserer{' '}
+                      <Link href="/datenschutz" className="text-primary-600 hover:underline">
+                        Datenschutzerklärung
+                      </Link>{' '}
+                      zu.
+                    </p>
+                  </form>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -215,10 +366,10 @@ export default function EnergieausweisPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <h2 className="section-title mb-6 text-center" data-aos="fade-up">
-              Welche Informationen benötigen Sie zur Erstellung des Online-Energieausweises?
+              Welche Informationen benötigen Sie zur Erstellung?
             </h2>
             <p className="text-gray-600 text-center mb-8" data-aos="fade-up" data-aos-delay="100">
-              Je nach Art des Online-Energieausweises müssen spezifische Angaben zu Ihrer Immobilie gemacht werden. Nach Ihrer Bestellung senden wir Ihnen einen entsprechenden Fragebogen zu.
+              Je nach Art des Energieausweises werden unterschiedliche Angaben benötigt. Nach Ihrer Bestellung senden wir Ihnen einen entsprechenden Fragebogen zu.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
               <div className="bg-white p-6 rounded-xl shadow-md">
@@ -328,139 +479,6 @@ export default function EnergieausweisPage() {
           </Link>
         </div>
       </section>
-
-      {/* Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto" data-aos="zoom-in">
-            <div className="p-6 border-b border-gray-200 flex items-center justify-between">
-              <div>
-                <h3 className="text-xl font-bold text-gray-900">Energieausweis anfragen</h3>
-                <p className="text-gray-600 text-sm">
-                  {energieausweisTypes.find(t => t.id === selectedType)?.title}{' '}
-                  {energieausweisTypes.find(t => t.id === selectedType)?.subtitle} –{' '}
-                  {energieausweisTypes.find(t => t.id === selectedType)?.price} € inkl. MwSt.
-                </p>
-              </div>
-              <button
-                onClick={() => setShowModal(false)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-              >
-                <X className="h-5 w-5 text-gray-500" />
-              </button>
-            </div>
-
-            <div className="p-6">
-              {submitStatus === 'success' ? (
-                <div className="text-center py-8">
-                  <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Anfrage erfolgreich gesendet!</h4>
-                  <p className="text-gray-600 mb-6">
-                    Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.
-                  </p>
-                  <button
-                    onClick={() => setShowModal(false)}
-                    className="btn-primary"
-                  >
-                    Schließen
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="Max Mustermann"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      E-Mail *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="max@beispiel.de"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="0177 1234567"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Adresse der Immobilie *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.address}
-                      onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="Musterstraße 1, 54411 Hermeskeil"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Nachricht (optional)
-                    </label>
-                    <textarea
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="Haben Sie weitere Fragen oder Anmerkungen?"
-                    />
-                  </div>
-
-                  {submitStatus === 'error' && (
-                    <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg">
-                      <AlertCircle className="h-5 w-5" />
-                      <span>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</span>
-                    </div>
-                  )}
-
-                  <div className="pt-4">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? 'Wird gesendet...' : 'Anfrage absenden'}
-                    </button>
-                  </div>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    Mit dem Absenden stimmen Sie unserer{' '}
-                    <Link href="/datenschutz" className="text-primary-600 hover:underline">
-                      Datenschutzerklärung
-                    </Link>{' '}
-                    zu.
-                  </p>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
