@@ -30,6 +30,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'scontent-*.cdninstagram.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.onoffice.de',
+      },
     ],
     // Optimize image loading
     formats: ['image/avif', 'image/webp'],

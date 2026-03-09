@@ -97,7 +97,7 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
           <span className="text-sm">{property.ort || property.kurz_adresse || 'Standort auf Anfrage'}</span>
         </div>
 
-        {property.beschreibung && (
+        {property.beschreibung && property.beschreibung.trim() !== '' && property.beschreibung.trim() !== '00' && (
           <p className="text-wuestennacht-light text-sm mb-4 line-clamp-2">
             {property.beschreibung}
           </p>

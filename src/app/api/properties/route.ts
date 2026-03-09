@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { fetchEstates, isOnOfficeConfigured, OnOfficeProperty } from '@/lib/onoffice'
+import { fetchEstates, fetchEstateImages, isOnOfficeConfigured, OnOfficeProperty } from '@/lib/onoffice'
 import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
 import { properties as staticProperties, Property } from '@/data/properties'
 
@@ -123,7 +123,24 @@ export async function GET(request: NextRequest) {
       // Only return onOffice data if we actually got properties
       // Otherwise fall through to Airtable fallback
       if (onOfficeProps.length > 0) {
-        const properties = onOfficeProps.map(normalizeOnOfficeProperty)
+        // Fetch images for all properties in parallel
+        const propertiesWithImages = await Promise.all(
+          onOfficeProps.map(async (prop) => {
+            try {
+              const images = await fetchEstateImages(prop.id)
+              return {
+                ...prop,
+                bilder: images.length > 0 ? images : prop.bilder,
+                titelbild: images[0] || prop.titelbild,
+              }
+            } catch (error) {
+              console.error(`Failed to fetch images for estate ${prop.id}:`, error)
+              return prop
+            }
+          })
+        )
+
+        const properties = propertiesWithImages.map(normalizeOnOfficeProperty)
         return NextResponse.json({
           properties,
           count: properties.length,
