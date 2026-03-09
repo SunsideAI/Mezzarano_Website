@@ -441,6 +441,10 @@ export interface OnOfficeProperty {
   objekttyp?: string             // Einfamilienhaus, Mehrfamilienhaus, etc.
   status?: number                // 1=Aktiv, 2=Inaktiv, 0=Archiviert
 
+  // Homepage Status
+  homepage_status?: string              // ind_2910_Feld_ObjKategorie194 (ind_Schl_5603 = Online)
+  online_vermarktungsstatus?: string    // WI-Homepage Status (mw_website_online = Online)
+
   // Pricing
   kaufpreis?: number
   kaltmiete?: number
@@ -686,17 +690,20 @@ export function getBefeuerungLabel(befeuerung?: string): string {
   return BEFEUERUNG_LABELS[befeuerung.toLowerCase()] || befeuerung
 }
 
-// Fields to request from onOffice API (conservative list of standard fields)
+// Fields to request from onOffice API
 const ESTATE_FIELDS = [
   // Core identifiers
   'Id', 'objektnr_extern', 'objektnr_intern',
   // Titles & Descriptions
-  'objekttitel', 'objektbeschreibung', 'lage', 'sonstige_angaben',
+  'objekttitel', 'objektbeschreibung', 'lage', 'sonstige_angaben', 'ausstatt_beschr',
   // Location
   'strasse', 'hausnummer', 'plz', 'ort', 'land', 'regionaler_zusatz', 'bundesland',
   'breitengrad', 'laengengrad',
   // Classification
   'nutzungsart', 'objektart', 'vermarktungsart', 'objekttyp', 'status',
+  // Homepage Status - beide Felder einbinden
+  'ind_2910_Feld_ObjKategorie194',  // Homepage Status (ind_Schl_5603 = Online)
+  'online_vermarktungsstatus',       // WI-Homepage Status (mw_website_online)
   // Pricing
   'kaufpreis', 'kaltmiete', 'warmmiete', 'nebenkosten', 'heizkosten', 'kaution',
   'aussen_courtage', 'courtage_hinweis', 'innen_courtage',
@@ -709,16 +716,23 @@ const ESTATE_FIELDS = [
   'anzahl_balkone', 'anzahl_terrassen',
   // Structure
   'etage', 'anzahl_etagen', 'etagenzahl',
-  // Parking
-  'anzahl_garagen', 'stellplatz',
+  // Parking - FIX: war 'stellplatz', jetzt korrekt
+  'anzahl_garagen', 'anzahl_stellplaetze', 'anzahl_carport',
   // Building
-  'baujahr', 'zustand', 'objektzustand',
+  'baujahr', 'zustand', 'objektzustand', 'ausstattungsqualitaet',
   // Energy
   'heizungsart', 'befeuerung', 'energieausweistyp',
-  'endenergiebedarf', 'energieeffizienzklasse', 'primaerenergietraeger',
-  // Features
-  'keller', 'unterkellert', 'fahrstuhl',
-  'einbaukueche', 'balkon', 'terrasse', 'garten',
+  'endenergiebedarf', 'energieverbrauchskennwert', 'energieeffizienzklasse', 'primaerenergietraeger', 'energyClass',
+  // Features - alle Boolean-Felder
+  'keller', 'unterkellert', 'fahrstuhl', 'dachboden',
+  'rollstuhlgerecht', 'tiefgarage', 'swimmingpool', 'sauna', 'wintergarten',
+  'gaesteWc', 'kamin', 'klimatisiert',
+  'gartennutzung', 'einbaukueche', 'moebiliert',
+  'seniorengerecht', 'barrierefrei', 'denkmalschutzobjekt',
+  'haustiere', 'als_ferien', 'gewerbliche_nutzung',
+  'balkon', 'terrasse', 'garten',
+  // Availability
+  'verfuegbar_ab',
   // Dates
   'erstellt_am', 'geaendert_am',
 ]
@@ -764,7 +778,7 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     objekttitel: str('objekttitel'),
     objektbeschreibung: str('objektbeschreibung'),
     lage: str('lage'),
-    ausstattung_beschr: str('sonstige_angaben'),
+    ausstattung_beschr: str('ausstatt_beschr') || str('sonstige_angaben'),
 
     strasse: str('strasse'),
     hausnummer: str('hausnummer'),
@@ -784,6 +798,10 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     vermarktungsart: vermarktungsart,
     objekttyp: str('objekttyp'),
     status: num('status'),
+
+    // Homepage Status
+    homepage_status: str('ind_2910_Feld_ObjKategorie194'),
+    online_vermarktungsstatus: str('online_vermarktungsstatus'),
 
     kaufpreis: num('kaufpreis'),
     kaltmiete: num('kaltmiete'),
@@ -834,7 +852,7 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     wohnungsnr: str('wohnungsnr'),
 
     anzahl_garagen: num('anzahl_garagen'),
-    anzahl_stellplaetze: num('stellplatz'),
+    anzahl_stellplaetze: num('anzahl_stellplaetze'),
     anzahl_carport: num('anzahl_carport'),
     stellplatzmiete: num('stellplatzmiete'),
     stellplatzpreis: num('stellplatzpreis'),
@@ -866,20 +884,21 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     dachboden: bool('dachboden'),
     fahrstuhl: bool('fahrstuhl'),
     rollstuhlgerecht: bool('rollstuhlgerecht'),
+    tiefgarage: bool('tiefgarage'),
     swimmingpool: bool('swimmingpool'),
     sauna: bool('sauna'),
     wintergarten: bool('wintergarten'),
-    gaestewc: bool('gaestewc'),
+    gaestewc: bool('gaesteWc') || bool('gaestewc'),
     kamin: bool('kamin'),
-    klimaanlage: bool('klimaanlage'),
+    klimaanlage: bool('klimatisiert') || bool('klimaanlage'),
     gartennutzung: bool('gartennutzung'),
     einbaukueche: bool('einbaukueche'),
     moebiliert: bool('moebiliert'),
     seniorengerecht: bool('seniorengerecht'),
     barrierefrei: bool('barrierefrei'),
-    denkmalschutzobjekt: bool('denkmalschutzobjekt'),
+    denkmalschutzobjekt: bool('denkmalschutzobjekt') || bool('denkmalgeschuetzt'),
     haustiere: bool('haustiere'),
-    als_ferienwohnung: bool('als_ferienwohnung'),
+    als_ferienwohnung: bool('als_ferien') || bool('als_ferienwohnung'),
     gewerbliche_nutzung: bool('gewerbliche_nutzung'),
 
     verfuegbar_ab: str('verfuegbar_ab'),
