@@ -1,6 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { fetchEstates, isOnOfficeConfigured, OnOfficeProperty } from '@/lib/onoffice'
 import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
+import { properties as staticProperties, Property } from '@/data/properties'
+
+// Convert static property to AirtableProperty format
+function normalizeStaticProperty(prop: Property): AirtableProperty {
+  return {
+    id: prop.id,
+    titel: prop.title,
+    beschreibung: prop.description,
+    kategorie: prop.type === 'kauf' ? 'Kauf' : 'Miete',
+    preis: prop.price,
+    ort: prop.location,
+    kurz_adresse: prop.address,
+    adresse_komplett: prop.address,
+    wohnflaeche: prop.area,
+    zimmer: prop.bedrooms,
+    badezimmer: prop.bathrooms,
+    baujahr: prop.yearBuilt,
+    cover: prop.images[0],
+    bilder: prop.images,
+    objekt_typ: prop.category,
+    rs_typ: prop.category.toUpperCase(),
+    marketing_typ: prop.type === 'kauf' ? 'BUY' : 'RENT',
+    status: 'Verfügbar',
+  }
+}
 
 // Convert onOffice property to a format compatible with existing components
 function normalizeOnOfficeProperty(prop: OnOfficeProperty): AirtableProperty {
@@ -74,15 +99,9 @@ export async function GET(request: NextRequest) {
     (process.env.AIRTABLE_API_KEY || process.env.AT_TOKEN)
   )
 
+  // Log data source status
   if (!hasOnOffice && !hasAirtable) {
-    return NextResponse.json({
-      error: 'No property data source configured',
-      properties: [],
-      debug: {
-        hasOnOffice,
-        hasAirtable,
-      }
-    })
+    console.log('No external data sources configured, will use static fallback')
   }
 
   // Try onOffice first
@@ -100,15 +119,19 @@ export async function GET(request: NextRequest) {
 
       const { properties: onOfficeProps, total } = await fetchEstates(filters)
 
-      // Normalize to AirtableProperty format for compatibility
-      const properties = onOfficeProps.map(normalizeOnOfficeProperty)
+      // Only return onOffice data if we actually got properties
+      // Otherwise fall through to Airtable fallback
+      if (onOfficeProps.length > 0) {
+        const properties = onOfficeProps.map(normalizeOnOfficeProperty)
+        return NextResponse.json({
+          properties,
+          count: properties.length,
+          total,
+          source: 'onoffice'
+        })
+      }
 
-      return NextResponse.json({
-        properties,
-        count: properties.length,
-        total,
-        source: 'onoffice'
-      })
+      console.log('onOffice returned 0 properties, trying Airtable fallback...')
     } catch (error) {
       console.error('onOffice API Error:', error)
       // Fall through to Airtable if onOffice fails
@@ -144,8 +167,12 @@ export async function GET(request: NextRequest) {
     }
   }
 
+  // Ultimate fallback: static properties
+  console.log('Using static properties as fallback...')
+  const normalizedStatic = staticProperties.map(normalizeStaticProperty)
   return NextResponse.json({
-    error: 'No data source available',
-    properties: []
-  }, { status: 500 })
+    properties: normalizedStatic,
+    count: normalizedStatic.length,
+    source: 'static-fallback'
+  })
 }
