@@ -98,9 +98,11 @@ export default function VoiceflowChat() {
         }, 1000)
 
         // Chat nur 1x pro Session automatisch öffnen (nach 5 Sekunden)
+        // Nicht auf Mobile (< 768px) automatisch öffnen
         const hasOpenedThisSession = sessionStorage.getItem('chatOpenedOnce')
+        const isMobile = window.innerWidth < 768
 
-        if (!hasOpenedThisSession) {
+        if (!hasOpenedThisSession && !isMobile) {
           setTimeout(() => {
             if (window.voiceflow?.chat) {
               window.voiceflow.chat.open()
