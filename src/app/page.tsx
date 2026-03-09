@@ -7,7 +7,8 @@ import { getFeaturedProperties } from '@/data/properties'
 import HeroSlider from '@/components/HeroSlider'
 import RegionsGrid from '@/components/RegionsGrid'
 import InstagramFeed from '@/components/InstagramFeed'
-import { fetchProperties, AirtableProperty } from '@/lib/airtable'
+import { fetchEstates, isOnOfficeConfigured, OnOfficeProperty } from '@/lib/onoffice'
+import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
 
 // Force dynamic rendering to fetch fresh Airtable data
 export const dynamic = 'force-dynamic'
@@ -64,17 +65,82 @@ const testimonials = [
   },
 ]
 
+// Helper to convert OnOfficeProperty to AirtableProperty format for the card component
+function normalizeOnOfficeProperty(prop: OnOfficeProperty): AirtableProperty {
+  const isRent = prop.vermarktungsart === 'miete'
+  return {
+    id: String(prop.id),
+    expose_id: prop.expose_id,
+    titel: prop.titel,
+    beschreibung: prop.objektbeschreibung,
+    kurz_adresse: [prop.strasse, prop.hausnummer].filter(Boolean).join(' ') || undefined,
+    adresse_komplett: [prop.strasse, prop.hausnummer, prop.plz, prop.ort].filter(Boolean).join(', ') || undefined,
+    strasse: prop.strasse,
+    haus_nummer: prop.hausnummer,
+    plz: prop.plz,
+    ort: prop.ort,
+    region: prop.region,
+    kategorie: isRent ? 'Miete' : 'Kauf',
+    unterkategorie: prop.objekttyp,
+    objekt_typ: prop.nutzungsart,
+    rs_typ: prop.objektart?.toUpperCase(),
+    marketing_typ: isRent ? 'RENT' : 'BUY',
+    status: prop.status === 1 ? 'Verfügbar' : 'Archiviert',
+    preis: isRent ? prop.kaltmiete : prop.kaufpreis,
+    wohnflaeche: prop.wohnflaeche,
+    grundstueck: prop.grundstuecksflaeche,
+    zimmer: prop.anzahl_zimmer,
+    schlafzimmer: prop.anzahl_schlafzimmer,
+    badezimmer: prop.anzahl_badezimmer,
+    balkone: prop.anzahl_balkone,
+    terrassen: prop.anzahl_terrassen,
+    etagen: prop.anzahl_etagen,
+    garagen: prop.anzahl_garagen,
+    stellplaetze: prop.anzahl_stellplaetze,
+    baujahr: prop.baujahr,
+    heizung: prop.heizungsart,
+    objektbeschreibung: prop.objektbeschreibung,
+    lage: prop.lage,
+    ausstattung: prop.ausstattung_beschr,
+    energieausweis: prop.energieausweistyp,
+    energieeffizienzklasse: prop.energieeffizienzklasse,
+    bilder: prop.bilder,
+    cover: prop.titelbild,
+  }
+}
+
 export default async function HomePage() {
-  // Fetch from Airtable, fall back to static data
-  let airtableProperties: AirtableProperty[] = []
-  try {
-    airtableProperties = await fetchProperties({ show_all: true })
-  } catch (error) {
-    console.error('Failed to fetch Airtable properties:', error)
+  // Fetch from onOffice first, fall back to Airtable, then static data
+  let properties: AirtableProperty[] = []
+  let dataSource = 'static'
+
+  // Try onOffice first
+  if (isOnOfficeConfigured()) {
+    try {
+      const { properties: onOfficeProps } = await fetchEstates()
+      if (onOfficeProps.length > 0) {
+        properties = onOfficeProps.map(normalizeOnOfficeProperty)
+        dataSource = 'onoffice'
+      }
+    } catch (error) {
+      console.error('Failed to fetch onOffice properties:', error)
+    }
+  }
+
+  // Fallback to Airtable
+  if (properties.length === 0) {
+    try {
+      properties = await fetchAirtableProperties({ show_all: true })
+      if (properties.length > 0) {
+        dataSource = 'airtable'
+      }
+    } catch (error) {
+      console.error('Failed to fetch Airtable properties:', error)
+    }
   }
 
   const staticFeaturedProperties = getFeaturedProperties()
-  const hasAirtableData = airtableProperties.length > 0
+  const hasLiveData = properties.length > 0
 
   return (
     <>
@@ -122,7 +188,7 @@ export default async function HomePage() {
             <div>
               <h2 className="section-title mb-2">Aktuelle Immobilien</h2>
               <p className="text-secondary-600">
-                {hasAirtableData ? 'Live aus unserem Angebot' : 'Entdecken Sie unsere Top-Angebote'}
+                {hasLiveData ? 'Live aus unserem Angebot' : 'Entdecken Sie unsere Top-Angebote'}
               </p>
             </div>
             <Link href="/immobilien" className="btn-secondary group ripple">
@@ -132,8 +198,8 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {hasAirtableData ? (
-              airtableProperties.slice(0, 4).map((property, index) => (
+            {hasLiveData ? (
+              properties.slice(0, 4).map((property, index) => (
                 <div key={property.id} data-aos="fade-up" data-aos-delay={index * 100}>
                   <AirtablePropertyCard property={property} priority={index < 2} />
                 </div>

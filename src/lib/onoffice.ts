@@ -403,4 +403,766 @@ export function isOnOfficeConfigured(): boolean {
   return !!(process.env.ONOFFICE_TOKEN && process.env.ONOFFICE_SECRET)
 }
 
+// ─── Estate/Property Types ──────────────────────────────────────────────────
+
+export interface OnOfficeProperty {
+  // Core identifiers
+  id: number
+  expose_id: string
+  objektnr_extern?: string
+  objektnr_intern?: string
+
+  // Title & Description
+  titel: string
+  objekttitel?: string
+  objektbeschreibung?: string
+  lage?: string
+  ausstattung_beschr?: string
+  spiegel_bemerkung?: string
+
+  // Location
+  strasse?: string
+  hausnummer?: string
+  plz?: string
+  ort?: string
+  land?: string
+  region?: string
+  bundesland?: string
+  flur?: string
+  flurstk?: string
+  gemarkung?: string
+  breitengrad?: number
+  laengengrad?: number
+
+  // Classification
+  nutzungsart?: string           // Wohnen, Gewerbe, etc.
+  objektart?: string             // haus, wohnung, etc.
+  vermarktungsart?: string       // kauf, miete
+  objekttyp?: string             // Einfamilienhaus, Mehrfamilienhaus, etc.
+  status?: number                // 1=Aktiv, 2=Inaktiv, 0=Archiviert
+
+  // Pricing
+  kaufpreis?: number
+  kaltmiete?: number
+  warmmiete?: number
+  nebenkosten?: number
+  heizkosten?: number
+  kaution?: string
+  courtage?: string
+  courtage_hinweis?: string
+  provisionspflichtig?: boolean
+  provision?: string
+  mietpreis_pro_qm?: number
+  kaufpreis_pro_qm?: number
+  nettokaltmiete?: number
+  pauschalmiete?: number
+  erbpacht?: number
+  hausgeld?: number
+  abstand?: number
+  preis_zeitraum_von?: string
+  preis_zeitraum_bis?: string
+  mwst_satz?: number
+  mwst_gesamt?: number
+  freitext_preis?: string
+
+  // Areas & Sizes
+  wohnflaeche?: number
+  nutzflaeche?: number
+  gesamtflaeche?: number
+  grundstuecksflaeche?: number
+  verkaufsflaeche?: number
+  lagerflaeche?: number
+  bueroflaeche?: number
+  gastroflaeche?: number
+  sonstflaeche?: number
+  balkon_terrasse_flaeche?: number
+  fensterfront?: number
+  verwaltungsflaeche?: number
+  teilbar_ab?: number
+  gartenflaeche?: number
+  kellerflaeche?: number
+  dachbodenflaeche?: number
+
+  // Rooms & Structure
+  anzahl_zimmer?: number
+  anzahl_schlafzimmer?: number
+  anzahl_badezimmer?: number
+  anzahl_sep_wc?: number
+  anzahl_balkone?: number
+  anzahl_terrassen?: number
+  anzahl_loggien?: number
+  anzahl_wohneinheiten?: number
+  anzahl_gewerbeeinheiten?: number
+  etage?: number
+  anzahl_etagen?: number
+  etagenzahl?: number
+  wohnungsnr?: string
+
+  // Parking
+  anzahl_garagen?: number
+  anzahl_stellplaetze?: number
+  anzahl_carport?: number
+  stellplatzmiete?: number
+  stellplatzpreis?: number
+
+  // Building details
+  baujahr?: number
+  letzte_modernisierung?: string
+  zustand?: string
+  alter?: string
+  bebaubar_mit?: string
+  bauart?: string
+  ausbaustufe?: string
+  dachform?: string
+  bodenbelag?: string
+  erschliessung?: string
+  erschliessung_umfang?: string
+  grundstueckzustand?: string
+
+  // Heating & Energy
+  heizungsart?: string
+  befeuerung?: string
+  energieausweis?: string
+  energieausweistyp?: string
+  energieverbrauchskennwert?: string
+  energieeffizienzklasse?: string
+  endenergiebedarf?: string
+  primaerenergietraeger?: string
+  stromverbrauch?: string
+  waermelieferung?: string
+  baujahr_heizung?: number
+  energiepass_gueltig_bis?: string
+
+  // Features (booleans)
+  keller?: boolean
+  dachboden?: boolean
+  fahrstuhl?: boolean
+  rollstuhlgerecht?: boolean
+  tiefgarage?: boolean
+  swimmingpool?: boolean
+  sauna?: boolean
+  wintergarten?: boolean
+  gaestewc?: boolean
+  kamin?: boolean
+  klimaanlage?: boolean
+  gartennutzung?: boolean
+  einbaukueche?: boolean
+  moebiliert?: boolean
+  seniorengerecht?: boolean
+  barrierefrei?: boolean
+  denkmalschutzobjekt?: boolean
+  haustiere?: boolean
+  als_ferienwohnung?: boolean
+  gewerbliche_nutzung?: boolean
+
+  // Additional info
+  verfuegbar_ab?: string
+  max_mietdauer?: string
+  min_mietdauer?: string
+  objektzustand?: string
+  qualitaet_ausstattung?: string
+  anzahl_betten?: number
+  vermietbare_flaeche?: number
+  kueche?: string
+  bad?: string
+  boden?: string
+  verkehrswert?: number
+  mieteinnahmen_ist?: number
+  mieteinnahmen_soll?: number
+  rendite?: number
+  x_fache?: number
+
+  // Dates
+  stand_vom?: string
+  aktiv_bis?: string
+  angelegt_am?: string
+  geaendert_am?: string
+
+  // Images (will be fetched separately)
+  bilder: string[]
+  titelbild?: string
+}
+
+// German labels for property types
+const OBJEKTART_LABELS: Record<string, string> = {
+  'haus': 'Haus',
+  'wohnung': 'Wohnung',
+  'grundstueck': 'Grundstück',
+  'buero_praxen': 'Büro/Praxen',
+  'einzelhandel': 'Einzelhandel',
+  'gastgewerbe': 'Gastronomie/Hotel',
+  'hallen_lager_prod': 'Halle/Lager/Produktion',
+  'land_forstwirtschaft': 'Land-/Forstwirtschaft',
+  'parken': 'Parken',
+  'sonstige': 'Sonstige',
+  'freizeitimmobilie_gewerblich': 'Freizeitimmobilie',
+  'zinshaus_renditeobjekt': 'Zinshaus/Renditeobjekt',
+}
+
+const OBJEKTTYP_LABELS: Record<string, string> = {
+  'einfamilienhaus': 'Einfamilienhaus',
+  'mehrfamilienhaus': 'Mehrfamilienhaus',
+  'doppelhaushaelfte': 'Doppelhaushälfte',
+  'reihenhaus': 'Reihenhaus',
+  'reihenmittelhaus': 'Reihenmittelhaus',
+  'reiheneckhaus': 'Reiheneckhaus',
+  'reihenendhaus': 'Reihenendhaus',
+  'zweifamilienhaus': 'Zweifamilienhaus',
+  'villa': 'Villa',
+  'stadthaus': 'Stadthaus',
+  'bungalow': 'Bungalow',
+  'landhaus': 'Landhaus',
+  'bauernhaus': 'Bauernhaus',
+  'etagenwohnung': 'Etagenwohnung',
+  'erdgeschosswohnung': 'Erdgeschosswohnung',
+  'dachgeschoss': 'Dachgeschosswohnung',
+  'maisonette': 'Maisonette',
+  'loft': 'Loft/Studio',
+  'penthouse': 'Penthouse',
+  'apartment': 'Apartment',
+  'souterrain': 'Souterrain',
+}
+
+const ZUSTAND_LABELS: Record<string, string> = {
+  'erstbezug': 'Erstbezug',
+  'neuwertig': 'Neuwertig',
+  'modernisiert': 'Modernisiert',
+  'gepflegt': 'Gepflegt',
+  'renovierungsbeduerftig': 'Renovierungsbedürftig',
+  'sanierungsbeduerftig': 'Sanierungsbedürftig',
+  'abrissobjekt': 'Abrissreif',
+  'nach_vereinbarung': 'Nach Vereinbarung',
+}
+
+const HEIZUNGSART_LABELS: Record<string, string> = {
+  'zentralheizung': 'Zentralheizung',
+  'etagenheizung': 'Etagenheizung',
+  'ofenheizung': 'Ofenheizung',
+  'fernwaerme': 'Fernwärme',
+  'fussbodenheizung': 'Fußbodenheizung',
+  'blockheizkraftwerk': 'Blockheizkraftwerk',
+  'waermepumpe': 'Wärmepumpe',
+  'solar': 'Solar',
+  'pellets': 'Pelletheizung',
+}
+
+const BEFEUERUNG_LABELS: Record<string, string> = {
+  'oel': 'Öl',
+  'gas': 'Gas',
+  'elektro': 'Elektro',
+  'alternativ': 'Alternativ',
+  'solar': 'Solar',
+  'erdwaerme': 'Erdwärme',
+  'luftwaerme': 'Luftwärmepumpe',
+  'fernwaerme': 'Fernwärme',
+  'pellets': 'Pellets',
+  'kohle': 'Kohle',
+  'holz': 'Holz',
+  'fluessiggas': 'Flüssiggas',
+}
+
+export function getObjektartLabel(objektart?: string): string {
+  if (!objektart) return 'Immobilie'
+  return OBJEKTART_LABELS[objektart.toLowerCase()] || objektart
+}
+
+export function getObjekttypLabel(objekttyp?: string): string {
+  if (!objekttyp) return ''
+  return OBJEKTTYP_LABELS[objekttyp.toLowerCase()] || objekttyp
+}
+
+export function getZustandLabel(zustand?: string): string {
+  if (!zustand) return ''
+  return ZUSTAND_LABELS[zustand.toLowerCase()] || zustand
+}
+
+export function getHeizungsartLabel(heizungsart?: string): string {
+  if (!heizungsart) return ''
+  return HEIZUNGSART_LABELS[heizungsart.toLowerCase()] || heizungsart
+}
+
+export function getBefeuerungLabel(befeuerung?: string): string {
+  if (!befeuerung) return ''
+  return BEFEUERUNG_LABELS[befeuerung.toLowerCase()] || befeuerung
+}
+
+// Fields to request from onOffice API
+const ESTATE_FIELDS = [
+  // Core
+  'Id', 'objektnr_extern', 'objektnr_intern',
+  // Titles & Descriptions
+  'objekttitel', 'objektbeschreibung', 'lage', 'ausstattung_beschr', 'sonstige_angaben',
+  // Location
+  'strasse', 'hausnummer', 'plz', 'ort', 'land', 'regionaler_zusatz', 'bundesland',
+  'breitengrad', 'laengengrad', 'flur', 'flurstk', 'gemarkung',
+  // Classification
+  'nutzungsart', 'objektart', 'vermarktungsart', 'objekttyp', 'status',
+  // Pricing
+  'kaufpreis', 'kaltmiete', 'warmmiete', 'nebenkosten', 'heizkosten', 'kaution',
+  'aussen_courtage', 'courtage_hinweis', 'provisionspflichtig', 'innen_courtage',
+  'mietpreis_pro_qm', 'kaufpreis_pro_qm', 'nettokaltmiete', 'pauschalmiete',
+  'erbpacht', 'hausgeld', 'abstand', 'freitext_preis', 'mwst_satz', 'mwst_gesamt',
+  // Areas
+  'wohnflaeche', 'nutzflaeche', 'gesamtflaeche', 'grundstuecksflaeche',
+  'verkaufsflaeche', 'lagerflaeche', 'bueroflaeche', 'gastroflaeche',
+  'balkon_terrasse_flaeche', 'gartenflaeche', 'kellerflaeche', 'teilbar_ab',
+  // Rooms
+  'anzahl_zimmer', 'anzahl_schlafzimmer', 'anzahl_badezimmer', 'anzahl_sep_wc',
+  'anzahl_balkone', 'anzahl_terrassen', 'anzahl_loggien',
+  'anzahl_wohn_schlafzimmer', 'anzahl_wohneinheiten', 'anzahl_gewerbeeinheiten',
+  // Structure
+  'etage', 'anzahl_etagen', 'etagenzahl', 'wohnungsnr',
+  // Parking
+  'anzahl_garagen', 'stellplatz', 'anzahl_carport', 'stellplatzmiete', 'stellplatzpreis',
+  // Building
+  'baujahr', 'letzte_modernisierung', 'zustand', 'alter', 'bebaubar_mit',
+  'bauart', 'ausbaustufe', 'dachform', 'bodenbelag', 'erschliessung',
+  // Energy
+  'heizungsart', 'befeuerung', 'energieausweistyp', 'energieverbrauchskennwert',
+  'endenergiebedarf', 'energieeffizienzklasse', 'primaerenergietraeger',
+  'baujahr_heizung', 'energiepass_gueltig_bis', 'stromverbrauch', 'waermelieferung',
+  // Features
+  'keller', 'unterkellert', 'dachboden', 'fahrstuhl', 'rollstuhlgerecht',
+  'swimmingpool', 'sauna', 'wintergarten', 'gaestewc', 'kamin',
+  'klimaanlage', 'gartennutzung', 'einbaukueche', 'moebiliert',
+  'seniorengerecht', 'barrierefrei', 'denkmalschutzobjekt', 'haustiere',
+  'als_ferienwohnung', 'gewerbliche_nutzung',
+  // Additional
+  'verfuegbar_ab', 'max_mietdauer', 'min_mietdauer', 'objektzustand',
+  'ausstattung', 'anzahl_betten', 'kueche', 'bad', 'boden',
+  'verkehrswert', 'mieteinnahmen_ist', 'mieteinnahmen_soll', 'rendite', 'x_fache',
+  // Dates
+  'stand_vom', 'aktiv_bis', 'erstellt_am', 'geaendert_am',
+]
+
+// Transform onOffice API record to our Property type
+function transformEstateRecord(record: { id: number; elements: Record<string, unknown> }): OnOfficeProperty {
+  const e = record.elements
+
+  // Helper to get string value
+  const str = (key: string): string | undefined => {
+    const val = e[key]
+    return val !== null && val !== undefined && val !== '' ? String(val) : undefined
+  }
+
+  // Helper to get number value
+  const num = (key: string): number | undefined => {
+    const val = e[key]
+    if (val === null || val === undefined || val === '') return undefined
+    const n = typeof val === 'number' ? val : parseFloat(String(val).replace(',', '.'))
+    return isNaN(n) ? undefined : n
+  }
+
+  // Helper to get boolean value
+  const bool = (key: string): boolean | undefined => {
+    const val = e[key]
+    if (val === null || val === undefined) return undefined
+    if (typeof val === 'boolean') return val
+    if (typeof val === 'string') return val.toLowerCase() === 'ja' || val === '1' || val.toLowerCase() === 'true'
+    if (typeof val === 'number') return val === 1
+    return undefined
+  }
+
+  const vermarktungsart = str('vermarktungsart')?.toLowerCase()
+  const isRent = vermarktungsart === 'miete'
+
+  return {
+    id: record.id,
+    expose_id: str('objektnr_extern') || String(record.id),
+    objektnr_extern: str('objektnr_extern'),
+    objektnr_intern: str('objektnr_intern'),
+
+    titel: str('objekttitel') || 'Immobilie',
+    objekttitel: str('objekttitel'),
+    objektbeschreibung: str('objektbeschreibung'),
+    lage: str('lage'),
+    ausstattung_beschr: str('ausstattung_beschr') || str('sonstige_angaben'),
+
+    strasse: str('strasse'),
+    hausnummer: str('hausnummer'),
+    plz: str('plz'),
+    ort: str('ort'),
+    land: str('land'),
+    region: str('regionaler_zusatz'),
+    bundesland: str('bundesland'),
+    breitengrad: num('breitengrad'),
+    laengengrad: num('laengengrad'),
+    flur: str('flur'),
+    flurstk: str('flurstk'),
+    gemarkung: str('gemarkung'),
+
+    nutzungsart: str('nutzungsart'),
+    objektart: str('objektart'),
+    vermarktungsart: vermarktungsart,
+    objekttyp: str('objekttyp'),
+    status: num('status'),
+
+    kaufpreis: num('kaufpreis'),
+    kaltmiete: num('kaltmiete'),
+    warmmiete: num('warmmiete'),
+    nebenkosten: num('nebenkosten'),
+    heizkosten: num('heizkosten'),
+    kaution: str('kaution'),
+    courtage: str('aussen_courtage'),
+    courtage_hinweis: str('courtage_hinweis'),
+    provisionspflichtig: bool('provisionspflichtig'),
+    provision: str('innen_courtage'),
+    mietpreis_pro_qm: num('mietpreis_pro_qm'),
+    kaufpreis_pro_qm: num('kaufpreis_pro_qm'),
+    nettokaltmiete: num('nettokaltmiete'),
+    pauschalmiete: num('pauschalmiete'),
+    erbpacht: num('erbpacht'),
+    hausgeld: num('hausgeld'),
+    abstand: num('abstand'),
+    freitext_preis: str('freitext_preis'),
+    mwst_satz: num('mwst_satz'),
+    mwst_gesamt: num('mwst_gesamt'),
+
+    wohnflaeche: num('wohnflaeche'),
+    nutzflaeche: num('nutzflaeche'),
+    gesamtflaeche: num('gesamtflaeche'),
+    grundstuecksflaeche: num('grundstuecksflaeche'),
+    verkaufsflaeche: num('verkaufsflaeche'),
+    lagerflaeche: num('lagerflaeche'),
+    bueroflaeche: num('bueroflaeche'),
+    gastroflaeche: num('gastroflaeche'),
+    balkon_terrasse_flaeche: num('balkon_terrasse_flaeche'),
+    gartenflaeche: num('gartenflaeche'),
+    kellerflaeche: num('kellerflaeche'),
+    teilbar_ab: num('teilbar_ab'),
+
+    anzahl_zimmer: num('anzahl_zimmer'),
+    anzahl_schlafzimmer: num('anzahl_schlafzimmer'),
+    anzahl_badezimmer: num('anzahl_badezimmer'),
+    anzahl_sep_wc: num('anzahl_sep_wc'),
+    anzahl_balkone: num('anzahl_balkone'),
+    anzahl_terrassen: num('anzahl_terrassen'),
+    anzahl_loggien: num('anzahl_loggien'),
+    anzahl_wohneinheiten: num('anzahl_wohneinheiten'),
+    anzahl_gewerbeeinheiten: num('anzahl_gewerbeeinheiten'),
+    etage: num('etage'),
+    anzahl_etagen: num('anzahl_etagen') || num('etagenzahl'),
+    etagenzahl: num('etagenzahl'),
+    wohnungsnr: str('wohnungsnr'),
+
+    anzahl_garagen: num('anzahl_garagen'),
+    anzahl_stellplaetze: num('stellplatz'),
+    anzahl_carport: num('anzahl_carport'),
+    stellplatzmiete: num('stellplatzmiete'),
+    stellplatzpreis: num('stellplatzpreis'),
+
+    baujahr: num('baujahr'),
+    letzte_modernisierung: str('letzte_modernisierung'),
+    zustand: str('zustand'),
+    alter: str('alter'),
+    bebaubar_mit: str('bebaubar_mit'),
+    bauart: str('bauart'),
+    ausbaustufe: str('ausbaustufe'),
+    dachform: str('dachform'),
+    bodenbelag: str('bodenbelag'),
+    erschliessung: str('erschliessung'),
+
+    heizungsart: str('heizungsart'),
+    befeuerung: str('befeuerung'),
+    energieausweistyp: str('energieausweistyp'),
+    energieverbrauchskennwert: str('energieverbrauchskennwert'),
+    endenergiebedarf: str('endenergiebedarf'),
+    energieeffizienzklasse: str('energieeffizienzklasse'),
+    primaerenergietraeger: str('primaerenergietraeger'),
+    baujahr_heizung: num('baujahr_heizung'),
+    energiepass_gueltig_bis: str('energiepass_gueltig_bis'),
+    stromverbrauch: str('stromverbrauch'),
+    waermelieferung: str('waermelieferung'),
+
+    keller: bool('keller') || bool('unterkellert'),
+    dachboden: bool('dachboden'),
+    fahrstuhl: bool('fahrstuhl'),
+    rollstuhlgerecht: bool('rollstuhlgerecht'),
+    swimmingpool: bool('swimmingpool'),
+    sauna: bool('sauna'),
+    wintergarten: bool('wintergarten'),
+    gaestewc: bool('gaestewc'),
+    kamin: bool('kamin'),
+    klimaanlage: bool('klimaanlage'),
+    gartennutzung: bool('gartennutzung'),
+    einbaukueche: bool('einbaukueche'),
+    moebiliert: bool('moebiliert'),
+    seniorengerecht: bool('seniorengerecht'),
+    barrierefrei: bool('barrierefrei'),
+    denkmalschutzobjekt: bool('denkmalschutzobjekt'),
+    haustiere: bool('haustiere'),
+    als_ferienwohnung: bool('als_ferienwohnung'),
+    gewerbliche_nutzung: bool('gewerbliche_nutzung'),
+
+    verfuegbar_ab: str('verfuegbar_ab'),
+    max_mietdauer: str('max_mietdauer'),
+    min_mietdauer: str('min_mietdauer'),
+    objektzustand: str('objektzustand'),
+    qualitaet_ausstattung: str('ausstattung'),
+    anzahl_betten: num('anzahl_betten'),
+    kueche: str('kueche'),
+    bad: str('bad'),
+    boden: str('boden'),
+    verkehrswert: num('verkehrswert'),
+    mieteinnahmen_ist: num('mieteinnahmen_ist'),
+    mieteinnahmen_soll: num('mieteinnahmen_soll'),
+    rendite: num('rendite'),
+    x_fache: num('x_fache'),
+
+    stand_vom: str('stand_vom'),
+    aktiv_bis: str('aktiv_bis'),
+    angelegt_am: str('erstellt_am'),
+    geaendert_am: str('geaendert_am'),
+
+    bilder: [],
+    titelbild: undefined,
+  }
+}
+
+// ─── Estate API Functions ───────────────────────────────────────────────────
+
+export interface EstateFilter {
+  vermarktungsart?: 'kauf' | 'miete'
+  objektart?: string
+  ort?: string
+  plz?: string
+  preis_max?: number
+  preis_min?: number
+  wohnflaeche_min?: number
+  zimmer_min?: number
+  status?: number  // 1=Active, 0=Archived
+}
+
+/**
+ * Fetch estates/properties from onOffice CRM
+ */
+export async function fetchEstates(filters?: EstateFilter, options?: { limit?: number; offset?: number }): Promise<{ properties: OnOfficeProperty[]; total: number }> {
+  try {
+    const client = createOnOfficeClient()
+    const limit = options?.limit || 100
+    const offset = options?.offset || 0
+
+    // Build filter object for onOffice
+    const filter: Record<string, Array<{ op: string; val: string | number }>> = {}
+
+    // Default: only active estates published to website
+    filter.status = [{ op: '=', val: 1 }]
+
+    if (filters?.vermarktungsart) {
+      filter.vermarktungsart = [{ op: '=', val: filters.vermarktungsart }]
+    }
+    if (filters?.objektart) {
+      filter.objektart = [{ op: '=', val: filters.objektart }]
+    }
+    if (filters?.ort) {
+      filter.ort = [{ op: 'like', val: `%${filters.ort}%` }]
+    }
+    if (filters?.plz) {
+      filter.plz = [{ op: '=', val: filters.plz }]
+    }
+    if (filters?.preis_max) {
+      // Filter on kaufpreis or kaltmiete depending on vermarktungsart
+      if (filters.vermarktungsart === 'miete') {
+        filter.kaltmiete = [{ op: '<=', val: filters.preis_max }]
+      } else {
+        filter.kaufpreis = [{ op: '<=', val: filters.preis_max }]
+      }
+    }
+    if (filters?.preis_min) {
+      if (filters.vermarktungsart === 'miete') {
+        filter.kaltmiete = [{ op: '>=', val: filters.preis_min }]
+      } else {
+        filter.kaufpreis = [{ op: '>=', val: filters.preis_min }]
+      }
+    }
+    if (filters?.wohnflaeche_min) {
+      filter.wohnflaeche = [{ op: '>=', val: filters.wohnflaeche_min }]
+    }
+    if (filters?.zimmer_min) {
+      filter.anzahl_zimmer = [{ op: '>=', val: filters.zimmer_min }]
+    }
+
+    const response = await client.request([
+      {
+        actionid: client.ACTION_ID.READ,
+        resourcetype: client.RESOURCE_TYPE.ESTATE,
+        identifier: 'fetch_estates',
+        parameters: {
+          data: ESTATE_FIELDS,
+          listlimit: limit,
+          listoffset: offset,
+          filter,
+          sortby: { geaendert_am: 'DESC' },
+        },
+      },
+    ])
+
+    const result = response.response.results[0]
+
+    if (result.status.errorcode !== 0) {
+      console.error('onOffice fetchEstates error:', result.status.message)
+      return { properties: [], total: 0 }
+    }
+
+    const total = result.data.meta.cntabsolute
+    const properties = result.data.records.map(transformEstateRecord)
+
+    return { properties, total }
+  } catch (error) {
+    console.error('onOffice fetchEstates error:', error)
+    return { properties: [], total: 0 }
+  }
+}
+
+/**
+ * Fetch a single estate by its ID
+ */
+export async function fetchEstateById(estateId: number): Promise<OnOfficeProperty | null> {
+  try {
+    const client = createOnOfficeClient()
+
+    const response = await client.request([
+      {
+        actionid: client.ACTION_ID.READ,
+        resourcetype: client.RESOURCE_TYPE.ESTATE,
+        resourceid: estateId,
+        identifier: 'fetch_estate_by_id',
+        parameters: {
+          data: ESTATE_FIELDS,
+        },
+      },
+    ])
+
+    const result = response.response.results[0]
+
+    if (result.status.errorcode !== 0 || result.data.records.length === 0) {
+      return null
+    }
+
+    return transformEstateRecord(result.data.records[0])
+  } catch (error) {
+    console.error('onOffice fetchEstateById error:', error)
+    return null
+  }
+}
+
+/**
+ * Fetch estate by external object number (expose_id)
+ */
+export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeProperty | null> {
+  try {
+    const client = createOnOfficeClient()
+
+    const response = await client.request([
+      {
+        actionid: client.ACTION_ID.READ,
+        resourcetype: client.RESOURCE_TYPE.ESTATE,
+        identifier: 'fetch_estate_by_expose_id',
+        parameters: {
+          data: ESTATE_FIELDS,
+          filter: {
+            objektnr_extern: [{ op: '=', val: exposeId }],
+          },
+          listlimit: 1,
+        },
+      },
+    ])
+
+    const result = response.response.results[0]
+
+    if (result.status.errorcode !== 0 || result.data.records.length === 0) {
+      // Try by internal ID as fallback
+      const numericId = parseInt(exposeId)
+      if (!isNaN(numericId)) {
+        return fetchEstateById(numericId)
+      }
+      return null
+    }
+
+    return transformEstateRecord(result.data.records[0])
+  } catch (error) {
+    console.error('onOffice fetchEstateByExposeId error:', error)
+    return null
+  }
+}
+
+/**
+ * Fetch images for an estate (Homepage-published images)
+ */
+export async function fetchEstateImages(estateId: number): Promise<string[]> {
+  try {
+    const client = createOnOfficeClient()
+
+    const response = await client.request([
+      {
+        actionid: client.ACTION_ID.GET,
+        resourcetype: client.RESOURCE_TYPE.ESTATE,
+        resourceid: estateId,
+        identifier: 'fetch_estate_images',
+        parameters: {
+          categories: ['Foto', 'Titelbild', 'Foto_gross'],
+          language: 'DEU',
+        },
+      },
+    ])
+
+    const result = response.response.results[0]
+
+    if (result.status.errorcode !== 0) {
+      console.error('onOffice fetchEstateImages error:', result.status.message)
+      return []
+    }
+
+    // Extract image URLs from the response
+    const images: string[] = []
+    const records = result.data.records || []
+
+    for (const record of records) {
+      const elements = record.elements || {}
+      // Images are typically in 'url' or 'originalurl' fields
+      if (elements.url) {
+        images.push(String(elements.url))
+      } else if (elements.originalurl) {
+        images.push(String(elements.originalurl))
+      }
+    }
+
+    return images
+  } catch (error) {
+    console.error('onOffice fetchEstateImages error:', error)
+    return []
+  }
+}
+
+/**
+ * Fetch estate with images (combines estate data with images)
+ */
+export async function fetchEstateWithImages(estateId: number): Promise<OnOfficeProperty | null> {
+  const [estate, images] = await Promise.all([
+    fetchEstateById(estateId),
+    fetchEstateImages(estateId),
+  ])
+
+  if (!estate) return null
+
+  estate.bilder = images
+  estate.titelbild = images[0]
+
+  return estate
+}
+
+/**
+ * Fetch estate by expose ID with images
+ */
+export async function fetchEstateByExposeIdWithImages(exposeId: string): Promise<OnOfficeProperty | null> {
+  const estate = await fetchEstateByExposeId(exposeId)
+  if (!estate) return null
+
+  const images = await fetchEstateImages(estate.id)
+  estate.bilder = images
+  estate.titelbild = images[0]
+
+  return estate
+}
+
 export { ACTION_ID, RESOURCE_TYPE }

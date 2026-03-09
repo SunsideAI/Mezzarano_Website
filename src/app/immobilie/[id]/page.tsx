@@ -1,8 +1,24 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Bed, Bath, Square, Calendar, CheckCircle, Phone, Mail, ArrowLeft, Share2, Heart, Printer, Building, Thermometer, Trees, Home, Fence, Car, Layers } from 'lucide-react'
-import { fetchPropertyByExposeId } from '@/lib/airtable'
+import {
+  MapPin, Bed, Bath, Square, Calendar, CheckCircle, Phone, Mail,
+  ArrowLeft, Share2, Heart, Printer, Building, Thermometer, Trees,
+  Home, Fence, Car, Layers, Euro, Ruler, Zap, Flame, DoorOpen,
+  Mountain, Warehouse, Key, FileText, Clock, Shield, Sparkles,
+  Accessibility, PawPrint, ChefHat, Sofa, Snowflake, Sun, Droplets
+} from 'lucide-react'
+import {
+  fetchEstateByExposeIdWithImages,
+  OnOfficeProperty,
+  isOnOfficeConfigured,
+  getObjektartLabel,
+  getObjekttypLabel,
+  getZustandLabel,
+  getHeizungsartLabel,
+  getBefeuerungLabel
+} from '@/lib/onoffice'
+import { fetchPropertyByExposeId, AirtableProperty } from '@/lib/airtable'
 import ImageGallery from '@/components/ImageGallery'
 import PropertyMap from '@/components/PropertyMap'
 import PropertyInquiryForm from '@/components/PropertyInquiryForm'
@@ -28,49 +44,94 @@ function getOptimizedCloudinaryUrl(url: string, width: number = 1200): string {
   return url
 }
 
-// Fallback: proxy URL for non-Cloudinary images
-function getProxyImageUrl(recordId: string, index: number = 0): string {
-  return `/api/image/${recordId}?index=${index}&type=bilder`
+// Format price with German locale
+function formatPrice(price: number | undefined, isRent?: boolean): string {
+  if (!price) return 'Preis auf Anfrage'
+  const formatted = new Intl.NumberFormat('de-DE').format(price)
+  return isRent ? `${formatted} €/Monat` : `${formatted} €`
+}
+
+// Format area
+function formatArea(area: number | undefined): string {
+  if (!area) return ''
+  return `${new Intl.NumberFormat('de-DE').format(area)} m²`
+}
+
+// Component for feature badges
+function FeatureBadge({ icon: Icon, label, available }: { icon: React.ElementType; label: string; available?: boolean }) {
+  if (available === false || available === undefined) return null
+  return (
+    <div className="flex items-center gap-2 px-3 py-2 bg-green-50 text-green-700 rounded-lg text-sm">
+      <Icon className="h-4 w-4" />
+      <span>{label}</span>
+    </div>
+  )
+}
+
+// Component for detail rows
+function DetailRow({ label, value, icon: Icon }: { label: string; value?: string | number | null; icon?: React.ElementType }) {
+  if (value === undefined || value === null || value === '') return null
+  return (
+    <div className="flex items-start gap-3 py-2 border-b border-gray-100 last:border-0">
+      {Icon && <Icon className="h-5 w-5 text-primary-500 flex-shrink-0 mt-0.5" />}
+      <div className="flex-1">
+        <p className="text-sm text-gray-500">{label}</p>
+        <p className="font-medium text-gray-900">{value}</p>
+      </div>
+    </div>
+  )
 }
 
 export default async function PropertyDetailPage({ params }: { params: { id: string } }) {
-  const property = await fetchPropertyByExposeId(params.id)
+  let property: OnOfficeProperty | null = null
+  let fallbackProperty: AirtableProperty | null = null
+  let source: 'onoffice' | 'airtable' = 'onoffice'
 
+  // Try onOffice first
+  if (isOnOfficeConfigured()) {
+    property = await fetchEstateByExposeIdWithImages(params.id)
+  }
+
+  // Fallback to Airtable
   if (!property) {
+    fallbackProperty = await fetchPropertyByExposeId(params.id)
+    source = 'airtable'
+  }
+
+  if (!property && !fallbackProperty) {
     notFound()
   }
 
-  const formatPrice = (price: number | undefined, kategorie?: string) => {
-    if (!price) return 'Preis auf Anfrage'
-    const formatted = new Intl.NumberFormat('de-DE').format(price)
-    return kategorie === 'Miete' ? `${formatted} €/Monat` : `${formatted} €`
-  }
+  // Use onOffice data or convert Airtable data
+  const isRent = property
+    ? property.vermarktungsart === 'miete'
+    : fallbackProperty?.kategorie === 'Miete'
 
-  // Use direct Cloudinary URLs for speed, proxy only as fallback
-  // Deduplicate by extracting unique images based on content hash in filename
+  const title = property?.titel || fallbackProperty?.titel || 'Immobilie'
+  const exposeId = property?.expose_id || fallbackProperty?.expose_id || params.id
+  const images = property?.bilder || fallbackProperty?.bilder || []
+
+  // Deduplicate images
   const seenImages = new Set<string>()
-  const allImages: string[] = property.bilder
+  const allImages: string[] = images
     .filter(url => {
-      // Extract a unique identifier from the URL
-      // For Cloudinary: use the public_id (path after version)
-      // For others: use the full URL
       const match = url.match(/\/v\d+\/(.+)$/)
       const identifier = match ? match[1] : url
-      if (seenImages.has(identifier)) {
-        return false
-      }
+      if (seenImages.has(identifier)) return false
       seenImages.add(identifier)
       return true
     })
-    .map(url => {
-      // Use direct Cloudinary URL if available, otherwise use proxy
-      if (url.includes('res.cloudinary.com')) {
-        return getOptimizedCloudinaryUrl(url, 1200)
-      }
-      // For non-Cloudinary URLs, find the index and use proxy
-      const index = property.bilder.indexOf(url)
-      return getProxyImageUrl(property.id, index)
-    })
+    .map(url => url.includes('res.cloudinary.com') ? getOptimizedCloudinaryUrl(url, 1200) : url)
+
+  // Build address string
+  const address = property
+    ? [property.strasse, property.hausnummer, property.plz, property.ort].filter(Boolean).join(', ')
+    : fallbackProperty?.adresse_komplett || fallbackProperty?.kurz_adresse || `${fallbackProperty?.plz || ''} ${fallbackProperty?.ort || ''}`
+
+  // Get price
+  const price = property
+    ? (isRent ? property.kaltmiete : property.kaufpreis)
+    : fallbackProperty?.preis
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -90,7 +151,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
       {/* Image Gallery */}
       <section className="bg-gray-100 py-6">
         <div className="container-custom">
-          <ImageGallery images={allImages} title={property.titel} />
+          <ImageGallery images={allImages} title={title} />
         </div>
       </section>
 
@@ -104,40 +165,46 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
               <div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    property.kategorie !== 'Miete'
-                      ? 'bg-primary-100 text-primary-700'
-                      : 'bg-secondary-100 text-secondary-700'
+                    !isRent ? 'bg-primary-100 text-primary-700' : 'bg-secondary-100 text-secondary-700'
                   }`}>
-                    {property.kategorie === 'Miete' ? 'Zur Miete' : 'Zum Kauf'}
+                    {isRent ? 'Zur Miete' : 'Zum Kauf'}
                   </span>
-                  {(property.objekt_typ || property.unterkategorie) && (
+                  {(property?.objekttyp || property?.objektart || fallbackProperty?.objekt_typ) && (
                     <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
-                      {property.objekt_typ || property.unterkategorie}
+                      {property ? getObjekttypLabel(property.objekttyp) || getObjektartLabel(property.objektart) : fallbackProperty?.objekt_typ}
                     </span>
                   )}
-                  {property.status && property.status !== 'Verfügbar' && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-700">
-                      {property.status}
+                  {property?.zustand && (
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700">
+                      {getZustandLabel(property.zustand)}
+                    </span>
+                  )}
+                  {property?.status === 1 && (
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700">
+                      Verfügbar
                     </span>
                   )}
                 </div>
 
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  {property.titel}
+                  {title}
                 </h1>
 
                 <div className="flex items-center gap-2 text-gray-600 mb-6">
                   <MapPin className="h-5 w-5" />
-                  <span>{property.adresse_komplett || property.kurz_adresse || `${property.plz} ${property.ort}`}</span>
+                  <span>{address}</span>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-wrap">
                   <div>
                     <p className="text-3xl font-bold text-primary-500">
-                      {property.preis ? `${new Intl.NumberFormat('de-DE').format(property.preis)} €` : 'Preis auf Anfrage'}
+                      {formatPrice(price, isRent)}
                     </p>
-                    {property.kategorie === 'Miete' && property.preis && (
-                      <p className="text-sm text-gray-500">pro Monat</p>
+                    {isRent && property?.warmmiete && (
+                      <p className="text-sm text-gray-500">Warmmiete: {formatPrice(property.warmmiete, true)}</p>
+                    )}
+                    {!isRent && property?.kaufpreis_pro_qm && (
+                      <p className="text-sm text-gray-500">{formatPrice(property.kaufpreis_pro_qm)}/m²</p>
                     )}
                   </div>
                   <div className="flex gap-2">
@@ -152,162 +219,298 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                     </button>
                   </div>
                 </div>
+
+                {/* Object Number */}
+                {(property?.objektnr_extern || exposeId) && (
+                  <p className="text-sm text-gray-400 mt-4">
+                    Objekt-Nr.: {property?.objektnr_extern || exposeId}
+                  </p>
+                )}
               </div>
 
-              {/* Key Features */}
+              {/* Key Features Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-xl shadow-sm">
-                {property.zimmer !== undefined && property.zimmer > 0 && (
+                {(property?.anzahl_zimmer || fallbackProperty?.zimmer) !== undefined && (property?.anzahl_zimmer || fallbackProperty?.zimmer)! > 0 && (
                   <div className="text-center p-4">
                     <Bed className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.zimmer}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property?.anzahl_zimmer || fallbackProperty?.zimmer}</p>
                     <p className="text-sm text-gray-500">Zimmer</p>
                   </div>
                 )}
-                {property.schlafzimmer !== undefined && property.schlafzimmer > 0 && (
+                {property?.anzahl_schlafzimmer !== undefined && property.anzahl_schlafzimmer > 0 && (
                   <div className="text-center p-4">
                     <Bed className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.schlafzimmer}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property.anzahl_schlafzimmer}</p>
                     <p className="text-sm text-gray-500">Schlafzimmer</p>
                   </div>
                 )}
-                {property.badezimmer !== undefined && property.badezimmer > 0 && (
+                {(property?.anzahl_badezimmer || fallbackProperty?.badezimmer) !== undefined && (property?.anzahl_badezimmer || fallbackProperty?.badezimmer)! > 0 && (
                   <div className="text-center p-4">
                     <Bath className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.badezimmer}</p>
-                    <p className="text-sm text-gray-500">{property.badezimmer === 1 ? 'Badezimmer' : 'Badezimmer'}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property?.anzahl_badezimmer || fallbackProperty?.badezimmer}</p>
+                    <p className="text-sm text-gray-500">Badezimmer</p>
                   </div>
                 )}
-                {property.wohnflaeche !== undefined && property.wohnflaeche > 0 && (
+                {(property?.wohnflaeche || fallbackProperty?.wohnflaeche) !== undefined && (property?.wohnflaeche || fallbackProperty?.wohnflaeche)! > 0 && (
                   <div className="text-center p-4">
                     <Square className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.wohnflaeche}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property?.wohnflaeche || fallbackProperty?.wohnflaeche}</p>
                     <p className="text-sm text-gray-500">m² Wohnfläche</p>
                   </div>
                 )}
-                {property.grundstueck !== undefined && property.grundstueck > 0 && (
+                {(property?.grundstuecksflaeche || fallbackProperty?.grundstueck) !== undefined && (property?.grundstuecksflaeche || fallbackProperty?.grundstueck)! > 0 && (
                   <div className="text-center p-4">
                     <Fence className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.grundstueck}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property?.grundstuecksflaeche || fallbackProperty?.grundstueck}</p>
                     <p className="text-sm text-gray-500">m² Grundstück</p>
                   </div>
                 )}
-                {property.etagen !== undefined && property.etagen > 0 && (
+                {(property?.anzahl_etagen || fallbackProperty?.etagen) !== undefined && (property?.anzahl_etagen || fallbackProperty?.etagen)! > 0 && (
                   <div className="text-center p-4">
                     <Layers className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.etagen}</p>
-                    <p className="text-sm text-gray-500">{property.etagen === 1 ? 'Etage' : 'Etagen'}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property?.anzahl_etagen || fallbackProperty?.etagen}</p>
+                    <p className="text-sm text-gray-500">Etagen</p>
                   </div>
                 )}
-                {property.baujahr !== undefined && property.baujahr > 0 && (
+                {(property?.baujahr || fallbackProperty?.baujahr) !== undefined && (property?.baujahr || fallbackProperty?.baujahr)! > 0 && (
                   <div className="text-center p-4">
                     <Calendar className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.baujahr}</p>
+                    <p className="text-2xl font-bold text-gray-900">{property?.baujahr || fallbackProperty?.baujahr}</p>
                     <p className="text-sm text-gray-500">Baujahr</p>
                   </div>
                 )}
-                {property.balkone !== undefined && property.balkone > 0 && (
+                {property?.etage !== undefined && (
                   <div className="text-center p-4">
-                    <Home className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.balkone}</p>
-                    <p className="text-sm text-gray-500">{property.balkone === 1 ? 'Balkon' : 'Balkone'}</p>
+                    <Building className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-gray-900">{property.etage}</p>
+                    <p className="text-sm text-gray-500">Etage</p>
                   </div>
                 )}
-                {property.terrassen !== undefined && property.terrassen > 0 && (
-                  <div className="text-center p-4">
-                    <Trees className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{property.terrassen}</p>
-                    <p className="text-sm text-gray-500">{property.terrassen === 1 ? 'Terrasse' : 'Terrassen'}</p>
-                  </div>
-                )}
-                {((property.garagen !== undefined && property.garagen > 0) || (property.stellplaetze !== undefined && property.stellplaetze > 0)) && (
+                {((property?.anzahl_garagen || fallbackProperty?.garagen) || (property?.anzahl_stellplaetze || fallbackProperty?.stellplaetze)) && (
                   <div className="text-center p-4">
                     <Car className="h-8 w-8 text-primary-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{(property.garagen || 0) + (property.stellplaetze || 0)}</p>
+                    <p className="text-2xl font-bold text-gray-900">
+                      {(property?.anzahl_garagen || fallbackProperty?.garagen || 0) + (property?.anzahl_stellplaetze || fallbackProperty?.stellplaetze || 0)}
+                    </p>
                     <p className="text-sm text-gray-500">Stellplätze</p>
                   </div>
                 )}
               </div>
 
+              {/* Costs Section (onOffice only) */}
+              {property && (isRent ? (property.kaltmiete || property.nebenkosten || property.heizkosten) : (property.kaufpreis || property.hausgeld || property.courtage)) && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Euro className="h-6 w-6 text-primary-500" />
+                    {isRent ? 'Mietkosten' : 'Kaufkosten'}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {isRent ? (
+                      <>
+                        <DetailRow label="Kaltmiete" value={formatPrice(property.kaltmiete, true)} icon={Euro} />
+                        <DetailRow label="Nebenkosten" value={formatPrice(property.nebenkosten, true)} icon={Euro} />
+                        <DetailRow label="Heizkosten" value={formatPrice(property.heizkosten, true)} icon={Flame} />
+                        <DetailRow label="Warmmiete" value={formatPrice(property.warmmiete, true)} icon={Euro} />
+                        <DetailRow label="Kaution" value={property.kaution} icon={Shield} />
+                        {property.stellplatzmiete && <DetailRow label="Stellplatzmiete" value={formatPrice(property.stellplatzmiete, true)} icon={Car} />}
+                      </>
+                    ) : (
+                      <>
+                        <DetailRow label="Kaufpreis" value={formatPrice(property.kaufpreis)} icon={Euro} />
+                        {property.kaufpreis_pro_qm && <DetailRow label="Preis pro m²" value={formatPrice(property.kaufpreis_pro_qm)} icon={Ruler} />}
+                        {property.hausgeld && <DetailRow label="Hausgeld" value={formatPrice(property.hausgeld, true)} icon={Euro} />}
+                        {property.courtage && <DetailRow label="Provision" value={property.courtage} icon={FileText} />}
+                        {property.courtage_hinweis && <DetailRow label="Provisionshinweis" value={property.courtage_hinweis} icon={FileText} />}
+                        {property.erbpacht && <DetailRow label="Erbpacht" value={formatPrice(property.erbpacht, true)} icon={Euro} />}
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Areas Section (onOffice only) */}
+              {property && (property.wohnflaeche || property.nutzflaeche || property.grundstuecksflaeche || property.balkon_terrasse_flaeche) && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Ruler className="h-6 w-6 text-primary-500" />
+                    Flächen
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <DetailRow label="Wohnfläche" value={formatArea(property.wohnflaeche)} icon={Home} />
+                    <DetailRow label="Nutzfläche" value={formatArea(property.nutzflaeche)} icon={Warehouse} />
+                    <DetailRow label="Grundstücksfläche" value={formatArea(property.grundstuecksflaeche)} icon={Mountain} />
+                    <DetailRow label="Gesamtfläche" value={formatArea(property.gesamtflaeche)} icon={Square} />
+                    <DetailRow label="Balkon/Terrasse" value={formatArea(property.balkon_terrasse_flaeche)} icon={Sun} />
+                    <DetailRow label="Gartenfläche" value={formatArea(property.gartenflaeche)} icon={Trees} />
+                    <DetailRow label="Kellerfläche" value={formatArea(property.kellerflaeche)} icon={Warehouse} />
+                    {property.teilbar_ab && <DetailRow label="Teilbar ab" value={formatArea(property.teilbar_ab)} icon={Ruler} />}
+                  </div>
+                </div>
+              )}
+
               {/* Description */}
-              {(property.objektbeschreibung || property.beschreibung) && (
+              {(property?.objektbeschreibung || fallbackProperty?.objektbeschreibung || fallbackProperty?.beschreibung) && (
                 <div className="bg-white p-8 rounded-xl shadow-sm">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Beschreibung
                   </h2>
                   <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">
-                    {property.objektbeschreibung || property.beschreibung}
+                    {property?.objektbeschreibung || fallbackProperty?.objektbeschreibung || fallbackProperty?.beschreibung}
                   </div>
                 </div>
               )}
 
               {/* Location Description */}
-              {property.lage && (
+              {(property?.lage || fallbackProperty?.lage) && (
                 <div className="bg-white p-8 rounded-xl shadow-sm">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Lage
                   </h2>
                   <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">
-                    {property.lage}
+                    {property?.lage || fallbackProperty?.lage}
                   </div>
                 </div>
               )}
 
-              {/* Features / Ausstattung */}
-              {property.ausstattung && (
+              {/* Equipment Description */}
+              {(property?.ausstattung_beschr || fallbackProperty?.ausstattung) && (
                 <div className="bg-white p-8 rounded-xl shadow-sm">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     Ausstattung
                   </h2>
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">
-                    {property.ausstattung}
+                  <div className="text-gray-600 leading-relaxed whitespace-pre-wrap mb-6">
+                    {property?.ausstattung_beschr || fallbackProperty?.ausstattung}
+                  </div>
+                </div>
+              )}
+
+              {/* Features/Amenities (onOffice boolean fields) */}
+              {property && (
+                property.einbaukueche || property.fahrstuhl || property.keller || property.balkon_terrasse_flaeche ||
+                property.gartennutzung || property.kamin || property.sauna || property.swimmingpool ||
+                property.klimaanlage || property.barrierefrei || property.gaestewc || property.moebiliert
+              ) && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Sparkles className="h-6 w-6 text-primary-500" />
+                    Merkmale
+                  </h2>
+                  <div className="flex flex-wrap gap-3">
+                    <FeatureBadge icon={ChefHat} label="Einbauküche" available={property.einbaukueche} />
+                    <FeatureBadge icon={Building} label="Fahrstuhl" available={property.fahrstuhl} />
+                    <FeatureBadge icon={Warehouse} label="Keller" available={property.keller} />
+                    <FeatureBadge icon={Sun} label="Balkon/Terrasse" available={(property.anzahl_balkone || 0) > 0 || (property.anzahl_terrassen || 0) > 0} />
+                    <FeatureBadge icon={Trees} label="Gartennutzung" available={property.gartennutzung} />
+                    <FeatureBadge icon={Flame} label="Kamin" available={property.kamin} />
+                    <FeatureBadge icon={Droplets} label="Sauna" available={property.sauna} />
+                    <FeatureBadge icon={Droplets} label="Pool" available={property.swimmingpool} />
+                    <FeatureBadge icon={Snowflake} label="Klimaanlage" available={property.klimaanlage} />
+                    <FeatureBadge icon={Accessibility} label="Barrierefrei" available={property.barrierefrei} />
+                    <FeatureBadge icon={Accessibility} label="Seniorengerecht" available={property.seniorengerecht} />
+                    <FeatureBadge icon={DoorOpen} label="Gäste-WC" available={property.gaestewc} />
+                    <FeatureBadge icon={Sofa} label="Möbliert" available={property.moebiliert} />
+                    <FeatureBadge icon={PawPrint} label="Haustiere erlaubt" available={property.haustiere} />
+                    <FeatureBadge icon={Sun} label="Wintergarten" available={property.wintergarten} />
+                    <FeatureBadge icon={Building} label="Dachboden" available={property.dachboden} />
+                    <FeatureBadge icon={Shield} label="Denkmalschutz" available={property.denkmalschutzobjekt} />
+                  </div>
+                </div>
+              )}
+
+              {/* Building Details (onOffice only) */}
+              {property && (property.zustand || property.bauart || property.dachform || property.bodenbelag || property.letzte_modernisierung) && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Building className="h-6 w-6 text-primary-500" />
+                    Gebäudedetails
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <DetailRow label="Zustand" value={getZustandLabel(property.zustand)} icon={CheckCircle} />
+                    <DetailRow label="Bauart" value={property.bauart} icon={Building} />
+                    <DetailRow label="Dachform" value={property.dachform} icon={Home} />
+                    <DetailRow label="Bodenbelag" value={property.bodenbelag} icon={Layers} />
+                    <DetailRow label="Ausbaustufe" value={property.ausbaustufe} icon={Building} />
+                    <DetailRow label="Letzte Modernisierung" value={property.letzte_modernisierung} icon={Calendar} />
+                    {property.anzahl_wohneinheiten && <DetailRow label="Wohneinheiten" value={property.anzahl_wohneinheiten} icon={Home} />}
+                    {property.anzahl_gewerbeeinheiten && <DetailRow label="Gewerbeeinheiten" value={property.anzahl_gewerbeeinheiten} icon={Building} />}
                   </div>
                 </div>
               )}
 
               {/* Energy Info */}
-              {(property.energieausweis || property.energieeffizienzklasse || property.heizung) && (
+              {(property?.energieausweistyp || property?.energieeffizienzklasse || property?.heizungsart ||
+                fallbackProperty?.energieausweis || fallbackProperty?.energieeffizienzklasse || fallbackProperty?.heizung) && (
                 <div className="bg-white p-8 rounded-xl shadow-sm">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Zap className="h-6 w-6 text-primary-500" />
                     Energiedaten
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {property.energieeffizienzklasse && (
-                      <div className="flex items-center gap-3">
-                        <Thermometer className="h-5 w-5 text-primary-500 flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-gray-500">Energieeffizienzklasse</p>
-                          <p className="font-medium text-gray-900">{property.energieeffizienzklasse}</p>
-                        </div>
-                      </div>
-                    )}
-                    {property.heizung && (
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-gray-500">Heizung</p>
-                          <p className="font-medium text-gray-900">{property.heizung}</p>
-                        </div>
-                      </div>
-                    )}
-                    {property.energieausweis && (
-                      <div className="flex items-center gap-3 col-span-full">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-gray-500">Energieausweis</p>
-                          <p className="font-medium text-gray-900">{property.energieausweis}</p>
-                        </div>
-                      </div>
+                    {property ? (
+                      <>
+                        <DetailRow label="Energieausweistyp" value={property.energieausweistyp} icon={FileText} />
+                        <DetailRow label="Energieeffizienzklasse" value={property.energieeffizienzklasse} icon={Zap} />
+                        <DetailRow label="Endenergiebedarf" value={property.endenergiebedarf ? `${property.endenergiebedarf} kWh/(m²·a)` : undefined} icon={Zap} />
+                        <DetailRow label="Energieverbrauchskennwert" value={property.energieverbrauchskennwert ? `${property.energieverbrauchskennwert} kWh/(m²·a)` : undefined} icon={Zap} />
+                        <DetailRow label="Primärenergieträger" value={property.primaerenergietraeger} icon={Flame} />
+                        <DetailRow label="Heizungsart" value={getHeizungsartLabel(property.heizungsart)} icon={Thermometer} />
+                        <DetailRow label="Befeuerung" value={getBefeuerungLabel(property.befeuerung)} icon={Flame} />
+                        <DetailRow label="Baujahr Heizung" value={property.baujahr_heizung} icon={Calendar} />
+                        <DetailRow label="Energieausweis gültig bis" value={property.energiepass_gueltig_bis} icon={Calendar} />
+                      </>
+                    ) : (
+                      <>
+                        <DetailRow label="Energieausweis" value={fallbackProperty?.energieausweis} icon={FileText} />
+                        <DetailRow label="Energieeffizienzklasse" value={fallbackProperty?.energieeffizienzklasse} icon={Zap} />
+                        <DetailRow label="Heizung" value={fallbackProperty?.heizung} icon={Thermometer} />
+                      </>
                     )}
                   </div>
                 </div>
               )}
 
+              {/* Investment Info (onOffice only) */}
+              {property && (property.mieteinnahmen_ist || property.mieteinnahmen_soll || property.rendite || property.x_fache) && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Euro className="h-6 w-6 text-primary-500" />
+                    Kapitalanlage
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <DetailRow label="Mieteinnahmen (Ist)" value={formatPrice(property.mieteinnahmen_ist, true)} icon={Euro} />
+                    <DetailRow label="Mieteinnahmen (Soll)" value={formatPrice(property.mieteinnahmen_soll, true)} icon={Euro} />
+                    <DetailRow label="Rendite" value={property.rendite ? `${property.rendite}%` : undefined} icon={Zap} />
+                    <DetailRow label="X-Fache" value={property.x_fache} icon={Euro} />
+                  </div>
+                </div>
+              )}
+
+              {/* Availability (onOffice only) */}
+              {property?.verfuegbar_ab && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <Clock className="h-6 w-6 text-primary-500" />
+                    Verfügbarkeit
+                  </h2>
+                  <p className="text-gray-600">
+                    <span className="font-medium">Verfügbar ab:</span> {property.verfuegbar_ab}
+                  </p>
+                  {property.min_mietdauer && (
+                    <p className="text-gray-600 mt-2">
+                      <span className="font-medium">Mindestmietdauer:</span> {property.min_mietdauer}
+                    </p>
+                  )}
+                </div>
+              )}
+
               {/* Map */}
               <PropertyMap
-                address={property.adresse_komplett || property.kurz_adresse || ''}
-                city={property.ort || ''}
-                plz={property.plz}
-                region={property.region}
+                address={address}
+                city={property?.ort || fallbackProperty?.ort || ''}
+                plz={property?.plz || fallbackProperty?.plz}
+                region={property?.region || fallbackProperty?.region}
+                lat={property?.breitengrad}
+                lng={property?.laengengrad}
               />
             </div>
 
@@ -320,8 +523,8 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                     Interesse an dieser Immobilie?
                   </h3>
                   <PropertyInquiryForm
-                    propertyId={property.expose_id}
-                    propertyTitle={property.titel}
+                    propertyId={exposeId}
+                    propertyTitle={title}
                   />
                 </div>
 
@@ -370,6 +573,36 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   </div>
                 </div>
 
+                {/* Property Quick Facts */}
+                <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-xl">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <Key className="h-5 w-5 text-primary-500" />
+                    Auf einen Blick
+                  </h3>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    {(property?.objekttyp || property?.objektart) && (
+                      <li>• {getObjekttypLabel(property?.objekttyp) || getObjektartLabel(property?.objektart)}</li>
+                    )}
+                    {(property?.wohnflaeche || fallbackProperty?.wohnflaeche) && (
+                      <li>• {formatArea(property?.wohnflaeche || fallbackProperty?.wohnflaeche)} Wohnfläche</li>
+                    )}
+                    {(property?.anzahl_zimmer || fallbackProperty?.zimmer) && (
+                      <li>• {property?.anzahl_zimmer || fallbackProperty?.zimmer} Zimmer</li>
+                    )}
+                    {(property?.baujahr || fallbackProperty?.baujahr) && (
+                      <li>• Baujahr {property?.baujahr || fallbackProperty?.baujahr}</li>
+                    )}
+                    {property?.zustand && (
+                      <li>• {getZustandLabel(property.zustand)}</li>
+                    )}
+                    {property?.heizungsart && (
+                      <li>• {getHeizungsartLabel(property.heizungsart)}</li>
+                    )}
+                    {property?.energieeffizienzklasse && (
+                      <li>• Energieklasse {property.energieeffizienzklasse}</li>
+                    )}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

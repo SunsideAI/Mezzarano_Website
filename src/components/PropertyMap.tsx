@@ -9,6 +9,8 @@ interface PropertyMapProps {
   city: string
   plz?: string
   region?: string
+  lat?: number  // Direct coordinates from CRM
+  lng?: number
 }
 
 interface Coordinates {
@@ -16,15 +18,22 @@ interface Coordinates {
   lng: number
 }
 
-export default function PropertyMap({ address, city, plz, region }: PropertyMapProps) {
+export default function PropertyMap({ address, city, plz, region, lat, lng }: PropertyMapProps) {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<any>(null)
 
-  // Geocode the address using Nominatim (free OpenStreetMap geocoding)
+  // Use direct coordinates from CRM if available, otherwise geocode
   useEffect(() => {
+    // If we have direct coordinates from CRM, use them immediately
+    if (lat && lng) {
+      setCoordinates({ lat, lng })
+      setIsLoading(false)
+      return
+    }
+
     const geocodeAddress = async () => {
       setIsLoading(true)
       setError(false)
@@ -91,7 +100,7 @@ export default function PropertyMap({ address, city, plz, region }: PropertyMapP
       setIsLoading(false)
       setError(true)
     }
-  }, [address, city, plz, region])
+  }, [address, city, plz, region, lat, lng])
 
   // Initialize map when coordinates are available
   useEffect(() => {
