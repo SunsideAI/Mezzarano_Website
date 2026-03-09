@@ -9,7 +9,8 @@
     "lint": "next lint",
     "blog:generate": "node scripts/generate-blog-post.js",
     "blog:batch": "node scripts/generate-batch.js",
-    "blog:auto": "node scripts/auto-generate.js"
+    "blog:auto": "node scripts/auto-generate.js",
+    "onoffice:test": "node scripts/test-onoffice.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
