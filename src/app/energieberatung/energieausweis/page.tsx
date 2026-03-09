@@ -336,6 +336,22 @@ export default function EnergieausweisPage() {
                       </div>
                     )}
 
+                    <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        id="privacy"
+                        required
+                        className="mt-1"
+                      />
+                      <label htmlFor="privacy" className="text-sm text-gray-600">
+                        Ich habe die{' '}
+                        <Link href="/datenschutz" className="text-primary-600 hover:underline">
+                          Datenschutzerklärung
+                        </Link>{' '}
+                        gelesen und stimme der Verarbeitung meiner Daten zu.
+                      </label>
+                    </div>
+
                     <div className="pt-4">
                       <button
                         type="submit"
@@ -345,14 +361,6 @@ export default function EnergieausweisPage() {
                         {isSubmitting ? 'Wird gesendet...' : 'Anfrage absenden'}
                       </button>
                     </div>
-
-                    <p className="text-xs text-gray-500 text-center">
-                      Mit dem Absenden stimmen Sie unserer{' '}
-                      <Link href="/datenschutz" className="text-primary-600 hover:underline">
-                        Datenschutzerklärung
-                      </Link>{' '}
-                      zu.
-                    </p>
                   </form>
                 </div>
               )}
