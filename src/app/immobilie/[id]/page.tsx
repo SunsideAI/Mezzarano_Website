@@ -82,6 +82,39 @@ function DetailRow({ label, value, icon: Icon }: { label: string; value?: string
   )
 }
 
+// Render description with intelligent formatting
+function renderDescription(text: string) {
+  if (!text) return null
+
+  const lines = text.split('\n').filter(line => line.trim())
+  const bulletPattern = /^[-•*]\s*|^\d+[.)]\s*/
+
+  // Check if at least 2 lines look like bullet points
+  const bulletLines = lines.filter(l => bulletPattern.test(l.trim()))
+
+  if (bulletLines.length >= 2) {
+    return (
+      <ul className="space-y-3">
+        {lines.map((line, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5 flex-shrink-0" />
+            <span>{line.replace(bulletPattern, '').trim()}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  // Otherwise render as paragraphs
+  return (
+    <div className="space-y-4">
+      {lines.map((p, i) => (
+        <p key={i}>{p}</p>
+      ))}
+    </div>
+  )
+}
+
 export default async function PropertyDetailPage({ params }: { params: { id: string } }) {
   let property: OnOfficeProperty | null = null
   let fallbackProperty: AirtableProperty | null = null
@@ -354,8 +387,8 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Beschreibung
                   </h2>
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">
-                    {property?.objektbeschreibung || fallbackProperty?.objektbeschreibung || fallbackProperty?.beschreibung}
+                  <div className="text-gray-600 leading-relaxed">
+                    {renderDescription(property?.objektbeschreibung || fallbackProperty?.objektbeschreibung || fallbackProperty?.beschreibung || '')}
                   </div>
                 </div>
               )}
@@ -366,8 +399,8 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Lage
                   </h2>
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">
-                    {property?.lage || fallbackProperty?.lage}
+                  <div className="text-gray-600 leading-relaxed">
+                    {renderDescription(property?.lage || fallbackProperty?.lage || '')}
                   </div>
                 </div>
               )}
@@ -378,8 +411,8 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     Ausstattung
                   </h2>
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-wrap mb-6">
-                    {property?.ausstattung_beschr || fallbackProperty?.ausstattung}
+                  <div className="text-gray-600 leading-relaxed">
+                    {renderDescription(property?.ausstattung_beschr || fallbackProperty?.ausstattung || '')}
                   </div>
                 </div>
               )}
@@ -573,36 +606,6 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   </div>
                 </div>
 
-                {/* Property Quick Facts */}
-                <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-xl">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Key className="h-5 w-5 text-primary-500" />
-                    Auf einen Blick
-                  </h3>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    {(property?.objekttyp || property?.objektart) && (
-                      <li>• {getObjekttypLabel(property?.objekttyp) || getObjektartLabel(property?.objektart)}</li>
-                    )}
-                    {(property?.wohnflaeche || fallbackProperty?.wohnflaeche) && (
-                      <li>• {formatArea(property?.wohnflaeche || fallbackProperty?.wohnflaeche)} Wohnfläche</li>
-                    )}
-                    {(property?.anzahl_zimmer || fallbackProperty?.zimmer) && (
-                      <li>• {property?.anzahl_zimmer || fallbackProperty?.zimmer} Zimmer</li>
-                    )}
-                    {(property?.baujahr || fallbackProperty?.baujahr) && (
-                      <li>• Baujahr {property?.baujahr || fallbackProperty?.baujahr}</li>
-                    )}
-                    {property?.zustand && (
-                      <li>• {getZustandLabel(property.zustand)}</li>
-                    )}
-                    {property?.heizungsart && (
-                      <li>• {getHeizungsartLabel(property.heizungsart)}</li>
-                    )}
-                    {property?.energieeffizienzklasse && (
-                      <li>• Energieklasse {property.energieeffizienzklasse}</li>
-                    )}
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
