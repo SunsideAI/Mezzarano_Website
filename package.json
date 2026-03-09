@@ -10,7 +10,8 @@
     "blog:generate": "node scripts/generate-blog-post.js",
     "blog:batch": "node scripts/generate-batch.js",
     "blog:auto": "node scripts/auto-generate.js",
-    "onoffice:test": "node scripts/test-onoffice.js"
+    "onoffice:test": "node scripts/test-onoffice.js",
+    "onoffice:fetch": "node scripts/fetch-onoffice-estates.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
