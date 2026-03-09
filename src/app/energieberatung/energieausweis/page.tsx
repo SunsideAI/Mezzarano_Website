@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Clock, FileCheck, Check, ArrowRight, Phone, CheckCircle, AlertCircle, FileText, ArrowLeft } from 'lucide-react'
 
@@ -69,6 +69,8 @@ const faqItems = [
 export default function EnergieausweisPage() {
   const [selectedType, setSelectedType] = useState<string | null>(null)
   const [showForm, setShowForm] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [animationPhase, setAnimationPhase] = useState<'cards' | 'form'>('cards')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,14 +84,34 @@ export default function EnergieausweisPage() {
 
   const handleSelectType = (typeId: string) => {
     setSelectedType(typeId)
-    setShowForm(true)
+    setIsAnimating(true)
     setSubmitStatus('idle')
+
+    // Start exit animation for cards
+    setTimeout(() => {
+      setShowForm(true)
+      setAnimationPhase('form')
+      // End animation after form slides in
+      setTimeout(() => {
+        setIsAnimating(false)
+      }, 400)
+    }, 300)
   }
 
   const handleBack = () => {
-    setShowForm(false)
-    setSelectedType(null)
-    setSubmitStatus('idle')
+    setIsAnimating(true)
+
+    // Start exit animation for form
+    setTimeout(() => {
+      setShowForm(false)
+      setAnimationPhase('cards')
+      setSelectedType(null)
+      setSubmitStatus('idle')
+      // End animation after cards slide in
+      setTimeout(() => {
+        setIsAnimating(false)
+      }, 400)
+    }, 300)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -181,17 +203,18 @@ export default function EnergieausweisPage() {
       </section>
 
       {/* Pricing Cards OR Contact Form */}
-      <section id="auswahl" className="py-12 md:py-20">
+      <section id="auswahl" className="py-12 md:py-20 overflow-hidden">
         <div className="container-custom">
           {!showForm ? (
             // Price Cards
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto transition-all duration-300 ease-out ${
+              isAnimating && animationPhase === 'cards' ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 translate-y-0'
+            }`}>
               {energieausweisTypes.map((type, index) => (
                 <div
                   key={type.id}
-                  className={`relative rounded-2xl overflow-hidden shadow-lg ${type.popular ? 'ring-2 ring-primary-500' : ''}`}
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
+                  className={`relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 ${type.popular ? 'ring-2 ring-primary-500' : ''}`}
+                  style={{ transitionDelay: isAnimating ? '0ms' : `${index * 100}ms` }}
                 >
                   {type.popular && (
                     <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
@@ -231,9 +254,11 @@ export default function EnergieausweisPage() {
             </div>
           ) : (
             // Inline Contact Form
-            <div className="max-w-2xl mx-auto">
+            <div className={`max-w-2xl mx-auto transition-all duration-400 ease-out ${
+              isAnimating && animationPhase === 'form' ? 'opacity-0 scale-95 translate-y-8' : 'opacity-100 scale-100 translate-y-0'
+            }`}>
               {submitStatus === 'success' ? (
-                <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div className="bg-white rounded-2xl shadow-lg p-8 text-center animate-bounce-in">
                   <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">Anfrage erfolgreich gesendet!</h2>
                   <p className="text-gray-600 mb-6">
