@@ -19,24 +19,36 @@ const ONOFFICE_API_URL = 'https://api.onoffice.de/api/stable/api.php'
 const TOKEN = process.env.ONOFFICE_TOKEN || 'b035fdc742fd891a570142df46775fc4'
 const SECRET = process.env.ONOFFICE_SECRET || '650d69a88044953fd0062cd07b1b6911a3f993c8ae174c729788c4baf7d83236'
 
-// All relevant estate fields
+// Minimal fields - should always work
+const MINIMAL_FIELDS = [
+  'Id',
+  'objekttitel',
+  'objektnr_extern',
+  'vermarktungsart',
+  'objektart',
+  'status',
+  'kaufpreis',
+  'kaltmiete',
+  'plz',
+  'ort',
+  'wohnflaeche',
+  'anzahl_zimmer',
+]
+
+// Conservative estate fields - only standard fields that should exist
 const ESTATE_FIELDS = [
   // IDs
   'Id',
   'objektnr_extern',
-  'objektnr_intern',
 
   // Title & Description
   'objekttitel',
   'objektbeschreibung',
   'lage',
-  'ausstattung_beschr',
-  'spiegel_text',
 
   // Classification
   'vermarktungsart',
   'objektart',
-  'objekttyp',
   'nutzungsart',
   'status',
 
@@ -46,90 +58,40 @@ const ESTATE_FIELDS = [
   'plz',
   'ort',
   'land',
-  'regionaler_zusatz',
-  'bundesland',
 
   // Prices
   'kaufpreis',
   'kaltmiete',
   'warmmiete',
   'nebenkosten',
-  'heizkosten',
-  'kaution',
-  'courtage',
-  'provisionspflichtig',
 
   // Areas
   'wohnflaeche',
   'nutzflaeche',
   'grundstuecksflaeche',
-  'gesamtflaeche',
-  'bueroflaeche',
-  'ladenflaeche',
-  'kellerflaeche',
-  'balkon_terrasse_flaeche',
-  'gartenflaeche',
 
   // Rooms
   'anzahl_zimmer',
   'anzahl_schlafzimmer',
   'anzahl_badezimmer',
-  'anzahl_sep_wc',
   'anzahl_balkone',
   'anzahl_terrassen',
-  'anzahl_etagen',
-  'etage',
 
   // Parking
   'anzahl_garagen',
   'anzahl_stellplaetze',
-  'stellplatzart',
 
   // Building
   'baujahr',
-  'letzte_modernisierung',
   'objektzustand',
-  'bauweise',
-  'dachform',
-  'erschliessung',
 
   // Energy
   'energieausweistyp',
-  'energieeffizienzklasse',
-  'endenergiebedarf',
-  'energieverbrauchskennwert',
   'heizungsart',
-  'befeuerung',
-
-  // Features
-  'ausstattung',
-  'kueche',
-  'bodenbelag',
-  'boden',
-  'bad',
-  'fahrstuhl',
-  'rollstuhlgerecht',
-  'keller',
-  'dachboden',
-  'balkon',
-  'terrasse',
-  'garten',
-  'gartennutzung',
-  'einbaukueche',
-  'klimatisiert',
-  'moebliert',
-  'seniorengerecht',
-  'haustiere',
 
   // Dates
-  'verfuegbar_ab',
   'erstellt_am',
   'geaendert_am',
-  'stand_vom',
-
-  // Contact
-  'objektadresse_freigeben',
-  'anbieter',
 ]
 
 function generateHMAC(timestamp, token, resourcetype, actionid, secret) {
@@ -139,16 +101,22 @@ function generateHMAC(timestamp, token, resourcetype, actionid, secret) {
   return hmac.digest('base64')
 }
 
-async function fetchAllEstates(includeArchived = false) {
+async function fetchAllEstates(includeArchived = false, useMinimalFields = false) {
   const allEstates = []
   let offset = 0
   const limit = 100
   let total = 0
+  let retryWithMinimal = false
 
   const actionid = 'urn:onoffice-de-ns:smart:2.5:smartml:action:read'
   const resourcetype = 'estate'
 
+  const fieldsToUse = useMinimalFields ? MINIMAL_FIELDS : ESTATE_FIELDS
+
   console.error('Fetching estates from onOffice...\n')
+  if (useMinimalFields) {
+    console.error('(Using minimal field set)\n')
+  }
 
   do {
     const timestamp = Math.floor(Date.now() / 1000)
@@ -171,11 +139,10 @@ async function fetchAllEstates(includeArchived = false) {
           hmac,
           hmac_version: '2',
           parameters: {
-            data: ESTATE_FIELDS,
+            data: fieldsToUse,
             listlimit: limit,
             listoffset: offset,
             filter: Object.keys(filter).length > 0 ? filter : undefined,
-            sortby: { geaendert_am: 'DESC' },
           },
         }],
       },
@@ -192,6 +159,12 @@ async function fetchAllEstates(includeArchived = false) {
 
       if (result.status?.code !== 200) {
         console.error('API Error:', result.status?.message)
+
+        // If we get "Unknown field" error and haven't tried minimal yet, retry
+        if (result.status?.message?.includes('Unknown field') && !useMinimalFields) {
+          console.error('\nRetrying with minimal fields...\n')
+          return fetchAllEstates(includeArchived, true)
+        }
         break
       }
 
@@ -199,6 +172,12 @@ async function fetchAllEstates(includeArchived = false) {
 
       if (actionResult?.status?.errorcode !== 0) {
         console.error('Action Error:', actionResult?.status?.message)
+
+        // If we get field error and haven't tried minimal yet, retry
+        if (actionResult?.status?.message?.includes('field') && !useMinimalFields) {
+          console.error('\nRetrying with minimal fields...\n')
+          return fetchAllEstates(includeArchived, true)
+        }
         break
       }
 
@@ -279,8 +258,8 @@ async function main() {
       console.log(`Fläche:     ${e.wohnflaeche || '-'} m² Wohnfläche | ${e.grundstuecksflaeche || '-'} m² Grundstück`)
       console.log(`Zimmer:     ${e.anzahl_zimmer || '-'} | Schlafzimmer: ${e.anzahl_schlafzimmer || '-'} | Bäder: ${e.anzahl_badezimmer || '-'}`)
       console.log(`Baujahr:    ${e.baujahr || 'N/A'}`)
-      console.log(`Energie:    ${e.energieeffizienzklasse || '-'} | ${e.heizungsart || '-'}`)
-      console.log(`Aktualisiert: ${e.geaendert_am || e.stand_vom || 'N/A'}`)
+      console.log(`Energie:    ${e.energieausweistyp || '-'} | ${e.heizungsart || '-'}`)
+      console.log(`Aktualisiert: ${e.geaendert_am || 'N/A'}`)
 
       if (e.objektbeschreibung) {
         const desc = e.objektbeschreibung.substring(0, 200).replace(/\n/g, ' ')
