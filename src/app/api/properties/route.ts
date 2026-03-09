@@ -105,7 +105,9 @@ export async function GET(request: NextRequest) {
     console.log('No external data sources configured, will use static fallback')
   }
 
-  // Try onOffice first
+  // TEMPORARILY DISABLED: onOffice integration - using Airtable as primary source
+  // TODO: Re-enable onOffice when ready
+  /*
   if (hasOnOffice) {
     try {
       const kategorie = searchParams.get('kategorie')
@@ -120,10 +122,7 @@ export async function GET(request: NextRequest) {
 
       const { properties: onOfficeProps, total } = await fetchEstates(filters)
 
-      // Only return onOffice data if we actually got properties
-      // Otherwise fall through to Airtable fallback
       if (onOfficeProps.length > 0) {
-        // Fetch images for all properties in parallel
         const propertiesWithImages = await Promise.all(
           onOfficeProps.map(async (prop) => {
             try {
@@ -152,11 +151,11 @@ export async function GET(request: NextRequest) {
       console.log('onOffice returned 0 properties, trying Airtable fallback...')
     } catch (error) {
       console.error('onOffice API Error:', error)
-      // Fall through to Airtable if onOffice fails
     }
   }
+  */
 
-  // Fallback to Airtable
+  // Primary: Airtable
   if (hasAirtable) {
     try {
       const filters = {
