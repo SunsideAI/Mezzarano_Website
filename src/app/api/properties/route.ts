@@ -7,6 +7,7 @@ import { properties as staticProperties, Property } from '@/data/properties'
 function normalizeStaticProperty(prop: Property): AirtableProperty {
   return {
     id: prop.id,
+    expose_id: `DEMO-${prop.id}`,
     titel: prop.title,
     beschreibung: prop.description,
     kategorie: prop.type === 'kauf' ? 'Kauf' : 'Miete',
