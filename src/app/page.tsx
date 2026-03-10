@@ -110,12 +110,22 @@ function normalizeOnOfficeProperty(prop: OnOfficeProperty): AirtableProperty {
 }
 
 export default async function HomePage() {
-  // Fetch from onOffice first, fall back to Airtable, then static data
+  // Fetch from Airtable first, fall back to onOffice, then static data
   let properties: AirtableProperty[] = []
   let dataSource = 'static'
 
-  // Try onOffice first
-  if (isOnOfficeConfigured()) {
+  // Try Airtable first
+  try {
+    properties = await fetchAirtableProperties({ show_all: true })
+    if (properties.length > 0) {
+      dataSource = 'airtable'
+    }
+  } catch (error) {
+    console.error('Failed to fetch Airtable properties:', error)
+  }
+
+  // Fallback to onOffice
+  if (properties.length === 0 && isOnOfficeConfigured()) {
     try {
       const { properties: onOfficeProps } = await fetchEstates()
       if (onOfficeProps.length > 0) {
@@ -124,18 +134,6 @@ export default async function HomePage() {
       }
     } catch (error) {
       console.error('Failed to fetch onOffice properties:', error)
-    }
-  }
-
-  // Fallback to Airtable
-  if (properties.length === 0) {
-    try {
-      properties = await fetchAirtableProperties({ show_all: true })
-      if (properties.length > 0) {
-        dataSource = 'airtable'
-      }
-    } catch (error) {
-      console.error('Failed to fetch Airtable properties:', error)
     }
   }
 
