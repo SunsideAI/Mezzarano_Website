@@ -14,8 +14,8 @@ export default function ProvenExpertWidget() {
         <img
           src="https://images.provenexpert.com/9b/a8/af4104cbc649ed6d9563682a8ecd/widget_portrait_90_de_0.png"
           alt="Erfahrungen & Bewertungen zu Mezzarano Sandro"
-          width={90}
-          height={108}
+          width={60}
+          height={72}
           className="rounded shadow-lg"
         />
       </a>
