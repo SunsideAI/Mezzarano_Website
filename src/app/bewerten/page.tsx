@@ -95,8 +95,9 @@ export default function BewertenPage() {
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Tagline Badge */}
-              <div className="mb-6" data-aos="fade-up">
+              {/* Tagline Badge - Icon neben Badge */}
+              <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
+                <BarChart3 className="h-6 w-6 text-wuestenrot" />
                 <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
                   Immobilienbewertung
                 </span>
@@ -105,13 +106,13 @@ export default function BewertenPage() {
               {/* Headline with White Bars - w-fit für exakte Textbreite */}
               <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
                 <span className="flex flex-col items-start gap-3">
-                  <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                  <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     was ist ihre
                   </span>
-                  <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                  <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     immobilie wert?
                   </span>
-                  <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                  <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
                     wüstenrot
                   </span>
                 </span>
