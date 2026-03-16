@@ -80,7 +80,7 @@ export default function PageHero({
               {lines.map((line, index) => (
                 <span
                   key={index}
-                  className={`inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase ${
+                  className={`inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase ${
                     line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
                   }`}
                 >
@@ -89,7 +89,7 @@ export default function PageHero({
               ))}
               {/* Brand wüstenrot */}
               {showBrand && (
-                <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
                   wüstenrot
                 </span>
               )}

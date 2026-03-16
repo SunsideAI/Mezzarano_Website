@@ -23,7 +23,8 @@ const slides: Slide[] = [
     tagline: 'Immobilienverkauf',
     lines: [
       { text: 'immobilien verkaufen', isHighlighted: false },
-      { text: 'kompetent und persönlich', isHighlighted: false },
+      { text: 'kompetent und', isHighlighted: false },
+      { text: 'persönlich', isHighlighted: false },
     ],
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
@@ -31,8 +32,8 @@ const slides: Slide[] = [
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_265469422_aumfux.jpg',
     tagline: 'Immobilienkauf',
     lines: [
-      { text: 'ihr traumhaus finden', isHighlighted: false },
-      { text: 'mit lokaler expertise', isHighlighted: false },
+      { text: 'ihr traumhaus', isHighlighted: false },
+      { text: 'finden', isHighlighted: false },
     ],
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
@@ -146,7 +147,7 @@ export default function HeroSlider() {
               {slides[currentSlide].lines.map((line, index) => (
                 <span
                   key={index}
-                  className={`inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight lowercase ${
+                  className={`inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight lowercase ${
                     line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
                   }`}
                 >
@@ -154,7 +155,7 @@ export default function HeroSlider() {
                 </span>
               ))}
               {/* Brand wüstenrot */}
-              <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-wuestenrot">
+              <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-wuestenrot">
                 wüstenrot
               </span>
             </span>
