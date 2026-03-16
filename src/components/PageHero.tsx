@@ -49,7 +49,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="relative min-h-[auto] py-12 md:py-0 md:min-h-[480px] bg-wuestennacht flex items-center overflow-hidden"
+      className="relative min-h-[auto] py-16 md:py-0 md:min-h-[560px] bg-wuestennacht flex items-center overflow-hidden"
     >
       {/* Background Image (optional) */}
       {backgroundImage && (

@@ -61,7 +61,7 @@ export default function SchweichPage() {
   return (
     <>
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
-      <section className="bg-wuestennacht min-h-[400px] md:min-h-[520px] flex items-center py-12">
+      <section className="bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}

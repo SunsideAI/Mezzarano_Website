@@ -91,7 +91,7 @@ export default function BewertenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero with Wüstenrot Layout-Prinzipien */}
-      <section className="relative min-h-[auto] py-12 md:py-0 md:min-h-[520px] bg-wuestennacht flex items-center overflow-hidden">
+      <section className="relative min-h-[auto] py-12 md:py-0 md:min-h-[600px] bg-wuestennacht flex items-center overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

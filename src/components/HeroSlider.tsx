@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, ArrowRight } from 'lucide-react'
+import { Phone, ArrowRight, Home, Key, Calculator, LucideIcon } from 'lucide-react'
 
 interface HeadlineLine {
   text: string
@@ -13,6 +13,7 @@ interface HeadlineLine {
 interface Slide {
   image: string
   tagline: string
+  icon: LucideIcon
   lines: HeadlineLine[]
   subheadline: string
 }
@@ -21,6 +22,7 @@ const slides: Slide[] = [
   {
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_112407784_bo2mmc.jpg',
     tagline: 'Immobilienverkauf',
+    icon: Home,
     lines: [
       { text: 'immobilien verkaufen', isHighlighted: false },
       { text: 'kompetent und', isHighlighted: false },
@@ -31,6 +33,7 @@ const slides: Slide[] = [
   {
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_265469422_aumfux.jpg',
     tagline: 'Immobilienkauf',
+    icon: Key,
     lines: [
       { text: 'ihr traumhaus', isHighlighted: false },
       { text: 'finden', isHighlighted: false },
@@ -40,6 +43,7 @@ const slides: Slide[] = [
   {
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711784/AdobeStock_476608445_ekjvmp.jpg',
     tagline: 'Finanzierung',
+    icon: Calculator,
     lines: [
       { text: 'finanzierung', isHighlighted: false },
       { text: 'aus einer hand', isHighlighted: false },
@@ -124,14 +128,17 @@ export default function HeroSlider() {
       {/* Content */}
       <div className="container-custom relative z-20 py-12 md:py-20">
         <div className="max-w-4xl">
-          {/* Tagline Badge - Wüstenrot Style */}
-          {/* Tagline - Text in wuestenrot */}
+          {/* Tagline - Icon + Text in wuestenrot */}
           <div
             className={`flex items-center gap-2 text-wuestenrot mb-6 transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
             style={{ transitionDelay: '0ms' }}
           >
+            {(() => {
+              const Icon = slides[currentSlide].icon
+              return <Icon className="h-5 w-5" />
+            })()}
             <span className="text-sm font-semibold uppercase tracking-wider">
               {slides[currentSlide].tagline}
             </span>

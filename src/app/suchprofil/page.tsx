@@ -473,7 +473,7 @@ export default function SuchprofilPage() {
     <div className="min-h-screen">
 
       {/* Hero with Wüstenrot Layout-Prinzipien */}
-      <section className="min-h-[auto] py-12 md:py-0 md:min-h-[520px] bg-wuestennacht flex items-center">
+      <section className="min-h-[auto] py-12 md:py-0 md:min-h-[600px] bg-wuestennacht flex items-center">
         <div className="container-custom">
           <div className="max-w-4xl">
             {/* Tagline - Icon + Text in wuestenrot */}

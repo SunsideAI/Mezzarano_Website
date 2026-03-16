@@ -62,7 +62,7 @@ export default function ErklaervideosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
-      <section className="min-h-[400px] md:min-h-[520px] bg-wuestennacht flex items-center py-12">
+      <section className="min-h-[450px] md:min-h-[600px] bg-wuestennacht flex items-center py-12">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

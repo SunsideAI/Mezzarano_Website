@@ -227,7 +227,7 @@ export default function ImmobilienPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
-      <section className="bg-wuestennacht min-h-[400px] md:min-h-[520px] flex items-center py-12">
+      <section className="bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12">
         <div className="container-custom">
           <div className="max-w-4xl">
             {/* Tagline - Icon + Text in wuestenrot */}
