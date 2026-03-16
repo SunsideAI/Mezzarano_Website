@@ -9,6 +9,7 @@ import RegionsGrid from '@/components/RegionsGrid'
 import InstagramFeed from '@/components/InstagramFeed'
 import { fetchEstates, isOnOfficeConfigured, OnOfficeProperty } from '@/lib/onoffice'
 import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
+import ProvenExpertWidget from '@/components/ProvenExpertWidget'
 
 // Force dynamic rendering to fetch fresh Airtable data
 export const dynamic = 'force-dynamic'
@@ -360,6 +361,9 @@ export default async function HomePage() {
                 className="object-contain opacity-90"
               />
             </div>
+
+            {/* ProvenExpert Widget */}
+            <ProvenExpertWidget />
           </div>
         </div>
       </section>

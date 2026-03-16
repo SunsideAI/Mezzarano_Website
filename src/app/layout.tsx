@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
 import ScrollAnimations from '@/components/ScrollAnimations'
 import VoiceflowChat from '@/components/VoiceflowChat'
-import ProvenExpertWidget from '@/components/ProvenExpertWidget'
 
 const siteUrl = 'https://mezzarano-immobilien.de'
 
@@ -107,7 +106,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <VoiceflowChat />
-        <ProvenExpertWidget />
       </body>
     </html>
   )
