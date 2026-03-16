@@ -149,18 +149,34 @@ export default function EnergieausweisPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <section className="min-h-[auto] py-12 md:py-0 md:min-h-[520px] bg-wuestennacht flex items-center">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-              <FileText className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Online-Energieausweis</span>
+          <div className="max-w-4xl">
+            {/* Tagline Badge */}
+            <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
+              <FileText className="h-6 w-6 text-wuestenrot" />
+              <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+                Online-Energieausweis
+              </span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-              Energieausweis online erstellen
+
+            {/* Headline with White Bars */}
+            <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
+              <span className="flex flex-col items-start gap-3">
+                <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                  energieausweis
+                </span>
+                <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                  online erstellen
+                </span>
+                <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                  wüstenrot
+                </span>
+              </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
+
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
               Schnell, einfach und günstig – Ihr Energieausweis ab 59 € inkl. MwSt. GEG-konform und 10 Jahre gültig.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
@@ -168,7 +184,7 @@ export default function EnergieausweisPage() {
                 Jetzt Ausweis wählen
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                 <Phone className="h-5 w-5 mr-2" />
                 0177 6542977
               </a>

@@ -67,23 +67,23 @@ export default function SchweichPage() {
             {/* Text Content */}
             <div data-aos="fade-right">
               {/* Tagline Badge */}
-              <div className="flex items-center gap-2 mb-4">
-                <MapPin className="h-5 w-5 text-wuestenrot" />
-                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1">
+              <div className="flex items-center gap-3 mb-6">
+                <MapPin className="h-6 w-6 text-wuestenrot" />
+                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
                   Trier-Saarburg
                 </span>
               </div>
 
               {/* Headline with White Bars */}
-              <h1 className="mb-6">
-                <span className="flex flex-col items-start gap-2">
-                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight lowercase text-wuestennacht">
+              <h1 className="mb-8">
+                <span className="flex flex-col items-start gap-3">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     ihr immobilienmakler
                   </span>
-                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight lowercase text-wuestennacht">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     in schweich
                   </span>
-                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-wuestenrot">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
                     wüstenrot
                   </span>
                 </span>

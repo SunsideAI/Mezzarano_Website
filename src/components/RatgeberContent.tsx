@@ -95,18 +95,31 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-secondary-900 h-[400px] md:h-[480px] flex items-center">
+      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+      <section className="bg-wuestennacht min-h-[400px] md:min-h-[520px] flex items-center py-12">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
-              <BookOpen className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Wissen & Expertise</span>
+          <div className="max-w-4xl">
+            {/* Tagline Badge */}
+            <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
+              <BookOpen className="h-6 w-6 text-wuestenrot" />
+              <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+                Wissen & Expertise
+              </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-              Immobilien-Ratgeber
+
+            {/* Headline with White Bars */}
+            <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
+              <span className="flex flex-col items-start gap-3">
+                <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                  immobilien-ratgeber
+                </span>
+                <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                  wüstenrot
+                </span>
+              </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
               Expertenwissen rund um Immobilien in Hermeskeil, Trier, an der Mosel und im Hochwald.
               Tipps zum Kauf, Verkauf, zur Finanzierung und aktuelle Marktanalysen.
             </p>
@@ -119,7 +132,7 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
                 placeholder="Artikel durchsuchen..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-xl bg-secondary-800 border border-secondary-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full pl-12 pr-4 py-4 rounded-xl bg-wuestennacht-light border border-wuestennacht-hover text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-wuestenrot"
               />
             </div>
           </div>

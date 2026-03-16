@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Home, CheckCircle, PiggyBank, Phone as PhoneIcon, Leaf, FileText, ClipboardCheck, HardHat, ArrowRight, Phone, Shield, TrendingUp, Zap } from 'lucide-react'
 import type { Metadata } from 'next'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Energieberatung für Ihr Zuhause | Wüstenrot Energieberatung | Mezzarano',
@@ -90,33 +91,20 @@ const reasons = [
 export default function EnergieberatungPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-              <Zap className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Wüstenrot Energieberatung</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-              Energieberatung für Ihr Zuhause
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-              Als zertifizierter Energieberater unterstütze ich Sie dabei, Ihre Immobilie zukunftssicher zu machen – mit individueller Beratung und umfassender Fördermittelberatung.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
-              <Link href="/kontakt" className="btn-primary">
-                Kostenlose Anfrage starten
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                <Phone className="h-5 w-5 mr-2" />
-                0177 6542977
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <PageHero
+        tagline="Wüstenrot Energieberatung"
+        icon={Zap}
+        lines={[
+          { text: 'energieberatung' },
+          { text: 'für ihr zuhause' },
+        ]}
+        subheadline="Als zertifizierter Energieberater unterstütze ich Sie dabei, Ihre Immobilie zukunftssicher zu machen – mit individueller Beratung und umfassender Fördermittelberatung."
+        primaryCta={{
+          text: 'Kostenlose Anfrage starten',
+          href: '/kontakt',
+        }}
+      />
 
       {/* Benefits */}
       <section className="py-12 md:py-20 bg-gray-50">

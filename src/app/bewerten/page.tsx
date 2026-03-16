@@ -95,24 +95,24 @@ export default function BewertenPage() {
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Tagline Badge */}
-              <div className="flex items-center gap-2 mb-4" data-aos="fade-up">
-                <BarChart3 className="h-5 w-5 text-wuestenrot" />
-                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1">
+              {/* Tagline Badge - Icon neben dem Badge */}
+              <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
+                <BarChart3 className="h-6 w-6 text-wuestenrot" />
+                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
                   Immobilienbewertung
                 </span>
               </div>
 
-              {/* Headline with White Bars */}
-              <h1 className="mb-6" data-aos="fade-up" data-aos-delay="100">
-                <span className="flex flex-col items-start gap-2">
-                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-4xl lg:text-5xl font-bold leading-tight lowercase text-wuestennacht">
+              {/* Headline with White Bars - Größere Schrift */}
+              <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
+                <span className="flex flex-col items-start gap-3">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     was ist ihre
                   </span>
-                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-4xl lg:text-5xl font-bold leading-tight lowercase text-wuestennacht">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     immobilie wert?
                   </span>
-                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-wuestenrot">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
                     wüstenrot
                   </span>
                 </span>

@@ -122,7 +122,7 @@ export default function HeroSlider() {
 
       {/* Content */}
       <div className="container-custom relative z-20 py-12 md:py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           {/* Tagline Badge - Wüstenrot Style */}
           <div
             className={`transition-all duration-500 ${
@@ -130,23 +130,23 @@ export default function HeroSlider() {
             }`}
             style={{ transitionDelay: '0ms' }}
           >
-            <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1 mb-4">
+            <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5 mb-6">
               {slides[currentSlide].tagline}
             </span>
           </div>
 
-          {/* Headline with White Bars - Wüstenrot Layout-Prinzipien */}
+          {/* Headline with White Bars - Wüstenrot Layout-Prinzipien - Größere Schrift */}
           <h1
-            className={`mb-6 transition-all duration-500 ${
+            className={`mb-8 transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
             style={{ transitionDelay: '150ms' }}
           >
-            <span className="flex flex-col items-start gap-2">
+            <span className="flex flex-col items-start gap-3">
               {slides[currentSlide].lines.map((line, index) => (
                 <span
                   key={index}
-                  className={`inline-block bg-white px-4 py-1 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight lowercase ${
+                  className={`inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight lowercase ${
                     line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
                   }`}
                 >
@@ -154,7 +154,7 @@ export default function HeroSlider() {
                 </span>
               ))}
               {/* Brand wüstenrot */}
-              <span className="inline-block bg-white px-4 py-1 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-wuestenrot">
+              <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-wuestenrot">
                 wüstenrot
               </span>
             </span>

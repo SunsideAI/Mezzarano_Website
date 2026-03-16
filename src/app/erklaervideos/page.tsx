@@ -61,18 +61,32 @@ export default function ErklaervideosPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="h-[400px] md:h-[480px] bg-secondary-900 flex items-center">
+      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+      <section className="min-h-[400px] md:min-h-[520px] bg-wuestennacht flex items-center py-12">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
-                Wissen kompakt erklärt
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-                Erklärvideos
+              {/* Tagline Badge */}
+              <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
+                <Play className="h-6 w-6 text-wuestenrot" />
+                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+                  Wissen kompakt erklärt
+                </span>
+              </div>
+
+              {/* Headline with White Bars */}
+              <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
+                <span className="flex flex-col items-start gap-3">
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                    erklärvideos
+                  </span>
+                  <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                    wüstenrot
+                  </span>
+                </span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+
+              <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
                 Immobilienthemen auf den Punkt gebracht. Informieren Sie sich bequem per Video – wann und wo Sie möchten.
               </p>
               <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
@@ -80,7 +94,7 @@ export default function ErklaervideosPage() {
                   Beratung anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                   <Phone className="h-5 w-5 mr-2" />
                   0177 6542977
                 </a>
@@ -91,23 +105,23 @@ export default function ErklaervideosPage() {
                 <h3 className="text-2xl font-bold text-white mb-6">Unsere Video-Themen</h3>
                 <ul className="space-y-4 text-white mb-6">
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Maklerkosten & Provisionen</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Widerrufsrecht erklärt</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Preisermittlung verstehen</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Sicherheit beim Vermieten</span>
                   </li>
                 </ul>
-                <a href="#videos" className="btn-primary w-full justify-center bg-white text-primary-500 hover:bg-gray-100">
+                <a href="#videos" className="btn-primary w-full justify-center bg-white text-wuestenrot hover:bg-gray-100">
                   Videos ansehen
                 </a>
               </div>
