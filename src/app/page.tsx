@@ -46,21 +46,21 @@ const stats = [
 
 const testimonials = [
   {
-    name: 'Familie Schneider',
-    location: 'Hermeskeil',
-    text: 'Herr Mezzarano hat uns kompetent beim Hauskauf beraten. Seine Ortskenntnis im Hochwald ist unschlagbar!',
+    name: 'Enrico Mildenberger',
+    location: 'Google Bewertung',
+    text: 'Sehr freundlicher Mann. War eine super Erfahrung mit Herrn Mezzarano, der uns eine wunderschöne Wohnung vermittelt hat. Stets hilfsbereit und offen für alle Fragen. Jederzeit ansprechbar und erreichbar.',
     rating: 5,
   },
   {
-    name: 'Thomas Weber',
-    location: 'Trier',
-    text: 'Schnelle Vermittlung meiner Eigentumswohnung zu einem hervorragenden Preis. Absolute Empfehlung!',
+    name: 'Bernhard Stein',
+    location: 'Google Local Guide',
+    text: 'Die Bewertung ist top, weil wir und unser Verkauf Objekt von Anfang an persönlich und mit viel Engagement betreut wurde. Es wurde kein Einsatz und keine Kommunikationskanäle gescheut die Vermarktung voran zu bringen. Uneingeschränkt zu empfehlen.',
     rating: 5,
   },
   {
-    name: 'Petra Hoffmann',
-    location: 'Schweich',
-    text: 'Kompetent, zuverlässig und immer erreichbar. So stelle ich mir Immobilienservice vor.',
+    name: 'Erik Jenchenne',
+    location: 'Google Local Guide',
+    text: 'Welch ein Glück hatten mein Geschäftspartner und ich, auf Sandro zu stoßen. Nicht nur hat er uns ein hervorragendes Immobilienprojekt vorgeschlagen, sondern er war auch während des gesamten Verkaufsprozesses von unschätzbarer Hilfe. Von der ersten Besichtigung über das Angebot bis hin zum Notartermin hat er sich um alle Aspekte gekümmert. Die Kommunikation war stets konstant und einfach. Ich kann Sandro nur wärmstens empfehlen.',
     rating: 5,
   },
 ]
@@ -421,6 +421,14 @@ export default async function HomePage() {
               <span>Mehr Bewertungen auf Google</span>
               <ArrowRight className="h-4 w-4" />
             </a>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="text-center mt-6" data-aos="fade-up">
+            <p className="text-xs text-secondary-400 max-w-2xl mx-auto">
+              Die hier dargestellten Bewertungen stammen von Google und wurden von uns nicht auf ihre Echtheit überprüft.
+              Sie geben die persönliche Meinung der jeweiligen Verfasser wieder.
+            </p>
           </div>
         </div>
       </section>
