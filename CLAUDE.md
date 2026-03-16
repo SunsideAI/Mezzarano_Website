@@ -229,6 +229,9 @@ The website integrates with onOffice enterprise CRM for lead management.
 |------|-----------|------------------|
 | Kontaktformular | `/api/contact` | `address`, `agentslog` |
 | Suchprofil | `/api/suchprofil` | `address`, `searchcriteria`, `agentslog` |
+| Immobilien-Anfrage | `/api/contact` | `address`, `agentslog` |
+| Newsletter | `/api/newsletter` | `address`, `agentslog` |
+| Energieausweis | `/api/contact` | `address`, `agentslog` |
 
 ### API Library
 
@@ -253,6 +256,46 @@ The onOffice integration is implemented in `src/lib/onoffice.ts`:
 
 Full onOffice API documentation: `onOffice_api.md` (in repo root)
 
+## Email Notifications (Resend)
+
+The website sends email notifications to the team when leads are generated.
+
+### Recipients
+
+All lead notifications are sent to:
+- `sandro.mezzarano@wuestenrot.de`
+- `contact@sunsideai.de`
+
+### Notification Types
+
+| Form | Subject Example |
+|------|-----------------|
+| Kontaktformular | "Neue Kontaktanfrage von Max Mustermann" |
+| Immobilien-Anfrage | "Neue Immobilien-Anfrage von Max Mustermann" |
+| Suchprofil | "Neues Suchprofil: Max Mustermann sucht Haus zum Kauf" |
+| Newsletter | "Neue Newsletter-Anmeldung: email@example.de" |
+
+### Implementation
+
+The email notification system is implemented in `src/lib/email.ts`:
+
+- **sendContactNotification()**: Contact form and property inquiry emails
+- **sendSearchProfileNotification()**: Search profile wizard emails
+- **sendNewsletterNotification()**: Newsletter subscription emails
+
+### Setup
+
+1. Create a Resend account at https://resend.com
+2. Verify your domain or use Resend's test domain
+3. Create an API key
+4. Add to `.env.local`:
+   ```env
+   RESEND_API_KEY=re_your-api-key
+   RESEND_FROM_EMAIL=noreply@your-domain.de
+   ```
+
+**Note**: Email notifications are optional. If `RESEND_API_KEY` is not set, notifications are skipped silently.
+
 ## Environment Variables
 
 Create a `.env.local` file for local development:
@@ -264,6 +307,10 @@ ANTHROPIC_API_KEY=your-anthropic-api-key
 # Required for onOffice CRM integration (Lead forms)
 ONOFFICE_TOKEN=your-32-character-token
 ONOFFICE_SECRET=your-64-character-secret
+
+# Required for email notifications (Resend)
+RESEND_API_KEY=re_your-resend-api-key
+RESEND_FROM_EMAIL=noreply@mezzarano-immobilien.de
 
 # Optional: Deployment webhook
 DEPLOY_WEBHOOK_URL=https://your-deployment-webhook

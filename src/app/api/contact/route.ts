@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createContact, isOnOfficeConfigured, type ContactFormData } from '@/lib/onoffice'
+import { sendContactNotification } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -50,6 +51,18 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString(),
       })
 
+      // Send email notification (don't block on failure)
+      sendContactNotification({
+        name,
+        email,
+        phone: body.phone,
+        inquiryType: body.inquiryType,
+        message: finalMessage,
+        propertyId,
+        propertyTitle,
+        source,
+      }).catch(err => console.error('Email notification failed:', err))
+
       return NextResponse.json({
         success: true,
         message: 'Ihre Anfrage wurde erfolgreich gesendet.',
@@ -68,6 +81,18 @@ export async function POST(request: NextRequest) {
     })
 
     if (result.success) {
+      // Send email notification (don't block on failure)
+      sendContactNotification({
+        name,
+        email,
+        phone: body.phone,
+        inquiryType: body.inquiryType,
+        message: finalMessage,
+        propertyId,
+        propertyTitle,
+        source,
+      }).catch(err => console.error('Email notification failed:', err))
+
       return NextResponse.json({
         success: true,
         message: 'Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.',

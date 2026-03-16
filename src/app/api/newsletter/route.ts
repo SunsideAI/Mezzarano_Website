@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createOnOfficeClient, isOnOfficeConfigured } from '@/lib/onoffice'
+import { sendNewsletterNotification } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,6 +31,11 @@ export async function POST(request: NextRequest) {
         email,
         timestamp: new Date().toISOString(),
       })
+
+      // Send email notification (don't block on failure)
+      sendNewsletterNotification({ email }).catch(err =>
+        console.error('Email notification failed:', err)
+      )
 
       return NextResponse.json({
         success: true,
@@ -72,6 +78,11 @@ export async function POST(request: NextRequest) {
           },
         },
       ])
+
+      // Send email notification (don't block on failure)
+      sendNewsletterNotification({ email }).catch(err =>
+        console.error('Email notification failed:', err)
+      )
 
       return NextResponse.json({
         success: true,

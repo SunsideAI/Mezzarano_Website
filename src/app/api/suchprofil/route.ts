@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createSearchProfile, isOnOfficeConfigured, type SearchProfileData } from '@/lib/onoffice'
+import { sendSearchProfileNotification } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -47,6 +48,11 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString(),
       })
 
+      // Send email notification (don't block on failure)
+      sendSearchProfileNotification(body as SearchProfileData).catch(err =>
+        console.error('Email notification failed:', err)
+      )
+
       return NextResponse.json({
         success: true,
         message: 'Ihr Suchprofil wurde erfolgreich angelegt.',
@@ -58,6 +64,11 @@ export async function POST(request: NextRequest) {
     const result = await createSearchProfile(body as SearchProfileData)
 
     if (result.success) {
+      // Send email notification (don't block on failure)
+      sendSearchProfileNotification(body as SearchProfileData).catch(err =>
+        console.error('Email notification failed:', err)
+      )
+
       return NextResponse.json({
         success: true,
         message: 'Ihr Suchprofil wurde erfolgreich angelegt. Wir melden uns, sobald eine passende Immobilie verfuegbar ist.',
