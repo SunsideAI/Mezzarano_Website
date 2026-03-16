@@ -64,6 +64,7 @@ export default function Footer() {
             <div className="mb-6">
               <h3 className="text-white font-bold text-lg mb-1">{contact.name}</h3>
               <p className="text-gray-400 text-sm">{contact.title}</p>
+              <p className="text-wuestenrot font-semibold text-sm mt-2 italic">&bdquo;Ehrlichkeit hat ein Zuhause.&ldquo;</p>
             </div>
 
             {/* Contact Info */}

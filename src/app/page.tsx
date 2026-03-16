@@ -439,6 +439,7 @@ export default async function HomePage() {
       {/* CTA Section */}
       <section className="py-12 md:py-20 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
+          <p className="text-white/80 text-lg italic mb-4">&bdquo;Ehrlichkeit hat ein Zuhause.&ldquo;</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Bereit, Ihre Traumimmobilie zu finden?
           </h2>

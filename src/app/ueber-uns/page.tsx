@@ -76,7 +76,8 @@ export default function UeberUnsPage() {
 
             <div data-aos="fade-left">
               <h2 className="section-title mb-6">Sandro Mezzarano</h2>
-              <p className="text-primary-500 font-semibold mb-4">Wüstenrot Immobilienberater</p>
+              <p className="text-primary-500 font-semibold mb-2">Wüstenrot Immobilienberater</p>
+              <p className="text-secondary-900 font-bold text-xl mb-6 italic">&bdquo;Ehrlichkeit hat ein Zuhause.&ldquo;</p>
               <p className="text-gray-600 mb-6">
                 Als Ihr Wüstenrot Immobilienpartner in Hermeskeil verbinde ich persönliche Betreuung
                 mit der Stärke eines renommierten Finanzdienstleisters. Mein Ziel ist es, Sie
