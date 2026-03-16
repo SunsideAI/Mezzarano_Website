@@ -226,18 +226,30 @@ export default function ImmobilienPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-secondary-900 h-[400px] md:h-[480px] flex items-center">
+      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+      <section className="bg-wuestennacht min-h-[400px] md:min-h-[520px] flex items-center py-12">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
-              <Search className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Immobiliensuche</span>
+          <div className="max-w-4xl">
+            {/* Tagline Badge */}
+            <div className="mb-6" data-aos="fade-up">
+              <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+                Immobiliensuche
+              </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-              Immobilien
+
+            {/* Headline with White Bars - w-fit für exakte Textbreite */}
+            <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
+              <span className="flex flex-col items-start gap-3">
+                <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
+                  aktuelle immobilien
+                </span>
+                <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                  wüstenrot
+                </span>
+              </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
               Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel – aktuelle Angebote aus dem Wüstenrot-Netzwerk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
@@ -245,7 +257,7 @@ export default function ImmobilienPage() {
                 Beratung anfragen
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                 <Phone className="h-5 w-5 mr-2" />
                 0177 6542977
               </a>

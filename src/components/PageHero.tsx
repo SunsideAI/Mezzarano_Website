@@ -64,24 +64,23 @@ export default function PageHero({
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl">
-          {/* Tagline Badge - Icon neben dem Badge */}
+          {/* Tagline Badge - nur Badge ohne Icon */}
           <div
-            className="flex items-center gap-3 mb-6"
+            className="mb-6"
             data-aos="fade-up"
           >
-            {Icon && <Icon className="h-6 w-6 text-wuestenrot" />}
             <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
               {tagline}
             </span>
           </div>
 
-          {/* Headline with White Bars - Größere Schrift */}
+          {/* Headline with White Bars - w-fit für exakte Textbreite */}
           <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
             <span className="flex flex-col items-start gap-3">
               {lines.map((line, index) => (
                 <span
                   key={index}
-                  className={`inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase ${
+                  className={`inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase ${
                     line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
                   }`}
                 >
@@ -90,7 +89,7 @@ export default function PageHero({
               ))}
               {/* Brand wüstenrot */}
               {showBrand && (
-                <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
+                <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-wuestenrot">
                   wüstenrot
                 </span>
               )}

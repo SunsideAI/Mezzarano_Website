@@ -135,7 +135,7 @@ export default function HeroSlider() {
             </span>
           </div>
 
-          {/* Headline with White Bars - Wüstenrot Layout-Prinzipien - Größere Schrift */}
+          {/* Headline with White Bars - w-fit für exakte Textbreite */}
           <h1
             className={`mb-8 transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
@@ -146,7 +146,7 @@ export default function HeroSlider() {
               {slides[currentSlide].lines.map((line, index) => (
                 <span
                   key={index}
-                  className={`inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight lowercase ${
+                  className={`inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight lowercase ${
                     line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
                   }`}
                 >
@@ -154,7 +154,7 @@ export default function HeroSlider() {
                 </span>
               ))}
               {/* Brand wüstenrot */}
-              <span className="inline-block bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-wuestenrot">
+              <span className="inline-block w-fit bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-wuestenrot">
                 wüstenrot
               </span>
             </span>
