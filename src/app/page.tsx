@@ -60,7 +60,7 @@ const testimonials = [
   {
     name: 'Erik Jenchenne',
     location: 'Google Local Guide',
-    text: 'Welch ein Glück hatten mein Geschäftspartner und ich, auf Sandro zu stoßen. Nicht nur hat er uns ein hervorragendes Immobilienprojekt vorgeschlagen, sondern er war auch während des gesamten Verkaufsprozesses von unschätzbarer Hilfe. Von der ersten Besichtigung über das Angebot bis hin zum Notartermin hat er sich um alle Aspekte gekümmert. Die Kommunikation war stets konstant und einfach. Ich kann Sandro nur wärmstens empfehlen.',
+    text: 'Welch ein Glück hatten mein Geschäftspartner und ich, auf Sandro zu stoßen. Er war während des gesamten Verkaufsprozesses von unschätzbarer Hilfe. Die Kommunikation war stets konstant und einfach. Ich kann Sandro nur wärmstens empfehlen.',
     rating: 5,
   },
 ]
