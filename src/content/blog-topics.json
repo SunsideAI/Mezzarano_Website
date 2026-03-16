@@ -155,8 +155,8 @@
       ],
       "category": "Recht & Steuern",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-16T10:07:22.214Z"
     },
     {
       "title": "Haus sanieren oder verkaufen: Die richtige Entscheidung treffen",
@@ -168,8 +168,8 @@
       ],
       "category": "Tipps & Ratgeber",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-16T10:08:30.195Z"
     },
     {
       "title": "Home Staging: So verkaufen Sie Ihre Immobilie schneller",
@@ -181,8 +181,8 @@
       ],
       "category": "Immobilienverkauf",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-16T10:09:45.828Z"
     },
     {
       "title": "Neubau vs. Bestandsimmobilie: Vor- und Nachteile im Vergleich",
