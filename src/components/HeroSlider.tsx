@@ -155,7 +155,7 @@ export default function HeroSlider() {
               {slides[currentSlide].lines.map((line, index) => (
                 <span
                   key={index}
-                  className={`inline-block w-fit whitespace-nowrap bg-white px-4 py-2 md:px-5 md:py-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none lowercase ${
+                  className={`inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none lowercase ${
                     line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
                   }`}
                 >
@@ -163,7 +163,7 @@ export default function HeroSlider() {
                 </span>
               ))}
               {/* Brand wüstenrot */}
-              <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-2 md:px-5 md:py-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none text-wuestenrot">
+              <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none text-wuestenrot">
                 wüstenrot
               </span>
             </span>
