@@ -66,9 +66,10 @@ export default function ErklaervideosPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Tagline Badge */}
-              <div className="mb-6" data-aos="fade-up">
-                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+              {/* Tagline - Icon + Text in wuestenrot */}
+              <div className="flex items-center gap-2 text-wuestenrot mb-6" data-aos="fade-up">
+                <Play className="h-5 w-5" />
+                <span className="text-sm font-semibold uppercase tracking-wider">
                   Wissen kompakt erklärt
                 </span>
               </div>

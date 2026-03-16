@@ -66,9 +66,10 @@ export default function BernkastelKuesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div data-aos="fade-right">
-              {/* Tagline Badge */}
-              <div className="mb-6">
-                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+              {/* Tagline - Icon + Text in wuestenrot */}
+              <div className="flex items-center gap-2 text-wuestenrot mb-6">
+                <MapPin className="h-5 w-5" />
+                <span className="text-sm font-semibold uppercase tracking-wider">
                   Moselregion
                 </span>
               </div>

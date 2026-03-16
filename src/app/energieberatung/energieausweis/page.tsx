@@ -153,9 +153,10 @@ export default function EnergieausweisPage() {
       <section className="min-h-[auto] py-12 md:py-0 md:min-h-[520px] bg-wuestennacht flex items-center">
         <div className="container-custom">
           <div className="max-w-4xl">
-            {/* Tagline Badge */}
-            <div className="mb-6" data-aos="fade-up">
-              <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+            {/* Tagline - Icon + Text in wuestenrot */}
+            <div className="flex items-center gap-2 text-wuestenrot mb-6" data-aos="fade-up">
+              <FileText className="h-5 w-5" />
+              <span className="text-sm font-semibold uppercase tracking-wider">
                 Online-Energieausweis
               </span>
             </div>

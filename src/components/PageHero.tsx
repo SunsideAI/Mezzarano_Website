@@ -64,12 +64,13 @@ export default function PageHero({
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl">
-          {/* Tagline Badge */}
+          {/* Tagline - Icon + Text in wuestenrot */}
           <div
-            className="mb-6"
+            className="flex items-center gap-2 text-wuestenrot mb-6"
             data-aos="fade-up"
           >
-            <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
+            {Icon && <Icon className="h-5 w-5" />}
+            <span className="text-sm font-semibold uppercase tracking-wider">
               {tagline}
             </span>
           </div>
