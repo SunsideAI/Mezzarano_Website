@@ -2,7 +2,7 @@
  * Email Notification Service
  *
  * Uses Resend to send lead notification emails to the team.
- * Recipients: sandro.mezzarano@wuestenrot.de, contact@sunsideai.de
+ * Recipients (Test-Modus): contact@sunsideai.de
  */
 
 import { Resend } from 'resend'
@@ -21,8 +21,8 @@ function getResendClient(): Resend | null {
 }
 
 // Email recipients for lead notifications
+// TODO: Für Produktion wieder hinzufügen: 'sandro.mezzarano@wuestenrot.de'
 const NOTIFICATION_RECIPIENTS = [
-  'sandro.mezzarano@wuestenrot.de',
   'contact@sunsideai.de',
 ]
 
