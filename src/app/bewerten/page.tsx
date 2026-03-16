@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, BarChart3, Clock, Shield, FileText, Phone, ArrowRight, Home, TrendingUp, Calculator, MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Kostenlose Immobilienbewertung in Hermeskeil, Trier & Mosel | Mezzarano',
@@ -89,19 +90,35 @@ const priceRanges = [
 export default function BewertenPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
-        <div className="container-custom">
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <section className="relative min-h-[auto] py-12 md:py-0 md:min-h-[520px] bg-wuestennacht flex items-center overflow-hidden">
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-                <BarChart3 className="h-5 w-5" />
-                <span className="text-sm font-medium uppercase tracking-wider">Immobilienbewertung</span>
+              {/* Tagline Badge */}
+              <div className="flex items-center gap-2 mb-4" data-aos="fade-up">
+                <BarChart3 className="h-5 w-5 text-wuestenrot" />
+                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1">
+                  Immobilienbewertung
+                </span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-                Was ist Ihre Immobilie wert?
+
+              {/* Headline with White Bars */}
+              <h1 className="mb-6" data-aos="fade-up" data-aos-delay="100">
+                <span className="flex flex-col items-start gap-2">
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-4xl lg:text-5xl font-bold leading-tight lowercase text-wuestennacht">
+                    was ist ihre
+                  </span>
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-4xl lg:text-5xl font-bold leading-tight lowercase text-wuestennacht">
+                    immobilie wert?
+                  </span>
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-wuestenrot">
+                    wüstenrot
+                  </span>
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
+
+              <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
                 Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - kostenlos, unverbindlich und von einem lokalen Experten mit fundierter Marktkenntnis.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
@@ -109,7 +126,7 @@ export default function BewertenPage() {
                   Kostenlose Bewertung anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
+                <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                   <Phone className="h-5 w-5 mr-2" />
                   0177 6542977
                 </a>
@@ -120,23 +137,23 @@ export default function BewertenPage() {
                 <h3 className="text-2xl font-bold text-white mb-6">Jetzt Bewertung starten</h3>
                 <ul className="space-y-4 text-white mb-6">
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Termin innerhalb von 48 Stunden</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Persönliche Vor-Ort-Besichtigung</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>Schriftliches Wertgutachten</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary-400" />
+                    <CheckCircle className="h-5 w-5 text-wuestenrot" />
                     <span>100% kostenlos & unverbindlich</span>
                   </li>
                 </ul>
-                <Link href="/kontakt" className="btn-primary w-full justify-center bg-white text-primary-500 hover:bg-gray-100">
+                <Link href="/kontakt" className="btn-primary w-full justify-center bg-white text-wuestenrot hover:bg-gray-100">
                   Bewertung anfragen
                 </Link>
               </div>

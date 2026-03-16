@@ -60,28 +60,43 @@ const faqItems = [
 export default function BernkastelKuesPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-secondary-900 h-[400px] md:h-[480px] flex items-center">
+      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+      <section className="bg-wuestennacht min-h-[400px] md:min-h-[520px] flex items-center py-12">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div data-aos="fade-right">
-              <div className="flex items-center gap-2 text-primary-400 mb-4">
-                <MapPin className="h-5 w-5" />
-                <span className="font-medium">Moselregion</span>
+              {/* Tagline Badge */}
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="h-5 w-5 text-wuestenrot" />
+                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1">
+                  Moselregion
+                </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Immobilien in Bernkastel-Kues
+
+              {/* Headline with White Bars */}
+              <h1 className="mb-6">
+                <span className="flex flex-col items-start gap-2">
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight lowercase text-wuestennacht">
+                    ihr immobilienmakler
+                  </span>
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight lowercase text-wuestennacht">
+                    in bernkastel-kues
+                  </span>
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-wuestenrot">
+                    wüstenrot
+                  </span>
+                </span>
               </h1>
               <p className="text-lg text-gray-300 mb-8">
                 Traumhafte Immobilien an der Mosel – von der historischen Fachwerk-Altstadt
                 bis zu Häusern mit Weinbergsblick. Ihr Wüstenrot Partner für die Moselregion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/kontakt" className="btn-primary">
+                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors">
                   Beratung anfragen
                 </Link>
-                <Link href="/immobilien" className="btn-outline">
+                <Link href="/immobilien" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors">
                   Mosel-Immobilien entdecken
                 </Link>
               </div>

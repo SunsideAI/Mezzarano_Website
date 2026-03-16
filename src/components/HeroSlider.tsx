@@ -3,32 +3,46 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Star, ArrowRight } from 'lucide-react'
+import { Phone, ArrowRight } from 'lucide-react'
+
+interface HeadlineLine {
+  text: string
+  isHighlighted?: boolean
+}
 
 interface Slide {
   image: string
-  headline: string
-  highlightedText: string
+  tagline: string
+  lines: HeadlineLine[]
   subheadline: string
 }
 
 const slides: Slide[] = [
   {
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_112407784_bo2mmc.jpg',
-    headline: 'Immobilien verkaufen – ',
-    highlightedText: 'kompetent und persönlich',
+    tagline: 'Immobilienverkauf',
+    lines: [
+      { text: 'immobilien verkaufen', isHighlighted: false },
+      { text: 'kompetent und persönlich', isHighlighted: false },
+    ],
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
   {
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_265469422_aumfux.jpg',
-    headline: 'Ihr Traumhaus finden – ',
-    highlightedText: 'mit lokaler Expertise',
+    tagline: 'Immobilienkauf',
+    lines: [
+      { text: 'ihr traumhaus finden', isHighlighted: false },
+      { text: 'mit lokaler expertise', isHighlighted: false },
+    ],
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
   {
     image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711784/AdobeStock_476608445_ekjvmp.jpg',
-    headline: 'Wüstenrot Partner – ',
-    highlightedText: 'Finanzierung aus einer Hand',
+    tagline: 'Finanzierung',
+    lines: [
+      { text: 'finanzierung', isHighlighted: false },
+      { text: 'aus einer hand', isHighlighted: false },
+    ],
     subheadline: 'Profitieren Sie von attraktiven Finanzierungslösungen und umfassender Beratung durch das Wüstenrot-Netzwerk.',
   },
 ]
@@ -93,7 +107,7 @@ export default function HeroSlider() {
           <div className={`absolute inset-0 ${index === currentSlide ? 'animate-ken-burns' : ''}`}>
             <Image
               src={slide.image}
-              alt={`${slide.headline} ${slide.highlightedText}`}
+              alt={`${slide.tagline} - ${slide.lines.map(l => l.text).join(' ')}`}
               fill
               priority={index === 0}
               sizes="100vw"
@@ -109,35 +123,46 @@ export default function HeroSlider() {
       {/* Content */}
       <div className="container-custom relative z-20 py-12 md:py-20">
         <div className="max-w-3xl">
-          {/* Rating Badge */}
+          {/* Tagline Badge - Wüstenrot Style */}
           <div
-            className={`flex items-center gap-2 mb-6 transition-all duration-500 ${
+            className={`transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
             style={{ transitionDelay: '0ms' }}
           >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-wuestenrot text-wuestenrot" />
-              ))}
-            </div>
-            <span className="text-white/80 text-sm">Ihr vertrauensvoller Partner</span>
+            <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1 mb-4">
+              {slides[currentSlide].tagline}
+            </span>
           </div>
 
-          {/* Headline - Styleguide: wüstenrot Akzent */}
+          {/* Headline with White Bars - Wüstenrot Layout-Prinzipien */}
           <h1
-            className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-headline transition-all duration-500 ${
+            className={`mb-6 transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
             style={{ transitionDelay: '150ms' }}
           >
-            {slides[currentSlide].headline}
-            <span className="text-wuestenrot">{slides[currentSlide].highlightedText}</span>
+            <span className="flex flex-col items-start gap-2">
+              {slides[currentSlide].lines.map((line, index) => (
+                <span
+                  key={index}
+                  className={`inline-block bg-white px-4 py-1 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight lowercase ${
+                    line.isHighlighted ? 'text-wuestenrot' : 'text-wuestennacht'
+                  }`}
+                >
+                  {line.text}
+                </span>
+              ))}
+              {/* Brand wüstenrot */}
+              <span className="inline-block bg-white px-4 py-1 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-wuestenrot">
+                wüstenrot
+              </span>
+            </span>
           </h1>
 
           {/* Subheadline */}
           <p
-            className={`text-lg md:text-xl text-white/80 mb-10 max-w-2xl transition-all duration-500 ${
+            className={`text-lg md:text-xl text-white/90 mb-10 max-w-2xl transition-all duration-500 ${
               textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
             style={{ transitionDelay: '300ms' }}

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { CheckCircle, Search, Key, Shield, Heart, Phone, ArrowRight, Home, FileSearch, Calculator, UserCheck, MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
 import ProcessSteps from '@/components/ProcessSteps'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Immobilie kaufen in Hermeskeil, Trier & Mosel | Mezzarano Immobilien',
@@ -94,33 +95,20 @@ const buyingTips = [
 export default function KaufenPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="h-[400px] md:h-[480px] bg-secondary-900 flex items-center">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-4" data-aos="fade-up">
-              <Key className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Immobilie kaufen</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-              Finden Sie mit uns Ihre Traumimmobilie
-            </h1>
-            <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-              Von der ersten Beratung bis zur Schlüsselübergabe - ich begleite Sie auf dem Weg zu Ihrem neuen Zuhause in Hermeskeil, Trier und der Moselregion.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
-              <Link href="/immobilien" className="btn-primary">
-                Aktuelle Angebote ansehen
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                <Phone className="h-5 w-5 mr-2" />
-                0177 6542977
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <PageHero
+        tagline="Immobilienkauf"
+        icon={Key}
+        lines={[
+          { text: 'finden sie mit uns' },
+          { text: 'ihre traumimmobilie' },
+        ]}
+        subheadline="Von der ersten Beratung bis zur Schlüsselübergabe - ich begleite Sie auf dem Weg zu Ihrem neuen Zuhause in Hermeskeil, Trier und der Moselregion."
+        primaryCta={{
+          text: 'Aktuelle Angebote ansehen',
+          href: '/immobilien',
+        }}
+      />
 
       {/* Benefits */}
       <section className="py-12 md:py-20 bg-gray-50">

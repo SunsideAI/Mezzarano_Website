@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Home, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
 import SchemaMarkup, { generateFAQSchema } from '@/components/SchemaMarkup'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Immobilienmakler Hermeskeil | Sandro Mezzarano | Wüstenrot Immobilien',
@@ -60,20 +61,36 @@ export default function HermeskeilPage() {
     <>
       <SchemaMarkup data={faqSchema} />
 
-      {/* Hero Section */}
-      <section className="bg-secondary-900 h-[400px] md:h-[480px] flex items-center">
+      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+      <section className="bg-wuestennacht min-h-[400px] md:min-h-[520px] flex items-center py-12">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div data-aos="fade-right">
-              <div className="flex items-center gap-2 text-primary-400 mb-4">
-                <MapPin className="h-5 w-5" />
-                <span className="font-medium">Hermeskeil & Hochwald</span>
+              {/* Tagline Badge */}
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="h-5 w-5 text-wuestenrot" />
+                <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-3 py-1">
+                  Hermeskeil & Hochwald
+                </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Ihr Immobilienmakler in Hermeskeil
+
+              {/* Headline with White Bars */}
+              <h1 className="mb-6">
+                <span className="flex flex-col items-start gap-2">
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight lowercase text-wuestennacht">
+                    ihr immobilienmakler
+                  </span>
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight lowercase text-wuestennacht">
+                    in hermeskeil
+                  </span>
+                  <span className="inline-block bg-white px-4 py-1 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-wuestenrot">
+                    wüstenrot
+                  </span>
+                </span>
               </h1>
-              <p className="text-lg text-gray-300 mb-8">
+
+              <p className="text-lg text-white/90 mb-8">
                 Sandro Mezzarano – Ihr lokaler Wüstenrot Immobilienexperte für den Kauf,
                 Verkauf und die Vermietung von Immobilien in Hermeskeil und der gesamten Hochwald-Region.
               </p>
@@ -81,14 +98,14 @@ export default function HermeskeilPage() {
                 <Link href="/kontakt" className="btn-primary">
                   Kostenlose Beratung anfragen
                 </Link>
-                <Link href="/immobilien?ort=Hermeskeil" className="btn-outline">
+                <Link href="/immobilien?ort=Hermeskeil" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
                   Immobilien in Hermeskeil
                 </Link>
               </div>
             </div>
 
             {/* Image */}
-            <div className="relative" data-aos="fade-left">
+            <div className="relative hidden lg:block" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png"
@@ -101,7 +118,7 @@ export default function HermeskeilPage() {
                 />
               </div>
               {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-500 rounded-2xl -z-10 hidden md:block" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-wuestenrot rounded-2xl -z-10" />
             </div>
           </div>
         </div>

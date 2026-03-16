@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Award, Users, Target, Heart, CheckCircle, Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
+import PageHero from '@/components/PageHero'
 
 const values = [
   {
@@ -37,33 +38,20 @@ const services = [
 export default function UeberUnsPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-              <Award className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Ihr Makler</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-              Über mich
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-              Ihr persönlicher Wüstenrot Immobilienpartner in Hermeskeil und der Region Trier-Mosel – Erfahrung, Vertrauen und lokale Expertise seit über 16 Jahren.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
-              <Link href="/kontakt" className="btn-primary">
-                Kontakt aufnehmen
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                <Phone className="h-5 w-5 mr-2" />
-                0177 6542977
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <PageHero
+        tagline="Ihr Makler"
+        icon={Award}
+        lines={[
+          { text: 'über mich' },
+          { text: 'erfahrung & vertrauen' },
+        ]}
+        subheadline="Ihr persönlicher Wüstenrot Immobilienpartner in Hermeskeil und der Region Trier-Mosel – Erfahrung, Vertrauen und lokale Expertise seit über 16 Jahren."
+        primaryCta={{
+          text: 'Kontakt aufnehmen',
+          href: '/kontakt',
+        }}
+      />
 
       {/* Story Section */}
       <section className="py-12 md:py-20">

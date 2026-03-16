@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare, ArrowRight } from 'lucide-react'
+import PageHero from '@/components/PageHero'
 
 const contactInfo = [
   {
@@ -87,33 +88,20 @@ export default function KontaktPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-              <MessageSquare className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Kontakt</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-              Kontaktieren Sie mich
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-              Ich bin persönlich für Sie da. Kontaktieren Sie mich für eine unverbindliche Beratung rund um Ihre Immobilie in Hermeskeil und der Region.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
-              <a href="#kontaktformular" className="btn-primary">
-                Nachricht schreiben
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                <Phone className="h-5 w-5 mr-2" />
-                0177 6542977
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <PageHero
+        tagline="Kontakt"
+        icon={MessageSquare}
+        lines={[
+          { text: 'kontaktieren sie mich' },
+          { text: 'persönlich für sie da' },
+        ]}
+        subheadline="Ich bin persönlich für Sie da. Kontaktieren Sie mich für eine unverbindliche Beratung rund um Ihre Immobilie in Hermeskeil und der Region."
+        primaryCta={{
+          text: 'Nachricht schreiben',
+          href: '#kontaktformular',
+        }}
+      />
 
       {/* Contact Info Cards - Fenster-Form */}
       <section className="py-12 bg-warmgrau">

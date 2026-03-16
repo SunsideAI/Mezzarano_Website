@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { CheckCircle, TrendingUp, Clock, Shield, Users, Phone, ArrowRight, Home, FileText, UserCheck, Camera, BarChart3 } from 'lucide-react'
 import type { Metadata } from 'next'
 import ProcessSteps from '@/components/ProcessSteps'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Immobilie verkaufen in Hermeskeil, Trier & Mosel | Mezzarano Immobilien',
@@ -73,33 +74,20 @@ const sellingPoints = [
 export default function VerkaufenPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="min-h-[auto] py-8 md:py-0 md:h-[480px] bg-secondary-900 flex items-center">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-primary-400 mb-3 md:mb-4" data-aos="fade-up">
-              <TrendingUp className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">Immobilie verkaufen</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
-              Ihr Immobilienverkauf in besten Händen
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-5 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-              Als Ihr Wüstenrot-Partner in Hermeskeil begleite ich Sie persönlich durch den gesamten Verkaufsprozess - von der ersten Bewertung bis zur Schlüsselübergabe.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="300">
-              <Link href="/kontakt" className="btn-primary">
-                Kostenlose Bewertung anfragen
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-secondary-900">
-                <Phone className="h-5 w-5 mr-2" />
-                0177 6542977
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <PageHero
+        tagline="Immobilienverkauf"
+        icon={TrendingUp}
+        lines={[
+          { text: 'ihr immobilienverkauf' },
+          { text: 'in besten händen' },
+        ]}
+        subheadline="Als Ihr Wüstenrot-Partner in Hermeskeil begleite ich Sie persönlich durch den gesamten Verkaufsprozess - von der ersten Bewertung bis zur Schlüsselübergabe."
+        primaryCta={{
+          text: 'Kostenlose Bewertung anfragen',
+          href: '/kontakt',
+        }}
+      />
 
       {/* Benefits */}
       <section className="py-10 md:py-20 bg-gray-50">
