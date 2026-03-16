@@ -476,17 +476,16 @@ export default function SuchprofilPage() {
       <section className="min-h-[auto] py-12 md:py-0 md:min-h-[520px] bg-wuestennacht flex items-center">
         <div className="container-custom">
           <div className="max-w-4xl">
-            {/* Tagline Badge - Icon neben Badge */}
-            <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
-              <Bell className="h-6 w-6 text-wuestenrot" />
+            {/* Tagline Badge */}
+            <div className="mb-6" data-aos="fade-up">
               <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
                 Suchprofil
               </span>
             </div>
 
-            {/* Headline with White Bars - w-fit für exakte Textbreite */}
+            {/* Headline with White Bars - keine Abstände zwischen Balken */}
             <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
-              <span className="flex flex-col items-start gap-3">
+              <span className="flex flex-col items-start gap-0">
                 <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                   die richtige immobilie
                 </span>

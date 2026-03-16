@@ -143,7 +143,7 @@ export default function HeroSlider() {
             }`}
             style={{ transitionDelay: '150ms' }}
           >
-            <span className="flex flex-col items-start gap-3">
+            <span className="flex flex-col items-start gap-0">
               {slides[currentSlide].lines.map((line, index) => (
                 <span
                   key={index}

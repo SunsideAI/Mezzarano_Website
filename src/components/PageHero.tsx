@@ -64,20 +64,19 @@ export default function PageHero({
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl">
-          {/* Tagline Badge - Icon neben Badge */}
+          {/* Tagline Badge */}
           <div
-            className="flex items-center gap-3 mb-6"
+            className="mb-6"
             data-aos="fade-up"
           >
-            {Icon && <Icon className="h-6 w-6 text-wuestenrot" />}
             <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
               {tagline}
             </span>
           </div>
 
-          {/* Headline with White Bars - w-fit für exakte Textbreite */}
+          {/* Headline with White Bars - keine Abstände zwischen Balken */}
           <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
-            <span className="flex flex-col items-start gap-3">
+            <span className="flex flex-col items-start gap-0">
               {lines.map((line, index) => (
                 <span
                   key={index}

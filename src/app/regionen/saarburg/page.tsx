@@ -66,17 +66,16 @@ export default function SaarburgPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div data-aos="fade-right">
-              {/* Tagline Badge - Icon neben Badge */}
-              <div className="flex items-center gap-3 mb-6">
-                <MapPin className="h-6 w-6 text-wuestenrot" />
+              {/* Tagline Badge */}
+              <div className="mb-6">
                 <span className="inline-block bg-wuestenrot text-white font-bold text-sm px-4 py-1.5">
                   Saarburg & Umgebung
                 </span>
               </div>
 
-              {/* Headline with White Bars - w-fit für exakte Textbreite */}
+              {/* Headline with White Bars - keine Abstände zwischen Balken */}
               <h1 className="mb-8">
-                <span className="flex flex-col items-start gap-3">
+                <span className="flex flex-col items-start gap-0">
                   <span className="inline-block w-fit whitespace-nowrap bg-white px-5 py-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight lowercase text-wuestennacht">
                     ihr immobilienmakler
                   </span>
