@@ -20,7 +20,7 @@ export default function ProvenExpertWidget() {
           position: 'fixed',
           lineHeight: 0,
           left: 0,
-          top: 100,
+          bottom: 20,
         }}
       >
         <img
