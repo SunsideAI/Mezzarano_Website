@@ -27,7 +27,7 @@ const NOTIFICATION_RECIPIENTS = [
 ]
 
 // Sender email (must be verified in Resend)
-const SENDER_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@mezzarano-immobilien.de'
+const SENDER_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@sunsideai.de'
 const SENDER_NAME = 'Mezzarano Immobilien Website'
 
 /**
