@@ -151,6 +151,96 @@ export interface NewsletterLeadData {
 
 // ─── Email Templates ─────────────────────────────────────────────────────────
 
+// Common email wrapper with header and footer
+function getEmailWrapper(title: string, subtitle: string, content: string, timestamp: string): string {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
+  <!--[if mso]>
+  <style type="text/css">
+    table { border-collapse: collapse; }
+    .button { padding: 12px 24px !important; }
+  </style>
+  <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9; -webkit-font-smoothing: antialiased;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f1f5f9; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+
+          <!-- Logo Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 24px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <span style="font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px;">MEZZARANO</span>
+                    <span style="font-size: 22px; font-weight: 300; color: #94a3b8; letter-spacing: -0.5px;"> IMMOBILIEN</span>
+                  </td>
+                  <td align="right">
+                    <span style="display: inline-block; background-color: #E30613; color: #ffffff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Wuestenrot Partner</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Title Section -->
+          <tr>
+            <td style="background-color: #E30613; padding: 32px 40px;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">${title}</h1>
+              <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 16px; font-weight: 400;">${subtitle}</p>
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px;">
+              ${content}
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 24px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <p style="color: #64748b; margin: 0 0 4px 0; font-size: 13px; font-weight: 600;">Sandro Mezzarano</p>
+                    <p style="color: #94a3b8; margin: 0; font-size: 12px;">Wuestenrot Immobilien Partner</p>
+                  </td>
+                  <td align="right">
+                    <a href="tel:01776542977" style="display: inline-block; color: #64748b; font-size: 12px; text-decoration: none; margin-right: 16px;">0177 6542977</a>
+                    <a href="mailto:sandro.mezzarano@wuestenrot.de" style="display: inline-block; color: #64748b; font-size: 12px; text-decoration: none;">E-Mail</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Copyright -->
+          <tr>
+            <td style="background-color: #1e293b; padding: 16px 40px; text-align: center;">
+              <p style="color: #64748b; margin: 0; font-size: 11px;">
+                ${timestamp} · mezzarano-immobilien.de
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`
+}
+
 function getContactEmailHtml(data: ContactLeadData): string {
   const inquiryTypeLabels: Record<string, string> = {
     kaufberatung: 'Kaufberatung',
@@ -164,92 +254,90 @@ function getContactEmailHtml(data: ContactLeadData): string {
   }
 
   const inquiryLabel = data.inquiryType ? inquiryTypeLabels[data.inquiryType] || data.inquiryType : 'Allgemeine Anfrage'
+  const timestamp = new Date().toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' })
 
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neue Kontaktanfrage</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 20px;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <!-- Header -->
-          <tr>
-            <td style="background-color: #E30613; padding: 30px; text-align: center;">
-              <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Neue Kontaktanfrage</h1>
-              <p style="color: #ffffff; margin: 10px 0 0 0; opacity: 0.9;">${inquiryLabel}</p>
-            </td>
-          </tr>
+  const content = `
+    <!-- Contact Card -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
+      <tr>
+        <td style="padding: 24px;">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="48" valign="top">
+                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #E30613 0%, #b91c1c 100%); border-radius: 12px; text-align: center; line-height: 48px;">
+                  <span style="color: #ffffff; font-size: 20px;">&#128100;</span>
+                </div>
+              </td>
+              <td style="padding-left: 16px;" valign="top">
+                <h3 style="color: #1e293b; margin: 0 0 4px 0; font-size: 18px; font-weight: 600;">${data.name}</h3>
+                <p style="color: #64748b; margin: 0; font-size: 14px;">Neuer Lead</p>
+              </td>
+            </tr>
+          </table>
 
-          <!-- Content -->
-          <tr>
-            <td style="padding: 30px;">
-              <h2 style="color: #1e293b; margin: 0 0 20px 0; font-size: 18px;">Kontaktdaten</h2>
-
-              <table width="100%" cellpadding="8" cellspacing="0" style="margin-bottom: 20px;">
-                <tr>
-                  <td style="background-color: #f8fafc; border-radius: 4px; padding: 12px;">
-                    <strong style="color: #64748b;">Name:</strong><br>
-                    <span style="color: #1e293b; font-size: 16px;">${data.name}</span>
-                  </td>
-                </tr>
-                <tr><td style="height: 8px;"></td></tr>
-                <tr>
-                  <td style="background-color: #f8fafc; border-radius: 4px; padding: 12px;">
-                    <strong style="color: #64748b;">E-Mail:</strong><br>
-                    <a href="mailto:${data.email}" style="color: #E30613; font-size: 16px; text-decoration: none;">${data.email}</a>
-                  </td>
-                </tr>
+          <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="50%" style="padding-right: 12px;">
+                  <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">E-Mail</p>
+                  <a href="mailto:${data.email}" style="color: #E30613; font-size: 14px; text-decoration: none; font-weight: 500;">${data.email}</a>
+                </td>
                 ${data.phone ? `
-                <tr><td style="height: 8px;"></td></tr>
-                <tr>
-                  <td style="background-color: #f8fafc; border-radius: 4px; padding: 12px;">
-                    <strong style="color: #64748b;">Telefon:</strong><br>
-                    <a href="tel:${data.phone}" style="color: #E30613; font-size: 16px; text-decoration: none;">${data.phone}</a>
-                  </td>
-                </tr>
+                <td width="50%" style="padding-left: 12px;">
+                  <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Telefon</p>
+                  <a href="tel:${data.phone}" style="color: #E30613; font-size: 14px; text-decoration: none; font-weight: 500;">${data.phone}</a>
+                </td>
                 ` : ''}
-              </table>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
 
-              ${data.propertyTitle ? `
-              <h2 style="color: #1e293b; margin: 20px 0 10px 0; font-size: 18px;">Immobilie</h2>
-              <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-                <strong style="color: #92400e;">${data.propertyTitle}</strong>
-                ${data.propertyId ? `<br><span style="color: #a16207; font-size: 14px;">ID: ${data.propertyId}</span>` : ''}
-              </div>
-              ` : ''}
+    <!-- Quick Actions -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+      <tr>
+        <td align="center">
+          <a href="mailto:${data.email}" style="display: inline-block; background-color: #E30613; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-right: 8px;">Antworten</a>
+          ${data.phone ? `<a href="tel:${data.phone}" style="display: inline-block; background-color: #1e293b; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px;">Anrufen</a>` : ''}
+        </td>
+      </tr>
+    </table>
 
-              <h2 style="color: #1e293b; margin: 20px 0 10px 0; font-size: 18px;">Nachricht</h2>
-              <div style="background-color: #f8fafc; border-radius: 4px; padding: 15px;">
-                <p style="color: #1e293b; margin: 0; white-space: pre-wrap; line-height: 1.6;">${data.message}</p>
-              </div>
+    ${data.propertyTitle ? `
+    <!-- Property Info -->
+    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="40" valign="top">
+            <span style="font-size: 24px;">&#127968;</span>
+          </td>
+          <td style="padding-left: 12px;">
+            <p style="color: #92400e; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Interessiert an</p>
+            <p style="color: #78350f; margin: 0; font-size: 16px; font-weight: 600;">${data.propertyTitle}</p>
+            ${data.propertyId ? `<p style="color: #a16207; margin: 4px 0 0 0; font-size: 13px;">ID: ${data.propertyId}</p>` : ''}
+          </td>
+        </tr>
+      </table>
+    </div>
+    ` : ''}
 
-              <p style="color: #94a3b8; font-size: 12px; margin-top: 20px;">
-                Quelle: ${data.source || 'Website Kontaktformular'}
-              </p>
-            </td>
-          </tr>
+    <!-- Message -->
+    <div style="margin-bottom: 16px;">
+      <p style="color: #94a3b8; margin: 0 0 8px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Nachricht</p>
+      <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+        <p style="color: #334155; margin: 0; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${data.message}</p>
+      </div>
+    </div>
 
-          <!-- Footer -->
-          <tr>
-            <td style="background-color: #1e293b; padding: 20px; text-align: center;">
-              <p style="color: #94a3b8; margin: 0; font-size: 12px;">
-                Diese E-Mail wurde automatisch von der Mezzarano Immobilien Website gesendet.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-`
+    <!-- Source Tag -->
+    <p style="color: #94a3b8; margin: 0; font-size: 12px;">
+      <span style="display: inline-block; background-color: #f1f5f9; padding: 4px 10px; border-radius: 4px; font-size: 11px;">${data.source || 'Website Kontaktformular'}</span>
+    </p>
+  `
+
+  return getEmailWrapper('Neue Kontaktanfrage', inquiryLabel, content, timestamp)
 }
 
 function getSearchProfileEmailHtml(data: SearchProfileLeadData): string {
@@ -260,209 +348,189 @@ function getSearchProfileEmailHtml(data: SearchProfileLeadData): string {
     gewerbe: 'Gewerbe',
   }
 
+  const typIcons: Record<string, string> = {
+    haus: '&#127968;',
+    wohnung: '&#127970;',
+    grundstueck: '&#127966;',
+    gewerbe: '&#127970;',
+  }
+
   const formatCurrency = (value?: number) => {
     if (!value) return '-'
     return value >= 1000000
-      ? `${(value / 1000000).toLocaleString('de-DE', { maximumFractionDigits: 1 })} Mio. Euro`
-      : `${value.toLocaleString('de-DE')} Euro`
+      ? `${(value / 1000000).toLocaleString('de-DE', { maximumFractionDigits: 1 })} Mio. €`
+      : `${value.toLocaleString('de-DE')} €`
   }
 
   const formatArea = (value?: number) => {
     if (!value) return '-'
-    return `${value.toLocaleString('de-DE')} m2`
+    return `${value.toLocaleString('de-DE')} m²`
   }
 
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neues Suchprofil</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 20px;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <!-- Header -->
-          <tr>
-            <td style="background-color: #E30613; padding: 30px; text-align: center;">
-              <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Neues Suchprofil</h1>
-              <p style="color: #ffffff; margin: 10px 0 0 0; opacity: 0.9;">
-                ${data.art === 'kaufen' ? 'Kaufinteressent' : 'Mietinteressent'} - ${typLabels[data.typ] || data.typ}
-              </p>
-            </td>
-          </tr>
+  const timestamp = new Date().toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' })
+  const subtitle = `${data.art === 'kaufen' ? 'Kaufinteressent' : 'Mietinteressent'} sucht ${typLabels[data.typ] || data.typ}`
 
-          <!-- Content -->
-          <tr>
-            <td style="padding: 30px;">
-              <h2 style="color: #1e293b; margin: 0 0 20px 0; font-size: 18px;">Kontaktdaten</h2>
+  const content = `
+    <!-- Contact Card -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
+      <tr>
+        <td style="padding: 24px;">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="48" valign="top">
+                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #E30613 0%, #b91c1c 100%); border-radius: 12px; text-align: center; line-height: 48px;">
+                  <span style="color: #ffffff; font-size: 20px;">&#128100;</span>
+                </div>
+              </td>
+              <td style="padding-left: 16px;" valign="top">
+                <h3 style="color: #1e293b; margin: 0 0 4px 0; font-size: 18px; font-weight: 600;">${data.vorname} ${data.nachname}</h3>
+                <p style="color: #64748b; margin: 0; font-size: 14px;">${data.art === 'kaufen' ? 'Kaufinteressent' : 'Mietinteressent'}</p>
+              </td>
+            </tr>
+          </table>
 
-              <table width="100%" cellpadding="8" cellspacing="0" style="margin-bottom: 20px;">
-                <tr>
-                  <td style="background-color: #f8fafc; border-radius: 4px; padding: 12px;">
-                    <strong style="color: #64748b;">Name:</strong><br>
-                    <span style="color: #1e293b; font-size: 16px;">${data.vorname} ${data.nachname}</span>
-                  </td>
-                </tr>
-                <tr><td style="height: 8px;"></td></tr>
-                <tr>
-                  <td style="background-color: #f8fafc; border-radius: 4px; padding: 12px;">
-                    <strong style="color: #64748b;">E-Mail:</strong><br>
-                    <a href="mailto:${data.email}" style="color: #E30613; font-size: 16px; text-decoration: none;">${data.email}</a>
-                  </td>
-                </tr>
+          <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="50%" style="padding-right: 12px;">
+                  <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">E-Mail</p>
+                  <a href="mailto:${data.email}" style="color: #E30613; font-size: 14px; text-decoration: none; font-weight: 500;">${data.email}</a>
+                </td>
                 ${data.telefon ? `
-                <tr><td style="height: 8px;"></td></tr>
-                <tr>
-                  <td style="background-color: #f8fafc; border-radius: 4px; padding: 12px;">
-                    <strong style="color: #64748b;">Telefon:</strong><br>
-                    <a href="tel:${data.telefon}" style="color: #E30613; font-size: 16px; text-decoration: none;">${data.telefon}</a>
-                  </td>
-                </tr>
+                <td width="50%" style="padding-left: 12px;">
+                  <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Telefon</p>
+                  <a href="tel:${data.telefon}" style="color: #E30613; font-size: 14px; text-decoration: none; font-weight: 500;">${data.telefon}</a>
+                </td>
                 ` : ''}
-              </table>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
 
-              <h2 style="color: #1e293b; margin: 20px 0 10px 0; font-size: 18px;">Suchkriterien</h2>
-              <table width="100%" cellpadding="10" cellspacing="0" style="background-color: #f0fdf4; border-radius: 8px; margin-bottom: 20px;">
-                <tr>
-                  <td width="50%" style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Art:</strong><br>
-                    <span style="color: #15803d;">${data.art === 'kaufen' ? 'Kaufen' : 'Mieten'}</span>
-                  </td>
-                  <td width="50%" style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Typ:</strong><br>
-                    <span style="color: #15803d;">${typLabels[data.typ] || data.typ}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2" style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Region:</strong><br>
-                    <span style="color: #15803d;">${[...data.regionen, data.ortFreitext].filter(Boolean).join(', ') || '-'}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Budget (max.):</strong><br>
-                    <span style="color: #15803d;">${formatCurrency(data.budgetMax)}</span>
-                  </td>
-                  <td style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Zimmer:</strong><br>
-                    <span style="color: #15803d;">${data.zimmer === 'egal' ? 'Egal' : data.zimmer ? `ab ${data.zimmer}` : '-'}</span>
-                  </td>
-                </tr>
-                ${(data.typ === 'haus' || data.typ === 'wohnung') ? `
-                <tr>
-                  <td colspan="2" style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Wohnflaeche:</strong><br>
-                    <span style="color: #15803d;">${formatArea(data.wohnflaecheMin)} - ${formatArea(data.wohnflaecheMax)}</span>
-                  </td>
-                </tr>
-                ` : ''}
-                ${(data.typ === 'haus' || data.typ === 'grundstueck') ? `
-                <tr>
-                  <td colspan="2" style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Grundstuecksflaeche:</strong><br>
-                    <span style="color: #15803d;">${formatArea(data.grundstueckMin)} - ${formatArea(data.grundstueckMax)}</span>
-                  </td>
-                </tr>
-                ` : ''}
-                ${data.typ === 'gewerbe' ? `
-                <tr>
-                  <td colspan="2" style="border-bottom: 1px solid #dcfce7;">
-                    <strong style="color: #166534;">Nutzflaeche:</strong><br>
-                    <span style="color: #15803d;">${formatArea(data.nutzflaecheMin)} - ${formatArea(data.nutzflaecheMax)}</span>
-                  </td>
-                </tr>
-                ` : ''}
-                ${data.features && data.features.length > 0 ? `
-                <tr>
-                  <td colspan="2">
-                    <strong style="color: #166534;">Ausstattung:</strong><br>
-                    <span style="color: #15803d;">${data.features.join(', ')}</span>
-                  </td>
-                </tr>
-                ` : ''}
-              </table>
+    <!-- Quick Actions -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+      <tr>
+        <td align="center">
+          <a href="mailto:${data.email}" style="display: inline-block; background-color: #E30613; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-right: 8px;">Antworten</a>
+          ${data.telefon ? `<a href="tel:${data.telefon}" style="display: inline-block; background-color: #1e293b; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px;">Anrufen</a>` : ''}
+        </td>
+      </tr>
+    </table>
 
-              ${data.anmerkungen ? `
-              <h2 style="color: #1e293b; margin: 20px 0 10px 0; font-size: 18px;">Anmerkungen</h2>
-              <div style="background-color: #f8fafc; border-radius: 4px; padding: 15px;">
-                <p style="color: #1e293b; margin: 0; white-space: pre-wrap; line-height: 1.6;">${data.anmerkungen}</p>
-              </div>
-              ` : ''}
-            </td>
-          </tr>
+    <!-- Search Criteria Header -->
+    <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="48" valign="top">
+            <span style="font-size: 32px;">${typIcons[data.typ] || '&#127968;'}</span>
+          </td>
+          <td style="padding-left: 12px;">
+            <p style="color: #065f46; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Sucht</p>
+            <p style="color: #047857; margin: 0; font-size: 20px; font-weight: 700;">${typLabels[data.typ] || data.typ} zum ${data.art === 'kaufen' ? 'Kauf' : 'Mieten'}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-          <!-- Footer -->
-          <tr>
-            <td style="background-color: #1e293b; padding: 20px; text-align: center;">
-              <p style="color: #94a3b8; margin: 0; font-size: 12px;">
-                Diese E-Mail wurde automatisch von der Mezzarano Immobilien Website gesendet.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-`
+    <!-- Search Criteria Details -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+      <tr>
+        <td width="50%" style="padding: 12px; background-color: #f8fafc; border-radius: 8px 0 0 0;">
+          <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Budget (max.)</p>
+          <p style="color: #1e293b; margin: 0; font-size: 16px; font-weight: 600;">${formatCurrency(data.budgetMax)}</p>
+        </td>
+        <td width="50%" style="padding: 12px; background-color: #f1f5f9; border-radius: 0 8px 0 0;">
+          <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Zimmer</p>
+          <p style="color: #1e293b; margin: 0; font-size: 16px; font-weight: 600;">${data.zimmer === 'egal' ? 'Egal' : data.zimmer ? `ab ${data.zimmer}` : '-'}</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 12px; background-color: #f1f5f9;">
+          <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Region</p>
+          <p style="color: #1e293b; margin: 0; font-size: 15px; font-weight: 500;">${[...data.regionen, data.ortFreitext].filter(Boolean).join(', ') || '-'}</p>
+        </td>
+      </tr>
+      ${(data.typ === 'haus' || data.typ === 'wohnung') ? `
+      <tr>
+        <td colspan="2" style="padding: 12px; background-color: #f8fafc;">
+          <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Wohnflaeche</p>
+          <p style="color: #1e293b; margin: 0; font-size: 15px; font-weight: 500;">${formatArea(data.wohnflaecheMin)} - ${formatArea(data.wohnflaecheMax)}</p>
+        </td>
+      </tr>
+      ` : ''}
+      ${(data.typ === 'haus' || data.typ === 'grundstueck') ? `
+      <tr>
+        <td colspan="2" style="padding: 12px; background-color: #f1f5f9;">
+          <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Grundstueck</p>
+          <p style="color: #1e293b; margin: 0; font-size: 15px; font-weight: 500;">${formatArea(data.grundstueckMin)} - ${formatArea(data.grundstueckMax)}</p>
+        </td>
+      </tr>
+      ` : ''}
+      ${data.typ === 'gewerbe' ? `
+      <tr>
+        <td colspan="2" style="padding: 12px; background-color: #f1f5f9;">
+          <p style="color: #94a3b8; margin: 0 0 4px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Nutzflaeche</p>
+          <p style="color: #1e293b; margin: 0; font-size: 15px; font-weight: 500;">${formatArea(data.nutzflaecheMin)} - ${formatArea(data.nutzflaecheMax)}</p>
+        </td>
+      </tr>
+      ` : ''}
+      ${data.features && data.features.length > 0 ? `
+      <tr>
+        <td colspan="2" style="padding: 12px; background-color: #f8fafc; border-radius: 0 0 8px 8px;">
+          <p style="color: #94a3b8; margin: 0 0 8px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Gewuenschte Ausstattung</p>
+          <p style="color: #1e293b; margin: 0; font-size: 14px;">
+            ${data.features.map(f => `<span style="display: inline-block; background-color: #e2e8f0; padding: 4px 10px; border-radius: 4px; margin: 2px 4px 2px 0; font-size: 12px;">${f}</span>`).join('')}
+          </p>
+        </td>
+      </tr>
+      ` : ''}
+    </table>
+
+    ${data.anmerkungen ? `
+    <!-- Notes -->
+    <div style="margin-bottom: 16px;">
+      <p style="color: #94a3b8; margin: 0 0 8px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Anmerkungen</p>
+      <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+        <p style="color: #334155; margin: 0; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${data.anmerkungen}</p>
+      </div>
+    </div>
+    ` : ''}
+  `
+
+  return getEmailWrapper('Neues Suchprofil', subtitle, content, timestamp)
 }
 
 function getNewsletterEmailHtml(data: NewsletterLeadData): string {
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neue Newsletter-Anmeldung</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 20px;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <!-- Header -->
-          <tr>
-            <td style="background-color: #E30613; padding: 30px; text-align: center;">
-              <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Neue Newsletter-Anmeldung</h1>
-            </td>
-          </tr>
+  const timestamp = new Date().toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' })
 
-          <!-- Content -->
-          <tr>
-            <td style="padding: 30px;">
-              <div style="background-color: #f8fafc; border-radius: 4px; padding: 20px; text-align: center;">
-                <p style="color: #64748b; margin: 0 0 10px 0; font-size: 14px;">E-Mail-Adresse:</p>
-                <a href="mailto:${data.email}" style="color: #E30613; font-size: 20px; text-decoration: none; font-weight: bold;">${data.email}</a>
-              </div>
+  const content = `
+    <!-- Newsletter Subscription Card -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border-radius: 12px; overflow: hidden;">
+      <tr>
+        <td style="padding: 32px; text-align: center;">
+          <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #E30613 0%, #b91c1c 100%); border-radius: 16px; margin: 0 auto 20px; text-align: center; line-height: 64px;">
+            <span style="color: #ffffff; font-size: 28px;">&#128233;</span>
+          </div>
 
-              <p style="color: #94a3b8; font-size: 12px; margin-top: 20px; text-align: center;">
-                Der Kontakt wurde automatisch in onOffice angelegt.
-              </p>
-            </td>
-          </tr>
+          <p style="color: #94a3b8; margin: 0 0 8px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Neue Anmeldung</p>
+          <a href="mailto:${data.email}" style="color: #1e293b; font-size: 20px; text-decoration: none; font-weight: 700;">${data.email}</a>
 
-          <!-- Footer -->
-          <tr>
-            <td style="background-color: #1e293b; padding: 20px; text-align: center;">
-              <p style="color: #94a3b8; margin: 0; font-size: 12px;">
-                Diese E-Mail wurde automatisch von der Mezzarano Immobilien Website gesendet.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-`
+          <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #e2e8f0;">
+            <a href="mailto:${data.email}" style="display: inline-block; background-color: #E30613; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 32px; border-radius: 8px;">E-Mail senden</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Info -->
+    <p style="color: #94a3b8; margin: 20px 0 0 0; font-size: 13px; text-align: center;">
+      Der Kontakt wurde automatisch in onOffice angelegt.
+    </p>
+  `
+
+  return getEmailWrapper('Newsletter-Anmeldung', 'Neuer Abonnent', content, timestamp)
 }
 
 // ─── Email Sending Functions ─────────────────────────────────────────────────
