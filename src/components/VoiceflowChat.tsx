@@ -72,9 +72,9 @@ export default function VoiceflowChat() {
           }
         }
       }).then(() => {
-        const isPropertyPage = window.location.pathname.startsWith('/immobilien/') &&
-          window.location.pathname !== '/immobilien/' &&
-          window.location.pathname !== '/immobilien'
+        const isPropertyPage = window.location.pathname.startsWith('/immobilie/') &&
+          window.location.pathname !== '/immobilie/' &&
+          window.location.pathname !== '/immobilie'
 
         // Proaktive Nachricht je nach Seitenart
         setTimeout(() => {
