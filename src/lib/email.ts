@@ -1,23 +1,63 @@
 /**
  * Email Notification Service
  *
- * Uses Resend to send lead notification emails to the team.
+ * Uses Resend REST API to send lead notification emails to the team.
  * Recipients (Test-Modus): contact@sunsideai.de
  */
 
-import { Resend } from 'resend'
+// Resend API endpoint
+const RESEND_API_URL = 'https://api.resend.com/emails'
 
-// Lazy initialization of Resend client
-let resendClient: Resend | null = null
+interface ResendEmailPayload {
+  from: string
+  to: string[]
+  subject: string
+  html: string
+  reply_to?: string
+}
 
-function getResendClient(): Resend | null {
-  if (!process.env.RESEND_API_KEY) {
-    return null
+interface ResendApiResponse {
+  id?: string
+  error?: {
+    message: string
+    name: string
   }
-  if (!resendClient) {
-    resendClient = new Resend(process.env.RESEND_API_KEY)
+}
+
+/**
+ * Send email via Resend REST API (more reliable in serverless environments)
+ */
+async function sendViaResendApi(payload: ResendEmailPayload): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.warn('RESEND_API_KEY not configured')
+    return { success: true } // Silently skip if not configured
   }
-  return resendClient
+
+  try {
+    const response = await fetch(RESEND_API_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+
+    const data: ResendApiResponse = await response.json()
+
+    if (!response.ok || data.error) {
+      const errorMessage = data.error?.message || `HTTP ${response.status}`
+      console.error('Resend API error:', errorMessage)
+      return { success: false, error: errorMessage }
+    }
+
+    console.log('Email sent successfully via Resend API, id:', data.id)
+    return { success: true }
+  } catch (error) {
+    console.error('Resend API fetch error:', error)
+    return { success: false, error: error instanceof Error ? error.message : 'Network error' }
+  }
 }
 
 // Email recipients for lead notifications
@@ -411,31 +451,13 @@ export async function sendContactNotification(data: ContactLeadData): Promise<{ 
 
   const inquiryLabel = data.inquiryType ? inquiryTypeLabels[data.inquiryType] || data.inquiryType : 'Kontaktanfrage'
 
-  try {
-    const resend = getResendClient()
-    if (!resend) {
-      console.warn('Resend client not initialized - skipping email')
-      return { success: true }
-    }
-
-    const { error } = await resend.emails.send({
-      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: NOTIFICATION_RECIPIENTS,
-      subject: `Neue ${inquiryLabel} von ${data.name}`,
-      html: getContactEmailHtml(data),
-      replyTo: data.email,
-    })
-
-    if (error) {
-      console.error('Failed to send contact notification email:', error)
-      return { success: false, error: error.message }
-    }
-
-    return { success: true }
-  } catch (error) {
-    console.error('Error sending contact notification email:', error)
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
-  }
+  return sendViaResendApi({
+    from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+    to: NOTIFICATION_RECIPIENTS,
+    subject: `Neue ${inquiryLabel} von ${data.name}`,
+    html: getContactEmailHtml(data),
+    reply_to: data.email,
+  })
 }
 
 /**
@@ -454,31 +476,13 @@ export async function sendSearchProfileNotification(data: SearchProfileLeadData)
     gewerbe: 'Gewerbe',
   }
 
-  try {
-    const resend = getResendClient()
-    if (!resend) {
-      console.warn('Resend client not initialized - skipping email')
-      return { success: true }
-    }
-
-    const { error } = await resend.emails.send({
-      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: NOTIFICATION_RECIPIENTS,
-      subject: `Neues Suchprofil: ${data.vorname} ${data.nachname} sucht ${typLabels[data.typ] || data.typ} zum ${data.art === 'kaufen' ? 'Kauf' : 'Mieten'}`,
-      html: getSearchProfileEmailHtml(data),
-      replyTo: data.email,
-    })
-
-    if (error) {
-      console.error('Failed to send search profile notification email:', error)
-      return { success: false, error: error.message }
-    }
-
-    return { success: true }
-  } catch (error) {
-    console.error('Error sending search profile notification email:', error)
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
-  }
+  return sendViaResendApi({
+    from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+    to: NOTIFICATION_RECIPIENTS,
+    subject: `Neues Suchprofil: ${data.vorname} ${data.nachname} sucht ${typLabels[data.typ] || data.typ} zum ${data.art === 'kaufen' ? 'Kauf' : 'Mieten'}`,
+    html: getSearchProfileEmailHtml(data),
+    reply_to: data.email,
+  })
 }
 
 /**
@@ -490,29 +494,11 @@ export async function sendNewsletterNotification(data: NewsletterLeadData): Prom
     return { success: true }
   }
 
-  try {
-    const resend = getResendClient()
-    if (!resend) {
-      console.warn('Resend client not initialized - skipping email')
-      return { success: true }
-    }
-
-    const { error } = await resend.emails.send({
-      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: NOTIFICATION_RECIPIENTS,
-      subject: `Neue Newsletter-Anmeldung: ${data.email}`,
-      html: getNewsletterEmailHtml(data),
-      replyTo: data.email,
-    })
-
-    if (error) {
-      console.error('Failed to send newsletter notification email:', error)
-      return { success: false, error: error.message }
-    }
-
-    return { success: true }
-  } catch (error) {
-    console.error('Error sending newsletter notification email:', error)
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
-  }
+  return sendViaResendApi({
+    from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+    to: NOTIFICATION_RECIPIENTS,
+    subject: `Neue Newsletter-Anmeldung: ${data.email}`,
+    html: getNewsletterEmailHtml(data),
+    reply_to: data.email,
+  })
 }
