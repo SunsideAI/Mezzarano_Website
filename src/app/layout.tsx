@@ -54,10 +54,10 @@ export const metadata: Metadata = {
     description: 'Professionelle Immobilienberatung in der Region Trier-Mosel. Kostenlose Bewertung, persönliche Betreuung, Wüstenrot Finanzierungspartner.',
     images: [
       {
-        url: '/og-image.svg',
+        url: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1773756912/csm_wuestenrot_immobilien-logo_6e50ef3869_ljwzlt.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sandro Mezzarano - Immobilienmakler Hermeskeil',
+        alt: 'Wüstenrot Immobilien - Sandro Mezzarano',
       },
     ],
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sandro Mezzarano | Immobilienmakler Hermeskeil & Trier',
     description: 'Ihr Wüstenrot Immobilienexperte für die Region Trier-Mosel. Kostenlose Immobilienbewertung!',
-    images: ['/og-image.svg'],
+    images: ['https://res.cloudinary.com/djqviyb2c/image/upload/v1773756912/csm_wuestenrot_immobilien-logo_6e50ef3869_ljwzlt.jpg'],
   },
   robots: {
     index: true,
