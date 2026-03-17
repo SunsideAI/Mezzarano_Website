@@ -4,12 +4,12 @@ This file provides guidance for AI assistants working on this codebase.
 
 ## Project Overview
 
-**Mezzarano Immobilien Website** - A modern real estate (Immobilien) web application for Mezzarano Immobilien, a Wüstenrot real estate partner in the Heilbronn region of Germany.
+**Mezzarano Immobilien Website** - A modern real estate (Immobilien) web application for Mezzarano Immobilien, a Wüstenrot real estate partner in the Trier/Hermeskeil region of Germany.
 
 ### Key Features
 - Property listings with advanced filtering (buy/rent, category, price, area)
 - AI-powered blog content generation system
-- Regional information pages for Heilbronn area
+- Regional information pages for Trier-Saarburg, Hochwald and Mosel region
 - Contact forms and property inquiry system
 - SEO-optimized with structured data markup
 - Fully German-language interface
@@ -47,8 +47,15 @@ Mezzarano_Website/
 │   │   ├── kontakt/page.tsx         # Contact page
 │   │   ├── ueber-uns/page.tsx       # About page
 │   │   └── regionen/                # Regional pages
-│   │       ├── heilbronn/page.tsx
-│   │       └── weinsberg/page.tsx
+│   │       ├── hermeskeil/page.tsx
+│   │       ├── trier/page.tsx
+│   │       ├── schweich/page.tsx
+│   │       ├── saarburg/page.tsx
+│   │       ├── konz/page.tsx
+│   │       ├── bitburg/page.tsx
+│   │       ├── wittlich/page.tsx
+│   │       ├── hochwald/page.tsx
+│   │       └── bernkastel-kues/page.tsx
 │   │
 │   ├── components/
 │   │   ├── Header.tsx               # Navigation with dropdowns
