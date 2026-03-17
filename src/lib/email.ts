@@ -159,6 +159,8 @@ function getContactEmailHtml(data: ContactLeadData): string {
     bewertung: 'Immobilienbewertung',
     allgemein: 'Allgemeine Anfrage',
     immobilie: 'Immobilien-Anfrage',
+    energieausweis: 'Energieausweis-Bestellung',
+    finanzierung: 'Finanzierungsanfrage',
   }
 
   const inquiryLabel = data.inquiryType ? inquiryTypeLabels[data.inquiryType] || data.inquiryType : 'Allgemeine Anfrage'
@@ -481,6 +483,8 @@ export async function sendContactNotification(data: ContactLeadData): Promise<{ 
     bewertung: 'Immobilienbewertung',
     allgemein: 'Allgemeine Anfrage',
     immobilie: 'Immobilien-Anfrage',
+    energieausweis: 'Energieausweis-Bestellung',
+    finanzierung: 'Finanzierungsanfrage',
   }
 
   const inquiryLabel = data.inquiryType ? inquiryTypeLabels[data.inquiryType] || data.inquiryType : 'Kontaktanfrage'

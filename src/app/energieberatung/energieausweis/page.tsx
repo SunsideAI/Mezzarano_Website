@@ -126,13 +126,18 @@ export default function EnergieausweisPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...formData,
-          subject: `Energieausweis Anfrage: ${selectedProduct?.title} ${selectedProduct?.subtitle}`,
-          message: `Produkt: ${selectedProduct?.title} ${selectedProduct?.subtitle}\nPreis: ${selectedProduct?.price} € inkl. MwSt.\n\n${formData.message || 'Keine zusätzliche Nachricht'}`,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          inquiryType: 'energieausweis',
+          message: `Produkt: ${selectedProduct?.title} ${selectedProduct?.subtitle}\nPreis: ${selectedProduct?.price} € inkl. MwSt.\nAdresse: ${formData.address || 'Nicht angegeben'}\n\n${formData.message || 'Keine zusätzliche Nachricht'}`,
+          source: 'Energieausweis Online-Bestellung',
         }),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (result.success) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', phone: '', address: '', message: '' })
       } else {
