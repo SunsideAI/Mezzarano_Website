@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, X, Grid3X3, Maximize2, ImageOff } from 'lucide-react'
 
@@ -23,13 +23,13 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const allImages = images
   const useUnoptimized = hasImages && allImages.some(isProxyImage)
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))
-  }
+  }, [allImages.length])
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1))
-  }
+  }, [allImages.length])
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index)
@@ -59,7 +59,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isLightboxOpen, hasImages])
+  }, [isLightboxOpen, hasImages, goToPrevious, goToNext])
 
   // If no images, show placeholder
   if (!hasImages) {

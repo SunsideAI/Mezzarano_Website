@@ -144,6 +144,7 @@ export default function ErklaervideosPage() {
                   className="relative aspect-video bg-secondary-900 cursor-pointer overflow-hidden"
                   onClick={() => openVideo(video)}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
                     alt={video.title}

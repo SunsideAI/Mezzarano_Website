@@ -52,7 +52,8 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
             role="img"
             aria-label={property.titel}
           >
-            {/* Hidden img to detect load errors */}
+            {/* Hidden img to detect load errors - eslint-disable-next-line @next/next/no-img-element */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imageUrl}
               alt=""
