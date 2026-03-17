@@ -212,7 +212,10 @@ function getEmailWrapper(title: string, subtitle: string, content: string, times
             <td style="background-color: ${WUESTENNACHT}; padding: 24px 32px;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td>
+                  <td width="56" valign="middle">
+                    <img src="https://a.mktgcdn.com/p/5Fe51wUcsp-46vNzozWVbYMnxAmFzBgXbJ8JznveZRA/265x265.png" alt="Sandro Mezzarano" width="48" height="48" style="border-radius: 50%; display: block;" />
+                  </td>
+                  <td valign="middle" style="padding-left: 12px;">
                     <p style="color: #ffffff; margin: 0 0 2px 0; font-size: 14px; font-weight: 600;">Sandro Mezzarano</p>
                     <p style="color: #888888; margin: 0; font-size: 12px;">Wüstenrot Immobilien · Hermeskeil</p>
                   </td>
