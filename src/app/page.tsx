@@ -354,7 +354,7 @@ export default async function HomePage() {
                 className="object-contain opacity-90"
               />
               <Image
-                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/LOGO_Sanierungsexperte_Sprengnetter_ks7vfd.png"
+                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1773752841/Siegel-Sprengnetter-Sanierungsexperte-RGB_idrqfv.png"
                 alt="Sprengnetter Qualifizierter Fachmakler - Sanierungsexperte"
                 width={100}
                 height={130}

@@ -106,7 +106,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              <span>{contact.street}, {contact.city}</span>
+              <span>Trier / Hermeskeil</span>
             </div>
           </div>
         </div>
