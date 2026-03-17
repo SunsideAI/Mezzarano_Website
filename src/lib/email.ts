@@ -175,23 +175,6 @@ function getEmailWrapper(title: string, subtitle: string, content: string, times
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; overflow: hidden;">
 
-          <!-- Header with Logo -->
-          <tr>
-            <td style="background-color: ${WUESTENNACHT}; padding: 20px 32px;">
-              <table width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td width="48" valign="middle">
-                    <img src="https://a.mktgcdn.com/p/5Fe51wUcsp-46vNzozWVbYMnxAmFzBgXbJ8JznveZRA/265x265.png" alt="Sandro Mezzarano" width="40" height="40" style="border-radius: 50%; display: block;" />
-                  </td>
-                  <td style="padding-left: 16px;" valign="middle">
-                    <span style="font-size: 20px; font-weight: 700; color: #ffffff; letter-spacing: -0.3px;">wüstenrot</span>
-                    <span style="font-size: 14px; font-weight: 400; color: #888888; margin-left: 4px;">immobilien</span>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
           <!-- Orange Title Bar -->
           <tr>
             <td style="background-color: ${WUESTENROT}; padding: 24px 32px;">
