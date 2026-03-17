@@ -51,8 +51,8 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString(),
       })
 
-      // Send email notification (don't block on failure)
-      sendContactNotification({
+      // Send email notification (await to ensure it completes in serverless)
+      const emailResult = await sendContactNotification({
         name,
         email,
         phone: body.phone,
@@ -61,7 +61,10 @@ export async function POST(request: NextRequest) {
         propertyId,
         propertyTitle,
         source,
-      }).catch(err => console.error('Email notification failed:', err))
+      })
+      if (!emailResult.success) {
+        console.warn('Email notification failed:', emailResult.error)
+      }
 
       return NextResponse.json({
         success: true,
@@ -81,8 +84,8 @@ export async function POST(request: NextRequest) {
     })
 
     if (result.success) {
-      // Send email notification (don't block on failure)
-      sendContactNotification({
+      // Send email notification (await to ensure it completes in serverless)
+      const emailResult = await sendContactNotification({
         name,
         email,
         phone: body.phone,
@@ -91,7 +94,10 @@ export async function POST(request: NextRequest) {
         propertyId,
         propertyTitle,
         source,
-      }).catch(err => console.error('Email notification failed:', err))
+      })
+      if (!emailResult.success) {
+        console.warn('Email notification failed:', emailResult.error)
+      }
 
       return NextResponse.json({
         success: true,

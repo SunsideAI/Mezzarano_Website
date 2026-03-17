@@ -48,10 +48,11 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString(),
       })
 
-      // Send email notification (don't block on failure)
-      sendSearchProfileNotification(body as SearchProfileData).catch(err =>
-        console.error('Email notification failed:', err)
-      )
+      // Send email notification (await to ensure it completes in serverless)
+      const emailResult = await sendSearchProfileNotification(body as SearchProfileData)
+      if (!emailResult.success) {
+        console.warn('Email notification failed:', emailResult.error)
+      }
 
       return NextResponse.json({
         success: true,
@@ -64,10 +65,11 @@ export async function POST(request: NextRequest) {
     const result = await createSearchProfile(body as SearchProfileData)
 
     if (result.success) {
-      // Send email notification (don't block on failure)
-      sendSearchProfileNotification(body as SearchProfileData).catch(err =>
-        console.error('Email notification failed:', err)
-      )
+      // Send email notification (await to ensure it completes in serverless)
+      const emailResult = await sendSearchProfileNotification(body as SearchProfileData)
+      if (!emailResult.success) {
+        console.warn('Email notification failed:', emailResult.error)
+      }
 
       return NextResponse.json({
         success: true,

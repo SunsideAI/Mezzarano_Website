@@ -26,38 +26,72 @@ interface ResendApiResponse {
 
 /**
  * Send email via Resend REST API (more reliable in serverless environments)
+ * Includes timeout and retry logic for network resilience
  */
-async function sendViaResendApi(payload: ResendEmailPayload): Promise<{ success: boolean; error?: string }> {
+async function sendViaResendApi(payload: ResendEmailPayload, retries = 2): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
     console.warn('RESEND_API_KEY not configured')
     return { success: true } // Silently skip if not configured
   }
 
-  try {
-    const response = await fetch(RESEND_API_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    })
+  let lastError: string = 'Unknown error'
 
-    const data: ResendApiResponse = await response.json()
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      // Create AbortController with 10 second timeout
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 10000)
 
-    if (!response.ok || data.error) {
-      const errorMessage = data.error?.message || `HTTP ${response.status}`
-      console.error('Resend API error:', errorMessage)
-      return { success: false, error: errorMessage }
+      const response = await fetch(RESEND_API_URL, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      })
+
+      clearTimeout(timeoutId)
+
+      const data: ResendApiResponse = await response.json()
+
+      if (!response.ok || data.error) {
+        const errorMessage = data.error?.message || `HTTP ${response.status}`
+        console.error('Resend API error:', errorMessage)
+        return { success: false, error: errorMessage }
+      }
+
+      console.log('Email sent successfully via Resend API, id:', data.id)
+      return { success: true }
+    } catch (error) {
+      const isAbortError = error instanceof Error && error.name === 'AbortError'
+      const isNetworkError = error instanceof Error && (
+        error.message.includes('ETIMEDOUT') ||
+        error.message.includes('fetch failed') ||
+        error.message.includes('network')
+      )
+
+      lastError = isAbortError ? 'Request timeout' : (error instanceof Error ? error.message : 'Network error')
+      console.error(`Resend API attempt ${attempt + 1}/${retries + 1} failed:`, lastError)
+
+      // Only retry on timeout/network errors
+      if ((isAbortError || isNetworkError) && attempt < retries) {
+        // Exponential backoff: 1s, 2s
+        const delay = Math.pow(2, attempt) * 1000
+        console.log(`Retrying in ${delay}ms...`)
+        await new Promise(resolve => setTimeout(resolve, delay))
+        continue
+      }
+
+      // Don't retry for other errors
+      break
     }
-
-    console.log('Email sent successfully via Resend API, id:', data.id)
-    return { success: true }
-  } catch (error) {
-    console.error('Resend API fetch error:', error)
-    return { success: false, error: error instanceof Error ? error.message : 'Network error' }
   }
+
+  console.error('Resend API all attempts failed:', lastError)
+  return { success: false, error: lastError }
 }
 
 // Email recipients for lead notifications
