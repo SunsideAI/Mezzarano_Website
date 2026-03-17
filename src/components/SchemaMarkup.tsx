@@ -16,7 +16,7 @@ const businessInfo = {
   name: 'Sandro Mezzarano',
   legalName: 'Sandro Mezzarano - Wüstenrot Immobilien',
   description: 'Ihr Wüstenrot Immobilien-Experte in Hermeskeil. Professionelle Beratung für Kauf, Verkauf und Vermietung von Immobilien in der Region Trier.',
-  url: 'https://mezzarano-immobilien.de',
+  url: 'https://mezzarano-wuestenrot-immobilien.de',
   telephone: '+49 177 6542977',
   email: 'sandro.mezzarano@wuestenrot.de',
   address: {

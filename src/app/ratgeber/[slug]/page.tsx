@@ -54,7 +54,7 @@ export default function BlogPostPage({ params }: Props) {
     })
   }
 
-  const shareUrl = `https://mezzarano-immobilien.de/ratgeber/${params.slug}`
+  const shareUrl = `https://mezzarano-wuestenrot-immobilien.de/ratgeber/${params.slug}`
 
   // Schema.org Article markup
   const articleSchema = {
@@ -71,7 +71,7 @@ export default function BlogPostPage({ params }: Props) {
       name: 'Mezzarano Immobilien',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://mezzarano-immobilien.de/logo.png'
+        url: 'https://mezzarano-wuestenrot-immobilien.de/logo.png'
       }
     },
     datePublished: post.pubDate,

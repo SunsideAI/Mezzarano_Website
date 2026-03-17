@@ -6,7 +6,7 @@ import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMa
 import ScrollAnimations from '@/components/ScrollAnimations'
 import VoiceflowChat from '@/components/VoiceflowChat'
 
-const siteUrl = 'https://mezzarano-immobilien.de'
+const siteUrl = 'https://mezzarano-wuestenrot-immobilien.de'
 
 export const viewport: Viewport = {
   width: 'device-width',

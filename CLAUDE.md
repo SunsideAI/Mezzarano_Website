@@ -317,7 +317,7 @@ ONOFFICE_SECRET=your-64-character-secret
 
 # Required for email notifications (Resend)
 RESEND_API_KEY=re_your-resend-api-key
-RESEND_FROM_EMAIL=noreply@mezzarano-immobilien.de
+RESEND_FROM_EMAIL=noreply@mezzarano-wuestenrot-immobilien.de
 
 # Optional: Deployment webhook
 DEPLOY_WEBHOOK_URL=https://your-deployment-webhook

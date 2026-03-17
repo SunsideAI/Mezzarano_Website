@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = 'https://mezzarano-immobilien.de'
+  const siteUrl = 'https://mezzarano-wuestenrot-immobilien.de'
 
   return {
     rules: [

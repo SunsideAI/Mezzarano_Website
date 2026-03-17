@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllSlugs } from '@/lib/blog'
 
-const siteUrl = 'https://mezzarano-immobilien.de'
+const siteUrl = 'https://mezzarano-wuestenrot-immobilien.de'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = getAllSlugs()
