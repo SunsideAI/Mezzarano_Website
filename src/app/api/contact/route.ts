@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { success: false, error: 'Bitte geben Sie eine gueltige E-Mail-Adresse ein.' },
+        { success: false, error: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.' },
         { status: 400 }
       )
     }
@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
     } else {
       console.error('onOffice contact creation failed:', result.error)
       return NextResponse.json(
-        { success: false, error: 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es spaeter erneut.' },
+        { success: false, error: 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.' },
         { status: 500 }
       )
     }

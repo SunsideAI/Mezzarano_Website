@@ -80,7 +80,7 @@ export default function FinancingCalculator({ onSubmit }: FinancingCalculatorPro
         setErrorMessage(result.error || 'Ein Fehler ist aufgetreten.')
       }
     } catch {
-      setErrorMessage('Verbindungsfehler. Bitte versuchen Sie es spaeter erneut.')
+      setErrorMessage('Verbindungsfehler. Bitte versuchen Sie es später erneut.')
     } finally {
       setIsSubmitting(false)
     }

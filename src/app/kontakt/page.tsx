@@ -73,7 +73,7 @@ export default function KontaktPage() {
         setSubmitError(result.error || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.')
       }
     } catch {
-      setSubmitError('Verbindungsfehler. Bitte pruefen Sie Ihre Internetverbindung.')
+      setSubmitError('Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.')
     } finally {
       setIsSubmitting(false)
     }

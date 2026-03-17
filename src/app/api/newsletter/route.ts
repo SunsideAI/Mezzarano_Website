@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { success: false, error: 'Bitte geben Sie eine gueltige E-Mail-Adresse ein.' },
+        { success: false, error: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.' },
         { status: 400 }
       )
     }
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
-        message: 'Vielen Dank fuer Ihre Anmeldung!',
+        message: 'Vielen Dank für Ihre Anmeldung!',
         mode: 'development',
       })
     }
@@ -88,14 +88,14 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
-        message: 'Vielen Dank fuer Ihre Anmeldung! Sie erhalten ab sofort unseren Newsletter.',
+        message: 'Vielen Dank für Ihre Anmeldung! Sie erhalten ab sofort unseren Newsletter.',
         addressId,
       })
     }
 
     console.error('onOffice newsletter subscription failed:', result.status.message)
     return NextResponse.json(
-      { success: false, error: 'Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es spaeter erneut.' },
+      { success: false, error: 'Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.' },
       { status: 500 }
     )
   } catch (error) {

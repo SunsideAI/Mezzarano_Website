@@ -61,7 +61,7 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle }: Prope
       }
     } catch {
       setStatus('error')
-      setErrorMessage('Verbindungsfehler. Bitte versuchen Sie es spaeter erneut.')
+      setErrorMessage('Verbindungsfehler. Bitte versuchen Sie es später erneut.')
     }
   }
 
@@ -71,7 +71,7 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle }: Prope
         <div className="text-green-600 text-4xl mb-3">✓</div>
         <h4 className="text-lg font-semibold text-green-800 mb-2">Anfrage gesendet!</h4>
         <p className="text-green-700 text-sm">
-          Vielen Dank fuer Ihr Interesse. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+          Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
         </p>
         <button
           onClick={() => setStatus('idle')}

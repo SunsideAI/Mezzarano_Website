@@ -25,7 +25,7 @@ export default function NewsletterForm() {
 
       if (result.success) {
         setStatus('success')
-        setMessage(result.message || 'Vielen Dank fuer Ihre Anmeldung!')
+        setMessage(result.message || 'Vielen Dank für Ihre Anmeldung!')
         setEmail('')
       } else {
         setStatus('error')
@@ -33,7 +33,7 @@ export default function NewsletterForm() {
       }
     } catch {
       setStatus('error')
-      setMessage('Verbindungsfehler. Bitte versuchen Sie es spaeter erneut.')
+      setMessage('Verbindungsfehler. Bitte versuchen Sie es später erneut.')
     }
   }
 
