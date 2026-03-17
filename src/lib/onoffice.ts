@@ -246,7 +246,6 @@ export async function createContact(data: ContactFormData): Promise<{ success: b
           Email: data.email,
           Telefon1: data.phone || '',
           Bemerkung: `[${data.inquiryType || 'Allgemein'}] ${data.message}`,
-          newsletter: false,
           Status: 1, // Active
         },
       },
