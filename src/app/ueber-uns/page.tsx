@@ -60,7 +60,7 @@ export default function UeberUnsPage() {
             <div className="relative" data-aos="fade-right">
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://a.mktgcdn.com/p/5Fe51wUcsp-46vNzozWVbYMnxAmFzBgXbJ8JznveZRA/265x265.png"
+                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_80/v1770806323/Lebenskunst-Photography_-078_-_Sandro_-_11.09.2025_-_Business_fotografie-_Trier-13__2_r18b6c.jpg"
                   alt="Sandro Mezzarano - Wüstenrot Immobilien"
                   fill
                   className="object-cover object-top"
