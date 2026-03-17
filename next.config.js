@@ -34,6 +34,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'image.onoffice.de',
       },
+      {
+        protocol: 'https',
+        hostname: 'a.mktgcdn.com',
+      },
     ],
     // Optimize image loading
     formats: ['image/avif', 'image/webp'],
