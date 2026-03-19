@@ -194,8 +194,8 @@
       ],
       "category": "Immobilienkauf",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-19T09:44:55.096Z"
     },
     {
       "title": "Grundstückspreise Heilbronn Region: Aktuelle Entwicklung",
@@ -207,8 +207,8 @@
       ],
       "category": "Marktberichte",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-19T09:46:08.307Z"
     },
     {
       "title": "Kapitalanlage Immobilien Heilbronn: Renditestarke Standorte",
@@ -234,8 +234,8 @@
       ],
       "category": "Recht & Steuern",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-03-19T09:47:18.045Z"
     },
     {
       "title": "Wüstenrot Bausparvertrag: Optimal für Immobilienfinanzierung",
