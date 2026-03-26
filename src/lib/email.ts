@@ -95,8 +95,8 @@ async function sendViaResendApi(payload: ResendEmailPayload, retries = 2): Promi
 }
 
 // Email recipients for lead notifications
-// TODO: Für Produktion wieder hinzufügen: 'sandro.mezzarano@wuestenrot.de'
 const NOTIFICATION_RECIPIENTS = [
+  'sandro.mezzarano@wuestenrot.de',
   'contact@sunsideai.de',
 ]
 
