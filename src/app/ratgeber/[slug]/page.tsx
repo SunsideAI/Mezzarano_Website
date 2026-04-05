@@ -229,7 +229,7 @@ export default function BlogPostPage({ params }: Props) {
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
                       <Image
-                        src="https://res.cloudinary.com/djqviyb2c/image/upload/w_128,h_128,c_fill,g_face,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg"
+                        src="/images/team/Mezzarano.jpg"
                         alt="Sandro Mezzarano"
                         width={64}
                         height={64}

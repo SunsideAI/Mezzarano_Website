@@ -105,7 +105,7 @@ export default function WittlichPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1770805357/Wittlich_c5qqd9.png"
+                  src="/images/regionen/Wittlich.png"
                   alt="Immobilien in Wittlich"
                   fill
                   className="object-cover"

@@ -106,7 +106,7 @@ export default function SaarburgPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1770805375/Saarburg_elmn8i.png"
+                  src="/images/regionen/Saarburg.png"
                   alt="Saarburg - Historische Altstadt an der Saar"
                   fill
                   className="object-cover"

@@ -12,47 +12,47 @@ const regions = [
   {
     name: 'Hermeskeil',
     href: '/regionen/hermeskeil',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.29_a8ccel.png',
+    image: '/images/regionen/Hermeskeil.jpg',
   },
   {
     name: 'Trier',
     href: '/regionen/trier',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251684/Bildschirmfoto_2026-01-24_um_11.47.56_ozajy1.png',
+    image: '/images/stock/Aachen.jpg', // TODO: Replace with Trier image
   },
   {
     name: 'Bernkastel-Kues',
     href: '/regionen/bernkastel-kues',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.48.04_asqrpt.png',
+    image: '/images/regionen/Bernkastel.jpg',
   },
   {
     name: 'Schweich',
     href: '/regionen/schweich',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png',
+    image: '/images/regionen/Schweich.jpg',
   },
   {
     name: 'Saarburg',
     href: '/regionen/saarburg',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805375/Saarburg_elmn8i.png',
+    image: '/images/regionen/Saarburg.png',
   },
   {
     name: 'Bitburg',
     href: '/regionen/bitburg',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805358/Bittburg_tejpzq.png',
+    image: '/images/regionen/Bittburg.png',
   },
   {
     name: 'Konz',
     href: '/regionen/konz',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805357/Konz_eqrxqw.png',
+    image: '/images/regionen/Konz.png',
   },
   {
     name: 'Wittlich',
     href: '/regionen/wittlich',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805357/Wittlich_c5qqd9.png',
+    image: '/images/regionen/Wittlich.png',
   },
   {
     name: 'Hochwald',
     href: '/regionen/hochwald',
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_400,q_70,f_auto/v1770805355/Wald_pxfoka.png',
+    image: '/images/regionen/Hermeskeil.jpg', // TODO: Replace with Hochwald/forest image
   },
 ]
 

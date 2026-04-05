@@ -30,7 +30,7 @@ const agent = {
   phone1: '0177 6542977',
   phone2: '06503 9523963',
   email: 'sandro.mezzarano@wuestenrot.de',
-  image: 'https://res.cloudinary.com/djqviyb2c/image/upload/w_200,h_200,c_fill,g_face,q_80/v1769254175/Mezzarano-bearb-1024x758_vgqhbw.jpg',
+  image: '/images/team/Mezzarano.jpg',
 }
 
 // Optimize Cloudinary URL with responsive size

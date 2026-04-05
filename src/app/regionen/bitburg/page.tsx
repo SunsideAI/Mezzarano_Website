@@ -105,7 +105,7 @@ export default function BitburgPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1770805358/Bittburg_tejpzq.png"
+                  src="/images/regionen/Bittburg.png"
                   alt="Immobilien in Bitburg"
                   fill
                   className="object-cover"

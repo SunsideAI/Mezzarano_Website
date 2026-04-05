@@ -105,7 +105,7 @@ export default function HochwaldPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1770805355/Wald_pxfoka.png"
+                  src="/images/regionen/Hermeskeil.jpg"
                   alt="Immobilien im Hochwald"
                   fill
                   className="object-cover"

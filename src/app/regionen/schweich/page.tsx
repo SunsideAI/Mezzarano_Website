@@ -105,7 +105,7 @@ export default function SchweichPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1769251685/Bildschirmfoto_2026-01-24_um_11.47.48_jnakga.png"
+                  src="/images/regionen/Schweich.jpg"
                   alt="Schweich an der Mosel"
                   fill
                   className="object-cover"

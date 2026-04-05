@@ -105,7 +105,7 @@ export default function KonzPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/djqviyb2c/image/upload/w_800,q_85,f_auto/v1770805357/Konz_eqrxqw.png"
+                  src="/images/regionen/Konz.png"
                   alt="Immobilien in Konz"
                   fill
                   className="object-cover"

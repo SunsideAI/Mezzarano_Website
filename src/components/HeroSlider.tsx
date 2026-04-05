@@ -20,7 +20,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_112407784_bo2mmc.jpg',
+    image: '/images/hero/AdobeStock_112407784.jpeg',
     tagline: 'Immobilienverkauf',
     icon: Home,
     lines: [
@@ -31,7 +31,7 @@ const slides: Slide[] = [
     subheadline: 'Ihr Wüstenrot Immobilienexperte in Hermeskeil. Professionelle Beratung für die Region Trier, Hochwald und Mosel.',
   },
   {
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711778/AdobeStock_265469422_aumfux.jpg',
+    image: '/images/hero/AdobeStock_265469422.jpeg',
     tagline: 'Immobilienkauf',
     icon: Key,
     lines: [
@@ -41,7 +41,7 @@ const slides: Slide[] = [
     subheadline: 'Von der Eigentumswohnung bis zum Einfamilienhaus – ich begleite Sie persönlich durch den gesamten Kaufprozess.',
   },
   {
-    image: 'https://res.cloudinary.com/djqviyb2c/image/upload/v1772711784/AdobeStock_476608445_ekjvmp.jpg',
+    image: '/images/hero/AdobeStock_476608445.jpeg',
     tagline: 'Finanzierung',
     icon: Calculator,
     lines: [
