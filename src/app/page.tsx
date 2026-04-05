@@ -340,21 +340,21 @@ export default async function HomePage() {
             </p>
             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
               <Image
-                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Focus_Money_H%C3%B6chste_Kompetenz_WUESTENROT_IMMOBILIEN_2025_gnwd3c.jpg"
+                src="/images/awards/focus-money-2025.jpg"
                 alt="Focus Money - Höchste Kompetenz 2025"
                 width={100}
                 height={130}
                 className="object-contain opacity-90"
               />
               <Image
-                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1770805619/Handelsblatt_Exzellente_Kundenberatung_WUESTENROT_IMMOBILIEN_2025_z9rek4.jpg"
+                src="/images/awards/handelsblatt-2025.jpg"
                 alt="Handelsblatt - Exzellente Kundenberatung 2025"
                 width={100}
                 height={130}
                 className="object-contain opacity-90"
               />
               <Image
-                src="https://res.cloudinary.com/djqviyb2c/image/upload/w_300,q_80/v1773752841/Siegel-Sprengnetter-Sanierungsexperte-RGB_idrqfv.png"
+                src="/images/awards/sprengnetter-sanierungsexperte.png"
                 alt="Sprengnetter Qualifizierter Fachmakler - Sanierungsexperte"
                 width={100}
                 height={130}
