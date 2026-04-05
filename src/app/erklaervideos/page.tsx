@@ -62,8 +62,15 @@ export default function ErklaervideosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
-      <section className="min-h-[450px] md:min-h-[600px] bg-wuestennacht flex items-center py-12">
-        <div className="container-custom">
+      <section className="relative min-h-[450px] md:min-h-[600px] bg-wuestennacht flex items-center py-12 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/stock/AdobeStock_510543411.jpeg')" }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-wuestennacht/85" />
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               {/* Tagline - Icon + Text in wuestenrot */}
