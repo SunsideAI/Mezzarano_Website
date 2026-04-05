@@ -51,6 +51,7 @@ export default function UeberUnsPage() {
           text: 'Kontakt aufnehmen',
           href: '/kontakt',
         }}
+        backgroundImage="/images/hero/AdobeStock_112407784.jpeg"
       />
 
       {/* Story Section */}

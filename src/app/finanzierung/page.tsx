@@ -98,6 +98,7 @@ export default function FinanzierungPage() {
           text: 'Kostenlose Beratung anfragen',
           href: '/kontakt',
         }}
+        backgroundImage="/images/stock/AdobeStock_510543411.jpeg"
       />
 
       {/* Finanzierungsarten */}

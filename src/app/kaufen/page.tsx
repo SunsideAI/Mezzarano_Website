@@ -108,6 +108,7 @@ export default function KaufenPage() {
           text: 'Aktuelle Angebote ansehen',
           href: '/immobilien',
         }}
+        backgroundImage="/images/stock/AdobeStock_712383372.jpeg"
       />
 
       {/* Benefits */}

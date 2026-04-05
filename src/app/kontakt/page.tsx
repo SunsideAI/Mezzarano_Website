@@ -101,6 +101,7 @@ export default function KontaktPage() {
           text: 'Nachricht schreiben',
           href: '#kontaktformular',
         }}
+        backgroundImage="/images/stock/AdobeStock_288240294.jpeg"
       />
 
       {/* Contact Info Cards - Fenster-Form */}

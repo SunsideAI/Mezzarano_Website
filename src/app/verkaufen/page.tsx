@@ -87,6 +87,7 @@ export default function VerkaufenPage() {
           text: 'Kostenlose Bewertung anfragen',
           href: '/kontakt',
         }}
+        backgroundImage="/images/stock/AdobeStock_629132659.jpeg"
       />
 
       {/* Benefits */}

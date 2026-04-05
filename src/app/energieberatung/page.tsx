@@ -104,6 +104,7 @@ export default function EnergieberatungPage() {
           text: 'Kostenlose Anfrage starten',
           href: '/kontakt',
         }}
+        backgroundImage="/images/stock/AdobeStock_349911568.jpeg"
       />
 
       {/* Benefits */}
