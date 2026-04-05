@@ -227,8 +227,15 @@ export default function ImmobilienPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
-      <section className="bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12">
-        <div className="container-custom">
+      <section className="relative bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero/AdobeStock_476608445.jpeg')" }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-wuestennacht/85" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl">
             {/* Tagline - Icon + Text in wuestenrot */}
             <div className="flex items-center gap-2 text-wuestenrot mb-6" data-aos="fade-up">
