@@ -142,7 +142,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
     : fallbackProperty?.kategorie === 'Miete'
 
   const title = property?.titel || fallbackProperty?.titel || 'Immobilie'
-  const exposeId = property?.expose_id || fallbackProperty?.expose_id || params.id
+  const propertyExposeId = property?.expose_id || fallbackProperty?.expose_id || params.id
   const images = property?.bilder || fallbackProperty?.bilder || []
 
   // Deduplicate images
@@ -255,9 +255,9 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                 </div>
 
                 {/* Object Number */}
-                {(property?.objektnr_extern || exposeId) && (
+                {(property?.objektnr_extern || propertyExposeId) && (
                   <p className="text-sm text-gray-400 mt-4">
-                    Objekt-Nr.: {property?.objektnr_extern || exposeId}
+                    Objekt-Nr.: {property?.objektnr_extern || propertyExposeId}
                   </p>
                 )}
               </div>
@@ -557,7 +557,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                     Interesse an dieser Immobilie?
                   </h3>
                   <PropertyInquiryForm
-                    propertyId={exposeId}
+                    propertyId={propertyExposeId}
                     propertyTitle={title}
                   />
                 </div>
