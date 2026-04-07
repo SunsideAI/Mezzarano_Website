@@ -125,7 +125,7 @@ export default async function HomePage() {
         const propsWithImages = await Promise.all(
           onOfficeProps.map(async (prop) => {
             try {
-              const images = await fetchEstateImages(prop.id)
+              const images = await fetchEstateImages(prop.id, '800x600')
               return { ...prop, bilder: images.length > 0 ? images : prop.bilder, titelbild: images[0] || prop.titelbild }
             } catch { return prop }
           })

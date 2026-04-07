@@ -3,6 +3,9 @@ import { fetchEstates, fetchEstateImages, isOnOfficeConfigured, OnOfficeProperty
 import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
 import { properties as staticProperties, Property } from '@/data/properties'
 
+// Cache for 5 minutes on CDN, serve stale while revalidating
+export const revalidate = 300
+
 // Convert static property to AirtableProperty format
 function normalizeStaticProperty(prop: Property): AirtableProperty {
   return {
@@ -124,7 +127,7 @@ export async function GET(request: NextRequest) {
         const propertiesWithImages = await Promise.all(
           onOfficeProps.map(async (prop) => {
             try {
-              const images = await fetchEstateImages(prop.id)
+              const images = await fetchEstateImages(prop.id, '800x600')
               return {
                 ...prop,
                 bilder: images.length > 0 ? images : prop.bilder,

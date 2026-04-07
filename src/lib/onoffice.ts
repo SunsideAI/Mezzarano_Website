@@ -1129,8 +1129,9 @@ export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeP
 /**
  * Fetch images for an estate (Homepage-published images)
  * Uses estatepictures resourcetype as per onOffice API documentation
+ * @param size - 'original' for detail pages, '800x600' for listings, '400x300' for thumbnails
  */
-export async function fetchEstateImages(estateId: number): Promise<string[]> {
+export async function fetchEstateImages(estateId: number, size: string = 'original'): Promise<string[]> {
   try {
     const client = createOnOfficeClient()
 
@@ -1143,7 +1144,7 @@ export async function fetchEstateImages(estateId: number): Promise<string[]> {
         parameters: {
           estateids: [estateId],
           categories: ['Titelbild', 'Foto', 'Foto_gross', 'Grundriss', 'Lageplan', 'Panorama'],
-          size: 'original',
+          size,
         },
       },
     ])
@@ -1164,13 +1165,13 @@ export async function fetchEstateImages(estateId: number): Promise<string[]> {
       const elements = record.elements
       if (Array.isArray(elements)) {
         for (const el of elements as Array<{ url?: string; originalurl?: string }>) {
-          if (el.url) images.push(String(el.url))
-          else if (el.originalurl) images.push(String(el.originalurl))
+          const url = el.url || el.originalurl
+          if (url) images.push(decodeURIComponent(String(url)))
         }
       } else if (elements) {
         const el = elements as { url?: string; originalurl?: string }
-        if (el.url) images.push(String(el.url))
-        else if (el.originalurl) images.push(String(el.originalurl))
+        const url = el.url || el.originalurl
+        if (url) images.push(decodeURIComponent(String(url)))
       }
     }
 

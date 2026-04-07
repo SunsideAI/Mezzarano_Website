@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Bed, Square, Heart, ImageOff } from 'lucide-react'
 import { AirtableProperty } from '@/lib/airtable'
 
@@ -42,25 +43,19 @@ export default function AirtablePropertyCard({ property }: AirtablePropertyCardP
 
   return (
     <article className="bg-white rounded-fenster shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-      {/* Image - using CSS background for instant loading */}
+      {/* Image - using Next.js Image for automatic optimization */}
       <div className="relative h-48 overflow-hidden bg-warmgrau">
-        {/* Image as background - loads immediately without React state issues */}
         {imageUrl && !imageError ? (
-          <div
-            className="absolute inset-0 bg-cover bg-center z-10 group-hover:scale-105 transition-transform duration-300"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-            role="img"
-            aria-label={property.titel}
-          >
-            {/* Hidden img to detect load errors - eslint-disable-next-line @next/next/no-img-element */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imageUrl}
-              alt=""
-              className="hidden"
-              onError={() => setImageError(true)}
-            />
-          </div>
+          <Image
+            src={imageUrl}
+            alt={property.titel}
+            fill
+            className="object-cover z-10 group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
+            onError={() => setImageError(true)}
+            unoptimized={imageUrl.includes('image.onoffice.de')}
+          />
         ) : (
           <div className="absolute inset-0 z-10 bg-warmgrau flex items-center justify-center">
             <ImageOff className="w-12 h-12 text-gray-300" />
