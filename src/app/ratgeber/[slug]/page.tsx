@@ -54,7 +54,7 @@ export default function BlogPostPage({ params }: Props) {
     })
   }
 
-  const shareUrl = `https://mezzarano-immobilien.de/ratgeber/${params.slug}`
+  const shareUrl = `https://mezzarano-wuestenrot-immobilien.de/ratgeber/${params.slug}`
 
   // Schema.org Article markup
   const articleSchema = {
@@ -71,7 +71,7 @@ export default function BlogPostPage({ params }: Props) {
       name: 'Mezzarano Immobilien',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://mezzarano-immobilien.de/logo.png'
+        url: 'https://mezzarano-wuestenrot-immobilien.de/logo.png'
       }
     },
     datePublished: post.pubDate,
@@ -88,7 +88,7 @@ export default function BlogPostPage({ params }: Props) {
 
       <article className="min-h-screen bg-secondary-50">
         {/* Header */}
-        <header className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-16">
+        <header className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-10 md:py-16">
           <div className="container-custom">
             <Link
               href="/ratgeber"
@@ -99,7 +99,7 @@ export default function BlogPostPage({ params }: Props) {
             </Link>
 
             <div className="max-w-4xl">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-6" data-aos="fade-up">
                 <span className="badge bg-primary-500 text-white">
                   {post.category}
                 </span>
@@ -110,15 +110,15 @@ export default function BlogPostPage({ params }: Props) {
                 )}
               </div>
 
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
                 {post.title}
               </h1>
 
-              <p className="text-xl text-secondary-300 mb-8">
+              <p className="text-xl text-secondary-300 mb-8" data-aos="fade-up" data-aos-delay="200">
                 {post.description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 text-secondary-400">
+              <div className="flex flex-wrap items-center gap-6 text-secondary-400" data-aos="fade-up" data-aos-delay="300">
                 <span className="flex items-center gap-2">
                   <User className="h-5 w-5" />
                   {post.author}
@@ -140,7 +140,7 @@ export default function BlogPostPage({ params }: Props) {
         <div className="container-custom py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-8" data-aos="fade-right">
               <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                 <div
                   className="prose-blog"
@@ -208,11 +208,11 @@ export default function BlogPostPage({ params }: Props) {
             </div>
 
             {/* Sidebar */}
-            <aside className="lg:col-span-4">
+            <aside className="lg:col-span-4" data-aos="fade-left">
               <div className="sticky top-28 space-y-8">
                 {/* CTA Box */}
                 <div className="bg-primary-500 text-white rounded-2xl p-8">
-                  <h3 className="font-serif text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-4">
                     Kostenlose Beratung
                   </h3>
                   <p className="text-white/90 mb-6">
@@ -227,8 +227,14 @@ export default function BlogPostPage({ params }: Props) {
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <h4 className="font-semibold text-secondary-900 mb-4">Über den Autor</h4>
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary-500">M</span>
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="/images/team/Mezzarano.jpg"
+                        alt="Sandro Mezzarano"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="font-semibold text-secondary-900">{post.author}</p>
@@ -243,12 +249,14 @@ export default function BlogPostPage({ params }: Props) {
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <section className="py-16 bg-white">
+          <section className="py-10 md:py-16 bg-white">
             <div className="container-custom">
-              <h2 className="section-title mb-8">Weitere Artikel</h2>
+              <h2 className="section-title mb-8" data-aos="fade-up">Weitere Artikel</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {relatedPosts.map(post => (
-                  <BlogCard key={post.slug} post={post} />
+                {relatedPosts.map((post, index) => (
+                  <div key={post.slug} data-aos="fade-up" data-aos-delay={index * 100}>
+                    <BlogCard post={post} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -263,6 +271,42 @@ export default function BlogPostPage({ params }: Props) {
 function convertMarkdownToHtml(markdown: string): string {
   let html = markdown
 
+  // Process tables first (before other transformations)
+  html = html.replace(/(\|.+\|[\r\n]+\|[-:\| ]+\|[\r\n]+((\|.+\|[\r\n]?)+))/gm, (match) => {
+    const lines = match.trim().split('\n').filter(line => line.trim())
+    if (lines.length < 2) return match
+
+    // Parse header row
+    const headerCells = lines[0].split('|').filter(cell => cell.trim()).map(cell => cell.trim())
+
+    // Skip separator row (lines[1])
+
+    // Parse data rows
+    const dataRows = lines.slice(2).map(line =>
+      line.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
+    )
+
+    // Build HTML table
+    let tableHtml = '<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse">'
+    tableHtml += '<thead><tr class="bg-secondary-100">'
+    headerCells.forEach(cell => {
+      tableHtml += `<th class="border border-secondary-200 px-4 py-3 text-left font-semibold text-secondary-700">${cell}</th>`
+    })
+    tableHtml += '</tr></thead><tbody>'
+
+    dataRows.forEach((row, index) => {
+      const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-secondary-50'
+      tableHtml += `<tr class="${rowClass}">`
+      row.forEach(cell => {
+        tableHtml += `<td class="border border-secondary-200 px-4 py-3 text-secondary-600">${cell}</td>`
+      })
+      tableHtml += '</tr>'
+    })
+
+    tableHtml += '</tbody></table></div>'
+    return tableHtml
+  })
+
   // Headers
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>')
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>')
@@ -276,9 +320,15 @@ function convertMarkdownToHtml(markdown: string): string {
   // Links
   html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>')
 
-  // Lists
+  // Numbered lists
+  html = html.replace(/^(\d+)\. (.*$)/gim, '<li>$2</li>')
+
+  // Unordered lists
   html = html.replace(/^\- (.*$)/gim, '<li>$1</li>')
-  html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+
+  // Wrap consecutive li elements in ul/ol
+  html = html.replace(/(<li>[\s\S]*?<\/li>)/g, '<ul>$1</ul>')
+  html = html.replace(/<\/ul>\s*<ul>/g, '')
 
   // Paragraphs
   html = html.replace(/\n\n/gim, '</p><p>')
@@ -289,6 +339,8 @@ function convertMarkdownToHtml(markdown: string): string {
   html = html.replace(/<\/h(\d)><\/p>/g, '</h$1>')
   html = html.replace(/<p><ul>/g, '<ul>')
   html = html.replace(/<\/ul><\/p>/g, '</ul>')
+  html = html.replace(/<p><div/g, '<div')
+  html = html.replace(/<\/div><\/p>/g, '</div>')
   html = html.replace(/<p><\/p>/g, '')
 
   return html

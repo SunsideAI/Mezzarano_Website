@@ -1,0 +1,207 @@
+import { NextRequest, NextResponse } from 'next/server'
+
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || process.env.AT_TOKEN
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || process.env.AT_BASE
+const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID || process.env.AT_TABLE || 'Objekte'
+
+interface AirtableAttachment {
+  id: string
+  url: string
+  filename: string
+  type: string
+}
+
+interface AirtableRecord {
+  id: string
+  fields: Record<string, unknown>
+}
+
+// Cache for image URLs (in-memory, resets on cold start)
+const imageCache = new Map<string, { url: string; timestamp: number }>()
+const CACHE_DURATION = 60 * 60 * 1000 // 1 hour (Airtable URLs last ~2 hours, Cloudinary permanent)
+
+// Return 404 response for missing images (no fallback!)
+function return404() {
+  return new NextResponse(null, { status: 404 })
+}
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { recordId: string } }
+) {
+  const { recordId } = params
+  const { searchParams } = new URL(request.url)
+  const imageIndex = parseInt(searchParams.get('index') || '0', 10)
+  const type = searchParams.get('type') || 'bilder' // 'bilder' or 'cover'
+  const width = parseInt(searchParams.get('w') || '800', 10) // Responsive width: 400 for mobile, 800 for desktop
+
+  if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
+    // Return 404 if Airtable not configured
+    return return404()
+  }
+
+  // Limit width to reasonable values for security
+  const safeWidth = Math.min(Math.max(width, 200), 1600)
+  const cacheKey = `${recordId}-${type}-${imageIndex}-${safeWidth}`
+
+  // Check cache first
+  const cached = imageCache.get(cacheKey)
+  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+    return fetchAndStreamImage(cached.url)
+  }
+
+  try {
+    // Fetch fresh data from Airtable
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_ID)}/${recordId}`
+
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      },
+      cache: 'no-store',
+    })
+
+    if (!response.ok) {
+      console.error('Airtable fetch error:', response.status)
+      return return404()
+    }
+
+    const record: AirtableRecord = await response.json()
+
+    const title = record.fields.title || record.fields.titel || 'Unknown'
+
+    // Get images - prioritize permanent URLs over expiring Airtable attachments
+    let imageUrls: string[] = []
+
+    // Priority 1: cloudinary_urls (permanent, best option)
+    // Support various field names and formats
+    const cloudinaryField = record.fields.cloudinary_urls || record.fields['Cloudinary URLs'] || record.fields['cloudinary urls'] || record.fields.cloudinary_images
+    if (cloudinaryField) {
+      if (typeof cloudinaryField === 'string') {
+        // Handle newline-separated, comma-separated, or single URL
+        imageUrls = (cloudinaryField as string).split(/[\n,]/).map(url => url.trim()).filter(Boolean)
+      } else if (Array.isArray(cloudinaryField)) {
+        // Handle array of strings or array of objects with url property
+        imageUrls = (cloudinaryField as any[]).map((item: any) =>
+          typeof item === 'string' ? item.trim() : item?.url?.trim()
+        ).filter(Boolean)
+      }
+    }
+    // Priority 2: bild_url (stable external URL from ImmobilienScout24 etc.)
+    else if (record.fields.bild_url && typeof record.fields.bild_url === 'string') {
+      imageUrls = [(record.fields.bild_url as string).trim()]
+    }
+    // Priority 3: bilder field (may contain multiple URLs)
+    else if (record.fields.bilder && typeof record.fields.bilder === 'string') {
+      imageUrls = (record.fields.bilder as string).split('\n').map(url => url.trim()).filter(Boolean)
+    }
+    // Priority 4: bilder_attachments (Airtable attachments - these expire after ~2 hours!)
+    else {
+      const attachments = record.fields.bilder_attachments as any[]
+      if (attachments && Array.isArray(attachments) && attachments.length > 0) {
+        imageUrls = attachments.map((att: any) => att?.url).filter(Boolean)
+      }
+    }
+
+    // Remove duplicate images - multi-pass deduplication
+    // Pass 1: remove exact URL duplicates
+    imageUrls = imageUrls.filter((url, index) => imageUrls.indexOf(url) === index)
+
+    // Pass 2: for Cloudinary URLs, deduplicate by public_id (ignoring version)
+    const seenPublicIds = new Set<string>()
+    imageUrls = imageUrls.filter((url) => {
+      if (url.includes('res.cloudinary.com')) {
+        // Extract public_id: everything after /v{version}/ and before the extension
+        const match = url.match(/\/v\d+\/(.+?)(?:\.[^.]+)?$/)
+        const publicId = match ? match[1] : url
+        if (seenPublicIds.has(publicId)) {
+          return false
+        }
+        seenPublicIds.add(publicId)
+        return true
+      }
+      // For non-Cloudinary URLs, use filename
+      const filename = url.split('/').pop()?.split('?')[0] || url
+      if (seenPublicIds.has(filename)) {
+        return false
+      }
+      seenPublicIds.add(filename)
+      return true
+    })
+
+    if (imageUrls.length === 0) {
+      return return404()
+    }
+
+    // For 'cover' type, always use first image; for 'bilder', use the specified index
+    const targetIndex = type === 'cover' ? 0 : imageIndex
+    const imageUrl = imageUrls[Math.min(targetIndex, imageUrls.length - 1)]
+
+    if (!imageUrl) {
+      return return404()
+    }
+
+    // Optimize Cloudinary URLs with transformations (responsive width)
+    let optimizedUrl = imageUrl
+    if (imageUrl.includes('res.cloudinary.com') && !imageUrl.includes('/w_') && !imageUrl.includes('/q_')) {
+      // Add automatic format, quality, and size optimization with responsive width
+      optimizedUrl = imageUrl.replace(
+        '/upload/',
+        `/upload/f_auto,q_auto,w_${safeWidth},c_limit/`
+      )
+    }
+
+    // Cache the fresh URL
+    imageCache.set(cacheKey, {
+      url: optimizedUrl,
+      timestamp: Date.now(),
+    })
+
+    // Fetch and stream the actual image
+    return fetchAndStreamImage(optimizedUrl)
+  } catch (error) {
+    console.error('Image proxy error:', error)
+    return return404()
+  }
+}
+
+async function fetchAndStreamImage(imageUrl: string): Promise<NextResponse> {
+  try {
+    const response = await fetch(imageUrl, {
+      headers: {
+        'Accept': 'image/*',
+      },
+    })
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch image: ${response.status}`)
+    }
+
+    const contentType = response.headers.get('content-type') || 'image/jpeg'
+    const imageBuffer = await response.arrayBuffer()
+
+    return new NextResponse(imageBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': contentType,
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800', // Cache 24h, stale 7 days
+        'Access-Control-Allow-Origin': '*',
+        'Vary': 'Accept',
+      },
+    })
+  } catch (error) {
+    console.error('Error streaming image:', error)
+    // Return a simple 1x1 transparent pixel as fallback
+    const transparentPixel = Buffer.from(
+      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+      'base64'
+    )
+    return new NextResponse(transparentPixel, {
+      status: 200,
+      headers: {
+        'Content-Type': 'image/png',
+        'Cache-Control': 'no-cache',
+      },
+    })
+  }
+}

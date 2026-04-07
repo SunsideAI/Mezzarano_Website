@@ -23,20 +23,6 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-4 left-4 flex gap-2">
-          <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-            property.type === 'kauf'
-              ? 'bg-primary-700 text-white'
-              : 'bg-gold-500 text-white'
-          }`}>
-            {property.type === 'kauf' ? 'Kaufen' : 'Mieten'}
-          </span>
-          {property.featured && (
-            <span className="px-3 py-1 rounded-full text-sm font-medium bg-red-500 text-white">
-              Top-Angebot
-            </span>
-          )}
-        </div>
         <button
           className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
           aria-label="Zu Favoriten hinzufügen"
@@ -48,8 +34,8 @@ export default function PropertyCard({ property }: PropertyCardProps) {
       {/* Content */}
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-3">
-          <h3 className="font-serif text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
-            <Link href={`/immobilien/${property.id}`}>
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+            <Link href={`/immobilie/${property.id}`}>
               {property.title}
             </Link>
           </h3>
@@ -88,7 +74,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
             </p>
           </div>
           <Link
-            href={`/immobilien/${property.id}`}
+            href={`/immobilie/${property.id}`}
             className="text-primary-700 font-medium hover:text-primary-800 transition-colors"
           >
             Details →

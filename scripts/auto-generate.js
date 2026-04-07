@@ -53,13 +53,13 @@ async function generatePost(topic) {
   const client = new Anthropic();
 
   // Generate content
-  const SYSTEM_PROMPT = `Du bist ein erfahrener Immobilien-Content-Autor für Mezzarano Immobilien, einen Wüstenrot-Immobilienberater in der Region Heilbronn.
+  const SYSTEM_PROMPT = `Du bist ein erfahrener Immobilien-Content-Autor für Mezzarano Immobilien, einen Wüstenrot-Immobilienberater in der Region Hermeskeil, Trier, Mosel und Hochwald.
 
 Deine Aufgabe ist es, SEO-optimierte, informative Blog-Artikel auf Deutsch zu schreiben.
 
 Wichtige Richtlinien:
 - Schreibe in einem professionellen, aber zugänglichen Ton
-- Verwende die regionale Perspektive (Heilbronn, Weinsberg, Neckarsulm, etc.)
+- Verwende die regionale Perspektive (Hermeskeil, Trier, Schweich, Bernkastel-Kues, Hochwald, Mosel)
 - Integriere natürlich relevante Keywords
 - Strukturiere den Artikel mit klaren H2 und H3 Überschriften
 - Füge praktische Tipps und Handlungsempfehlungen ein
@@ -81,7 +81,7 @@ Der Artikel sollte:
 1. Eine packende Einleitung haben
 2. Mehrere H2-Abschnitte mit Unterüberschriften (H3)
 3. Praktische Tipps und Beispiele enthalten
-4. Lokale Bezüge zur Region Heilbronn haben
+4. Lokale Bezüge zur Region Hermeskeil, Trier, Mosel und Hochwald haben
 5. Mit einem Call-to-Action für Beratung enden
 
 Bitte schreibe den Artikel im Markdown-Format.`;
@@ -98,7 +98,9 @@ Bitte schreibe den Artikel im Markdown-Format.`;
       max_tokens: 100,
       messages: [{
         role: 'user',
-        content: `Erstelle einen SEO-optimierten Titel (max 60 Zeichen) für: "${topic.title}". Nur den Titel ausgeben.`
+        content: `Erstelle einen SEO-optimierten Titel (max 60 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic.title}".
+
+WICHTIG: Gib NUR den Titel aus - keine Anführungszeichen, keine Erklärungen, keine Zeichenanzahl.`
       }]
     }),
     client.messages.create({
@@ -106,18 +108,43 @@ Bitte schreibe den Artikel im Markdown-Format.`;
       max_tokens: 200,
       messages: [{
         role: 'user',
-        content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für: "${topic.title}". Für Mezzarano Immobilien Heilbronn.`
+        content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic.title}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel.
+
+WICHTIG: Gib NUR den Description-Text aus. KEINE Anführungszeichen, KEINE Zeichenanzahl, KEINE Labels wie "SEO-Meta-Description:", KEINE Formatierung wie **fett**.`
       }]
     })
   ]);
 
   const content = contentResponse.content[0].text;
-  const seoTitle = titleResponse.content[0].text.trim();
-  const description = descResponse.content[0].text.trim();
+
+  // Clean title: remove quotes and any extra text
+  const seoTitle = titleResponse.content[0].text
+    .trim()
+    .replace(/^["'„"»«]|["'„"»«]$/g, '')
+    .split('\n')[0] // Only take first line
+    .trim();
+
+  // Clean description: remove quotes, character counts, labels, and extra formatting
+  const description = descResponse.content[0].text
+    .trim()
+    .replace(/^\*\*SEO[^*]*\*\*:?\s*/gi, '') // Remove **SEO-Meta-Description:** etc.
+    .replace(/^SEO[^:]*:\s*/gi, '') // Remove "SEO-Meta-Description:" etc.
+    .replace(/^Meta[- ]?Description:?\s*/gi, '') // Remove "Meta-Description:" etc.
+    .replace(/^Description:?\s*/gi, '') // Remove "Description:" etc.
+    .replace(/^["'„"»«]|["'„"»«]$/g, '') // Remove quotes
+    .replace(/\*\*\(?[\d\s]*Zeichen\)?\*\*/gi, '') // Remove **(154 Zeichen)** etc.
+    .replace(/\*\*Zeichenanzahl:?\s*\d+\*\*/gi, '') // Remove **Zeichenanzahl: 154**
+    .replace(/\(Zeichen:?\s*\d+\)/gi, '') // Remove (Zeichen: 155)
+    .replace(/\(\d+\s*Zeichen\)/gi, '') // Remove (155 Zeichen)
+    .replace(/Zeichenanzahl:?\s*\d+/gi, '') // Remove Zeichenanzahl: 155
+    .replace(/\[\d+\s*Zeichen\]/gi, '') // Remove [155 Zeichen]
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
 
   const category = topic.category;
   const date = new Date().toISOString().split('T')[0];
-  const tags = [...new Set([...topic.keywords, 'Heilbronn', 'Immobilien', 'Wüstenrot'])].slice(0, 6);
+  const tags = [...new Set([...topic.keywords, 'Hermeskeil', 'Trier', 'Mosel', 'Immobilien', 'Wüstenrot'])].slice(0, 6);
 
   const slug = seoTitle
     .toLowerCase()
@@ -159,6 +186,16 @@ tags: ${JSON.stringify(tags)}
 async function main() {
   console.log('🚀 Auto Blog Generator Starting...\n');
 
+  // Validate API key before starting
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('❌ ANTHROPIC_API_KEY environment variable is not set!');
+    console.error('   Please add it to your GitHub repository secrets.');
+    console.error('   Go to: Repository Settings > Secrets and Variables > Actions > New repository secret');
+    process.exit(1);
+  }
+
+  console.log('✅ API key found');
+
   const data = loadTopics();
   const unusedTopics = getUnusedTopics(data);
 
@@ -195,6 +232,14 @@ async function main() {
       }
     } catch (error) {
       console.error(`   ❌ Failed: ${error.message}`);
+      // Log full error details for debugging
+      if (error.status) {
+        console.error(`   Status: ${error.status}`);
+      }
+      if (error.error) {
+        console.error(`   Details: ${JSON.stringify(error.error)}`);
+      }
+      console.error(`   Stack: ${error.stack}`);
       results.failed++;
     }
   }
@@ -221,6 +266,13 @@ async function main() {
 }
 
 main().catch(error => {
-  console.error('Fatal error:', error);
+  console.error('❌ Fatal error:', error.message);
+  if (error.status) {
+    console.error(`   Status: ${error.status}`);
+  }
+  if (error.error) {
+    console.error(`   Details: ${JSON.stringify(error.error)}`);
+  }
+  console.error(`   Stack: ${error.stack}`);
   process.exit(1);
 });

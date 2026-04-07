@@ -26,13 +26,13 @@ const CATEGORIES = [
   'Tipps & Ratgeber'
 ];
 
-const SYSTEM_PROMPT = `Du bist ein erfahrener Immobilien-Content-Autor für Mezzarano Immobilien, einen Wüstenrot-Immobilienberater in der Region Heilbronn.
+const SYSTEM_PROMPT = `Du bist ein erfahrener Immobilien-Content-Autor für Mezzarano Immobilien, einen Wüstenrot-Immobilienberater in der Region Hermeskeil, Trier, Mosel und Hochwald.
 
 Deine Aufgabe ist es, SEO-optimierte, informative Blog-Artikel auf Deutsch zu schreiben.
 
 Wichtige Richtlinien:
 - Schreibe in einem professionellen, aber zugänglichen Ton
-- Verwende die regionale Perspektive (Heilbronn, Weinsberg, Neckarsulm, etc.)
+- Verwende die regionale Perspektive (Hermeskeil, Trier, Schweich, Bernkastel-Kues, Hochwald, Mosel)
 - Integriere natürlich relevante Keywords
 - Strukturiere den Artikel mit klaren H2 und H3 Überschriften
 - Füge praktische Tipps und Handlungsempfehlungen ein
@@ -59,7 +59,7 @@ Der Artikel sollte:
 1. Eine packende Einleitung haben
 2. Mehrere H2-Abschnitte mit Unterüberschriften (H3)
 3. Praktische Tipps und Beispiele enthalten
-4. Lokale Bezüge zur Region Heilbronn haben
+4. Lokale Bezüge zur Region Hermeskeil, Trier, Mosel und Hochwald haben
 5. Mit einem Call-to-Action für Beratung enden
 
 Bitte schreibe den Artikel im Markdown-Format.`;
@@ -82,11 +82,18 @@ async function generateSEOTitle(topic) {
     max_tokens: 100,
     messages: [{
       role: 'user',
-      content: `Erstelle einen SEO-optimierten Titel (max 60 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Nur den Titel ausgeben, ohne Anführungszeichen.`
+      content: `Erstelle einen SEO-optimierten Titel (max 60 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}".
+
+WICHTIG: Gib NUR den Titel aus - keine Anführungszeichen, keine Erklärungen, keine Zeichenanzahl.`
     }]
   });
 
-  return response.content[0].text.trim();
+  // Clean title: remove quotes and any extra text
+  return response.content[0].text
+    .trim()
+    .replace(/^["'„"»«]|["'„"»«]$/g, '')
+    .split('\n')[0]
+    .trim();
 }
 
 async function generateDescription(topic) {
@@ -97,11 +104,29 @@ async function generateDescription(topic) {
     max_tokens: 200,
     messages: [{
       role: 'user',
-      content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Für Mezzarano Immobilien in Heilbronn. Nur die Description ausgeben.`
+      content: `Erstelle eine SEO-Meta-Description (max 155 Zeichen) für einen Immobilien-Blog-Artikel zum Thema: "${topic}". Für Mezzarano Immobilien in Hermeskeil, Trier und an der Mosel.
+
+WICHTIG: Gib NUR den Description-Text aus. KEINE Anführungszeichen, KEINE Zeichenanzahl, KEINE Labels wie "SEO-Meta-Description:", KEINE Formatierung wie **fett**.`
     }]
   });
 
-  return response.content[0].text.trim();
+  // Clean description: remove quotes, character counts, labels, and extra formatting
+  return response.content[0].text
+    .trim()
+    .replace(/^\*\*SEO[^*]*\*\*:?\s*/gi, '') // Remove **SEO-Meta-Description:** etc.
+    .replace(/^SEO[^:]*:\s*/gi, '') // Remove "SEO-Meta-Description:" etc.
+    .replace(/^Meta[- ]?Description:?\s*/gi, '') // Remove "Meta-Description:" etc.
+    .replace(/^Description:?\s*/gi, '') // Remove "Description:" etc.
+    .replace(/^["'„"»«]|["'„"»«]$/g, '') // Remove quotes
+    .replace(/\*\*\(?[\d\s]*Zeichen\)?\*\*/gi, '') // Remove **(154 Zeichen)** etc.
+    .replace(/\*\*Zeichenanzahl:?\s*\d+\*\*/gi, '') // Remove **Zeichenanzahl: 154**
+    .replace(/\(Zeichen:?\s*\d+\)/gi, '') // Remove (Zeichen: 155)
+    .replace(/\(\d+\s*Zeichen\)/gi, '') // Remove (155 Zeichen)
+    .replace(/Zeichenanzahl:?\s*\d+/gi, '') // Remove Zeichenanzahl: 155
+    .replace(/\[\d+\s*Zeichen\]/gi, '') // Remove [155 Zeichen]
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
 }
 
 function detectCategory(topic, keywords = []) {
@@ -119,8 +144,8 @@ function detectCategory(topic, keywords = []) {
   if (text.includes('bewertung') || text.includes('wert')) {
     return 'Immobilienbewertung';
   }
-  if (text.includes('heilbronn') || text.includes('weinsberg') || text.includes('neckarsulm') ||
-      text.includes('bad wimpfen') || text.includes('öhringen') || text.includes('lauffen')) {
+  if (text.includes('hermeskeil') || text.includes('trier') || text.includes('schweich') ||
+      text.includes('bernkastel') || text.includes('mosel') || text.includes('hochwald')) {
     return 'Regionen';
   }
   if (text.includes('finanzierung') || text.includes('kredit') || text.includes('zins') ||
@@ -152,7 +177,7 @@ function createSlug(title) {
 
 function createFrontmatter(title, description, category, keywords) {
   const date = new Date().toISOString().split('T')[0];
-  const tags = [...new Set([...keywords, 'Heilbronn', 'Immobilien', 'Wüstenrot'])].slice(0, 6);
+  const tags = [...new Set([...keywords, 'Hermeskeil', 'Trier', 'Mosel', 'Immobilien', 'Wüstenrot'])].slice(0, 6);
 
   return `---
 title: "${title}"

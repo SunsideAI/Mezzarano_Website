@@ -1,0 +1,202 @@
+import Link from 'next/link'
+import { CheckCircle, TrendingUp, Clock, Shield, Users, Phone, ArrowRight, Home, FileText, UserCheck, Camera, BarChart3 } from 'lucide-react'
+import type { Metadata } from 'next'
+import ProcessSteps from '@/components/ProcessSteps'
+import PageHero from '@/components/PageHero'
+
+export const metadata: Metadata = {
+  title: 'Immobilie verkaufen in Hermeskeil, Trier & Mosel | Mezzarano Immobilien',
+  description: 'Professioneller Immobilienverkauf in der Region Hermeskeil, Trier und Mosel. Kostenlose Bewertung, optimale Vermarktung und persönliche Betreuung bis zum Notar.',
+}
+
+const benefits = [
+  {
+    icon: BarChart3,
+    title: 'Kostenlose Bewertung',
+    description: 'Professionelle Marktpreiseinschätzung Ihrer Immobilie ohne Kosten und Verpflichtung.',
+  },
+  {
+    icon: Camera,
+    title: 'Professionelle Vermarktung',
+    description: 'Hochwertige Fotos, aussagekräftige Exposés und Präsenz auf allen wichtigen Portalen.',
+  },
+  {
+    icon: Users,
+    title: 'Qualifizierte Käufer',
+    description: 'Gezielte Ansprache solventer Interessenten durch unser Wüstenrot-Netzwerk.',
+  },
+  {
+    icon: Shield,
+    title: 'Rechtssicherheit',
+    description: 'Professionelle Vertragsgestaltung und Begleitung bis zum Notartermin.',
+  },
+]
+
+const processSteps = [
+  {
+    icon: Home,
+    title: 'Kostenlose Erstberatung',
+    description: 'Wir besichtigen Ihre Immobilie, analysieren den lokalen Markt und erstellen eine fundierte Wertermittlung.',
+  },
+  {
+    icon: FileText,
+    title: 'Verkaufsvorbereitung',
+    description: 'Professionelle Fotos, Erstellung des Exposés, Beschaffung aller notwendigen Unterlagen wie Energieausweis.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Aktive Vermarktung',
+    description: 'Präsentation auf führenden Immobilienportalen, in unserem Netzwerk und durch gezielte Direktansprache.',
+  },
+  {
+    icon: Users,
+    title: 'Besichtigungen & Verhandlung',
+    description: 'Professionelle Durchführung aller Besichtigungen und Preisverhandlungen in Ihrem Interesse.',
+  },
+  {
+    icon: UserCheck,
+    title: 'Erfolgreicher Abschluss',
+    description: 'Begleitung zum Notar, Koordination der Übergabe und Unterstützung bei allen Formalitäten.',
+  },
+]
+
+const sellingPoints = [
+  'Über 16 Jahre Erfahrung in der Region',
+  'Wüstenrot-Partner mit starkem Netzwerk',
+  'Lokale Marktkenntnis in Hermeskeil, Trier & Mosel',
+  'Persönliche Betreuung von A bis Z',
+  'Finanzierungsberatung für Käufer inklusive',
+  'Transparente Kommunikation',
+  'Keine versteckten Kosten',
+  'Erfolgsabhängige Provision',
+]
+
+export default function VerkaufenPage() {
+  return (
+    <div className="min-h-screen">
+      {/* Hero with Wüstenrot Layout-Prinzipien */}
+      <PageHero
+        tagline="Immobilienverkauf"
+        icon={TrendingUp}
+        lines={[
+          { text: 'ihr immobilienverkauf' },
+          { text: 'in besten händen' },
+        ]}
+        subheadline="Als Ihr Wüstenrot-Partner in Hermeskeil begleite ich Sie persönlich durch den gesamten Verkaufsprozess - von der ersten Bewertung bis zur Schlüsselübergabe."
+        primaryCta={{
+          text: 'Kostenlose Bewertung anfragen',
+          href: '/kontakt',
+        }}
+        backgroundImage="/images/stock/AdobeStock_629132659.jpeg"
+      />
+
+      {/* Benefits */}
+      <section className="py-10 md:py-20 bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-up">
+            <h2 className="section-title mb-3 md:mb-4">Ihre Vorteile beim Verkauf mit mir</h2>
+            <p className="section-subtitle mx-auto">
+              Profitieren Sie von meiner Erfahrung und dem starken Wüstenrot-Netzwerk
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={benefit.title}
+                className="bg-white p-6 md:p-8 rounded-xl text-center group hover:shadow-xl transition-all"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:bg-primary-500 transition-colors">
+                  <benefit.icon className="h-7 w-7 md:h-8 md:w-8 text-primary-500 group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <ProcessSteps
+        steps={processSteps}
+        title="So verkaufen wir Ihre Immobilie"
+        subtitle="Ein transparenter Prozess für Ihren erfolgreichen Immobilienverkauf"
+      />
+
+      {/* Why Us */}
+      <section className="py-10 md:py-20 bg-secondary-900 text-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div data-aos="fade-right">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">
+                Warum Sie mit mir verkaufen sollten
+              </h2>
+              <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-base">
+                Als Ihr lokaler Wüstenrot-Immobilienberater kenne ich den Markt in Hermeskeil, Trier und der Moselregion wie kaum ein anderer. Diese Expertise kombiniere ich mit persönlicher Betreuung und einem starken Netzwerk.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                {sellingPoints.map((point) => (
+                  <div key={point} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary-500 flex-shrink-0" />
+                    <span className="text-gray-300">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-2xl">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Kostenlose Immobilienbewertung</h3>
+                <p className="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
+                  Erfahren Sie den aktuellen Marktwert Ihrer Immobilie - unverbindlich und kostenfrei.
+                </p>
+                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                  <li className="flex items-center gap-3">
+                    <Clock className="h-5 w-5 text-primary-500" />
+                    <span>Termin innerhalb von 48 Stunden</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <BarChart3 className="h-5 w-5 text-primary-500" />
+                    <span>Fundierte Marktanalyse</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <FileText className="h-5 w-5 text-primary-500" />
+                    <span>Schriftliches Wertgutachten</span>
+                  </li>
+                </ul>
+                <Link href="/kontakt" className="btn-primary w-full justify-center">
+                  Jetzt Bewertung anfragen
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-10 md:py-20 bg-gradient-to-br from-primary-500 to-primary-600">
+        <div className="container-custom text-center" data-aos="fade-up">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+            Bereit, Ihre Immobilie zu verkaufen?
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
+            Lassen Sie uns gemeinsam den besten Preis für Ihre Immobilie erzielen. Ich freue mich auf Ihren Anruf!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <Link href="/kontakt" className="btn-primary bg-white text-primary-500 hover:bg-gray-100">
+              Kontakt aufnehmen
+            </Link>
+            <a href="tel:01776542977" className="btn-outline-dark">
+              <Phone className="h-5 w-5 mr-2" />
+              0177 6542977
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

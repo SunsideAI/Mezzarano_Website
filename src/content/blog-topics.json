@@ -1,9 +1,10 @@
 {
   "topics": [
     {
-      "title": "Immobilienmarkt Heilbronn 2026: Preise, Trends und Prognosen",
+      "title": "Immobilienmarkt Trier-Mosel 2026: Preise, Trends und Prognosen",
       "keywords": [
-        "Heilbronn",
+        "Trier",
+        "Mosel",
         "Immobilienmarkt",
         "Preise",
         "Trends",
@@ -12,66 +13,68 @@
       "category": "Marktberichte",
       "priority": "high",
       "used": true,
-      "usedDate": "2026-02-01T00:00:00.000Z"
+      "usedDate": "2026-01-24T13:00:02.387Z"
     },
     {
-      "title": "Immobilie verkaufen in Heilbronn: Der komplette Ratgeber",
+      "title": "Immobilie verkaufen in Hermeskeil: Der komplette Ratgeber",
       "keywords": [
         "Immobilie verkaufen",
-        "Heilbronn",
+        "Hermeskeil",
         "Ratgeber",
         "Tipps"
       ],
       "category": "Immobilienverkauf",
       "priority": "high",
       "used": true,
-      "usedDate": "2026-02-26T09:52:46.395Z"
+      "usedDate": "2026-01-24T13:01:18.290Z"
     },
     {
-      "title": "Immobilienbewertung Heilbronn: Kostenlos und professionell",
+      "title": "Immobilienbewertung Trier: Kostenlos und professionell",
       "keywords": [
         "Immobilienbewertung",
-        "Heilbronn",
+        "Trier",
         "kostenlos",
         "Wertermittlung"
       ],
       "category": "Immobilienbewertung",
       "priority": "high",
       "used": true,
-      "usedDate": "2026-02-26T09:54:01.131Z"
+      "usedDate": "2026-01-24T13:02:30.524Z"
     },
     {
-      "title": "Weinsberg Immobilien: Der perfekte Standort für Familien",
+      "title": "Schweich Immobilien: Der perfekte Standort für Familien",
       "keywords": [
-        "Weinsberg",
+        "Schweich",
         "Immobilien",
         "Familie",
+        "Wohnen",
+        "Mosel"
+      ],
+      "category": "Regionen",
+      "priority": "high",
+      "used": true,
+      "usedDate": "2026-01-24T19:49:48.845Z"
+    },
+    {
+      "title": "Hermeskeil Immobilienmarkt: Leben und Wohnen im Hochwald",
+      "keywords": [
+        "Hermeskeil",
+        "Immobilien",
+        "Hochwald",
         "Wohnen"
       ],
       "category": "Regionen",
       "priority": "high",
       "used": true,
-      "usedDate": "2026-02-26T09:55:11.879Z"
+      "usedDate": "2026-01-24T19:51:01.382Z"
     },
     {
-      "title": "Neckarsulm Immobilienmarkt: Arbeiten und Leben im Industriestandort",
+      "title": "Bernkastel-Kues: Historische Weinstadt mit Wohnpotenzial",
       "keywords": [
-        "Neckarsulm",
+        "Bernkastel-Kues",
+        "Mosel",
         "Immobilien",
-        "Audi",
-        "Wirtschaft"
-      ],
-      "category": "Regionen",
-      "priority": "high",
-      "used": true,
-      "usedDate": "2026-03-02T09:51:42.285Z"
-    },
-    {
-      "title": "Bad Wimpfen: Historisches Kleinod mit Wohnpotenzial",
-      "keywords": [
-        "Bad Wimpfen",
-        "Altstadt",
-        "Immobilien",
+        "Wein",
         "Geschichte"
       ],
       "category": "Regionen",
@@ -91,7 +94,7 @@
       "category": "Finanzierung",
       "priority": "high",
       "used": true,
-      "usedDate": "2026-03-02T09:52:55.007Z"
+      "usedDate": "2026-01-24T19:52:14.158Z"
     },
     {
       "title": "Eigenkapital bei der Immobilienfinanzierung: Wie viel brauche ich?",
@@ -116,8 +119,8 @@
       ],
       "category": "Kapitalanlage",
       "priority": "high",
-      "used": true,
-      "usedDate": "2026-03-02T09:54:04.476Z"
+      "used": false,
+      "usedDate": null
     },
     {
       "title": "Spekulationssteuer Immobilien: So vermeiden Sie Steuerfallen",
@@ -133,10 +136,10 @@
       "usedDate": "2026-03-09T09:52:57.672Z"
     },
     {
-      "title": "Grunderwerbsteuer Baden-Württemberg: Alles Wichtige",
+      "title": "Grunderwerbsteuer Rheinland-Pfalz: Alles Wichtige",
       "keywords": [
         "Grunderwerbsteuer",
-        "Baden-Württemberg",
+        "Rheinland-Pfalz",
         "Nebenkosten",
         "Kauf"
       ],
@@ -198,10 +201,11 @@
       "usedDate": "2026-03-19T09:44:55.096Z"
     },
     {
-      "title": "Grundstückspreise Heilbronn Region: Aktuelle Entwicklung",
+      "title": "Grundstückspreise Region Trier: Aktuelle Entwicklung",
       "keywords": [
         "Grundstückspreise",
-        "Heilbronn",
+        "Trier",
+        "Mosel",
         "Bauland",
         "Preise"
       ],
@@ -211,10 +215,11 @@
       "usedDate": "2026-03-19T09:46:08.307Z"
     },
     {
-      "title": "Kapitalanlage Immobilien Heilbronn: Renditestarke Standorte",
+      "title": "Kapitalanlage Immobilien Trier-Mosel: Renditestarke Standorte",
       "keywords": [
         "Kapitalanlage",
-        "Heilbronn",
+        "Trier",
+        "Mosel",
         "Rendite",
         "Investment"
       ],
@@ -265,12 +270,13 @@
       "usedDate": "2026-03-23T10:06:32.949Z"
     },
     {
-      "title": "Öhringen Immobilien: Leben im Hohenlohekreis",
+      "title": "Hochwald Region: Naturnahe Immobilien mit Zukunft",
       "keywords": [
-        "Öhringen",
-        "Hohenlohekreis",
+        "Hochwald",
+        "Natur",
         "Immobilien",
-        "Wohnen"
+        "Wohnen",
+        "Ländlich"
       ],
       "category": "Regionen",
       "priority": "low",
@@ -278,12 +284,13 @@
       "usedDate": "2026-03-26T10:02:38.126Z"
     },
     {
-      "title": "Lauffen am Neckar: Weinort mit Charme und Potenzial",
+      "title": "Moseltal: Weinregion mit Charme und Wohnpotenzial",
       "keywords": [
-        "Lauffen",
-        "Neckar",
+        "Mosel",
         "Wein",
-        "Immobilien"
+        "Immobilien",
+        "Tourismus",
+        "Lebensqualität"
       ],
       "category": "Regionen",
       "priority": "low",
@@ -317,10 +324,10 @@
       "usedDate": "2026-03-26T10:05:04.748Z"
     },
     {
-      "title": "Mietspiegel Heilbronn 2026: Mietpreise nach Stadtteilen",
+      "title": "Mietspiegel Trier 2026: Mietpreise nach Stadtteilen",
       "keywords": [
         "Mietspiegel",
-        "Heilbronn",
+        "Trier",
         "Mietpreise",
         "Stadtteile"
       ],

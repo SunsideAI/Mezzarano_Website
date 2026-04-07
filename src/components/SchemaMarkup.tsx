@@ -11,68 +11,60 @@ export default function SchemaMarkup({ data }: SchemaMarkupProps) {
   )
 }
 
-// Pre-built schema generators
+// Sandro Mezzarano's business info
+const businessInfo = {
+  name: 'Sandro Mezzarano',
+  legalName: 'Sandro Mezzarano - Wüstenrot Immobilien',
+  description: 'Ihr Wüstenrot Immobilien-Experte in Hermeskeil. Professionelle Beratung für Kauf, Verkauf und Vermietung von Immobilien in der Region Trier.',
+  url: 'https://mezzarano-wuestenrot-immobilien.de',
+  telephone: '+49 177 6542977',
+  email: 'sandro.mezzarano@wuestenrot.de',
+  address: {
+    street: 'Saarstraße 1',
+    city: 'Hermeskeil',
+    postalCode: '54411',
+    region: 'Rheinland-Pfalz',
+    country: 'DE'
+  },
+  geo: {
+    latitude: 49.6558,
+    longitude: 6.9428
+  }
+}
 
 export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: 'Mezzarano Immobilien',
-    description: 'Ihr Wüstenrot Immobilienberater in Heilbronn. Professionelle Beratung für Kauf, Verkauf und Finanzierung von Immobilien.',
-    url: 'https://mezzarano-immobilien.de',
-    telephone: '+49 7131 123456',
-    email: 'info@mezzarano-immobilien.de',
+    name: businessInfo.legalName,
+    description: businessInfo.description,
+    url: businessInfo.url,
+    telephone: businessInfo.telephone,
+    email: businessInfo.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Musterstraße 123',
-      addressLocality: 'Heilbronn',
-      postalCode: '74072',
-      addressRegion: 'Baden-Württemberg',
-      addressCountry: 'DE'
+      streetAddress: businessInfo.address.street,
+      addressLocality: businessInfo.address.city,
+      postalCode: businessInfo.address.postalCode,
+      addressRegion: businessInfo.address.region,
+      addressCountry: businessInfo.address.country
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 49.1427,
-      longitude: 9.2109
+      latitude: businessInfo.geo.latitude,
+      longitude: businessInfo.geo.longitude
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '18:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '10:00',
-        closes: '14:00'
-      }
-    ],
     areaServed: [
-      {
-        '@type': 'City',
-        name: 'Heilbronn'
-      },
-      {
-        '@type': 'City',
-        name: 'Weinsberg'
-      },
-      {
-        '@type': 'City',
-        name: 'Neckarsulm'
-      },
-      {
-        '@type': 'City',
-        name: 'Bad Wimpfen'
-      }
+      { '@type': 'City', name: 'Hermeskeil' },
+      { '@type': 'City', name: 'Trier' },
+      { '@type': 'City', name: 'Bernkastel-Kues' },
+      { '@type': 'City', name: 'Schweich' }
     ],
-    sameAs: [
-      'https://www.facebook.com/mezzarano',
-      'https://www.linkedin.com/company/mezzarano',
-      'https://www.instagram.com/mezzarano'
-    ],
-    priceRange: '€€€'
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Wüstenrot Immobilien GmbH',
+      url: 'https://www.wuestenrot-immobilien.de'
+    }
   }
 }
 
@@ -108,13 +100,12 @@ export function generatePropertySchema(property: {
   name: string
   description: string
   price: number
-  currency: string
+  currency?: string
   address: string
   city: string
-  bedrooms: number
-  bathrooms: number
-  area: number
-  image: string
+  bedrooms?: number
+  area?: number
+  image?: string
   url: string
 }) {
   return {
@@ -125,7 +116,7 @@ export function generatePropertySchema(property: {
     offers: {
       '@type': 'Offer',
       price: property.price,
-      priceCurrency: property.currency
+      priceCurrency: property.currency || 'EUR'
     },
     address: {
       '@type': 'PostalAddress',
@@ -133,14 +124,15 @@ export function generatePropertySchema(property: {
       addressLocality: property.city,
       addressCountry: 'DE'
     },
-    numberOfRooms: property.bedrooms,
-    numberOfBathroomsTotal: property.bathrooms,
-    floorSize: {
-      '@type': 'QuantitativeValue',
-      value: property.area,
-      unitCode: 'MTK'
-    },
-    image: property.image,
+    ...(property.bedrooms && { numberOfRooms: property.bedrooms }),
+    ...(property.area && {
+      floorSize: {
+        '@type': 'QuantitativeValue',
+        value: property.area,
+        unitCode: 'MTK'
+      }
+    }),
+    ...(property.image && { image: property.image }),
     url: property.url
   }
 }

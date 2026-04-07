@@ -2,13 +2,16 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { Search, SlidersHorizontal, Grid, List, X, ChevronLeft, ChevronRight, Bell } from 'lucide-react'
+import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight, Bell, ArrowRight, Phone } from 'lucide-react'
 import PropertyCard from '@/components/PropertyCard'
-import { properties } from '@/data/properties'
+import AirtablePropertyCard from '@/components/AirtablePropertyCard'
+import { properties as staticProperties, Property } from '@/data/properties'
+import { AirtableProperty } from '@/lib/airtable'
+import AOS from 'aos'
+
+const ITEMS_PER_PAGE = 8
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
-
-const ITEMS_PER_PAGE = 9
 
 export default function ImmobilienPage() {
   const [showFilters, setShowFilters] = useState(false)
@@ -25,8 +28,38 @@ export default function ImmobilienPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [currentPage, setCurrentPage] = useState(1)
 
-  const filteredProperties = useMemo(() => {
-    let result = [...properties]
+  // Airtable data
+  const [airtableProperties, setAirtableProperties] = useState<AirtableProperty[]>([])
+  const [isLoadingAirtable, setIsLoadingAirtable] = useState(true)
+  const [airtableError, setAirtableError] = useState(false)
+
+  // Fetch Airtable properties
+  useEffect(() => {
+    const fetchAirtableData = async () => {
+      setIsLoadingAirtable(true)
+      try {
+        const response = await fetch('/api/properties')
+        if (response.ok) {
+          const data = await response.json()
+          setAirtableProperties(data.properties || [])
+          setAirtableError(false)
+        } else {
+          setAirtableError(true)
+        }
+      } catch (error) {
+        console.error('Error fetching Airtable:', error)
+        setAirtableError(true)
+      } finally {
+        setIsLoadingAirtable(false)
+      }
+    }
+
+    fetchAirtableData()
+  }, [])
+
+  // Filter static properties
+  const filteredStaticProperties = useMemo(() => {
+    let result = [...staticProperties]
 
     if (filters.type) {
       result = result.filter(p => p.type === filters.type)
@@ -52,6 +85,7 @@ export default function ImmobilienPage() {
       )
     }
 
+    // Sort
     switch (sortBy) {
       case 'price-asc':
         result.sort((a, b) => a.price - b.price)
@@ -72,15 +106,77 @@ export default function ImmobilienPage() {
     return result
   }, [filters, sortBy])
 
+  // Filter Airtable properties
+  const filteredAirtableProperties = useMemo(() => {
+    let result = [...airtableProperties]
+
+    if (filters.type) {
+      const kategorie = filters.type === 'kauf' ? 'Kauf' : 'Miete'
+      result = result.filter(p => p.kategorie === kategorie)
+    }
+    if (filters.category) {
+      // Match against objekt_typ or unterkategorie (German labels from Airtable)
+      const typeMap: Record<string, string[]> = {
+        'wohnung': ['Wohnung'],
+        'haus': ['Haus'],
+        'villa': ['Haus', 'Villa'],
+        'gewerbe': ['Büro/Praxis', 'Gastronomie/Hotel', 'Gewerbe', 'Industrie'],
+      }
+      const matchingTypes = typeMap[filters.category] || []
+      result = result.filter(p => {
+        const propType = p.objekt_typ || p.unterkategorie || ''
+        return matchingTypes.some(t => propType.includes(t))
+      })
+    }
+    if (filters.minPrice) {
+      result = result.filter(p => (p.preis || 0) >= parseInt(filters.minPrice))
+    }
+    if (filters.maxPrice) {
+      result = result.filter(p => (p.preis || Infinity) <= parseInt(filters.maxPrice))
+    }
+    if (filters.minArea) {
+      result = result.filter(p => (p.wohnflaeche || 0) >= parseInt(filters.minArea))
+    }
+    if (filters.bedrooms) {
+      result = result.filter(p => (p.zimmer || 0) >= parseInt(filters.bedrooms))
+    }
+    if (filters.location) {
+      result = result.filter(p =>
+        (p.ort || '').toLowerCase().includes(filters.location.toLowerCase()) ||
+        (p.kurz_adresse || '').toLowerCase().includes(filters.location.toLowerCase())
+      )
+    }
+
+    // Sort
+    switch (sortBy) {
+      case 'price-asc':
+        result.sort((a, b) => (a.preis || 0) - (b.preis || 0))
+        break
+      case 'price-desc':
+        result.sort((a, b) => (b.preis || 0) - (a.preis || 0))
+        break
+      case 'area-asc':
+        result.sort((a, b) => (a.wohnflaeche || 0) - (b.wohnflaeche || 0))
+        break
+      case 'area-desc':
+        result.sort((a, b) => (b.wohnflaeche || 0) - (a.wohnflaeche || 0))
+        break
+    }
+
+    return result
+  }, [airtableProperties, filters, sortBy])
+
+  // Reset to page 1 when filters or sort change
   useEffect(() => {
     setCurrentPage(1)
   }, [filters, sortBy])
 
-  const totalPages = Math.ceil(filteredProperties.length / ITEMS_PER_PAGE)
-  const paginatedProperties = filteredProperties.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  )
+  // Scroll to results top when page changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && currentPage > 1) {
+      document.getElementById('immobilien-results')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [currentPage])
 
   const resetFilters = () => {
     setFilters({
@@ -96,30 +192,85 @@ export default function ImmobilienPage() {
 
   const activeFilterCount = Object.values(filters).filter(v => v !== '').length
 
-  const getPageNumbers = () => {
+  // Use Airtable properties if available, otherwise static
+  const hasAirtableData = airtableProperties.length > 0
+  const allFiltered = hasAirtableData ? filteredAirtableProperties : filteredStaticProperties
+  const totalCount = allFiltered.length
+  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE)
+
+  const paginatedAirtable = filteredAirtableProperties.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+  const paginatedStatic = filteredStaticProperties.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+
+  // Page numbers with ellipsis
+  const getPageNumbers = (): (number | '...')[] => {
     if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1)
-    const pages: (number | '...')[] = []
-    if (currentPage <= 4) {
-      pages.push(1, 2, 3, 4, 5, '...', totalPages)
-    } else if (currentPage >= totalPages - 3) {
-      pages.push(1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
-    } else {
-      pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages)
-    }
-    return pages
+    if (currentPage <= 4) return [1, 2, 3, 4, 5, '...', totalPages]
+    if (currentPage >= totalPages - 3) return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages]
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages]
   }
+
+  // Refresh AOS when properties change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setTimeout(() => {
+        AOS.refresh()
+      }, 100)
+    }
+  }, [airtableProperties, filteredStaticProperties, filteredAirtableProperties])
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-primary-900 py-16">
-        <div className="container-custom">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            Immobilien
-          </h1>
-          <p className="text-xl text-gray-300">
-            Finden Sie Ihr perfektes Zuhause aus unserem exklusiven Portfolio
-          </p>
+      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+      <section className="relative bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero/AdobeStock_476608445.jpeg')" }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-wuestennacht/85" />
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl">
+            {/* Tagline - Icon + Text in wuestenrot */}
+            <div className="flex items-center gap-2 text-wuestenrot mb-6" data-aos="fade-up">
+              <Search className="h-5 w-5" />
+              <span className="text-sm font-semibold uppercase tracking-wider">
+                Immobiliensuche
+              </span>
+            </div>
+
+            {/* Headline with White Bars - keine Abstände zwischen Balken */}
+            <h1 className="mb-8" data-aos="fade-up" data-aos-delay="100">
+              <span className="flex flex-col items-start gap-0">
+                <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
+                  aktuelle immobilien
+                </span>
+                <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none text-wuestenrot">
+                  wüstenrot
+                </span>
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+              Finden Sie Ihr perfektes Zuhause in der Region Hermeskeil, Trier und Mosel – aktuelle Angebote aus dem Wüstenrot-Netzwerk.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+              <Link href="/kontakt" className="btn-primary">
+                Beratung anfragen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a href="tel:01776542977" className="btn-outline border-white text-white hover:bg-white hover:text-wuestennacht">
+                <Phone className="h-5 w-5 mr-2" />
+                0177 6542977
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -145,14 +296,14 @@ export default function ImmobilienPage() {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border transition-colors ${
                   showFilters || activeFilterCount > 0
-                    ? 'bg-primary-700 text-white border-primary-700'
+                    ? 'bg-primary-500 text-white border-primary-500'
                     : 'bg-white text-gray-700 border-gray-200 hover:border-primary-300'
                 }`}
               >
                 <SlidersHorizontal className="h-5 w-5" />
                 <span>Filter</span>
                 {activeFilterCount > 0 && (
-                  <span className="bg-gold-400 text-white text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-white text-primary-500 text-xs px-2 py-0.5 rounded-full">
                     {activeFilterCount}
                   </span>
                 )}
@@ -175,13 +326,13 @@ export default function ImmobilienPage() {
               <div className="hidden md:flex items-center border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-primary-700 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-primary-500 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
                 >
                   <Grid className="h-5 w-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2.5 ${viewMode === 'list' ? 'bg-primary-700 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+                  className={`p-2.5 ${viewMode === 'list' ? 'bg-primary-500 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
                 >
                   <List className="h-5 w-5" />
                 </button>
@@ -274,7 +425,7 @@ export default function ImmobilienPage() {
               {activeFilterCount > 0 && (
                 <button
                   onClick={resetFilters}
-                  className="mt-4 text-sm text-primary-700 hover:text-primary-800 flex items-center gap-1"
+                  className="mt-4 text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1"
                 >
                   <X className="h-4 w-4" />
                   Filter zurücksetzen
@@ -286,123 +437,181 @@ export default function ImmobilienPage() {
       </section>
 
       {/* Results */}
-      <section className="py-12">
+      <section id="immobilien-results" className="py-12">
         <div className="container-custom">
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-gray-600">
-              <span className="font-semibold text-gray-900">{filteredProperties.length}</span> Immobilien gefunden
-            </p>
-            {totalPages > 1 && (
-              <p className="text-sm text-gray-500">
-                Seite {currentPage} von {totalPages}
+          <div className="mb-6 flex items-center justify-between">
+            {isLoadingAirtable ? (
+              <div className="flex items-center gap-2 text-gray-500">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Lade Immobilien...
+              </div>
+            ) : (
+              <p className="text-gray-600">
+                <span className="font-semibold text-gray-900">{totalCount}</span> Immobilien gefunden
+                {totalPages > 1 && (
+                  <span className="ml-2 text-sm text-gray-400">
+                    (Seite {currentPage} von {totalPages})
+                  </span>
+                )}
               </p>
             )}
           </div>
 
-          {filteredProperties.length > 0 ? (
-            <>
-              <div className={
-                viewMode === 'grid'
-                  ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
-                  : 'flex flex-col gap-6'
-              }>
-                {paginatedProperties.map((property) => (
-                  <PropertyCard key={property.id} property={property} />
-                ))}
-
-                {/* Suchprofil Tile */}
-                <Link
-                  href="/suchprofil"
-                  className={`group relative bg-gradient-to-br from-primary-700 to-primary-900 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                    viewMode === 'list' ? 'p-10 min-h-[160px]' : 'p-8 min-h-[360px]'
-                  }`}
-                >
-                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className={`relative flex ${viewMode === 'list' ? 'flex-row items-center gap-8' : 'flex-col items-center'}`}>
-                    <div className={`bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors flex-shrink-0 ${
-                      viewMode === 'list' ? 'w-14 h-14' : 'w-16 h-16 mb-5'
-                    }`}>
-                      <Bell className={viewMode === 'list' ? 'h-7 w-7 text-white' : 'h-8 w-8 text-white'} />
-                    </div>
-                    <div className={viewMode === 'list' ? 'text-left' : ''}>
-                      <h3 className={`font-serif font-bold text-white mb-2 ${viewMode === 'list' ? 'text-xl' : 'text-2xl mb-3'}`}>
-                        Nicht das Passende gefunden?
-                      </h3>
-                      <p className={`text-white/80 leading-relaxed ${viewMode === 'list' ? 'text-sm mb-4' : 'text-sm mb-6'}`}>
-                        Legen Sie jetzt Ihr persönliches Suchprofil an und wir melden uns, sobald ein passendes Objekt verfügbar ist.
-                      </p>
-                      <span className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-6 py-2.5 rounded-full group-hover:bg-gold-50 transition-colors text-sm">
-                        Suchprofil anlegen
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex justify-center items-center gap-2 mt-12">
-                  <button
-                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                    disabled={currentPage === 1}
-                    className="p-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-                    aria-label="Vorherige Seite"
-                  >
-                    <ChevronLeft className="h-5 w-5 text-gray-700" />
-                  </button>
-
-                  {getPageNumbers().map((page, idx) =>
-                    page === '...' ? (
-                      <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">...</span>
-                    ) : (
-                      <button
-                        key={page}
-                        onClick={() => setCurrentPage(page as number)}
-                        className={`w-10 h-10 rounded-lg font-medium transition-colors ${
-                          currentPage === page
-                            ? 'bg-primary-700 text-white shadow-sm'
-                            : 'border border-gray-200 text-gray-700 hover:bg-gray-50'
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    )
-                  )}
-
-                  <button
-                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                    disabled={currentPage === totalPages}
-                    className="p-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-                    aria-label="Nächste Seite"
-                  >
-                    <ChevronRight className="h-5 w-5 text-gray-700" />
-                  </button>
+          {/* Show Airtable properties if available */}
+          {hasAirtableData && paginatedAirtable.length > 0 && (
+            <div className={
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'
+                : 'flex flex-col gap-6 mb-12'
+            }>
+              {paginatedAirtable.map((property, index) => (
+                <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
+                  <AirtablePropertyCard property={property} priority={index < 4} />
                 </div>
+              ))}
+              {/* Suchprofil CTA tile – always last in grid */}
+              <div data-aos="fade-up" data-aos-delay={Math.min(paginatedAirtable.length * 50, 300)}>
+                <SuchprofilTile />
+              </div>
+            </div>
+          )}
+
+          {/* Show loading skeletons while fetching */}
+          {isLoadingAirtable && (
+            <div className={
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'
+                : 'flex flex-col gap-6'
+            }>
+              {[...Array(8)].map((_, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden animate-pulse">
+                  <div className="h-48 bg-gray-200" />
+                  <div className="p-6 space-y-3">
+                    <div className="h-6 bg-gray-200 rounded w-3/4" />
+                    <div className="h-4 bg-gray-200 rounded w-1/2" />
+                    <div className="h-4 bg-gray-200 rounded w-full" />
+                    <div className="h-8 bg-gray-200 rounded w-1/3 mt-4" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Show static properties ONLY if loading finished AND no Airtable data */}
+          {!isLoadingAirtable && !hasAirtableData && paginatedStatic.length > 0 && (
+            <div className={
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                : 'flex flex-col gap-6'
+            }>
+              {paginatedStatic.map((property, index) => (
+                <div key={property.id} data-aos="fade-up" data-aos-delay={Math.min(index * 50, 300)}>
+                  <PropertyCard property={property} />
+                </div>
+              ))}
+              {/* Suchprofil CTA tile */}
+              <div data-aos="fade-up" data-aos-delay={Math.min(paginatedStatic.length * 50, 300)}>
+                <SuchprofilTile />
+              </div>
+            </div>
+          )}
+
+          {/* Pagination */}
+          {!isLoadingAirtable && totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-10">
+              <button
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="p-2 rounded-lg border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                aria-label="Vorherige Seite"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              {getPageNumbers().map((page, idx) =>
+                page === '...' ? (
+                  <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">…</span>
+                ) : (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page as number)}
+                    className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                      currentPage === page
+                        ? 'bg-primary-500 text-white'
+                        : 'border border-gray-200 hover:border-primary-500 hover:text-primary-500'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                )
               )}
-            </>
-          ) : (
-            <div className="text-center py-16">
+
+              <button
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className="p-2 rounded-lg border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                aria-label="Nächste Seite"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          )}
+
+          {/* No results */}
+          {totalCount === 0 && !isLoadingAirtable && (
+            <div className="text-center py-16" data-aos="fade-up">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="h-8 w-8 text-gray-400" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Keine Ergebnisse gefunden
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-4">
                 Versuchen Sie, Ihre Filterkriterien anzupassen
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onClick={resetFilters} className="btn-primary">
-                  Filter zurücksetzen
-                </button>
-                <Link href="/suchprofil" className="btn-secondary">
-                  Suchprofil anlegen
-                </Link>
-              </div>
+              <button onClick={resetFilters} className="btn-primary">
+                Filter zurücksetzen
+              </button>
             </div>
           )}
         </div>
       </section>
     </div>
+  )
+}
+
+function SuchprofilTile() {
+  return (
+    <Link
+      href="/suchprofil"
+      className="group relative flex flex-col h-full min-h-[320px] rounded-[16px] bg-wuestenrot hover:bg-wuestenrot-hover hover:shadow-xl transition-all duration-300 p-6 overflow-hidden"
+    >
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 pointer-events-none" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Icon */}
+        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <Bell className="h-6 w-6 text-wuestenrot" />
+        </div>
+
+        {/* Text */}
+        <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+          Nicht das Passende<br />dabei?
+        </h3>
+        <p className="text-white/80 text-sm leading-relaxed mb-auto">
+          Legen Sie jetzt Ihr persönliches Suchprofil an – ich benachrichtige Sie sofort, wenn die richtige Immobilie verfügbar ist.
+        </p>
+
+        {/* Button */}
+        <div className="mt-4">
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-wuestenrot text-sm font-bold group-hover:bg-warmgrau transition-colors">
+            <Bell className="h-4 w-4" />
+            Suchprofil anlegen
+          </span>
+        </div>
+      </div>
+    </Link>
   )
 }

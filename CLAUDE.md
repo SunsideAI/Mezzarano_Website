@@ -4,12 +4,12 @@ This file provides guidance for AI assistants working on this codebase.
 
 ## Project Overview
 
-**Mezzarano Immobilien Website** - A modern real estate (Immobilien) web application for Mezzarano Immobilien, a Wüstenrot real estate partner in the Heilbronn region of Germany.
+**Mezzarano Immobilien Website** - A modern real estate (Immobilien) web application for Mezzarano Immobilien, a Wüstenrot real estate partner in the Trier/Hermeskeil region of Germany.
 
 ### Key Features
 - Property listings with advanced filtering (buy/rent, category, price, area)
 - AI-powered blog content generation system
-- Regional information pages for Heilbronn area
+- Regional information pages for Trier-Saarburg, Hochwald and Mosel region
 - Contact forms and property inquiry system
 - SEO-optimized with structured data markup
 - Fully German-language interface
@@ -47,8 +47,15 @@ Mezzarano_Website/
 │   │   ├── kontakt/page.tsx         # Contact page
 │   │   ├── ueber-uns/page.tsx       # About page
 │   │   └── regionen/                # Regional pages
-│   │       ├── heilbronn/page.tsx
-│   │       └── weinsberg/page.tsx
+│   │       ├── hermeskeil/page.tsx
+│   │       ├── trier/page.tsx
+│   │       ├── schweich/page.tsx
+│   │       ├── saarburg/page.tsx
+│   │       ├── konz/page.tsx
+│   │       ├── bitburg/page.tsx
+│   │       ├── wittlich/page.tsx
+│   │       ├── hochwald/page.tsx
+│   │       └── bernkastel-kues/page.tsx
 │   │
 │   ├── components/
 │   │   ├── Header.tsx               # Navigation with dropdowns
@@ -219,6 +226,83 @@ Automated blog generation runs on:
 - **Schedule**: Mondays & Thursdays at 9 AM UTC
 - **Manual trigger**: Via workflow_dispatch
 
+## onOffice CRM Integration
+
+The website integrates with onOffice enterprise CRM for lead management.
+
+### Integrated Forms
+
+| Form | API Route | onOffice Modules |
+|------|-----------|------------------|
+| Kontaktformular | `/api/contact` | `address`, `agentslog` |
+| Suchprofil | `/api/suchprofil` | `address`, `searchcriteria`, `agentslog` |
+| Immobilien-Anfrage | `/api/contact` | `address`, `agentslog` |
+| Newsletter | `/api/newsletter` | `address`, `agentslog` |
+| Energieausweis | `/api/contact` | `address`, `agentslog` |
+
+### API Library
+
+The onOffice integration is implemented in `src/lib/onoffice.ts`:
+
+- **HMAC v2 Authentication**: Secure request signing
+- **createContact()**: Create lead from contact form
+- **createSearchProfile()**: Create address + search criteria from search profile wizard
+
+### Setup
+
+1. Log into onOffice enterprise
+2. Navigate to: **Extras > Einstellungen > Benutzer > API-Benutzer**
+3. Create new API user with rights:
+   - Adressen: Lesen, Anlegen
+   - Suchkriterien: Lesen, Anlegen
+   - Maklerbuch: Anlegen
+4. Copy Token (32 chars) and Secret (64 chars)
+5. Add to `.env.local` or production environment
+
+### API Documentation
+
+Full onOffice API documentation: `onOffice_api.md` (in repo root)
+
+## Email Notifications (Resend)
+
+The website sends email notifications to the team when leads are generated.
+
+### Recipients
+
+All lead notifications are sent to:
+- `sandro.mezzarano@wuestenrot.de`
+- `contact@sunsideai.de`
+
+### Notification Types
+
+| Form | Subject Example |
+|------|-----------------|
+| Kontaktformular | "Neue Kontaktanfrage von Max Mustermann" |
+| Immobilien-Anfrage | "Neue Immobilien-Anfrage von Max Mustermann" |
+| Suchprofil | "Neues Suchprofil: Max Mustermann sucht Haus zum Kauf" |
+| Newsletter | "Neue Newsletter-Anmeldung: email@example.de" |
+
+### Implementation
+
+The email notification system is implemented in `src/lib/email.ts`:
+
+- **sendContactNotification()**: Contact form and property inquiry emails
+- **sendSearchProfileNotification()**: Search profile wizard emails
+- **sendNewsletterNotification()**: Newsletter subscription emails
+
+### Setup
+
+1. Create a Resend account at https://resend.com
+2. Verify your domain or use Resend's test domain
+3. Create an API key
+4. Add to `.env.local`:
+   ```env
+   RESEND_API_KEY=re_your-api-key
+   RESEND_FROM_EMAIL=noreply@your-domain.de
+   ```
+
+**Note**: Email notifications are optional. If `RESEND_API_KEY` is not set, notifications are skipped silently.
+
 ## Environment Variables
 
 Create a `.env.local` file for local development:
@@ -226,6 +310,14 @@ Create a `.env.local` file for local development:
 ```env
 # Required for blog generation
 ANTHROPIC_API_KEY=your-anthropic-api-key
+
+# Required for onOffice CRM integration (Lead forms)
+ONOFFICE_TOKEN=your-32-character-token
+ONOFFICE_SECRET=your-64-character-secret
+
+# Required for email notifications (Resend)
+RESEND_API_KEY=re_your-resend-api-key
+RESEND_FROM_EMAIL=noreply@mezzarano-wuestenrot-immobilien.de
 
 # Optional: Deployment webhook
 DEPLOY_WEBHOOK_URL=https://your-deployment-webhook

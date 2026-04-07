@@ -1,125 +1,117 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ExternalLink } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { WuestenrotLogoCompact } from './WuestenrotLogo'
+
+// Sandro Mezzarano's contact info
+const contact = {
+  name: 'Sandro Mezzarano',
+  title: 'Ihr Immobilien-Experte in Hermeskeil',
+  street: 'Saarstraße 1',
+  city: '54411 Hermeskeil',
+  phone1: '0177 6542977',
+  phone2: '06503 9523963',
+  email: 'sandro.mezzarano@wuestenrot.de',
+}
 
 const footerLinks = {
-  unternehmen: [
-    { name: 'Über uns', href: '/ueber-uns' },
-    { name: 'Team', href: '/ueber-uns#team' },
-    { name: 'Ratgeber', href: '/ratgeber' },
-    { name: 'Karriere', href: '/karriere' },
+  immobilien: [
+    { name: 'Alle Immobilien', href: '/immobilien' },
+    { name: 'Häuser kaufen', href: '/immobilien?kategorie=Kauf&rs_typ=HOUSE' },
+    { name: 'Wohnungen kaufen', href: '/immobilien?kategorie=Kauf&rs_typ=APARTMENT' },
+    { name: 'Mieten', href: '/immobilien?kategorie=Miete' },
   ],
   leistungen: [
-    { name: 'Immobilien kaufen', href: '/immobilien?type=kauf' },
-    { name: 'Immobilien mieten', href: '/immobilien?type=miete' },
-    { name: 'Immobilienbewertung', href: '/leistungen/bewertung' },
-    { name: 'Finanzierung', href: '/leistungen/finanzierung' },
-    { name: 'Verkaufsberatung', href: '/leistungen/verkauf' },
+    { name: 'Immobilie verkaufen', href: '/verkaufen' },
+    { name: 'Immobilie kaufen', href: '/kaufen' },
+    { name: 'Immobilienbewertung', href: '/bewerten' },
+    { name: 'Erklärvideos', href: '/erklaervideos' },
+    { name: 'Ratgeber', href: '/ratgeber' },
   ],
   regionen: [
-    { name: 'Heilbronn', href: '/regionen/heilbronn' },
-    { name: 'Weinsberg', href: '/regionen/weinsberg' },
-    { name: 'Neckarsulm', href: '/regionen/neckarsulm' },
-    { name: 'Bad Wimpfen', href: '/regionen/bad-wimpfen' },
-    { name: 'Öhringen', href: '/regionen/oehringen' },
+    { name: 'Hermeskeil', href: '/regionen/hermeskeil' },
+    { name: 'Trier', href: '/regionen/trier' },
+    { name: 'Schweich', href: '/regionen/schweich' },
+    { name: 'Saarburg', href: '/regionen/saarburg' },
+    { name: 'Konz', href: '/regionen/konz' },
+    { name: 'Bitburg', href: '/regionen/bitburg' },
+    { name: 'Wittlich', href: '/regionen/wittlich' },
+    { name: 'Hochwald', href: '/regionen/hochwald' },
+    { name: 'Bernkastel-Kues', href: '/regionen/bernkastel-kues' },
   ],
   rechtliches: [
     { name: 'Impressum', href: '/impressum' },
     { name: 'Datenschutz', href: '/datenschutz' },
-    { name: 'AGB', href: '/agb' },
   ],
 }
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary-900 text-secondary-300">
-      {/* Wüstenrot Partner Banner */}
-      <div className="bg-primary-500 py-4">
-        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-primary-500 font-bold text-lg">W</span>
-            </div>
-            <div className="text-white">
-              <span className="font-semibold">Offizieller Wüstenrot Partner</span>
-              <span className="block text-sm text-white/80">Finanzierung & Bausparen aus einer Hand</span>
-            </div>
-          </div>
-          <a
-            href="https://www.wuestenrot.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-          >
-            Mehr erfahren
-            <ExternalLink className="h-4 w-4" />
-          </a>
-        </div>
-      </div>
-
+    <footer className="bg-wuestennacht text-gray-300">
       {/* Main footer content */}
-      <div className="container-custom py-16">
+      <div className="container-custom py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-serif font-bold text-2xl">M</span>
-              </div>
+              <WuestenrotLogoCompact />
               <div>
-                <span className="font-serif text-xl font-bold text-white">Mezzarano</span>
-                <span className="block text-xs text-secondary-400 -mt-1 tracking-wider">IMMOBILIEN</span>
+                <span className="font-bold text-lg text-white leading-tight block">wüstenrot</span>
+                <span className="text-sm text-gray-400 block">Immobilien</span>
               </div>
             </Link>
-            <p className="text-secondary-400 mb-6 max-w-sm">
-              Ihr Wüstenrot Immobilienberater in der Region Heilbronn. Wir begleiten Sie
-              kompetent bei Kauf, Verkauf und Finanzierung Ihrer Immobilie.
-            </p>
+
+            {/* Agent Info */}
+            <div className="mb-6">
+              <h3 className="text-white font-bold text-lg mb-1">{contact.name}</h3>
+              <p className="text-gray-400 text-sm">{contact.title}</p>
+              <p className="text-wuestenrot font-semibold text-sm mt-2 italic">&bdquo;Ehrlichkeit hat ein Zuhause.&ldquo;</p>
+            </div>
 
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <a href="tel:+4971311234567" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Phone className="h-5 w-5 text-primary-500" />
-                <span>+49 7131 123 4567</span>
+              <a href={`tel:${contact.phone1.replace(/\s/g, '')}`} className="flex items-center gap-3 hover:text-wuestenrot-light transition-colors">
+                <Phone className="h-5 w-5 text-wuestenrot" />
+                <span>{contact.phone1}</span>
               </a>
-              <a href="mailto:info@mezzarano-immobilien.de" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Mail className="h-5 w-5 text-primary-500" />
-                <span>info@mezzarano-immobilien.de</span>
+              <a href={`tel:${contact.phone2.replace(/\s/g, '')}`} className="flex items-center gap-3 hover:text-wuestenrot-light transition-colors">
+                <Phone className="h-5 w-5 text-wuestenrot" />
+                <span>{contact.phone2}</span>
+              </a>
+              <a href={`mailto:${contact.email}`} className="flex items-center gap-3 hover:text-wuestenrot-light transition-colors">
+                <Mail className="h-5 w-5 text-wuestenrot" />
+                <span>{contact.email}</span>
               </a>
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary-500 mt-0.5" />
-                <span>Musterstraße 123<br />74072 Heilbronn</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Clock className="h-5 w-5 text-primary-500 mt-0.5" />
-                <span>Mo - Fr: 9:00 - 18:00<br />Sa: Nach Vereinbarung</span>
+                <MapPin className="h-5 w-5 text-wuestenrot mt-0.5" />
+                <span>{contact.street}<br />{contact.city}</span>
               </div>
             </div>
 
-            {/* Social Media */}
+            {/* Social Media - Münze-Form (Kreis) */}
             <div className="flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/Mezzarano.wuestenrotimmobilien/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
+                className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/mezzarano.wuestenrotimmobilien/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
+                className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sandro-mezzarano-1619ab277/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
+                className="w-10 h-10 bg-wuestennacht-light rounded-full flex items-center justify-center hover:bg-wuestenrot transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -129,11 +121,11 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-white font-semibold mb-6">Unternehmen</h3>
+            <h3 className="text-white font-bold mb-6">Immobilien</h3>
             <ul className="space-y-3">
-              {footerLinks.unternehmen.map((link) => (
+              {footerLinks.immobilien.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-primary-400 transition-colors">
+                  <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -142,11 +134,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-6">Leistungen</h3>
+            <h3 className="text-white font-bold mb-6">Leistungen</h3>
             <ul className="space-y-3">
               {footerLinks.leistungen.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-primary-400 transition-colors">
+                  <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -155,11 +147,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-6">Regionen</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-bold mb-6">Regionen</h3>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
               {footerLinks.regionen.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-primary-400 transition-colors">
+                  <Link href={link.href} className="hover:text-wuestenrot-light transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -169,18 +161,18 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-secondary-800">
+      {/* Bottom bar - Legal Lines */}
+      <div className="border-t border-wuestennacht-light">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-secondary-500">
-            &copy; {new Date().getFullYear()} Mezzarano Immobilien. Alle Rechte vorbehalten.
+          <p className="text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} {contact.name} - Wüstenrot Immobilien. Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
             {footerLinks.rechtliches.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-secondary-500 hover:text-primary-400 transition-colors"
+                className="text-gray-500 hover:text-wuestenrot-light transition-colors"
               >
                 {link.name}
               </Link>
