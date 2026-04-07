@@ -130,7 +130,14 @@ export default async function HomePage() {
             } catch { return prop }
           })
         )
-        properties = propsWithImages.map(normalizeOnOfficeProperty)
+        // Filter out incomplete properties (no images, no title, no price)
+        const completeProps = propsWithImages.filter(prop => {
+          const hasImages = prop.bilder && prop.bilder.length > 0
+          const hasTitle = prop.titel && prop.titel !== 'Immobilie'
+          const hasPrice = (prop.kaufpreis && prop.kaufpreis > 0) || (prop.kaltmiete && prop.kaltmiete > 0)
+          return hasImages && hasTitle && hasPrice
+        })
+        properties = completeProps.map(normalizeOnOfficeProperty)
         dataSource = 'onoffice'
       }
     } catch (error) {
