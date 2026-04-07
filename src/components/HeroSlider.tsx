@@ -108,17 +108,19 @@ export default function HeroSlider() {
             index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          {/* Background Image with Ken Burns */}
+          {/* Background Image with Ken Burns - only load active + next slide */}
           <div className={`absolute inset-0 ${index === currentSlide ? 'animate-ken-burns' : ''}`}>
-            <Image
-              src={slide.image}
-              alt={`${slide.tagline} - ${slide.lines.map(l => l.text).join(' ')}`}
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className="object-cover"
-              quality={80}
-            />
+            {(index === currentSlide || index === (currentSlide + 1) % slides.length || index === 0) && (
+              <Image
+                src={slide.image}
+                alt={`${slide.tagline} - ${slide.lines.map(l => l.text).join(' ')}`}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+                quality={80}
+              />
+            )}
           </div>
           {/* Gradient Overlay - Styleguide: wüstennacht */}
           <div className="absolute inset-0 bg-gradient-to-r from-wuestennacht/95 via-wuestennacht/80 to-wuestennacht/50" />
