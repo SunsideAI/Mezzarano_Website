@@ -137,7 +137,15 @@ export async function GET(request: NextRequest) {
           })
         )
 
-        const properties = propertiesWithImages.map(normalizeOnOfficeProperty)
+        // Filter out incomplete properties (no images, no real description, no price)
+        const completeProperties = propertiesWithImages.filter(prop => {
+          const hasImages = prop.bilder && prop.bilder.length > 0
+          const hasTitle = prop.titel && prop.titel !== 'Immobilie'
+          const hasPrice = (prop.kaufpreis && prop.kaufpreis > 0) || (prop.kaltmiete && prop.kaltmiete > 0)
+          return hasImages && hasTitle && hasPrice
+        })
+
+        const properties = completeProperties.map(normalizeOnOfficeProperty)
         return NextResponse.json({
           properties,
           count: properties.length,
