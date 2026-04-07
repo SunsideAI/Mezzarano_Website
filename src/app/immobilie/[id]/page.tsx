@@ -6,7 +6,8 @@ import {
   ArrowLeft, Share2, Heart, Printer, Building, Thermometer, Trees,
   Home, Fence, Car, Layers, Euro, Ruler, Zap, Flame, DoorOpen,
   Mountain, Warehouse, Key, FileText, Clock, Shield, Sparkles,
-  Accessibility, PawPrint, ChefHat, Sofa, Snowflake, Sun, Droplets
+  Accessibility, PawPrint, ChefHat, Sofa, Snowflake, Sun, Droplets,
+  Rotate3d, Play
 } from 'lucide-react'
 import {
   fetchEstateByExposeIdWithImages,
@@ -70,7 +71,7 @@ function FeatureBadge({ icon: Icon, label, available }: { icon: React.ElementTyp
 
 // Component for detail rows
 function DetailRow({ label, value, icon: Icon }: { label: string; value?: string | number | null; icon?: React.ElementType }) {
-  if (value === undefined || value === null || value === '') return null
+  if (value === undefined || value === null || value === '' || value === 0 || value === '0' || value === 'Preis auf Anfrage') return null
   return (
     <div className="flex items-start gap-3 py-2 border-b border-gray-100 last:border-0">
       {Icon && <Icon className="h-5 w-5 text-primary-500 flex-shrink-0 mt-0.5" />}
@@ -116,18 +117,19 @@ function renderDescription(text: string) {
 }
 
 export default async function PropertyDetailPage({ params }: { params: { id: string } }) {
+  const exposeId = decodeURIComponent(params.id)
   let property: OnOfficeProperty | null = null
   let fallbackProperty: AirtableProperty | null = null
   let source: 'onoffice' | 'airtable' = 'onoffice'
 
   // Try onOffice first
   if (isOnOfficeConfigured()) {
-    property = await fetchEstateByExposeIdWithImages(params.id)
+    property = await fetchEstateByExposeIdWithImages(exposeId)
   }
 
   // Fallback to Airtable
   if (!property) {
-    fallbackProperty = await fetchPropertyByExposeId(params.id)
+    fallbackProperty = await fetchPropertyByExposeId(exposeId)
     source = 'airtable'
   }
 
@@ -141,7 +143,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
     : fallbackProperty?.kategorie === 'Miete'
 
   const title = property?.titel || fallbackProperty?.titel || 'Immobilie'
-  const exposeId = property?.expose_id || fallbackProperty?.expose_id || params.id
+  const propertyExposeId = property?.expose_id || fallbackProperty?.expose_id || params.id
   const images = property?.bilder || fallbackProperty?.bilder || []
 
   // Deduplicate images
@@ -156,10 +158,10 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
     })
     .map(url => url.includes('res.cloudinary.com') ? getOptimizedCloudinaryUrl(url, 1200) : url)
 
-  // Build address string
+  // Build address string (nur PLZ + Ort, keine Straße)
   const address = property
-    ? [property.strasse, property.hausnummer, property.plz, property.ort].filter(Boolean).join(', ')
-    : fallbackProperty?.adresse_komplett || fallbackProperty?.kurz_adresse || `${fallbackProperty?.plz || ''} ${fallbackProperty?.ort || ''}`
+    ? [property.plz, property.ort].filter(Boolean).join(' ')
+    : `${fallbackProperty?.plz || ''} ${fallbackProperty?.ort || ''}`.trim()
 
   // Get price
   const price = property
@@ -197,23 +199,21 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
               {/* Title and Price */}
               <div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    !isRent ? 'bg-primary-100 text-primary-700' : 'bg-secondary-100 text-secondary-700'
-                  }`}>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                     {isRent ? 'Zur Miete' : 'Zum Kauf'}
                   </span>
                   {(property?.objekttyp || property?.objektart || fallbackProperty?.objekt_typ) && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                       {property ? getObjekttypLabel(property.objekttyp) || getObjektartLabel(property.objektart) : fallbackProperty?.objekt_typ}
                     </span>
                   )}
                   {property?.zustand && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                       {getZustandLabel(property.zustand)}
                     </span>
                   )}
                   {property?.status === 1 && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                       Verfügbar
                     </span>
                   )}
@@ -254,9 +254,9 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                 </div>
 
                 {/* Object Number */}
-                {(property?.objektnr_extern || exposeId) && (
+                {(property?.objektnr_extern || propertyExposeId) && (
                   <p className="text-sm text-gray-400 mt-4">
-                    Objekt-Nr.: {property?.objektnr_extern || exposeId}
+                    Objekt-Nr.: {property?.objektnr_extern || propertyExposeId}
                   </p>
                 )}
               </div>
@@ -265,7 +265,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-xl shadow-sm">
                 {(property?.anzahl_zimmer || fallbackProperty?.zimmer) !== undefined && (property?.anzahl_zimmer || fallbackProperty?.zimmer)! > 0 && (
                   <div className="text-center p-4">
-                    <Bed className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <DoorOpen className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">{property?.anzahl_zimmer || fallbackProperty?.zimmer}</p>
                     <p className="text-sm text-gray-500">Zimmer</p>
                   </div>
@@ -340,21 +340,21 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {isRent ? (
                       <>
-                        <DetailRow label="Kaltmiete" value={formatPrice(property.kaltmiete, true)} icon={Euro} />
-                        <DetailRow label="Nebenkosten" value={formatPrice(property.nebenkosten, true)} icon={Euro} />
-                        <DetailRow label="Heizkosten" value={formatPrice(property.heizkosten, true)} icon={Flame} />
-                        <DetailRow label="Warmmiete" value={formatPrice(property.warmmiete, true)} icon={Euro} />
-                        <DetailRow label="Kaution" value={property.kaution} icon={Shield} />
-                        {property.stellplatzmiete && <DetailRow label="Stellplatzmiete" value={formatPrice(property.stellplatzmiete, true)} icon={Car} />}
+                        {property.kaltmiete ? <DetailRow label="Kaltmiete" value={formatPrice(property.kaltmiete, true)} icon={Euro} /> : null}
+                        {property.nebenkosten ? <DetailRow label="Nebenkosten" value={formatPrice(property.nebenkosten, true)} icon={Euro} /> : null}
+                        {property.heizkosten ? <DetailRow label="Heizkosten" value={formatPrice(property.heizkosten, true)} icon={Flame} /> : null}
+                        {property.warmmiete ? <DetailRow label="Warmmiete" value={formatPrice(property.warmmiete, true)} icon={Euro} /> : null}
+                        {property.kaution ? <DetailRow label="Kaution" value={property.kaution} icon={Shield} /> : null}
+                        {property.stellplatzmiete ? <DetailRow label="Stellplatzmiete" value={formatPrice(property.stellplatzmiete, true)} icon={Car} /> : null}
                       </>
                     ) : (
                       <>
-                        <DetailRow label="Kaufpreis" value={formatPrice(property.kaufpreis)} icon={Euro} />
-                        {property.kaufpreis_pro_qm && <DetailRow label="Preis pro m²" value={formatPrice(property.kaufpreis_pro_qm)} icon={Ruler} />}
-                        {property.hausgeld && <DetailRow label="Hausgeld" value={formatPrice(property.hausgeld, true)} icon={Euro} />}
-                        {property.courtage && <DetailRow label="Provision" value={property.courtage} icon={FileText} />}
-                        {property.courtage_hinweis && <DetailRow label="Provisionshinweis" value={property.courtage_hinweis} icon={FileText} />}
-                        {property.erbpacht && <DetailRow label="Erbpacht" value={formatPrice(property.erbpacht, true)} icon={Euro} />}
+                        {property.kaufpreis ? <DetailRow label="Kaufpreis" value={formatPrice(property.kaufpreis)} icon={Euro} /> : null}
+                        {property.kaufpreis_pro_qm ? <DetailRow label="Preis pro m²" value={formatPrice(property.kaufpreis_pro_qm)} icon={Ruler} /> : null}
+                        {property.hausgeld ? <DetailRow label="Hausgeld" value={formatPrice(property.hausgeld, true)} icon={Euro} /> : null}
+                        {property.courtage ? <DetailRow label="Provision" value={property.courtage} icon={FileText} /> : null}
+                        {property.courtage_hinweis ? <DetailRow label="Provisionshinweis" value={property.courtage_hinweis} icon={FileText} /> : null}
+                        {property.erbpacht ? <DetailRow label="Erbpacht" value={formatPrice(property.erbpacht, true)} icon={Euro} /> : null}
                       </>
                     )}
                   </div>
@@ -545,6 +545,37 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                 lat={property?.breitengrad}
                 lng={property?.laengengrad}
               />
+
+              {/* 3D Virtual Tour Embed */}
+              {property?.virtualTourUrl && (
+                <div className="bg-white p-8 rounded-xl shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <Rotate3d className="h-6 w-6 text-primary-500" />
+                    3D-Rundgang
+                  </h2>
+                  <div className="rounded-xl overflow-hidden aspect-video bg-gray-100">
+                    <iframe
+                      src={property.virtualTourUrl}
+                      className="w-full h-full border-0"
+                      title={`3D-Rundgang: ${title}`}
+                      allowFullScreen
+                      loading="lazy"
+                      allow="xr-spatial-tracking; gyroscope; accelerometer"
+                    />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="text-sm text-gray-500">Nutzen Sie die Maus oder Ihr Gerät um sich umzuschauen</p>
+                    <a
+                      href={property.virtualTourUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-500 font-medium text-sm hover:text-primary-600 transition-colors"
+                    >
+                      Im Vollbild öffnen →
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -556,10 +587,51 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                     Interesse an dieser Immobilie?
                   </h3>
                   <PropertyInquiryForm
-                    propertyId={exposeId}
+                    propertyId={propertyExposeId}
                     propertyTitle={title}
                   />
                 </div>
+
+                {/* 3D Virtual Tour */}
+                {property?.virtualTourUrl && (
+                  <div className="bg-gradient-to-br from-primary-500 to-primary-700 p-6 rounded-xl shadow-lg text-white">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                        <Rotate3d className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold">3D-Rundgang</h3>
+                    </div>
+                    <p className="text-white/80 text-sm mb-4">
+                      Erkunden Sie diese Immobilie virtuell in einer interaktiven 360°-Tour.
+                    </p>
+                    <a
+                      href={property.virtualTourUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <Play className="h-5 w-5" />
+                      Rundgang starten
+                    </a>
+                  </div>
+                )}
+
+                {/* Booking Link */}
+                {property?.bookingUrl && (
+                  <div className="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Besichtigung buchen</h3>
+                    <p className="text-sm text-gray-500 mb-4">Vereinbaren Sie einen persönlichen Besichtigungstermin.</p>
+                    <a
+                      href={property.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full gap-2 bg-primary-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors"
+                    >
+                      <Calendar className="h-5 w-5" />
+                      Termin vereinbaren
+                    </a>
+                  </div>
+                )}
 
                 {/* Agent Info */}
                 <div className="bg-white p-6 rounded-xl shadow-lg">

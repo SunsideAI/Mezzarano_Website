@@ -111,30 +111,49 @@ function normalizeOnOfficeProperty(prop: OnOfficeProperty): AirtableProperty {
 }
 
 export default async function HomePage() {
-  // Fetch from Airtable first, fall back to onOffice, then static data
+  // Fetch from onOffice first (primary), fall back to Airtable, then static data
   let properties: AirtableProperty[] = []
   let dataSource = 'static'
 
-  // Try Airtable first
-  try {
-    properties = await fetchAirtableProperties({ show_all: true })
-    if (properties.length > 0) {
-      dataSource = 'airtable'
-    }
-  } catch (error) {
-    console.error('Failed to fetch Airtable properties:', error)
-  }
-
-  // Fallback to onOffice
-  if (properties.length === 0 && isOnOfficeConfigured()) {
+  // Try onOffice first (primary CRM source)
+  if (isOnOfficeConfigured()) {
     try {
       const { properties: onOfficeProps } = await fetchEstates()
       if (onOfficeProps.length > 0) {
-        properties = onOfficeProps.map(normalizeOnOfficeProperty)
+        // Fetch images for each property
+        const { fetchEstateImages } = await import('@/lib/onoffice')
+        const propsWithImages = await Promise.all(
+          onOfficeProps.map(async (prop) => {
+            try {
+              const images = await fetchEstateImages(prop.id, '800x600')
+              return { ...prop, bilder: images.length > 0 ? images : prop.bilder, titelbild: images[0] || prop.titelbild }
+            } catch { return prop }
+          })
+        )
+        // Filter out incomplete properties (no images, no title, no price)
+        const completeProps = propsWithImages.filter(prop => {
+          const hasImages = prop.bilder && prop.bilder.length > 0
+          const hasTitle = prop.titel && prop.titel !== 'Immobilie'
+          const hasPrice = (prop.kaufpreis && prop.kaufpreis > 0) || (prop.kaltmiete && prop.kaltmiete > 0)
+          return hasImages && hasTitle && hasPrice
+        })
+        properties = completeProps.map(normalizeOnOfficeProperty)
         dataSource = 'onoffice'
       }
     } catch (error) {
       console.error('Failed to fetch onOffice properties:', error)
+    }
+  }
+
+  // Fallback to Airtable
+  if (properties.length === 0) {
+    try {
+      properties = await fetchAirtableProperties({ show_all: true })
+      if (properties.length > 0) {
+        dataSource = 'airtable'
+      }
+    } catch (error) {
+      console.error('Failed to fetch Airtable properties:', error)
     }
   }
 

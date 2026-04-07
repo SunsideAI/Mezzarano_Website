@@ -582,6 +582,10 @@ export interface OnOfficeProperty {
   angelegt_am?: string
   geaendert_am?: string
 
+  // Media Links
+  virtualTourUrl?: string        // WI360GradLink (Ogulo 3D Tour)
+  bookingUrl?: string            // MP_timum_buchungslink (Besichtigungstermin)
+
   // Images (will be fetched separately)
   bilder: string[]
   titelbild?: string
@@ -733,6 +737,8 @@ const ESTATE_FIELDS = [
   'ind_2910_Feld_ObjKategorie194',
   // Verfuegbarkeit
   'verfuegbar_ab',
+  // Medien-Links
+  'WI360GradLink', 'MP_timum_buchungslink',
   // Datum
   'erstellt_am', 'geaendert_am',
 ]
@@ -921,6 +927,9 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     angelegt_am: str('erstellt_am'),
     geaendert_am: str('geaendert_am'),
 
+    virtualTourUrl: str('WI360GradLink'),
+    bookingUrl: str('MP_timum_buchungslink'),
+
     bilder: [],
     titelbild: undefined,
   }
@@ -1061,6 +1070,7 @@ export async function fetchEstateById(estateId: number): Promise<OnOfficePropert
 export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeProperty | null> {
   try {
     const client = createOnOfficeClient()
+    const decodedId = decodeURIComponent(exposeId).trim()
 
     const response = await client.request([
       {
@@ -1070,7 +1080,7 @@ export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeP
         parameters: {
           data: ESTATE_FIELDS,
           filter: {
-            objektnr_extern: [{ op: '=', val: exposeId }],
+            objektnr_extern: [{ op: '=', val: decodedId }],
           },
           listlimit: 1,
         },
@@ -1080,8 +1090,29 @@ export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeP
     const result = response.response.results[0]
 
     if (result.status.errorcode !== 0 || result.data.records.length === 0) {
-      // Try by internal ID as fallback
-      const numericId = parseInt(exposeId)
+      // Try with 'like' operator for partial match (handles encoding issues)
+      const likeResponse = await client.request([
+        {
+          actionid: client.ACTION_ID.READ,
+          resourcetype: client.RESOURCE_TYPE.ESTATE,
+          identifier: 'fetch_estate_by_expose_id_like',
+          parameters: {
+            data: ESTATE_FIELDS,
+            filter: {
+              objektnr_extern: [{ op: 'like', val: `%${decodedId.replace(/\s+/g, '%')}%` }],
+            },
+            listlimit: 1,
+          },
+        },
+      ])
+
+      const likeResult = likeResponse.response.results[0]
+      if (likeResult.status.errorcode === 0 && likeResult.data.records.length > 0) {
+        return transformEstateRecord(likeResult.data.records[0])
+      }
+
+      // Try by internal numeric ID as last fallback
+      const numericId = parseInt(decodedId)
       if (!isNaN(numericId)) {
         return fetchEstateById(numericId)
       }
@@ -1098,8 +1129,9 @@ export async function fetchEstateByExposeId(exposeId: string): Promise<OnOfficeP
 /**
  * Fetch images for an estate (Homepage-published images)
  * Uses estatepictures resourcetype as per onOffice API documentation
+ * @param size - 'original' for detail pages, '800x600' for listings, '400x300' for thumbnails
  */
-export async function fetchEstateImages(estateId: number): Promise<string[]> {
+export async function fetchEstateImages(estateId: number, size: string = 'original'): Promise<string[]> {
   try {
     const client = createOnOfficeClient()
 
@@ -1112,7 +1144,7 @@ export async function fetchEstateImages(estateId: number): Promise<string[]> {
         parameters: {
           estateids: [estateId],
           categories: ['Titelbild', 'Foto', 'Foto_gross', 'Grundriss', 'Lageplan', 'Panorama'],
-          size: 'original',
+          size,
         },
       },
     ])
@@ -1133,13 +1165,13 @@ export async function fetchEstateImages(estateId: number): Promise<string[]> {
       const elements = record.elements
       if (Array.isArray(elements)) {
         for (const el of elements as Array<{ url?: string; originalurl?: string }>) {
-          if (el.url) images.push(String(el.url))
-          else if (el.originalurl) images.push(String(el.originalurl))
+          const url = el.url || el.originalurl
+          if (url) images.push(decodeURIComponent(String(url)))
         }
       } else if (elements) {
         const el = elements as { url?: string; originalurl?: string }
-        if (el.url) images.push(String(el.url))
-        else if (el.originalurl) images.push(String(el.originalurl))
+        const url = el.url || el.originalurl
+        if (url) images.push(decodeURIComponent(String(url)))
       }
     }
 

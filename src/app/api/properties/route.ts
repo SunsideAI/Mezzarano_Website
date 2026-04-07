@@ -3,6 +3,9 @@ import { fetchEstates, fetchEstateImages, isOnOfficeConfigured, OnOfficeProperty
 import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
 import { properties as staticProperties, Property } from '@/data/properties'
 
+// Cache for 5 minutes on CDN, serve stale while revalidating
+export const revalidate = 300
+
 // Convert static property to AirtableProperty format
 function normalizeStaticProperty(prop: Property): AirtableProperty {
   return {
@@ -40,9 +43,9 @@ function normalizeOnOfficeProperty(prop: OnOfficeProperty): AirtableProperty {
     url: undefined,
 
     // Location
-    kurz_adresse: [prop.strasse, prop.hausnummer].filter(Boolean).join(' ') || undefined,
-    adresse_komplett: [prop.strasse, prop.hausnummer, prop.plz, prop.ort].filter(Boolean).join(', ') || undefined,
-    strasse: prop.strasse,
+    kurz_adresse: [prop.plz, prop.ort].filter(Boolean).join(' ') || undefined,
+    adresse_komplett: [prop.plz, prop.ort].filter(Boolean).join(' ') || undefined,
+    strasse: undefined,
     haus_nummer: prop.hausnummer,
     plz: prop.plz,
     ort: prop.ort,
@@ -105,9 +108,7 @@ export async function GET(request: NextRequest) {
     console.log('No external data sources configured, will use static fallback')
   }
 
-  // TEMPORARILY DISABLED: onOffice integration - using Airtable as primary source
-  // TODO: Re-enable onOffice when ready
-  /*
+  // Primary: onOffice CRM (Cloudinary for Airtable images expired)
   if (hasOnOffice) {
     try {
       const kategorie = searchParams.get('kategorie')
@@ -126,7 +127,7 @@ export async function GET(request: NextRequest) {
         const propertiesWithImages = await Promise.all(
           onOfficeProps.map(async (prop) => {
             try {
-              const images = await fetchEstateImages(prop.id)
+              const images = await fetchEstateImages(prop.id, '800x600')
               return {
                 ...prop,
                 bilder: images.length > 0 ? images : prop.bilder,
@@ -139,7 +140,15 @@ export async function GET(request: NextRequest) {
           })
         )
 
-        const properties = propertiesWithImages.map(normalizeOnOfficeProperty)
+        // Filter out incomplete properties (no images, no real description, no price)
+        const completeProperties = propertiesWithImages.filter(prop => {
+          const hasImages = prop.bilder && prop.bilder.length > 0
+          const hasTitle = prop.titel && prop.titel !== 'Immobilie'
+          const hasPrice = (prop.kaufpreis && prop.kaufpreis > 0) || (prop.kaltmiete && prop.kaltmiete > 0)
+          return hasImages && hasTitle && hasPrice
+        })
+
+        const properties = completeProperties.map(normalizeOnOfficeProperty)
         return NextResponse.json({
           properties,
           count: properties.length,
@@ -153,9 +162,8 @@ export async function GET(request: NextRequest) {
       console.error('onOffice API Error:', error)
     }
   }
-  */
 
-  // Primary: Airtable
+  // Fallback: Airtable
   if (hasAirtable) {
     try {
       const filters = {

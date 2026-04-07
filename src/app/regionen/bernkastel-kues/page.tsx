@@ -62,13 +62,6 @@ export default function BernkastelKuesPage() {
     <>
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
       <section className="relative bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12 overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/stock/AdobeStock_288240294.jpeg')" }}
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-wuestennacht/85" />
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
@@ -84,13 +77,13 @@ export default function BernkastelKuesPage() {
               {/* Headline with White Bars - keine Abstände zwischen Balken */}
               <h1 className="mb-8">
                 <span className="flex flex-col items-start gap-0">
-                  <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
+                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
                     ihr immobilienmakler
                   </span>
-                  <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
+                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
                     in bernkastel-kues
                   </span>
-                  <span className="inline-block w-fit whitespace-nowrap bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none text-wuestenrot">
+                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none text-wuestenrot">
                     wüstenrot
                   </span>
                 </span>
