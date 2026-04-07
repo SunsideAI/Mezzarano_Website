@@ -1,8 +1,6 @@
 ---
 title: "Erbschaft Immobilie: Verkaufen, Behalten oder Vermieten?"
-description: "Erbschaft Immobilie erhalten? Mezzarano Immobilien Heilbronn berät Sie: Verkaufen, behalten oder vermieten - was ist die beste Entscheidung für Sie?
-
-(Zeichen: 154)"
+description: "Erbschaft Immobilie erhalten? Mezzarano Immobilien Heilbronn berät Sie: Verkaufen, behalten oder vermieten - was ist die beste Entscheidung für Sie?"
 pubDate: 2026-03-19
 category: "Recht & Steuern"
 author: "Mezzarano Immobilien"

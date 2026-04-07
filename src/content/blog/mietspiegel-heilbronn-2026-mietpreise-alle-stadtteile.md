@@ -1,8 +1,6 @@
 ---
 title: "Mietspiegel Heilbronn 2026: Mietpreise alle Stadtteile"
-description: "Mietspiegel Heilbronn 2026: Aktuelle Mietpreise & Trends nach Stadtteilen. Mezzarano Immobilien - Ihr Experte für den Heilbronner Wohnungsmarkt.
-
-**Zeichenanzahl: 154 Zeichen**"
+description: "Mietspiegel Heilbronn 2026: Aktuelle Mietpreise & Trends nach Stadtteilen. Mezzarano Immobilien - Ihr Experte für den Heilbronner Wohnungsmarkt."
 pubDate: 2026-03-23
 category: "Marktberichte"
 author: "Mezzarano Immobilien"

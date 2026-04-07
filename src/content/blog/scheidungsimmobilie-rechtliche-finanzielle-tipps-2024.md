@@ -1,8 +1,6 @@
 ---
 title: "Scheidungsimmobilie: Rechtliche & finanzielle Tipps 2024"
-description: "Scheidungsimmobilie verkaufen? Mezzarano Immobilien Heilbronn berät zu rechtlichen & finanziellen Aspekten. Professionelle Unterstützung.
-
-(Zeichenanzahl: 154)"
+description: "Scheidungsimmobilie verkaufen? Mezzarano Immobilien Heilbronn berät zu rechtlichen & finanziellen Aspekten. Professionelle Unterstützung."
 pubDate: 2026-03-23
 category: "Recht & Steuern"
 author: "Mezzarano Immobilien"

@@ -1,8 +1,6 @@
 ---
 title: "Bad Wimpfen: Historisches Wohnen & Immobilien kaufen"
-description: "Entdecken Sie Bad Wimpfen: Historische Schönheit trifft modernes Wohnen. Mezzarano Immobilien Heilbronn zeigt Ihnen Ihr Traumzuhause im Kleinod.
-
-(Zeichenanzahl: 154)"
+description: "Entdecken Sie Bad Wimpfen: Historische Schönheit trifft modernes Wohnen. Mezzarano Immobilien Heilbronn zeigt Ihnen Ihr Traumzuhause im Kleinod."
 pubDate: 2026-03-12
 category: "Regionen"
 author: "Mezzarano Immobilien"

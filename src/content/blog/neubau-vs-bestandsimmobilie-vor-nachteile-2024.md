@@ -1,8 +1,6 @@
 ---
 title: "Neubau vs. Bestandsimmobilie: Vor- & Nachteile 2024"
-description: "Neubau oder Bestandsimmobilie? Mezzarano Immobilien Heilbronn vergleicht Vor- & Nachteile. Jetzt informieren & richtige Entscheidung treffen!
-
-(Zeichenanzahl: 149)"
+description: "Neubau oder Bestandsimmobilie? Mezzarano Immobilien Heilbronn vergleicht Vor- & Nachteile. Jetzt informieren & richtige Entscheidung treffen!"
 pubDate: 2026-03-19
 category: "Immobilienkauf"
 author: "Mezzarano Immobilien"
