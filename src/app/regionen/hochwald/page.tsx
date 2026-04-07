@@ -77,13 +77,13 @@ export default function HochwaldPage() {
               {/* Headline with White Bars - keine Abstände zwischen Balken */}
               <h1 className="mb-8">
                 <span className="flex flex-col items-start gap-0">
-                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-4xl lg:text-5xl font-bold leading-none lowercase text-wuestennacht">
+                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
                     ihr immobilienmakler
                   </span>
-                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-4xl lg:text-5xl font-bold leading-none lowercase text-wuestennacht">
+                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none lowercase text-wuestennacht">
                     im hochwald
                   </span>
-                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-4xl lg:text-5xl font-bold leading-none text-wuestenrot">
+                  <span className="inline-block w-fit bg-white px-4 py-1 md:px-5 md:py-2 text-2xl md:text-5xl lg:text-6xl font-bold leading-none text-wuestenrot">
                     wüstenrot
                   </span>
                 </span>
