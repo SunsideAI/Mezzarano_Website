@@ -6,7 +6,8 @@ import {
   ArrowLeft, Share2, Heart, Printer, Building, Thermometer, Trees,
   Home, Fence, Car, Layers, Euro, Ruler, Zap, Flame, DoorOpen,
   Mountain, Warehouse, Key, FileText, Clock, Shield, Sparkles,
-  Accessibility, PawPrint, ChefHat, Sofa, Snowflake, Sun, Droplets
+  Accessibility, PawPrint, ChefHat, Sofa, Snowflake, Sun, Droplets,
+  Rotate3d, Play
 } from 'lucide-react'
 import {
   fetchEstateByExposeIdWithImages,
@@ -549,9 +550,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
               {property?.virtualTourUrl && (
                 <div className="bg-white p-8 rounded-xl shadow-sm">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                    <svg className="h-6 w-6 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9" />
-                    </svg>
+                    <Rotate3d className="h-6 w-6 text-primary-500" />
                     3D-Rundgang
                   </h2>
                   <div className="rounded-xl overflow-hidden aspect-video bg-gray-100">
@@ -598,9 +597,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <div className="bg-gradient-to-br from-primary-500 to-primary-700 p-6 rounded-xl shadow-lg text-white">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                        <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9" />
-                        </svg>
+                        <Rotate3d className="h-5 w-5 text-white" />
                       </div>
                       <h3 className="text-lg font-bold">3D-Rundgang</h3>
                     </div>
@@ -613,9 +610,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-full gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
                     >
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="5 3 19 12 5 21 5 3" />
-                      </svg>
+                      <Play className="h-5 w-5" />
                       Rundgang starten
                     </a>
                   </div>
