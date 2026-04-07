@@ -40,9 +40,9 @@ function normalizeOnOfficeProperty(prop: OnOfficeProperty): AirtableProperty {
     url: undefined,
 
     // Location
-    kurz_adresse: [prop.strasse, prop.hausnummer].filter(Boolean).join(' ') || undefined,
-    adresse_komplett: [prop.strasse, prop.hausnummer, prop.plz, prop.ort].filter(Boolean).join(', ') || undefined,
-    strasse: prop.strasse,
+    kurz_adresse: [prop.plz, prop.ort].filter(Boolean).join(' ') || undefined,
+    adresse_komplett: [prop.plz, prop.ort].filter(Boolean).join(' ') || undefined,
+    strasse: undefined,
     haus_nummer: prop.hausnummer,
     plz: prop.plz,
     ort: prop.ort,

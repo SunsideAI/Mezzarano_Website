@@ -158,10 +158,10 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
     })
     .map(url => url.includes('res.cloudinary.com') ? getOptimizedCloudinaryUrl(url, 1200) : url)
 
-  // Build address string
+  // Build address string (nur PLZ + Ort, keine Straße)
   const address = property
-    ? [property.strasse, property.hausnummer, property.plz, property.ort].filter(Boolean).join(', ')
-    : fallbackProperty?.adresse_komplett || fallbackProperty?.kurz_adresse || `${fallbackProperty?.plz || ''} ${fallbackProperty?.ort || ''}`
+    ? [property.plz, property.ort].filter(Boolean).join(' ')
+    : `${fallbackProperty?.plz || ''} ${fallbackProperty?.ort || ''}`.trim()
 
   // Get price
   const price = property
