@@ -45,13 +45,6 @@ export default function TrierPage() {
     <>
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
       <section className="relative bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12 overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/stock/AdobeStock_288240294.jpeg')" }}
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-wuestennacht/85" />
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
