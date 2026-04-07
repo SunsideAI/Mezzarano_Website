@@ -105,9 +105,7 @@ export async function GET(request: NextRequest) {
     console.log('No external data sources configured, will use static fallback')
   }
 
-  // TEMPORARILY DISABLED: onOffice integration - using Airtable as primary source
-  // TODO: Re-enable onOffice when ready
-  /*
+  // Primary: onOffice CRM (Cloudinary for Airtable images expired)
   if (hasOnOffice) {
     try {
       const kategorie = searchParams.get('kategorie')
@@ -153,9 +151,8 @@ export async function GET(request: NextRequest) {
       console.error('onOffice API Error:', error)
     }
   }
-  */
 
-  // Primary: Airtable
+  // Fallback: Airtable
   if (hasAirtable) {
     try {
       const filters = {
