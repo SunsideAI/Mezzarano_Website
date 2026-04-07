@@ -116,18 +116,19 @@ function renderDescription(text: string) {
 }
 
 export default async function PropertyDetailPage({ params }: { params: { id: string } }) {
+  const exposeId = decodeURIComponent(params.id)
   let property: OnOfficeProperty | null = null
   let fallbackProperty: AirtableProperty | null = null
   let source: 'onoffice' | 'airtable' = 'onoffice'
 
   // Try onOffice first
   if (isOnOfficeConfigured()) {
-    property = await fetchEstateByExposeIdWithImages(params.id)
+    property = await fetchEstateByExposeIdWithImages(exposeId)
   }
 
   // Fallback to Airtable
   if (!property) {
-    fallbackProperty = await fetchPropertyByExposeId(params.id)
+    fallbackProperty = await fetchPropertyByExposeId(exposeId)
     source = 'airtable'
   }
 
