@@ -582,6 +582,10 @@ export interface OnOfficeProperty {
   angelegt_am?: string
   geaendert_am?: string
 
+  // Media Links
+  virtualTourUrl?: string        // WI360GradLink (Ogulo 3D Tour)
+  bookingUrl?: string            // MP_timum_buchungslink (Besichtigungstermin)
+
   // Images (will be fetched separately)
   bilder: string[]
   titelbild?: string
@@ -733,6 +737,8 @@ const ESTATE_FIELDS = [
   'ind_2910_Feld_ObjKategorie194',
   // Verfuegbarkeit
   'verfuegbar_ab',
+  // Medien-Links
+  'WI360GradLink', 'MP_timum_buchungslink',
   // Datum
   'erstellt_am', 'geaendert_am',
 ]
@@ -920,6 +926,9 @@ function transformEstateRecord(record: { id: number; elements: Record<string, un
     aktiv_bis: str('aktiv_bis'),
     angelegt_am: str('erstellt_am'),
     geaendert_am: str('geaendert_am'),
+
+    virtualTourUrl: str('WI360GradLink'),
+    bookingUrl: str('MP_timum_buchungslink'),
 
     bilder: [],
     titelbild: undefined,
