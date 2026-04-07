@@ -198,23 +198,21 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
               {/* Title and Price */}
               <div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    !isRent ? 'bg-primary-100 text-primary-700' : 'bg-secondary-100 text-secondary-700'
-                  }`}>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                     {isRent ? 'Zur Miete' : 'Zum Kauf'}
                   </span>
                   {(property?.objekttyp || property?.objektart || fallbackProperty?.objekt_typ) && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                       {property ? getObjekttypLabel(property.objekttyp) || getObjektartLabel(property.objektart) : fallbackProperty?.objekt_typ}
                     </span>
                   )}
                   {property?.zustand && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                       {getZustandLabel(property.zustand)}
                     </span>
                   )}
                   {property?.status === 1 && (
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                       Verfügbar
                     </span>
                   )}
@@ -266,7 +264,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-xl shadow-sm">
                 {(property?.anzahl_zimmer || fallbackProperty?.zimmer) !== undefined && (property?.anzahl_zimmer || fallbackProperty?.zimmer)! > 0 && (
                   <div className="text-center p-4">
-                    <Bed className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                    <DoorOpen className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">{property?.anzahl_zimmer || fallbackProperty?.zimmer}</p>
                     <p className="text-sm text-gray-500">Zimmer</p>
                   </div>
