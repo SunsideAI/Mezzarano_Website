@@ -71,7 +71,7 @@ function FeatureBadge({ icon: Icon, label, available }: { icon: React.ElementTyp
 
 // Component for detail rows
 function DetailRow({ label, value, icon: Icon }: { label: string; value?: string | number | null; icon?: React.ElementType }) {
-  if (value === undefined || value === null || value === '') return null
+  if (value === undefined || value === null || value === '' || value === 0 || value === '0' || value === 'Preis auf Anfrage') return null
   return (
     <div className="flex items-start gap-3 py-2 border-b border-gray-100 last:border-0">
       {Icon && <Icon className="h-5 w-5 text-primary-500 flex-shrink-0 mt-0.5" />}
@@ -340,21 +340,21 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {isRent ? (
                       <>
-                        <DetailRow label="Kaltmiete" value={formatPrice(property.kaltmiete, true)} icon={Euro} />
-                        <DetailRow label="Nebenkosten" value={formatPrice(property.nebenkosten, true)} icon={Euro} />
-                        <DetailRow label="Heizkosten" value={formatPrice(property.heizkosten, true)} icon={Flame} />
-                        <DetailRow label="Warmmiete" value={formatPrice(property.warmmiete, true)} icon={Euro} />
-                        <DetailRow label="Kaution" value={property.kaution} icon={Shield} />
-                        {property.stellplatzmiete && <DetailRow label="Stellplatzmiete" value={formatPrice(property.stellplatzmiete, true)} icon={Car} />}
+                        {property.kaltmiete ? <DetailRow label="Kaltmiete" value={formatPrice(property.kaltmiete, true)} icon={Euro} /> : null}
+                        {property.nebenkosten ? <DetailRow label="Nebenkosten" value={formatPrice(property.nebenkosten, true)} icon={Euro} /> : null}
+                        {property.heizkosten ? <DetailRow label="Heizkosten" value={formatPrice(property.heizkosten, true)} icon={Flame} /> : null}
+                        {property.warmmiete ? <DetailRow label="Warmmiete" value={formatPrice(property.warmmiete, true)} icon={Euro} /> : null}
+                        {property.kaution ? <DetailRow label="Kaution" value={property.kaution} icon={Shield} /> : null}
+                        {property.stellplatzmiete ? <DetailRow label="Stellplatzmiete" value={formatPrice(property.stellplatzmiete, true)} icon={Car} /> : null}
                       </>
                     ) : (
                       <>
-                        <DetailRow label="Kaufpreis" value={formatPrice(property.kaufpreis)} icon={Euro} />
-                        {property.kaufpreis_pro_qm && <DetailRow label="Preis pro m²" value={formatPrice(property.kaufpreis_pro_qm)} icon={Ruler} />}
-                        {property.hausgeld && <DetailRow label="Hausgeld" value={formatPrice(property.hausgeld, true)} icon={Euro} />}
-                        {property.courtage && <DetailRow label="Provision" value={property.courtage} icon={FileText} />}
-                        {property.courtage_hinweis && <DetailRow label="Provisionshinweis" value={property.courtage_hinweis} icon={FileText} />}
-                        {property.erbpacht && <DetailRow label="Erbpacht" value={formatPrice(property.erbpacht, true)} icon={Euro} />}
+                        {property.kaufpreis ? <DetailRow label="Kaufpreis" value={formatPrice(property.kaufpreis)} icon={Euro} /> : null}
+                        {property.kaufpreis_pro_qm ? <DetailRow label="Preis pro m²" value={formatPrice(property.kaufpreis_pro_qm)} icon={Ruler} /> : null}
+                        {property.hausgeld ? <DetailRow label="Hausgeld" value={formatPrice(property.hausgeld, true)} icon={Euro} /> : null}
+                        {property.courtage ? <DetailRow label="Provision" value={property.courtage} icon={FileText} /> : null}
+                        {property.courtage_hinweis ? <DetailRow label="Provisionshinweis" value={property.courtage_hinweis} icon={FileText} /> : null}
+                        {property.erbpacht ? <DetailRow label="Erbpacht" value={formatPrice(property.erbpacht, true)} icon={Euro} /> : null}
                       </>
                     )}
                   </div>
