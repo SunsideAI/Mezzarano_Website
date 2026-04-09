@@ -119,8 +119,8 @@
       ],
       "category": "Kapitalanlage",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-09T10:14:36.536Z"
     },
     {
       "title": "Spekulationssteuer Immobilien: So vermeiden Sie Steuerfallen",
@@ -132,8 +132,8 @@
       ],
       "category": "Recht & Steuern",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-09T10:15:54.446Z"
     },
     {
       "title": "Grunderwerbsteuer Rheinland-Pfalz: Alles Wichtige",
@@ -225,8 +225,8 @@
       ],
       "category": "Kapitalanlage",
       "priority": "high",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-09T10:17:14.852Z"
     },
     {
       "title": "Erbschaft Immobilie: Verkaufen, Behalten oder Vermieten?",
