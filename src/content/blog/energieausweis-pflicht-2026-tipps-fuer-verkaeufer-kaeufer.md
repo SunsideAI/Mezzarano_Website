@@ -1,5 +1,5 @@
 ---
-title: "Energieausweis Pflicht 2024: Tipps für Verkäufer & Käufer"
+title: "Energieausweis Pflicht 2026: Tipps für Verkäufer & Käufer"
 description: "Energieausweis Pflicht beim Immobilienverkauf: Wichtige Infos für Käufer & Verkäufer. Mezzarano Immobilien berät Sie in Hermeskeil, Trier & Mosel-Region."
 pubDate: 2026-04-16
 category: "Recht & Steuern"

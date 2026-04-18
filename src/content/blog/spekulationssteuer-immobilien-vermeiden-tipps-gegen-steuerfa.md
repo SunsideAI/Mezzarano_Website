@@ -58,7 +58,7 @@ Diese können den steuerpflichtigen Gewinn erheblich reduzieren:
 
 ### Praxisbeispiel aus Bernkastel-Kues
 
-Ein Ehepaar aus Bernkastel-Kues kaufte 2016 ein renovierungsbedürftiges Winzerhaus für 200.000 Euro. Die Nebenkosten beim Kauf beliefen sich auf 15.000 Euro. In den folgenden Jahren investierten sie 80.000 Euro in die Modernisierung (neue Heizung, Dachsanierung, Elektrik). 2024 verkaufen sie die Immobilie für 450.000 Euro.
+Ein Ehepaar aus Bernkastel-Kues kaufte 2016 ein renovierungsbedürftiges Winzerhaus für 200.000 Euro. Die Nebenkosten beim Kauf beliefen sich auf 15.000 Euro. In den folgenden Jahren investierten sie 80.000 Euro in die Modernisierung (neue Heizung, Dachsanierung, Elektrik). 2026 verkaufen sie die Immobilie für 450.000 Euro.
 
 **Berechnung:**
 - Verkaufspreis: 450.000 Euro

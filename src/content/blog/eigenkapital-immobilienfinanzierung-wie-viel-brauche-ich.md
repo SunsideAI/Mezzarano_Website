@@ -190,7 +190,7 @@ Wenn Sie eine Immobilie als Kapitalanlage erwerben möchten, verlangen Banken in
 
 Der Immobilienmarkt in der Region Trier hat sich in den letzten Jahren dynamisch entwickelt. Die Nähe zu Luxemburg, die Universität Trier und die hohe Lebensqualität machen die Region attraktiv.
 
-**Durchschnittliche Kaufpreise (Stand 2024):**
+**Durchschnittliche Kaufpreise (Stand 2026):**
 - Trier Innenstadt: 3.500-4.500 Euro/m²
 - Hermeskeil: 2.800-3.500 Euro/m²
 - Schweich: 3.200-4.000 Euro/m²

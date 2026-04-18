@@ -57,7 +57,7 @@ Die Bauzinsen spielen eine entscheidende Rolle bei der Kaufentscheidung. Als Wü
 
 ## Prognose für die kommenden Jahre
 
-### Kurzfristige Entwicklung (2026-2025)
+### Kurzfristige Entwicklung (2026-2027)
 
 Für die nächsten 12-18 Monate erwarten wir:
 
@@ -65,7 +65,7 @@ Für die nächsten 12-18 Monate erwarten wir:
 2. **Stabilisierung des Zinsniveaus** auf dem aktuellen Niveau
 3. **Weiterhin hohe Nachfrage** in guten Lagen, besonders in Grenznähe zu Luxemburg
 
-### Mittelfristige Perspektive (2025-2028)
+### Mittelfristige Perspektive (2027-2030)
 
 Langfristig sehen wir folgende Trends:
 

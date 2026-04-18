@@ -231,7 +231,7 @@ Der nominale Zinssatz ist nur ein Faktor. Wichtiger ist der effektive Jahreszins
 
 ## Ausblick: Baufinanzierung in der Region Trier-Hermeskeil
 
-### Marktentwicklung 2026/2025
+### Marktentwicklung 2026/2027
 
 Die Immobilienmärkte in der Region zeigen unterschiedliche Entwicklungen:
 

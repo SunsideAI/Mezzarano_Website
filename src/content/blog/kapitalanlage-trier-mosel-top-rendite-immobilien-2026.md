@@ -1,5 +1,5 @@
 ---
-title: "Kapitalanlage Trier-Mosel: Top Rendite-Immobilien 2024"
+title: "Kapitalanlage Trier-Mosel: Top Rendite-Immobilien 2026"
 description: "Entdecken Sie renditestarke Immobilien-Kapitalanlagen in Trier und an der Mosel. Mezzarano Immobilien zeigt Ihnen die besten Standorte für Ihre Investition."
 pubDate: 2026-04-09
 category: "Kapitalanlage"
@@ -150,7 +150,7 @@ Die Wertentwicklung von Immobilien in der Region Trier-Mosel wird von mehreren n
 
 Die Region Trier-Mosel befindet sich derzeit in einer stabilen Wachstumsphase. Im Gegensatz zu überhitzten Großstadtmärkten sind die Preise hier noch nicht spekulativ übertrieben, bieten aber dennoch solide Renditen.
 
-**Marktindikatoren (Stand 2024):**
+**Marktindikatoren (Stand 2026):**
 - Durchschnittliche Preissteigerung: 3-5% p.a.
 - Leerstandsquote: Unter 2% in attraktiven Lagen
 - Mietpreisentwicklung: +2-4% jährlich
