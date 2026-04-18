@@ -17,7 +17,7 @@ const regions = [
   {
     name: 'Trier',
     href: '/regionen/trier',
-    image: '/images/stock/Aachen.jpg', // TODO: Replace with Trier image
+    image: '/images/regionen/Trier.jpg',
   },
   {
     name: 'Bernkastel-Kues',

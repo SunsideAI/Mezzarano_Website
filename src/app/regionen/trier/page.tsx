@@ -89,8 +89,8 @@ export default function TrierPage() {
             <div className="relative" data-aos="fade-left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/stock/Aachen.jpg"
-                  alt="Trier - Historische Altstadt"
+                  src="/images/regionen/Trier.jpg"
+                  alt="Trier - Porta Nigra und historische Altstadt"
                   fill
                   className="object-cover"
                   priority
