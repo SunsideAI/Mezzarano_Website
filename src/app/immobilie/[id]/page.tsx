@@ -241,13 +241,13 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                     )}
                   </div>
                   <div className="flex gap-2">
-                    <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Teilen">
+                    <button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Teilen">
                       <Share2 className="h-5 w-5 text-gray-500" />
                     </button>
-                    <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Favorit">
+                    <button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Favorit">
                       <Heart className="h-5 w-5 text-gray-500" />
                     </button>
-                    <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Drucken">
+                    <button className="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Drucken">
                       <Printer className="h-5 w-5 text-gray-500" />
                     </button>
                   </div>
@@ -608,7 +608,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                       href={property.virtualTourUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                      className="inline-flex items-center justify-center w-full gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-[24px] hover:bg-gray-100 transition-colors"
                     >
                       <Play className="h-5 w-5" />
                       Rundgang starten
@@ -625,7 +625,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                       href={property.bookingUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full gap-2 bg-primary-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors"
+                      className="inline-flex items-center justify-center w-full gap-2 bg-primary-500 text-white font-bold px-6 py-3 rounded-[24px] hover:bg-primary-600 transition-colors"
                     >
                       <Calendar className="h-5 w-5" />
                       Termin vereinbaren

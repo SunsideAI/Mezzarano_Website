@@ -277,13 +277,13 @@ export default function SchweichPage() {
             Auch aktiv in der Region
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/regionen/trier" className="px-6 py-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors text-secondary-700">
+            <Link href="/regionen/trier" className="px-6 py-3 bg-gray-100 rounded-[24px] hover:bg-gray-200 transition-colors text-secondary-700">
               Trier
             </Link>
-            <Link href="/regionen/hermeskeil" className="px-6 py-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors text-secondary-700">
+            <Link href="/regionen/hermeskeil" className="px-6 py-3 bg-gray-100 rounded-[24px] hover:bg-gray-200 transition-colors text-secondary-700">
               Hermeskeil
             </Link>
-            <Link href="/regionen/bernkastel-kues" className="px-6 py-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors text-secondary-700">
+            <Link href="/regionen/bernkastel-kues" className="px-6 py-3 bg-gray-100 rounded-[24px] hover:bg-gray-200 transition-colors text-secondary-700">
               Bernkastel-Kues
             </Link>
           </div>

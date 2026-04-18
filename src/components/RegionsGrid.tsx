@@ -99,7 +99,7 @@ export default function RegionsGrid() {
         <div className="text-center mt-8">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-medium rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-medium rounded-[24px] transition-colors"
           >
             {expanded ? (
               <>
