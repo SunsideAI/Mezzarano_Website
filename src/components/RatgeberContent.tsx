@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Search, BookOpen, TrendingUp } from 'lucide-react'
@@ -36,6 +36,12 @@ interface Props {
 export default function RatgeberContent({ allPosts, categories, featuredPost }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [displayCount, setDisplayCount] = useState(6)
+
+  // Reset display count when search query changes
+  useEffect(() => {
+    setDisplayCount(6)
+  }, [searchQuery])
 
   // Handle category selection without scroll jumping
   const handleCategoryClick = useCallback((category: string | null) => {
@@ -47,8 +53,9 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
     // Save current scroll position
     const scrollY = window.scrollY
 
-    // Update category
+    // Update category and reset display count
     setSelectedCategory(category)
+    setDisplayCount(6)
 
     // Restore scroll position immediately
     requestAnimationFrame(() => {
@@ -91,10 +98,23 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
   // Posts to display in grid (exclude featured if shown separately)
   const displayPosts = useMemo(() => {
     if (displayFeaturedPost) {
-      return filteredPosts.filter(post => post.slug !== displayFeaturedPost.slug).slice(0, 6)
+      return filteredPosts.filter(post => post.slug !== displayFeaturedPost.slug).slice(0, displayCount)
     }
-    return filteredPosts.slice(0, 6)
-  }, [filteredPosts, displayFeaturedPost])
+    return filteredPosts.slice(0, displayCount)
+  }, [filteredPosts, displayFeaturedPost, displayCount])
+
+  // Check if there are more posts to load
+  const hasMorePosts = useMemo(() => {
+    const totalAvailable = displayFeaturedPost
+      ? filteredPosts.filter(post => post.slug !== displayFeaturedPost.slug).length
+      : filteredPosts.length
+    return displayCount < totalAvailable
+  }, [filteredPosts, displayFeaturedPost, displayCount])
+
+  // Load more posts
+  const loadMorePosts = useCallback(() => {
+    setDisplayCount(prev => prev + 6)
+  }, [])
 
   return (
     <>
@@ -252,9 +272,12 @@ export default function RatgeberContent({ allPosts, categories, featuredPost }: 
             </div>
           )}
 
-          {filteredPosts.length > 6 && (
+          {hasMorePosts && (
             <div className="text-center mt-12">
-              <button className="btn-secondary">
+              <button
+                onClick={loadMorePosts}
+                className="btn-secondary"
+              >
                 Weitere Artikel laden
               </button>
             </div>
