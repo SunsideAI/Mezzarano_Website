@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Play, X, Info, Euro, FileText, Home, Shield, CheckCircle, Phone, ArrowRight } from 'lucide-react'
+
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTAwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNjAiIGZpbGw9IiMxYTIzMmUiLz48L3N2Zz4="
 
 interface VideoData {
   id: string
@@ -63,10 +66,16 @@ export default function ErklaervideosPage() {
     <div className="min-h-screen">
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
       <section className="relative min-h-[450px] md:min-h-[600px] bg-wuestennacht flex items-center py-12 overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/stock/AdobeStock_510543411.jpeg')" }}
+        {/* Background Image - optimized with Next.js Image */}
+        <Image
+          src="/images/stock/AdobeStock_510543411.jpeg"
+          alt=""
+          fill
+          priority
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-wuestennacht/85" />

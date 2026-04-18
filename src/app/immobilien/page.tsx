@@ -2,7 +2,10 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Search, SlidersHorizontal, Grid, List, X, Loader2, ChevronLeft, ChevronRight, Bell, ArrowRight, Phone } from 'lucide-react'
+
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTAwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNjAiIGZpbGw9IiMxYTIzMmUiLz48L3N2Zz4="
 import PropertyCard from '@/components/PropertyCard'
 import AirtablePropertyCard from '@/components/AirtablePropertyCard'
 import { properties as staticProperties, Property } from '@/data/properties'
@@ -228,10 +231,16 @@ export default function ImmobilienPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Wüstenrot Layout-Prinzipien */}
       <section className="relative bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12 overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero/AdobeStock_476608445.jpeg')" }}
+        {/* Background Image - optimized with Next.js Image */}
+        <Image
+          src="/images/hero/AdobeStock_476608445.jpeg"
+          alt=""
+          fill
+          priority
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-wuestennacht/85" />

@@ -18,6 +18,8 @@ import {
   MapPin,
 } from 'lucide-react'
 
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTAwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNjAiIGZpbGw9IiMxYTIzMmUiLz48L3N2Zz4="
+
 // ─── Types ─────────────────────────────────────────────────────────────────────
 type Art  = 'kaufen' | 'mieten' | ''
 type Typ  = 'haus' | 'wohnung' | 'grundstueck' | 'gewerbe' | ''
@@ -474,10 +476,16 @@ export default function SuchprofilPage() {
 
       {/* Hero with Wüstenrot Layout-Prinzipien */}
       <section className="relative min-h-[auto] py-12 md:py-0 md:min-h-[600px] bg-wuestennacht flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero/AdobeStock_112407784.jpeg')" }}
+        {/* Background Image - optimized with Next.js Image */}
+        <Image
+          src="/images/hero/AdobeStock_112407784.jpeg"
+          alt=""
+          fill
+          priority
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-wuestennacht/85" />

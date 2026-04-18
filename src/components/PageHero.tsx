@@ -1,5 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, ArrowRight, LucideIcon } from 'lucide-react'
+
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTAwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNjAiIGZpbGw9IiMxYTIzMmUiLz48L3N2Zz4="
 
 interface HeadlineLine {
   text: string
@@ -51,12 +54,18 @@ export default function PageHero({
     <section
       className="relative min-h-[auto] py-16 md:py-0 md:min-h-[560px] bg-wuestennacht flex items-center overflow-hidden"
     >
-      {/* Background Image (optional) */}
+      {/* Background Image (optional) - optimized with Next.js Image */}
       {backgroundImage && (
         <>
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            placeholder="blur"
+            blurDataURL={BLUR_DATA_URL}
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-wuestennacht/95 via-wuestennacht/85 to-wuestennacht/70" />
         </>
