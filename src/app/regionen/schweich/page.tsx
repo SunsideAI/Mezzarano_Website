@@ -93,10 +93,10 @@ export default function SchweichPage() {
                 Sandro Mezzarano von Wüstenrot Immobilien berät Sie beim Kauf und Verkauf.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors">
+                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-[24px]">
                   Beratung anfragen
                 </Link>
-                <Link href="/immobilien?ort=Schweich" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors">
+                <Link href="/immobilien?ort=Schweich" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-[24px]">
                   Immobilien in Schweich
                 </Link>
               </div>

@@ -93,10 +93,10 @@ export default function SaarburgPage() {
                 Verkauf und die Vermietung von Immobilien in Saarburg und an der Saar.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors">
+                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-[24px]">
                   Kostenlose Beratung anfragen
                 </Link>
-                <Link href="/immobilien?ort=Saarburg" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors">
+                <Link href="/immobilien?ort=Saarburg" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-[24px]">
                   Immobilien in Saarburg
                 </Link>
               </div>
