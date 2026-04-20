@@ -180,6 +180,20 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Powered by */}
+      <div className="border-t border-wuestennacht-light/50 bg-wuestennacht">
+        <div className="container-custom py-4 text-center">
+          <a
+            href="https://sunsideai.de"
+            target="_blank"
+            rel="noopener"
+            className="text-xs text-gray-500 hover:text-wuestenrot-light transition-colors"
+          >
+            Powered by Sunside AI
+          </a>
+        </div>
+      </div>
     </footer>
   )
 }
