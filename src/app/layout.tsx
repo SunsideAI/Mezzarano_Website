@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CookieBanner from '@/components/CookieBanner'
 import SchemaMarkup, { generateLocalBusinessSchema } from '@/components/SchemaMarkup'
 import ScrollAnimations from '@/components/ScrollAnimations'
 import VoiceflowChat from '@/components/VoiceflowChat'
@@ -105,6 +106,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieBanner />
         <VoiceflowChat />
       </body>
     </html>
