@@ -184,8 +184,8 @@
       ],
       "category": "Immobilienverkauf",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-20T10:49:37.346Z"
     },
     {
       "title": "Neubau vs. Bestandsimmobilie: Vor- und Nachteile im Vergleich",
@@ -197,8 +197,8 @@
       ],
       "category": "Immobilienkauf",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-20T10:50:54.864Z"
     },
     {
       "title": "Grundstückspreise Region Trier: Aktuelle Entwicklung",
@@ -211,8 +211,8 @@
       ],
       "category": "Marktberichte",
       "priority": "medium",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-20T10:52:13.682Z"
     },
     {
       "title": "Kapitalanlage Immobilien Trier-Mosel: Renditestarke Standorte",
