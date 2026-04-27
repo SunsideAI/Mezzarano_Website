@@ -266,8 +266,8 @@
       ],
       "category": "Recht & Steuern",
       "priority": "low",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-27T11:04:45.574Z"
     },
     {
       "title": "Hochwald Region: Naturnahe Immobilien mit Zukunft",
@@ -280,8 +280,8 @@
       ],
       "category": "Regionen",
       "priority": "low",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-27T11:06:05.935Z"
     },
     {
       "title": "Moseltal: Weinregion mit Charme und Wohnpotenzial",
@@ -294,8 +294,8 @@
       ],
       "category": "Regionen",
       "priority": "low",
-      "used": false,
-      "usedDate": null
+      "used": true,
+      "usedDate": "2026-04-27T11:07:29.583Z"
     },
     {
       "title": "Immobilienfinanzierung ohne Eigenkapital: Chancen und Risiken",
