@@ -7,6 +7,7 @@ import { getFeaturedProperties } from '@/data/properties'
 import HeroSlider from '@/components/HeroSlider'
 import RegionsGrid from '@/components/RegionsGrid'
 import InstagramFeed from '@/components/InstagramFeed'
+import TimumBooking from '@/components/TimumBooking'
 import { fetchEstates, isOnOfficeConfigured, OnOfficeProperty } from '@/lib/onoffice'
 import { fetchProperties as fetchAirtableProperties, AirtableProperty } from '@/lib/airtable'
 import ProvenExpertWidget from '@/components/ProvenExpertWidget'
@@ -386,6 +387,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Termin buchen */}
+      <TimumBooking />
 
       {/* Testimonials */}
       <section className="py-12 md:py-20 bg-white">
