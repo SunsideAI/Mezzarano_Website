@@ -21,11 +21,11 @@ export default function TimumBooking() {
           data-aos-delay="100"
         >
           {/* Timum Widget Container */}
-          <div id="timumContainer-b21b2523-c2c3-4345-9767-34b08af1e30c" className="min-h-[400px]" />
+          <div id="timumContainer-25be7b95-a536-417f-96d6-5304e687a679" className="min-h-[400px]" />
 
           {/* Timum Script */}
           <Script
-            src="https://www.timum.de/b21b2523-c2c3-4345-9767-34b08af1e30c/widget.js"
+            src="https://www.timum.de/b21b2523-c2c3-4345-9767-34b08af1e30c/25be7b95-a536-417f-96d6-5304e687a679/widget.js"
             type="module"
             strategy="lazyOnload"
           />
