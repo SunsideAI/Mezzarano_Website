@@ -3,6 +3,7 @@ import { getAllSlugs } from '@/lib/blog'
 import { fetchEstates, isOnOfficeConfigured } from '@/lib/onoffice'
 import { fetchProperties as fetchAirtableProperties } from '@/lib/airtable'
 import { properties as staticProperties } from '@/data/properties'
+import { GLOSSAR } from '@/lib/glossar'
 
 const siteUrl = 'https://mezzarano-wuestenrot-immobilien.de'
 
@@ -170,6 +171,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${siteUrl}/immobilien-abc`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // Legal pages
     {
       url: `${siteUrl}/datenschutz`,
@@ -201,5 +208,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...blogPosts, ...propertyPages]
+  // Glossar terms (Immobilien-ABC) — 624 long-tail SEO pages
+  const glossarPages: MetadataRoute.Sitemap = GLOSSAR.map((term) => ({
+    url: `${siteUrl}/immobilien-abc/${term.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'yearly',
+    priority: 0.5,
+  }))
+
+  return [...staticPages, ...blogPosts, ...propertyPages, ...glossarPages]
 }

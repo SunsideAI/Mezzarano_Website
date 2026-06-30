@@ -41,6 +41,7 @@ const navigation: NavItem[] = [
     name: 'Ratgeber',
     children: [
       { name: 'Ratgeber & Blog', href: '/ratgeber' },
+      { name: 'Immobilien-ABC', href: '/immobilien-abc' },
       { name: 'Erklärvideos', href: '/erklaervideos' },
     ]
   },
