@@ -50,7 +50,7 @@ export default function ImmobilienABCContent({ letters, groups, totalTerms }: Pr
     <>
       {/* Filter bar - sticky */}
       <nav
-        className="sticky top-20 z-30 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm"
+        className="sticky top-20 md:top-[7.5rem] z-30 bg-white border-b border-gray-200 shadow-sm"
         aria-label="Alphabet-Filter"
       >
         <div className="container-custom py-4">
@@ -119,7 +119,7 @@ export default function ImmobilienABCContent({ letters, groups, totalTerms }: Pr
             <div
               key={g.letter}
               id={`buchstabe-${g.letter}`}
-              className="mb-12 scroll-mt-40"
+              className="mb-12 scroll-mt-[10rem] md:scroll-mt-[13rem]"
             >
               <h2 className="text-4xl font-bold text-wuestenrot border-b-2 border-gray-200 pb-3 mb-6">
                 {g.letter}
