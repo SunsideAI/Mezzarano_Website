@@ -44,7 +44,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: siteUrl,
+    // relative to the current route, so every page gets a self-canonical
+    // instead of inheriting the homepage URL
+    canonical: './',
   },
   openGraph: {
     type: 'website',

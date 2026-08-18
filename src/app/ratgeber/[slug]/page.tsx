@@ -1,10 +1,13 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { marked } from 'marked'
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2, Linkedin, Twitter, Mail } from 'lucide-react'
 import { getPostBySlug, getAllSlugs, getRelatedPosts } from '@/lib/blog'
 import BlogCard from '@/components/BlogCard'
 import SchemaMarkup from '@/components/SchemaMarkup'
+
+const SITE_URL = 'https://mezzarano-wuestenrot-immobilien.de'
 
 interface Props {
   params: { slug: string }
@@ -22,14 +25,22 @@ export async function generateMetadata({ params }: Props) {
     return { title: 'Artikel nicht gefunden' }
   }
 
+  const url = `${SITE_URL}/ratgeber/${params.slug}`
+
   return {
-    title: `${post.title} | Mezzarano Immobilien`,
+    // absolute: the article titles are already 45-62 characters, the brand
+    // suffix from the root template would push them past the SERP cutoff
+    title: { absolute: post.title },
     description: post.description,
     keywords: post.tags.join(', '),
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
+      url,
       publishedTime: post.pubDate,
       authors: [post.author],
       tags: post.tags,
@@ -54,7 +65,7 @@ export default function BlogPostPage({ params }: Props) {
     })
   }
 
-  const shareUrl = `https://mezzarano-wuestenrot-immobilien.de/ratgeber/${params.slug}`
+  const shareUrl = `${SITE_URL}/ratgeber/${params.slug}`
 
   // Schema.org Article markup
   const articleSchema = {
@@ -71,7 +82,7 @@ export default function BlogPostPage({ params }: Props) {
       name: 'Mezzarano Immobilien',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://mezzarano-wuestenrot-immobilien.de/logo.png'
+        url: `${SITE_URL}/logo.png`
       }
     },
     datePublished: post.pubDate,
@@ -144,7 +155,7 @@ export default function BlogPostPage({ params }: Props) {
               <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                 <div
                   className="prose-blog"
-                  dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(post.content) }}
+                  dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
                 />
 
                 {/* Tags */}
@@ -267,81 +278,8 @@ export default function BlogPostPage({ params }: Props) {
   )
 }
 
-// Simple Markdown to HTML converter
-function convertMarkdownToHtml(markdown: string): string {
-  let html = markdown
-
-  // Process tables first (before other transformations)
-  html = html.replace(/(\|.+\|[\r\n]+\|[-:\| ]+\|[\r\n]+((\|.+\|[\r\n]?)+))/gm, (match) => {
-    const lines = match.trim().split('\n').filter(line => line.trim())
-    if (lines.length < 2) return match
-
-    // Parse header row
-    const headerCells = lines[0].split('|').filter(cell => cell.trim()).map(cell => cell.trim())
-
-    // Skip separator row (lines[1])
-
-    // Parse data rows
-    const dataRows = lines.slice(2).map(line =>
-      line.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
-    )
-
-    // Build HTML table
-    let tableHtml = '<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse">'
-    tableHtml += '<thead><tr class="bg-secondary-100">'
-    headerCells.forEach(cell => {
-      tableHtml += `<th class="border border-secondary-200 px-4 py-3 text-left font-semibold text-secondary-700">${cell}</th>`
-    })
-    tableHtml += '</tr></thead><tbody>'
-
-    dataRows.forEach((row, index) => {
-      const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-secondary-50'
-      tableHtml += `<tr class="${rowClass}">`
-      row.forEach(cell => {
-        tableHtml += `<td class="border border-secondary-200 px-4 py-3 text-secondary-600">${cell}</td>`
-      })
-      tableHtml += '</tr>'
-    })
-
-    tableHtml += '</tbody></table></div>'
-    return tableHtml
-  })
-
-  // Headers
-  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>')
-  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>')
-  html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>')
-
-  // Bold and Italic
-  html = html.replace(/\*\*\*(.*?)\*\*\*/gim, '<strong><em>$1</em></strong>')
-  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-  html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>')
-
-  // Links
-  html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>')
-
-  // Numbered lists
-  html = html.replace(/^(\d+)\. (.*$)/gim, '<li>$2</li>')
-
-  // Unordered lists
-  html = html.replace(/^\- (.*$)/gim, '<li>$1</li>')
-
-  // Wrap consecutive li elements in ul/ol
-  html = html.replace(/(<li>[\s\S]*?<\/li>)/g, '<ul>$1</ul>')
-  html = html.replace(/<\/ul>\s*<ul>/g, '')
-
-  // Paragraphs
-  html = html.replace(/\n\n/gim, '</p><p>')
-  html = '<p>' + html + '</p>'
-
-  // Clean up
-  html = html.replace(/<p><h/g, '<h')
-  html = html.replace(/<\/h(\d)><\/p>/g, '</h$1>')
-  html = html.replace(/<p><ul>/g, '<ul>')
-  html = html.replace(/<\/ul><\/p>/g, '</ul>')
-  html = html.replace(/<p><div/g, '<div')
-  html = html.replace(/<\/div><\/p>/g, '</div>')
-  html = html.replace(/<p><\/p>/g, '')
-
-  return html
+// Blockquotes, horizontal rules, nested lists and tables are handled by marked;
+// the .prose-blog class supplies the styling.
+function renderMarkdown(markdown: string): string {
+  return marked.parse(markdown, { async: false, gfm: true, breaks: false }) as string
 }

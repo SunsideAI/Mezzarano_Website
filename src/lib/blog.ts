@@ -31,6 +31,27 @@ export interface BlogPostMeta {
   readingTime: number
 }
 
+/**
+ * Removes internal editorial notes (HTML comments) so they never reach the
+ * rendered page or the reading-time estimate.
+ */
+function stripInternalComments(content: string): string {
+  return content.replace(/<!--[\s\S]*?-->/g, '').replace(/\n{3,}/g, '\n\n').trim()
+}
+
+/**
+ * Drops the leading H1 of a post body. The article template already renders the
+ * frontmatter title as the page H1, so keeping it would produce two H1s.
+ */
+function stripLeadingH1(content: string): string {
+  return content.replace(/^\s*#\s+.*(\r?\n)+/, '')
+}
+
+/** Everything that has to happen before a post body is rendered or measured. */
+function prepareContent(content: string): string {
+  return stripLeadingH1(stripInternalComments(content))
+}
+
 function calculateReadingTime(content: string): number {
   const wordsPerMinute = 200
   const words = content.trim().split(/\s+/).length
@@ -60,7 +81,7 @@ export function getAllPosts(): BlogPostMeta[] {
       image: data.image,
       featured: data.featured || false,
       tags: data.tags || [],
-      readingTime: calculateReadingTime(content)
+      readingTime: calculateReadingTime(prepareContent(content))
     }
   })
 
@@ -78,7 +99,8 @@ export function getPostBySlug(slug: string): BlogPost | null {
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf-8')
-  const { data, content } = matter(fileContent)
+  const { data, content: rawContent } = matter(fileContent)
+  const content = prepareContent(rawContent)
 
   return {
     slug,
