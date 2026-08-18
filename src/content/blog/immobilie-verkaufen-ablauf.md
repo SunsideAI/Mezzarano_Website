@@ -48,7 +48,7 @@ Jetzt geht es um die zentrale Zahl: Was ist Ihre Immobilie wirklich wert? Als Sp
 
 Viele Eigentümer sind überrascht, wenn der Marktwert von ihrer eigenen Einschätzung abweicht. Das ist normal und kein Grund zur Sorge. Eine saubere Bewertung schafft die Grundlage für alles Weitere. Wie die einzelnen Verfahren funktionieren, vertiefe ich im Beitrag zur Wertermittlung.
 
-> [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/wertermittlung-haus/)
+> [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/ratgeber/wertermittlung-haus)
 
 ## Schritt 3: Unterlagen zusammenstellen
 
@@ -97,18 +97,18 @@ Ein Punkt, den Sie früh klären sollten: die Spekulationsfrist nach § 23 EStG.
 
 Nicht jeder Verkauf folgt dem Standardweg. Bei einer vermieteten Wohnung gelten eigene Regeln rund um Mieterschutz und Preis. Wenn Sie wohnen bleiben und trotzdem Kapital freisetzen möchten, lohnt der nüchterne Blick auf die Alternativen zum klassischen Verkauf. Für diese Fälle habe ich eigene Beiträge geschrieben.
 
-> [Vermietete Wohnung verkaufen: Was Eigentümer wissen müssen](/vermietete-wohnung-verkaufen/)
-> [Haus teilverkaufen: Ehrliche Einschätzung und die besseren Wege](/haus-teilverkaufen/)
+> [Vermietete Wohnung verkaufen: Was Eigentümer wissen müssen](/ratgeber/vermietete-wohnung-verkaufen)
+> [Haus teilverkaufen: Ehrliche Einschätzung und die besseren Wege](/ratgeber/haus-teilverkaufen)
 
 ## Was kostet ein Makler beim Verkauf?
 
 Seit dem 23. Dezember 2020 teilen sich Käufer und Verkäufer bei Wohnimmobilien die Maklerprovision (§ 656c-d BGB). Im Raum Trier sind üblicherweise 3,57 Prozent je Seite (7,14 Prozent gesamt inklusive Mehrwertsteuer) oder 2,975 Prozent je Seite (5,95 Prozent gesamt) marktüblich, je nach Segment. Was Sie als Eigentümer dafür bekommen und wie sich die Kosten rechnen, vertiefe ich gesondert.
 
-> [Was kostet ein Immobilienmakler in Rheinland-Pfalz?](/was-kostet-immobilienmakler-rheinland-pfalz/)
+> [Was kostet ein Immobilienmakler in Rheinland-Pfalz?](/ratgeber/was-kostet-immobilienmakler-rheinland-pfalz)
 
 Wer den Trierer Markt und die regionalen Preisniveaus einordnen möchte, findet im Marktüberblick die aktuellen Zahlen.
 
-> [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/immobilien-trier/)
+> [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/ratgeber/immobilien-trier)
 
 ## Häufige Fragen zum Ablauf des Immobilienverkaufs
 
@@ -133,8 +133,8 @@ Der Ablauf wirkt umfangreich, ist aber gut planbar, wenn die Reihenfolge stimmt 
 
 Sie überlegen zu verkaufen und möchten zuerst wissen, was Ihre Immobilie wert ist? Fordern Sie eine kostenlose, unverbindliche Marktwerteinschätzung an.
 
-> [Kostenlose Wertermittlung anfordern](/bewerten/)
-> [Kontakt aufnehmen](/kontakt/)
+> [Kostenlose Wertermittlung anfordern](/bewerten)
+> [Kontakt aufnehmen](/kontakt)
 
 ---
 

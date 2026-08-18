@@ -94,10 +94,10 @@ Das größere Thema war aber der Bedarfswert. Das Finanzamt hatte den Wert pausc
 
 ## Was Sie weiterlesen sollten
 
-- Wer den aktuellen Markt und die Preise je Lage einschätzen will, findet im [Marktüberblick Trier](/immobilien-trier/) die Zahlen für Stadt und Umland.
-- Falls Sie überlegen, das geerbte Objekt zu vermieten statt zu verkaufen und später eine vermietete Wohnung abzugeben, lohnt der Ratgeber [Vermietete Wohnung verkaufen](/vermietete-wohnung-verkaufen/).
-- Wenn ein Miterbe im Haus wohnen bleiben möchte, ist der Beitrag [Haus teilverkaufen: die besseren Wege](/haus-teilverkaufen/) eine ehrliche Entscheidungshilfe.
-- Eine [kostenlose Marktwertschätzung](/bewerten/) Ihres geerbten Hauses schafft die Grundlage für jede weitere Entscheidung.
+- Wer den aktuellen Markt und die Preise je Lage einschätzen will, findet im [Marktüberblick Trier](/ratgeber/immobilien-trier) die Zahlen für Stadt und Umland.
+- Falls Sie überlegen, das geerbte Objekt zu vermieten statt zu verkaufen und später eine vermietete Wohnung abzugeben, lohnt der Ratgeber [Vermietete Wohnung verkaufen](/ratgeber/vermietete-wohnung-verkaufen).
+- Wenn ein Miterbe im Haus wohnen bleiben möchte, ist der Beitrag [Haus teilverkaufen: die besseren Wege](/ratgeber/haus-teilverkaufen) eine ehrliche Entscheidungshilfe.
+- Eine [kostenlose Marktwertschätzung](/bewerten) Ihres geerbten Hauses schafft die Grundlage für jede weitere Entscheidung.
 
 ## Häufige Fragen
 
@@ -120,7 +120,7 @@ Nein. Der Erwerb durch Erbschaft ist nach § 3 GrEStG grunderwerbsteuerfrei. Die
 
 Beim geerbten Haus entscheidet sich der finanzielle Ausgang selten am Verkaufstag, sondern in den Wochen davor. Zieht die Erbengemeinschaft an einem Strang? Sind die Steuerfristen sauber geprüft? Und stimmt der Wert, den das Finanzamt ansetzt? Wer diese Punkte ordnet, verkauft in Ruhe und behält mehr. Wer sie übergeht, zahlt drauf, oft vierstellig.
 
-Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Wenn Sie ein geerbtes Haus im Raum Trier, Saarburg, Konz, an der Mosel, in der Eifel oder im Hochwald verkaufen wollen, schauen wir gemeinsam, was in Ihrem Fall sinnvoll ist, und ich sage Ihnen ehrlich, wenn Warten die bessere Wahl ist. Sie erreichen mich unter 06503 9523963 oder über das [Kontaktformular](/kontakt/). Eine erste [Marktwertschätzung](/bewerten/) ist kostenlos und unverbindlich.
+Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Wenn Sie ein geerbtes Haus im Raum Trier, Saarburg, Konz, an der Mosel, in der Eifel oder im Hochwald verkaufen wollen, schauen wir gemeinsam, was in Ihrem Fall sinnvoll ist, und ich sage Ihnen ehrlich, wenn Warten die bessere Wahl ist. Sie erreichen mich unter 06503 9523963 oder über das [Kontaktformular](/kontakt). Eine erste [Marktwertschätzung](/bewerten) ist kostenlos und unverbindlich.
 
 <!--
 Content-Strategie-Hinweis:

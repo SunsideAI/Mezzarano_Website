@@ -69,7 +69,7 @@ Bei Ehepaaren, die eine selbstgenutzte Immobilie kaufen, rate ich dagegen in all
 
 Das ist der stärkste Anwendungsfall, und er heißt in der Beratungspraxis Familienpool. Die Eltern bringen ihre Immobilien in eine GbR ein und übertragen den Kindern nach und nach Gesellschaftsanteile, statt ganze Objekte zu verschenken. Der Freibetrag von 400.000 Euro je Kind und Elternteil lässt sich alle zehn Jahre erneut nutzen, sodass sich größeres Vermögen über die Jahre steuerfrei verlagern lässt.
 
-Der zweite Vorteil ist die Steuerung. Die Eltern können sich im Gesellschaftsvertrag die Geschäftsführung und den Nießbrauch an den Mieterträgen vorbehalten. Sie geben Substanz ab, behalten aber Entscheidungsgewalt und Einkünfte. Wer schon einmal erlebt hat, wie eine Erbengemeinschaft ein Haus über Jahre blockiert, weil sich vier Miterben nicht einigen können, versteht den Reiz sofort. Was passiert, wenn diese Vorsorge fehlt, habe ich im Ratgeber [Geerbtes Haus verkaufen](/geerbtes-haus-verkaufen) beschrieben.
+Der zweite Vorteil ist die Steuerung. Die Eltern können sich im Gesellschaftsvertrag die Geschäftsführung und den Nießbrauch an den Mieterträgen vorbehalten. Sie geben Substanz ab, behalten aber Entscheidungsgewalt und Einkünfte. Wer schon einmal erlebt hat, wie eine Erbengemeinschaft ein Haus über Jahre blockiert, weil sich vier Miterben nicht einigen können, versteht den Reiz sofort. Was passiert, wenn diese Vorsorge fehlt, habe ich im Ratgeber [Geerbtes Haus verkaufen](/ratgeber/geerbtes-haus-verkaufen) beschrieben.
 
 Für Hofstellen im Hochwald kommt ein weiterer Punkt hinzu. Zu einem alten Anwesen gehören oft mehrere Flurstücke, teils landwirtschaftlich genutzt. Diese Flächen später einzeln unter Erben aufzuteilen, zerlegt den Wert des Ganzen. In einer Gesellschaft bleibt der Bestand beisammen, und die Nachfolge läuft über Anteile statt über Grundbuchseiten.
 
@@ -77,7 +77,7 @@ Für Hofstellen im Hochwald kommt ein weiterer Punkt hinzu. Zu einem alten Anwes
 
 Wer mehrere vermietete Wohnungen oder ein Zinshaus hält, kann die Verwaltung in einer GbR bündeln. Mieteinnahmen, Instandhaltung, Rücklagen und Finanzierung laufen über ein Konto und eine Buchhaltung. Bei mehreren Beteiligten wird die Ergebnisverteilung über den Gesellschaftsvertrag geregelt, was flexibler ist als starre Bruchteile.
 
-Steuerlich bleibt die vermögensverwaltende GbR transparent. Die Gesellschaft selbst zahlt keine Einkommensteuer, die Einkünfte werden einheitlich festgestellt und den Gesellschaftern anteilig zugerechnet. Jeder versteuert seinen Anteil mit dem persönlichen Steuersatz. Gewerbesteuer fällt nicht an, solange die Gesellschaft die Grenze zur Gewerblichkeit nicht überschreitet. Wie ein solches Objekt überhaupt bewertet wird, zeigt der Beitrag [Mehrfamilienhaus verkaufen](/mehrfamilienhaus-verkaufen).
+Steuerlich bleibt die vermögensverwaltende GbR transparent. Die Gesellschaft selbst zahlt keine Einkommensteuer, die Einkünfte werden einheitlich festgestellt und den Gesellschaftern anteilig zugerechnet. Jeder versteuert seinen Anteil mit dem persönlichen Steuersatz. Gewerbesteuer fällt nicht an, solange die Gesellschaft die Grenze zur Gewerblichkeit nicht überschreitet. Wie ein solches Objekt überhaupt bewertet wird, zeigt der Beitrag Mehrfamilienhaus verkaufen.
 
 Eine Warnung gehört an diese Stelle: Verkauft die Gesellschaft innerhalb von fünf Jahren mehr als drei Objekte, droht die Einstufung als gewerblicher Grundstückshandel. Die Verkäufe der GbR werden den Gesellschaftern anteilig zugerechnet und können sich mit deren privaten Verkäufen addieren. Aus der geplanten privaten Vermögensverwaltung wird dann ein Gewerbebetrieb mit Gewerbesteuer und ohne Spekulationsfrist. Diese Grenze sollten Sie vor jedem Verkauf mit Ihrem Steuerberater durchgehen.
 
@@ -85,7 +85,7 @@ Eine Warnung gehört an diese Stelle: Verkauft die Gesellschaft innerhalb von f�
 
 ### Grunderwerbsteuer beim Einbringen und Übertragen
 
-In Rheinland-Pfalz beträgt die Grunderwerbsteuer 5,0 Prozent des Kaufpreises. Kauft eine GbR eine Immobilie von einem Dritten, fällt sie ganz normal an, eine Gesellschaft spart hier nichts. Die Details zur Berechnung finden Sie im Ratgeber [Grunderwerbsteuer in Rheinland-Pfalz](/grunderwerbsteuer-rheinland-pfalz).
+In Rheinland-Pfalz beträgt die Grunderwerbsteuer 5,0 Prozent des Kaufpreises. Kauft eine GbR eine Immobilie von einem Dritten, fällt sie ganz normal an, eine Gesellschaft spart hier nichts. Die Details zur Berechnung finden Sie im Ratgeber [Grunderwerbsteuer in Rheinland-Pfalz](/ratgeber/grunderwerbsteuer-rheinland-pfalz).
 
 Interessant wird es bei Übertragungen zwischen der Gesellschaft und ihren Gesellschaftern. Bringt ein Eigentümer sein Grundstück in eine Gesellschaft ein, an der er selbst beteiligt ist, bleibt der Vorgang nach § 5 GrEStG in Höhe seiner Beteiligungsquote steuerfrei. Umgekehrt greift § 6 GrEStG, wenn ein Grundstück von der Gesellschaft zurück an einen Gesellschafter geht. Voraussetzung sind Haltefristen von jeweils zehn Jahren, die vor und nach dem Vorgang laufen. Wer innerhalb dieser Frist Anteile verschiebt, verliert die Begünstigung rückwirkend.
 
@@ -120,7 +120,7 @@ Die Ratgeber im Netz zählen gern die Vorteile auf. Aus der Beratung heraus sind
 3. **Gesellschaftsvertrag aufsetzen.** Mindestens sollten Name, Sitz, Zweck, Einlagen, Geschäftsführung, Beschlussfassung, Ergebnisverteilung, Kündigung, Abfindung und die Nachfolge im Todesfall geregelt sein. Enthält der Vertrag die Verpflichtung, ein Grundstück zu übertragen, braucht er notarielle Beurkundung nach § 311b BGB.
 4. **Anmeldung zum Gesellschaftsregister.** Alle Gesellschafter melden gemeinsam an, der Notar beglaubigt und reicht elektronisch beim Amtsgericht ein.
 5. **Transparenzregister-Meldung.** Direkt nach der Eintragung, ohne Übergangsfrist.
-6. **Konto, Steuernummer, Grundbuch.** Ein eigenes Gesellschaftskonto einrichten, die Gesellschaft beim Finanzamt anmelden und den Grundbucheintrag über den Notar veranlassen. Beim Kauf läuft das zusammen mit dem [Kaufvertrag](/kaufvertrag-immobilie) über denselben Notartermin.
+6. **Konto, Steuernummer, Grundbuch.** Ein eigenes Gesellschaftskonto einrichten, die Gesellschaft beim Finanzamt anmelden und den Grundbucheintrag über den Notar veranlassen. Beim Kauf läuft das zusammen mit dem Kaufvertrag über denselben Notartermin.
 
 Von der ersten Besprechung bis zur eingetragenen eGbR vergehen erfahrungsgemäß vier bis acht Wochen, abhängig von der Auslastung des Registergerichts.
 
@@ -130,7 +130,7 @@ Für den gemeinsamen Kauf von zwei Personen ohne besondere Konstellation reicht 
 
 Die **vermögensverwaltende GmbH** wird ab einer bestimmten Größenordnung interessant, weil laufende Mieterträge dort niedriger besteuert werden können und die Haftung auf das Gesellschaftsvermögen beschränkt ist. Dem stehen Stammkapital, Bilanzierungspflicht, Jahresabschluss und höhere laufende Kosten gegenüber. Diese Rechnung geht erst bei einem größeren Portfolio auf und gehört auf den Tisch eines Steuerberaters, nicht in einen Blogartikel.
 
-Aus Sicht eines Sprengnetter-zertifizierten Sachverständigen kommt ein Hinweis dazu, der unabhängig von der Rechtsform gilt: Jede dieser Gestaltungen setzt voraus, dass Sie den Wert Ihrer Immobilien realistisch kennen. Wer Anteile überträgt, Abfindungen regelt oder Freibeträge ausschöpfen will, braucht eine belastbare Zahl. Wie diese zustande kommt, erklärt der Beitrag [Wertermittlung Haus](/wertermittlung-haus).
+Aus Sicht eines Sprengnetter-zertifizierten Sachverständigen kommt ein Hinweis dazu, der unabhängig von der Rechtsform gilt: Jede dieser Gestaltungen setzt voraus, dass Sie den Wert Ihrer Immobilien realistisch kennen. Wer Anteile überträgt, Abfindungen regelt oder Freibeträge ausschöpfen will, braucht eine belastbare Zahl. Wie diese zustande kommt, erklärt der Beitrag [Wertermittlung Haus](/ratgeber/wertermittlung-haus).
 
 ## Häufige Fragen zur Immobilien-GbR
 
@@ -155,7 +155,7 @@ Die Rechtsform entscheidet nicht darüber, ob eine Immobilie ein gutes Investmen
 
 Mein Anspruch dabei ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, wenn eine Gestaltung in Ihrem Fall nur Aufwand verursacht, und ich sage es auch, wenn sich der Aufwand lohnt.
 
-Wenn Sie überlegen, Immobilien im Hochwald, im Raum Trier oder an der Mosel in einer Gesellschaft zu bündeln, sprechen Sie mich an. Ich ordne Ihre Situation aus Marktsicht ein, sage Ihnen, welche Werte im Raum stehen, und bringe Sie mit einem Steuerberater und einem Notar zusammen, die den Rest verbindlich klären. Den Marktwert Ihrer Immobilie können Sie über die [kostenlose Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) anfragen, für ein persönliches Gespräch erreichen Sie mich über die [Kontaktseite](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder telefonisch unter 06503 9523963.
+Wenn Sie überlegen, Immobilien im Hochwald, im Raum Trier oder an der Mosel in einer Gesellschaft zu bündeln, sprechen Sie mich an. Ich ordne Ihre Situation aus Marktsicht ein, sage Ihnen, welche Werte im Raum stehen, und bringe Sie mit einem Steuerberater und einem Notar zusammen, die den Rest verbindlich klären. Den Marktwert Ihrer Immobilie können Sie über die [kostenlose Wertermittlung](/bewerten) anfragen, für ein persönliches Gespräch erreichen Sie mich über die [Kontaktseite](/kontakt) oder telefonisch unter 06503 9523963.
 
 
 <!--

@@ -117,15 +117,15 @@ Ja, oft sogar. Nur eben nicht zwingend über den Teilverkauf. Der Vollverkauf mi
 
 Wenn Sie überlegen, Ihr Haus teilzuverkaufen, sprechen Sie mit jemandem, der nichts an einem Teilverkauf verdient. Ich verkaufe keine Teilkauf-Verträge. Ich helfe Ihnen, die für Sie passende Lösung zu finden, ob das nun ein klassischer Verkauf, ein Verkauf mit Nießbrauch, eine Leibrente oder im Einzelfall doch ein seriöser Teilverkauf ist.
 
-Grundlage jeder Entscheidung ist eine ehrliche Bewertung Ihres Hauses. Diese mache ich für Eigentümer im Hochwald, in Trier, Saarburg, an der Mosel und in der Eifel kostenfrei und unverbindlich. Vereinbaren Sie gern ein [Erstgespräch über unsere Kontaktseite](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder starten Sie direkt mit der [kostenlosen Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten).
+Grundlage jeder Entscheidung ist eine ehrliche Bewertung Ihres Hauses. Diese mache ich für Eigentümer im Hochwald, in Trier, Saarburg, an der Mosel und in der Eifel kostenfrei und unverbindlich. Vereinbaren Sie gern ein [Erstgespräch über unsere Kontaktseite](/kontakt) oder starten Sie direkt mit der [kostenlosen Wertermittlung](/bewerten).
 
 ---
 
 **Weiterlesen:**
 - [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](#/blog/immobilien-trier)
 - [Vermietete Wohnung verkaufen: Mieter, Preis und Steuer](#/blog/vermietete-wohnung-verkaufen)
-- [Kostenlose Immobilienbewertung](https://mezzarano-wuestenrot-immobilien.de/bewerten)
-- [Kontakt und Beratung](https://mezzarano-wuestenrot-immobilien.de/kontakt)
+- [Kostenlose Immobilienbewertung](/bewerten)
+- [Kontakt und Beratung](/kontakt)
 
 ---
 

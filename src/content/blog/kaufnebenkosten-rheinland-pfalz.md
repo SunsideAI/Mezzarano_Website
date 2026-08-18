@@ -47,7 +47,7 @@ Für die **Notar- und Grundbuchkosten** zusammen sollten Sie mit 1,5 bis 2,0 Pro
 
 Vermittelt ein Makler die Immobilie, fällt eine Provision an. Seit dem 23. Dezember 2020 gilt bei Wohnimmobilien, die an Verbraucher verkauft werden, die gesetzliche Teilung der Provision (§ 656c-d BGB): Käufer und Verkäufer tragen jeweils die Hälfte. Im Raum Trier sind je nach Marktsegment zwei Sätze üblich, nämlich 3,57 Prozent je Seite (7,14 Prozent gesamt, inklusive Mehrwertsteuer) oder 2,975 Prozent je Seite (5,95 Prozent gesamt). Für Sie als Käufer bedeutet das also rund 2,975 oder 3,57 Prozent des Kaufpreises.
 
-Was genau hinter dieser Provision steht und warum sie sich bei einem sauber begleiteten Verkauf rechnet, ist ein eigenes Thema [Was kostet ein Immobilienmakler in Rheinland-Pfalz?](/was-kostet-immobilienmakler-rheinland-pfalz/). Hier zählt nur: Rechnen Sie die Käuferseite der Provision in Ihr Budget ein, sobald ein Makler im Spiel ist.
+Was genau hinter dieser Provision steht und warum sie sich bei einem sauber begleiteten Verkauf rechnet, ist ein eigenes Thema [Was kostet ein Immobilienmakler in Rheinland-Pfalz?](/ratgeber/was-kostet-immobilienmakler-rheinland-pfalz). Hier zählt nur: Rechnen Sie die Käuferseite der Provision in Ihr Budget ein, sobald ein Makler im Spiel ist.
 
 ## Rechenbeispiel: Kaufnebenkosten für ein Haus im Raum Trier
 
@@ -62,7 +62,7 @@ Nehmen wir ein Einfamilienhaus für **320.000 Euro**, einen realistischen Wert f
 | Maklerprovision (Käuferseite) | 3,57 % | 11.424 € |
 | **Gesamt mit Makler** | **ca. 10,4 %** | **33.184 €** |
 
-Ohne Makler landen Sie bei rund 21.760 Euro, mit Makler bei gut 33.000 Euro. Das ist Geld, das zusätzlich zum Kaufpreis bereitstehen muss. Wenn Sie eine konkrete Zahl für Ihr Wunschobjekt brauchen, hilft eine saubere Wertermittlung als Ausgangspunkt. Wie die drei gängigen Verfahren funktionieren, habe ich an anderer Stelle erklärt [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/wertermittlung-haus/).
+Ohne Makler landen Sie bei rund 21.760 Euro, mit Makler bei gut 33.000 Euro. Das ist Geld, das zusätzlich zum Kaufpreis bereitstehen muss. Wenn Sie eine konkrete Zahl für Ihr Wunschobjekt brauchen, hilft eine saubere Wertermittlung als Ausgangspunkt. Wie die drei gängigen Verfahren funktionieren, habe ich an anderer Stelle erklärt [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/ratgeber/wertermittlung-haus).
 
 ## Wo Sie wirklich sparen können, und wo nicht
 
@@ -88,7 +88,7 @@ Letztes Jahr hatte ich einen Fall in Saarburg, der das gut zeigt: Die Käufer ha
 
 ## Luxemburg-Pendler: Nebenkosten und Eigenkapital
 
-Im Raum Saarburg, Konz und Trier arbeitet ein großer Teil der Käufer in Luxemburg. Das Einkommen ist oft komfortabel, die Finanzierung läuft über deutsche oder luxemburgische Banken. Wichtig ist auch hier: Die Kaufnebenkosten werden in der Regel nicht mitfinanziert. Banken beleihen den Immobilienwert, nicht die Steuer und nicht die Provision. Wer mit Luxemburger Gehalt kalkuliert, sollte die 7 bis 11 Prozent als echtes Eigenkapital bereithalten. Mehr zum Kauf in dieser grenznahen Lage finden Sie in meinem Ratgeber [Haus kaufen in Saarburg: Preise, Lagen, Tipps 2026](/haus-kaufen-saarburg/), und einen Überblick über das Trierer Preisniveau gibt [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/immobilien-trier/).
+Im Raum Saarburg, Konz und Trier arbeitet ein großer Teil der Käufer in Luxemburg. Das Einkommen ist oft komfortabel, die Finanzierung läuft über deutsche oder luxemburgische Banken. Wichtig ist auch hier: Die Kaufnebenkosten werden in der Regel nicht mitfinanziert. Banken beleihen den Immobilienwert, nicht die Steuer und nicht die Provision. Wer mit Luxemburger Gehalt kalkuliert, sollte die 7 bis 11 Prozent als echtes Eigenkapital bereithalten. Mehr zum Kauf in dieser grenznahen Lage finden Sie in meinem Ratgeber [Haus kaufen in Saarburg: Preise, Lagen, Tipps 2026](/ratgeber/haus-kaufen-saarburg), und einen Überblick über das Trierer Preisniveau gibt [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/ratgeber/immobilien-trier).
 
 ## Häufige Fragen zu Kaufnebenkosten in Rheinland-Pfalz
 
@@ -109,7 +109,7 @@ Bei Notar und Grundbuch nicht, die Gebühren sind im GNotKG bundeseinheitlich ge
 
 ## Ihr nächster Schritt
 
-Die Kaufnebenkosten sind planbar, sobald Sie den Kaufpreis kennen. Und der beginnt mit einer realistischen Einschätzung des Objekts. Wenn Sie wissen möchten, was eine Immobilie im Raum Hermeskeil, Trier oder an der Mosel tatsächlich wert ist und welche Nebenkosten konkret auf Sie zukommen, melden Sie sich gern. Eine erste Marktwerteinschätzung biete ich kostenlos an: [Immobilie bewerten lassen](/bewerten/) oder direkt über die [Kontaktseite](/kontakt/). Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Sache ist — persönlich, nicht über ein Callcenter.
+Die Kaufnebenkosten sind planbar, sobald Sie den Kaufpreis kennen. Und der beginnt mit einer realistischen Einschätzung des Objekts. Wenn Sie wissen möchten, was eine Immobilie im Raum Hermeskeil, Trier oder an der Mosel tatsächlich wert ist und welche Nebenkosten konkret auf Sie zukommen, melden Sie sich gern. Eine erste Marktwerteinschätzung biete ich kostenlos an: [Immobilie bewerten lassen](/bewerten) oder direkt über die [Kontaktseite](/kontakt). Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Sache ist — persönlich, nicht über ein Callcenter.
 
 ---
 

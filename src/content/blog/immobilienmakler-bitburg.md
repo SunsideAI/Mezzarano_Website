@@ -114,9 +114,9 @@ Wichtiger als die Adresse ist die tatsächliche Kenntnis Ihres konkreten Mikrost
 
 Wenn Sie überlegen, Ihre Immobilie in Bitburg oder im Eifelkreis zu verkaufen, ist der einfachste erste Schritt eine kostenfreie Marktwerteinschätzung. Sie geben mir die wichtigsten Daten, ich melde mich mit einer ersten fundierten Einordnung zurück. Sie legen sich dabei auf nichts fest.
 
-- **Kostenfreie Bewertung anfragen:** [mezzarano-wuestenrot-immobilien.de/bewerten](https://mezzarano-wuestenrot-immobilien.de/bewerten)
-- **Persönliches Gespräch vereinbaren:** [mezzarano-wuestenrot-immobilien.de/kontakt](https://mezzarano-wuestenrot-immobilien.de/kontakt)
-- **Aktuelle Angebote ansehen:** [mezzarano-wuestenrot-immobilien.de/immobilien](https://mezzarano-wuestenrot-immobilien.de/immobilien)
+- **Kostenfreie Bewertung anfragen:** [mezzarano-wuestenrot-immobilien.de/bewerten](/bewerten)
+- **Persönliches Gespräch vereinbaren:** [mezzarano-wuestenrot-immobilien.de/kontakt](/kontakt)
+- **Aktuelle Angebote ansehen:** [mezzarano-wuestenrot-immobilien.de/immobilien](/immobilien)
 - **Telefon:** 06503 9523963
 
 Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Sache ist — auch dann, wenn das bedeutet, dass ein Verkauf gerade nicht der richtige Zeitpunkt ist.

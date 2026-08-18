@@ -25,7 +25,7 @@ Die Zahlen sind eindeutig. 2024 pendelten allein aus dem Landkreis Trier-Saarbur
 
 Der Grund ist simpel: In Luxemburg lässt sich gut verdienen, dort wohnen aber kostet ein Vermögen. Wer auf der deutschen Seite kauft, bekommt für sein Geld deutlich mehr Quadratmeter, Grundstück und Ruhe, bei einem Arbeitsweg, der je nach Lage zwischen 20 und 50 Minuten liegt. Diese Rechnung geht für viele auf, und genau deshalb ist die Nachfrage in den grenznahen Orten so hoch.
 
-Für Sie als Käufer bedeutet das zweierlei. Die Auswahl ist hart umkämpft, gerade direkt an der Grenze. Gleichzeitig kaufen Sie in einer Region mit stabiler Wertentwicklung, weil der Pendlerstrom nicht abreißt. Wie sich der Markt in der Stadt selbst darstellt, habe ich ausführlich im [Marktüberblick Immobilien Trier](/immobilien-trier/) beschrieben.
+Für Sie als Käufer bedeutet das zweierlei. Die Auswahl ist hart umkämpft, gerade direkt an der Grenze. Gleichzeitig kaufen Sie in einer Region mit stabiler Wertentwicklung, weil der Pendlerstrom nicht abreißt. Wie sich der Markt in der Stadt selbst darstellt, habe ich ausführlich im [Marktüberblick Immobilien Trier](/ratgeber/immobilien-trier) beschrieben.
 
 ## Baufinanzierung als Grenzgänger: mit Lux-Gehalt zur deutschen Finanzierung
 
@@ -70,11 +70,11 @@ Die Frage nach der besten Lage beantworte ich immer gleich: Es gibt keine beste 
 
 **Igel, Wasserbillig-Achse und Nittel.** Direkt an der Grenze. Hier wohnen Sie am dichtesten am Arbeitsplatz, mit der Brücke bei Wasserbillig und der Bahnverbindung als Alternative zum Auto. Der Preis spiegelt diese Nähe. Wer den Bahnhof Wasserbillig nutzt, umgeht den morgendlichen Stau auf der Brücke, der real ist und an manchen Tagen Nerven kostet.
 
-**Saarburg.** Rund 25 Kilometer von der Grenze, mit eigenem Charme und etwas mehr Spielraum beim Preis als die grenznahen Orte. Was hier wichtig ist, habe ich gesondert im Ratgeber [Haus kaufen in Saarburg](/haus-kaufen-saarburg/) aufgeschrieben.
+**Saarburg.** Rund 25 Kilometer von der Grenze, mit eigenem Charme und etwas mehr Spielraum beim Preis als die grenznahen Orte. Was hier wichtig ist, habe ich gesondert im Ratgeber [Haus kaufen in Saarburg](/ratgeber/haus-kaufen-saarburg) aufgeschrieben.
 
 **Schweich und untere Mosel.** Gute Anbindung über die A1 und A64, beliebt bei Trier- und Luxemburg-Pendlern zugleich, mit dem Speckgürtel-Effekt von Trier.
 
-**Hermeskeil und der Hochwald.** Die ehrliche Alternative für alle, denen Platz und Preis wichtiger sind als die letzten zehn Minuten Fahrtzeit. Sie pendeln etwas länger, meist 45 bis 50 Minuten, kaufen dafür aber spürbar günstiger und ländlicher. Worauf es im Hochwald ankommt, lesen Sie im Beitrag [Haus kaufen in Hermeskeil](/haus-kaufen-hermeskeil/).
+**Hermeskeil und der Hochwald.** Die ehrliche Alternative für alle, denen Platz und Preis wichtiger sind als die letzten zehn Minuten Fahrtzeit. Sie pendeln etwas länger, meist 45 bis 50 Minuten, kaufen dafür aber spürbar günstiger und ländlicher. Worauf es im Hochwald ankommt, lesen Sie im Beitrag [Haus kaufen in Hermeskeil](/ratgeber/haus-kaufen-hermeskeil).
 
 Mein Rat aus 16 Jahren in der Region: Rechnen Sie den Arbeitsweg ehrlich zur Hauptverkehrszeit, nicht sonntags. Die A64 zur Grenze und die Moselbrücken sehen morgens anders aus als auf der Landkarte. Eine Lage zehn Minuten weiter draußen kostet oft deutlich weniger und fährt sich kaum schlechter.
 
@@ -89,7 +89,7 @@ Damit der Kauf strukturiert abläuft, hat sich diese Reihenfolge bewährt:
 5. **Steuerlich absichern.** Vor der Unterschrift kurz mit dem Steuerberater die Homeoffice- und Vermietungsfragen klären.
 6. **Notartermin und Kaufabwicklung.** Mit fertiger Finanzierung und geprüftem Objekt steht dem Abschluss nichts im Weg.
 
-Aktuelle Angebote im Raum Trier, Saarburg und Hochwald finden Sie unter [aktuelle Immobilienangebote](/immobilien/).
+Aktuelle Angebote im Raum Trier, Saarburg und Hochwald finden Sie unter [aktuelle Immobilienangebote](/immobilien).
 
 ## Häufige Fragen
 
@@ -112,7 +112,7 @@ Das hängt von Ihrem Arbeitsweg und Budget ab. Grenznahe Orte wie Konz, Igel ode
 
 Ehrlichkeit hat ein Zuhause. Als Berater vor Ort begleite ich Sie persönlich, von der ersten Einschätzung bis zum Notartermin, und vermittle bei Bedarf den richtigen Finanzierungspartner für Grenzgänger. Wenn Sie wissen möchten, was Ihr Wunschort kostet oder was Ihre jetzige Immobilie wert ist, melden Sie sich gern.
 
-Eine erste Einschätzung erhalten Sie kostenlos über meine [kostenlose Wertermittlung](/bewerten/) oder direkt über die [Kontaktseite](/kontakt/). Telefonisch erreichen Sie mich unter 06503 9523963.
+Eine erste Einschätzung erhalten Sie kostenlos über meine [kostenlose Wertermittlung](/bewerten) oder direkt über die [Kontaktseite](/kontakt). Telefonisch erreichen Sie mich unter 06503 9523963.
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil, zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. Für seine Beratung wurde er 2025 von Focus Money und vom Handelsblatt ausgezeichnet.*
 

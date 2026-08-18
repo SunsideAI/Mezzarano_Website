@@ -49,7 +49,7 @@ Ich nutze hier die jüngsten verfügbaren Marktdaten aus den großen Preisportal
 
 Die Preise haben sich nach der starken Korrektur 2023 und 2024 stabilisiert. Wer 2021 zum Höchstpreis verkauft hat, hatte Glück; wer 2024 zum Tiefstpreis gekauft hat, ebenfalls. 2026 sehen wir in Trier einen Markt, der wieder funktioniert: mit realistischen Preisvorstellungen auf beiden Seiten und Vermarktungszeiten, die wieder kalkulierbar sind.
 
-Wichtig: Diese Zahlen sind Durchschnittswerte. Für eine belastbare Einschätzung Ihres konkreten Objekts braucht es eine individuelle Bewertung. Genau dafür biete ich eine [kostenlose Marktwerteinschätzung](https://mezzarano-wuestenrot-immobilien.de/bewerten) an.
+Wichtig: Diese Zahlen sind Durchschnittswerte. Für eine belastbare Einschätzung Ihres konkreten Objekts braucht es eine individuelle Bewertung. Genau dafür biete ich eine [kostenlose Marktwerteinschätzung](/bewerten) an.
 
 ## Die Trierer Stadtteile: Wo Sie was bekommen
 
@@ -103,7 +103,7 @@ Verkaufen Sie ein Haus oder eine Wohnung in Trier, sind drei Punkte wichtiger al
 
 **Die Vermarktung entscheidet über den Preis.** Schlechte Fotos, schwammige Exposés und uneinheitliche Portalauftritte kosten am Ende mehrere zehntausend Euro. Eine professionelle Aufbereitung mit guten Fotos, lesbaren Grundrissen, sauberer Beschreibung und gezielter Zielgruppenansprache ist keine Kür, sondern Voraussetzung für einen marktgerechten Preis.
 
-Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Sache ist, und begleite Sie persönlich. Wer eine Einschätzung möchte, kann mich direkt [kontaktieren](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder die [kostenlose Marktwerteinschätzung](https://mezzarano-wuestenrot-immobilien.de/bewerten) starten.
+Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Sache ist, und begleite Sie persönlich. Wer eine Einschätzung möchte, kann mich direkt [kontaktieren](/kontakt) oder die [kostenlose Marktwerteinschätzung](/bewerten) starten.
 
 ## Was Sie als Käufer in Trier wissen sollten
 
@@ -156,8 +156,8 @@ Wenn Sie konkret werden möchten, ob für Verkauf, Kauf oder einfach eine erste 
 
 - **Telefon:** 06503 9523963
 - **E-Mail:** sandro.mezzarano@wuestenrot.de
-- **Kostenlose Marktwerteinschätzung:** [zur Bewertung](https://mezzarano-wuestenrot-immobilien.de/bewerten)
-- **Aktuelle Angebote im Raum Trier:** [Immobilien-Übersicht](https://mezzarano-wuestenrot-immobilien.de/immobilien)
-- **Persönliches Beratungsgespräch:** [Kontakt aufnehmen](https://mezzarano-wuestenrot-immobilien.de/kontakt)
+- **Kostenlose Marktwerteinschätzung:** [zur Bewertung](/bewerten)
+- **Aktuelle Angebote im Raum Trier:** [Immobilien-Übersicht](/immobilien)
+- **Persönliches Beratungsgespräch:** [Kontakt aufnehmen](/kontakt)
 
 Ich begleite Sie persönlich, von der ersten Einschätzung bis zum Notartermin. Kein Callcenter, keine Standardprozesse. Ehrlichkeit hat ein Zuhause.

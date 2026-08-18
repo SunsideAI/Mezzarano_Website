@@ -18,7 +18,7 @@ featured: false
 
 Wohnen in Trier heißt fast immer: erst den richtigen Stadtteil finden, dann die Wohnung. Wer Familie hat und Wert auf kurze Wege zu Kita und Schule legt, ist auf der Höhe in Tarforst, Heiligkreuz oder am Petrisberg gut aufgehoben. Wer das urbane Leben sucht, bleibt in der Innenstadt oder in Trier-Süd. Und wer nach Luxemburg pendelt, denkt die Fahrzeit gleich mit. Trier hat 19 Ortsbezirke, und sie unterscheiden sich stärker, als die meisten von außen vermuten.
 
-Ich bin Sandro Mezzarano, seit über 16 Jahren als Immobilienberater im Raum Trier und im Hochwald unterwegs. In diesem Ratgeber geht es nicht um Quadratmeterpreise, sondern darum, wie es sich in den einzelnen Lagen tatsächlich lebt. Was Immobilien in den jeweiligen Stadtteilen kosten, lesen Sie besser im Marktüberblick [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/immobilien-trier/).
+Ich bin Sandro Mezzarano, seit über 16 Jahren als Immobilienberater im Raum Trier und im Hochwald unterwegs. In diesem Ratgeber geht es nicht um Quadratmeterpreise, sondern darum, wie es sich in den einzelnen Lagen tatsächlich lebt. Was Immobilien in den jeweiligen Stadtteilen kosten, lesen Sie besser im Marktüberblick [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/ratgeber/immobilien-trier).
 
 ## Wohnen in Trier: Was die Stadt als Wohnort ausmacht
 
@@ -72,7 +72,7 @@ Die Nahversorgung ist in den meisten Lagen gut, am dichtesten in Innenstadt, Hei
 
 Für viele meiner Kunden ist das die wichtigste Frage überhaupt, denn ein erheblicher Teil arbeitet in Luxemburg. Die Eckdaten: Von Trier bis Luxemburg-Stadt sind es rund 48 Kilometer, mit dem Auto über die A64 schaffen Sie das bei freier Fahrt in etwa 30 Minuten, mit der Bahn ab Hauptbahnhof in rund 47 Minuten (Quelle: Verkehrsverbund / Rome2rio). Das Wort „bei freier Fahrt" ist entscheidend, denn zu den Stoßzeiten staut sich der Grenzverkehr regelmäßig.
 
-Für Pendler heißt das praktisch: Wer auf das Auto setzt, fährt aus den westlichen und südlichen Lagen (Euren, Zewen, Trier-West, Süd) am schnellsten Richtung Grenze. Wer die Bahn nutzt, wohnt idealerweise so, dass der Hauptbahnhof gut erreichbar ist, also eher zentrumsnah. Ein Detail, das gern vergessen wird: In Luxemburg ist der öffentliche Nahverkehr kostenlos. Wer es bis über die Grenze zu einem Park-and-Ride schafft, spart sich Stau und Parkplatzsuche in der Stadt. Zu den steuerlichen Seiten des Pendelns, etwa dem Doppelbesteuerungsabkommen, sprechen Sie am besten mit einem Steuerberater. Mehr zu den Besonderheiten beim Immobilienkauf als Grenzgänger finden Sie demnächst in einem eigenen Ratgeber: [Immobilie kaufen im Raum Trier als Luxemburg-Pendler](/immobilie-kaufen-luxemburg-pendler/).
+Für Pendler heißt das praktisch: Wer auf das Auto setzt, fährt aus den westlichen und südlichen Lagen (Euren, Zewen, Trier-West, Süd) am schnellsten Richtung Grenze. Wer die Bahn nutzt, wohnt idealerweise so, dass der Hauptbahnhof gut erreichbar ist, also eher zentrumsnah. Ein Detail, das gern vergessen wird: In Luxemburg ist der öffentliche Nahverkehr kostenlos. Wer es bis über die Grenze zu einem Park-and-Ride schafft, spart sich Stau und Parkplatzsuche in der Stadt. Zu den steuerlichen Seiten des Pendelns, etwa dem Doppelbesteuerungsabkommen, sprechen Sie am besten mit einem Steuerberater. Mehr zu den Besonderheiten beim Immobilienkauf als Grenzgänger finden Sie demnächst in einem eigenen Ratgeber: [Immobilie kaufen im Raum Trier als Luxemburg-Pendler](/ratgeber/immobilie-kaufen-luxemburg-pendler).
 
 ## Welcher Stadtteil passt zu welchem Lebensentwurf?
 
@@ -86,7 +86,7 @@ Damit Sie eine schnelle Orientierung haben, hier meine ehrliche Zuordnung aus de
 
 Eine Geschichte aus dem letzten Jahr zeigt das gut: Ein junges Paar, beide teilweise in Luxemburg tätig, war fest auf eine Altbauwohnung mitten in der Innenstadt eingestellt, des Flairs wegen. Beim genaueren Hinsehen passte der Alltag nicht: kein Stellplatz, kein Garten, und mit dem ersten Kind wurde der Kita-Platz zum Thema. Am Ende sind die beiden in Heiligkreuz gelandet, mit kleinem Garten und Betreuung um die Ecke, und im Rückblick sehr froh darüber. Genau das meine ich, wenn ich sage: erst der Stadtteil, dann die Wohnung.
 
-Wenn Sie wissen möchten, was eine Immobilie in Ihrer Wunschlage realistisch wert ist, hilft eine fundierte Einschätzung weiter: [Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/immobilienbewertung-trier/). Die aktuelle Preisentwicklung nach Stadtteilen vertiefe ich im Marktbericht [Immobilienpreise in Trier](/immobilienpreise-trier/).
+Wenn Sie wissen möchten, was eine Immobilie in Ihrer Wunschlage realistisch wert ist, hilft eine fundierte Einschätzung weiter: [Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/ratgeber/immobilienbewertung-trier). Die aktuelle Preisentwicklung nach Stadtteilen vertiefe ich im Marktbericht [Immobilienpreise in Trier](/ratgeber/immobilienpreise-trier).
 
 ## Häufige Fragen zum Wohnen in Trier
 
@@ -107,7 +107,7 @@ Diese Stadtteile sind ruhiger und oft günstiger, haben aber teils das Thema Hoc
 
 ## Sie überlegen, in Trier zu wohnen?
 
-Ob Kauf oder Verkauf: Ich kenne die Trierer Stadtteile aus 16 Jahren Praxis und sage Ihnen ehrlich, welche Lage zu Ihren Plänen passt, ohne Verkaufsdruck. Schauen Sie sich gern meine [aktuellen Angebote](/immobilien/) an oder [nehmen Sie Kontakt auf](/kontakt/). Eine erste Markteinschätzung Ihrer Immobilie erhalten Sie [kostenlos über die Wertermittlung](/bewerten/).
+Ob Kauf oder Verkauf: Ich kenne die Trierer Stadtteile aus 16 Jahren Praxis und sage Ihnen ehrlich, welche Lage zu Ihren Plänen passt, ohne Verkaufsdruck. Schauen Sie sich gern meine [aktuellen Angebote](/immobilien) an oder [nehmen Sie Kontakt auf](/kontakt). Eine erste Markteinschätzung Ihrer Immobilie erhalten Sie [kostenlos über die Wertermittlung](/bewerten).
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil, zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. Für seine Beratung wurde er 2025 von Focus Money (höchste Beratungskompetenz) und vom Handelsblatt (exzellente Kundenberatung) ausgezeichnet. Sein Anspruch: Ehrlichkeit hat ein Zuhause.*
 

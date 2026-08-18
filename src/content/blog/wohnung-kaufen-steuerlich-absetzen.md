@@ -40,7 +40,7 @@ Beim Kauf selbst geht steuerlich nichts. Bei dem, was Sie danach am Objekt tun, 
 
 Dazu kommt ein Sonderfall, auf den ich weiter unten eigens eingehe: Bei einem denkmalgeschützten Objekt eröffnet § 10f EStG auch Selbstnutzern eine echte Abschreibung.
 
-Was dagegen endgültig nicht absetzbar ist, wenn Sie selbst einziehen: der Kaufpreis, die Grunderwerbsteuer von 5,0 Prozent in Rheinland-Pfalz, Notar- und Grundbuchkosten, die Maklerprovision und die Zinsen Ihrer Finanzierung. Wie hoch diese Posten in unserer Region zusammen ausfallen, habe ich in den [Kaufnebenkosten in Rheinland-Pfalz](/kaufnebenkosten-rheinland-pfalz/) im Einzelnen aufgeschlüsselt. Steuerlich verpuffen sie beim Selbstnutzer, sie erhöhen aber Ihre Anschaffungskosten und wirken damit später bei einem etwaigen Verkauf.
+Was dagegen endgültig nicht absetzbar ist, wenn Sie selbst einziehen: der Kaufpreis, die Grunderwerbsteuer von 5,0 Prozent in Rheinland-Pfalz, Notar- und Grundbuchkosten, die Maklerprovision und die Zinsen Ihrer Finanzierung. Wie hoch diese Posten in unserer Region zusammen ausfallen, habe ich in den [Kaufnebenkosten in Rheinland-Pfalz](/ratgeber/kaufnebenkosten-rheinland-pfalz) im Einzelnen aufgeschlüsselt. Steuerlich verpuffen sie beim Selbstnutzer, sie erhöhen aber Ihre Anschaffungskosten und wirken damit später bei einem etwaigen Verkauf.
 
 ## Bei Vermietung landen Ihre Kosten in zwei verschiedenen Töpfen
 
@@ -85,7 +85,7 @@ Zusätzlich existiert die Sonderabschreibung für den Mietwohnungsneubau nach §
 
 Jetzt zu dem Punkt, den ich in kaum einem Ratgeber sauber erklärt finde und der in unserer Region echte Beträge bewegt. Abschreiben dürfen Sie nur das Gebäude. Grund und Boden verschleißt nach der Logik des Steuerrechts nicht, also gibt es darauf keine Abschreibung. Ihr Kaufpreis muss deshalb aufgeteilt werden: ein Teil auf den Boden, ein Teil auf das Gebäude. Nur der Gebäudeanteil bildet Ihre Abschreibungsbasis, und dieselbe Aufteilung gilt anteilig auch für Grunderwerbsteuer, Notarkosten und Maklerprovision.
 
-Bei einer Eigentumswohnung erwerben Sie einen Miteigentumsanteil am Grundstück. Wie schwer der wiegt, hängt am Bodenrichtwert der Lage. Und der schwankt in unserer Region erheblich. Im Hochwald rund um Hermeskeil liegt der Bodenrichtwert für Wohnbauland bei etwa 55 bis 76 Euro pro Quadratmeter, in Trier-Stadt und in den Toplagen an der unteren Mosel ein Vielfaches davon (Quelle: BORIS-RP, Gutachterausschuss Trier-Saarburg, Stichtag 01.01.2024). Wie Sie den Wert für eine konkrete Adresse selbst abrufen, zeige ich im Ratgeber [Bodenrichtwert in Rheinland-Pfalz](/bodenrichtwert-rheinland-pfalz/).
+Bei einer Eigentumswohnung erwerben Sie einen Miteigentumsanteil am Grundstück. Wie schwer der wiegt, hängt am Bodenrichtwert der Lage. Und der schwankt in unserer Region erheblich. Im Hochwald rund um Hermeskeil liegt der Bodenrichtwert für Wohnbauland bei etwa 55 bis 76 Euro pro Quadratmeter, in Trier-Stadt und in den Toplagen an der unteren Mosel ein Vielfaches davon (Quelle: BORIS-RP, Gutachterausschuss Trier-Saarburg, Stichtag 01.01.2024). Wie Sie den Wert für eine konkrete Adresse selbst abrufen, zeige ich im Ratgeber [Bodenrichtwert in Rheinland-Pfalz](/ratgeber/bodenrichtwert-rheinland-pfalz).
 
 Was das steuerlich bedeutet, zeigt eine Gegenüberstellung. Zwei vermietete Wohnungen, Baujahr 1990, jeweils 250.000 Euro Kaufpreis, in beiden Fällen 2 Prozent lineare AfA:
 
@@ -116,12 +116,12 @@ Der entscheidende Punkt ist das Verfahren, und daran scheitern Vorhaben in der P
 
 Ein Denkfehler, den ich in unserer Grenzregion häufiger sehe als jeden anderen. Abschreibung und Werbungskosten wirken nur, wenn sie gegen deutsche steuerpflichtige Einkünfte laufen können. Wer sein Gehalt in Luxemburg verdient, versteuert es nach dem Doppelbesteuerungsabkommen dort. In Deutschland bleibt dann unter Umständen kaum zu versteuerndes Einkommen übrig, gegen das ein Verlust aus Vermietung wirken könnte.
 
-Das macht den Kauf nicht falsch. Es heißt nur, dass die Steuerersparnis in Ihrer Kalkulation nichts verloren hat und die Rendite allein aus Miete und Wertentwicklung kommen muss. Welche Besonderheiten für Pendler beim Kauf im Raum Trier sonst gelten, habe ich gesondert zusammengestellt: [Immobilie kaufen als Luxemburg-Pendler](/immobilie-kaufen-luxemburg-pendler/). Für diese Konstellation brauchen Sie einen Steuerberater, der das Doppelbesteuerungsabkommen kennt. Das ist keine Standardfrage.
+Das macht den Kauf nicht falsch. Es heißt nur, dass die Steuerersparnis in Ihrer Kalkulation nichts verloren hat und die Rendite allein aus Miete und Wertentwicklung kommen muss. Welche Besonderheiten für Pendler beim Kauf im Raum Trier sonst gelten, habe ich gesondert zusammengestellt: [Immobilie kaufen als Luxemburg-Pendler](/ratgeber/immobilie-kaufen-luxemburg-pendler). Für diese Konstellation brauchen Sie einen Steuerberater, der das Doppelbesteuerungsabkommen kennt. Das ist keine Standardfrage.
 
 ## Häufige Fragen
 
 **Kann ich die Grunderwerbsteuer beim Wohnungskauf absetzen?**
-Bei Eigennutzung nicht. Bei Vermietung gehört sie zu den Anschaffungsnebenkosten und erhöht die Abschreibungsbasis, wirkt also anteilig über die AfA. In Rheinland-Pfalz beträgt sie 5,0 Prozent des Kaufpreises. Was daraus in Summe für Sie folgt, lesen Sie in der [Grunderwerbsteuer in Rheinland-Pfalz](/grunderwerbsteuer-rheinland-pfalz/).
+Bei Eigennutzung nicht. Bei Vermietung gehört sie zu den Anschaffungsnebenkosten und erhöht die Abschreibungsbasis, wirkt also anteilig über die AfA. In Rheinland-Pfalz beträgt sie 5,0 Prozent des Kaufpreises. Was daraus in Summe für Sie folgt, lesen Sie in der [Grunderwerbsteuer in Rheinland-Pfalz](/ratgeber/grunderwerbsteuer-rheinland-pfalz).
 
 **Sind Notarkosten steuerlich absetzbar?**
 Teilweise, und nur bei Vermietung. Der Anteil für die Grundschuld ist sofort abziehbar, der Anteil für Kaufvertrag und Eigentumsumschreibung wirkt über die Abschreibung. Lassen Sie sich die Rechnung aufgeschlüsselt geben.
@@ -130,16 +130,16 @@ Teilweise, und nur bei Vermietung. Der Anteil für die Grundschuld ist sofort ab
 Das lässt sich pauschal nicht sagen, und jede Zahl, die Ihnen ohne Kenntnis Ihrer Verhältnisse genannt wird, ist geraten. Die Wirkung hängt an Ihrem persönlichen Steuersatz, an der Höhe der Abschreibung, an den Zinsen und daran, ob überhaupt ein Verlust entsteht. Bei einer Bestandswohnung für 250.000 Euro liegt die jährliche AfA typischerweise im Bereich von 3.500 bis 4.500 Euro. Was das für Sie bedeutet, rechnet Ihr Steuerberater in wenigen Minuten aus.
 
 **Kann ich als Selbstnutzer die Zinsen meiner Finanzierung absetzen?**
-Nein. Schuldzinsen sind nur abziehbar, wenn sie mit steuerpflichtigen Einkünften zusammenhängen, und die fehlen bei der selbst genutzten Wohnung. Vermieten Sie allerdings einen Teil, wird anteilig nach Fläche aufgeteilt: Bei einem vermieteten Zimmer von 20 Quadratmetern in einer 80-Quadratmeter-Wohnung setzen Sie ein Viertel der Zinsen, der Abschreibung und der laufenden Kosten an. Grundlage ist die korrekt berechnete Fläche, und wie die zu ermitteln ist, erklärt der Ratgeber [Wohnfläche berechnen](/wohnflaeche-berechnen/).
+Nein. Schuldzinsen sind nur abziehbar, wenn sie mit steuerpflichtigen Einkünften zusammenhängen, und die fehlen bei der selbst genutzten Wohnung. Vermieten Sie allerdings einen Teil, wird anteilig nach Fläche aufgeteilt: Bei einem vermieteten Zimmer von 20 Quadratmetern in einer 80-Quadratmeter-Wohnung setzen Sie ein Viertel der Zinsen, der Abschreibung und der laufenden Kosten an. Grundlage ist die korrekt berechnete Fläche, und wie die zu ermitteln ist, erklärt der Ratgeber Wohnfläche berechnen.
 
 **Ändert sich etwas, wenn ich die Wohnung später verkaufe?**
-Ja, und das sollten Sie von Anfang an mitdenken. Bei einem Verkauf innerhalb von zehn Jahren kann der Gewinn nach § 23 EStG steuerpflichtig sein, wobei die bereits genutzte Abschreibung den steuerpflichtigen Gewinn erhöht. Bei Eigennutzung greift eine Ausnahme. Für die Verkaufsseite habe ich das im Ratgeber [Vermietete Wohnung verkaufen](/vermietete-wohnung-verkaufen/) ausgeführt.
+Ja, und das sollten Sie von Anfang an mitdenken. Bei einem Verkauf innerhalb von zehn Jahren kann der Gewinn nach § 23 EStG steuerpflichtig sein, wobei die bereits genutzte Abschreibung den steuerpflichtigen Gewinn erhöht. Bei Eigennutzung greift eine Ausnahme. Für die Verkaufsseite habe ich das im Ratgeber [Vermietete Wohnung verkaufen](/ratgeber/vermietete-wohnung-verkaufen) ausgeführt.
 
 ## Ehrlich rechnen, bevor Sie unterschreiben
 
 Die Steuer ist beim Wohnungskauf ein Faktor, aber sie ist niemals der Grund. Eine Wohnung, die sich nur über die Abschreibung trägt, ist keine gute Investition. Eine mit vernünftiger Lage und realistischem Preis bleibt eine gute, auch wenn der steuerliche Effekt kleiner ausfällt als gehofft. Was Sie brauchen, ist eine Kalkulation ohne Wunschdenken: der richtige Kaufpreis, eine belastbare Mieterwartung und ein Steuerberater, der die konkreten Zahlen einordnet.
 
-Beim ersten Teil helfe ich Ihnen gern. Ich schaue mir an, ob der Preis einer Wohnung im Raum Trier, an der Mosel oder im Hochwald zum Markt passt, welche Miete realistisch erzielbar ist und worauf Sie beim Objekt achten sollten. Für die Finanzierung steht das Netzwerk der Wüstenrot im Hintergrund. Eine erste Einschätzung ist bei mir kostenlos: [Wertermittlung anfordern](/bewerten/) oder direkt [Kontakt aufnehmen](/kontakt/). Aktuelle Angebote finden Sie unter [Immobilien](/immobilien/).
+Beim ersten Teil helfe ich Ihnen gern. Ich schaue mir an, ob der Preis einer Wohnung im Raum Trier, an der Mosel oder im Hochwald zum Markt passt, welche Miete realistisch erzielbar ist und worauf Sie beim Objekt achten sollten. Für die Finanzierung steht das Netzwerk der Wüstenrot im Hintergrund. Eine erste Einschätzung ist bei mir kostenlos: [Wertermittlung anfordern](/bewerten) oder direkt [Kontakt aufnehmen](/kontakt). Aktuelle Angebote finden Sie unter [Immobilien](/immobilien).
 
 Dass mir Focus Money 2025 die höchste Beratungskompetenz bescheinigt hat, freut mich. Wichtiger ist mir, was dahintersteht: Ehrlichkeit hat ein Zuhause. Sie sollen vor dem Notartermin wissen, was Sie erwartet, und nicht danach.
 

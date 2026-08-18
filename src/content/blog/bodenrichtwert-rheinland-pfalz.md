@@ -55,7 +55,7 @@ Bodenrichtwerte schwanken in unserer Region enorm, stärker, als viele Eigentüm
 
 Diese Zahlen sind Orientierungsgrößen, keine festen Preise für Ihr Grundstück. Den exakten, amtlichen Wert für eine bestimmte Adresse liefert immer BORIS-RP. Der landesweite Durchschnitt in Rheinland-Pfalz liegt aktuell bei rund 200 Euro pro Quadratmeter. Diese Zahl zeigt, wie weit der Hochwald nach unten und Trier-Stadt nach oben davon abweichen.
 
-Hermeskeil ist eben nicht Trier, und die Preisentwicklung im Hochwald folgt eigenen Mustern. Wer den Bodenrichtwert seines Grundstücks in Reinsfeld mit dem in Trier-Tarforst vergleicht, vergleicht zwei verschiedene Märkte. Den Trierer Markt mit seinen Stadtteilen habe ich an anderer Stelle ausführlicher beschrieben [Immobilien in Trier](/immobilien-trier/).
+Hermeskeil ist eben nicht Trier, und die Preisentwicklung im Hochwald folgt eigenen Mustern. Wer den Bodenrichtwert seines Grundstücks in Reinsfeld mit dem in Trier-Tarforst vergleicht, vergleicht zwei verschiedene Märkte. Den Trierer Markt mit seinen Stadtteilen habe ich an anderer Stelle ausführlicher beschrieben [Immobilien in Trier](/ratgeber/immobilien-trier).
 
 ## Bodenrichtwert vs. Verkehrswert: warum die Zahl nur der Anfang ist
 
@@ -67,7 +67,7 @@ Aus Sicht eines Sprengnetter-zertifizierten Sachverständigen heißt das: Der Bo
 
 Letztes Jahr hatte ich einen Fall im Hochwald, der das gut zeigt: Zwei Bauplätze in derselben Bodenrichtwertzone, also identischer Bodenrichtwert. Der eine ebenerdig und sofort bebaubar, der andere mit deutlichem Gefälle und einem alten Schuppen, der erst abgerissen werden musste. Am Ende lagen zwischen beiden Grundstücken bei vergleichbarer Fläche mehrere zehntausend Euro. Der Bodenrichtwert war für beide gleich — der erzielbare Preis nicht annähernd. Wer sich allein auf die amtliche Zahl verlassen hätte, hätte entweder Geld verschenkt oder den Verkauf verschleppt.
 
-Genau deshalb ersetzt der Bodenrichtwert keine Bewertung. Er ist ein guter erster Anhaltspunkt, den Sie selbst kostenlos abrufen können. Was Ihr Grundstück oder Ihr Haus wirklich wert ist, ergibt sich erst aus der Betrachtung des Einzelfalls. Welche Verfahren dabei zum Einsatz kommen, erkläre ich gesondert [Wertermittlung Haus: die drei Verfahren](/wertermittlung-haus/) und für die Region speziell [Immobilienbewertung in Trier](/immobilienbewertung-trier/).
+Genau deshalb ersetzt der Bodenrichtwert keine Bewertung. Er ist ein guter erster Anhaltspunkt, den Sie selbst kostenlos abrufen können. Was Ihr Grundstück oder Ihr Haus wirklich wert ist, ergibt sich erst aus der Betrachtung des Einzelfalls. Welche Verfahren dabei zum Einsatz kommen, erkläre ich gesondert [Wertermittlung Haus: die drei Verfahren](/ratgeber/wertermittlung-haus) und für die Region speziell [Immobilienbewertung in Trier](/ratgeber/immobilienbewertung-trier).
 
 ## Wofür Sie den Bodenrichtwert brauchen: Grundsteuer und Erbschaftsteuer
 
@@ -98,7 +98,7 @@ Auch über BORIS-RP beziehungsweise das Geoportal Rheinland-Pfalz. Die Stadt Tri
 
 ## Ihr nächster Schritt
 
-Der Bodenrichtwert ist ein guter Startpunkt: amtlich und in zwei Minuten kostenlos abgerufen. Aber er beantwortet nicht die Frage, die Eigentümer wirklich umtreibt: Was ist meine Immobilie heute am Markt wert? Diese Frage beantworte ich Ihnen mit einer kostenlosen, ehrlichen Ersteinschätzung auf Basis vergleichbarer Verkäufe in Ihrer Lage. Fordern Sie Ihre Wertermittlung an [Kostenlose Wertermittlung](/bewerten/) oder nehmen Sie unverbindlich [Kontakt](/kontakt/) auf. Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause.
+Der Bodenrichtwert ist ein guter Startpunkt: amtlich und in zwei Minuten kostenlos abgerufen. Aber er beantwortet nicht die Frage, die Eigentümer wirklich umtreibt: Was ist meine Immobilie heute am Markt wert? Diese Frage beantworte ich Ihnen mit einer kostenlosen, ehrlichen Ersteinschätzung auf Basis vergleichbarer Verkäufe in Ihrer Lage. Fordern Sie Ihre Wertermittlung an [Kostenlose Wertermittlung](/bewerten) oder nehmen Sie unverbindlich [Kontakt](/kontakt) auf. Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause.
 
 ---
 

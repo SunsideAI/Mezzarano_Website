@@ -53,7 +53,7 @@ Jetzt der Teil, den Sie in den meisten Ratgebern nicht lesen. Ein Einfamilienhau
 
 Anders sieht es in Trier aus, in den Mosel-Toplagen zwischen Schweich und Bernkastel-Kues und bei Objekten mit großem Grundstück oder mehreren Wohneinheiten. Dort lohnt das Rechnen tatsächlich.
 
-Eine Warnung dazu: Der Wert, mit dem das Finanzamt arbeitet, ist nicht Ihr Bauchgefühl und auch nicht der Preis, den Sie am Markt erzielen würden. Das Finanzamt bewertet nach §§ 176 ff. BewG typisiert, je nach Objektart im Vergleichswert-, Ertragswert- oder Sachwertverfahren. Dieser Grundbesitzwert kann deutlich über dem realistischen Marktwert liegen. Nach § 198 BewG dürfen Sie einen niedrigeren Wert nachweisen, in der Regel über ein qualifiziertes Verkehrswertgutachten. Wie das im Erbfall funktioniert, habe ich im Beitrag [INTERNER LINK: "Geerbtes Haus verkaufen: Steuern, Fristen und der richtige Zeitpunkt" -> /geerbtes-haus-verkaufen/] ausführlich beschrieben. Bei einer Schenkung gilt derselbe Mechanismus, nur mit dem Vorteil, dass Sie den Zeitpunkt selbst wählen und die Bewertung vorher klären können.
+Eine Warnung dazu: Der Wert, mit dem das Finanzamt arbeitet, ist nicht Ihr Bauchgefühl und auch nicht der Preis, den Sie am Markt erzielen würden. Das Finanzamt bewertet nach §§ 176 ff. BewG typisiert, je nach Objektart im Vergleichswert-, Ertragswert- oder Sachwertverfahren. Dieser Grundbesitzwert kann deutlich über dem realistischen Marktwert liegen. Nach § 198 BewG dürfen Sie einen niedrigeren Wert nachweisen, in der Regel über ein qualifiziertes Verkehrswertgutachten. Wie das im Erbfall funktioniert, habe ich im Beitrag [Geerbtes Haus verkaufen: Steuern, Fristen und der richtige Zeitpunkt](/ratgeber/geerbtes-haus-verkaufen) ausführlich beschrieben. Bei einer Schenkung gilt derselbe Mechanismus, nur mit dem Vorteil, dass Sie den Zeitpunkt selbst wählen und die Bewertung vorher klären können.
 
 Als Sprengnetter-zertifizierter Sachverständiger sehe ich diese Lücke zwischen typisiertem Grundbesitzwert und tatsächlichem Marktwert vor allem bei zwei Objekttypen: bei älteren Bestandshäusern mit erheblichem Sanierungsstau und bei Hofstellen mit viel Nebengebäude, das im Sachwertverfahren mitzählt, am Markt aber kaum etwas bringt.
 
@@ -71,7 +71,7 @@ Ein Beispiel von der Mosel: Ein Haus in Schweich mit einem Steuerwert von 400.00
 
 Der eigentliche Hebel in dieser Rechnung ist der Jahreswert, und der wird in der Praxis oft geschätzt statt belegt. Eine nachvollziehbar hergeleitete ortsübliche Miete ist hier mehr wert als jede Verhandlung mit dem Finanzamt hinterher.
 
-Nießbrauch hat allerdings Nebenwirkungen. Das Kind ist Eigentümer, kann die Immobilie faktisch aber nicht verkaufen und sie auch nur schwer als Sicherheit für eine Finanzierung einsetzen. Und beim Pflichtteil wird das Recht zum Problem, dazu gleich mehr. Wenn Sie über eine Übertragung gegen Geld nachdenken statt über eine Schenkung, lohnt der Vergleich mit den Verrentungsmodellen, die ich im Beitrag [INTERNER LINK: "Haus teilverkaufen: Ehrliche Einschätzung und die besseren Wege" -> /haus-teilverkaufen/] gegenübergestellt habe.
+Nießbrauch hat allerdings Nebenwirkungen. Das Kind ist Eigentümer, kann die Immobilie faktisch aber nicht verkaufen und sie auch nur schwer als Sicherheit für eine Finanzierung einsetzen. Und beim Pflichtteil wird das Recht zum Problem, dazu gleich mehr. Wenn Sie über eine Übertragung gegen Geld nachdenken statt über eine Schenkung, lohnt der Vergleich mit den Verrentungsmodellen, die ich im Beitrag [Haus teilverkaufen: Ehrliche Einschätzung und die besseren Wege](/ratgeber/haus-teilverkaufen) gegenübergestellt habe.
 
 ## Die zwei Zehnjahresfristen, die oft verwechselt werden
 
@@ -85,7 +85,7 @@ Diese beiden Fristen sind der Grund, warum ich Eigentümern rate, nicht auf die 
 
 ## Was es kostet, ein Haus zu Lebzeiten zu überschreiben
 
-Die gute Nachricht zuerst: Grunderwerbsteuer fällt nicht an. Schenkungen sind nach § 3 Nr. 2 GrEStG befreit, Übertragungen an Verwandte in gerader Linie zusätzlich nach § 3 Nr. 6 GrEStG. In Rheinland-Pfalz liegt der Satz bei 5,0 Prozent; bei einem Wert von 300.000 Euro wären das 15.000 Euro, die bei der Übertragung an das eigene Kind entfallen. Die Einzelheiten habe ich im Beitrag [INTERNER LINK: "Grunderwerbsteuer in Rheinland-Pfalz: Höhe, Berechnung, Tipps" -> /grunderwerbsteuer-rheinland-pfalz/] zusammengestellt.
+Die gute Nachricht zuerst: Grunderwerbsteuer fällt nicht an. Schenkungen sind nach § 3 Nr. 2 GrEStG befreit, Übertragungen an Verwandte in gerader Linie zusätzlich nach § 3 Nr. 6 GrEStG. In Rheinland-Pfalz liegt der Satz bei 5,0 Prozent; bei einem Wert von 300.000 Euro wären das 15.000 Euro, die bei der Übertragung an das eigene Kind entfallen. Die Einzelheiten habe ich im Beitrag [Grunderwerbsteuer in Rheinland-Pfalz: Höhe, Berechnung, Tipps](/ratgeber/grunderwerbsteuer-rheinland-pfalz) zusammengestellt.
 
 Am Notar kommen Sie dagegen nicht vorbei. Die Übertragung muss beurkundet werden (§ 311b BGB), die Gebühren richten sich nach dem GNotKG und dem Wert der Immobilie. Bei 300.000 Euro sollten Sie mit etwa 2.500 bis 3.500 Euro für Beurkundung, Eigentumsumschreibung und Eintragung des Nießbrauchs rechnen. Im Erbfall entfällt dieser Posten größtenteils, weil die Grundbuchberichtigung innerhalb von zwei Jahren nach dem Erbfall gebührenfrei ist. Wer also nur auf die Nebenkosten schaut, fährt mit dem Erbfall billiger.
 
@@ -119,7 +119,7 @@ Was das praktisch heißt: Niemand kann seriös sagen, wie die Regeln in drei Jah
 
 ## Was ich Eigentümern in der Region empfehle
 
-1. **Wert ermitteln, bevor Sie rechnen.** Ohne belastbaren Verkehrswert ist jede Steuerüberlegung Kaffeesatzleserei. Wie eine Bewertung abläuft, lesen Sie im Beitrag [INTERNER LINK: "Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?" -> /immobilienbewertung-trier/].
+1. **Wert ermitteln, bevor Sie rechnen.** Ohne belastbaren Verkehrswert ist jede Steuerüberlegung Kaffeesatzleserei. Wie eine Bewertung abläuft, lesen Sie im Beitrag [Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/ratgeber/immobilienbewertung-trier).
 2. **Ins Grundbuch schauen.** Wer eingetragen ist, entscheidet über die Zahl der nutzbaren Freibeträge. Bei nur einem eingetragenen Ehepartner lässt sich das oft noch korrigieren.
 3. **Wert je Empfänger gegen den Freibetrag stellen.** Liegt jeder Empfänger darunter, ist die Steuerfrage beantwortet und Sie können sich auf das Wesentliche konzentrieren.
 4. **Ihr eigentliches Ziel benennen.** Wohnen bleiben, Streit vermeiden, das Haus in der Familie halten, den Pflegefall absichern: Für jedes dieser Ziele gibt es eine andere Vertragsgestaltung.
@@ -148,9 +148,9 @@ Pflichtteilsberechtigte Kinder können eine Schenkung nach § 2325 BGB noch zehn
 
 Ob Sie Ihre Immobilie vererben oder verschenken sollten, entscheidet keine Tabelle. Es entscheidet der Wert des Objekts, die Zahl der Empfänger, Ihr Alter und die Frage, was Ihnen wichtiger ist: ein paar Tausend Euro Steuer oder Ruhe in der Familie. Bei den meisten Häusern im Hochwald und in der Eifel lautet die Antwort auf den ersten Teil ohnehin null.
 
-Was in jedem dieser Fälle am Anfang steht, ist derselbe Schritt. Ohne belastbaren Verkehrswert rechnen Sie mit Zahlen, die nichts bedeuten, und schließen Verträge über Ausgleichszahlungen, die niemand nachvollziehen kann. Diese Einschätzung erhalten Sie bei mir kostenlos und ohne Verpflichtung, über das Formular zur [Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) oder im Gespräch unter 06503 9523963.
+Was in jedem dieser Fälle am Anfang steht, ist derselbe Schritt. Ohne belastbaren Verkehrswert rechnen Sie mit Zahlen, die nichts bedeuten, und schließen Verträge über Ausgleichszahlungen, die niemand nachvollziehen kann. Diese Einschätzung erhalten Sie bei mir kostenlos und ohne Verpflichtung, über das Formular zur [Wertermittlung](/bewerten) oder im Gespräch unter 06503 9523963.
 
-Wenn Sie eine Übertragung im Raum Hermeskeil, Trier, Saarburg oder an der Mosel planen, rufen Sie mich gern an. Ich sage Ihnen, was Ihre Immobilie wert ist, und ich sage Ihnen auch, wo Sie besser einen Steuerberater fragen. Ehrlichkeit hat ein Zuhause. Sie erreichen mich über die [Kontaktseite](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder per E-Mail an sandro.mezzarano@wuestenrot.de.
+Wenn Sie eine Übertragung im Raum Hermeskeil, Trier, Saarburg oder an der Mosel planen, rufen Sie mich gern an. Ich sage Ihnen, was Ihre Immobilie wert ist, und ich sage Ihnen auch, wo Sie besser einen Steuerberater fragen. Ehrlichkeit hat ein Zuhause. Sie erreichen mich über die [Kontaktseite](/kontakt) oder per E-Mail an sandro.mezzarano@wuestenrot.de.
 
 
 **Über den Autor**

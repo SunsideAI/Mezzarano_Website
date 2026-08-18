@@ -40,7 +40,7 @@ Das Gesetz heißt „Gesetz zur Verteilung der Maklerkosten" und steht in den §
 
 Für Käufer ist die Provision nur einer von mehreren Posten. Hinzu kommen die Grunderwerbsteuer und die Notarkosten. Wie sich die gesamten Kaufnebenkosten in Rheinland-Pfalz zusammensetzen, lesen Sie im eigenen Ratgeber.
 
-> [Kaufnebenkosten in Rheinland-Pfalz: Alle Kosten auf einen Blick](/kaufnebenkosten-rheinland-pfalz/)
+> [Kaufnebenkosten in Rheinland-Pfalz: Alle Kosten auf einen Blick](/ratgeber/kaufnebenkosten-rheinland-pfalz)
 
 ## Rechenbeispiele: Was die Maklerprovision konkret bedeutet
 
@@ -54,11 +54,11 @@ Prozente sind abstrakt. Hier drei Beispiele mit Kaufpreisen, die sich an den akt
 
 Bei einem Einfamilienhaus im Hochwald für 320.000 Euro zahlen Sie als Verkäufer also rund 11.400 Euro. Das ist eine spürbare Summe, keine Frage. Die Käuferseite zahlt denselben Betrag noch einmal. Beim niedrigeren Satz von 5,95 Prozent wären es je Seite rund 9.520 Euro. Wie sich die Preise zwischen Trierer Stadtteilen, Mosel und Hochwald unterscheiden, lesen Sie im Marktüberblick.
 
-> [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/immobilien-trier/)
+> [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/ratgeber/immobilien-trier)
 
 Wenn Sie den genauen Wert Ihrer Immobilie kennen möchten, bevor Sie über Provision nachdenken, hilft Ihnen der Methoden-Ratgeber weiter, denn der erzielte Preis entscheidet über alles andere.
 
-> [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/wertermittlung-haus/)
+> [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/ratgeber/wertermittlung-haus)
 
 ## Wann wird die Provision fällig?
 
@@ -80,7 +80,7 @@ Das ist fairer, als es zunächst klingt. Das gesamte Marktrisiko der Vermarktung
 
 Den vollständigen Weg eines Verkaufs habe ich Schritt für Schritt in einem eigenen Leitfaden beschrieben. Wer diesen Aufwand kennt, sieht die Provision mit anderen Augen.
 
-> [Immobilie verkaufen: Ablauf in 10 Schritten](/immobilie-verkaufen-ablauf/)
+> [Immobilie verkaufen: Ablauf in 10 Schritten](/ratgeber/immobilie-verkaufen-ablauf)
 
 ## Was es kostet, keinen Makler zu nehmen
 
@@ -92,7 +92,7 @@ Letztes Jahr kam ein Eigentümer aus Schweich zu mir, der sein Haus zunächst se
 
 Das ist keine Verkaufsmasche, sondern Rechnerei. Bei einem Haus für 320.000 Euro entsprechen acht Prozent rund 25.600 Euro. Dem stehen 11.400 Euro Verkäuferprovision gegenüber. Genau deshalb ist mein Anspruch: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen vorher, was Ihre Immobilie realistisch bringt, eine erste Einschätzung dazu finden Sie in der Immobilienbewertung für Trier.
 
-> [Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/immobilienbewertung-trier/)
+> [Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/ratgeber/immobilienbewertung-trier)
 
 ## Verkauf oder Vermietung? Beim Vermieten gilt das Bestellerprinzip
 
@@ -102,7 +102,7 @@ Die Höhe ist hier gedeckelt: Die Provision bei der Vermietung beträgt höchste
 
 Für Sie als Eigentümer heißt das: Beim Verkauf teilen sich Verkäufer und Käufer die Provision, bei der Vermietung zahlt der Besteller. Zwei Geschäfte, zwei Logiken. Wer eine vermietete Wohnung verkauft, sollte beide kennen, dazu mehr im Ratgeber.
 
-> [Vermietete Wohnung verkaufen: Was Eigentümer wissen müssen](/vermietete-wohnung-verkaufen/)
+> [Vermietete Wohnung verkaufen: Was Eigentümer wissen müssen](/ratgeber/vermietete-wohnung-verkaufen)
 
 ## Lässt sich die Maklerprovision verhandeln?
 
@@ -118,7 +118,7 @@ Bei vermieteten Objekten und Kapitalanlagen kann die Maklerprovision steuerlich 
 
 Die zweite Gruppe sind die Pendler aus Luxemburg. In Saarburg, Konz und im südlichen Hochwald ist ein erheblicher Teil der Käufer in Luxemburg beschäftigt. Für sie gelten dieselben Provisionsregeln, doch Finanzierung und Bonitätsprüfung laufen anders, weil das Einkommen aus dem Ausland kommt. Diese Käufergruppe richtig anzusprechen und einzuschätzen, gehört zu den Dingen, die einen lokalen Makler von einem überregionalen Portal unterscheiden. Was Pendler bei Finanzierung und Steuern sonst noch beachten sollten, vertiefe ich im eigenen Ratgeber.
 
-> [Immobilie kaufen im Raum Trier als Luxemburg-Pendler: Was Sie wissen müssen](/immobilie-kaufen-luxemburg-pendler/)
+> [Immobilie kaufen im Raum Trier als Luxemburg-Pendler: Was Sie wissen müssen](/ratgeber/immobilie-kaufen-luxemburg-pendler)
 
 ## Häufige Fragen zur Maklerprovision in Rheinland-Pfalz
 
@@ -141,8 +141,8 @@ Bei selbst genutztem Wohneigentum in der Regel nicht. Bei vermieteten Objekten u
 
 Bevor Sie über Provision nachdenken, sollten Sie wissen, was Ihre Immobilie wert ist, denn der erzielte Preis entscheidet darüber, ob sich ein Makler für Sie rechnet. Eine erste, kostenlose Markteinschätzung für Ihr Haus oder Ihre Wohnung im Hochwald und im Raum Trier-Mosel erhalten Sie über meine Wertermittlung. Wenn Sie lieber direkt sprechen möchten, erreichen Sie mich telefonisch unter 06503 9523963. Ich sage Ihnen ehrlich, was machbar ist und was nicht.
 
-> [Kostenlose Wertermittlung anfordern](/bewerten/)
-> [Kontakt aufnehmen](/kontakt/)
+> [Kostenlose Wertermittlung anfordern](/bewerten)
+> [Kontakt aufnehmen](/kontakt)
 
 ---
 

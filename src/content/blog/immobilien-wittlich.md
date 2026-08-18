@@ -145,7 +145,7 @@ Ich sehe in der Praxis: Eine wachsende Zahl von Käufern, die in Luxemburg arbei
 
 Ehrlichkeit hat ein Zuhause. Das ist mehr als ein Slogan. Es bedeutet, dass ich Eigentümern in Wittlich sage, was Sache ist: welcher Preis realistisch ist, wo der größte Hebel für die Vermarktung liegt und welche Schwachstellen am Objekt vor der Vermarktung behoben werden sollten. Wuestenrot Immobilien als Marke gibt mir den Rahmen, in dem ich seit 16 Jahren arbeite. Die persönliche Beratung vor Ort liefere ich.
 
-Wenn Sie überlegen, in Wittlich oder Umgebung zu verkaufen oder zu kaufen, sprechen Sie mich gerne direkt an. Eine erste Marktwerteinschätzung Ihrer Immobilie bekommen Sie kostenfrei: [hier zur Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) oder telefonisch unter 06503 9523963.
+Wenn Sie überlegen, in Wittlich oder Umgebung zu verkaufen oder zu kaufen, sprechen Sie mich gerne direkt an. Eine erste Marktwerteinschätzung Ihrer Immobilie bekommen Sie kostenfrei: [hier zur Wertermittlung](/bewerten) oder telefonisch unter 06503 9523963.
 
 ## Häufige Fragen zu Immobilien in Wittlich
 
@@ -171,4 +171,4 @@ Ja, der Energieausweis ist beim Verkauf Pflicht und muss spätestens zur Besicht
 
 **Über den Autor:** Sandro Mezzarano ist selbstständiger Handelsvertreter der Wuestenrot Immobilien GmbH mit Sitz in Hermeskeil. Zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung. Über 16 Jahre Branchenerfahrung im Raum Hochwald, Trier und Mosel. Ausgezeichnet von Focus Money 2025 und Handelsblatt 2025.
 
-Kontakt: [Termin vereinbaren](https://mezzarano-wuestenrot-immobilien.de/kontakt) · Telefon 06503 9523963 · sandro.mezzarano@wuestenrot.de
+Kontakt: [Termin vereinbaren](/kontakt) · Telefon 06503 9523963 · sandro.mezzarano@wuestenrot.de

@@ -71,7 +71,7 @@ Beim Hauskauf an der Mosel kommen zum reinen Kaufpreis weitere Kosten dazu. In R
 
 Bei einem Kaufpreis von 350.000 Euro reden wir also über 25.000 bis 35.000 Euro Nebenkosten. Diese müssen Sie in der Regel aus Eigenkapital stemmen. Banken finanzieren Nebenkosten in den meisten Fällen nicht mit.
 
-Wer früh wissen will, wie viel Haus überhaupt drin ist, kann eine [kostenlose Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) als Ausgangspunkt nutzen. Das gilt vor allem für Käufer, die ein bestehendes Haus verkaufen, um an der Mosel zu kaufen.
+Wer früh wissen will, wie viel Haus überhaupt drin ist, kann eine [kostenlose Wertermittlung](/bewerten) als Ausgangspunkt nutzen. Das gilt vor allem für Käufer, die ein bestehendes Haus verkaufen, um an der Mosel zu kaufen.
 
 ## Sieben Schritte zum Hauskauf an der Mosel
 
@@ -121,7 +121,7 @@ Möglichst nach Regenphasen, im November oder März. Trockene Sommerbesichtigung
 
 Wenn Sie konkret an einem Objekt an der Mosel interessiert sind oder einfach eine Marktorientierung brauchen, sprechen Sie mich an. Ich begleite Käufer von der ersten Besichtigung bis zum Notartermin, schaue mir Substanz und Lage ehrlich an und sage Ihnen auch, wenn ein Objekt aus meiner Sicht nicht zum Preis passt. Ehrlichkeit hat ein Zuhause, das ist mein Anspruch.
 
-Sie erreichen mich telefonisch unter 06503 9523963, per E-Mail an sandro.mezzarano@wuestenrot.de oder über die [Kontaktseite](https://mezzarano-wuestenrot-immobilien.de/kontakt). Eine [kostenlose Erstbewertung](https://mezzarano-wuestenrot-immobilien.de/bewerten) Ihrer aktuellen Immobilie ist möglich, wenn Sie zum Mosel-Kauf hin einen Verkauf planen. Die [aktuellen Angebote](https://mezzarano-wuestenrot-immobilien.de/immobilien) finden Sie ebenfalls auf meiner Website.
+Sie erreichen mich telefonisch unter 06503 9523963, per E-Mail an sandro.mezzarano@wuestenrot.de oder über die [Kontaktseite](/kontakt). Eine [kostenlose Erstbewertung](/bewerten) Ihrer aktuellen Immobilie ist möglich, wenn Sie zum Mosel-Kauf hin einen Verkauf planen. Die [aktuellen Angebote](/immobilien) finden Sie ebenfalls auf meiner Website.
 
 ---
 

@@ -131,8 +131,8 @@ Für viele ja. Die Fahrzeit nach Luxemburg-Stadt liegt bei rund einer Stunde, di
 
 Wenn Sie überlegen, in Hermeskeil oder im Hochwald ein Haus zu kaufen, sprechen Sie mich an. Ich kenne den Markt vor Ort, habe die laufenden Vermarktungen im Blick und kann Ihnen ehrlich sagen, was ein Objekt wert ist und wo die Fallstricke liegen. Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Sie hören von mir, was Sache ist — nicht, was Sie hören wollen.
 
-- Aktuelle Angebote: [Immobilienangebote von Wuestenrot Immobilien Mezzarano](https://mezzarano-wuestenrot-immobilien.de/immobilien)
-- Wertermittlung oder Marktcheck zu einem Wunschobjekt: [Bewertung anfordern](https://mezzarano-wuestenrot-immobilien.de/bewerten)
-- Direkter Kontakt: [Termin vereinbaren](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder Telefon 06503 9523963
+- Aktuelle Angebote: [Immobilienangebote von Wuestenrot Immobilien Mezzarano](/immobilien)
+- Wertermittlung oder Marktcheck zu einem Wunschobjekt: [Bewertung anfordern](/bewerten)
+- Direkter Kontakt: [Termin vereinbaren](/kontakt) oder Telefon 06503 9523963
 
 Sie suchen weitere Marktinformationen aus der Region? In den Pillar-Artikeln zu [Immobilien in Trier](/ratgeber/immobilien-trier), zu [Immobilien in Wittlich](/ratgeber/immobilien-wittlich) und zum [Immobilienmakler in Bitburg](/ratgeber/immobilienmakler-bitburg) finden Sie ergänzende Marktdaten für die angrenzenden Regionen.

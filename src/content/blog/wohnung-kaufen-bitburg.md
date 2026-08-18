@@ -136,7 +136,7 @@ Wenn Sie selbst in der Wohnung gewohnt haben, ist der Verkauf in der Regel steue
 
 ## Ihr nächster Schritt
 
-Wenn Sie eine Wohnung in Bitburg konkret im Blick haben oder erst einmal verstehen wollen, was Ihre Vorstellungen am Markt kosten, melden Sie sich. Eine [kostenlose Erstberatung](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder eine [Wertermittlung Ihrer aktuellen Immobilie](https://mezzarano-wuestenrot-immobilien.de/bewerten), falls Sie verkaufen und neu kaufen wollen, ist der schnellste Weg, um Klarheit zu bekommen. Telefonisch erreichen Sie mich unter 06503 9523963 oder per E-Mail an sandro.mezzarano@wuestenrot.de.
+Wenn Sie eine Wohnung in Bitburg konkret im Blick haben oder erst einmal verstehen wollen, was Ihre Vorstellungen am Markt kosten, melden Sie sich. Eine [kostenlose Erstberatung](/kontakt) oder eine [Wertermittlung Ihrer aktuellen Immobilie](/bewerten), falls Sie verkaufen und neu kaufen wollen, ist der schnellste Weg, um Klarheit zu bekommen. Telefonisch erreichen Sie mich unter 06503 9523963 oder per E-Mail an sandro.mezzarano@wuestenrot.de.
 
 ---
 

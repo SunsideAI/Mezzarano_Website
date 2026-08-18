@@ -59,7 +59,7 @@ Ein ehrliches Wort zur Vorsicht: Einzelne Stadtteile erscheinen in Portalen manc
 
 Letztes Jahr saß bei mir eine Eigentümerin aus Trier-Süd, die ihre Wohnung nach einem Portal-Angebotspreis von gut 4.000 Euro pro Quadratmeter kalkuliert hatte. In der Kaufpreissammlung des Gutachterausschusses lagen die tatsächlich beurkundeten Abschlüsse für vergleichbare Wohnungen spürbar darunter. Wir haben den Startpreis realistisch angesetzt, und genau deshalb verkaufte sich die Wohnung innerhalb weniger Wochen, statt monatelang am Markt zu stehen. Angebotspreis und Abschlusspreis sind eben zwei verschiedene Dinge.
 
-Wie viel eine bestimmte Adresse in einem Stadtteil wert ist, lässt sich pauschal ohnehin nicht sagen. Das hängt vom baulichen Zustand ab, von der energetischen Qualität und von der genauen Mikrolage. Mehr dazu in der [Immobilienbewertung Trier](/immobilienbewertung-trier/).
+Wie viel eine bestimmte Adresse in einem Stadtteil wert ist, lässt sich pauschal ohnehin nicht sagen. Das hängt vom baulichen Zustand ab, von der energetischen Qualität und von der genauen Mikrolage. Mehr dazu in der [Immobilienbewertung Trier](/ratgeber/immobilienbewertung-trier).
 
 ## Warum Trier teurer ist als sein Umland: die Luxemburg-Nachfrage
 
@@ -69,19 +69,19 @@ Für Verkäufer ist das eine gute Nachricht, weil die Käuferbasis breiter ist a
 
 ## Bodenrichtwerte als ein Baustein des Preises
 
-Bei Häusern und Grundstücken fragen mich Eigentümer oft nach dem Bodenrichtwert. Er ist der amtliche Durchschnittswert für den reinen Boden in einer Zone und ein nützlicher Anhaltspunkt, aber eben nur das Fundament und nicht der ganze Preis. Den aktuellen Wert für Ihre Lage finden Sie kostenlos über das Bodenrichtwertinformationssystem BORIS-RP. Wie Sie ihn abrufen und richtig deuten, erkläre ich im Ratgeber zum [Bodenrichtwert Rheinland-Pfalz](/bodenrichtwert-rheinland-pfalz/).
+Bei Häusern und Grundstücken fragen mich Eigentümer oft nach dem Bodenrichtwert. Er ist der amtliche Durchschnittswert für den reinen Boden in einer Zone und ein nützlicher Anhaltspunkt, aber eben nur das Fundament und nicht der ganze Preis. Den aktuellen Wert für Ihre Lage finden Sie kostenlos über das Bodenrichtwertinformationssystem BORIS-RP. Wie Sie ihn abrufen und richtig deuten, erkläre ich im Ratgeber zum [Bodenrichtwert Rheinland-Pfalz](/ratgeber/bodenrichtwert-rheinland-pfalz).
 
 ## Was die Zahlen für Verkäufer bedeuten
 
 Der stabilisierte Markt gibt Eigentümern wieder Verhandlungssicherheit, verzeiht aber keine Fantasiepreise. Die Erfahrung der letzten Monate zeigt: Wer realistisch startet, verkauft im Raum Trier zügig. Wer auf den oberen Portal-Angebotspreis aufschlägt, riskiert, dass sein Objekt am Markt liegen bleibt und am Ende unter Wert weggeht.
 
-Aus meiner Sicht kommt es vor allem auf zwei Dinge an: einen Startpreis, der sich an beurkundeten Vergleichswerten orientiert statt an Angebotspreisen, und einen vollständigen Energieausweis, der schon zur ersten Besichtigung vorliegt. Die ehrliche Einordnung der Mikrolage gehört ebenfalls dazu. Was Ihr konkretes Objekt heute am Markt erzielen kann, klären wir am besten in einer [kostenlosen Wertermittlung](/bewerten/).
+Aus meiner Sicht kommt es vor allem auf zwei Dinge an: einen Startpreis, der sich an beurkundeten Vergleichswerten orientiert statt an Angebotspreisen, und einen vollständigen Energieausweis, der schon zur ersten Besichtigung vorliegt. Die ehrliche Einordnung der Mikrolage gehört ebenfalls dazu. Was Ihr konkretes Objekt heute am Markt erzielen kann, klären wir am besten in einer [kostenlosen Wertermittlung](/bewerten).
 
 ## Was die Zahlen für Käufer bedeuten
 
 Käufer profitieren davon, dass der Preisdruck nachgelassen hat und wieder mehr Objekte verfügbar sind. Verhandlungsspielraum gibt es vor allem bei sanierungsbedürftigen Häusern, deren energetischer Zustand viele Interessenten abschreckt. Hier liegt eine Chance, wenn Sie die Sanierungskosten realistisch einrechnen.
 
-Kalkulieren Sie immer die Kaufnebenkosten mit ein: In Rheinland-Pfalz fallen 5,0 Prozent Grunderwerbsteuer an, dazu Notar und Grundbuch mit etwa 1,5 bis 2,0 Prozent sowie die geteilte Maklerprovision. Den größeren Marktüberblick über Stadtteile, Lagen und das Wohnumfeld finden Sie in unserem [Überblick zum Immobilienmarkt Trier](/immobilien-trier/).
+Kalkulieren Sie immer die Kaufnebenkosten mit ein: In Rheinland-Pfalz fallen 5,0 Prozent Grunderwerbsteuer an, dazu Notar und Grundbuch mit etwa 1,5 bis 2,0 Prozent sowie die geteilte Maklerprovision. Den größeren Marktüberblick über Stadtteile, Lagen und das Wohnumfeld finden Sie in unserem [Überblick zum Immobilienmarkt Trier](/ratgeber/immobilien-trier).
 
 ## Ausblick: Immobilienpreise Trier 2026
 
@@ -108,7 +108,7 @@ Durchschnittspreise sind nur ein Ausgangspunkt. Den konkreten Wert bestimmen der
 
 ---
 
-Möchten Sie wissen, wo Ihre Immobilie in diesem Marktumfeld konkret steht? Ich schaue mir Ihr Objekt persönlich an und gebe Ihnen eine ehrliche, datenbasierte Einschätzung. Kein Callcenter, sondern Beratung auf Augenhöhe. Vereinbaren Sie eine [kostenlose Wertermittlung](/bewerten/) oder nehmen Sie direkt [Kontakt](/kontakt/) auf.
+Möchten Sie wissen, wo Ihre Immobilie in diesem Marktumfeld konkret steht? Ich schaue mir Ihr Objekt persönlich an und gebe Ihnen eine ehrliche, datenbasierte Einschätzung. Kein Callcenter, sondern Beratung auf Augenhöhe. Vereinbaren Sie eine [kostenlose Wertermittlung](/bewerten) oder nehmen Sie direkt [Kontakt](/kontakt) auf.
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil, zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. Ausgezeichnet von Focus Money 2025 und Handelsblatt 2025. Sein Anspruch: Ehrlichkeit hat ein Zuhause.*
 

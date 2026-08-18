@@ -105,7 +105,7 @@ Warten Sie eher, wenn die 10-Jahres-Frist noch nicht durch ist und der Gewinn su
 
 - Wenn Sie überlegen, ob ein Verkauf jetzt der richtige Zeitpunkt ist, gibt der [Marktüberblick Trier](#) Ihnen die aktuellen Preise je Stadtteil.
 - Wenn Sie selbst in der Eifel eine Wohnung kaufen wollen, ist [Wohnung kaufen in Bitburg](#) der passende Einstieg in den dortigen Markt.
-- Eine [kostenlose Marktwertschätzung](https://mezzarano-wuestenrot-immobilien.de/bewerten) Ihrer vermieteten Wohnung verschafft Ihnen Klarheit, bevor Sie eine Entscheidung treffen.
+- Eine [kostenlose Marktwertschätzung](/bewerten) Ihrer vermieteten Wohnung verschafft Ihnen Klarheit, bevor Sie eine Entscheidung treffen.
 
 ## Häufige Fragen
 
@@ -128,7 +128,7 @@ Manchmal ja, manchmal nein. Eine zulässige Anhebung auf die ortsübliche Vergle
 
 Eine vermietete Wohnung zu verkaufen ist seltener ein Frage der Marktlage, sondern fast immer eine Frage der Vorbereitung. Wer den Mietvertrag, das Vorkaufsrecht und die Spekulationsfrist sauber geklärt hat, bevor das Expose online geht, verkauft schneller und teurer. Wer das nicht tut, verliert in der Verhandlung, entweder beim Preis oder bei der Geschwindigkeit.
 
-Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Wenn Sie eine vermietete Wohnung im Raum Trier, Bitburg, Wittlich, Hermeskeil oder an der Mosel verkaufen wollen, schauen wir gemeinsam, was realistisch ist und welche Variante für Sie am meisten Sinn ergibt. Sie erreichen mich unter 06503 9523963 oder über das [Kontaktformular](https://mezzarano-wuestenrot-immobilien.de/kontakt). Eine erste [Marktwertschätzung](https://mezzarano-wuestenrot-immobilien.de/bewerten) ist kostenlos.
+Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Wenn Sie eine vermietete Wohnung im Raum Trier, Bitburg, Wittlich, Hermeskeil oder an der Mosel verkaufen wollen, schauen wir gemeinsam, was realistisch ist und welche Variante für Sie am meisten Sinn ergibt. Sie erreichen mich unter 06503 9523963 oder über das [Kontaktformular](/kontakt). Eine erste [Marktwertschätzung](/bewerten) ist kostenlos.
 
 <!--
 Content-Strategie-Hinweis:

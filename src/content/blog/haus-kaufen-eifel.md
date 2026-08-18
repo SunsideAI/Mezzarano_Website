@@ -100,7 +100,7 @@ In der Eifel mehr als in vielen anderen Regionen. Bei Bestandshäusern mit Sanie
 
 ## Ihr nächster Schritt
 
-Wenn Sie ein Haus in der Eifel kaufen möchten oder bereits ein konkretes Objekt im Blick haben, biete ich Ihnen zwei Wege an. Über die [kostenlose Marktwerteinschätzung](https://mezzarano-wuestenrot-immobilien.de/bewerten) bekommen Sie eine Einordnung zum Angebotspreis. Über die [Kontaktseite](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder telefonisch unter 06503 9523963 können Sie ein persönliches Beratungsgespräch vereinbaren. Aktuelle Angebote finden Sie unter [unseren Immobilien](https://mezzarano-wuestenrot-immobilien.de/immobilien).
+Wenn Sie ein Haus in der Eifel kaufen möchten oder bereits ein konkretes Objekt im Blick haben, biete ich Ihnen zwei Wege an. Über die [kostenlose Marktwerteinschätzung](/bewerten) bekommen Sie eine Einordnung zum Angebotspreis. Über die [Kontaktseite](/kontakt) oder telefonisch unter 06503 9523963 können Sie ein persönliches Beratungsgespräch vereinbaren. Aktuelle Angebote finden Sie unter [unseren Immobilien](/immobilien).
 
 Ehrlichkeit hat ein Zuhause. Das gilt in Bitburg, Daun und Prüm genauso wie an der Mosel oder im Hochwald.
 

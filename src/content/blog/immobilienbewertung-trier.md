@@ -46,7 +46,7 @@ Hinter jeder seriösen Bewertung steht eines von drei anerkannten Verfahren. Wel
 - **Sachwertverfahren:** Bodenwert plus Gebäudewert abzüglich Alterung. Üblich bei selbst genutzten Häusern, für die es kaum Vergleichsobjekte gibt.
 - **Ertragswertverfahren:** Der Wert leitet sich aus den Mieteinnahmen ab. Maßgeblich bei vermieteten Wohnungen und Mehrfamilienhäusern.
 
-Wie diese Verfahren im Detail rechnen, habe ich in einem eigenen Beitrag aufgeschlüsselt: [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/wertermittlung-haus/). Für diesen Artikel reicht: Ein guter Bewerter wählt das Verfahren passend zum Objekt und verlässt sich nicht auf eine einzige Methode.
+Wie diese Verfahren im Detail rechnen, habe ich in einem eigenen Beitrag aufgeschlüsselt: [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/ratgeber/wertermittlung-haus). Für diesen Artikel reicht: Ein guter Bewerter wählt das Verfahren passend zum Objekt und verlässt sich nicht auf eine einzige Methode.
 
 ## Was den Wert Ihrer Immobilie in Trier wirklich bestimmt
 
@@ -99,9 +99,9 @@ Für steuerliche Zwecke gelten eigene Regeln, und das Finanzamt setzt zunächst 
 
 ## Lassen Sie Ihre Immobilie in Trier realistisch bewerten
 
-Eine Zahl ist schnell genannt. Eine belastbare Zahl, mit der Sie auch vor dem Käufer und seiner Bank bestehen, braucht einen Blick auf das konkrete Objekt. Wenn Sie Ihre Immobilie in Trier bewerten lassen möchten, fordern Sie eine [kostenlose Ersteinschätzung](/bewerten/) an oder rufen Sie mich direkt an unter 06503 9523963. Ich sage Ihnen ehrlich, was Sache ist — Ehrlichkeit hat ein Zuhause.
+Eine Zahl ist schnell genannt. Eine belastbare Zahl, mit der Sie auch vor dem Käufer und seiner Bank bestehen, braucht einen Blick auf das konkrete Objekt. Wenn Sie Ihre Immobilie in Trier bewerten lassen möchten, fordern Sie eine [kostenlose Ersteinschätzung](/bewerten) an oder rufen Sie mich direkt an unter 06503 9523963. Ich sage Ihnen ehrlich, was Sache ist — Ehrlichkeit hat ein Zuhause.
 
-Mehr zum Trierer Markt insgesamt lesen Sie in meinem Überblick [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/immobilien-trier/). Wie der Bodenrichtwert in Ihre Bewertung einfließt, erkläre ich gesondert in [Bodenrichtwert in Rheinland-Pfalz](/bodenrichtwert-rheinland-pfalz/). Bei Fragen erreichen Sie mich jederzeit über das [Kontaktformular](/kontakt/).
+Mehr zum Trierer Markt insgesamt lesen Sie in meinem Überblick [Immobilien in Trier: Marktüberblick, Stadtteile und Preisniveau](/ratgeber/immobilien-trier). Wie der Bodenrichtwert in Ihre Bewertung einfließt, erkläre ich gesondert in [Bodenrichtwert in Rheinland-Pfalz](/ratgeber/bodenrichtwert-rheinland-pfalz). Bei Fragen erreichen Sie mich jederzeit über das [Kontaktformular](/kontakt).
 
 ---
 

@@ -69,7 +69,7 @@ Dieser Faktor wird in Laien-Rechnungen gern vergessen, und er macht einen erhebl
 
 Das Ertragswertverfahren bewertet ein Haus nicht nach Bausubstanz, sondern nach den Erträgen, die es abwirft. Es ist das maßgebliche Verfahren für vermietete Objekte, also für Mehrfamilienhäuser und für die klassische Anlagewohnung.
 
-Vereinfacht gesagt: Aus der Jahresnettokaltmiete werden die Bewirtschaftungskosten herausgerechnet, der so ermittelte Reinertrag wird mit einem Vervielfältiger kapitalisiert, der die Restnutzungsdauer und den Liegenschaftszins berücksichtigt. Wer eine vermietete Wohnung verkaufen möchte, sollte diese Logik kennen, weil der Preis hier an der erzielbaren Rendite hängt und nicht am Wiederbeschaffungswert. Die Details dazu habe ich im Beitrag zum [Verkauf vermieteter Wohnungen](/vermietete-wohnung-verkaufen/) ausgeführt.
+Vereinfacht gesagt: Aus der Jahresnettokaltmiete werden die Bewirtschaftungskosten herausgerechnet, der so ermittelte Reinertrag wird mit einem Vervielfältiger kapitalisiert, der die Restnutzungsdauer und den Liegenschaftszins berücksichtigt. Wer eine vermietete Wohnung verkaufen möchte, sollte diese Logik kennen, weil der Preis hier an der erzielbaren Rendite hängt und nicht am Wiederbeschaffungswert. Die Details dazu habe ich im Beitrag zum [Verkauf vermieteter Wohnungen](/ratgeber/vermietete-wohnung-verkaufen) ausgeführt.
 
 Für das selbstgenutzte Eigenheim fällt das Ertragswertverfahren praktisch weg, weil keine Mieteinnahmen anfallen, die sich ansetzen lassen.
 
@@ -97,7 +97,7 @@ Das Verkehrswertgutachten ist die förmliche, ausführlich begründete Bewertung
 
 Unabhängig vom Verfahren entscheiden am Ende dieselben Stellschrauben über den Wert. In über 16 Jahren in der Region habe ich gelernt, worauf es bei uns besonders ankommt:
 
-- Lage und Bodenrichtwert: Ein Grundstück in Trier-Tarforst wird anders bewertet als eines in einem Eifeldorf; einen Überblick über den Trierer Markt gebe ich im Beitrag [Immobilien in Trier](/immobilien-trier/). Die Nähe zur Grenze macht einen Unterschied, in Saarburg und Konz treibt die Nachfrage der Luxemburg-Pendler die Preise spürbar.
+- Lage und Bodenrichtwert: Ein Grundstück in Trier-Tarforst wird anders bewertet als eines in einem Eifeldorf; einen Überblick über den Trierer Markt gebe ich im Beitrag [Immobilien in Trier](/ratgeber/immobilien-trier). Die Nähe zur Grenze macht einen Unterschied, in Saarburg und Konz treibt die Nachfrage der Luxemburg-Pendler die Preise spürbar.
 - Zustand und Energetik: Eine erneuerte Heizung, ein gepflegtes Dach und ein guter Energieausweis heben den Wert. Sanierungsstau zieht ihn nach unten, oft stärker, als Eigentümer erwarten.
 - Baujahr und Restnutzungsdauer: Sie fließen direkt in die Alterswertminderung ein.
 - Grundstückszuschnitt und Bebaubarkeit: gerade bei den großen Grundstücken im Hochwald ein häufig unterschätzter Hebel.
@@ -125,7 +125,7 @@ Es ist dasselbe. Das Baugesetzbuch verwendet den Begriff Verkehrswert (§ 194 Ba
 
 Eine gute Wertermittlung ist keine Hexerei, aber sie braucht Marktkenntnis, das passende Verfahren und einen ehrlichen Blick auf das Objekt. Genau dafür stehe ich: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Ihr Haus im Raum Trier, Hochwald und Mosel realistisch wert ist — nicht, was Sie hören möchten.
 
-Möchten Sie wissen, wo Ihr Haus heute steht? Fordern Sie eine [kostenlose Wertermittlung](/bewerten/) an oder [nehmen Sie Kontakt auf](/kontakt/) für ein persönliches Gespräch. Telefonisch erreichen Sie mich unter 06503 9523963.
+Möchten Sie wissen, wo Ihr Haus heute steht? Fordern Sie eine [kostenlose Wertermittlung](/bewerten) an oder [nehmen Sie Kontakt auf](/kontakt) für ein persönliches Gespräch. Telefonisch erreichen Sie mich unter 06503 9523963.
 
 <!--
 CONTENT-STRATEGIE-HINWEIS (intern, nicht veroeffentlichen)

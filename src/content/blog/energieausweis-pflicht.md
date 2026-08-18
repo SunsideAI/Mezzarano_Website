@@ -40,7 +40,7 @@ Und bei manchen Häusern haben Sie ohnehin keine Wahl. Für Wohnhäuser mit weni
 
 Letztes Jahr hatte ich einen Fall in der Südeifel, der das gut zeigt. Ein Eigentümer wollte das Haus seiner Eltern, Baujahr 1968, mit einem schnellen Online-Verbrauchsausweis für 60 Euro vermarkten. Rechtlich war für dieses Haus aber der Bedarfsausweis fällig. Bei der Berechnung kam dann heraus, was die niedrigen Heizkosten verschleiert hatten: ungedämmte Außenwände, einfachverglaste Fenster im Obergeschoss, ein Ölkessel von 1994. Der Sanierungsstau stand schwarz auf weiß im Ausweis. Unangenehm im ersten Moment, aber ehrlich, und am Ende die bessere Verhandlungsgrundlage. Wer mit offenen Karten spielt, verkauft ruhiger.
 
-Wie der energetische Zustand am Ende auf den Marktwert durchschlägt, ist ein eigenes Thema. Wer hier tiefer einsteigen möchte, findet die Details in meinem Beitrag zur [Immobilienbewertung Trier](/immobilienbewertung-trier/). Wer ein älteres Bestandshaus in der Eifel im Blick hat, für den lohnt auch mein Ratgeber [Haus kaufen in der Eifel](/haus-kaufen-eifel/), in dem die energetische Substanz alter Häuser eine größere Rolle spielt.
+Wie der energetische Zustand am Ende auf den Marktwert durchschlägt, ist ein eigenes Thema. Wer hier tiefer einsteigen möchte, findet die Details in meinem Beitrag zur [Immobilienbewertung Trier](/ratgeber/immobilienbewertung-trier). Wer ein älteres Bestandshaus in der Eifel im Blick hat, für den lohnt auch mein Ratgeber [Haus kaufen in der Eifel](/ratgeber/haus-kaufen-eifel), in dem die energetische Substanz alter Häuser eine größere Rolle spielt.
 
 ## Was der Energieausweis kostet
 
@@ -68,7 +68,7 @@ Was passiert, wenn Sie das ignorieren? Ein Verstoß gegen die Energieausweis-Pfl
 
 Ein Energieausweis ist zehn Jahre gültig (§ 79 GEG). Danach braucht es einen neuen, sobald Sie wieder verkaufen oder neu vermieten. Wer also vor neun Jahren schon einmal einen ausstellen ließ, sollte vor dem nächsten Verkauf das Ausstellungsdatum prüfen.
 
-Den richtigen Zeitpunkt für die Beschaffung sehe ich so: nicht erst, wenn der erste Besichtigungstermin steht, sondern gleich zu Beginn der Verkaufsvorbereitung. Der Energieausweis gehört zu den Unterlagen, die Sie ohnehin zusammenstellen müssen. Wie sich der gesamte Ablauf sinnvoll ordnen lässt, habe ich in meinem [Leitfaden Immobilie verkaufen: Ablauf in 10 Schritten](/immobilie-verkaufen-ablauf/) Schritt für Schritt beschrieben. Der Ausweis ist dort einer der ersten Punkte, und das aus gutem Grund: Ohne ihn dürfen Sie streng genommen nicht einmal richtig inserieren.
+Den richtigen Zeitpunkt für die Beschaffung sehe ich so: nicht erst, wenn der erste Besichtigungstermin steht, sondern gleich zu Beginn der Verkaufsvorbereitung. Der Energieausweis gehört zu den Unterlagen, die Sie ohnehin zusammenstellen müssen. Wie sich der gesamte Ablauf sinnvoll ordnen lässt, habe ich in meinem [Leitfaden Immobilie verkaufen: Ablauf in 10 Schritten](/ratgeber/immobilie-verkaufen-ablauf) Schritt für Schritt beschrieben. Der Ausweis ist dort einer der ersten Punkte, und das aus gutem Grund: Ohne ihn dürfen Sie streng genommen nicht einmal richtig inserieren.
 
 ## Was sich 2026 ändert und was vorerst nicht
 
@@ -99,7 +99,7 @@ Fehlt er beim Verkauf oder bei der Vermietung, oder fehlen die Pflichtangaben in
 
 ## Ihr nächster Schritt
 
-Sie planen einen Verkauf oder eine Vermietung im Raum Hermeskeil, Trier, Saarburg, an der Mosel oder in der Eifel und sind sich beim Energieausweis unsicher? Sprechen Sie mich an. Ich sage Ihnen ehrlich, welcher Ausweis für Ihr Haus der richtige ist, und kümmere mich auf Wunsch um die Beschaffung. Eine erste Einschätzung Ihrer Immobilie erhalten Sie über meine [kostenlose Wertermittlung](/bewerten/), oder Sie nehmen direkt [Kontakt](/kontakt/) auf.
+Sie planen einen Verkauf oder eine Vermietung im Raum Hermeskeil, Trier, Saarburg, an der Mosel oder in der Eifel und sind sich beim Energieausweis unsicher? Sprechen Sie mich an. Ich sage Ihnen ehrlich, welcher Ausweis für Ihr Haus der richtige ist, und kümmere mich auf Wunsch um die Beschaffung. Eine erste Einschätzung Ihrer Immobilie erhalten Sie über meine [kostenlose Wertermittlung](/bewerten), oder Sie nehmen direkt [Kontakt](/kontakt) auf.
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH in Hermeskeil, zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. Für seine Beratung wurde er 2025 von Focus Money (höchste Beratungskompetenz) und Handelsblatt (exzellente Kundenberatung) ausgezeichnet. Dieser Beitrag ersetzt keine Rechts- oder Energieberatung im Einzelfall.*
 

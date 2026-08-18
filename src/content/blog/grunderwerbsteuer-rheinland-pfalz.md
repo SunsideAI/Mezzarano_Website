@@ -24,7 +24,7 @@ In meinen 16 Jahren als Immobilienberater erlebe ich immer wieder, dass Käufer 
 
 Der Steuersatz liegt in Rheinland-Pfalz bei 5,0 Prozent. Damit gehört das Land zum Mittelfeld: Bayern und Sachsen liegen mit 3,5 Prozent darunter, Bundesländer wie das Saarland, Schleswig-Holstein oder Brandenburg verlangen 6,5 Prozent. Die Höhe der Grunderwerbsteuer bestimmt jedes Bundesland seit der Föderalismusreform 2006 selbst, deshalb dieser Flickenteppich.
 
-Wichtig für die Praxis: Bemessungsgrundlage ist die sogenannte Gegenleistung, in aller Regel also der notariell beurkundete Kaufpreis. Nicht der Verkehrswert, nicht der Bodenrichtwert, nicht das, was die Bank schätzt. Was im Kaufvertrag steht, zählt. Wie der Bodenrichtwert davon abzugrenzen ist, habe ich gesondert erklärt: [Bodenrichtwert in Rheinland-Pfalz](/bodenrichtwert-rheinland-pfalz/).
+Wichtig für die Praxis: Bemessungsgrundlage ist die sogenannte Gegenleistung, in aller Regel also der notariell beurkundete Kaufpreis. Nicht der Verkehrswert, nicht der Bodenrichtwert, nicht das, was die Bank schätzt. Was im Kaufvertrag steht, zählt. Wie der Bodenrichtwert davon abzugrenzen ist, habe ich gesondert erklärt: [Bodenrichtwert in Rheinland-Pfalz](/ratgeber/bodenrichtwert-rheinland-pfalz).
 
 ## Grunderwerbsteuer in RLP berechnen: Beispiele aus der Region
 
@@ -35,7 +35,7 @@ Die Berechnung ist denkbar einfach: Kaufpreis mal 5,0 Prozent. Damit Sie ein Gef
 - **Einfamilienhaus in Saarburg (oft Luxemburg-Pendler), 400.000 Euro:** 20.000 Euro
 - **Sanierungsbedürftiges Winzerhaus an der Mosel, 250.000 Euro:** 12.500 Euro
 
-Sie sehen: Das ist kein Kleingeld. Die Grunderwerbsteuer ist nur einer von mehreren Posten der Kaufnebenkosten. Dazu kommen Notar- und Grundbuchkosten und, je nach Fall, die Maklerprovision. Den vollständigen Überblick über alle Nebenkosten finden Sie hier: [Kaufnebenkosten in Rheinland-Pfalz](/kaufnebenkosten-rheinland-pfalz/).
+Sie sehen: Das ist kein Kleingeld. Die Grunderwerbsteuer ist nur einer von mehreren Posten der Kaufnebenkosten. Dazu kommen Notar- und Grundbuchkosten und, je nach Fall, die Maklerprovision. Den vollständigen Überblick über alle Nebenkosten finden Sie hier: [Kaufnebenkosten in Rheinland-Pfalz](/ratgeber/kaufnebenkosten-rheinland-pfalz).
 
 ## Wer zahlt die Grunderwerbsteuer?
 
@@ -106,7 +106,7 @@ Nein. Übertragungen zwischen Verwandten in gerader Linie sind nach § 3 Nr. 6 G
 
 Die Grunderwerbsteuer ist kein Posten, an dem sich groß sparen lässt, aber einer, den Sie genau kennen sollten, bevor Sie ein Angebot abgeben. Als Sprengnetter-zertifizierter Sachverständiger und Berater im Raum Trier-Mosel-Eifel rechne ich mit meinen Käufern von Anfang an die kompletten Kosten durch, damit beim Notartermin keine Überraschung wartet.
 
-Sie planen einen Kauf oder Verkauf im Hochwald, in Trier, an der Mosel oder in der Eifel? Sprechen Sie mich an — ich sage Ihnen ehrlich, mit welchen Kosten Sie rechnen müssen. Eine erste Einschätzung Ihrer Immobilie erhalten Sie über meine [kostenlose Wertermittlung](/bewerten/), und für ein persönliches Gespräch erreichen Sie mich über die [Kontaktseite](/kontakt/). Aktuelle Angebote finden Sie unter [meinen Immobilien](/immobilien/).
+Sie planen einen Kauf oder Verkauf im Hochwald, in Trier, an der Mosel oder in der Eifel? Sprechen Sie mich an — ich sage Ihnen ehrlich, mit welchen Kosten Sie rechnen müssen. Eine erste Einschätzung Ihrer Immobilie erhalten Sie über meine [kostenlose Wertermittlung](/bewerten), und für ein persönliches Gespräch erreichen Sie mich über die [Kontaktseite](/kontakt). Aktuelle Angebote finden Sie unter [meinen Immobilien](/immobilien).
 
 *Dieser Artikel ersetzt keine Steuerberatung. Für Ihre individuelle steuerliche Situation wenden Sie sich bitte an einen Steuerberater oder Ihr zuständiges Finanzamt.*
 

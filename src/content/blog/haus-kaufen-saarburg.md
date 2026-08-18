@@ -118,7 +118,7 @@ In älteren Ortsteilen lohnt ein Blick auf den Zustand von Wasser-, Abwasser- un
 **5. Heizung und Warmwasser**
 Welche Heizung steht im Keller, wie alt ist sie, welche Pflichten ergeben sich aus dem Gebäudeenergiegesetz? Eine 25 Jahre alte Ölheizung ist 2026 kein Argument mehr, sondern eine Kostenstelle.
 
-Aus Sicht eines Sprengnetter-zertifizierten Sachverständigen heißt das: Wer diese fünf Punkte vor dem Notartermin sauber geklärt hat, kauft mit deutlich geringerem Risiko. Eine professionelle [Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) gibt zusätzliche Sicherheit, gerade dann, wenn der angebotene Preis emotional schwer einzuordnen ist.
+Aus Sicht eines Sprengnetter-zertifizierten Sachverständigen heißt das: Wer diese fünf Punkte vor dem Notartermin sauber geklärt hat, kauft mit deutlich geringerem Risiko. Eine professionelle [Wertermittlung](/bewerten) gibt zusätzliche Sicherheit, gerade dann, wenn der angebotene Preis emotional schwer einzuordnen ist.
 
 ## Der Ablauf eines Hauskaufs in Saarburg: In 7 Schritten zum eigenen Haus
 
@@ -126,7 +126,7 @@ So sieht ein typischer Kaufprozess aus, wenn ich Käufer in Saarburg begleite:
 
 1. **Bedarf klären:** Wohnfläche, Lage, Budget, Pendelzeit. Realistisch, nicht nur ideal.
 2. **Finanzierung vorbereiten:** Eigenkapital aufstellen, Finanzierungsbestätigung der Bank einholen. Ohne diese ist man am Markt nicht ernstzunehmen.
-3. **Suche und Besichtigung:** Aktuelle Angebote bei mir unter [mezzarano-wuestenrot-immobilien.de/immobilien](https://mezzarano-wuestenrot-immobilien.de/immobilien) oder per Suchauftrag. Besichtigungen immer mit offener Checkliste, nicht emotional.
+3. **Suche und Besichtigung:** Aktuelle Angebote bei mir unter [mezzarano-wuestenrot-immobilien.de/immobilien](/immobilien) oder per Suchauftrag. Besichtigungen immer mit offener Checkliste, nicht emotional.
 4. **Substanz prüfen:** Energieausweis, Bauzustand, Unterlagen anfordern und durchgehen.
 5. **Preisverhandlung:** Auf Basis von Marktwert und Substanz, nicht auf Basis von Angebotspreis.
 6. **Notartermin:** Kaufvertragsentwurf zwei Wochen vorher prüfen, Fragen klären.
@@ -166,4 +166,4 @@ Bei Bestandsimmobilien ab Baujahr vor 1990 ist eine fachliche Bewertung dringend
 
 Mein Büro sitzt in Hermeskeil, mein Arbeitsgebiet reicht von dort über Saarburg und Konz bis nach Trier und an die Mosel. Wenn Sie in Saarburg ein Haus kaufen wollen, begleite ich Sie persönlich — von der ersten Marktwertabschätzung bis zum Notartermin. Ehrlichkeit hat ein Zuhause: Ich sage Ihnen, was ein Objekt wirklich wert ist, und auch dann, wenn es das falsche für Sie ist.
 
-Aktuelle [Immobilien-Angebote](https://mezzarano-wuestenrot-immobilien.de/immobilien) finden Sie auf meiner Website. Wenn Sie konkrete Vorstellungen haben oder einen Suchauftrag aufgeben möchten, erreichen Sie mich unter 06503 9523963 oder per [Kontaktformular](https://mezzarano-wuestenrot-immobilien.de/kontakt). Eine [kostenlose Marktwerteinschätzung](https://mezzarano-wuestenrot-immobilien.de/bewerten) gibt Ihnen den entscheidenden Anhaltspunkt, egal ob Sie kaufen oder verkaufen wollen.
+Aktuelle [Immobilien-Angebote](/immobilien) finden Sie auf meiner Website. Wenn Sie konkrete Vorstellungen haben oder einen Suchauftrag aufgeben möchten, erreichen Sie mich unter 06503 9523963 oder per [Kontaktformular](/kontakt). Eine [kostenlose Marktwerteinschätzung](/bewerten) gibt Ihnen den entscheidenden Anhaltspunkt, egal ob Sie kaufen oder verkaufen wollen.

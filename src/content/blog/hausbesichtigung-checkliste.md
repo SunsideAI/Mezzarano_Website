@@ -24,9 +24,9 @@ Ich bin Sandro Mezzarano und begleite seit 16 Jahren Käufer und Eigentümer zwi
 
 Ein Teil der Besichtigung findet am Schreibtisch statt. Was Sie vorher gelesen haben, müssen Sie vor Ort nicht mehr erraten.
 
-**Energieausweis.** Nach dem Gebäudeenergiegesetz (GEG) muss der Verkäufer Ihnen den Energieausweis spätestens bei der Besichtigung unaufgefordert vorlegen. Wer das nicht tut, riskiert ein Bußgeld von bis zu 10.000 Euro. Wichtiger als die Farbskala ist für Sie der Endenergiebedarf in Kilowattstunden pro Quadratmeter und Jahr. Bei einem unsanierten Haus aus den 1970er-Jahren liegt der oft bei 250 bis 350, bei einem gut sanierten Bestandshaus zwischen 80 und 120. Was das an Pflichten und Kosten nach sich zieht, habe ich im Ratgeber [INTERNER LINK: "Energieausweis-Pflicht: Kosten, Arten und Fristen 2026" -> /energieausweis-pflicht/] ausführlich aufgeschrieben.
+**Energieausweis.** Nach dem Gebäudeenergiegesetz (GEG) muss der Verkäufer Ihnen den Energieausweis spätestens bei der Besichtigung unaufgefordert vorlegen. Wer das nicht tut, riskiert ein Bußgeld von bis zu 10.000 Euro. Wichtiger als die Farbskala ist für Sie der Endenergiebedarf in Kilowattstunden pro Quadratmeter und Jahr. Bei einem unsanierten Haus aus den 1970er-Jahren liegt der oft bei 250 bis 350, bei einem gut sanierten Bestandshaus zwischen 80 und 120. Was das an Pflichten und Kosten nach sich zieht, habe ich im Ratgeber [Energieausweis-Pflicht: Kosten, Arten und Fristen 2026](/ratgeber/energieausweis-pflicht) ausführlich aufgeschrieben.
 
-**Grundriss mit Maßen und Wohnflächenberechnung.** Fragen Sie nach, wie die Wohnfläche ermittelt wurde. Bei Altbauten mit Dachschrägen weichen die Angaben im Exposé regelmäßig von einer Berechnung nach Wohnflächenverordnung ab, weil unter zwei Metern Höhe nur die halbe Fläche zählt und unter einem Meter gar nichts. Das ist keine Kleinigkeit: Zehn Quadratmeter Differenz sind bei einem Quadratmeterpreis von 2.400 Euro rund 24.000 Euro. Welche Räume mitzählen und welche nicht, steht im Beitrag [INTERNER LINK: "Wohnfläche berechnen: Was zählt dazu und was nicht" -> /wohnflaeche-berechnen/].
+**Grundriss mit Maßen und Wohnflächenberechnung.** Fragen Sie nach, wie die Wohnfläche ermittelt wurde. Bei Altbauten mit Dachschrägen weichen die Angaben im Exposé regelmäßig von einer Berechnung nach Wohnflächenverordnung ab, weil unter zwei Metern Höhe nur die halbe Fläche zählt und unter einem Meter gar nichts. Das ist keine Kleinigkeit: Zehn Quadratmeter Differenz sind bei einem Quadratmeterpreis von 2.400 Euro rund 24.000 Euro. Welche Räume mitzählen und welche nicht, steht im Beitrag Wohnfläche berechnen: Was zählt dazu und was nicht.
 
 **Nebenkostenaufstellung der letzten zwei Jahre.** Heizkosten, Wasser, Strom, Grundsteuer, Abfall, Schornsteinfeger. Die echten Verbrauchswerte sagen mehr über die Substanz als jeder Ausweis.
 
@@ -79,7 +79,7 @@ Fragen Sie direkt und notieren Sie die Antworten. Das ist kein Misstrauen, das i
 - Bestehen Wegerechte, Wohnrechte, Nießbrauch oder Baulasten?
 - Ist die Immobilie lastenfrei, oder stehen noch Grundschulden im Grundbuch?
 
-Die vorletzte Frage ist rechtlich relevant. Kaufverträge über Bestandsimmobilien enthalten fast immer einen Gewährleistungsausschluss, umgangssprachlich „gekauft wie gesehen". Der greift allerdings nicht, wenn der Verkäufer einen ihm bekannten Mangel arglistig verschwiegen hat (§ 444 BGB). Wer gefragt wurde und falsch geantwortet hat, steht anders da als jemand, der nie gefragt wurde. Für die vertragliche Bewertung im Einzelfall ist der Notar oder ein Rechtsanwalt zuständig, nicht ich. Was sonst noch im Vertrag steht, erklärt der Beitrag [INTERNER LINK: "Der Immobilien-Kaufvertrag: Inhalt, Notartermin und Ablauf" -> /kaufvertrag-immobilie/].
+Die vorletzte Frage ist rechtlich relevant. Kaufverträge über Bestandsimmobilien enthalten fast immer einen Gewährleistungsausschluss, umgangssprachlich „gekauft wie gesehen". Der greift allerdings nicht, wenn der Verkäufer einen ihm bekannten Mangel arglistig verschwiegen hat (§ 444 BGB). Wer gefragt wurde und falsch geantwortet hat, steht anders da als jemand, der nie gefragt wurde. Für die vertragliche Bewertung im Einzelfall ist der Notar oder ein Rechtsanwalt zuständig, nicht ich. Was sonst noch im Vertrag steht, erklärt der Beitrag Der Immobilien-Kaufvertrag: Inhalt, Notartermin und Ablauf.
 
 ## Onlinebesichtigung: was ein Video zeigt und was nicht
 
@@ -95,7 +95,7 @@ Legen Sie den zweiten Termin bewusst anders: möglichst bei Regen, möglichst am
 
 Einen Bausachverständigen sollten Sie mitnehmen, wenn das Baujahr vor 1980 liegt und keine Sanierung dokumentiert ist, wenn Sie Feuchte oder Risse gesehen haben oder wenn der Kaufpreis Sie an die Grenze Ihrer Finanzierung bringt. Eine Kaufberatung vor Ort kostet je nach Umfang etwa 500 bis 1.200 Euro. Eine einzige übersehene Position kostet mehr.
 
-Denken Sie beim Preis außerdem an die Nebenkosten: In Rheinland-Pfalz kommen 5,0 Prozent Grunderwerbsteuer auf den Kaufpreis, dazu Notar und Grundbuch mit rund 1,5 bis 2,0 Prozent und gegebenenfalls die Maklerprovision, die bei Wohnimmobilien seit dem 23.12.2020 nach § 656c-d BGB geteilt wird. Wie sich das im Raum Trier konkret zusammensetzt, zeigt der Beitrag [INTERNER LINK: "Kaufnebenkosten in Rheinland-Pfalz: Alle Kosten auf einen Blick" -> /kaufnebenkosten-rheinland-pfalz/].
+Denken Sie beim Preis außerdem an die Nebenkosten: In Rheinland-Pfalz kommen 5,0 Prozent Grunderwerbsteuer auf den Kaufpreis, dazu Notar und Grundbuch mit rund 1,5 bis 2,0 Prozent und gegebenenfalls die Maklerprovision, die bei Wohnimmobilien seit dem 23.12.2020 nach § 656c-d BGB geteilt wird. Wie sich das im Raum Trier konkret zusammensetzt, zeigt der Beitrag [Kaufnebenkosten in Rheinland-Pfalz: Alle Kosten auf einen Blick](/ratgeber/kaufnebenkosten-rheinland-pfalz).
 
 ## Hausbesichtigung Checkliste zum Abhaken
 
@@ -148,9 +148,9 @@ Nur auf das zu schauen, was sich später ändern lässt. Eine alte Küche oder e
 
 ## So finden Sie das passende Objekt
 
-Mit einer guten Vorbereitung sparen Sie sich teure Überraschungen. Den Markt vor Ort kennen Sie damit trotzdem noch nicht. Was in Saarburg ein realistischer Preis ist, kann in einem Dorf 15 Kilometer weiter deutlich daneben liegen. Ortsbezogene Einschätzungen finden Sie in meinen Ratgebern [INTERNER LINK: "Haus kaufen in Saarburg: Preise, Lagen, Tipps 2026" -> /haus-kaufen-saarburg/] und [INTERNER LINK: "Haus kaufen in der Eifel: Lagen, Preise, Tipps 2026" -> /haus-kaufen-eifel/].
+Mit einer guten Vorbereitung sparen Sie sich teure Überraschungen. Den Markt vor Ort kennen Sie damit trotzdem noch nicht. Was in Saarburg ein realistischer Preis ist, kann in einem Dorf 15 Kilometer weiter deutlich daneben liegen. Ortsbezogene Einschätzungen finden Sie in meinen Ratgebern [Haus kaufen in Saarburg: Preise, Lagen, Tipps 2026](/ratgeber/haus-kaufen-saarburg) und [Haus kaufen in der Eifel: Lagen, Preise, Tipps 2026](/ratgeber/haus-kaufen-eifel).
 
-Meine aktuellen Angebote im Raum Hermeskeil, Trier, Saarburg, Konz, Schweich, Bernkastel-Kues, Bitburg und Wittlich finden Sie unter [mezzarano-wuestenrot-immobilien.de/immobilien](https://mezzarano-wuestenrot-immobilien.de/immobilien). Wenn Sie ein konkretes Objekt im Blick haben und eine zweite Meinung zum Zustand oder zum Preis möchten, rufen Sie mich an unter 06503 9523963 oder schreiben Sie mir über die [Kontaktseite](https://mezzarano-wuestenrot-immobilien.de/kontakt). Ich sage Ihnen ehrlich, was ich sehe, auch wenn die Antwort lautet: Finger weg.
+Meine aktuellen Angebote im Raum Hermeskeil, Trier, Saarburg, Konz, Schweich, Bernkastel-Kues, Bitburg und Wittlich finden Sie unter [mezzarano-wuestenrot-immobilien.de/immobilien](/immobilien). Wenn Sie ein konkretes Objekt im Blick haben und eine zweite Meinung zum Zustand oder zum Preis möchten, rufen Sie mich an unter 06503 9523963 oder schreiben Sie mir über die [Kontaktseite](/kontakt). Ich sage Ihnen ehrlich, was ich sehe, auch wenn die Antwort lautet: Finger weg.
 
 <!--
 CONTENT-STRATEGIE (intern, nicht veröffentlichen)
