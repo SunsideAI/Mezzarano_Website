@@ -616,23 +616,6 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   </div>
                 )}
 
-                {/* Booking Link */}
-                {property?.bookingUrl && (
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Besichtigung buchen</h3>
-                    <p className="text-sm text-gray-500 mb-4">Vereinbaren Sie einen persönlichen Besichtigungstermin.</p>
-                    <a
-                      href={property.bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full gap-2 bg-primary-500 text-white font-bold px-6 py-3 rounded-[24px] hover:bg-primary-600 transition-colors"
-                    >
-                      <Calendar className="h-5 w-5" />
-                      Termin vereinbaren
-                    </a>
-                  </div>
-                )}
-
                 {/* Agent Info */}
                 <div className="bg-white p-6 rounded-xl shadow-lg">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">
