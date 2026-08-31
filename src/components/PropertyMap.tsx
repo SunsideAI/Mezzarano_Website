@@ -119,7 +119,7 @@ export default function PropertyMap({ address, city, plz, region, lat, lng }: Pr
             background: #F84914;
             width: 40px;
             height: 40px;
-            border-radius: 50% 50% 50% 0;
+            border-radius: 0;
             transform: rotate(-45deg);
             display: flex;
             align-items: center;

@@ -93,10 +93,10 @@ export default function KonzPage() {
                 Verkauf und die Vermietung von Immobilien in Konz an Saar und Mosel.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-[24px]">
+                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-none">
                   Kostenlose Beratung anfragen
                 </Link>
-                <Link href="/immobilien?ort=Konz" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-[24px]">
+                <Link href="/immobilien?ort=Konz" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-none">
                   Immobilien in Konz
                 </Link>
               </div>

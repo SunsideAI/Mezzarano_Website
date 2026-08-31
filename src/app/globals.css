@@ -95,10 +95,10 @@
 
   /* === BORDER-RADIUS === */
   --radius-haus: 0px;
-  --radius-fenster: 16px;
-  --radius-muenze: 50%;
-  --radius-button: 24px;
-  --radius-input: 8px;
+  --radius-fenster: 0px;
+  --radius-muenze: 0px;
+  --radius-button: 0px;
+  --radius-input: 0px;
 
   /* === SCHATTEN === */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -758,7 +758,7 @@
     height: 3px;
     background: linear-gradient(90deg, var(--color-wuestenrot), var(--color-wuestenrot-light));
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 2px;
+    border-radius: 0;
   }
 
   .underline-animate:hover::after {
@@ -803,7 +803,7 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+    border-radius: 0;
     transition: transform 0.5s ease;
   }
 
@@ -811,4 +811,31 @@
     transform: translate(-50%, -50%) scale(2);
     opacity: 0;
   }
+}
+
+/* Fremd-CSS mit eigenen Radien: Tailwind Typography und Leaflet kennen die
+   Theme-Skala nicht. Beide liegen in eigenen CSS-Bundles, deren Ladereihenfolge
+   nicht garantiert ist, deshalb hier bewusst hoehere Spezifitaet statt
+   Verlass auf die Kaskade. */
+.prose-blog :is(pre, kbd, code, img, figure, blockquote, table) {
+  border-radius: 0;
+}
+
+.leaflet-bar.leaflet-bar,
+.leaflet-bar.leaflet-bar a,
+.leaflet-control-layers.leaflet-control-layers,
+.leaflet-popup-content-wrapper.leaflet-popup-content-wrapper,
+.leaflet-tooltip.leaflet-tooltip {
+  border-radius: 0;
+}
+
+/* Eingebettete Fremd-Widgets (ProvenExpert, Elfsight Instagram) injizieren ihr
+   CSS zur Laufzeit ins Dokument. Doppelte Klassen fuer hoehere Spezifitaet,
+   damit die Ecken auch nach dem Nachladen eckig bleiben. Rein dekorativ: greift
+   ein Selektor nach einem Widget-Update nicht mehr, bleibt nur eine Ecke rund. */
+[class*='pew-'][class*='pew-'],
+[class*='pew-'][class*='pew-'] *,
+[class*='eapps-'][class*='eapps-'],
+[class*='eapps-'][class*='eapps-'] * {
+  border-radius: 0 !important;
 }

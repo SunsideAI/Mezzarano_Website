@@ -608,7 +608,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                       href={property.virtualTourUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-[24px] hover:bg-gray-100 transition-colors"
+                      className="inline-flex items-center justify-center w-full gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-none hover:bg-gray-100 transition-colors"
                     >
                       <Play className="h-5 w-5" />
                       Rundgang starten

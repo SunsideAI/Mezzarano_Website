@@ -294,7 +294,7 @@ export default function SuchprofilPage() {
           <div className="flex gap-2 flex-wrap">
             {ZIMMER.map(z => (
               <button key={z} onClick={() => setS2(p => ({ ...p, zimmer: z }))}
-                className={`px-4 py-2 rounded-[24px] text-sm font-semibold border transition-all ${
+                className={`px-4 py-2 rounded-none text-sm font-semibold border transition-all ${
                   s2.zimmer === z
                     ? 'bg-primary-500 text-white border-primary-500'
                     : 'bg-white text-gray-600 border-gray-200 hover:border-primary-400 hover:text-primary-500'

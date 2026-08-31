@@ -303,7 +303,7 @@ export default function ImmobilienPage() {
               {/* Filter Toggle */}
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-[24px] border transition-colors ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-none border transition-colors ${
                   showFilters || activeFilterCount > 0
                     ? 'bg-primary-500 text-white border-primary-500'
                     : 'bg-white text-gray-700 border-gray-200 hover:border-primary-300'
@@ -531,7 +531,7 @@ export default function ImmobilienPage() {
               <button
                 onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="p-2 rounded-[24px] border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-none border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                 aria-label="Vorherige Seite"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -544,7 +544,7 @@ export default function ImmobilienPage() {
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page as number)}
-                    className={`w-10 h-10 rounded-[24px] text-sm font-medium transition-colors ${
+                    className={`w-10 h-10 rounded-none text-sm font-medium transition-colors ${
                       currentPage === page
                         ? 'bg-primary-500 text-white'
                         : 'border border-gray-200 hover:border-primary-500 hover:text-primary-500'
@@ -558,7 +558,7 @@ export default function ImmobilienPage() {
               <button
                 onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="p-2 rounded-[24px] border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-none border border-gray-200 hover:border-primary-500 hover:text-primary-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                 aria-label="Nächste Seite"
               >
                 <ChevronRight className="h-5 w-5" />
@@ -593,7 +593,7 @@ function SuchprofilTile() {
   return (
     <Link
       href="/suchprofil"
-      className="group relative flex flex-col h-full min-h-[320px] rounded-[16px] bg-wuestenrot hover:bg-wuestenrot-hover hover:shadow-xl transition-all duration-300 p-6 overflow-hidden"
+      className="group relative flex flex-col h-full min-h-[320px] rounded-none bg-wuestenrot hover:bg-wuestenrot-hover hover:shadow-xl transition-all duration-300 p-6 overflow-hidden"
     >
       {/* Subtle gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 pointer-events-none" />

@@ -93,10 +93,10 @@ export default function BitburgPage() {
                 Verkauf und die Vermietung von Immobilien in Bitburg und der Eifel.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-[24px]">
+                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-none">
                   Kostenlose Beratung anfragen
                 </Link>
-                <Link href="/immobilien?ort=Bitburg" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-[24px]">
+                <Link href="/immobilien?ort=Bitburg" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-none">
                   Immobilien in Bitburg
                 </Link>
               </div>

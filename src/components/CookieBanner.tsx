@@ -60,13 +60,13 @@ export default function CookieBanner() {
             <div className="flex flex-col sm:flex-row gap-3 lg:flex-shrink-0">
               <button
                 onClick={handleReject}
-                className="px-6 py-3 border-2 border-gray-500 text-gray-300 font-semibold rounded-[24px] hover:border-white hover:text-white transition-colors"
+                className="px-6 py-3 border-2 border-gray-500 text-gray-300 font-semibold rounded-none hover:border-white hover:text-white transition-colors"
               >
                 Nur notwendige
               </button>
               <button
                 onClick={handleAccept}
-                className="px-6 py-3 bg-wuestenrot text-white font-semibold rounded-[24px] hover:bg-wuestenrot-hover transition-colors"
+                className="px-6 py-3 bg-wuestenrot text-white font-semibold rounded-none hover:bg-wuestenrot-hover transition-colors"
               >
                 Alle akzeptieren
               </button>

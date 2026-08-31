@@ -93,10 +93,10 @@ export default function SchweichPage() {
                 Sandro Mezzarano von Wüstenrot Immobilien berät Sie beim Kauf und Verkauf.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-[24px]">
+                <Link href="/kontakt" className="inline-flex items-center justify-center px-6 py-3 bg-wuestenrot text-white font-bold hover:bg-red-700 transition-colors rounded-none">
                   Beratung anfragen
                 </Link>
-                <Link href="/immobilien?ort=Schweich" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-[24px]">
+                <Link href="/immobilien?ort=Schweich" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-wuestennacht transition-colors rounded-none">
                   Immobilien in Schweich
                 </Link>
               </div>
@@ -277,13 +277,13 @@ export default function SchweichPage() {
             Auch aktiv in der Region
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/regionen/trier" className="px-6 py-3 bg-gray-100 rounded-[24px] hover:bg-gray-200 transition-colors text-secondary-700">
+            <Link href="/regionen/trier" className="px-6 py-3 bg-gray-100 rounded-none hover:bg-gray-200 transition-colors text-secondary-700">
               Trier
             </Link>
-            <Link href="/regionen/hermeskeil" className="px-6 py-3 bg-gray-100 rounded-[24px] hover:bg-gray-200 transition-colors text-secondary-700">
+            <Link href="/regionen/hermeskeil" className="px-6 py-3 bg-gray-100 rounded-none hover:bg-gray-200 transition-colors text-secondary-700">
               Hermeskeil
             </Link>
-            <Link href="/regionen/bernkastel-kues" className="px-6 py-3 bg-gray-100 rounded-[24px] hover:bg-gray-200 transition-colors text-secondary-700">
+            <Link href="/regionen/bernkastel-kues" className="px-6 py-3 bg-gray-100 rounded-none hover:bg-gray-200 transition-colors text-secondary-700">
               Bernkastel-Kues
             </Link>
           </div>

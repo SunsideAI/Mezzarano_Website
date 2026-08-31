@@ -8,6 +8,24 @@ const config: Config = {
     './src/content/**/*.{md,mdx}',
   ],
   theme: {
+    // Kantige Geometrie: alle Ecken 90 Grad. Die Skala ersetzt die
+    // Tailwind-Defaults, damit auch rounded-xl / rounded-full eckig sind.
+    borderRadius: {
+      none: '0',
+      sm: '0',
+      DEFAULT: '0',
+      md: '0',
+      lg: '0',
+      xl: '0',
+      '2xl': '0',
+      '3xl': '0',
+      full: '0',
+      haus: '0',
+      fenster: '0',
+      muenze: '0',
+      button: '0',
+      input: '0',
+    },
     extend: {
       colors: {
         // Wüstenrot Corporate Design Colors (Official Styleguide)
@@ -73,13 +91,6 @@ const config: Config = {
         ww: ['"WW Type"', 'Helvetica Neue', 'Arial', 'sans-serif'],
         sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
         serif: ['Georgia', 'Cambria', 'serif'],
-      },
-      borderRadius: {
-        'haus': '0px',        // Eckig - Logo/Headlines
-        'fenster': '16px',    // Boxen, Content
-        'muenze': '50%',      // Icons, Störer
-        'button': '24px',     // Pill-Buttons
-        'input': '8px',       // Formularfelder (nur oben)
       },
       spacing: {
         'xs': '4px',
