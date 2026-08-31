@@ -4,7 +4,7 @@ description: "Eigenbedarfskündigung nach Immobilienkauf in Trier: Sperrfrist, K
 tags:
   - - Eigenbedarfskündigung nach Immobilienkauf
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-06-29
 category: "Recht & Steuern"
 featured: false
 ---

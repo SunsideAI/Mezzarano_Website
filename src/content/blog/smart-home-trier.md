@@ -4,7 +4,7 @@ description: "Was smarte Technik beim Verkauf einer Immobilie in Trier bringt: d
 tags:
   - - Smart Home Trier
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-08-11
 category: "Immobilienbewertung"
 featured: false
 ---

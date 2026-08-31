@@ -8,7 +8,7 @@ tags:
   - Sonderumlage Eigentümerwechsel
   - Erhaltungsrücklage Hausgeld
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-07-13
 category: "Recht & Steuern"
 featured: false
 ---

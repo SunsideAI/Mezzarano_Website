@@ -4,7 +4,7 @@ description: "Eintragung im Grundbuch nach dem Erbe: zwei Jahre gebührenfrei, w
 tags:
   - - Eintragung Grundbuch Erbe
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-07-01
 category: "Recht & Steuern"
 featured: false
 ---

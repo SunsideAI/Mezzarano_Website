@@ -4,7 +4,7 @@ description: "Carport vorm Haus in Rheinland-Pfalz: bis 50 m² genehmigungsfrei,
 tags:
   - - Carport vorm Haus
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-07-23
 category: "Immobilienbewertung"
 featured: false
 ---

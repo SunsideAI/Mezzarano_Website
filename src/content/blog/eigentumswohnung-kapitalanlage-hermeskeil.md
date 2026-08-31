@@ -4,7 +4,7 @@ description: "Eigentumswohnung als Kapitalanlage in Hermeskeil: Kaufpreisfaktor,
 tags:
   - - Eigentumswohnung als Kapitalanlage Hermeskeil
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-07-16
 category: "Immobilie kaufen"
 featured: false
 ---

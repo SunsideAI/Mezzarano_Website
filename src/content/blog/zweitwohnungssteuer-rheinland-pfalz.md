@@ -8,7 +8,7 @@ tags:
   - Zweitwohnungssteuer Ferienwohnung
   - Zweitwohnungssteuer absetzen
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-08-13
 category: "Recht & Steuern"
 featured: false
 ---

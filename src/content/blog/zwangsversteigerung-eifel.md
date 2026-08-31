@@ -4,7 +4,7 @@ description: "Zwangsversteigerung in der Eifel: Wie das Verfahren an den Amtsger
 tags:
   - - Zwangsversteigerung Eifel
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-08-07
 category: "Immobilie kaufen"
 featured: false
 ---

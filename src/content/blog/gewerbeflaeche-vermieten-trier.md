@@ -4,7 +4,7 @@ description: "Gewerbefläche vermieten in Trier: Was Büro- und Lagerflächen br
 tags:
   - - Gewerbefläche vermieten Trier
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-08-05
 category: "Markt & Region"
 featured: false
 ---

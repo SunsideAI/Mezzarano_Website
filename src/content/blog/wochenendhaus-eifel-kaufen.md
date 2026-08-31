@@ -4,7 +4,7 @@ description: "Wochenendhaus in der Eifel kaufen: Bebauungsplan, Pachtgrund, Zwei
 tags:
   - - Wochenendhaus Eifel kaufen
 author: "Sandro Mezzarano"
-pubDate: 2026-08-17
+pubDate: 2026-07-29
 category: "Immobilie kaufen"
 featured: false
 ---
