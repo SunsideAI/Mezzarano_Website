@@ -9,6 +9,7 @@ tags:
   - Maklerprovision steuerlich absetzen
   - Wohn-Riester Steuererklärung
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_510543411.jpeg"
 pubDate: 2026-07-24
 category: "Recht & Steuern"
 featured: false

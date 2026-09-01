@@ -8,6 +8,7 @@ tags:
   - Mietrendite Trier
   - Mehrfamilienhaus Trier kaufen
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_265469422.jpeg"
 pubDate: 2026-07-03
 category: "Immobilie kaufen"
 featured: false

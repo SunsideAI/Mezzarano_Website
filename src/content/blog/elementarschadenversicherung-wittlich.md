@@ -4,6 +4,7 @@ description: "Warum die Lieser über die Versicherbarkeit Ihrer Immobilie in Wit
 tags:
   - - Elementarschadenversicherung Wittlich
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-07-21
 category: "Finanzierung & Vorsorge"
 featured: false

@@ -4,6 +4,7 @@ description: "Welche Versicherungen Ihre Immobilie in Trier braucht, was der Ele
 tags:
   - - Versicherungen Immobilie Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_510543411.jpeg"
 pubDate: 2026-08-10
 category: "Finanzierung & Vorsorge"
 featured: false

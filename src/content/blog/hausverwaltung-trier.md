@@ -8,6 +8,7 @@ tags:
   - WEG-Verwaltung
   - Verwaltervertrag
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_112407784.jpeg"
 pubDate: 2026-07-15
 category: "Recht & Steuern"
 featured: false

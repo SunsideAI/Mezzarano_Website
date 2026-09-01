@@ -9,6 +9,7 @@ tags:
   - Bodenrichtwert vs. Verkehrswert
   - Bodenrichtwert Grundsteuer
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_510543411.jpeg"
 pubDate: 2026-06-22
 category: "Immobilienbewertung"
 featured: false

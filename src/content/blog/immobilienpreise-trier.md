@@ -8,6 +8,7 @@ tags:
   - Wohnungspreise Trier
   - Preisentwicklung Trier
 author: "Sandro Mezzarano"
+image: "/images/regionen/Trier.jpg"
 pubDate: 2026-06-22
 category: "Markt & Region"
 featured: false

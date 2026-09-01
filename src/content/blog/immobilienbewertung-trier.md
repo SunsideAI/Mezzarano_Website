@@ -9,6 +9,7 @@ tags:
   - Immobiliengutachter Trier
   - kostenlose Immobilienbewertung Trier
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_112407784.jpeg"
 pubDate: 2026-06-22
 category: "Immobilienbewertung"
 featured: false

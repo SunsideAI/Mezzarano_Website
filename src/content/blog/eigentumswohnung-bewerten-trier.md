@@ -9,6 +9,7 @@ tags:
   - Erhaltungsrücklage Kaufpreis
   - Teilungserklärung Wohnungswert
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_629132659.jpeg"
 pubDate: 2026-07-31
 category: "Immobilienbewertung"
 featured: false

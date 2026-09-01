@@ -9,6 +9,7 @@ tags:
   - Haus verkaufen im Alter
   - Mehrgenerationenwohnen Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-08-14
 category: "Markt & Region"
 featured: false

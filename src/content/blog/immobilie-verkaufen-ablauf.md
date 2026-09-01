@@ -8,6 +8,7 @@ tags:
   - Wie lange dauert ein Hausverkauf
   - Unterlagen Immobilienverkauf
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_1875955848.jpeg"
 pubDate: 2026-06-22
 category: "Immobilie verkaufen"
 featured: false

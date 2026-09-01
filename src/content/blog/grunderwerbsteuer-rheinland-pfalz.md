@@ -9,6 +9,7 @@ tags:
   - wer zahlt die Grunderwerbsteuer
   - Grunderwerbsteuer Befreiung
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_288240294.jpeg"
 pubDate: 2026-06-22
 category: "Recht & Steuern"
 featured: false

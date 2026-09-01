@@ -9,6 +9,7 @@ tags:
   - Eigentumswohnung Kapitalanlage Steuer
   - Notarkosten absetzbar
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_112407784.jpeg"
 pubDate: 2026-07-30
 category: "Recht & Steuern"
 featured: false

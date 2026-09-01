@@ -8,6 +8,7 @@ tags:
   - Geoportal Trier Bodenrichtwerte
   - Grundstückswert Trier ermitteln
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_1875955848.jpeg"
 pubDate: 2026-07-09
 category: "Immobilienbewertung"
 featured: false

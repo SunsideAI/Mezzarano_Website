@@ -8,6 +8,7 @@ tags:
   - Zinsentwicklung Immobilienkredit
   - Hauskauf Zinsen Hochwald
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-07-07
 category: "Finanzierung & Vorsorge"
 featured: false

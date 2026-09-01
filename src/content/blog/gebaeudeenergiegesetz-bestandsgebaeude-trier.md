@@ -9,6 +9,7 @@ tags:
   - kommunale Wärmeplanung Trier
   - Heizungstausch Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_288240294.jpeg"
 pubDate: 2026-07-08
 category: "Recht & Steuern"
 featured: false

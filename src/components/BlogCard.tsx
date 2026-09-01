@@ -1,20 +1,18 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, Clock, ArrowRight, Tag, TrendingUp, Home, Key, Building, Lightbulb, BookOpen, FileText, PiggyBank, Scale, MapPin, Users } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, Tag, TrendingUp, Home, Key, BookOpen, PiggyBank, Scale, MapPin } from 'lucide-react'
 import type { BlogPostMeta } from '@/lib/blog'
 
 // Category to icon mapping
+// Keys must match the category values in the post frontmatter. They did not,
+// so every card fell through to the BookOpen fallback.
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  'Marktberichte': TrendingUp,
-  'Kaufen': Home,
-  'Verkaufen': Key,
-  'Finanzierung': PiggyBank,
-  'Tipps': Lightbulb,
-  'Recht': Scale,
-  'Region': MapPin,
-  'Ratgeber': BookOpen,
-  'News': FileText,
-  'Über uns': Users,
+  'Immobilie kaufen': Home,
+  'Immobilie verkaufen': Key,
+  'Immobilienbewertung': TrendingUp,
+  'Recht & Steuern': Scale,
+  'Finanzierung & Vorsorge': PiggyBank,
+  'Markt & Region': MapPin,
 }
 
 // Get icon component for category

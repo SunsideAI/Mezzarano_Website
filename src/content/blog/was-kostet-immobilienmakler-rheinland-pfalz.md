@@ -8,6 +8,7 @@ tags:
   - Maklerkosten Trier
   - Maklerprovision verhandeln
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_712383372.jpeg"
 pubDate: 2026-06-22
 category: "Immobilie verkaufen"
 featured: false

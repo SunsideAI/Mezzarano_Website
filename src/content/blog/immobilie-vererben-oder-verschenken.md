@@ -9,6 +9,7 @@ tags:
   - Immobilie an Kinder übertragen
   - Pflichtteilsergänzungsanspruch Schenkung
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-07-30
 category: "Recht & Steuern"
 featured: false

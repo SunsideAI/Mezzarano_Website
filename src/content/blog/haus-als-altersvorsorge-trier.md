@@ -8,6 +8,7 @@ tags:
   - mietfrei wohnen im Alter
   - Instandhaltungsruecklage Einfamilienhaus
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-07-30
 category: "Finanzierung & Vorsorge"
 featured: false

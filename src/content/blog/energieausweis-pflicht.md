@@ -9,6 +9,7 @@ tags:
   - Energieausweis Gültigkeit
   - Pflichtangaben Immobilienanzeige
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_629132659.jpeg"
 pubDate: 2026-06-22
 category: "Recht & Steuern"
 featured: false

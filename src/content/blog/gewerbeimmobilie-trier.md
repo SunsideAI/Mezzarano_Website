@@ -4,6 +4,7 @@ description: "Was Ihre Gewerbeimmobilie in Trier wert ist, welche Steuerfallen b
 tags:
   - - Gewerbeimmobilie Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_510543411.jpeg"
 pubDate: 2026-07-14
 category: "Immobilie verkaufen"
 featured: false

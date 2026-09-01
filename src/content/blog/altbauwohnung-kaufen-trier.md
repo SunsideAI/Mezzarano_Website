@@ -9,6 +9,7 @@ tags:
   - denkmalgeschützte Wohnung Trier
   - Altbau sanieren Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_712383372.jpeg"
 pubDate: 2026-06-30
 category: "Immobilie kaufen"
 featured: false

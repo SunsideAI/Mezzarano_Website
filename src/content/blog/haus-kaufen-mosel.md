@@ -9,6 +9,7 @@ keywords:
   - Haus Schweich kaufen
   - Mosel Eigenheim
 author: "Sandro Mezzarano"
+image: "/images/regionen/Bernkastel.jpg"
 pubDate: 2026-05-18
 category: "Immobilie kaufen"
 featured: false

@@ -9,6 +9,7 @@ tags:
   - zweite Besichtigung
   - Onlinebesichtigung
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_265469422.jpeg"
 pubDate: 2026-07-30
 category: "Immobilie kaufen"
 featured: false

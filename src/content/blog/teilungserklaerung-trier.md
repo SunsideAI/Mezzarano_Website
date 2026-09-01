@@ -9,6 +9,7 @@ tags:
   - Gemeinschaftsordnung
   - Sondernutzungsrecht Stellplatz
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_288240294.jpeg"
 pubDate: 2026-08-03
 category: "Recht & Steuern"
 featured: false

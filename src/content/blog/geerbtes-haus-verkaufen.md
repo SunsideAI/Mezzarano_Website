@@ -8,6 +8,7 @@ keywords:
   - "Spekulationsfrist geerbtes Haus"
   - "Erbengemeinschaft Haus verkaufen"
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-06-22
 category: "Immobilie verkaufen"
 featured: false

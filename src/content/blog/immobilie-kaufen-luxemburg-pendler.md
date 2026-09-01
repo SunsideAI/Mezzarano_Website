@@ -8,6 +8,7 @@ tags:
   - Baufinanzierung Grenzgänger Luxemburg
   - Steuern Grenzgänger Immobilie Deutschland
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_601594714.jpeg"
 pubDate: 2026-06-22
 category: "Markt & Region"
 featured: false

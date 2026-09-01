@@ -4,6 +4,7 @@ description: "Immobilie privat verkaufen in Hermeskeil: Preisfindung, Aufklärun
 tags:
   - - Immobilie privat verkaufen Hermeskeil
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_112407784.jpeg"
 pubDate: 2026-08-06
 category: "Immobilie verkaufen"
 featured: false

@@ -8,6 +8,7 @@ tags:
   - Zugewinnausgleich Immobilie
   - Scheidungsimmobilie Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_1875955848.jpeg"
 pubDate: 2026-07-28
 category: "Immobilie verkaufen"
 featured: false

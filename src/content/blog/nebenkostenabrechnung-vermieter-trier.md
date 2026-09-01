@@ -8,6 +8,7 @@ tags:
   - Nebenkostenabrechnung Frist
   - CO2-Kosten Vermieter Mieter
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_476608445.jpeg"
 pubDate: 2026-07-17
 category: "Recht & Steuern"
 featured: false

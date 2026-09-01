@@ -8,6 +8,7 @@ keywords:
   - "Spekulationsfrist vermietete Immobilie"
   - "Eigenbedarfskündigung Verkauf"
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_288240294.jpeg"
 pubDate: 2026-05-18
 category: "Immobilie verkaufen"
 featured: false

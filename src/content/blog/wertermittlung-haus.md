@@ -10,6 +10,7 @@ tags:
   - Verkehrswert Haus
   - ImmoWertV
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_629132659.jpeg"
 pubDate: 2026-06-22
 category: "Immobilienbewertung"
 featured: false

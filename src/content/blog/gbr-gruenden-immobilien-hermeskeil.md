@@ -8,6 +8,7 @@ tags:
   - Grundbuchamt Hermeskeil
   - Hofstelle Hochwald Nachfolge
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_476608445.jpeg"
 pubDate: 2026-07-06
 category: "Recht & Steuern"
 featured: false

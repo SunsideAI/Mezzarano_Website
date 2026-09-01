@@ -8,6 +8,7 @@ tags:
   - Ankaufsangebot Immobilie prüfen
   - Immobilie diskret verkaufen Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_288240294.jpeg"
 pubDate: 2026-08-17
 category: "Immobilie verkaufen"
 featured: false

@@ -4,6 +4,7 @@ description: "Seit 29. Juli 2026 gilt das GModG. Welche Sanierungspflicht Eigent
 tags:
   - - Sanierungspflicht Trier
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_288240294.jpeg"
 pubDate: 2026-07-22
 category: "Recht & Steuern"
 featured: false

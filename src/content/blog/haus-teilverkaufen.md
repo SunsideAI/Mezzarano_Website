@@ -8,6 +8,7 @@ tags:
   - Alternativen zum Teilverkauf
   - Haus verkaufen und wohnen bleiben
 author: "Sandro Mezzarano"
+image: "/images/stock/AdobeStock_349911568.jpeg"
 pubDate: 2026-05-18
 category: "Immobilie verkaufen"
 featured: false

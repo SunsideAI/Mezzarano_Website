@@ -9,6 +9,7 @@ keywords:
   - Haus kaufen Vulkaneifel
   - Wochenendhaus Eifel
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_476608445.jpeg"
 pubDate: 2026-05-18
 category: "Immobilie kaufen"
 featured: false

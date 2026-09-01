@@ -9,6 +9,7 @@ keywords:
   - Neubauwohnung Bitburg
   - Wohnung Eifelkreis Bitburg-Prüm
 author: Sandro Mezzarano
+image: "/images/regionen/Bittburg.png"
 pubDate: 2026-05-18
 category: Immobilie kaufen
 featured: false

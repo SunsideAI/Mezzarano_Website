@@ -9,6 +9,7 @@ tags:
   - Grunderwerbsteuer GbR
   - Familienpool Immobilien
 author: "Sandro Mezzarano"
+image: "/images/hero/AdobeStock_476608445.jpeg"
 pubDate: 2026-07-30
 category: "Recht & Steuern"
 featured: false
