@@ -27,7 +27,7 @@ Für ein typisches Einfamilienhaus mit 130 Quadratmetern ergibt das eine grobe S
 
 Wer genauer wissen will, wo sein Haus steht, sollte eine Bewertung vornehmen lassen, bevor er sich für einen der beiden Wege entscheidet. Beide Rechnungen, Verkauf wie Vermietung, starten beim Marktwert.
 
-[INTERNER LINK: "Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?" -> /ratgeber/immobilienbewertung-trier/]
+[Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/ratgeber/immobilienbewertung-trier/)
 
 ## Was die Vermietung in Hermeskeil einbringt
 
@@ -85,11 +85,9 @@ Das ist der Punkt, den ich Eigentümern am deutlichsten sage: In Hermeskeil sind
 
 Nach § 566 BGB gilt „Kauf bricht nicht Miete“. Der Käufer tritt in den bestehenden Vertrag ein. Für einen Selbstnutzer heißt das: Eigenbedarfskündigung, Kündigungsfrist von bis zu neun Monaten, womöglich Streit. Viele springen an diesem Punkt ab. Übrig bleiben Kapitalanleger, und die rechnen mit der Mietrendite statt mit dem Wohnwert. Das drückt den Preis.
 
-In meinen Beratungen im Hochwald erlebe ich deshalb oft dieselbe Reihenfolge: Das Haus wird vermietet, weil der Verkauf „noch warten kann“. Fünf Jahre später soll es doch verkauft werden, und dann ist es vermietet, älter und schwerer zu vermarkten. <!-- TODO Fallstudie: konkreten Fall aus Hermeskeil oder Umgebung ergänzen -->
+In meinen Beratungen im Hochwald erlebe ich deshalb oft dieselbe Reihenfolge: Das Haus wird vermietet, weil der Verkauf „noch warten kann“. Fünf Jahre später soll es doch verkauft werden, und dann ist es vermietet, älter und schwerer zu vermarkten. **Die Kernaussage in einem Satz:** Wer ein Einfamilienhaus in Hermeskeil vermietet, obwohl er es mittelfristig verkaufen will, verkauft es später meist an Kapitalanleger statt an Selbstnutzer und damit oft unter dem Preis, den ein leeres Haus erzielt hätte.
 
-**Die Kernaussage in einem Satz:** Wer ein Einfamilienhaus in Hermeskeil vermietet, obwohl er es mittelfristig verkaufen will, verkauft es später meist an Kapitalanleger statt an Selbstnutzer und damit oft unter dem Preis, den ein leeres Haus erzielt hätte.
-
-[INTERNER LINK: "Vermietete Wohnung verkaufen: Was Eigentümer über Mieter, Preis und Steuer wissen müssen" -> /ratgeber/vermietete-wohnung-verkaufen/]
+[Vermietete Wohnung verkaufen: Was Eigentümer über Mieter, Preis und Steuer wissen müssen](/ratgeber/vermietete-wohnung-verkaufen/)
 
 ## Haus vermieten oder verkaufen in Hermeskeil: die Entscheidungshilfe
 
@@ -118,7 +116,7 @@ Zwei Varianten höre ich häufig:
 
 Als Sprengnetter-zertifizierter Sachverständiger ermittle ich zuerst den Marktwert Ihres Hauses, leer und vermietet. Mit beiden Zahlen nebeneinander ist die Entscheidung meist schon halb gefallen. Entscheiden Sie sich für den Verkauf, begleite ich Sie bis zum Notartermin. Entscheiden Sie sich für die Vermietung, sage ich Ihnen offen, mit welcher Miete Sie realistisch rechnen können.
 
-[INTERNER LINK: "Immobilie verkaufen: Ablauf in 10 Schritten" -> /ratgeber/immobilie-verkaufen-ablauf/]
+[Immobilie verkaufen: Ablauf in 10 Schritten](/ratgeber/immobilie-verkaufen-ablauf/)
 
 Mein Anspruch ist dabei derselbe wie bei jedem Auftrag: Ehrlichkeit hat ein Zuhause. Wenn Vermieten für Sie die bessere Wahl ist, sage ich Ihnen das.
 
@@ -138,7 +136,6 @@ Meistens ja. Einfamilienhäuser im Hochwald kaufen überwiegend Selbstnutzer, un
 
 **Was ist mein Haus in Hermeskeil wert?**
 Das hängt von Baujahr, Zustand und Lage ab. Eine kostenlose Wertermittlung gibt Ihnen eine belastbare Zahl als Grundlage für Ihre Entscheidung.
-
 
 **Sie stehen vor der Entscheidung, Ihr Haus in Hermeskeil zu vermieten oder zu verkaufen?** Lassen Sie uns beide Wege mit Ihren Zahlen durchrechnen. Fordern Sie Ihre [kostenlose Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) an oder rufen Sie mich direkt an: 06503 9523963. Sie erreichen mich auch über das [Kontaktformular](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder per E-Mail an sandro.mezzarano@wuestenrot.de.
 

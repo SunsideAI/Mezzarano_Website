@@ -28,7 +28,7 @@ Die Preise für Bauland in der Talstadt und in den Randlagen haben laut Gutachte
 
 **Kernaussage:** Ein Grundstück in Trier, auf dem ein Mehrfamilienhaus genehmigungsfähig ist, erzielt in der Regel einen höheren Quadratmeterpreis als eines, das nur für ein Einfamilienhaus taugt, weil Bauträger den Preis über die Wohnfläche kalkulieren, die sich darauf verkaufen lässt.
 
-Die Unterschiede innerhalb der Stadt sind enorm. Laut BORIS-RP liegt der höchste Bodenrichtwert für Wohnbauland an der Ostallee bei etwa 850 Euro pro Quadratmeter, der niedrigste im Bereich Ehrang bei etwa 120 Euro. Pfalzel, Biewer und Ehrang-Quint gehören zu den günstigeren Stadtteilen, Süd, Nord und die Innenstadt zu den teuersten. Wie Sie den Wert für Ihre Adresse selbst abrufen, erkläre ich ausführlich im Artikel [INTERNER LINK: "Bodenrichtwert Rheinland-Pfalz: finden und verstehen" -> /bodenrichtwert-rheinland-pfalz/].
+Die Unterschiede innerhalb der Stadt sind enorm. Laut BORIS-RP liegt der höchste Bodenrichtwert für Wohnbauland an der Ostallee bei etwa 850 Euro pro Quadratmeter, der niedrigste im Bereich Ehrang bei etwa 120 Euro. Pfalzel, Biewer und Ehrang-Quint gehören zu den günstigeren Stadtteilen, Süd, Nord und die Innenstadt zu den teuersten. Wie Sie den Wert für Ihre Adresse selbst abrufen, erkläre ich ausführlich im Artikel [Bodenrichtwert Rheinland-Pfalz: finden und verstehen](/ratgeber/bodenrichtwert-rheinland-pfalz/).
 
 ## Was ist mein Grundstück in Trier wert?
 
@@ -44,7 +44,7 @@ Der **Bodenrichtwert** ist der durchschnittliche Lagewert des Bodens in Euro pro
 
 **5. Untergrund.** Hier wird es in Trier speziell, deshalb bekommt der Punkt einen eigenen Abschnitt.
 
-Aus Sicht eines Sachverständigen heißt das: Zwei Grundstücke mit identischem Bodenrichtwert können am Markt 30 oder 40 Prozent auseinanderliegen. Mehr zu den Bewertungsverfahren lesen Sie im Artikel [INTERNER LINK: "Immobilienbewertung Trier: Was ist Ihr Haus wert?" -> /immobilienbewertung-trier/].
+Aus Sicht eines Sachverständigen heißt das: Zwei Grundstücke mit identischem Bodenrichtwert können am Markt 30 oder 40 Prozent auseinanderliegen. Mehr zu den Bewertungsverfahren lesen Sie im Artikel [Immobilienbewertung Trier: Was ist Ihr Haus wert?](/ratgeber/immobilienbewertung-trier/).
 
 ## Trierer Besonderheiten: römischer Boden und Mosel
 
@@ -75,11 +75,9 @@ Den Garten neben Weinbergen in Olewig oder Avelsbach sollten Sie ebenfalls genau
 
 **Schritt 5: Verhandeln und Käufer prüfen.** Lassen Sie sich vor dem Notartermin eine Finanzierungsbestätigung zeigen. Bei Bauträgern ist ein Kaufvertrag unter Vorbehalt der Baugenehmigung üblich. Das kann sinnvoll sein, verlängert aber die Zeit bis zum Geldeingang.
 
-**Schritt 6: Notar und Übergabe.** Der Notar entwirft den Vertrag, beurkundet und kümmert sich um die Eintragung ins Grundbuch. Den Gesamtprozess beschreibe ich in [INTERNER LINK: "Immobilie verkaufen: Ablauf in 10 Schritten" -> /immobilie-verkaufen-ablauf/].
+**Schritt 6: Notar und Übergabe.** Der Notar entwirft den Vertrag, beurkundet und kümmert sich um die Eintragung ins Grundbuch. Den Gesamtprozess beschreibe ich in [Immobilie verkaufen: Ablauf in 10 Schritten](/ratgeber/immobilie-verkaufen-ablauf/).
 
-Ein Eigentümer aus Trier-Tarforst kam mit einem Bauplatz zu mir, den er zwei Jahre lang privat angeboten hatte. Der Preis passte zum Bodenrichtwert, das Grundstück hatte aber rund acht Meter Höhenunterschied. Erst als wir eine grobe Kostenschätzung für die Hangbebauung ins Exposé aufnahmen, fanden sich ernsthafte Interessenten. Transparenz hat den Preis nicht gedrückt, sie hat das Misstrauen abgebaut. <!-- TODO Fallstudie: Beispiel mit Sandro Mezzarano abstimmen oder durch echten Fall ersetzen -->
-
-## Steuern beim Grundstücksverkauf: die 10-Jahres-Falle
+Ein Eigentümer aus Trier-Tarforst kam mit einem Bauplatz zu mir, den er zwei Jahre lang privat angeboten hatte. Der Preis passte zum Bodenrichtwert, das Grundstück hatte aber rund acht Meter Höhenunterschied. Erst als wir eine grobe Kostenschätzung für die Hangbebauung ins Exposé aufnahmen, fanden sich ernsthafte Interessenten. Transparenz hat den Preis nicht gedrückt, sie hat das Misstrauen abgebaut. ## Steuern beim Grundstücksverkauf: die 10-Jahres-Falle
 
 Bei unbebauten Grundstücken im Privatvermögen gilt die Spekulationsfrist nach § 23 EStG. Verkaufen Sie innerhalb von zehn Jahren nach dem Kauf, ist der Gewinn einkommensteuerpflichtig. Anders als beim selbst bewohnten Haus gibt es für ein unbebautes Grundstück keine Ausnahme wegen Eigennutzung, denn auf einem leeren Grundstück wohnt niemand.
 
@@ -87,7 +85,7 @@ Bei unbebauten Grundstücken im Privatvermögen gilt die Spekulationsfrist nach 
 
 Besonders tückisch ist das bei geteilten Grundstücken. Viele Eigentümer in Trier trennen einen Teil ihres großen Gartens ab und verkaufen ihn als Bauplatz. Nach der Rechtsprechung des Bundesfinanzhofs ist dieser abgetrennte Teil in der Regel nicht durch die Eigennutzung des Hauses geschützt. Liegt der Kauf des Gesamtgrundstücks weniger als zehn Jahre zurück, kann der Verkauf steuerpflichtig sein. Wer mehrere Grundstücke in kurzer Zeit verkauft oder vorher selbst erschließt, kann außerdem in den gewerblichen Grundstückshandel geraten.
 
-Bei geerbten Grundstücken läuft die Frist des Erblassers weiter. Mehr dazu im Artikel [INTERNER LINK: "Geerbtes Haus verkaufen: Steuer, Fristen, Ablauf" -> /geerbtes-haus-verkaufen/].
+Bei geerbten Grundstücken läuft die Frist des Erblassers weiter. Mehr dazu im Artikel [Geerbtes Haus verkaufen: Steuer, Fristen, Ablauf](/ratgeber/geerbtes-haus-verkaufen/).
 
 Steuerfragen sind immer Einzelfälle. Sprechen Sie vor dem Verkauf mit Ihrem Steuerberater. Ich kann Ihnen sagen, welche Fragen Sie stellen sollten, eine steuerliche Beratung ersetzt das nicht.
 
@@ -117,32 +115,6 @@ Ein Grundstück in Trier verkauft sich nicht über den Bodenrichtwert allein. Es
 
 Sie möchten wissen, was Ihr Grundstück in Trier wert ist? Ich schaue mir Ihren Bauplatz persönlich an und gebe Ihnen eine ehrliche Einschätzung, kostenlos und unverbindlich. [Jetzt Grundstück bewerten lassen](https://mezzarano-wuestenrot-immobilien.de/bewerten) oder rufen Sie mich direkt an: 06503 9523963.
 
-
 *Über den Autor: Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien in Hermeskeil und seit über 16 Jahren im Immobilienmarkt zwischen Hochwald, Trier und Mosel tätig. Er ist zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung.*
 
 *Quellen: Gutachterausschuss für Grundstückswerte der Stadt Trier, „Trierer Immobilienmarkt des Jahres 2025“ (trier.de); BORIS-RP / Geoportal Rheinland-Pfalz; ADD Rheinland-Pfalz zum Grundstückverkehrsgesetz; § 23 EStG; § 656c BGB; ImmoWertV. Dieser Artikel ersetzt keine Steuer- oder Rechtsberatung.*
-
-<!--
-INTERNE NOTIZEN (nicht veröffentlichen)
-
-Content-Strategie:
-- Abgrenzung: Art. Bodenrichtwert RLP = Wert finden/verstehen; dieser Artikel = Verkaufsprozess unbebautes Grundstück Trier. Immobilienbewertung Trier = Häuser. Kein Konflikt.
-- Exklusiv: Bodendenkmal/römischer Untergrund, Hochwassergebiete Ehrang/Pfalzel/Biewer/Zewen, Rebflächen-Schwelle 0,1 ha (Olewig/Avelsbach), keine Provisionsteilung bei unbebauten Grundstücken, Spekulationsfrist bei Gartenteilung.
-- VOR VERÖFFENTLICHUNG PRÜFEN: Bodenrichtwerte Ostallee ~850 / Ehrang ~120 EUR/m² in BORIS-RP (Stichtag 01.01.2026) verifizieren; Fallbeispiel Tarforst mit Sandro abstimmen.
-
-Content-Map-Eintrag:
-### Art. [NR]: Grundstück verkaufen in Trier: Preis, Ablauf, Steuern
-- **Status:** Geschrieben 2026-09-10
-- **Haupt-Keyword:** Grundstück verkaufen Trier
-- **Neben-Keywords:** Bauplatz verkaufen Trier, Grundstückswert Trier, unbebautes Grundstück verkaufen, Spekulationsfrist Grundstück, Grundstück verkaufen Unterlagen
-- **Kategorie:** Immobilie verkaufen
-- **Template:** Ratgeber
-- **Slug:** /grundstueck-verkaufen-trier/
-- **Zusammenfassung:** Verkaufsratgeber für unbebaute Grundstücke in Trier: Marktdaten 2025, Wertfaktoren, Trierer Besonderheiten (Bodendenkmal, Hochwasser, Rebflächen), 6-Schritte-Ablauf, Spekulationsfrist, freie Provision.
-- **Interne Links:** /bodenrichtwert-rheinland-pfalz/, /immobilienbewertung-trier/, /immobilie-verkaufen-ablauf/, /geerbtes-haus-verkaufen/
-
-Rückverlinkung:
-- bodenrichtwert-rheinland-pfalz -> im Abschnitt Trier-Stadt
-- immobilienpreise-trier -> im Bauland-Absatz
-- immobilie-verkaufen-ablauf -> Hinweis "Sonderfall Grundstück"
--->

@@ -27,7 +27,7 @@ Der Grund liegt im Bestand. Viele Trierer Häuser stammen aus den 1950er- bis 19
 
 > **In Trier ist der Quadratmeter in einer Eigentumswohnung 2026 rund 20 bis 25 Prozent teurer als im Haus. Weil Häuser aber deutlich mehr Wohnfläche haben, liegt der Gesamtpreis für ein Haus fast immer spürbar über dem einer Wohnung.**
 
-Ein Blick ins Umland verschiebt das Bild. Im Landkreis Trier-Saarburg liegen Eigentumswohnungen laut Gutachterausschuss bei rund 2.460 Euro pro Quadratmeter, gepflegte Häuser dagegen bei etwa 3.000 Euro und damit teils auf Stadtniveau. Wer ein Haus sucht, spart im Umland also nicht automatisch pro Quadratmeter. Er bekommt aber meist mehr Grundstück für sein Geld. Alle Details zu den Stadtteilen finden Sie in meinem [INTERNER LINK: "Immobilienpreise Trier: Marktbericht 2026" -> /ratgeber/immobilienpreise-trier/].
+Ein Blick ins Umland verschiebt das Bild. Im Landkreis Trier-Saarburg liegen Eigentumswohnungen laut Gutachterausschuss bei rund 2.460 Euro pro Quadratmeter, gepflegte Häuser dagegen bei etwa 3.000 Euro und damit teils auf Stadtniveau. Wer ein Haus sucht, spart im Umland also nicht automatisch pro Quadratmeter. Er bekommt aber meist mehr Grundstück für sein Geld. Alle Details zu den Stadtteilen finden Sie in meinem [Immobilienpreise Trier: Marktbericht 2026](/ratgeber/immobilienpreise-trier/).
 
 ## Rechenbeispiel: Was Sie am Ende wirklich zahlen
 
@@ -43,7 +43,7 @@ Zahlen pro Quadratmeter sind abstrakt. Deshalb zwei typische Objekte aus dem Tri
 | Maklerprovision Käuferanteil (3,57 %) | 10.139 EUR | 12.995 EUR |
 | **Gesamt inkl. Nebenkosten** | **ca. 312.600 – 314.000 EUR** | **ca. 400.650 – 402.500 EUR** |
 
-Der Unterschied liegt bei rund 88.000 Euro. Bei einem Zinssatz von vier Prozent sind das allein an Zinsen etwa 290 Euro im Monat mehr, bevor Sie einen Euro getilgt haben. Die Nebenkosten fallen in Rheinland-Pfalz mit 5,0 Prozent Grunderwerbsteuer etwas günstiger aus als in vielen anderen Bundesländern, bleiben aber ein Posten, den Sie aus Eigenkapital bezahlen sollten. Wie sich die Kosten im Einzelnen zusammensetzen, erkläre ich im Beitrag [INTERNER LINK: "Kaufnebenkosten in Rheinland-Pfalz" -> /ratgeber/kaufnebenkosten-rheinland-pfalz/].
+Der Unterschied liegt bei rund 88.000 Euro. Bei einem Zinssatz von vier Prozent sind das allein an Zinsen etwa 290 Euro im Monat mehr, bevor Sie einen Euro getilgt haben. Die Nebenkosten fallen in Rheinland-Pfalz mit 5,0 Prozent Grunderwerbsteuer etwas günstiger aus als in vielen anderen Bundesländern, bleiben aber ein Posten, den Sie aus Eigenkapital bezahlen sollten. Wie sich die Kosten im Einzelnen zusammensetzen, erkläre ich im Beitrag [Kaufnebenkosten in Rheinland-Pfalz](/ratgeber/kaufnebenkosten-rheinland-pfalz/).
 
 ## Laufende Kosten: Hausgeld gegen Instandhaltung
 
@@ -55,7 +55,7 @@ Nach dem Kauf beginnt der Teil, den viele unterschätzen. Und hier unterscheiden
 
 > **Wer ein Haus kauft, sollte die Instandhaltungsrücklage selbst bilden, als wäre sie ein Hausgeld. Rund 400 Euro im Monat sind für ein durchschnittliches Einfamilienhaus in Trier eine realistische Größenordnung.**
 
-Mein ehrlicher Eindruck aus der Praxis: Hauskäufer kalkulieren die Rate sauber, vergessen aber die Rücklage. Wohnungskäufer schauen auf das Hausgeld, lesen aber die Protokolle der Eigentümerversammlung nicht. Beides rächt sich. Was hinter Hausgeld und Sonderumlage steckt, lesen Sie im Beitrag [INTERNER LINK: "Hausgeld und Sonderumlage in Trier" -> /ratgeber/hausgeld-sonderumlage-trier/].
+Mein ehrlicher Eindruck aus der Praxis: Hauskäufer kalkulieren die Rate sauber, vergessen aber die Rücklage. Wohnungskäufer schauen auf das Hausgeld, lesen aber die Protokolle der Eigentümerversammlung nicht. Beides rächt sich. Was hinter Hausgeld und Sonderumlage steckt, lesen Sie im Beitrag [Hausgeld und Sonderumlage in Trier](/ratgeber/hausgeld-sonderumlage-trier/).
 
 ## Mitbestimmung: Wer entscheidet über Ihr Zuhause?
 
@@ -63,7 +63,7 @@ Hier liegt für mich der größte Unterschied, und er wird selten offen angespro
 
 Im Haus entscheiden Sie allein. Neue Heizung, Photovoltaik aufs Dach, Wintergarten, Fassadenfarbe: Solange Bebauungsplan und Nachbarrecht mitspielen, fragen Sie niemanden.
 
-In der Eigentumswohnung sind Sie Teil einer Gemeinschaft nach dem Wohnungseigentumsgesetz (WEG). Über das Gemeinschaftseigentum, also Dach, Fassade, Treppenhaus und Heizungsanlage, entscheidet die Eigentümerversammlung. Seit der WEG-Reform 2020 genügt für viele bauliche Veränderungen die einfache Mehrheit. Das macht Modernisierungen leichter, bedeutet aber auch: Sie können überstimmt werden und müssen Kosten unter Umständen mittragen. Welche Regeln in Ihrem Haus gelten, steht in der [INTERNER LINK: "Teilungserklärung" -> /ratgeber/teilungserklaerung-trier/].
+In der Eigentumswohnung sind Sie Teil einer Gemeinschaft nach dem Wohnungseigentumsgesetz (WEG). Über das Gemeinschaftseigentum, also Dach, Fassade, Treppenhaus und Heizungsanlage, entscheidet die Eigentümerversammlung. Seit der WEG-Reform 2020 genügt für viele bauliche Veränderungen die einfache Mehrheit. Das macht Modernisierungen leichter, bedeutet aber auch: Sie können überstimmt werden und müssen Kosten unter Umständen mittragen. Welche Regeln in Ihrem Haus gelten, steht in der [Teilungserklärung](/ratgeber/teilungserklaerung-trier/).
 
 Für manche Käufer ist die Gemeinschaft ein Vorteil. Wer beruflich viel unterwegs ist oder pendelt, schätzt es, dass sich eine Verwaltung um Winterdienst, Handwerker und Versicherung kümmert. Für andere ist sie ein Grund, lieber ein kleineres Haus im Umland zu kaufen.
 
@@ -84,7 +84,6 @@ Ehrlich gesagt hängt die Antwort stark von Ihrer Situation ab. Aus meinen Gespr
 - **Käufern, die selbst Hand anlegen** und über Modernisierung Wert schaffen möchten
 - **Menschen, die langfristig planen**, weil der Grundstücksanteil über Jahrzehnte meist stabiler im Wert ist als die Bausubstanz
 
-<!-- TODO Fallstudie: Beispiel von Sandro bestätigen oder durch echten Fall ersetzen -->
 Kürzlich saß ein Paar aus Konz bei mir, beide in Luxemburg beschäftigt, ein Kind unterwegs. Der Plan war eine Dreizimmerwohnung in Trier-Süd. Nach dem Durchrechnen haben wir gemeinsam festgestellt, dass eine Doppelhaushälfte in Konz-Könen zwar 60.000 Euro mehr kostet, ihnen aber zehn Minuten Arbeitsweg spart und ein zweites Kinderzimmer bringt. Umgekehrt habe ich schon oft erlebt, dass Paare ein Haus kaufen, weil „man das eben so macht", und nach fünf Jahren merken, dass sie den Garten eigentlich gar nicht wollten.
 
 ## Wertentwicklung und Wiederverkauf
@@ -129,17 +128,3 @@ Dann sprechen wir gemeinsam über Ihre Situation. Ich rechne mit Ihnen beide Var
 - Persönliches Gespräch: [Kontakt aufnehmen](https://mezzarano-wuestenrot-immobilien.de/kontakt) oder telefonisch unter 06503 9523963
 
 *Sandro Mezzarano, Wüstenrot Immobilien, Hermeskeil*
-
-
-<!-- INTERN, NICHT VEROEFFENTLICHEN
-
-Quellen: Preisdaten konsistent mit Art. immobilienpreise-trier und wohnung-kaufen-trier (Portaldaten Mitte 2026, Gutachterausschuss Trier-Saarburg), Mietspiegel Trier 2026, Peterssche Formel, § 20 WEG. Vor Veroeffentlichung aktuellen Stand pruefen.
-
-Content-Strategie-Hinweis:
-- Abgrenzung: wohnung-kaufen-trier = Kaufprozess Wohnung; immobilienpreise-trier = Marktbericht; eigentumswohnung-bewerten-trier = Verkaeufersicht. Dieser Artikel = Entscheidungsvergleich vor der Suche.
-- Exklusiv: Gesamtkosten-Rechenbeispiel Wohnung vs. Haus mit RLP-Saetzen, Kaufpreisfaktor-Vergleich per Mietspiegel, Mitbestimmung nach WEG-Reform, Lebensphasen-Matrix mit Lux-Pendlern.
-- Rueckverlinkung: wohnung-kaufen-trier (Schritt 2 Suchprofil), haus-kaufen-hermeskeil, immobilienpreise-trier (Abschnitt "Was die Zahlen fuer Kaeufer bedeuten"), immobilie-kaufen-luxemburg-pendler.
-
-Content-Map-Eintrag:
-| XX | Eigentumswohnung oder Haus Trier | gering-mittel (gesch.) | niedrig (gesch.) | Eigentumswohnung oder Haus in Trier? Der ehrliche Vergleich | eigentumswohnung-oder-haus-trier | Immobilie kaufen | ✅ Geschrieben 2026-09-10 (ohne Kritik-Loop) |
--->

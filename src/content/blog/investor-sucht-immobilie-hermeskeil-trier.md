@@ -67,9 +67,7 @@ In 16 Jahren im Hochwald habe ich genug dieser Schreiben auf Küchentischen lieg
 
 **7. Wie lange binden Sie sich?** Prüfen Sie Laufzeit und Kündigungsmöglichkeiten jeder Vereinbarung, die Ihnen vorgelegt wird. Ein Alleinauftrag über zwölf Monate ohne Ausstiegsmöglichkeit ist im Regionalmarkt unüblich lang.
 
-Eine Eigentümerin aus Kell am See rief mich vor einiger Zeit deswegen an. Geboten waren 210.000 Euro, ungesehen, „sofort und ohne Makler". Das Haus ging nach regulärer Vermarktung an eine junge Familie aus Konz, die einziehen wollte. Der Unterschied war fünfstellig und damit deutlich größer als jede Provision. <!-- TODO Fallstudie: durch echten Fall von Sandro Mezzarano ersetzen -->
-
-## Wann es sich lohnt, an einen Kapitalanleger zu verkaufen
+Eine Eigentümerin aus Kell am See rief mich vor einiger Zeit deswegen an. Geboten waren 210.000 Euro, ungesehen, „sofort und ohne Makler". Das Haus ging nach regulärer Vermarktung an eine junge Familie aus Konz, die einziehen wollte. Der Unterschied war fünfstellig und damit deutlich größer als jede Provision. ## Wann es sich lohnt, an einen Kapitalanleger zu verkaufen
 
 Pauschale Ablehnung wäre genauso falsch wie blindes Zusagen. Es gibt Objekte, für die ein Investor der natürliche Käufer ist.
 
@@ -79,9 +77,7 @@ Bei **stark sanierungsbedürftigen Häusern** scheitern private Käufer regelmä
 
 Und dann gibt es den Faktor Zeit. Bei einer Scheidung oder bei einer Erbengemeinschaft, die sich einigen muss, zählt Planungssicherheit manchmal mehr als die letzten fünf Prozent Kaufpreis. Ein Investor kauft ohne Besichtigungskarussell und ohne Finanzierungswackeln.
 
-Ein Trierer Mehrfamilienhaus aus den Sechzigerjahren habe ich genau aus diesem Grund an einen lokalen Anleger vermittelt: voll vermietet, Sanierungsstau im Dach, zwei Erben, die eine Lösung wollten und keinen zweijährigen Vermarktungsprozess. Für dieses Objekt war der Anleger der richtige Käufer. Das habe ich den Eigentümern auch so gesagt. <!-- TODO Fallstudie: durch echten Fall von Sandro Mezzarano ersetzen -->
-
-## So läuft es ab, wenn Sie Ihre Immobilie diskret verkaufen wollen
+Ein Trierer Mehrfamilienhaus aus den Sechzigerjahren habe ich genau aus diesem Grund an einen lokalen Anleger vermittelt: voll vermietet, Sanierungsstau im Dach, zwei Erben, die eine Lösung wollten und keinen zweijährigen Vermarktungsprozess. Für dieses Objekt war der Anleger der richtige Käufer. Das habe ich den Eigentümern auch so gesagt. ## So läuft es ab, wenn Sie Ihre Immobilie diskret verkaufen wollen
 
 Ein Verkauf außerhalb der Portale folgt demselben rechtlichen Rahmen wie jeder andere, nur ohne öffentliche Anzeige.
 
@@ -132,71 +128,3 @@ Telefon 06503 9523963, sandro.mezzarano@wuestenrot.de
 Zertifizierter Immobilienmakler (IHK Bonn), Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung, ausgezeichnet von Focus Money 2025 und Handelsblatt 2025.
 
 [Kostenlose Wertermittlung anfordern](/bewerten) oder [Kontakt aufnehmen](/kontakt).
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veroeffentlichen)
-
-Artikel-Nr.: 39 | Cluster 2 (Immobilie verkaufen) | Blog-Kritik 90/100 (Exzellent)
-Nutzer-Wunschthema ausserhalb der Ursprungsplanung, nicht Teil der Keyword-Analyse Art. 23-34.
-
-SUCHINTENTION (im Strategie-Schritt mit dem Nutzer geklaert):
-Das Thema traegt zwei Intentionen. Bewusst gewaehlt wurde die VERKAEUFER-Seite
-(Eigentuemer, die ein Ankaufsschreiben bekommen oder diskret verkaufen wollen),
-nicht die Anleger-/Kaeufer-Seite. Begruendung: hoechster Lead-Wert (Verkaufsmandat),
-keine regionale Ratgeber-Konkurrenz, und die Anleger-Seite waere ein Frontalangriff
-auf die Service-Seiten von Gilbers & Baasch (/kapitalanlage-immobilien/) und
-immo4u (Investoren & Kapitalanleger) bei gleichzeitiger Teilueberschneidung mit Art. 24.
-Ebenfalls geklaert: Der Artikel behauptet NICHT, dass konkrete Investoren-Kaufgesuche
-vorliegen. Er beschreibt die belegbare Marktlage. Damit rechtlich unangreifbar und
-ohne Wartungsbedarf bei der Mandatslage.
-
-KANNIBALISIERUNGS-SCHUTZ:
-- Art. 24 (Mehrfamilienhaus verkaufen): fuehrt "Renditeobjekt verkaufen" als Neben-Keyword
-  und die vollstaendige Ertragswert-/Faktor-Rechnung. Hier NUR die verkuerzte Faktorrechnung
-  als Preisvergleich, dann Forward-Link. Trennachse: Kaeufergruppe + Verkaufsweg statt
-  Objekttyp + Bewertungsverfahren.
-- Art. 9 (Vermietete Wohnung verkaufen): hat bereits das Drei-Kaeufergruppen-Modell.
-  Hier VIER Gruppen mit anderer Logik (Privatanleger / Lux-Pendler / Bautraeger /
-  ueberregionale Ankaufsdienste), objekttyp-uebergreifend.
-- Art. 12 (Ablauf-HUB): der 5-Schritte-Block ist bewusst der Off-Market-Sonderweg,
-  kein zweiter Vollprozess. Verlinkt auf den Hub.
-- Art. 23 (Sanierungsbeduerftiges Haus): nur als Ein-Absatz-Verweis mit Link.
-- "Investor", "Kapitalanleger", "Ankaufsangebot" waren in der gesamten Map als
-  Haupt-Keyword unbelegt.
-
-EXKLUSIVER INHALT (kein Regional-Wettbewerber und kein Nationalportal hat das):
-1. Die Gutachterausschuss-Schere Trier 2025: EFH/ZFH und gebrauchte ETW im Plus,
-   Geschaeftshaeuser Fussgaengerzone und sonstige Ertragsobjekte ruecklaeufig
-   (1.380 Kaufvertraege, 520 Mio. EUR, Vertragszahlen +10 %). Erklaert belegbar,
-   warum Investorengebote derzeit hinter Eigennutzerpreisen zurueckbleiben.
-2. § 311b Abs. 1 BGB: Das "verbindliche Kaufangebot" aus dem Ankaufsschreiben ist
-   ohne notarielle Beurkundung formunwirksam und bindet keine Seite.
-3. §§ 656a-656d BGB schuetzen ausschliesslich Verbraucher. Beim Verkauf an einen
-   gewerblichen Investor greift die gesetzliche Provisionsteilung NICHT.
-   (Kontext BGH I ZR 32/24 v. 06.03.2025 zum Halbteilungsgrundsatz.)
-4. BGH I ZR 113/22 v. 20.04.2023: Reservierungsgebuehren in Makler-AGB unwirksam,
-   rueckforderbar (Streitwert 4.200 EUR).
-5. Durchgerechneter Hochwald-Preisvergleich Eigennutzer vs. Investor:
-   140 qm Hermeskeil, 2.059 EUR/qm = 288.000 EUR gegen Faktor 17/20 auf
-   12.550 EUR Jahresnettokaltmiete = 213.000 bis 251.000 EUR. Luecke 37.000-75.000 EUR,
-   Bruttorendite 4,4 %.
-
-E-E-A-T-ANKER: 16 Jahre Hochwald im Fliesstext (Hauptanker). Sprengnetter,
-Focus Money 2025 und Handelsblatt 2025 NUR in der Autorenbox, da Sprengnetter
-bereits in 10+ Artikeln als Fliesstext-Anker steckt. Slogan "Ehrlichkeit hat ein
-Zuhause" im Schlussabschnitt. Zwei frische Anekdoten (Kell am See, Trierer MFH der
-Sechzigerjahre) - beide Orte in Art. 1-38 nicht als Anekdoten-Schauplatz verwendet.
-
-QUELLEN: Gutachterausschuss Stadt Trier (Grundstuecksmarktbericht 2026 fuer 2025),
-immowelt Hermeskeil 06/2026, ImmoScout24 Mietspiegel Hermeskeil Q1/2026,
-§ 311b Abs. 1 BGB, §§ 656a-656d BGB, BGH I ZR 113/22, BGH I ZR 32/24,
-§ 17 Abs. 2a BeurkG, § 23 EStG, GrEStG RLP (5,0 %).
-
-OFFEN: Die Fallbeispiele Kell am See und Trierer Mehrfamilienhaus sind rekonstruiert
-und durch echte Faelle von Sandro Mezzarano zu ersetzen.
-
-WARTUNG: (a) Hermeskeiler Kaufpreis 2.059 EUR/qm und Mietspiegel 7,47 EUR/qm sind
-Portal-Momentaufnahmen Mitte 2026, halbjaehrlich pruefen. (b) Grundstuecksmarktbericht
-Trier jaehrlich auf die neue Ausgabe umstellen. (c) Kaufpreisfaktoren 17/20 bei
-Zinsaenderungen nachjustieren. (d) Grunderwerbsteuersatz RLP vor Publish bestaetigen.
--->

@@ -156,15 +156,3 @@ Die Rechtsform entscheidet nicht darüber, ob eine Immobilie ein gutes Investmen
 Mein Anspruch dabei ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, wenn eine Gestaltung in Ihrem Fall nur Aufwand verursacht, und ich sage es auch, wenn sich der Aufwand lohnt.
 
 Wenn Sie überlegen, Immobilien im Hochwald, im Raum Trier oder an der Mosel in einer Gesellschaft zu bündeln, sprechen Sie mich an. Ich ordne Ihre Situation aus Marktsicht ein, sage Ihnen, welche Werte im Raum stehen, und bringe Sie mit einem Steuerberater und einem Notar zusammen, die den Rest verbindlich klären. Den Marktwert Ihrer Immobilie können Sie über die [kostenlose Wertermittlung](/bewerten) anfragen, für ein persönliches Gespräch erreichen Sie mich über die [Kontaktseite](/kontakt) oder telefonisch unter 06503 9523963.
-
-
-<!--
-CONTENT-STRATEGIE
-Haupt-Keyword: Immobilien GbR gründen
-Neben-Keywords: Immobilien-GbR, eGbR Grundbuch, vermögensverwaltende GbR, Grunderwerbsteuer GbR, Familienpool Immobilien
-Cluster: 5 (Recht, Steuern, Finanzierung)
-Interne Links im Artikel: /geerbtes-haus-verkaufen (Art. 11), /mehrfamilienhaus-verkaufen (Art. 24), /grunderwerbsteuer-rheinland-pfalz (Art. 16), /kaufvertrag-immobilie (Art. 26), /wertermittlung-haus (Art. 15)
-CTA: /bewerten, /kontakt, Telefon
-Aktualitaetsanker: § 24 GrEStG entfristet, BGBl 02.07.2026 — vor Veroeffentlichung erneut pruefen
-Rechtsstand: 30.07.2026
--->

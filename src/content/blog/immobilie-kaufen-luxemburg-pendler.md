@@ -117,33 +117,3 @@ Eine erste Einschätzung erhalten Sie kostenlos über meine [kostenlose Wertermi
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil, zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. Für seine Beratung wurde er 2025 von Focus Money und vom Handelsblatt ausgezeichnet.*
 
 *Dieser Artikel bietet allgemeine Informationen und keine Rechts-, Steuer- oder Finanzierungsberatung im Einzelfall. Für Ihre persönliche Situation wenden Sie sich bitte an einen Steuerberater, Rechtsanwalt oder Finanzierungsspezialisten.*
-
-<!--
-Content-Strategie-Hinweis:
-- Artikel 18 aus Content-Map (Kategorie Markt & Region; USP-Artikel, Bruecke zu Cluster 3 Immobilie kaufen)
-- Haupt-Keyword: Immobilie kaufen als Luxemburg-Pendler / Haus kaufen Luxemburg Grenze (Vol 590, Diff 13)
-- Neben-Keywords: Grenzgaenger Immobilienfinanzierung, Grenzgaenger Luxemburg Haus kaufen Deutschland,
-  Immobilie kaufen Trier Luxemburg Grenze, Baufinanzierung Grenzgaenger Luxemburg, Steuern Grenzgaenger
-  Immobilie Deutschland.
-- Blog-Kritik-Score: 94/100 (Exzellent). Humanizer + Finalcheck durchlaufen (4 Dreiergruppen aufgebrochen,
-  0 Em-Dash).
-- Angle: erster ehrlicher KAEUFERSEITIGER Cross-Border-Ratgeber der Region. Marktluecke: Gilbers & Baasch,
-  Eifel-Mosel-Makler, Volksbank Immobilien, Klauck haben keinen dedizierten Kaeufer-Cross-Border-Guide;
-  Friedmann Immobilien nur verkaeuferseitig + duenn bei Finanzierung/Steuer.
-- USP-Bausteine: (1) Finanzierung mit Lux-Gehalt bei deutscher Bank (WIKR seit 2016, EK 10-15 % Nebenkosten),
-  (2) Wechselkurs-Mythos-Korrektur (beide Euro, kein FX-Risiko wie bei Schweiz-Pendlern),
-  (3) Steuer-Ehrlichkeit (KEINE Sonder-Grenzgaengerregelung mit LU, Taetigkeitsprinzip, 34-Tage-Homeoffice
-  seit 2024), (4) deutsche Seite guenstiger (GrESt RLP 5,0 % vs. LU ~7 %, Preisniveau, Flaeche),
-  (5) Pendler-Lagen ehrlich inkl. Stau-Realitaet A64/Wasserbillig-Bruecke.
-- E-E-A-T-Anker: 16 Jahre + frische Igel-Grenzgaenger-Finanzierungs-Anekdote (in Art. 1-15 nicht verwendet);
-  Focus Money 2025 + Handelsblatt 2025 NUR Autoren-Box (Hauptanker-Status reserviert).
-- Steuerteil bewusst knapp gehalten -> Kannibalisierungs-Schutz zu Art. 16 (Grunderwerbsteuer) und Art. 17
-  (Kaufnebenkosten); Lagen nur angerissen -> Verweis auf Art. 4/5. Trennscharf zu Art. 2/4/5/8/9 (dort
-  Cross-Border nur Flavor).
-- Interne Link-Platzhalter "#" fuer Art. 2 (Immobilien Trier), Art. 5 (Haus kaufen Saarburg), Art. 4
-  (Haus kaufen Hermeskeil) vor WP-Veroeffentlichung mit echten URLs ersetzen.
-- Quellen: Datenblick / Statistisches Landesamt RLP 2025 (Pendlerzahlen), Finanzamt Trier + DBA DE-LUX
-  (Taetigkeitsprinzip), EY / Haufe (34-Tage-Bagatellgrenze seit 2024), Dr. Klein (Grenzgaenger-
-  Baufinanzierung, WIKR, EK), Banque de Luxembourg / Guichet.lu 2025 (LU-Uebertragungssteuer ~7 %,
-  Belleegen Akt), GrEStG RLP (5,0 %).
--->

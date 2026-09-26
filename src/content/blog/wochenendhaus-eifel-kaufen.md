@@ -109,20 +109,3 @@ Wenn Sie ein Wochenendhaus in der Eifel im Blick haben, schauen wir uns die vier
 Ehrlichkeit hat ein Zuhause. Das heißt bei diesem Thema auch: Wenn der Bebauungsplan Ihren Plan nicht hergibt, sage ich Ihnen das vor dem Notartermin und nicht danach.
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wuestenrot Immobilien GmbH mit Sitz in der Saarstraße 1 in Hermeskeil, zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung. 2025 wurde er von Focus Money für höchste Beratungskompetenz ausgezeichnet.*
-
-<!--
-Content-Strategie-Hinweis (nicht veröffentlichen)
-- Map-Nummer: Art. 65 (Planungs-Nr. 37 aus content-map-erweiterung-2.md, Tier 1; Nummer 37 in der Keyword-Tabelle bereits an „GbR gruenden Immobilien Hermeskeil" vergeben, deshalb konfliktfreie Neuvergabe analog Art. 60)
-- Haupt-Keyword: Wochenendhaus Eifel kaufen (SV 390, Diff 6)
-- Neben-Keywords: ferienhaus in eifel kaufen (170/6), ferienhaus kaufen eifel alleinlage (70/6), wochenendhaus kaufen eifel mosel hunsrueck (50/8), wochenendhaus kaufen trier (50/9)
-- Template: Ratgeber (Kaeufer-Pruefratgeber), Kategorie Immobilie kaufen, Cluster 3
-- Angle nach Nutzer-Entscheidung: Pruef-Ratgeber Recht/Kosten/Finanzierung, NICHT Markt-Guide
-- Abgrenzung zu Art. 7 (haus-kaufen-eifel): Art. 7 = Erstwohnsitz, Lagen, Preisniveau, Pendeln. Dieser Artikel = Zweitimmobilie als eigene Rechts- und Finanzierungswelt. Die Eifel-Marktuebersicht wird bewusst NICHT wiederholt, sondern im zweiten Absatz an Art. 7 abgegeben. „Wochenendhaus Eifel" laeuft in Art. 7 nur als Neben-Keyword.
-- Abgrenzung zu Art. 6 (haus-kaufen-mosel): Mosel nur als Vergleichsblock, Hochwasserthema abgegeben.
-- Exklusive Bausteine (kein Regional-Wettbewerber): § 10 BauNVO Wochenendhausgebiet mit Dauerwohnverbot; Pachtgrund/Scheinbestandteil inkl. Finanzierungsfolge; Zweitwohnungssteuer-Landkarte (Eifel praktisch keine, Trier 10 % seit 01.01.2007, Daun Beschluss 18.12.2025); Eigenkapitalanforderung bis 50 % plus Beleihungsstufen; Vergleichswert-Duenne bei Wochenendhaeusern (Sprengnetter-Anker in neuer Funktion); § 61 LBauO RLP + § 13a BauNVO fuer die Ferienvermietung; BFH IX R 37/16 zur § 23 EStG-Ausnahme bei Zweit- und Ferienwohnungen; GrESt-Kante RLP 5,0 % gegen NRW 6,5 % in der Nordeifel.
-- E-E-A-T-Anker: 16 Jahre + Buerositz Saarstrasse im Intro; Sprengnetter im Fliesstext NUR in der Bewertungs-Passage (neue Funktion: fehlende Vergleichsfaelle); Focus Money 2025 + IHK Bonn nur in der Autorenbox. Handelsblatt bewusst NICHT (Hauptanker in Art. 7, dem Schwesterartikel).
-- Interne Links: /ratgeber/haus-kaufen-eifel/ (Art. 7, wichtigster), /ratgeber/kaufnebenkosten-rheinland-pfalz/ (Art. 17), /ratgeber/versicherungen-immobilie-trier/ (Art. 51), /ratgeber/wertermittlung-haus/ (Art. 15), /ratgeber/haus-kaufen-mosel/ (Art. 6)
-- Quellen: § 10 BauNVO, § 13a BauNVO, § 61 LBauO RLP, § 23 EStG, BFH IX R 37/16 vom 27.06.2017, Statistisches Landesamt RLP (Beherbergungsstatistik Jan-Mai 2026), ImmoScout24-Atlas / aktuelle-grundstueckspreise.de Vulkaneifel, zweitwohnsitzsteuer.de (RLP-Uebersicht), Zweitwohnungssteuer-Vorbereitungssatzung Stadt Daun + Stadtratsbeschluss 18.12.2025, GrEStG RLP/NRW, § 656c-d BGB
-- OFFEN: Beide Fallbeispiele (Ehepaar aus dem Raum Koeln in der Vulkaneifel, Eigentuemer aus dem Eifelkreis mit Restpachtdauer) sind konstruiert und durch echte Faelle von Sandro Mezzarano zu ersetzen. Bewusst NICHT Manderscheid verwendet, weil Art. 7 seine Anekdote dort verortet.
-- WARTUNG: (a) Zweitwohnungssteuersatz der Stadt Daun nachtragen, sobald die Satzung veroeffentlicht ist; (b) Zweitwohnungssteuer-Landkarte RLP jaehrlich pruefen, weitere Eifelgemeinden koennen nachziehen; (c) Kaufpreise Vulkaneifel halbjaehrlich; (d) Tourismuszahlen Eifel bei neuer Beherbergungsstatistik aktualisieren; (e) Rechtsstand § 13a BauNVO und § 61 LBauO vor WP-Publish bestaetigen.
--->

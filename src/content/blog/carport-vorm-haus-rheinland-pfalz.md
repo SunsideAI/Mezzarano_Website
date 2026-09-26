@@ -65,9 +65,7 @@ Praktisch heißt das: Stehen an Ihrer Grenze bereits ein Gartenhaus und eine alt
 
 Wollen Sie den Carport an das Haus anbauen statt ihn frei zu stellen, kommt ein Punkt dazu, den die Bausatz-Anbieter selten erwähnen. Ein freistehender Carport ist ein eigenes Bauwerk. Sobald Sie ihn konstruktiv mit dem Wohnhaus verbinden, wird er Teil des Gebäudes, und dann greifen die Anforderungen der LBauO an dessen Außenwände und Dachkonstruktion auch für ihn. Praktisch relevant wird das bei einer Holzkonstruktion, die unter einem Dachüberstand endet oder direkt vor einem Fenster steht, aus dem im Brandfall gerettet werden müsste. Das ist keine Verbotszone, aber ein Fall für eine Bauvoranfrage statt für den Baumarkt-Zuschnitt.
 
-Ein Eigentümer aus Reinsfeld kam vor einiger Zeit mit genau dieser Konstellation zu mir. Der Carport stand seit Jahren, gebaut ohne Antrag, weil genehmigungsfrei. Beim Verkauf fiel dem Käufer auf, dass die Grenzbebauung zusammen mit dem Schuppen über 18 Metern lag. Geklärt wurde das am Ende über eine nachträgliche Abweichung, aber es hat den Notartermin um sechs Wochen verschoben. <!-- OFFEN: Fallbeispiel rekonstruiert, durch echten Fall von Sandro Mezzarano ersetzen -->
-
-## Was ein Carport 2026 kostet
+Ein Eigentümer aus Reinsfeld kam vor einiger Zeit mit genau dieser Konstellation zu mir. Der Carport stand seit Jahren, gebaut ohne Antrag, weil genehmigungsfrei. Beim Verkauf fiel dem Käufer auf, dass die Grenzbebauung zusammen mit dem Schuppen über 18 Metern lag. Geklärt wurde das am Ende über eine nachträgliche Abweichung, aber es hat den Notartermin um sechs Wochen verschoben. ## Was ein Carport 2026 kostet
 
 Belastbare amtliche Preisstatistiken gibt es für Carports nicht. Die folgenden Spannen stammen aus den einschlägigen Bau- und Handwerkerportalen und sind als Größenordnung zu lesen, nicht als Angebot:
 

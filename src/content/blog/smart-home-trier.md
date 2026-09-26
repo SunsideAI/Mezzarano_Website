@@ -55,9 +55,7 @@ Jede Diskussion über smarte Immobilien setzt eine Leitung voraus, und genau dar
 
 Zwei Punkte daraus sind für Eigentümer wichtig. Ein Anschluss bis zur Grundstücksgrenze ist nicht dasselbe wie ein Anschluss im Haus. Solange die Leitung nicht durch die Kellerwand gelegt ist, steht im Exposé bestenfalls "Glasfaser verfügbar", und der Käufer rechnet mit dem Restaufwand. Wer die Möglichkeit hat, sollte während einer ohnehin anstehenden Tiefbaumaßnahme wenigstens ein Leerrohr mitlegen lassen.
 
-Bei einem Verkauf in Gusenburg war die Anschlusssituation vor Kurzem der Punkt, an dem sich zwei Interessenten unterschieden. Der eine wollte im Homeoffice arbeiten und hat vor dem zweiten Termin die Verfügbarkeit geprüft, der andere hat gar nicht danach gefragt. Geboten haben am Ende beide, aber der erste kam ohne Vorbehalt in den Notartermin. <!-- OFFEN: Fallbeispiel rekonstruiert, durch echten Fall von Sandro Mezzarano ersetzen -->
-
-## Nachrüsten im Bestand: was funktioniert, was teuer wird
+Bei einem Verkauf in Gusenburg war die Anschlusssituation vor Kurzem der Punkt, an dem sich zwei Interessenten unterschieden. Der eine wollte im Homeoffice arbeiten und hat vor dem zweiten Termin die Verfügbarkeit geprüft, der andere hat gar nicht danach gefragt. Geboten haben am Ende beide, aber der erste kam ohne Vorbehalt in den Notartermin. ## Nachrüsten im Bestand: was funktioniert, was teuer wird
 
 Im Neubau ist die Frage einfach, weil sich ein Bussystem in der Rohbauphase mit überschaubarem Aufwand mitverlegen lässt. Im Bestand, und der prägt den Markt zwischen Hochwald und Mosel, sieht es anders aus.
 
@@ -97,9 +95,7 @@ Diese fünf Punkte gehören deshalb auf die Übergabeliste:
 - Vorhandene Dokumentation aushändigen: Verteilerplan, Kanalliste, Bedienungsanleitungen, Wartungsverträge
 - Bei Türschlössern und Kameras jeden Fernzugriff nachweislich beenden
 
-In einem Reihenhaus in Trier-Tarforst hat ein Käufer nach dem Einzug festgestellt, dass die Innenkamera weiterhin mit dem Konto der Verkäuferin verknüpft war. Es war ein Versehen und in zehn Minuten geklärt, aber das Vertrauen war für den Rest der Abwicklung angeknackst. <!-- OFFEN: Fallbeispiel rekonstruiert, durch echten Fall von Sandro Mezzarano ersetzen -->
-
-Damit zusammen hängt der Umgang mit Kameras während der Vermarktung. Wer Innen- oder Außenkameras betreibt, sollte sie zu Besichtigungen abschalten. Interessenten unbemerkt aufzuzeichnen, berührt deren Persönlichkeitsrecht und den Datenschutz, und Aufnahmen des öffentlichen Gehwegs oder des Nachbargrundstücks sind ohnehin ein eigenes Kapitel. Bei konkreten Fragen dazu ist der Rechtsanwalt die richtige Adresse, nicht der Makler. Was sonst noch zu einer sauberen Besichtigung gehört, steht in meiner [Hausbesichtigung Checkliste](/ratgeber/hausbesichtigung-checkliste).
+In einem Reihenhaus in Trier-Tarforst hat ein Käufer nach dem Einzug festgestellt, dass die Innenkamera weiterhin mit dem Konto der Verkäuferin verknüpft war. Es war ein Versehen und in zehn Minuten geklärt, aber das Vertrauen war für den Rest der Abwicklung angeknackst. Damit zusammen hängt der Umgang mit Kameras während der Vermarktung. Wer Innen- oder Außenkameras betreibt, sollte sie zu Besichtigungen abschalten. Interessenten unbemerkt aufzuzeichnen, berührt deren Persönlichkeitsrecht und den Datenschutz, und Aufnahmen des öffentlichen Gehwegs oder des Nachbargrundstücks sind ohnehin ein eigenes Kapitel. Bei konkreten Fragen dazu ist der Rechtsanwalt die richtige Adresse, nicht der Makler. Was sonst noch zu einer sauberen Besichtigung gehört, steht in meiner [Hausbesichtigung Checkliste](/ratgeber/hausbesichtigung-checkliste).
 
 ### Wie Sie es im Verkauf richtig einsetzen
 
@@ -135,57 +131,3 @@ Ich schaue mir das gern an. Eine erste Markteinschätzung erhalten Sie kostenlos
 Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil, zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung. Er begleitet Eigentümer und Käufer im Hochwald, im Raum Trier und an der Mosel seit über 16 Jahren. Ausgezeichnet mit Focus Money 2025 für höchste Beratungskompetenz und Handelsblatt 2025 für exzellente Kundenberatung.
 
 *Dieser Beitrag ersetzt keine steuerliche oder rechtliche Beratung. Für Fragen zur Aufteilung des Kaufpreises, zum Datenschutz und zu denkmalschutzrechtlichen Auflagen wenden Sie sich bitte an Ihren Steuerberater, einen Rechtsanwalt oder die zuständige Behörde.*
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veroeffentlichen)
-
-Planungsnummer: 49 aus content-map-erweiterung-2.md (Tier 2, Head-Term „Smarte Immobilien" SV 170 / Diff 18).
-Titel auf Trier lokalisiert (Nutzerwunsch), Head-Term laeuft als Neben-Keyword mit — gleiches Muster wie Art. 51.
-Blog-Kritik: 91/100 (Exzellent). Em-Dash 0. Verbotene Phrasen 0. Wortzahl rund 2.250.
-
-ABGRENZUNG / KANNIBALISIERUNGSSCHUTZ:
-- Erster Artikel der Map mit Haustechnik und Gebaeudedigitalisierung als Kern. „Smart", „Smart Meter",
-  „Glasfaser" und „§ 14a EnWG" kamen in keinem der 40 Vorgaengerartikel vor.
-- Art. 22 (Energieausweis): traegt weiterhin die GEG-Pflichten und Kennwerte. Hier nur Verweis, keine Wiederholung.
-- Art. 36 (Eigentumswohnung bewerten Trier): traegt WEG-Unterlagen, Erhaltungsruecklage, MEA.
-  Hier NUR § 20 Abs. 2 WEG (privilegierte bauliche Veraenderungen) — in Art. 36 nicht behandelt.
-- Art. 51 (Versicherungen Trier): traegt Elementarschutz und §§ 95/96 VVG. Hier nur der Wassermelder als Praeventionsmassnahme.
-- Art. 38 (Wohnprojekte Senioren): behaelt die Foerdertiefe zu KfW 455-B und § 40 Abs. 4 SGB XI.
-  Hier nur Foerdersatz und Antragsreihenfolge fuer Assistenzsysteme.
-- Art. 26 (Kaufvertrag) und Art. 16 (Grunderwerbsteuer): Hier neu ist die Anwendung der Inventar-Aufteilung
-  auf smarte Geraete entlang §§ 94/97 BGB. Der allgemeine GrESt-Rahmen bleibt bei Art. 16.
-- Art. 30 (Hausbesichtigung): behaelt die Kaeufer-Checkliste. Hier nur die Kamera-/Datenschutzfrage aus Verkaeufersicht.
-
-SECHS BAUSTEINE, DIE KEIN REGIONAL-WETTBEWERBER HAT:
-1. Ehrliche Bewertungslogik: Vergleichswertverfahren kennt kein Feld fuer ein KNX-System (Sprengnetter-Sicht).
-2. Smart-Meter-Pflichtgrenzen (6.000 kWh / 7 kWp / 4,2 kW) plus die Preisobergrenzen-Tabelle der Bundesnetzagentur.
-3. § 14a EnWG Modul 1 mit 110 bis 190 EUR und dem Dimmen ab 4,2 kW.
-4. Weisse-Flecken-Ausbau Trier-Saarburg mit 114 km Glasfaser, 5,5 Mio. EUR und 19 Adressen im Raum Hermeskeil.
-5. § 20 Abs. 2 WEG als Anspruch auf das Ob bei Einbruchsschutz, Glasfaser, Wallbox und Steckersolar.
-6. Uebergabe-Teil: §§ 94/97 BGB, Inventarliste, GrESt-Ersparnis 5,0 % auf bewegliche Gegenstaende, Konten-Reset.
-   Baustein 6 ist der eigentliche USP und wird bundesweit von praktisch keinem Ratgeber abgedeckt.
-
-DIREKTER WETTBEWERBER: Gilbers & Baasch, „Smart Home im Ueberblick: Wertsteigerung fuer Immobilien?"
-(rund 2.500 Woerter, keine Quelle, keine Zahl, kein Trier-Bezug, kein Recht, kein Verkaufsteil).
-
-OFFEN:
-- Beide Fallbeispiele (Gusenburg / Trier-Tarforst) sind rekonstruiert und durch echte Faelle
-  von Sandro Mezzarano zu ersetzen. Orte bewusst neu: Gusenburg und Tarforst sind in keinem
-  anderen Artikel als Anekdoten-Schauplatz belegt.
-- Die Aussage „Aufschlag von einem bis drei Prozent" stuetzt sich auf Marktanalysen ohne belastbare
-  deutsche Primaerstudie. Bewusst vorsichtig formuliert („Marktanalysen sehen"). Falls eine
-  Gutachterausschuss- oder IVD-Auswertung dazu erscheint, ersetzen.
-
-WARTUNG:
-(a) Glasfaser-Ausbaustand Trier-Saarburg: Die Zahlen stammen aus der Weisse-Flecken-Meldung
-    (Fertigstellung war fuer Ende 2025 angekuendigt). Vor WP-Publish den aktuellen Stand pruefen
-    und den Satz ggf. in die Vergangenheitsform setzen. HOECHSTE PRIORITAET dieses Artikels.
-(b) Preisobergrenzen der Bundesnetzagentur jaehrlich pruefen.
-(c) § 14a Modul 1 Spanne (110 bis 190 EUR, Stand Juli 2026) jaehrlich pruefen, sie ist netzgebietsabhaengig.
-(d) KfW 455-B: Programm war 2026 bereits einmal gestoppt, Verfuegbarkeit vor Publish pruefen.
-(e) Bitkom-Zahlen (48 % / 59 % / 38 %) bei neuer Erhebung aktualisieren.
-(f) Leitungswasser-Schadenaufwand 4,9 Mrd. EUR fuer 2024 — identisch zu Art. 51, gemeinsam pflegen.
-
-NEUE QUELLEN FUER DIE QUELLENSAMMLUNG: siehe Vorschlag in der Uebergabe (4 Eintraege).
--->
-

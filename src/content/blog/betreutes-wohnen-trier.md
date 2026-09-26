@@ -90,9 +90,7 @@ Als reine Kapitalanlage empfehle ich betreute Wohnungen nur mit Vorsicht. Die Re
 
 Die meisten Anlagen in Trier arbeiten mit Wartelisten. Die Zusage kommt dann oft kurzfristig, und die Wohnung soll innerhalb weniger Wochen bezogen werden. Wer erst dann über das Haus nachdenkt, verkauft unter Zeitdruck. Und Zeitdruck ist beim Immobilienverkauf fast immer teuer.
 
-In meiner täglichen Arbeit zwischen Hochwald und Mosel sehe ich das regelmäßig: Die Entscheidung für das betreute Wohnen ist gefallen, das Haus ist noch voll eingerichtet, und die Kinder wohnen weit weg. <!-- TODO Fallstudie: konkretes Beispiel eines Verkaufs im Zusammenhang mit Umzug ins betreute Wohnen (Ort, Zeitrahmen, Lösung) aus fallstudien-mezzarano.md ergänzen -->
-
-Grundsätzlich haben Sie drei Wege:
+In meiner täglichen Arbeit zwischen Hochwald und Mosel sehe ich das regelmäßig: Die Entscheidung für das betreute Wohnen ist gefallen, das Haus ist noch voll eingerichtet, und die Kinder wohnen weit weg. Grundsätzlich haben Sie drei Wege:
 
 **Verkaufen.** Das ist meist die klarste Lösung, weil das Kapital die neue Wohnform finanziert und die Verantwortung für das Haus endet. Verkauf und Umzug müssen dabei nicht am selben Tag passieren: Ein Rückmietrecht oder ein später Übergabetermin im Kaufvertrag verschafft Ihnen Luft. Wie das konkret aussieht, beschreibe ich im Ratgeber zu den [Wohnprojekten für Senioren in Trier](/ratgeber/wohnprojekte-senioren-trier/).
 
@@ -127,7 +125,6 @@ Das ist je nach Anlage sehr unterschiedlich, von wenigen Wochen bis zu mehreren 
 
 **Soll ich mein Haus vor oder nach der Zusage verkaufen?**
 Bewerten lassen sollten Sie es vorher, verkaufen meist erst mit Zusage in der Hand. Mit einem flexiblen Übergabetermin lassen sich beide Zeitpunkte gut aufeinander abstimmen.
-
 
 **Sie planen den Umzug ins betreute Wohnen und möchten wissen, was Ihr Haus wert ist?** Ich erstelle Ihnen eine kostenlose Marktwerteinschätzung und bespreche mit Ihnen in Ruhe, welcher Weg zu Ihrer Situation passt. [Jetzt Immobilie bewerten lassen](https://mezzarano-wuestenrot-immobilien.de/bewerten) oder direkt anrufen: 06503 9523963.
 

@@ -102,29 +102,3 @@ Fehlt er beim Verkauf oder bei der Vermietung, oder fehlen die Pflichtangaben in
 Sie planen einen Verkauf oder eine Vermietung im Raum Hermeskeil, Trier, Saarburg, an der Mosel oder in der Eifel und sind sich beim Energieausweis unsicher? Sprechen Sie mich an. Ich sage Ihnen ehrlich, welcher Ausweis für Ihr Haus der richtige ist, und kümmere mich auf Wunsch um die Beschaffung. Eine erste Einschätzung Ihrer Immobilie erhalten Sie über meine [kostenlose Wertermittlung](/bewerten), oder Sie nehmen direkt [Kontakt](/kontakt) auf.
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH in Hermeskeil, zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. Für seine Beratung wurde er 2025 von Focus Money (höchste Beratungskompetenz) und Handelsblatt (exzellente Kundenberatung) ausgezeichnet. Dieser Beitrag ersetzt keine Rechts- oder Energieberatung im Einzelfall.*
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veröffentlichen)
-=========================================================
-Artikel 22 der Content-Map. Cluster 5 (Recht, Steuern, Finanzierung), 3. Artikel nach Art. 16 (GrESt) und Art. 17 (Kaufnebenkosten).
-Blog-Kritik-Score: 91/100 (Exzellent).
-
-ABGRENZUNG / KANNIBALISIERUNGS-SCHUTZ:
-- Energieausweis als DOKUMENT/PFLICHT — trennscharf zu Art. 13/15 (Wert statt Dokument), Art. 16/17 (Steuer/Nebenkosten). In Art. 2-8 nur Streifschuss (RLP-Rechtsrahmen / 5-Punkte-Kaufpruefung), nirgends Haupt-Keyword.
-
-EXKLUSIVER INHALT:
-- Regionaler Altbau-Fokus: Bedarfsausweis-PFLICHT fuer Wohngebaeude < 5 WE, Bauantrag vor 01.11.1977 (haeufiger Eifel-/Hochwald-Fall).
-- Korrekte 2026-Einordnung GModG/EPBD: Wohngebaeude bleiben A+ bis H (NUR Nichtwohngebaeude bekommen A-G) — korrigiert aktiv den verbreiteten "A-G fuer alle"-Irrtum.
-- Sprengnetter-Sanierungssicht auf den energetischen Zustand.
-
-E-E-A-T:
-- Hauptanker im Fliesstext: Sprengnetter-Sachverstaendiger + 16 Jahre.
-- Focus Money 2025 + Handelsblatt 2025 NUR in Autoren-Box (Fliesstext-Hauptanker-Status weiterhin reserviert).
-- Frische Anekdote: Suedeifel-Altbau Baujahr 1968 (Online-Verbrauchsausweis vs. Bedarfsausweis-Pflicht, Sanierungsstau) — in Art. 1-21 nicht verwendet.
-
-VERLINKUNG:
-- Im Text: Art. 13 (immobilienbewertung-trier), Art. 7 (haus-kaufen-eifel), Art. 12 (immobilie-verkaufen-ablauf) + /bewerten + /kontakt.
-- Rueckverlinkung setzen von: Art. 12 (Ablauf-HUB, Energieausweis als Pflicht-Unterlage), Art. 16 (GrESt) und Art. 17 (Kaufnebenkosten) auf Art. 22.
-
-QUELLEN: GEG §§ 79 (Gueltigkeit), 81 (Bedarfsausweis), 82 (Verbrauchsausweis), 87 (Pflichtangaben Immobilienanzeige), 108 (Bussgeld); Verbraucherzentrale (Kosten); EPBD 2024 / GModG (Kabinettsbeschluss 13.05.2026, im parlamentarischen Verfahren, Inkrafttreten geplant ~11/2026).
--->

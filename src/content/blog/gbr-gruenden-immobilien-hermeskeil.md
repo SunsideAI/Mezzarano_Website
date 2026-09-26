@@ -126,17 +126,3 @@ Mein Anspruch dabei ist einfach: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, we
 Wenn Sie überlegen, Immobilien in Hermeskeil, im Hochwald oder im Raum Trier in einer Gesellschaft zu bündeln, sprechen Sie mich an. Ich ordne Ihre Situation aus Marktsicht ein, sage Ihnen, welche Werte tatsächlich im Raum stehen, und bringe Sie mit einem Notar und einem Steuerberater zusammen, die den Rest verbindlich klären. Den Marktwert Ihrer Immobilie können Sie über die [kostenlose Wertermittlung](/bewerten) anfragen. Für ein persönliches Gespräch erreichen Sie mich über die [Kontaktseite](/kontakt) oder telefonisch unter 06503 9523963. Mein Büro sitzt in der Saarstraße 1 in Hermeskeil, einen Termin vor Ort bekommen Sie kurzfristig.
 
 ---
-
-<!--
-CONTENT-STRATEGIE
-Haupt-Keyword: GbR gründen Immobilien Hermeskeil
-Neben-Keywords: Immobilien-GbR Hochwald, eGbR Gesellschaftsregister Wittlich, Grundbuchamt Hermeskeil, Hofstelle Hochwald Nachfolge
-Cluster: 5 (Recht, Steuern, Finanzierung)
-ABGRENZUNG zu Art. 35 (Immobilien-GbR gründen): Art. 35 = bundesrechtliche Rechtsform-Grundlagen (Was ist eine GbR, eGbR-Pflicht, Kosten, Steuern, Ablauf, Vor-/Nachteile, GbR vs. Bruchteilseigentum vs. GmbH).
-Dieser Artikel = ausschliesslich lokaler Vollzugs-Winkel: zwei zustaendige Gerichte (Registergericht Wittlich vs. Grundbuchamt Hermeskeil), Wert-Realitaetscheck bei Hochwald-Bodenrichtwerten, Hofstellen mit landwirtschaftlichen Flaechen (GrdstVG RLP), PV-Abfaerbung, laufende lokale Pflichten.
-Die Rechtsform-Erklaerung wird bewusst NICHT wiederholt, sondern im 2. Absatz prominent an Art. 35 abgegeben (Autoritaets-Signal fuer Google).
-Exklusive Bausteine (kein Wettbewerber, auch nicht national): Registergericht-Wittlich-Zustaendigkeit, GrdstVG-Schwellen RLP 0,5 ha / 0,1 ha mit Kreisverwaltung Trier-Saarburg, Hochwald-Freibetrags-Rechencheck (BRW Ø 76 EUR/m²), PV-Abfaerbung nach § 3 Nr. 72 EStG.
-Interne Links im Artikel: /ratgeber/immobilien-gbr-gruenden (Art. 35, wichtigster), /ratgeber/bodenrichtwert-rheinland-pfalz (Art. 14), /ratgeber/immobilie-vererben-oder-verschenken (Art. 29), /ratgeber/geerbtes-haus-verkaufen (Art. 11), /ratgeber/grundsteuer-rheinland-pfalz (Art. 31)
-CTA: /bewerten, /kontakt, Telefon, Bueroadresse Hermeskeil
-Rechtsstand: 17.08.2026
--->

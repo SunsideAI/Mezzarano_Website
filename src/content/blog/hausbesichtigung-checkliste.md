@@ -151,37 +151,3 @@ Nur auf das zu schauen, was sich später ändern lässt. Eine alte Küche oder e
 Mit einer guten Vorbereitung sparen Sie sich teure Überraschungen. Den Markt vor Ort kennen Sie damit trotzdem noch nicht. Was in Saarburg ein realistischer Preis ist, kann in einem Dorf 15 Kilometer weiter deutlich daneben liegen. Ortsbezogene Einschätzungen finden Sie in meinen Ratgebern [Haus kaufen in Saarburg: Preise, Lagen, Tipps 2026](/ratgeber/haus-kaufen-saarburg) und [Haus kaufen in der Eifel: Lagen, Preise, Tipps 2026](/ratgeber/haus-kaufen-eifel).
 
 Meine aktuellen Angebote im Raum Hermeskeil, Trier, Saarburg, Konz, Schweich, Bernkastel-Kues, Bitburg und Wittlich finden Sie unter [mezzarano-wuestenrot-immobilien.de/immobilien](/immobilien). Wenn Sie ein konkretes Objekt im Blick haben und eine zweite Meinung zum Zustand oder zum Preis möchten, rufen Sie mich an unter 06503 9523963 oder schreiben Sie mir über die [Kontaktseite](/kontakt). Ich sage Ihnen ehrlich, was ich sehe, auch wenn die Antwort lautet: Finger weg.
-
-<!--
-CONTENT-STRATEGIE (intern, nicht veröffentlichen)
-
-Artikel 30 der Content-Map. Cluster 3 (Immobilie kaufen).
-Haupt-Keyword: Hausbesichtigung Checkliste (Vol. ~300-500 gesch., Proxy "onlinebesichtigung" 210, Diff 8)
-
-ABGRENZUNG / KANNIBALISIERUNGSSCHUTZ:
-- Art. 4-8 (lokale Kauf-Guides) = Ortsangebot, Preise, Lagen. Dieser Artikel = prozessuale
-  Checkliste, ortsunabhängig. Art. 4 hat eine 5-Punkte-Kaufprüfung (energetisch/Substanz/
-  Grundstück/Anschlüsse/Heizung) - hier bewusst anderer Aufbau (Unterlagen -> außen -> innen ->
-  Fragenkatalog -> 2. Termin) und deutlich größere Detailtiefe je Bauteil.
-- Art. 26 (Kaufvertrag) = nach der Besichtigung. Art. 22 (Energieausweis) = das Dokument selbst.
-- Art. 27 (Wohnfläche) = Berechnungsregeln, hier nur der Prüfhinweis.
-
-EXKLUSIVER INHALT (nicht in anderen Artikeln):
-- Bruchsteinkeller / fehlende Horizontalsperre als regionaltypischer Prüfpunkt
-- Schieferdach Eifel: Haken und Schalung als Verschleißpunkt
-- CO2-Preiskorridor 55-65 EUR/t ab 2026 + ETS II ab 2027, bezogen auf Ölheizung in
-  Dörfern ohne Gasnetz
-- Elementarschadenversicherung / Starkregengefahrenkarte bei Mosel-Hanglagen
-- § 444 BGB Arglist vs. "gekauft wie gesehen" im Kontext des Fragenkatalogs
-- Feuerzeug-Spiegeltest für Verglasung
-- Abhak-Block als eigenständiges Snippet-/Print-Element
-
-E-E-A-T (neu, nicht doppelt verwendet):
-- "Ich gehe im Jahr durch eine ganze Reihe von Häusern..." (neue Formulierung)
-- Fallbeispiel Reinsfeld / Ölkessel 1998 (Ort bisher nicht als Fallbeispiel genutzt)
-- Sprengnetter-Anker bewusst NICHT verwendet (in 9 Artikeln bereits gebraucht)
-
-VERLINKUNG:
-Ausgehend: Art. 22, Art. 27, Art. 26, Art. 17, Art. 5, Art. 7 + /immobilien, /kontakt
-Eingehend nachziehen: Art. 5, Art. 7, Art. 4, Art. 26, Art. 8
--->

@@ -131,13 +131,3 @@ Grundlage jeder Entscheidung ist eine ehrliche Bewertung Ihres Hauses. Diese mac
 
 **Über den Autor**
 Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil. Er ist zertifizierter Immobilienmakler (IHK-Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung. Mit über 16 Jahren Erfahrung begleitet er Eigentümer und Käufer im Raum Hochwald, Trier, Mosel und Eifel. Ausgezeichnet 2025 von Focus Money für höchste Beratungskompetenz und vom Handelsblatt für exzellente Kundenberatung. Erreichbar unter 06503 9523963 oder sandro.mezzarano@wuestenrot.de.
-
-<!--
-Content-Strategie-Hinweis (intern, nicht veröffentlichen):
-- Cluster 2 Verkaufen, Phase 3 vorgezogen
-- USP: Vier-Modelle-Vergleich + ehrlicher Anti-Verkaufsbroschüre-Angle
-- Sprengnetter-Anker erstmals im Verkaufs-Cluster als Hauptanker (Verkehrswert-Fundament)
-- Hochwald-Nießbrauch-Anekdote neu, nicht in Art. 1-9 verwendet
-- Focus Money 2025 + Handelsblatt 2025 nur Autoren-Box
-- Interne Artikel-Links als #-Platzhalter, vor WordPress-Publish mit echten URLs ersetzen
--->

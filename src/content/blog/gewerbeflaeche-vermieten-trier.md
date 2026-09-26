@@ -125,8 +125,6 @@ Ein steuerlicher Hinweis noch zum Leerstand, weil er im Umland realistisch ist: 
 
 ## Aus der Praxis
 
-<!-- HINWEIS Sandro Mezzarano: Das folgende Beispiel ist rekonstruiert und sollte vor der Veroeffentlichung durch ein echtes Mandat ersetzt werden. -->
-
 Vor einiger Zeit saß mir ein Eigentümer gegenüber, der in Trier-Süd eine Büroetage von rund 240 Quadratmetern hochwertig ausgebaut hatte. Lüftung und Sanitärbereiche neu, Datenverkabelung durchgezogen, akustisch wirksame Decken eingebaut. Die Vorsteuer aus dem Ausbau hatte er gezogen, sein Steuerberater hatte das ordnungsgemäß erklärt.
 
 Dann kam ein Interessent, der die Fläche komplett nehmen wollte und eine gute Bonität mitbrachte: eine Praxis für Physiotherapie. Der Eigentümer war erleichtert, die Fläche war nicht ganz einfach zu schneiden. Wir haben das Gespräch an dieser Stelle unterbrochen und den Steuerberater dazugeholt.
@@ -169,82 +167,3 @@ Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien
 *Dieser Beitrag ersetzt keine Rechts- oder Steuerberatung. Bei umsatzsteuerlichen und vertragsrechtlichen Fragen wenden Sie sich bitte an Ihren Steuerberater oder an einen Fachanwalt für Miet- und Wohnungseigentumsrecht.*
 
 **Quellen:** Gutachterausschuss für Grundstückswerte in Trier, Bericht „Gewerbliche Mieten in Trier" (Ausgabe 2023, Erhebung November 2022); Stadt Trier, Wirtschaftsförderung; IHK Trier, Realsteuerhebesätze; Viertes Bürokratieentlastungsgesetz, §§ 578 Abs. 1 Satz 2, 126b BGB; §§ 4 Nr. 12a, 9 Abs. 2, 15a UStG sowie Umsatzsteuer-Anwendungserlass zur 5-Prozent-Grenze; § 307 Abs. 1 BGB und BGH-Rechtsprechung zur Umlage von Wartungs- und Instandhaltungskosten; BGH zum vertragsimmanenten Konkurrenzschutz; Preisklauselgesetz; § 551 BGB; BFH IX R 9/12 und IX R 14/12 vom 11.12.2012; Gebäudeenergiegesetz.
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veroeffentlichen)
-
-CLUSTER: neu — Vermietungs-Achse | KATEGORIE: Markt & Region
-HAUPT-KEYWORD: Gewerbeflaeche vermieten Trier
-
-TRENNSCHAERFE ZU ART. 60 (Gewerbeimmobilie Trier):
-Art. 60 = VERKAUF (Ertragswert, Faktor, Umsatzsteuer BEIM VERKAUF nach
-§ 9/§ 1 Abs. 1a UStG, Unterlagen fuer den Kaeufer). Dieser Artikel =
-VERMIETUNG (Mietpreisfindung, Vertragsform, Option nach § 9 Abs. 2 UStG
-bei laufender Vermietung, Betriebskosten, Konkurrenzschutz, Sicherheiten).
-Der Map-Eintrag zu Art. 60 haelt ausdruecklich fest, dass „vermieten" als
-eigenes Thema verfuegbar bleibt. Trennachse ist die TRANSAKTIONSART.
-
-⚠️ KEYWORD-BEREINIGUNG NOETIG: Art. 60 fuehrt „Gewerbemietvertrag" und
-„Gewerbeflaeche Trier" als Neben-Keywords, behandelt beides aber nur als
-Wertfaktor. Beide gehoeren inhaltlich hierher. Empfehlung: bei der naechsten
-Map-Konsolidierung bei Art. 60 streichen.
-
-⚠️ FEHLER IN ART. 60 GEFUNDEN: Der Abschnitt „Der Mietvertrag ist
-Werttraeger und Risiko zugleich" beschreibt die Schriftform nach § 550 BGB
-als geltendes Recht fuer Gewerberaum. Das ist seit dem BEG IV ueberholt
-(Textform seit 01.01.2025 fuer Neuvertraege, seit Anfang 2026 auch fuer
-Altvertraege). Art. 60 muss an dieser Stelle korrigiert werden.
-
-EXKLUSIVE BAUSTEINE (kein Regional-Wettbewerber hat einen davon):
-1. Textform statt Schriftform (BEG IV, §§ 578 Abs. 1 S. 2, 126b BGB) inkl.
-   Uebergangsfrist fuer Altvertraege und der offenen Frage zur
-   Urkundeneinheit. Staerkster Baustein, weil brandaktuell und weil er
-   die bekannteste Gewerbemietrechts-Falle entwertet.
-2. Option nach § 9 Abs. 2 UStG mit der Mieterfilter-Regel (Arzt,
-   Heilpraktiker, Bank, Versicherungsmakler kippen die Option) plus
-   5-%-Bagatellgrenze und § 15a-Berichtigung ueber 10 Jahre. Teuerster
-   Praxisfehler bei Bueroflaechen, traegt die Anekdote.
-3. Vertragsimmanenter Konkurrenzschutz (BGH) inkl. der Unwirksamkeit der
-   Kombiklausel Betriebspflicht plus Konkurrenzschutz-Ausschluss.
-4. Betriebskosten-Grenze: formularmaessige Umlage von Wartungs- und
-   Instandhaltungskosten fuer Gemeinschaftsflaechen ohne Kostenobergrenze
-   unwirksam, § 307 Abs. 1 BGB.
-5. Buero-Zahlen aus dem Gutachterausschuss-Bericht (6,50 bis 10,30 EUR/m²,
-   Entwicklung Innenstadt/Petrisberg stabil, Randlagen +4 bis 5 %). Art. 60
-   zitiert aus derselben Quelle nur die Einzelhandelswerte — komplementaer,
-   keine Doppelung.
-6. Ehrlicher Datenlage-Hinweis: Der Bericht endet an der Stadtgrenze, fuer
-   das Umland gibt es kein Pendant. Kein Wettbewerber sagt das.
-
-WETTBEWERB: Gilbers & Baasch betreibt „Lager mieten Trier" und ein
-Gewerbemakler-Silo. Geprueft: Objektlistings plus Leistungsbeschreibung,
-keine Marktdaten, keine Rechts- oder Steuerangaben. Restliche SERP
-portal-dominiert (immowelt, immobilo, kleinanzeigen, meinestadt).
-EHRLICHE EINORDNUNG: Ranking-seitig ist der Listing-Intent stark. Der Wert
-liegt im Lead (Vermietungsmandat plus spaeteres Verkaufsmandat) und in der
-AI-Citation, nicht im Volumen.
-
-E-E-A-T: Sprengnetter, Focus Money und Handelsblatt NUR in der Autorenbox
-(Sprengnetter steckt bereits in 10+ Artikeln). Fliesstext-Anker ist der
-Buerositz Hermeskeil plus die Stadt-Umland-Doppelperspektive. Anekdoten-
-Schauplatz Trier-Sued ist in der Map bislang unbenutzt, ebenso Foehren.
-
-OFFEN: Das Fallbeispiel Trier-Sued (Bueroetage 240 qm, Physiotherapie-
-Praxis, Vorsteuerberichtigung) ist rekonstruiert und sollte durch einen
-echten Fall von Sandro Mezzarano ersetzt werden.
-
-WARTUNG:
-(a) Ausgabe 2026 des Berichts „Gewerbliche Mieten in Trier" pruefen — er
-    erscheint dreijaehrlich, die zitierte Ausgabe ist 2023 mit einer
-    Erhebung von November 2022. Die Buerowerte 6,50 / 10,30 EUR/m² danach
-    abgleichen. Hoechste Prioritaet aller Wartungspunkte.
-(b) Portal-Durchschnitte (Buero ~11 EUR/m², Lager ~5 EUR/m²) sind
-    Momentaufnahmen 2026, halbjaehrlich pruefen.
-(c) Gewerbesteuerhebesaetze jaehrlich nach den kommunalen
-    Haushaltsbeschluessen (IHK Trier).
-(d) Rechtsprechung zur Urkundeneinheit in Textform beobachten — die Frage
-    ist noch nicht abschliessend geklaert, ein BGH-Urteil aendert den
-    Vertragsform-Abschnitt.
-(e) BGH-Linie zu isolierten Wartungskosten ohne Obergrenze: eine
-    abschliessende Klaerung steht aus.
--->

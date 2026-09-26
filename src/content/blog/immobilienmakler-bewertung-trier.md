@@ -17,7 +17,7 @@ featured: false
 
 Eine Bewertung vom Immobilienmakler in Trier ist dann gut, wenn sie nachvollziehbar ist: Sie beruht auf einer Besichtigung, nennt echte Vergleichsverkäufe statt Portalangebote und gibt eine realistische Preisspanne mit Begründung. Die höchste Zahl ist selten die beste. Wer mehrere Makler einlädt, bekommt oft Werte, die um zehn Prozent und mehr auseinanderliegen, und genau dann lohnt es sich, genauer hinzusehen.
 
-Ich bin Sandro Mezzarano, Immobilienberater bei Wüstenrot Immobilien in Hermeskeil und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. In diesem Artikel geht es nicht darum, welche Bewertungswege es gibt. Das habe ich in der [INTERNER LINK: "Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?" -> /ratgeber/immobilienbewertung-trier/] ausführlich erklärt. Hier geht es um eine andere Frage: Wie erkennen Sie, ob die Einschätzung, die ein Makler Ihnen auf den Tisch legt, belastbar ist?
+Ich bin Sandro Mezzarano, Immobilienberater bei Wüstenrot Immobilien in Hermeskeil und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung. In diesem Artikel geht es nicht darum, welche Bewertungswege es gibt. Das habe ich in der [Immobilienbewertung Trier: Was ist Ihr Haus wirklich wert?](/ratgeber/immobilienbewertung-trier/) ausführlich erklärt. Hier geht es um eine andere Frage: Wie erkennen Sie, ob die Einschätzung, die ein Makler Ihnen auf den Tisch legt, belastbar ist?
 
 ## Was eine Makler-Bewertung in Trier leistet und was nicht
 
@@ -33,7 +33,7 @@ Für einen Verkauf reicht die Maklerbewertung in den allermeisten Fällen. Sie m
 
 Die Bewertung ist für einen Makler der Einstieg ins Gespräch. Das ist legitim, und ich halte es genauso. Es erzeugt aber einen Interessenkonflikt, den Sie kennen sollten: Wer den höchsten Preis nennt, gewinnt beim Eigentümer schnell Sympathie und damit oft den Auftrag.
 
-Das Problem zeigt sich erst Monate später. Eine Immobilie, die zu teuer startet, bekommt kaum Anfragen. Nach einigen Wochen folgt die erste Preissenkung, dann die zweite. Käufer sehen das auf den Portalen und fragen sich, was mit dem Objekt nicht stimmt. Am Ende liegt der Verkaufspreis nicht selten unter dem, was ein realistischer Start gebracht hätte. Im Raum Trier-Saarburg verkaufen sich marktgerecht angesetzte Häuser nach meiner Erfahrung typischerweise in drei bis sechs Monaten. Wer deutlich darüber ansetzt, verliert Zeit und Verhandlungsspielraum. Wie der gesamte Verkauf abläuft, lesen Sie im Ratgeber [INTERNER LINK: "Immobilie verkaufen: Ablauf in 10 Schritten" -> /ratgeber/immobilie-verkaufen-ablauf/].
+Das Problem zeigt sich erst Monate später. Eine Immobilie, die zu teuer startet, bekommt kaum Anfragen. Nach einigen Wochen folgt die erste Preissenkung, dann die zweite. Käufer sehen das auf den Portalen und fragen sich, was mit dem Objekt nicht stimmt. Am Ende liegt der Verkaufspreis nicht selten unter dem, was ein realistischer Start gebracht hätte. Im Raum Trier-Saarburg verkaufen sich marktgerecht angesetzte Häuser nach meiner Erfahrung typischerweise in drei bis sechs Monaten. Wer deutlich darüber ansetzt, verliert Zeit und Verhandlungsspielraum. Wie der gesamte Verkauf abläuft, lesen Sie im Ratgeber [Immobilie verkaufen: Ablauf in 10 Schritten](/ratgeber/immobilie-verkaufen-ablauf/).
 
 Eine überhöhte Maklerbewertung kostet den Eigentümer am Ende meist mehr Geld, als eine ehrliche Einschätzung ihn am Anfang an Stolz kostet.
 
@@ -49,7 +49,7 @@ Das ist die wichtigste Frage auf dieser Liste. Portale zeigen Angebotspreise, al
 
 ### 3. Kann er den Wert herleiten?
 
-Eine seriöse Einschätzung erklärt, wie die Zahl zustande kommt. Beim selbstgenutzten Einfamilienhaus ist das meist das Vergleichswertverfahren, beim Mehrfamilienhaus das Ertragswertverfahren, bei Sonderobjekten das Sachwertverfahren. Wie die drei Verfahren funktionieren, erkläre ich in [INTERNER LINK: "Wertermittlung Haus: Die drei Verfahren verständlich erklärt" -> /ratgeber/wertermittlung-haus/]. Sie müssen die Rechnung nicht selbst prüfen können. Aber der Makler sollte sie Ihnen in einfachen Worten erklären können.
+Eine seriöse Einschätzung erklärt, wie die Zahl zustande kommt. Beim selbstgenutzten Einfamilienhaus ist das meist das Vergleichswertverfahren, beim Mehrfamilienhaus das Ertragswertverfahren, bei Sonderobjekten das Sachwertverfahren. Wie die drei Verfahren funktionieren, erkläre ich in [Wertermittlung Haus: Die drei Verfahren verständlich erklärt](/ratgeber/wertermittlung-haus/). Sie müssen die Rechnung nicht selbst prüfen können. Aber der Makler sollte sie Ihnen in einfachen Worten erklären können.
 
 ### 4. Bekommen Sie eine Spanne und eine Strategie?
 
@@ -57,7 +57,7 @@ Ein einzelner Betrag wirkt präzise, ist es aber nicht. Realistischer ist eine S
 
 ### 5. Kennt er Ihren Stadtteil wirklich?
 
-Trier ist kein einheitlicher Markt. Tarforst mit Universitätsnähe tickt anders als Ehrang, Heiligkreuz anders als Trier-Nord. Im Umland kommt die Nachfrage von Luxemburg-Pendlern dazu, die in Konz, Saarburg und entlang der Obermosel die Preise spürbar stützt. Laut Grundstücksmarktbericht der Stadt Trier (Ausgabe 2026, Daten für 2025) wurden rund 1.380 Kaufverträge mit einem Volumen von etwa 520 Millionen Euro geschlossen, rund 10 % mehr als im Vorjahr. Ein- und Zweifamilienhäuser sowie gebrauchte Eigentumswohnungen wurden leicht teurer, Ertragsobjekte gaben nach. Wer Ihnen solche Unterschiede nicht erklären kann, bewertet eher nach Gefühl. Aktuelle Preise nach Lage finden Sie im Marktbericht [INTERNER LINK: "Immobilienpreise in Trier: Aktueller Marktbericht 2026" -> /ratgeber/immobilienpreise-trier/].
+Trier ist kein einheitlicher Markt. Tarforst mit Universitätsnähe tickt anders als Ehrang, Heiligkreuz anders als Trier-Nord. Im Umland kommt die Nachfrage von Luxemburg-Pendlern dazu, die in Konz, Saarburg und entlang der Obermosel die Preise spürbar stützt. Laut Grundstücksmarktbericht der Stadt Trier (Ausgabe 2026, Daten für 2025) wurden rund 1.380 Kaufverträge mit einem Volumen von etwa 520 Millionen Euro geschlossen, rund 10 % mehr als im Vorjahr. Ein- und Zweifamilienhäuser sowie gebrauchte Eigentumswohnungen wurden leicht teurer, Ertragsobjekte gaben nach. Wer Ihnen solche Unterschiede nicht erklären kann, bewertet eher nach Gefühl. Aktuelle Preise nach Lage finden Sie im Marktbericht [Immobilienpreise in Trier: Aktueller Marktbericht 2026](/ratgeber/immobilienpreise-trier/).
 
 ### 6. Welche Qualifikation steht dahinter?
 
@@ -65,7 +65,7 @@ Wer als Makler Wohnimmobilien vermittelt, braucht eine Erlaubnis nach § 34c Gew
 
 ### 7. Ist die Bewertung an einen Auftrag gekoppelt?
 
-Eine kostenlose Bewertung sollte kostenlos bleiben, auch wenn Sie danach nicht beauftragen. Seien Sie vorsichtig, wenn Sie direkt beim Termin einen Maklervertrag unterschreiben sollen. Nehmen Sie sich Zeit, vergleichen Sie. Was ein Makler in Rheinland-Pfalz kostet und wie die Provision geteilt wird, lesen Sie im Ratgeber [INTERNER LINK: "Was kostet ein Immobilienmakler in Rheinland-Pfalz?" -> /ratgeber/was-kostet-immobilienmakler-rheinland-pfalz/].
+Eine kostenlose Bewertung sollte kostenlos bleiben, auch wenn Sie danach nicht beauftragen. Seien Sie vorsichtig, wenn Sie direkt beim Termin einen Maklervertrag unterschreiben sollen. Nehmen Sie sich Zeit, vergleichen Sie. Was ein Makler in Rheinland-Pfalz kostet und wie die Provision geteilt wird, lesen Sie im Ratgeber [Was kostet ein Immobilienmakler in Rheinland-Pfalz?](/ratgeber/was-kostet-immobilienmakler-rheinland-pfalz/).
 
 ## Warnsignale bei einer Maklerbewertung
 
@@ -81,9 +81,7 @@ Umgekehrt ist ein vorsichtiger Wert nicht automatisch ein schlechter. Manche Mak
 
 ## Drei Bewertungen, drei Zahlen: Was nun?
 
-Ein Ehepaar aus Konz hatte vor dem Verkauf des eigenen Einfamilienhauses drei Makler eingeladen. Die Werte lagen zwischen 395.000 und 465.000 Euro. Die höchste Zahl kam ohne Begründung, die niedrigste ohne Blick in den Keller. Wir haben uns gemeinsam die Vergleichsverkäufe und den Sanierungsbedarf angesehen, und am Ende lag der Verkaufspreis im oberen Mittelfeld der drei Werte. <!-- TODO Fallstudie: Beispiel von Sandro Mezzarano bestätigen oder durch echten Fall ersetzen -->
-
-Mein Rat bei abweichenden Werten:
+Ein Ehepaar aus Konz hatte vor dem Verkauf des eigenen Einfamilienhauses drei Makler eingeladen. Die Werte lagen zwischen 395.000 und 465.000 Euro. Die höchste Zahl kam ohne Begründung, die niedrigste ohne Blick in den Keller. Wir haben uns gemeinsam die Vergleichsverkäufe und den Sanierungsbedarf angesehen, und am Ende lag der Verkaufspreis im oberen Mittelfeld der drei Werte. Mein Rat bei abweichenden Werten:
 
 1. Legen Sie die Begründungen nebeneinander, nicht die Zahlen.
 2. Fragen Sie jeden Makler, woher die Abweichung zu den anderen kommt.

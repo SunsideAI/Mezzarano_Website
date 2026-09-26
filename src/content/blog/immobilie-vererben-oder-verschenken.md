@@ -152,38 +152,7 @@ Was in jedem dieser Fälle am Anfang steht, ist derselbe Schritt. Ohne belastbar
 
 Wenn Sie eine Übertragung im Raum Hermeskeil, Trier, Saarburg oder an der Mosel planen, rufen Sie mich gern an. Ich sage Ihnen, was Ihre Immobilie wert ist, und ich sage Ihnen auch, wo Sie besser einen Steuerberater fragen. Ehrlichkeit hat ein Zuhause. Sie erreichen mich über die [Kontaktseite](/kontakt) oder per E-Mail an sandro.mezzarano@wuestenrot.de.
 
-
 **Über den Autor**
 Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH mit Sitz in Hermeskeil, zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung. Er begleitet Eigentümer und Kaufinteressenten im Hochwald, im Raum Trier-Saarburg und an der Mosel seit über 16 Jahren. Ausgezeichnet von Focus Money 2025 für höchste Beratungskompetenz und vom Handelsblatt 2025 für exzellente Kundenberatung.
 
 **Quellen:** § 2 Abs. 1, § 10 Abs. 1, § 13 Abs. 1 Nr. 4a und 4c, § 14, § 16 Abs. 1 und Abs. 2 ErbStG; §§ 176 ff., § 14, § 16, § 198 BewG; § 23 EStG; § 3 Nr. 2 und Nr. 6 GrEStG; §§ 311b, 528, 529, 753, 1030 ff., 1093, 2325 BGB; § 93 SGB XII; BGH, Urteil vom 29.06.2016, IV ZR 474/15; BMF-Schreiben vom 21.10.2025, Az. IV D 4 - S 3104/00002/013/003 (Vervielfältiger ab 01.01.2026, Sterbetafel 2022/2024, Zinsfuß 5,5 %); GNotKG; SPD-Konzeptpapier zur Erbschaftsteuer, Januar 2026; Grunderwerbsteuersatz Rheinland-Pfalz 5,0 %; luxemburgisches Erbschaftsteuerrecht (Befreiung in gerader Linie für Immobilienvermögen); Preisniveau Hochwald und Trier auf Basis BORIS-RP und Gutachterausschuss Trier-Saarburg.
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (nicht veröffentlichen)
-
-Abgrenzung: Art. 29 setzt VOR dem Erbfall an (Planung zu Lebzeiten, Übertragungswege).
-Art. 11 (geerbtes-haus-verkaufen) setzt NACH dem Erbfall an (Verkauf, Erbengemeinschaft,
-§ 198 BewG im Erbfall). § 198 BewG hier nur gestreift mit Verweis auf Art. 11.
-Nießbrauch überlappt thematisch mit Art. 10 (Teilverkauf), dort aber als Verrentungs-
-Alternative gegen Geld, hier als Schenkungsgestaltung. Bidirektional verlinkt.
-
-Exklusiver Inhalt dieses Artikels (kein Wettbewerber in der Region hat das):
-- Reformlage 2026 (SPD-Konzeptpapier 01/2026, erwartete BVerfG-Entscheidung)
-- Nießbrauch-Kapitalwert durchgerechnet mit BMF-Vervielfältiger ab 01.01.2026
-- Trennung der zwei Zehnjahresfristen (§ 2325 BGB vs. § 528/529 BGB) inkl. BGH IV ZR 474/15
-- Regionaler Ehrlichkeits-Check: bei Hochwald-Werten ist die Steuerfrage keine
-- Familienheim-Asymmetrie: Ehegatten-Schenkung steuerfrei, Kinder nur im Erbfall
-- Cross-Border-Block "Wenn das Kind in Luxemburg lebt": Inlandsvermoegen,
-  § 16 Abs. 2 ErbStG anteiliger Freibetrag, LU-Befreiung in gerader Linie,
-  kein DBA fuer Erbschaft/Schenkung DE-LU. Baut Art. 18 (Lux-Pendler) thematisch
-  fort, ohne dessen Keywords zu beruehren (dort Kauf/Finanzierung, hier Uebertragung).
-
-E-E-A-T-Anker: 16 Jahre + IHK Bonn + Sprengnetter in NEUER Anwendung (Lücke zwischen
-typisiertem Grundbesitzwert und Marktwert bei Sanierungsstau/Hofstellen; Jahreswert-
-Herleitung für die Nießbrauchsbewertung). Focus Money 2025 und Handelsblatt 2025 nur
-in der Autorenbox. Anekdote Reinsfeld (Nießbrauch + Ausgleichszahlung + Pflichtteils-
-anrechnung) ist neu und in Art. 1-28 nicht verwendet.
-
-Interne Links im Artikel: Art. 11, Art. 10, Art. 16, Art. 13 + /bewerten, /kontakt.
-Vor WP-Veröffentlichung die [INTERNER LINK: ...]-Marker durch echte URLs ersetzen.
--->

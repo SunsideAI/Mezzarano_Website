@@ -142,27 +142,3 @@ Die Steuer ist beim Wohnungskauf ein Faktor, aber sie ist niemals der Grund. Ein
 Beim ersten Teil helfe ich Ihnen gern. Ich schaue mir an, ob der Preis einer Wohnung im Raum Trier, an der Mosel oder im Hochwald zum Markt passt, welche Miete realistisch erzielbar ist und worauf Sie beim Objekt achten sollten. Für die Finanzierung steht das Netzwerk der Wüstenrot im Hintergrund. Eine erste Einschätzung ist bei mir kostenlos: [Wertermittlung anfordern](/bewerten) oder direkt [Kontakt aufnehmen](/kontakt). Aktuelle Angebote finden Sie unter [Immobilien](/immobilien).
 
 Dass mir Focus Money 2025 die höchste Beratungskompetenz bescheinigt hat, freut mich. Wichtiger ist mir, was dahintersteht: Ehrlichkeit hat ein Zuhause. Sie sollen vor dem Notartermin wissen, was Sie erwartet, und nicht danach.
-
-<!-- CONTENT-STRATEGIE-HINWEIS (intern, nicht veröffentlichen):
-Art. 35, Cluster 5 (Recht & Steuern). Haupt-KW "Wohnung kaufen steuerlich absetzen".
-Abgrenzung: Steuerliche WIRKUNG der Kaufkosten — trennscharf zu Art. 17 (HÖHE der Kaufnebenkosten),
-Art. 16 (Grunderwerbsteuer isoliert), Art. 9 (Verkaufsseite/§ 23 EStG), Art. 31 (laufende Grundsteuer, geplant).
-Spekulationssteuer bewusst nur als FAQ-Zeile + Link auf Art. 9, kein Deep-Dive.
-Exklusiv vs. Konkurrenz: (1) Kaufpreisaufteilung Boden/Gebäude mit BORIS-RP-Zahlen Trier vs. Hochwald und
-Rechenbeispiel — kein Regionalwettbewerber hat das; (2) 15-Prozent-Falle § 6 Abs. 1 Nr. 1a EStG mit
-Trier-Nord-Anekdote; (3) Denkmal-AfA § 7i/§ 10f mit GDKE-/Behördenverfahren (Trier-USP);
-(4) Cross-Border-Luxemburg-Denkfehler (AfA braucht deutsches Einkommen) — Mezzarano-USP, kurz gehalten + Link Art. 18.
-E-E-A-T: Focus Money 2025 erstmals als Schluss-Anker in Cluster 5 (bisher nur Mosel-Artikel als Hauptanker);
-16 Jahre + Wüstenrot-Finanzierungsnetzwerk. Sprengnetter hier NICHT genutzt (in Art. 14/25/27 verbraucht).
-Neue Anekdoten (nirgends verwendet): Ehepaar Zerf (Zinsen-Irrtum Selbstnutzer), Kapitalanleger
-Bernkastel-Kues (Maklerprovision 8.000 EUR sofort vs. 160 EUR/Jahr), Trier-Nord 1968 (15-%-Grenze 24.750 EUR).
-Steuerberater-Verweis 6x, kein Beratungsanschein. GrESt korrekt 5,0 % RLP.
-Verlinkung Forward: Art. 17, 16, 14, 18, 27, 9 + /bewerten, /kontakt, /immobilien.
-Rückverlinkung nachziehen: Art. 17, 16, 9, 8, 18 -> Art. 35.
-Rechtsstand geprüft Juli 2026: § 7 Abs. 4 EStG (3 % ab Fertigstellung 2023 / 2 % / 2,5 %), § 7 Abs. 5a EStG
-(5 % degressiv, Baubeginn 01.10.2023-30.09.2029), § 7b EStG (5 % Sonder-AfA, 5.200 EUR/m² Baukostengrenze,
-4.000 EUR/m² Bemessungsgrundlage, letztmalig VZ 2026), § 35a (20 %, max. 1.200 EUR), § 35c (20 %, max.
-40.000 EUR, 7/7/6, befristet 31.12.2029), § 6 Abs. 1 Nr. 1a (15 % / 3 Jahre), § 7i (8x9 % + 4x7 %),
-§ 10f (10x9 %), Arbeitszimmer (1.260 EUR Jahres-/Tagespauschale), BMF-Arbeitshilfe Kaufpreisaufteilung.
-Quellen: gesetze-im-internet.de (EStG), BMF (Arbeitshilfe + Anwendungsschreiben § 7b v. 21.05.2025),
-BORIS-RP / Gutachterausschuss Trier-Saarburg (Stichtag 01.01.2024), Denkmalschutzgesetz RLP / GDKE, DBA DE-LUX. -->

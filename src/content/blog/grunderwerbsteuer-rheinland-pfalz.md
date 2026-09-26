@@ -113,20 +113,3 @@ Sie planen einen Kauf oder Verkauf im Hochwald, in Trier, an der Mosel oder in d
 ---
 
 **Autor: Sandro Mezzarano.** Selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH, zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung mit Sitz in Hermeskeil. Ausgezeichnet von Focus Money 2025 (höchste Beratungskompetenz) und Handelsblatt 2025 (exzellente Kundenberatung). Über 16 Jahre Erfahrung im Raum Hochwald, Trier und Mosel.
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veröffentlichen):
-- Art. 16, Cluster 5 (Recht, Steuern, Finanzierung). Blog-Kritik-Score: 90/100.
-- Abgrenzung: GrESt-Deep-Dive. Art. 17 (Kaufnebenkosten) bleibt der Nebenkosten-
-  Überblick und verlinkt später hierher. Art. 14 (Bodenrichtwert) sauber abgegrenzt
-  (Bemessungsgrundlage = Kaufpreis, nicht Bodenrichtwert).
-- Interne Links: Art. 14 (live), Art. 17 (geplant, Forward-Platzhalter), /bewerten,
-  /kontakt, /immobilien. Vor WordPress-Veröffentlichung Art.-17-Link auf echte URL
-  setzen, sobald Art. 17 live ist.
-- E-E-A-T-Anker: Sprengnetter + 16 Jahre als Hauptanker; Focus Money 2025 +
-  Handelsblatt 2025 nur in Autoren-Box (Hauptanker-Status für andere Artikel reserviert).
-- Exklusiver Mehrwert vs. Rechner-Konkurrenz: ehrliche Spar-Hebel mit BFH-Korrektur
-  Instandhaltungsrücklage (2020), regionale Rechenbeispiele, Luxemburg-Pendler-Bezug.
-- Quellen: Ministerium der Finanzen RLP, GrEStG (§§ 3, 13, 18, 22), Haufe/BFH-
-  Rechtsprechung (Instandhaltungsrücklage), Haus & Grund RLP (Reform-Debatte).
--->

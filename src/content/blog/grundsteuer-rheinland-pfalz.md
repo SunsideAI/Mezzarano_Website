@@ -139,29 +139,4 @@ Als Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung sage 
 
 *Dieser Artikel ersetzt keine Steuerberatung. Für Ihre persönliche steuerliche Situation und für ein Vorgehen gegen einen Bescheid wenden Sie sich bitte an einen Steuerberater oder an Ihr zuständiges Finanzamt.*
 
-
 **Autor: Sandro Mezzarano.** Selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH, zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung mit Sitz in Hermeskeil. Über 16 Jahre Erfahrung im Raum Hochwald, Trier und Mosel. Ausgezeichnet von Focus Money 2025 (höchste Beratungskompetenz) und Handelsblatt 2025 (exzellente Kundenberatung).
-
-<!-- CONTENT-STRATEGIE-HINWEIS (intern, nicht veröffentlichen):
-Art. 31, Cluster 5 (Recht, Steuern, Finanzierung). Blog-Kritik-Score: 92/100.
-Angle: Makler-Winkel statt Behörden-Erklärstück. Schwerpunkt auf Eigentümerwechsel
-(Stichtag 1.1., Zurechnungsfortschreibung, Umlage im Kaufvertrag) — genau das lassen
-Finanzministerium, Haus & Grund und die nationalen Portale aus. Hebt den Lead-Wert
-des Themas (Backlog-Score nur 18) deutlich an.
-Abgrenzung: Art. 16 (Grunderwerbsteuer) = einmalig beim Kauf, hier explizit im
-Käufer-Abschnitt gegeneinander abgesetzt. Art. 14 (Bodenrichtwert) = Herkunft/Suche
-des BRW, hier bewusst NICHT wiederholt, sondern verlinkt (einzige Überlappung der Map).
-Art. 17 (Kaufnebenkosten) = einmalige Kaufkosten. Alle trennscharf.
-Exklusiv vs. Konkurrenz: regionale Hebesatz-Tabelle (Hermeskeil/Trier/Wittlich/Bitburg),
-Erklärung des Nivellierungssatzes 465 % als Treiber der Erhöhungen, gesplittete
-Hebesätze seit Feb. 2025, Luxemburg-Pendler-Beobachtung.
-Verlinkung: Forward auf Art. 14, 12, 16, 17, 27 + /bewerten + /kontakt.
-Rückverlinkung nachziehen: Art. 16 -> Art. 31 (bidirektional laut Map), Art. 17 -> Art. 31,
-Art. 12 -> Art. 31 (Unterlagen-Schritt), Art. 14 -> Art. 31 (Grundsteuer-Absatz).
-WARTUNG: Hebesatz-Tabelle und Nivellierungssatz jährlich prüfen (Haushaltsbeschlüsse).
-Quellen: Ministerium der Finanzen RLP, Landesamt für Steuern RLP (§ 228 BewG, Frist
-31.03.), Statistisches Landesamt RLP (Ø 481 % Grundsteuer B 2023), IHK-Arbeitsgemeinschaft
-RLP (gesplittete Hebesätze, 12 von 41 Kommunen), Verbandsgemeinde Hermeskeil (545 %,
-Stand 2026), Stadt Trier (600 % seit 2025), BFH 27.05.2024 II B 78/23 und II B 79/23,
-gleich lautende Ländererlasse vom 24.06.2024, GrStG § 15 (Denkmal-Ermäßigung 10 %).
--->

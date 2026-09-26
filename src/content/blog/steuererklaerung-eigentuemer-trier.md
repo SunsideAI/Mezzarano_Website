@@ -68,9 +68,7 @@ Ein vereinfachtes Beispiel, Baujahr 1985:
 - Gebäudeanteil (angenommen 80 %): 213.000 Euro
 - **Jährliche AfA (2 %): 4.260 Euro**
 
-Die ganze Rechnung hängt am Gebäudeanteil. In Trier-Stadt sind die Bodenrichtwerte deutlich höher als im Hochwald, der Bodenanteil fällt also größer aus und die abschreibbare Summe kleiner. Das Finanzamt nutzt für die Aufteilung gern die Arbeitshilfe des Bundesfinanzministeriums, und die kommt in zentralen Trierer Lagen oft zu einem ungünstigen Ergebnis. Sie müssen das nicht einfach übernehmen. Eine Aufteilung schon im Kaufvertrag oder ein Gutachten eines Sachverständigen kann einen besseren Gebäudeanteil begründen. Die Bodenrichtwerte finden Sie kostenlos im Geoportal BORIS-RP. Als Sprengnetter-zertifizierter Sachverständiger sehe ich hier regelmäßig Differenzen von mehreren Prozentpunkten beim Gebäudeanteil. Über 50 Jahre Abschreibung kommt da ein spürbarer Betrag zusammen. <!-- TODO Fallstudie: konkreten, freigegebenen Fall zur Kaufpreisaufteilung ergänzen -->
-
-Wenn Sie die ganze Kaufentscheidung steuerlich durchrechnen möchten, finden Sie das hier: [INTERNER LINK: "Wohnung kaufen und steuerlich absetzen" -> /ratgeber/wohnung-kaufen-steuerlich-absetzen/]
+Die ganze Rechnung hängt am Gebäudeanteil. In Trier-Stadt sind die Bodenrichtwerte deutlich höher als im Hochwald, der Bodenanteil fällt also größer aus und die abschreibbare Summe kleiner. Das Finanzamt nutzt für die Aufteilung gern die Arbeitshilfe des Bundesfinanzministeriums, und die kommt in zentralen Trierer Lagen oft zu einem ungünstigen Ergebnis. Sie müssen das nicht einfach übernehmen. Eine Aufteilung schon im Kaufvertrag oder ein Gutachten eines Sachverständigen kann einen besseren Gebäudeanteil begründen. Die Bodenrichtwerte finden Sie kostenlos im Geoportal BORIS-RP. Als Sprengnetter-zertifizierter Sachverständiger sehe ich hier regelmäßig Differenzen von mehreren Prozentpunkten beim Gebäudeanteil. Über 50 Jahre Abschreibung kommt da ein spürbarer Betrag zusammen. Wenn Sie die ganze Kaufentscheidung steuerlich durchrechnen möchten, finden Sie das hier: [Wohnung kaufen und steuerlich absetzen](/ratgeber/wohnung-kaufen-steuerlich-absetzen/)
 
 ### Laufende Werbungskosten
 
@@ -82,7 +80,7 @@ In die Anlage V gehören außerdem:
 - Reparaturen und Instandhaltung
 - Fahrten zur Wohnung, Kontoführung, Porto, Inserate
 
-Zur Grundsteuer nach der Reform finden Sie hier mehr: [INTERNER LINK: "Grundsteuer in Rheinland-Pfalz" -> /ratgeber/grundsteuer-rheinland-pfalz/]
+Zur Grundsteuer nach der Reform finden Sie hier mehr: [Grundsteuer in Rheinland-Pfalz](/ratgeber/grundsteuer-rheinland-pfalz/)
 
 ### Die 15-Prozent-Falle nach dem Kauf
 
@@ -94,7 +92,7 @@ Außerhalb dieser drei Jahre gibt es ein nützliches Werkzeug: Größeren Erhalt
 
 Wenn Sie die Wohnung an Ihre Tochter vermieten, die in Trier studiert, zählt das Verhältnis zur ortsüblichen Miete. Ab 66 Prozent erkennt das Finanzamt alle Werbungskosten an. Zwischen 50 und 66 Prozent brauchen Sie eine positive Totalüberschussprognose. Unter 50 Prozent werden die Kosten gekürzt. Maßstab ist in Trier der qualifizierte Mietspiegel der Stadt, Ausgabe 2026, kostenlos auf trier.de. Das ist ein Vorteil gegenüber vielen Landgemeinden, in denen es keinen Mietspiegel gibt und über die ortsübliche Miete gestritten wird.
 
-Wie sich Vermietung in Trier insgesamt rechnet, zeigt dieser Artikel: [INTERNER LINK: "Anlageimmobilie Trier: Was sich 2026 wirklich rechnet" -> /ratgeber/anlageimmobilie-trier/]
+Wie sich Vermietung in Trier insgesamt rechnet, zeigt dieser Artikel: [Anlageimmobilie Trier: Was sich 2026 wirklich rechnet](/ratgeber/anlageimmobilie-trier/)
 
 ## Fristen und Finanzamt Trier
 
@@ -108,7 +106,7 @@ Viele meiner Kunden rund um Saarburg und Konz arbeiten in Luxemburg. Das Luxembu
 
 ## Wenn Sie verkaufen: die Spekulationsfrist
 
-Eine selbst genutzte Immobilie verkaufen Sie steuerfrei, wenn Sie im Verkaufsjahr und in den beiden Jahren davor selbst darin gewohnt haben. Bei vermieteten Objekten gilt die zehnjährige Spekulationsfrist nach § 23 EStG. Innerhalb dieser Frist versteuern Sie den Gewinn in der Anlage SO, und die bereits genommene AfA erhöht diesen Gewinn. Mehr dazu: [INTERNER LINK: "Vermietete Wohnung verkaufen" -> /ratgeber/vermietete-wohnung-verkaufen/]
+Eine selbst genutzte Immobilie verkaufen Sie steuerfrei, wenn Sie im Verkaufsjahr und in den beiden Jahren davor selbst darin gewohnt haben. Bei vermieteten Objekten gilt die zehnjährige Spekulationsfrist nach § 23 EStG. Innerhalb dieser Frist versteuern Sie den Gewinn in der Anlage SO, und die bereits genommene AfA erhöht diesen Gewinn. Mehr dazu: [Vermietete Wohnung verkaufen](/ratgeber/vermietete-wohnung-verkaufen/)
 
 ## Checkliste für Ihre Unterlagen
 

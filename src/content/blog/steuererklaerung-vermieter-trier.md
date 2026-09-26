@@ -17,7 +17,7 @@ featured: false
 
 Wer in Trier eine Wohnung oder ein Haus vermietet, muss die Mieteinnahmen in der Steuererklärung angeben, und zwar in der Anlage V. Dort stehen auf der einen Seite alle Einnahmen, einschließlich der Nebenkostenvorauszahlungen. Auf der anderen Seite stehen die Werbungskosten: Zinsen, Abschreibung, Reparaturen, Grundsteuer, Versicherungen. Für das Steuerjahr 2025 lief die Frist ohne Steuerberater am 31. Juli 2026 ab. Mit Steuerberater haben Sie Zeit bis zum 1. März 2027.
 
-Ich bin Sandro Mezzarano, Immobilienberater bei Wüstenrot Immobilien in Hermeskeil. Steuerberater bin ich nicht. Ich sehe aber jedes Jahr, an welchen Stellen Vermieter zwischen Trier und dem Hochwald bei der Steuererklärung Geld verschenken. Um diese Stellen geht es hier. Wie sich Selbstnutzer steuerlich aufstellen, lesen Sie in einem eigenen Beitrag: [INTERNER LINK: "Steuererklärung bei Eigennutzung: Was Sie in Trier absetzen" -> /ratgeber/steuererklaerung-haus-eigennutzung-trier/].
+Ich bin Sandro Mezzarano, Immobilienberater bei Wüstenrot Immobilien in Hermeskeil. Steuerberater bin ich nicht. Ich sehe aber jedes Jahr, an welchen Stellen Vermieter zwischen Trier und dem Hochwald bei der Steuererklärung Geld verschenken. Um diese Stellen geht es hier. Wie sich Selbstnutzer steuerlich aufstellen, lesen Sie in einem eigenen Beitrag: [Steuererklärung bei Eigennutzung: Was Sie in Trier absetzen](/ratgeber/steuererklaerung-haus-eigennutzung-trier/).
 
 ## Steuererklärung für Vermieter in Trier: wer abgeben muss und bis wann
 
@@ -47,7 +47,7 @@ Wenn Sie eine Immobilie gemeinsam mit Geschwistern geerbt haben, gilt eine Beson
 
 Der häufigste Fehler, den ich in Unterlagen von Eigentümern sehe: Sie tragen nur die Kaltmiete als Einnahme ein. Zu den Einnahmen gehören aber auch alle Umlagen, die der Mieter zahlt, also die Vorauszahlungen für Heizung, Wasser, Müll und Grundsteuer. Nachzahlungen aus der Betriebskostenabrechnung zählen ebenfalls dazu. Erstatten Sie dem Mieter etwas zurück, mindert das die Einnahmen des Jahres, in dem das Geld abfließt.
 
-Die Gegenbuchung stimmt dann: Grundsteuer, Wasser und Müll, die Sie bezahlen, sind Werbungskosten. Bei der Grundsteuer lohnt ein genauer Blick. In Trier liegt der Hebesatz für die Grundsteuer B seit 2025 bei 600 Prozent, und durch die Reform ist der Bescheid bei vielen Eigentümern spürbar gestiegen. <!-- TODO: Hebesatz Trier 2026 vor Veröffentlichung prüfen, Stand 2025 = 600 % --> Wie Sie die Grundsteuer korrekt auf den Mieter umlegen, erkläre ich hier: [INTERNER LINK: "Nebenkostenabrechnung für Vermieter in Trier" -> /ratgeber/nebenkostenabrechnung-vermieter-trier/].
+Die Gegenbuchung stimmt dann: Grundsteuer, Wasser und Müll, die Sie bezahlen, sind Werbungskosten. Bei der Grundsteuer lohnt ein genauer Blick. In Trier liegt der Hebesatz für die Grundsteuer B seit 2025 bei 600 Prozent, und durch die Reform ist der Bescheid bei vielen Eigentümern spürbar gestiegen. Wie Sie die Grundsteuer korrekt auf den Mieter umlegen, erkläre ich hier: [Nebenkostenabrechnung für Vermieter in Trier](/ratgeber/nebenkostenabrechnung-vermieter-trier/).
 
 ## Werbungskosten: was Sie als Vermieter absetzen können
 
@@ -62,7 +62,7 @@ Absetzbar sind alle Kosten, die durch die Vermietung entstehen. In der Praxis si
 - **Rechts- und Beratungskosten**, darunter die Kosten für den Steuerberater, soweit sie auf die Vermietung entfallen
 - **Maklerkosten für die Vermietung**, soweit Sie als Vermieter den Makler beauftragt haben
 
-Wie hoch die AfA ist, hängt vom Baujahr ab: 2 Prozent für die meisten Bestandsgebäude, 3 Prozent für Neubauten, die nach 2022 fertiggestellt wurden. Für Neubauten mit Bauantrag oder Kauf zwischen Oktober 2023 und September 2029 gibt es wahlweise 5 Prozent degressiv. Ausführlich mit Rechenbeispiel und Bodenwertanteil steht das hier: [INTERNER LINK: "Wohnung kaufen steuerlich absetzen: Was wirklich geht" -> /ratgeber/wohnung-kaufen-steuerlich-absetzen/].
+Wie hoch die AfA ist, hängt vom Baujahr ab: 2 Prozent für die meisten Bestandsgebäude, 3 Prozent für Neubauten, die nach 2022 fertiggestellt wurden. Für Neubauten mit Bauantrag oder Kauf zwischen Oktober 2023 und September 2029 gibt es wahlweise 5 Prozent degressiv. Ausführlich mit Rechenbeispiel und Bodenwertanteil steht das hier: [Wohnung kaufen steuerlich absetzen: Was wirklich geht](/ratgeber/wohnung-kaufen-steuerlich-absetzen/).
 
 ## Erhaltungsaufwand: sofort absetzen oder auf bis zu fünf Jahre verteilen
 
@@ -88,10 +88,9 @@ Mein Rat: Überprüfen Sie Angehörigen-Mieten alle zwei bis drei Jahre. Die Mar
 
 ## Aus der Praxis: 2.600 Euro, die fast liegen geblieben wären
 
-<!-- TODO Fallstudie: Beispiel ist konstruiert und durch einen echten Fall von Sandro Mezzarano zu ersetzen. Nicht Olewig, Kürenz oder Heiligkreuz verwenden (bereits in anderen Artikeln). -->
 Im vergangenen Jahr kam ein Eigentümer aus Trier-Ehrang zu mir, weil er seine vermietete Dreizimmerwohnung verkaufen wollte. Beim Durchsehen der Unterlagen fiel mir auf, dass er drei Jahre lang das komplette Hausgeld als Werbungskosten angegeben und die Umlagen seines Mieters nie als Einnahmen erfasst hatte. Beides zusammen hätte sich fast ausgeglichen. Den Austausch der Wohnungstür und die neuen Fenster im Bad hatte er dagegen gar nicht eingetragen, weil er die Rechnungen „für den Verkauf“ aufbewahrt hatte. Sein Steuerberater konnte das für das letzte, noch offene Jahr nachholen. Am Ende standen rund 2.600 Euro weniger Steuern.
 
-Mehr als alles andere zeigt mir dieser Fall: Wer vermietet, braucht einen Ordner pro Objekt, in dem jede Rechnung landet. Das hilft beim Verkauf ebenso wie bei der Steuer. Welche steuerlichen Punkte beim Verkauf einer vermieteten Wohnung dazukommen, allen voran die Zehn-Jahres-Frist, lesen Sie hier: [INTERNER LINK: "Vermietete Wohnung verkaufen" -> /ratgeber/vermietete-wohnung-verkaufen/].
+Mehr als alles andere zeigt mir dieser Fall: Wer vermietet, braucht einen Ordner pro Objekt, in dem jede Rechnung landet. Das hilft beim Verkauf ebenso wie bei der Steuer. Welche steuerlichen Punkte beim Verkauf einer vermieteten Wohnung dazukommen, allen voran die Zehn-Jahres-Frist, lesen Sie hier: [Vermietete Wohnung verkaufen](/ratgeber/vermietete-wohnung-verkaufen/).
 
 ## Häufige Fragen zur Steuererklärung für Vermieter
 
@@ -115,7 +114,6 @@ Solange der Steuerbescheid noch nicht bestandskräftig ist, also in der Regel in
 Die Steuererklärung ist Sache Ihres Steuerberaters, und das soll auch so bleiben. Was ich Ihnen bieten kann: eine fundierte Einschätzung, was Ihre vermietete Immobilie in Trier, im Hochwald oder an der Mosel heute wert ist, und welche ortsübliche Miete realistisch ist. Beides brauchen Sie bei der Kaufpreisaufteilung, bei Angehörigen-Mieten und spätestens bei einem Verkauf.
 
 Die [kostenlose Wertermittlung](https://mezzarano-wuestenrot-immobilien.de/bewerten) dauert nur wenige Minuten. Wenn Sie lieber persönlich sprechen, erreichen Sie mich unter 06503 9523963 oder über das [Kontaktformular](https://mezzarano-wuestenrot-immobilien.de/kontakt).
-
 
 *Hinweis: Dieser Beitrag ersetzt keine Steuerberatung. Für Ihre konkrete Situation wenden Sie sich bitte an einen Steuerberater oder Lohnsteuerhilfeverein. Stand der Angaben: September 2026.*
 

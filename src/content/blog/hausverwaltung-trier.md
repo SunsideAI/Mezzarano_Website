@@ -120,8 +120,6 @@ Rechtlich sauber, praktisch anspruchsvoll. Der Nachbar, der die Abrechnung neben
 
 Wer selbst verwaltet, sollte deshalb wenigstens zwei Dinge tun: eine Beschlusssammlung nach § 24 Abs. 7 WEG führen und die Erhaltungsrücklage auf einem eigenen Konto der Gemeinschaft halten, getrennt vom Privatvermögen.
 
-<!-- TODO Fallstudie: Der Hochwald-Absatz beschreibt ein typisches Muster, kein konkretes Mandat. Ein echtes Beispiel von Sandro Mezzarano (Ort, Einheitenzahl, konkrete Folge beim Verkauf) würde die Stelle deutlich stärker machen. -->
-
 ## Warum ich Ihnen das schreibe, obwohl ich selbst nicht verwalte
 
 Meine Arbeit endet beim Notartermin, die der Hausverwaltung fängt danach an. Trotzdem hängt beides zusammen. Wenn ich eine Eigentumswohnung in Trier oder eine vermietete Einheit an der Mosel in die Vermarktung nehme, ist einer meiner ersten Wege die Verwaltung: Teilungserklärung, Abrechnungen der letzten Jahre, Protokolle, Rücklagenstand, beschlossene Sanierungen. Wie lange das dauert und wie vollständig es kommt, unterscheidet sich zwischen zwei Häusern in derselben Straße erheblich.
@@ -158,64 +156,3 @@ Zertifizierter Immobilienmakler (IHK Bonn), über 16 Jahre in der Region zwische
 [Immobilie kostenlos bewerten lassen](/bewerten) | [Kontakt aufnehmen](/kontakt)
 
 *Dieser Beitrag gibt einen allgemeinen Überblick und ersetzt keine Rechtsberatung. Bei Streit über Beschlüsse, Abrechnungen oder Verwalterverträge wenden Sie sich an einen Rechtsanwalt für Wohnungseigentumsrecht; bei steuerlichen Fragen an Ihren Steuerberater.*
-
-<!--
-CONTENT-STRATEGIE (intern, nicht veroeffentlichen)
-==================================================
-Art. 37 | Cluster 5 (Recht, Steuern, Finanzierung) | Kritik 88/100 vor Ueberarbeitung
-
-NUMMERIERUNG: content-map-erweiterung-2.md fuehrt dieses Thema als Nr. 35. Diese Nummer
-ist in der Hauptmap bereits durch die Immobilien-GbR belegt, Nr. 36 durch Eigentumswohnung
-bewerten Trier. Der Artikel laeuft deshalb als Art. 37. Die uebrigen Themen aus
-erweiterung-2 (dort 36-64) verschieben sich entsprechend um zwei Nummern.
-
-SERP-REALITAET: „Hausverwaltung Trier" (SV 320, Diff 4) hat eine transaktionale
-Anbieter-SERP, besetzt von echten Verwaltungsunternehmen. Die Difficulty von 4 ist
-irrefuehrend niedrig. Realistisches Ranking-Ziel sind die informationellen Varianten:
-„hausverwaltung finden" (170), „gute hausverwaltung finden" (70), „hausverwaltung
-bitburg" (70), „hausverwaltung wittlich" (50) sowie „hausverwaltung wechseln".
-Der Head-Term ist Reichweiten-Bonus, nicht Zielgroesse.
-
-LEAD-LOGIK: Sandro Mezzarano bietet keine Hausverwaltung an. Der Artikel holt den
-Lead-Wert nicht ueber die Suchintention, sondern ueber die Zielgruppe dahinter:
-WEG-Eigentuemer, Kapitalanleger mit Mehrfamilienhaus, Erben vermieteter Einheiten.
-Die fehlende Leistung wird offen benannt (Abschnitt „Warum ich Ihnen das schreibe,
-obwohl ich selbst nicht verwalte") und als Unabhaengigkeitssignal genutzt.
-
-ABGRENZUNG: Art. 36 (Eigentumswohnung bewerten Trier) behandelt WEG-Unterlagen als
-Bewertungsgrundlage, Art. 37 die laufende Verwaltung als Dauerdienstleistung.
-Trennachse: Anlass vs. Dauerzustand. Art. 9 und Art. 24 streifen Verwaltung nur.
-Keine Kannibalisierung.
-
-EXKLUSIVE BAUSTEINE (kein Regional-Wettbewerber hat diese):
-- § 19 Abs. 2 Nr. 6 WEG Kleinanlagen-Ausnahme, angewendet auf die 4-8-Einheiten-WEGs
-  im Hochwald (Hermeskeil, Reinsfeld, Thalfang) inkl. der Wirtschaftlichkeitsrechnung
-  „180 EUR netto bei sechs Einheiten"
-- Wohnungsmarktbericht 2025 der Stadt Trier als Bestandsmarkt-Argument fuer die
-  Erhaltungsruecklage (111.770 EW Ende 2024, 271 statt 521-770 genehmigte WE in 2024)
-- BGH V ZR 195/23 vom 20.09.2024 zur Darstellung der Ruecklagenzahlungen
-- Ende der Zertifizierungsfiktion am 01.06.2024 (§ 26a WEG)
-- § 12 WEG Verwalterzustimmung als Stolperstein der Grundbuchumschreibung
-- Denkmalschutz RLP als Auswahlkriterium fuer Innenstadt-WEGs
-
-WARTUNG:
-- Kostentabelle 2026 jaehrlich pruefen (Branchenquelle, keine amtliche Statistik)
-- Wohnungsmarktbericht Trier erscheint jaehrlich im November, Zahlen dann aktualisieren
-- Rechtsstand § 26a / § 28 WEG vor WP-Publish gegenpruefen
-
-OFFEN: Der Hochwald-Abschnitt beschreibt ein Muster, kein konkretes Mandat. Ein echter
-Fall von Sandro Mezzarano (Ort, Einheitenzahl, konkrete Preisfolge beim Verkauf) waere
-die staerkste moegliche Aufwertung des Artikels.
-
-NEUE QUELLE FUER DIE QUELLENSAMMLUNG:
-- URL: https://www.trier.de/leben-in-trier/stadtportrait/trier-in-zahlen/6685.Stadt-Fokus.html
-  (Wohnungsmarktbericht 2025, Stadt Trier, Amt fuer Stadtentwicklung und Statistik)
-- Thema: Jaehrlicher Wohnungsmarktbericht der Stadt Trier. Bevoelkerung, Haushalte,
-  Wohnungsbestand, Neubaubedarf und tatsaechliche Genehmigungen/Fertigstellungen.
-- Relevante Daten (Ausgabe 2025): 111.770 Einwohner Ende 2024, +4,4 % in zehn Jahren;
-  langjaehriger Schnitt 472 neue Wohneinheiten p.a.; Bedarf 521-770 p.a.; 2024 nur
-  271 genehmigt (-49 % ggue. Vorjahr).
-- Nutzung: Fuer alle Trier-Artikel mit Markt-, Bestands- oder Neubaubezug (Art. 2, 20,
-  21, 36, 37). Primaerquelle der Stadt, jaehrlich im November aktualisiert.
--->
-

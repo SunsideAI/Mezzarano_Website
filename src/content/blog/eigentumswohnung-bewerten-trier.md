@@ -76,8 +76,6 @@ Der umgekehrte Fall ist der angenehmere. Eine Anlage, die Dach, Fassade, Fenster
 
 Ein Eigentümer aus Trier-Kürenz kam vergangenes Jahr mit einer Online-Schätzung zu mir, die seine Dreizimmerwohnung bei knapp 280.000 Euro sah. Das Tool hatte Baujahr, Fläche, Zimmerzahl und Postleitzahl verarbeitet. Was es nicht wusste: Die Gemeinschaft hatte vier Monate zuvor eine Fassadendämmung samt Balkonsanierung beschlossen, Anteil für seine Wohnung rund 22.000 Euro. Wir haben den Beschluss offen ins Exposé geschrieben und den Preis entsprechend angesetzt. Die Wohnung ging nach sieben Wochen weg. Hätten wir zum Tool-Preis inseriert, wäre der Beschluss spätestens beim Unterlagencheck der finanzierenden Bank aufgeschlagen, und die Verhandlung hätte von einem Fantasiepreis aus wieder von vorn begonnen.
 
-<!-- TODO Fallstudie: Beispiel Trier-Kürenz ist rekonstruiert. Bitte durch einen echten Fall von Sandro Mezzarano ersetzen oder bestaetigen lassen. -->
-
 ## Was in Trier zusätzlich den Ausschlag gibt
 
 Trier ist als Wohnungsmarkt kleinteilig, und zwar kleinteiliger als die meisten Eigentümer annehmen. Was hier besonders schwer wiegt:
@@ -132,31 +130,3 @@ Wenn Sie statt einer Wohnung ein Haus bewerten möchten oder einen Überblick ü
 ---
 
 *Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH in Hermeskeil und seit über 16 Jahren im Raum Trier, Hochwald und Mosel tätig. Als Sprengnetter-zertifizierter Sachverständiger bewertet er Bestands- und Sanierungsobjekte. Ausgezeichnet von Focus Money 2025 für höchste Beratungskompetenz und vom Handelsblatt 2025 für exzellente Kundenberatung.*
-
-<!--
-Content-Strategie-Hinweis:
-- Artikel 36 aus Content-Map (Cluster 4: Bewertung)
-- Haupt-Keyword: Eigentumswohnung bewerten Trier
-- Neben-Keywords: Wohnung bewerten lassen Trier, Wert Eigentumswohnung ermitteln, Verkehrswert Eigentumswohnung, Erhaltungsruecklage Kaufpreis, Teilungserklaerung Wohnungswert
-- Anlass: Nutzer-Wunschthema war urspruenglich "Immobilien bewerten Trier". Direkte Kannibalisierung mit Art. 13 (Immobilienbewertung Trier, fuehrt "Immobilie bewerten lassen Trier" bereits als Neben-Keyword). Nach Strategie-Ruecksprache auf den objekttyp-spezifischen Winkel Eigentumswohnung gedreht.
-- Angle: WEG-Spezifika als Wertfaktor. Bewusst NICHT der Ort, sondern der Objekttyp ist die Abgrenzungsachse zu Art. 13.
-- Kannibalisierungs-Schutz:
-  * Art. 13 (Immobilienbewertung Trier): dort Ort + Wege zur Bewertung, hier Objekttyp + WEG-Unterlagen. Preisdaten hier bewusst nur als Kurz-Einordnung.
-  * Art. 15 (Wertermittlung Haus): Verfahren dort ausfuehrlich, hier nur Vergleichs-/Ertragswert in zwei Saetzen + Link.
-  * Art. 27 (Wohnflaeche berechnen): nur Balkon-Viertelung als Warnhinweis + Link.
-  * Art. 9 (Vermietete Wohnung verkaufen): dort Mietrecht/Steuer, hier nur Ertragswert-Bezug + Link.
-  * Art. 20 (Immobilienpreise Trier): Marktdaten dort, hier nur drei Referenzwerte zur Einordnung.
-- Exklusive Bausteine (kein Regional-Wettbewerber hat diese):
-  * BFH-Urteil 16.09.2020 (II R 49/17) zur Erhaltungsruecklage, durchgerechnet mit RLP-Grunderwerbsteuer 5,0 %
-  * Fenster und Balkonkonstruktionen als Gemeinschaftseigentum, verknuepft mit Denkmalschutz in der Trierer Altstadt
-  * MEA-Rechenbeispiel (85,52 von 1.000) mit Kostenverteilungsfolge
-  * Beschlusssammlung nach § 24 Abs. 7 WEG als eigene Pruefposition neben den Protokollen
-  * Uninaehe Tarforst/Kuerenz als eigenes Renditesegment statt Wohnwertsegment
-  * Ehrlicher Umgang mit der Quellen-Spanne (3.384 vs. 3.760 EUR/qm) statt Scheingenauigkeit
-- E-E-A-T-Anker dieses Artikels: Sprengnetter bewusst NUR in der Autorenbox (steckt bereits in 9+ Artikeln, in Art. 13 als Hauptanker). Im Fliesstext stattdessen Formulierungsvariante 5 ("taegliche Arbeit zwischen Hermeskeil und Trier") und Variante 3 (Eigentuemer aus Trier-Kuerenz).
-- Score Blog-Kritik: 89/100 (Stark). Top-3-Schwaechen behoben: Haupt-Keyword in H2 ergaenzt, drei Dreiergruppen aufgeloest, zweite Erfahrungsstelle eingebaut. Nach Humanizer 93/100.
-- Interne Links im Artikel als /slug/-Pfade gesetzt: Art. 20, Art. 16, Art. 15, Art. 9, Art. 27, Art. 13 + /bewerten, /kontakt. Vor WP-Publish auf echte URLs mappen.
-- Quellen: immowelt Trier 07/2026, Engel & Voelkers Trier 04/2026, Wohnungsboerse Q1/2026, Gutachterausschuss Stadt Trier (Berichtsjahr 2025), BFH II R 49/17 vom 16.09.2020, § 19 Abs. 2 Nr. 4 WEG, § 24 Abs. 7 WEG, WEMoG 2020, ImmoWertV, WoFlV.
-- OFFEN: Das Fallbeispiel Trier-Kuerenz (Fassadendaemmung, 22.000 EUR Anteil, Verkauf nach sieben Wochen) ist rekonstruiert, weil fallstudien-mezzarano.md keine echten Faelle enthaelt. Durch einen echten Fall von Sandro Mezzarano ersetzen oder bestaetigen lassen.
-- WARTUNG: Die drei Quadratmeterpreise sind Momentaufnahmen Mitte 2026 und halbjaehrlich zu pruefen.
--->

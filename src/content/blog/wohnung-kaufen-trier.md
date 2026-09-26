@@ -85,9 +85,7 @@ Bei einem Haus entscheiden Sie allein über Reparaturen. Bei einer Eigentumswohn
 
 > **Beim Wohnungskauf entscheiden Teilungserklärung, Versammlungsprotokolle und Erhaltungsrücklage oft stärker über die tatsächlichen Kosten als der Kaufpreis selbst, denn anstehende Sanierungen am Gemeinschaftseigentum tragen alle Eigentümer anteilig.**
 
-In meiner täglichen Arbeit zwischen Hermeskeil und Trier sehe ich regelmäßig Käufer, die sich in eine Wohnung verlieben und die Protokolle erst beim Notar zum ersten Mal in der Hand halten. Dann ist es zu spät für Verhandlungen. Ein typischer Fall: Steht im Protokoll eine beschlossene Fassadendämmung, lässt sich der eigene Anteil beziffern und vom Kaufpreis abziehen. Ich fordere diese Unterlagen deshalb immer an, bevor ein Kaufinteressent ein Angebot abgibt. <!-- TODO Fallstudie: konkreten Trierer Wohnungskauf mit WEG-Befund aus fallstudien-mezzarano.md ergänzen, sobald vorhanden -->
-
-## Kaufnebenkosten für eine Wohnung in Trier
+In meiner täglichen Arbeit zwischen Hermeskeil und Trier sehe ich regelmäßig Käufer, die sich in eine Wohnung verlieben und die Protokolle erst beim Notar zum ersten Mal in der Hand halten. Dann ist es zu spät für Verhandlungen. Ein typischer Fall: Steht im Protokoll eine beschlossene Fassadendämmung, lässt sich der eigene Anteil beziffern und vom Kaufpreis abziehen. Ich fordere diese Unterlagen deshalb immer an, bevor ein Kaufinteressent ein Angebot abgibt. ## Kaufnebenkosten für eine Wohnung in Trier
 
 In Rheinland-Pfalz beträgt die Grunderwerbsteuer **5,0 Prozent**. Das ist weniger als in vielen anderen Bundesländern. Zusammen mit Notar, Grundbuch und Maklerprovision kommen Sie in Trier auf rund 10 Prozent des Kaufpreises.
 
@@ -135,7 +133,6 @@ Das Hausgeld ist die monatliche Zahlung an die Eigentümergemeinschaft für Verw
 **Wie lange dauert ein Wohnungskauf vom Angebot bis zur Schlüsselübergabe?**
 Rechnen Sie mit etwa zwei bis drei Monaten. Finanzierungszusage, Notarentwurf mit zweiwöchiger Prüffrist und die Fälligkeit des Kaufpreises bestimmen das Tempo.
 
-
 ## Sie suchen eine Wohnung in Trier?
 
 Auf meiner Website finden Sie [aktuelle Immobilienangebote](https://mezzarano-wuestenrot-immobilien.de/immobilien) im Raum Trier, Hochwald und Mosel. Wenn die passende Wohnung noch nicht dabei ist, sprechen Sie mich an. Ich prüfe mit Ihnen gemeinsam Lage, Preis und WEG-Unterlagen, bevor Sie sich festlegen.
@@ -145,15 +142,3 @@ Auf meiner Website finden Sie [aktuelle Immobilienangebote](https://mezzarano-wu
 *Sandro Mezzarano | Wüstenrot Immobilien, Hermeskeil. Ehrlichkeit hat ein Zuhause.*
 
 *Hinweis: Dieser Artikel ersetzt keine Rechts- oder Steuerberatung. Bei steuerlichen und rechtlichen Fragen wenden Sie sich bitte an Ihren Steuerberater, Rechtsanwalt oder Notar.*
-
-<!--
-Quellen (intern): Gutachterausschuss Stadt Trier, Grundstücksmarktbericht 2026 (trier.de); Engel & Völkers Trier, immowelt, wohnungsboerse.net (Angebotspreise 2026); Stadtteilwerte übernommen aus /immobilienpreise-trier/ für Konsistenz.
-
-Content-Map-Eintrag:
-- Haupt-Keyword: Wohnung kaufen Trier
-- Neben-Keywords: Eigentumswohnung Trier, Wohnungspreise Trier, Eigentumswohnung kaufen Trier Stadtteile, Kaufnebenkosten Wohnung Trier
-- Kategorie: Immobilie kaufen | Template: How-to-Guide | Cluster: Kauf (Käuferseite Stadt Trier)
-- Abgrenzung: Käufer-Ratgeber. /immobilienpreise-trier/ = Marktbericht, /wohnen-in-trier/ = Lagen-Guide, /eigentumswohnung-bewerten-trier/ = Verkäufer/Bewertung, /wohnung-kaufen-bitburg/ = andere Stadt.
-- Exklusiv: WEG-Unterlagen-Check als Kern, Rechenbeispiel 250.000 EUR mit RLP-Sätzen, Luxemburg-Pendler-Bezug.
-- Rückverlinkung: /immobilienpreise-trier/, /wohnen-in-trier/, /kaufnebenkosten-rheinland-pfalz/, /immobilie-kaufen-luxemburg-pendler/ sollten auf /wohnung-kaufen-trier/ verlinken.
--->

@@ -121,26 +121,3 @@ Nein. Der Erwerb durch Erbschaft ist nach § 3 GrEStG grunderwerbsteuerfrei. Die
 Beim geerbten Haus entscheidet sich der finanzielle Ausgang selten am Verkaufstag, sondern in den Wochen davor. Zieht die Erbengemeinschaft an einem Strang? Sind die Steuerfristen sauber geprüft? Und stimmt der Wert, den das Finanzamt ansetzt? Wer diese Punkte ordnet, verkauft in Ruhe und behält mehr. Wer sie übergeht, zahlt drauf, oft vierstellig.
 
 Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Wenn Sie ein geerbtes Haus im Raum Trier, Saarburg, Konz, an der Mosel, in der Eifel oder im Hochwald verkaufen wollen, schauen wir gemeinsam, was in Ihrem Fall sinnvoll ist, und ich sage Ihnen ehrlich, wenn Warten die bessere Wahl ist. Sie erreichen mich unter 06503 9523963 oder über das [Kontaktformular](/kontakt). Eine erste [Marktwertschätzung](/bewerten) ist kostenlos und unverbindlich.
-
-<!--
-Content-Strategie-Hinweis:
-- Artikel 11 aus Content-Map (Cluster 2: Immobilie verkaufen)
-- Haupt-Keyword: Geerbtes Haus verkaufen (Vol 590, Diff 8)
-- Blog-Kritik-Score: 91/100 (Exzellent). Humanizer + Finalcheck durchlaufen.
-- E-E-A-T-Anker dieses Artikels: Sprengnetter-Sachverstaendiger als Hauptanker in NEUER Anwendung
-  (§ 198 BewG / Bedarfswert-Minderung statt Teilverkauf-Verkehrswert wie Art. 10) + 16 Jahre.
-  Focus Money 2025 + Handelsblatt 2025 NICHT genutzt -> fuer Autoren-Box / kommende Artikel reserviert.
-- Frische Anekdote: Konz/Hochwald Erbengemeinschaft 3 Geschwister + zu hoher Bedarfswert 290k vs. 235k,
-  Verkauf 240k (in Art. 1-10 nicht verwendet).
-- Differenzierung zu Gilbers & Baasch (Ratgeber "Immobilie geerbt" + Blog "Erbimmobilien Trier") und
-  Eifel-Mosel-Makler (Erbengemeinschaft-Blog): fachliche Bewertungs-Tiefe (§ 198 BewG), RLP-Faktencheck
-  (Erbschaft grunderwerbsteuerfrei, Familienheim-Nachversteuerung), Cross-Border-Luxemburg.
-- Kannibalisierungs-Schutz: Neben-Keywords trennscharf zu Art. 9 (vermietet), Art. 10 (Teilverkauf),
-  Art. 12 (Ablauf allgemein), Art. 15 (Wertermittlung). "Spekulationsfrist geerbtes Haus" erbspezifisch
-  (Fussstapfentheorie), abgegrenzt von Art. 9 "Spekulationsfrist vermietete Immobilie".
-- Interne Link-Platzhalter "#" fuer Art. 2 (Immobilien Trier), Art. 9 (Vermietete Wohnung verkaufen),
-  Art. 10 (Haus teilverkaufen) vor WP-Veroeffentlichung mit echten URLs ersetzen.
-- Quellen: § 198 BewG, § 13 ErbStG, § 23 EStG, § 3 GrEStG, § 311b BGB, GNotKG (Grundbuchberichtigung
-  2-Jahres-Gebuehrenfreiheit), BFH/FG-Rechtsprechung 2025/2026 zu § 198 BewG, GrEStG RLP (5,0 %),
-  Doppelbesteuerungs-/Inlandsvermoegen-Kontext DE-LUX.
--->

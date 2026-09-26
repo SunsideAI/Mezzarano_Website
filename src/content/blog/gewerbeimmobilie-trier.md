@@ -128,8 +128,6 @@ Die Liste sieht nach Bürokratie aus. Sie ist in Wahrheit Ihr Verhandlungsschutz
 
 ## Aus der Praxis
 
-<!-- HINWEIS Sandro Mezzarano: Das folgende Beispiel ist rekonstruiert und sollte vor der Veroeffentlichung durch ein echtes Mandat ersetzt werden. -->
-
 Auf meinem Tisch lag vor einiger Zeit eine vermietete Werkstatthalle in einem Gewerbegebiet bei Konz, rund 900 Quadratmeter, ein Mieter seit vierzehn Jahren. Für den Eigentümer war das ein Selbstläufer. Seine Preisvorstellung leitete er aus der Jahresmiete und einem Faktor ab, den ihm ein Bekannter genannt hatte.
 
 Beim Sichten der Unterlagen fanden wir zwei Nachträge, mit denen die Fläche erweitert und die Miete angepasst worden war. Einer davon lag nur als E-Mail-Bestätigung vor. Damit stand die Schriftform des Vertrags im Raum und mit ihr die gesamte Restlaufzeit, auf der die Preisvorstellung beruhte.
@@ -175,71 +173,3 @@ Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien
 *Dieser Beitrag ersetzt keine Rechts- oder Steuerberatung. Bei umsatzsteuerlichen, ertragsteuerlichen und vertragsrechtlichen Fragen wenden Sie sich bitte an Ihren Steuerberater, Rechtsanwalt oder Notar.*
 
 **Quellen:** Gutachterausschuss für Grundstückswerte in Trier, Bericht „Gewerbliche Mieten in Trier" (Ausgabe 2023); IHK Trier, Realsteuerhebesätze; Stadt Trier, Wirtschaftsförderung (parQ54, Gewerbeflächen Ehrang); Hafen Trier; §§ 4 Nr. 9a, 9, 15a, 1 Abs. 1a UStG; §§ 126b, 566, 578 Abs. 1 Satz 2, 656a-656d BGB; Viertes Bürokratieentlastungsgesetz; § 23 EStG; Gebäudeenergiegesetz.
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veroeffentlichen)
-
-ARTIKEL-NR: 39 | CLUSTER 2 (Immobilie verkaufen) | KRITIK: 93/100
-Erster Gewerbe-Artikel der gesamten Content-Map. "Gewerbe" war in allen 38
-Bestandsartikeln thematisch unbelegt — null Kannibalisierungsrisiko.
-
-TRENNSCHAERFE: Trennachse zu Cluster 2 ist die OBJEKTKLASSE, analog zu
-Art. 23 (Sanierungsobjekt), 24 (Mehrfamilienhaus), 25 (Bauernhaus).
-Abgrenzung zu Art. 24: Art. 24 = Wohn-Renditeobjekt nach Ertragswert,
-Art. 39 = gewerbliche Nutzung mit Gewerbemietrecht und Umsatzsteueroption.
-Abgrenzung zu Art. 12 (Ablauf-HUB): Art. 12 bleibt der wohnwirtschaftliche
-Prozess-Hub, Art. 39 beschreibt bewusst KEINEN Schritt-fuer-Schritt-Ablauf.
-
-EXKLUSIVE BAUSTEINE (kein Regional-Wettbewerber hat einen davon):
-1. Umsatzsteuer-Option § 9 UStG inkl. Geschaeftsveraeusserung im Ganzen
-   (§ 1 Abs. 1a UStG), Vorsteuerberichtigung § 15a UStG ueber 10 Jahre und
-   der Hinweis auf die UNBEDINGTE statt bedingte Optionsklausel. Staerkster
-   Baustein des Artikels, deckt eine echte sechsstellige Fehlerquelle ab.
-2. §§ 656a-656d BGB gelten bei Gewerbe NICHT — Provision frei verhandelbar.
-   Direkter Kontrast zu Art. 19, dort Backlink setzen.
-3. Gutachterausschuss Trier, Bericht "Gewerbliche Mieten in Trier",
-   dreijaehrlich seit 2005. Diese Primaerquelle nennt kein Wettbewerber.
-4. Standortdaten: parQ54 (Konversion Gen.-von-Seidel-Kaserne Trier-Euren,
-   ~10 ha), Klaeschesberg (~60 ha Potenzialflaeche Richtung Luxemburg),
-   GVZ Ehrang / Hafen Trier trimodal an A64 und A602, Frachtbereich
-   Flughafen Luxemburg in ~45 Min per Lkw.
-5. Gewerbesteuerhebesatz als Preisfaktor: Trier 430 %, Konz 420,
-   Schweich/Bitburg 400, Wittlich 380, Hermeskeil/Saarburg 365.
-6. Vertragsform im Gewerbemietvertrag als Wertrisiko.
-   ⚠️ KORRIGIERT 2026-08-17: Der Abschnitt behauptete urspruenglich die
-   Schriftform nach § 550 BGB als geltendes Recht fuer Gewerberaum. Das ist
-   seit dem Vierten Buerokratieentlastungsgesetz ueberholt — Textform nach
-   §§ 578 Abs. 1 S. 2, 126b BGB gilt seit 01.01.2025 fuer Neuvertraege und
-   seit Anfang 2026 auch fuer Altvertraege. Absatz neu gefasst, Quellenzeile
-   angepasst, Backlink auf den Vermietungs-Artikel gesetzt. Gefunden beim
-   Strategie-Schritt zu „Gewerbeflaeche vermieten Trier".
-
-WETTBEWERB: Gilbers & Baasch betreibt ein Gewerbemakler-Silo (drei Seiten).
-Geprueft: reine Leistungsbroschuere, keine Preisspannen, keine Rechts- oder
-Steuerangaben, keine Marktdaten. Restliche SERP portal-gesperrt (immowelt,
-immonet, immobilo, kip.net). EHRLICHE EINORDNUNG: Das woertliche Keyword
-"Gewerbeimmobilie Trier" ist ranking-seitig schwer, weil Listing-Intent
-dominiert — wie bei Art. 32-34. Der Wert liegt im Lead (Gewerbemandat =
-groesstes Einzelmandat) und in der AI-Citation, nicht im Volumen.
-
-E-E-A-T: Sprengnetter-Anker bewusst NUR in der Autorenbox (steckt bereits in
-10+ Artikeln). Autoren-Einleitung und Anekdoten-Oeffner neu formuliert, weil
-"Ich bin Sandro Mezzarano" (10x) und "Ein Eigentuemer aus X kam zu mir" (9x)
-in der Map bereits abgenutzt sind.
-
-OFFEN: Das Fallbeispiel Konz (Werkstatthalle 900 qm, zwei Nachtraege,
-Schriftformrisiko, Neufassung mit 5 Jahren Festlaufzeit) ist rekonstruiert
-und sollte durch einen echten Fall von Sandro Mezzarano ersetzt werden.
-
-WARTUNG:
-(a) Die Ausgabe 2026 des Berichts "Gewerbliche Mieten in Trier" pruefen —
-    der Bericht erscheint dreijaehrlich, die zitierte Ausgabe ist 2023.
-    Die genannten Spannen (Simeonstrasse ~115 EUR/m², noerdliche Stadtteile
-    ab ~7 EUR/m²) dann gegen die neue Ausgabe abgleichen.
-(b) Gewerbesteuerhebesaetze jaehrlich nach den kommunalen Haushalts-
-    beschluessen pruefen (IHK Trier, Realsteuerhebesaetze).
-(c) parQ54-Vermarktungsstand und Klaeschesberg-Planungsstand vor
-    WP-Publish pruefen.
-(d) Rechtsstand zur unbedingten Option nach § 9 UStG bestaetigen.
--->
-

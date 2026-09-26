@@ -126,35 +126,3 @@ Es ist dasselbe. Das Baugesetzbuch verwendet den Begriff Verkehrswert (§ 194 Ba
 Eine gute Wertermittlung ist keine Hexerei, aber sie braucht Marktkenntnis, das passende Verfahren und einen ehrlichen Blick auf das Objekt. Genau dafür stehe ich: Ehrlichkeit hat ein Zuhause. Ich sage Ihnen, was Ihr Haus im Raum Trier, Hochwald und Mosel realistisch wert ist — nicht, was Sie hören möchten.
 
 Möchten Sie wissen, wo Ihr Haus heute steht? Fordern Sie eine [kostenlose Wertermittlung](/bewerten) an oder [nehmen Sie Kontakt auf](/kontakt) für ein persönliches Gespräch. Telefonisch erreichen Sie mich unter 06503 9523963.
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veroeffentlichen)
-==========================================================
-Artikel-Nr.: 15 | Cluster 4 (Bewertung) | Template: Ratgeber (informationell)
-Haupt-Keywords: Wertermittlung Haus (Vol 1.000, Diff 22), Hauswert ermitteln
-Neben-Keywords: Vergleichswertverfahren, Sachwertverfahren, Ertragswertverfahren, Verkehrswert Haus, ImmoWertV
-
-ABGRENZUNG / KANNIBALISIERUNGSSCHUTZ:
-- Art. 13 "Immobilienbewertung Trier" (geplant): Dieser Artikel ist der METHODEN-Erklaerer
-  (bundesweit-informationell). Trier nur als Flavor, NICHT "Immobilienbewertung Trier" targeten.
-- Art. 14 "Bodenrichtwert RLP" (geplant): Bodenrichtwert hier nur als Sachwert-Baustein,
-  kein Deep-Dive. Bleibt fuer Art. 14 frei.
-
-EXKLUSIVER INHALT (vs. nationale Portale mcmakler/immoverkauf24/finanztip/heid/certa):
-- Sprengnetter-Sachverstaendiger als Hauptanker (Bestand & Sanierung)
-- Regionales Duenndaten-Argument: Vergleichswertverfahren scheitert im laendlichen Hochwald
-- Ehrliche Online-Tool-Kritik + Rechenbeispiel mit Marktanpassungsfaktor (Hochwald-Groessenordnungen)
-- Cross-Border-Luxemburg-Aspekt (Saarburg/Konz)
-
-INTERNE LINKS IM TEXT:
-- /bewerten (echte URL), /kontakt (echte URL)
-- Art. 9 "Verkauf vermieteter Wohnungen" -> #-Platzhalter, in WordPress mit echter URL /vermietete-wohnung-verkaufen ersetzen
-- Art. 2 "Immobilien in Trier" -> #-Platzhalter, in WordPress mit echter URL /immobilien-trier ersetzen
-- Vor Veroeffentlichung ergaenzen, sobald online: Art. 13 (Immobilienbewertung Trier), Art. 14 (Bodenrichtwert RLP)
-
-QUELLEN: ImmoWertV 2021 (gesetze-im-internet.de), § 194 BauGB, Geoportal RLP / BORIS-RP,
-Gutachterausschuss Trier-Saarburg, Branchenangaben Gutachtenkosten (Kurz-/Vollgutachten).
-
-E-E-A-T: Sprengnetter HAUPTANKER + 16 Jahre; Focus Money 2025 / Handelsblatt 2025 NICHT genutzt
-(weiter fuer Autoren-Box / kommende Artikel reserviert). Kritik-Score: 89/100 (Stark).
--->

@@ -129,13 +129,3 @@ Manchmal ja, manchmal nein. Eine zulässige Anhebung auf die ortsübliche Vergle
 Eine vermietete Wohnung zu verkaufen ist seltener ein Frage der Marktlage, sondern fast immer eine Frage der Vorbereitung. Wer den Mietvertrag, das Vorkaufsrecht und die Spekulationsfrist sauber geklärt hat, bevor das Expose online geht, verkauft schneller und teurer. Wer das nicht tut, verliert in der Verhandlung, entweder beim Preis oder bei der Geschwindigkeit.
 
 Mein Anspruch ist einfach: Ehrlichkeit hat ein Zuhause. Wenn Sie eine vermietete Wohnung im Raum Trier, Bitburg, Wittlich, Hermeskeil oder an der Mosel verkaufen wollen, schauen wir gemeinsam, was realistisch ist und welche Variante für Sie am meisten Sinn ergibt. Sie erreichen mich unter 06503 9523963 oder über das [Kontaktformular](/kontakt). Eine erste [Marktwertschätzung](/bewerten) ist kostenlos.
-
-<!--
-Content-Strategie-Hinweis:
-- Artikel 9 aus Content-Map (Cluster 2: Immobilie verkaufen)
-- Haupt-Keyword: Vermietete Wohnung verkaufen (Vol 590, Diff 5)
-- E-E-A-T-Anker dieses Artikels: Focus Money 2025 (Hauptanker im Fließtext), 16 Jahre, Sprengnetter Ertragswertverfahren-Bezug
-- Reserviert für nächste Artikel: Handelsblatt 2025 als Hauptanker
-- Frische Anekdote: Trier-West 78qm Aufhebung-Variante (in Art. 1-8 nicht verwendet)
-- Interne Link-Platzhalter "#" für Art. 2 und Art. 8 vor WP-Veröffentlichung mit echten URLs ersetzen
--->

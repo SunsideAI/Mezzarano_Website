@@ -126,12 +126,3 @@ Sie erreichen mich telefonisch unter 06503 9523963, per E-Mail an sandro.mezzara
 ---
 
 **Autor:** Sandro Mezzarano. Selbstständiger Handelsvertreter der Wuestenrot Immobilien GmbH, Hermeskeil. IHK-Bonn zertifizierter Immobilienmakler, Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung (Bestand und Sanierung). Über 16 Jahre Erfahrung im Raum Trier, Hochwald und Mosel. Auszeichnungen: Focus Money 2025, Handelsblatt 2025.
-
-<!--
-Content-Strategie-Hinweis:
-- Cluster: Immobilie kaufen
-- Differenzierung zu Art. 4 (Hermeskeil) und Art. 5 (Saarburg): Mosel-Spezifika (Hochwasser, Hanglage, Wein-Toplagen), Trier-Pendler statt Lux-Pendler-Hauptfokus
-- E-E-A-T-Anker: Focus Money 2025 erstmals als Haupt-Anker; Sprengnetter-Sanierungs-Sachverstaendiger erneut (passend zu Winzerhaus-Sanierungsthema)
-- Kannibalisierungs-Schutz: "Bernkastel-Kues" und "Schweich" nur als Neben-Keywords, keine eigenen Lagen-Artikel geplant
-- Quellen: Engel & Völkers Bernkastel-Kues Q1/2025, Homeday Preisatlas 2025, Wohnungsbörse Bernkastel-Kues, immowelt Landkreis Bernkastel-Wittlich 2025, GEG, GrEStG RLP, § 656c-d BGB, § 17 BeurkG, Geoportal RLP (Hochwassergefahrenkarte)
--->

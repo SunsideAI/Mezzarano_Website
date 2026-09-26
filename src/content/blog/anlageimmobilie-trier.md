@@ -173,35 +173,3 @@ Mein Anspruch dabei ist einfach: Ehrlichkeit hat ein Zuhause. Wenn eine Rechnung
 Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH und zertifizierter Immobilienmakler (IHK Bonn) mit Büro in der Saarstraße 1 in Hermeskeil. Er begleitet Eigentümer und Käufer im Raum Hochwald, Trier und Mosel seit über 16 Jahren, ist Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung und wurde 2025 von Focus Money für höchste Beratungskompetenz ausgezeichnet.
 
 **Hinweis:** Dieser Beitrag gibt den Stand von August 2026 wieder und ersetzt keine steuerliche oder rechtliche Beratung. Für Ihre persönliche steuerliche Situation wenden Sie sich bitte an Ihren Steuerberater, bei Vertragsfragen an Ihren Notar oder Rechtsanwalt.
-
-<!--
-CONTENT-STRATEGIE (intern, nicht veroeffentlichen)
-
-ABGRENZUNG:
-- Art. 45 (Eigentumswohnung Kapitalanlage Hermeskeil): dort Hochwald/ETW + Portalvergleich Hermeskeil vs. Trier. Hier Trier-Stadt + alle Objektklassen + Mietspiegel-Basis. Trennachse Ort + Objektbreite.
-- Art. 48 (Investor sucht Immobilien): dort VERKAEUFER-Seite. Hier KAEUFER-Seite. Das ist der bei Art. 48 bewusst zurueckgestellte Winkel aus content-map-erweiterung-2 (Tier 2, Nr. 48).
-- Art. 60 (Gewerbeimmobilie Trier): Gewerbe bleibt dort, inkl. Neben-KW "kapitalanlage gewerbeimmobilien". Hier bewusst NICHT aufgegriffen.
-- Art. 24 (Mehrfamilienhaus verkaufen): Faktor-Rechnung und Bewertungsmethodik bleiben dort, hier nur verkuerzt + verlinkt.
-- "wohnung-kaufen-steuerlich-absetzen": AfA-Saetze und Werbungskosten bleiben dort, hier abgegeben.
-
-EXKLUSIVE BAUSTEINE (kein Regional-Wettbewerber hat diese):
-1. Trier ist seit 08.10.2025 aus der Mietpreisbegrenzungsverordnung (VO v. 16.09.2025, Geltung bis 31.12.2029) UND seit der Kappungsgrenzenverordnung v. 13.09.2024 (Geltung 01.10.2024-30.09.2029) heraus. Folge: keine Begrenzung nach § 556d BGB bei Neuvermietung, Kappungsgrenze wieder 20 % statt 15 %. STAERKSTER BAUSTEIN.
-2. Die ehrliche Aufloesung des Widerspruchs: kumulative Kriterien (Leerstand MFH < 4 % UND Mietbelastung >= 20 % ueber Bundesschnitt, Gutachten empirica AG); Ausloeser der Neuberechnung waren Zensus-2022-Daten statt Fortschreibungen; gleichzeitig weisen kommerzielle Marktberichte fuer Trier < 2 % Leerstand aus. Kernaussage: rechtliche Folge einkalkulieren, Marktprognose davon trennen. Das ist der eigentliche USP und die Citation Capsule.
-3. Mietspiegel- statt Portalbasis als Renditegrundlage, mit beziffertem Effekt: Faktor 24,3 statt 27-28, also rund drei Jahresmieten Unterschied allein durch die Datenquelle. Loest zugleich die Zahlendifferenz zu Art. 45 sauber auf, statt sie zu verschweigen.
-4. Studierendenzahlen Trier 17.230 heute gegen rund 23.000 vor zehn Jahren, Rueckgang seit 2013 nahezu ununterbrochen; Studierendenwerk 5 Wohnheime / 1.617 Plaetze; WG-Zimmer rund 420 EUR warm 2026. Als belegte Warnung vor der Studentenapartment-Story.
-5. Denkmal-AfA § 7i EStG bezogen auf den Trierer Altstadtbestand, inkl. Bescheinigungsverfahren und § 32 DSchG RLP Vorkaufsrecht.
-6. Die 15-Prozent-Falle § 6 Abs. 1 Nr. 1a EStG mit konkretem Schwellenwert (rund 25.700 EUR netto) PLUS der Kopplung an die Erhaltungsruecklage, auf die der Kaeufer keinen Einfluss hat. Ergaenzt um BFH IX R 19/24 v. 14.01.2025.
-
-E-E-A-T: 16 Jahre im Fliesstext-Kontext + Autorenbox. Focus Money 2025 in der Box. Sprengnetter NUR in der Box (steckt bereits in 10+ Artikeln als Fliesstext-Anker). Handelsblatt 2025 bewusst NICHT genutzt (lag zuletzt bei Art. 45).
-
-OFFEN / VOR PUBLISH:
-- Das Fallbeispiel Trier-Pallien (Kaufinteressent aus dem Raum Konz, Portalmiete statt Mietspiegel, Nachverhandlung) ist rekonstruiert und durch einen echten Fall von Sandro Mezzarano zu ersetzen. Pallien ist in der Map bislang unbenutzt.
-
-WARTUNG:
-(a) HOECHSTE PRIORITAET: Beide Verordnungen vor jedem Publish gegenpruefen (mkbwk.rlp.de). Mietpreisbremse laeuft bis 31.12.2029, Kappungsgrenze bis 30.09.2029 - eine vorzeitige Neufassung wuerde den Kernbaustein des Artikels umdrehen.
-(b) Qualifizierter Mietspiegel Trier: Ausgabe 2026 zitiert, wird periodisch neu aufgelegt.
-(c) Kaufpreise ETW Trier 3.384-3.760 EUR/qm sind Momentaufnahmen Mitte 2026, halbjaehrlich pruefen (identische Basis wie Art. 36, gemeinsam pflegen).
-(d) Grundstuecksmarktbericht Trier jaehrlich auf die neue Ausgabe umstellen (identische Zahlen in Art. 48, gemeinsam pflegen).
-(e) Studierendenzahlen zum Wintersemester aktualisieren.
-(f) Grunderwerbsteuersatz RLP 5,0 % vor Publish bestaetigen.
--->

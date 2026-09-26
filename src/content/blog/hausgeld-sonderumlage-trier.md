@@ -75,9 +75,7 @@ Hier wird es teuer, und zwar regelmäßig.
 
 Beschließt die Gemeinschaft im März eine Sonderumlage, ruft die Verwaltung das Geld aber erst im Oktober ab, und ist die Eigentumsumschreibung im August erfolgt, zahlt der Käufer. Vollständig. Auch wenn er bei der Versammlung nicht dabei war und von dem Beschluss nichts wusste.
 
-Ein Eigentümer aus Trier-Mariahof kam damit vor einiger Zeit zu mir, allerdings von der anderen Seite: Er hatte gekauft, und drei Monate nach dem Einzug lag die Forderung über einen fünfstelligen Betrag für die Strangsanierung im Briefkasten. Der Beschluss stammte aus dem Frühjahr davor. Im Kaufvertrag stand dazu nichts, weil niemand danach gefragt hatte. Rechtlich war die Sache eindeutig, wirtschaftlich war es ein sehr unschöner Start. <!-- TODO Fallstudie: durch echten Fall von Sandro Mezzarano ersetzen, Ort Trier-Mariahof ist in der Map bislang unbenutzt -->
-
-Daraus folgen zwei Dinge, egal auf welcher Seite Sie stehen.
+Ein Eigentümer aus Trier-Mariahof kam damit vor einiger Zeit zu mir, allerdings von der anderen Seite: Er hatte gekauft, und drei Monate nach dem Einzug lag die Forderung über einen fünfstelligen Betrag für die Strangsanierung im Briefkasten. Der Beschluss stammte aus dem Frühjahr davor. Im Kaufvertrag stand dazu nichts, weil niemand danach gefragt hatte. Rechtlich war die Sache eindeutig, wirtschaftlich war es ein sehr unschöner Start. Daraus folgen zwei Dinge, egal auf welcher Seite Sie stehen.
 
 Erstens gehören die Protokolle der letzten drei Eigentümerversammlungen und die Beschlusssammlung nach § 24 Absatz 7 WEG vor die Beurkundung, nicht danach. Zweitens gehört eine ausdrückliche Regelung in den Kaufvertrag, wer beschlossene, aber noch nicht abgerufene Umlagen trägt. Diese Regelung wirkt nur zwischen Käufer und Verkäufer, gegenüber der Gemeinschaft bleibt es bei der gesetzlichen Zuordnung. Sie schafft aber einen Ausgleichsanspruch, und genau darum geht es. Sprechen Sie Ihren Notar aktiv darauf an, denn im Standardentwurf steht dazu meist nichts.
 
@@ -155,65 +153,3 @@ Ehrlichkeit hat ein Zuhause. Wenn die Zahlen gegen einen Verkauf zum jetzigen Ze
 Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH und zertifizierter Immobilienmakler (IHK Bonn) mit Büro in der Saarstraße 1 in Hermeskeil. Seit über 16 Jahren begleitet er Eigentümer und Käufer im Raum Hochwald, Trier und Mosel. 2025 wurde er vom Handelsblatt für exzellente Kundenberatung ausgezeichnet.
 
 **Hinweis:** Dieser Beitrag gibt den Stand von August 2026 wieder und ersetzt keine rechtliche oder steuerliche Beratung. Bei Beschlussfragen wenden Sie sich bitte an einen Fachanwalt für Miet- und Wohnungseigentumsrecht, bei steuerlichen Fragen an Ihren Steuerberater und bei Vertragsfragen an Ihren Notar.
-
-<!--
-CONTENT-STRATEGIE (intern, nicht veroeffentlichen)
-
-ABGRENZUNG:
-- hausverwaltung-trier.md: dort der VERWALTER als Dienstleister (Auswahl, Wechsel, § 26a WEG, Verwaltervertrag).
-  Hier das INNENVERHAELTNIS Eigentuemer <-> Gemeinschaft. § 26a und der Verwalterwechsel bewusst nicht wiederholt,
-  nur verlinkt.
-- nebenkostenabrechnung-vermieter-trier.md: dort das Verhaeltnis VERMIETER <-> MIETER (BetrKV, Fristen, CO2).
-  Hier nur eine FAQ-Antwort zur Umlagefaehigkeit, dann verlinkt.
-- Art. 36 (Eigentumswohnung bewerten Trier): dort Ruecklage als WERTFAKTOR inkl. BFH II R 49/17.
-  Hier nur als FAQ-Kurzantwort mit Verweis, die Bewertungslogik bleibt dort.
-- Art. 45 / Art. 69 (Kapitalanlage, Anlageimmobilie): dort die ANLEGERRECHNUNG inkl. BFH IX R 19/24
-  (Werbungskostenabzug). Hier bewusst NICHT aufgegriffen, um die Steuerachse nicht zu duplizieren.
-- Art. 8 (Wohnung kaufen Bitburg): dort die KAEUFER-Pruefliste vor dem Kauf. Hier die Eigentuemer-Perspektive
-  nach dem Kauf. Die 10-15-EUR-Faustregel ist bewusst identisch gehalten, damit die Map konsistent bleibt.
-- Art. 67 (Gebaeudeenergiegesetz Bestandsgebaeude Trier): GModG-Systematik bleibt dort, hier nur der
-  WEG-Beschluss- und Finanzierungsaspekt.
-- `teilungserklaerung-trier.md` (PARALLEL entstanden am 2026-08-17, bei Strategie-Check noch nicht vorhanden):
-  einzige echte Beruehrung. Dort liegt der VERTEILERSCHLUESSEL als Dokument (woher er kommt, wie man ihn liest,
-  Sondernutzungsrechte, Zweckbestimmung), hier nur die Tatsache, DASS er sich per Beschluss aendern laesst,
-  plus Verweis. Beide zitieren BGH V ZR 128/23 und V ZR 236/23 v. 14.02.2025 — bewusst, weil beide Artikel
-  die Entscheidungen aus verschiedenen Richtungen brauchen; der Tiefgaragen-Sachverhalt steht in beiden nur
-  kurz. ⚠️ Der urspruengliche Absatz hier war zu weitgehend formuliert (Beschlusskompetenz ohne die
-  Sachgrund-Schranke) und wurde nach Gegenpruefung korrigiert. BEI DER NAECHSTEN KONSOLIDIERUNG PRUEFEN,
-  ob die Doppelung noch tragbar ist.
-- `nebenkostenabrechnung-vermieter-trier.md` und `hausverwaltung-trier.md` haben bis heute keine Map-Nummer;
-  bei der naechsten Konsolidierung gemeinsam mit diesem Artikel nummerieren, weil die drei ein Feld bilden.
-
-EXKLUSIVE BAUSTEINE (kein Regional-Wettbewerber und keine der Portal-Seiten hat diese):
-1. BGH V ZR 257/16 v. 15.12.2017: Schuldner ist, wer bei FAELLIGKEIT eingetragen ist, nicht wer beim
-   BESCHLUSS Eigentuemer war. Staerkster Baustein, praktisch die haeufigste teure Ueberraschung beim ETW-Kauf.
-2. BGH V ZR 128/23 und V ZR 236/23 v. 14.02.2025: § 16 Abs. 2 S. 2 WEG erfasst auch die Zufuehrung zur
-   Erhaltungsruecklage und erstmalige Kostenbelastung. Nirgends in Ratgeberform vorhanden.
-3. BGH V ZR 195/23 v. 20.09.2024 (nur betragsrelevante Fehler) und V ZR 96/24 v. 11.04.2025 (Teilanfechtung).
-   Konkrete Handlungsanweisung statt allgemeinem "Sie koennen anfechten".
-4. Die KORREKTUR der veralteten 3-Prozent-Einheitswert-Regel (alter § 18 Abs. 2 Nr. 2 WEG, entfallen zum
-   01.12.2020). Steht auf zahlreichen Ratgeberseiten noch als geltendes Recht. Starkes Trust-Signal.
-5. § 10 Abs. 1 Nr. 2 ZVG: Rangklasse 2, Deckel 5 % des Verkehrswerts, Jahr der Beschlagnahme plus zwei Jahre.
-   Verbindet zu Art. 43 (Zwangsversteigerung Eifel).
-6. Die durchgerechnete Luecke Petersche Formel (rund 28 EUR/qm/Jahr) gegen Praxiszufuehrung (10-15 EUR/qm/Jahr)
-   als quantitative Erklaerung, warum Sonderumlagen strukturell entstehen. Citation-faehig.
-7. Kommunale Waermeplanung Trier (Frist 30.06.2026) als Timing-Argument fuer den Heizungstausch-Beschluss.
-
-E-E-A-T: 16 Jahre im Fliesstext-Kontext und in der Autorenbox. Handelsblatt 2025 in der Box
-(Focus Money lag zuletzt bei Art. 69, Sprengnetter steckt bereits in 10+ Artikeln als Fliesstext-Anker
-und ist hier bewusst NICHT verwendet, weil das Thema keine Bewertungskompetenz braucht).
-
-OFFEN / VOR PUBLISH:
-- Das Fallbeispiel Trier-Mariahof (Kaeufer, Strangsanierung, fuenfstellige Sonderumlage drei Monate nach Einzug)
-  ist rekonstruiert und durch einen echten Fall von Sandro Mezzarano zu ersetzen. Mariahof ist in der Map
-  bislang unbenutzt; Kuerenz (Art. 36), Olewig (Art. 38), Heiligkreuz (Art. 44) und Pallien (Art. 69) meiden.
-- Interne Links im Live-Format /ratgeber/<slug>/ MIT Trailing Slash gesetzt (wie Art. 44, 38, 69).
-
-WARTUNG:
-(a) Hausgeld-Spanne 3,00-4,50 EUR/qm jaehrlich pruefen.
-(b) Qualifizierter Mietspiegel Trier: Ausgabe 2026 zitiert, wird periodisch neu aufgelegt (gemeinsam mit
-    Art. 44, 66, 69 pflegen).
-(c) GModG-Stand 29.07.2026 und der Trierer Waermeplan: bei Fortschreibung des Plans Kapitel pruefen
-    (gemeinsam mit Art. 67 pflegen).
-(d) BGH-Linie zu § 16 Abs. 2 S. 2 WEG entwickelt sich, vor jedem groesseren Update gegenpruefen.
--->

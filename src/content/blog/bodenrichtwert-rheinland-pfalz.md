@@ -103,24 +103,3 @@ Der Bodenrichtwert ist ein guter Startpunkt: amtlich und in zwei Minuten kostenl
 ---
 
 *Über den Autor: Sandro Mezzarano ist selbstständiger Handelsvertreter der Wüstenrot Immobilien in Hermeskeil und seit über 16 Jahren im Immobilienmarkt zwischen Hochwald, Trier und Mosel tätig. Er ist zertifizierter Immobilienmakler (IHK Bonn) und Sprengnetter-zertifizierter Sachverständiger für Immobilienbewertung in Bestand und Sanierung. Ausgezeichnet von Focus Money 2025 (höchste Beratungskompetenz) und Handelsblatt 2025 (exzellente Kundenberatung).*
-
-<!--
-CONTENT-STRATEGIE-HINWEIS (intern, nicht veröffentlichen):
-- Thema: Art. 14 der Content-Map, Cluster 4 (Bewertung), Kategorie Immobilienbewertung.
-- Abgrenzung/Kannibalisierungs-Schutz: Bewusst NUR der Boden (Bodenrichtwert). Verkehrswert der ganzen
-  Immobilie -> Art. 13 (Immobilienbewertung Trier, geplant). Die drei Wertermittlungsverfahren -> Art. 15
-  (Wertermittlung Haus, geplant). "Bodenrichtwert Trier" trennscharf zu "Immobilien Trier" (Art. 2) und
-  "Immobilienbewertung Trier" (Art. 13). Grundsteuer/Erbschaftsteuer statt Grunderwerbsteuer -> kein Konflikt
-  mit Art. 16.
-- Exklusiver Inhalt: BORIS-RP-Schritt-fuer-Schritt, regionale Spannen-Tabelle (Hochwald/Schweich/Bitburg/
-  Wittlich), Bodenrichtwert-vs-Verkehrswert-Block, Hochwald-Bauplatz-Anekdote, Grundsteuer-/Erbschaftsteuer-
-  Block mit Rechenbeispiel.
-- E-E-A-T: Sprengnetter-Sachverstaendiger als Hauptanker im Fliesstext (thematisch ideal fuers Bewertungs-
-  Cluster); Focus Money 2025 + Handelsblatt 2025 nur in der Autoren-Box (Hauptanker-Status fuer weitere
-  Artikel reserviert).
-- Score Blog-Kritik: 91/100 (Exzellent). Humanizer: Em-Dashes auf 1 reduziert, 2 Dreiergruppen aufgebrochen.
-- Interne Links (vor WordPress-Veroeffentlichung mit echten URLs ersetzen):
-  Art. 2 (veroeffentlicht), Art. 13 + Art. 15 (geplant, derzeit Forward-Platzhalter), /bewerten, /kontakt.
-- Quellen: Oberer Gutachterausschuss fuer Grundstueckswerte RLP, Gutachterausschuss Trier-Saarburg, BORIS-RP /
-  Geoportal RLP, BewG (Grundbesitzwert), allgemeine Faustregel Verkehrswert +/-10-20 % ggue. Bodenrichtwert.
--->

@@ -134,7 +134,6 @@ Wenn ein Makler beteiligt ist, ja. Die Provision ist bei Wohnimmobilien gesetzli
 **Was passiert mit den Schulden des Verkäufers?**
 Die gehen nicht auf Sie über. Der Notar sorgt dafür, dass die Grundschuld gelöscht wird, bevor der Kaufpreis an den Verkäufer fließt. Reicht der Kaufpreis nicht, bleibt die Restschuld beim Verkäufer.
 
-
 ## Sie suchen ein Haus in der Eifel?
 
 Ich begleite Käufer zwischen Bitburg, Wittlich und dem Hochwald, auch bei Notverkäufen und vor Versteigerungsterminen. Gemeinsam prüfen wir Preis, Zustand und Grundbuch, bevor Sie sich festlegen. Aktuelle Häuser finden Sie unter [Immobilienangebote](https://mezzarano-wuestenrot-immobilien.de/immobilien).
@@ -144,14 +143,3 @@ Ich begleite Käufer zwischen Bitburg, Wittlich und dem Hochwald, auch bei Notve
 *Sandro Mezzarano | Wüstenrot Immobilien, Hermeskeil. Ehrlichkeit hat ein Zuhause.*
 
 *Hinweis: Dieser Artikel ersetzt keine Rechts- oder Steuerberatung. Bei steuerlichen und rechtlichen Fragen wenden Sie sich bitte an Ihren Steuerberater, Rechtsanwalt oder Notar.*
-
-<!--
-Quellen (intern): ZVG §§ 49, 56, 57a, 74a, 85a; zvg-portal.de; Bieterhinweise AG Bitburg/Prüm/Daun/Wittlich (justiz.rlp.de); Argetra Halbjahresreport H1 2026; Eifel-Preise konsistent mit /haus-kaufen-eifel/.
-
-Content-Strategie:
-- Haupt-Keyword: Haus von der Bank kaufen Eifel
-- Neben-Keywords: Bankimmobilien Eifel, Notverkauf Haus Eifel, freihändiger Verkauf Bank, Haus kaufen Bitburg Notverkauf
-- Kategorie: Immobilie kaufen | Template: Ratgeber | Cluster: Immobilie kaufen (Cluster 3)
-- Abgrenzung: /zwangsversteigerung-eifel/ = ZVG-Verfahren im Detail (hier nur Kurzfassung + Link); /haus-kaufen-eifel/ = Lagen/Preise-Guide. Exklusiv hier: Myth-Busting „Bank ist nicht Eigentümerin", Notverkauf-Ablauf mit Treuhandauflage, Rettungserwerb, Kostenvergleich Notverkauf vs. Versteigerung.
-- Rückverlinkung: /zwangsversteigerung-eifel/, /haus-kaufen-eifel/, /kaufnebenkosten-rheinland-pfalz/ sollten auf /haus-von-der-bank-kaufen-eifel/ verlinken.
--->
