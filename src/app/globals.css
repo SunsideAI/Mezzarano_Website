@@ -119,6 +119,8 @@
   body {
     @apply bg-wohnraum text-wuestennacht;
     font-family: var(--font-ww);
+    /* Guard: prevent any child element from causing horizontal page scroll on mobile */
+    overflow-x: hidden;
   }
 
   /* Sichtbare Focus-States für Barrierefreiheit */
@@ -424,6 +426,25 @@
 
   .prose-blog blockquote {
     border-radius: 0 var(--radius-fenster) var(--radius-fenster) 0;
+  }
+
+  /* Prevent wide tables / code / images inside blog content from causing
+     horizontal page scroll on mobile. Wide tables become internally scrollable. */
+  .prose-blog table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .prose-blog pre {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  .prose-blog img,
+  .prose-blog video,
+  .prose-blog iframe {
+    max-width: 100%;
+    height: auto;
   }
 
   /* === FORMULAR STYLES (Styleguide) === */
