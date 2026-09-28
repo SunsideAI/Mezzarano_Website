@@ -60,6 +60,7 @@ export async function POST(request: NextRequest) {
         message: finalMessage,
         propertyId,
         propertyTitle,
+        kategorie: body.kategorie,
         source,
       })
       if (!emailResult.success) {
@@ -93,6 +94,7 @@ export async function POST(request: NextRequest) {
         message: finalMessage,
         propertyId,
         propertyTitle,
+        kategorie: body.kategorie,
         source,
       })
       if (!emailResult.success) {

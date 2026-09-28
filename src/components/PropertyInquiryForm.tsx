@@ -5,9 +5,10 @@ import { useState } from 'react'
 interface PropertyInquiryFormProps {
   propertyId: string
   propertyTitle: string
+  isRent?: boolean
 }
 
-export default function PropertyInquiryForm({ propertyId, propertyTitle }: PropertyInquiryFormProps) {
+export default function PropertyInquiryForm({ propertyId, propertyTitle, isRent }: PropertyInquiryFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,6 +42,7 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle }: Prope
           inquiryType: 'immobilie',
           propertyId,
           propertyTitle,
+          kategorie: isRent ? 'miete' : 'kauf',
           source: `Immobilien-Anfrage: ${propertyTitle}`,
         }),
       })

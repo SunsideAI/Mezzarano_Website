@@ -8,12 +8,20 @@
 // Resend API endpoint
 const RESEND_API_URL = 'https://api.resend.com/emails'
 
+interface ResendAttachment {
+  filename: string
+  content: string // base64 encoded
+  content_type?: string
+}
+
 interface ResendEmailPayload {
   from: string
   to: string[]
+  bcc?: string[]
   subject: string
   html: string
   reply_to?: string
+  attachments?: ResendAttachment[]
 }
 
 interface ResendApiResponse {
@@ -122,6 +130,8 @@ export interface ContactLeadData {
   propertyId?: string
   propertyTitle?: string
   source?: string
+  /** For property inquiries: 'kauf' | 'miete' — enables OpenImmo-Feedback XML attachment */
+  kategorie?: 'kauf' | 'miete'
 }
 
 export interface SearchProfileLeadData {
@@ -496,6 +506,41 @@ export async function sendContactNotification(data: ContactLeadData): Promise<{ 
 
   const inquiryLabel = data.inquiryType ? inquiryTypeLabels[data.inquiryType] || data.inquiryType : 'Kontaktanfrage'
 
+  // Property inquiry (Kauf-/Mietinteressent): custom subject + OpenImmo-Feedback XML attachment
+  // Aligned with Make-Workflow "Mezzarano Immobilien" module 13, so the onOffice
+  // Portalfilter "Objektanfrage Sunside AI" recognises the mail.
+  const isPropertyInquiry = !!(data.propertyId && data.kategorie)
+
+  if (isPropertyInquiry) {
+    const { vorname, nachname } = splitName(data.name)
+    const xml = buildOpenImmoFeedbackXml({
+      objektnummer: data.propertyId!,
+      bezeichnung: data.propertyTitle || '',
+      kategorie: data.kategorie!,
+      vorname,
+      nachname,
+      email: data.email,
+      telefon: data.phone,
+      message: data.message,
+    })
+
+    return sendViaResendApi({
+      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+      to: ['sandro.mezzarano@wuestenrot.de'],
+      bcc: ['contact@sunsideai.de'],
+      subject: `Anfrage Interessent – ${data.propertyId} – ${vorname} ${nachname}`.trim(),
+      html: getContactEmailHtml(data),
+      reply_to: data.email,
+      attachments: [
+        {
+          filename: 'feedback.xml',
+          content: Buffer.from(xml, 'utf-8').toString('base64'),
+          content_type: 'application/xml',
+        },
+      ],
+    })
+  }
+
   return sendViaResendApi({
     from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
     to: NOTIFICATION_RECIPIENTS,
@@ -503,6 +548,68 @@ export async function sendContactNotification(data: ContactLeadData): Promise<{ 
     html: getContactEmailHtml(data),
     reply_to: data.email,
   })
+}
+
+// ─── OpenImmo-Feedback XML (for Kauf-/Mietinteressenten) ──────────────────────
+// Format: openimmo_feedback 1.2.7, aligned with Mezzarano Make-Workflow module 46.
+// The portal filter "Objektanfrage Sunside AI" in onOffice imports this XML.
+
+function splitName(fullName: string): { vorname: string; nachname: string } {
+  const parts = fullName.trim().split(/\s+/)
+  const vorname = parts[0] || ''
+  const nachname = parts.length > 1 ? parts.slice(1).join(' ') : ''
+  return { vorname, nachname }
+}
+
+function xmlEscape(s: string | undefined | null): string {
+  if (!s) return ''
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+}
+
+interface OpenImmoInput {
+  objektnummer: string
+  bezeichnung: string
+  kategorie: 'kauf' | 'miete'
+  vorname: string
+  nachname: string
+  email: string
+  telefon?: string
+  message: string
+}
+
+function buildOpenImmoFeedbackXml(input: OpenImmoInput): string {
+  const vermarktungsart = input.kategorie === 'kauf' ? 'KAUF' : 'MIETE_PACHT'
+  const datum = new Date().toISOString().slice(0, 10) // YYYY-MM-DD
+  const anfrage = `Quelle: Website Objektanfrage | Anforderungen: ${input.message}`
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<openimmo_feedback>
+  <version>1.2.7</version>
+  <sender>
+    <name>Sunside AI</name>
+    <datum>${datum}</datum>
+  </sender>
+  <objekt>
+    <portal_obj_id>${xmlEscape(input.objektnummer)}</portal_obj_id>
+    <oobj_id>${xmlEscape(input.objektnummer)}</oobj_id>
+    <bezeichnung>${xmlEscape(input.bezeichnung)}</bezeichnung>
+    <vermarktungsart>${vermarktungsart}</vermarktungsart>
+    <interessent>
+      <anrede></anrede>
+      <vorname>${xmlEscape(input.vorname)}</vorname>
+      <nachname>${xmlEscape(input.nachname)}</nachname>
+      <tel>${xmlEscape(input.telefon)}</tel>
+      <email>${xmlEscape(input.email)}</email>
+      <anfrage>${xmlEscape(anfrage)}</anfrage>
+    </interessent>
+  </objekt>
+</openimmo_feedback>
+`
 }
 
 /**

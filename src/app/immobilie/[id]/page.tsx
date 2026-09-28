@@ -589,6 +589,7 @@ export default async function PropertyDetailPage({ params }: { params: { id: str
                   <PropertyInquiryForm
                     propertyId={propertyExposeId}
                     propertyTitle={title}
+                    isRent={isRent}
                   />
                 </div>
 
