@@ -341,8 +341,6 @@ Ich bin selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH. Das gi
 
 ## Aus der Praxis: Immobilienverkauf in Wittlich
 
-<!-- TODO Fallstudie: In fallstudien-mezzarano.md gibt es noch keinen konkreten, freigegebenen Fall aus Wittlich. Sandro bitten, 1–2 Verkäufe (anonymisiert, ohne Kaufpreis) zu liefern, und diesen Abschnitt damit ersetzen. -->
-
 ### Realistischer Preis statt Wunschpreis
 
 Das Muster, das ich in der Region am häufigsten sehe: Immobilien, die mit einem realistischen Preis starten, verkaufen sich im Raum Trier und Wittlich typischerweise innerhalb von drei bis sechs Monaten. Wer deutlich über dem Marktwert startet, bleibt lange online. Käufer bemerken das und verhandeln am Ende härter. Der Verkäufer verliert dann Zeit und bekommt oft trotzdem weniger.
@@ -435,34 +433,3 @@ Wenn Sie zuerst lesen möchten: Einen allgemeinen Überblick über Wohnen und Pr
 [28] Homeday: Preisatlas Wittlich, https://www.homeday.de/de/preisatlas/wittlich, ohne Stichtag, abgerufen am 2026-09-30 (Sekundärquelle, Angebotsdaten)
 [29] immoportal.com: Immobilienpreise und Mietspiegel Wittlich, https://www.immoportal.com/immobilienpreise/wittlich, Stand 01.09.2026, abgerufen am 2026-09-30 (Sekundärquelle, Angebotsdaten)
 [30] Aufsichts- und Dienstleistungsdirektion Rheinland-Pfalz: Grundstücksverkehrsgesetz, https://add.rlp.de/themen/landwirtschaft-und-weinbau/landwirtschafter-grundstuecksverkehr/grundstuecksverkehrsgesetz, abgerufen am 2026-09-30
-
-<!--
-SEO- und Strategie-Hinweise (nicht veröffentlichen)
-
-Keywords (Semrush-Export eifelmoselmakler.de, 2026-05):
-- immobilienmakler wittlich — Vol 140, KD 17 — Eifel-Mosel-Makler Pos. 1
-- makler wittlich — Vol 50, KD 15 — Wettbewerber Pos. 6
-- immobilienmakler in wittlich — Vol 10, KD 9
-- makler in wittlich — Vol 10, KD 9
-- immobilienmakler bernkastel-wittlich — Vol 10, KD 15 — Wettbewerber Pos. 1
-- immobilienbewertung wittlich — Vol 20, KD 8 — Wettbewerber Pos. 11
-
-Wettbewerber (Stand 2026-09-30): eifelmoselmakler.de ~1.800 Wörter/10 H2, gilbers-baasch.de ~1.500/8 H2, herres-immobilien.de ~900, LBS/Sparkasse ~850, pkimmobilie.de ~3.000 (inkl. Objektliste). Keine Seite nennt Quellen für Regionaldaten.
-
-Kannibalisierung: /ratgeber/immobilien-wittlich/ führt „Immobilienmakler Wittlich“ als Neben-Keyword und eigene H3 „Einen Immobilienmakler in Wittlich frühzeitig einbinden“. Empfehlung: Keyword aus dem Frontmatter des Blogartikels entfernen, H3 umformulieren (z. B. „Den Verkauf frühzeitig vorbereiten“) und von dort mit Anker „Immobilienmakler Wittlich“ auf diese Seite verlinken. Blogartikel behält „wittlich immobilien“ (Vol 480).
-Zusätzlich: Der Blogartikel nennt Häuser „rund 2.900 €/m²“; aktuelle Portalwerte liegen bei 2.190–2.500 €/m² (Stand 09/2026). Zahlen dort aktualisieren.
-
-Rückverlinkungsvorschläge auf diese Seite:
-- /ratgeber/immobilien-wittlich/ (Anker: Immobilienmakler Wittlich)
-- /ratgeber/elementarschadenversicherung-wittlich/ (Anker: Makler in Wittlich)
-- /ratgeber/haus-kaufen-mosel/ (Anker: Immobilienmakler für Wittlich und Umgebung)
-- /ratgeber/bodenrichtwert-rheinland-pfalz/ (Anker: Bodenrichtwerte in Wittlich)
-- /ratgeber/immobilie-kaufen-luxemburg-pendler/ (Anker: Wittlich)
-
-Offene Prüfpunkte vor Veröffentlichung:
-- Gesetzbezeichnung GEG: Laut Recherche wird das Gesetz auf gesetze-im-internet.de inzwischen als „Gebäudemodernisierungsgesetz (GModG)“ geführt, §§ 80/87 unverändert. Bezeichnung im Text vor Publish prüfen.
-- Arbeitslosenquote [21] gegen statistik.arbeitsagentur.de bestätigen.
-- Provisionssatz, mit dem Sandro konkret arbeitet (fallstudien-mezzarano.md: TODO).
-- Fallstudie Wittlich (siehe TODO im Abschnitt „Aus der Praxis“).
-- Notarkosten sind gerundete Beispielwerte auf Basis GNotKG Tabelle B; konkrete Kostenberechnung durch den Notar.
--->

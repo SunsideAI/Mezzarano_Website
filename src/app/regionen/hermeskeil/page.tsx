@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Home, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import SchemaMarkup, { generateFAQSchema } from '@/components/SchemaMarkup'
 import PageHero from '@/components/PageHero'
 import RegionMarkdownContent from '@/components/RegionMarkdownContent'
@@ -18,51 +18,8 @@ export const metadata: Metadata = {
   },
 }
 
-const highlights = [
-  {
-    icon: Home,
-    title: 'Lokale Expertise',
-    description: 'Tiefgreifende Kenntnis des Hermeskeiler Immobilienmarktes und der Hochwald-Region.'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Faire Bewertung',
-    description: 'Kostenlose und marktgerechte Immobilienbewertung für Verkäufer in Hermeskeil.'
-  },
-  {
-    icon: Users,
-    title: 'Persönlicher Service',
-    description: 'Individuelle Betreuung von der ersten Beratung bis zum erfolgreichen Abschluss.'
-  },
-]
-
-const faqItems = [
-  {
-    question: 'Was kostet ein Immobilienmakler in Hermeskeil?',
-    answer: 'Bei Wüstenrot Immobilien Hermeskeil erhalten Sie eine kostenlose Erstberatung. Die Maklerprovision wird nur im Erfolgsfall fällig und ist marktüblich gestaffelt. Für Verkäufer bieten wir zudem eine kostenlose Immobilienbewertung an.'
-  },
-  {
-    question: 'Wie lange dauert der Verkauf einer Immobilie in Hermeskeil?',
-    answer: 'Die Verkaufsdauer hängt von verschiedenen Faktoren ab: Objektart, Zustand, Lage und Preisgestaltung. Im Durchschnitt vermitteln wir Immobilien in Hermeskeil innerhalb von 3-6 Monaten erfolgreich. Gut bewertete und fair bepreiste Objekte finden oft schneller einen Käufer.'
-  },
-  {
-    question: 'Welche Unterlagen benötige ich für den Immobilienverkauf?',
-    answer: 'Für den Verkauf benötigen wir: Grundbuchauszug, Energieausweis, Flurkarte, Wohnflächenberechnung, Baupläne (falls vorhanden) und aktuelle Nebenkostenabrechnungen. Wir unterstützen Sie gerne bei der Beschaffung fehlender Dokumente.'
-  },
-  {
-    question: 'Wie wird der Wert meiner Immobilie in Hermeskeil ermittelt?',
-    answer: 'Unsere Immobilienbewertung basiert auf einer Kombination aus Vergleichswertverfahren, Sachwertverfahren und aktueller Marktanalyse. Wir berücksichtigen Lage, Zustand, Ausstattung und die lokale Marktsituation im Hochwald.'
-  },
-]
-
-export default function HermeskeilPage() {
-  const faqSchema = generateFAQSchema(faqItems)
-
-  return (
-    <>
-      <SchemaMarkup data={faqSchema} />
-
-      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
+export default function HermeskeilPage() {  return (
+    <>      {/* Hero Section with Wüstenrot Layout-Prinzipien */}
       <section className="relative bg-wuestennacht min-h-[450px] md:min-h-[600px] flex items-center py-12 overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -146,97 +103,7 @@ export default function HermeskeilPage() {
       {/* Ausführlicher SEO-Content aus src/content/regionen/hermeskeil.md */}
       <RegionMarkdownContent slug="hermeskeil" />
 
-      {/* Introduction */}
-      <section className="py-10 md:py-16 bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
-              Immobilien in Hermeskeil – Ihre lokale Expertise
-            </h2>
-            <div className="prose prose-lg max-w-none text-secondary-700">
-              <p>
-                Hermeskeil, das Tor zum Hochwald, bietet eine attraktive Mischung aus
-                ländlicher Idylle und guter Infrastruktur. Als Mittelzentrum der Region verfügt die Stadt
-                über alle wichtigen Einrichtungen des täglichen Bedarfs, Schulen, Ärzte und eine gute
-                Verkehrsanbindung nach Trier und in den Hunsrück.
-              </p>
-              <p>
-                Der Immobilienmarkt in Hermeskeil zeichnet sich durch ein ausgewogenes Preis-Leistungs-Verhältnis
-                aus. Ob Sie ein Einfamilienhaus mit Garten suchen, eine moderne Eigentumswohnung oder ein
-                Grundstück für Ihren Neubau – als Ihr lokaler Wüstenrot Immobilienpartner kenne ich den
-                Markt und finde die passende Immobilie für Sie.
-              </p>
-              <p>
-                Für Verkäufer biete ich eine kostenlose Immobilienbewertung und entwickle eine individuelle
-                Vermarktungsstrategie, um Ihre Immobilie zum bestmöglichen Preis zu verkaufen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Ihre Vorteile mit Wüstenrot Immobilien Hermeskeil
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {highlights.map((item, index) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="h-7 w-7 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
-                <p className="text-secondary-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-10 md:py-16 bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-              <h2 className="text-3xl font-bold text-secondary-900 mb-6">
-                Umfassende Immobilienservices in Hermeskeil
-              </h2>
-              <ul className="space-y-4">
-                {[
-                  'Kostenlose Immobilienbewertung',
-                  'Professionelle Vermarktung mit Exposé und Fotos',
-                  'Besichtigungen und Verhandlungsführung',
-                  'Begleitung bis zum Notartermin',
-                  'Vermittlung von Finanzierungen über Wüstenrot',
-                  'Beratung bei Erbimmobilien und Scheidungen',
-                ].map((service) => (
-                  <li key={service} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-secondary-700">{service}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <Link href="/kontakt" className="btn-primary">
-                  Jetzt Beratungstermin vereinbaren
-                </Link>
-              </div>
-            </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden img-zoom" data-aos="fade-left">
-              <Image
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
-                alt="Immobilienberatung"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Region Overview */}
+                        {/* Region Overview */}
       <section className="py-10 md:py-16 bg-secondary-900 text-white">
         <div className="container-custom">
           <h2 className="text-3xl font-bold mb-8 text-center" data-aos="fade-up">
@@ -271,26 +138,7 @@ export default function HermeskeilPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Häufige Fragen zu Immobilien in Hermeskeil
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-3">
-                  {item.question}
-                </h3>
-                <p className="text-secondary-600">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+            {/* CTA */}
       <section className="py-10 md:py-16 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">

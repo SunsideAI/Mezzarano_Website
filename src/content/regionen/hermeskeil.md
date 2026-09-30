@@ -106,9 +106,7 @@ Auch in den Ortsgemeinden verkauft die Verbandsgemeinde Bauplätze. Die Preise l
 
 ## Stadtteile und Ortsgemeinden im Überblick
 
-Zur Verbandsgemeinde Hermeskeil gehören die Stadt und zwölf Ortsgemeinden. Die Einwohnerzahlen stammen aus dem Gemeindeverzeichnis, Stand 31.12.2025 [[1]](https://www.statistikportal.de/de/gemeindeverzeichnis/07235045). Jeder Ort hat seine eigene Käuferschaft. Das merke ich jedes Mal, wenn ein Interessent sagt, er suche „irgendwas im Hochwald“, und am Ende doch nur zwei oder drei Orte in Frage kommen. Die Nachbarorte außerhalb der Verbandsgemeinde, etwa Kell am See, Zerf und Thalfang, beschreibe ich auf der Seite [Immobilienmakler Hochwald](https://mezzarano-wuestenrot-immobilien.de/immobilienmakler-hochwald). <!-- URL der Hochwald-Regionsseite vor Livegang prüfen -->
-
-### Hermeskeil-Kernstadt
+Zur Verbandsgemeinde Hermeskeil gehören die Stadt und zwölf Ortsgemeinden. Die Einwohnerzahlen stammen aus dem Gemeindeverzeichnis, Stand 31.12.2025 [[1]](https://www.statistikportal.de/de/gemeindeverzeichnis/07235045). Jeder Ort hat seine eigene Käuferschaft. Das merke ich jedes Mal, wenn ein Interessent sagt, er suche „irgendwas im Hochwald“, und am Ende doch nur zwei oder drei Orte in Frage kommen. Die Nachbarorte außerhalb der Verbandsgemeinde, etwa Kell am See, Zerf und Thalfang, beschreibe ich auf der Seite [Immobilienmakler Hochwald](https://mezzarano-wuestenrot-immobilien.de/immobilienmakler-hochwald). ### Hermeskeil-Kernstadt
 
 In der Kernstadt leben 6.501 Menschen, gut 40 % der Verbandsgemeinde [[1]](https://www.statistikportal.de/de/gemeindeverzeichnis/07235045). Entsprechend breit ist das Angebot. Rund um die Fußgängerzone stehen Stadthäuser und Wohn- und Geschäftshäuser, in den Wohngebieten Einfamilienhäuser aus den 1960er- bis 1990er-Jahren, und im Baugebiet „Auf der Pferch“ entstehen Neubauten. Eigentumswohnungen? Gibt es in nennenswerter Zahl fast nur hier. Wer kauft, will meist kurze Wege: junge Familien zur Schule, ältere Käufer zum Arzt.
 
@@ -329,8 +327,6 @@ Als selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH arbeite ich
 
 ## Aus der Praxis in Hermeskeil
 
-<!-- TODO Fallstudie: Konkreten, von Sandro Mezzarano freigegebenen Verkaufsfall aus Hermeskeil oder der VG ergänzen (Objektart, Ausgangslage, Vorgehen, Ergebnis ohne Kaufpreis). In fallstudien-mezzarano.md liegt noch kein Hermeskeil-Fall vor. -->
-
 ### Typische Ausgangslage: das Elternhaus im Dorf
 
 Die Frage, die ich in Hermeskeil am häufigsten höre, stellen Erben: Was ist das Haus der Eltern wert, und lohnt sich eine Sanierung vor dem Verkauf? Meist lautet meine Antwort: Größere Sanierungen vor dem Verkauf rechnen sich selten. Kleine Maßnahmen wie Entrümpeln, Garten pflegen und einen Energieausweis bestellen schon. Wer ein Haus geerbt hat, findet im Ratgeber [Geerbtes Haus verkaufen](/ratgeber/geerbtes-haus-verkaufen/) die wichtigsten Schritte, einschließlich der Spekulationsfrist nach § 23 EStG [[30]](https://www.gesetze-im-internet.de/estg/__23.html).
@@ -479,13 +475,3 @@ Wer ein Haus kaufen möchte, findet im Ratgeber [Haus kaufen in Hermeskeil](/rat
 [37] Talsperrenverband Nonnweiler: Primstalsperre, https://www.talsperrenverband-nonnweiler.de/, abgerufen am 2026-09-30
 
 [38] Bundesministerium der Justiz: Beurkundungsgesetz, § 17 Abs. 2a, https://www.gesetze-im-internet.de/beurkg/__17.html, abgerufen am 2026-09-30
-
-<!--
-SEO-NOTIZEN
-Keywords (Wettbewerber-Exporte 05/2026, Volumen/KD): immobilien hermeskeil 170/6 (Local Pack), hermeskeil immobilien 170/8, immobilien in hermeskeil 10/8, immobilien hermeskeil kaufen 20/9, wer verkauft privat ein haus in hermeskeil 40/9, haus kaufen hermeskeil abtei 20/9. „immobilienmakler hermeskeil“ selbst ohne Volumen in den Exporten.
-Wettbewerber-Positionen „immobilien hermeskeil“: Klauck 4, Volksbank 6, Gilbers & Baasch 13, Eifel-Mosel-Makler 20. Wettbewerber-Regionsseiten: Eifel-Mosel-Makler ca. 2.800–3.200 Wörter, Engel & Völkers ca. 2.100–2.400, Gilbers & Baasch ca. 1.200–1.400.
-Kannibalisierung: „immobilien hermeskeil“ wandert zur Regionsseite. Im Blogartikel haus-kaufen-hermeskeil (2026-05-18) die Keywords „Immobilien Hermeskeil“ und „Hermeskeil Immobilienmarkt“ aus dem Frontmatter entfernen, Fokus „haus kaufen hermeskeil“ (390/8) und Link auf /immobilienmakler-hermeskeil ergänzen.
-Rückverlinkung: haus-kaufen-hermeskeil, bauernhaus-verkaufen-hochwald, bodenrichtwert-rheinland-pfalz, immobilie-kaufen-luxemburg-pendler, geerbtes-haus-verkaufen, was-kostet-immobilienmakler-rheinland-pfalz → jeweils Link mit Anker „Immobilienmakler Hermeskeil“.
-Überschneidung Regionsseiten: immobilienmakler-hochwald (2026-09-30) behandelt Hermeskeil, Reinsfeld, Gusenburg, Beuren, Damflos und Züsch mit denselben Daten. Empfehlung: Auf der Hochwald-Seite die VG-Hermeskeil-Abschnitte auf je 2–3 Sätze kürzen und auf /immobilienmakler-hermeskeil verlinken; Hochwald-Seite fokussiert auf Kell am See, Zerf, Schillingen, Thalfang und die Region insgesamt.
-Offene Punkte: Fallstudie (TODO), Focus-Money-Auszeichnung auf Person vs. Marke prüfen, Bodenrichtwerte der übrigen Ortsgemeinden in BORIS-RP nachtragen.
--->

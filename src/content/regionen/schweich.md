@@ -291,9 +291,7 @@ Die Nebenkosten finanzieren die meisten Banken nicht mit. Käufer sollten sie au
 
 ### Laufende Kosten nach dem Kauf
 
-Die Grundsteuer B lag in der Stadt Schweich 2024 bei einem Hebesatz von 465 Prozent [1]. Bis 2022 waren es 400 Prozent, der Stadtrat hat den Satz für 2023 erhöht ([VG Schweich, Hebesätze](https://www.schweich.de/verwaltung-buergerservice/gebuehren-und-ordnungen/hebesaetze/steuerhebesaetze/hebesaetze-pdf/hebesaetze-grundsteuer-b-2023.pdf?cid=6i6y) [30]). Nach der Grundsteuerreform hat das Land für Schweich einen aufkommensneutralen Hebesatz von 375 Prozent empfohlen ([Finanzministerium RLP](https://fm.rlp.de/fileadmin/04/Themen/Finanzen/Kommunale_Finanzen/Grundsteuerreform_-_Hebesaetze/Disclaimer_und_Liste.pdf) [35]). Welcher Satz aktuell gilt, erfragen Sie bei der VG-Verwaltung. <!-- TODO Quelle: beschlossener Hebesatz B 2025/2026 Stadt Schweich -->
-
-## Besonderheiten der Region Schweich
+Die Grundsteuer B lag in der Stadt Schweich 2024 bei einem Hebesatz von 465 Prozent [1]. Bis 2022 waren es 400 Prozent, der Stadtrat hat den Satz für 2023 erhöht ([VG Schweich, Hebesätze](https://www.schweich.de/verwaltung-buergerservice/gebuehren-und-ordnungen/hebesaetze/steuerhebesaetze/hebesaetze-pdf/hebesaetze-grundsteuer-b-2023.pdf?cid=6i6y) [30]). Nach der Grundsteuerreform hat das Land für Schweich einen aufkommensneutralen Hebesatz von 375 Prozent empfohlen ([Finanzministerium RLP](https://fm.rlp.de/fileadmin/04/Themen/Finanzen/Kommunale_Finanzen/Grundsteuerreform_-_Hebesaetze/Disclaimer_und_Liste.pdf) [35]). Welcher Satz aktuell gilt, erfragen Sie bei der VG-Verwaltung. ## Besonderheiten der Region Schweich
 
 ### Hochwasser an der Mosel
 
@@ -340,8 +338,6 @@ Für einen Verkauf braucht es mehr als einen Makler: Notare in Trier und Schweic
 Ich bin selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH. Das bedeutet für Sie: geprüfte Verträge, eine bekannte Marke und Zugang zur Baufinanzierung im Wüstenrot-Verbund, was Käufern die Finanzierung erleichtert. 2025 wurde ich vom Handelsblatt für exzellente Kundenberatung ausgezeichnet. Mein Grundsatz bleibt einfach: Ehrlichkeit hat ein Zuhause. Wenn ein Preis nicht passt, sage ich Ihnen das.
 
 ## Aus der Praxis in Schweich
-
-<!-- TODO Fallstudie: In fallstudien-mezzarano.md gibt es noch keinen konkreten Verkaufsfall aus Schweich. Bitte 1–2 echte Fälle von Sandro ergänzen (Objekttyp, Ortsteil, Ausgangslage, Vermarktungsdauer, ohne Kaufpreis). Bis dahin stehen hier allgemeine Praxiserfahrungen. -->
 
 ### Was ich bei Verkäufen in Schweich immer wieder erlebe
 
@@ -438,32 +434,3 @@ Sandro Mezzarano · Wüstenrot Immobilien · Saarstraße 1, 54411 Hermeskeil
 [33] Wikipedia: Schweich, https://de.wikipedia.org/wiki/Schweich, abgerufen am 2026-09-30
 [34] Bundesamt für Justiz: Immobilienwertermittlungsverordnung (ImmoWertV 2021), https://www.gesetze-im-internet.de/immowertv_2022/, abgerufen am 2026-09-30
 [35] Ministerium der Finanzen Rheinland-Pfalz: Liste der aufkommensneutralen Hebesätze 2025, https://fm.rlp.de/fileadmin/04/Themen/Finanzen/Kommunale_Finanzen/Grundsteuerreform_-_Hebesaetze/Disclaimer_und_Liste.pdf, Stand 15.10.2024, abgerufen am 2026-09-30
-
-<!--
-SEO-NOTIZEN (nicht veröffentlichen)
-
-Keywords (Wettbewerber-Exporte 2026-05, Suchvolumen / KD):
-- immobilienmakler schweich 40 / 11 (Haupt-Keyword, Local Pack)
-- schweich immobilien 210 / 9 · immobilien schweich 210 / 9 · immobilien in schweich 50 / 11
-- immobilien schweich-issel 30 / 9 · schweich issel 210 / 5
-- Nicht als Ziel-Keywords (für Art. 56 / Kaufartikel): haus kaufen in schweich 320 / 8, wohnung kaufen schweich 260 / 9, grundstück schweich 70 / 8
-
-Wettbewerber-Positionen „immobilienmakler schweich“: gilbers-baasch.de Pos. 5/22/24, eifelmoselmakler.de Pos. 7/28/44, volksbank.immobilien Pos. 22/34/52.
-Auf Seite 1 außerdem: Wüstenrot-Kollege Biagio Clemente (Büro Schweich), Gebietsfrage laut User geklärt (2026-09-30).
-Wettbewerber-Seiten nennen weder Bodenrichtwerte noch Gutachterausschuss, Kaufnebenkosten-Rechnung oder Hochwasserdaten. Das sind die Differenzierungsmerkmale dieser Seite.
-
-Kannibalisierung:
-- Content-Map Art. 56 „Schweich Immobilien“ (geplant, nicht geschrieben): Die Regionsseite übernimmt „schweich immobilien“/„immobilien schweich“. Art. 56 umstellen auf informationell („wohnen in schweich“, „schweich issel“, Lagen-Guide) und auf /immobilienmakler-schweich/ verlinken.
-- haus-kaufen-mosel: Schweich nur Neben-Keyword, käuferseitig, kein Konflikt.
-
-Rückverlinkung auf diese Seite (Anker „Immobilienmakler Schweich“):
-- haus-kaufen-mosel (Abschnitt „Schweich und die untere Mosel“)
-- immobilie-kaufen-luxemburg-pendler
-- bodenrichtwert-rheinland-pfalz
-- was-kostet-immobilienmakler-rheinland-pfalz
-- immobilienpreise-trier (Umlandvergleich)
-
-Offene TODOs: echte Fallstudie aus Schweich (fallstudien-mezzarano.md) · beschlossener Hebesatz Grundsteuer B 2025/26 · BORIS-Lizenz: Zustimmung für Veröffentlichung auf Makler-Website prüfen (Herkunftsvermerk ist gesetzt).
-Nebenbefund: GEG heißt seit 29.07.2026 GModG → Artikel energieausweis-pflicht aktualisieren.
-Kritik: 86/100 (Stark), Top-3 behoben, Humanizer durchgeführt.
--->

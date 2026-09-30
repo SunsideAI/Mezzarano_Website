@@ -344,8 +344,6 @@ Als selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH arbeite ich
 
 ## Aus der Praxis in Bitburg
 
-<!-- TODO Fallstudie: Die folgenden zwei Abschnitte beschreiben typische Konstellationen, keine konkreten Fälle. Bitte durch echte, freigegebene Fälle von Sandro Mezzarano aus Bitburg ersetzen (ohne Kaufpreise einzelner Objekte, siehe fallstudien-mezzarano.md). -->
-
 ### Das Elternhaus in Mötsch, die Erben in Köln
 
 Eine Konstellation, die mir in Bitburg immer wieder begegnet: Zwei Geschwister erben ein Einfamilienhaus aus den 1970er-Jahren, beide wohnen weit weg. Das Haus ist gepflegt, aber Heizung, Fenster und Bad sind im Originalzustand. Der erste Impuls ist oft, den Preis an einem Portaldurchschnitt festzumachen. Mit Bodenrichtwert, Energieausweis und einer ehrlichen Sanierungskostenschätzung im Exposé kommt man zu einem Preis, der Familien aus der Region erreicht. Die Erben müssen in der Regel nur zum Notartermin anreisen.
@@ -465,29 +463,3 @@ Alle Quellen abgerufen am 2026-09-30. P = Primärquelle, S = Sekundärquelle.
 43. (S) Bitburger Braugruppe: Unternehmen, https://www.bitburger-international.com/de/unternehmen, Stand 2025/2026
 44. (S) ProvenExpert: Profil Sandro Mezzarano, https://www.provenexpert.com/de-de/mezzarano-sandro/, Stand 30.09.2026
 45. (P) Beurkundungsgesetz, § 17 Abs. 2a, https://www.gesetze-im-internet.de/beurkg/__17.html
-
-<!--
-INTERN – SEO-Notizen (nicht veröffentlichen)
-
-Keywords (Wettbewerber-Exporte 2026-05): immobilienmakler bitburg (Vol 480, KD 5 laut Content-Map Art. 1); Varianten aus den Exporten: makler bitburg, bitburg immobilienmakler, immobilienmakler in bitburg, immobilienmakler bitburg-prüm / bitburg prüm, immobilienmakler eifelkreis bitburg prüm, immobilienmakler kreis bitburg prüm. Volumen der Varianten in den Exporten nachschlagen (xlsx nicht maschinell ausgewertet).
-
-Wettbewerber: Eifel-Mosel-Makler (Pos. 4 laut Quellensammlung, ca. 2.500–3.000 Wörter, FAQ, keine Marktdaten); Gilbers & Baasch (ca. 1.300 Wörter, keine Daten); Volksbank Immobilien (nicht abrufbar); LYOND, Grommes, Janssen jeweils ohne Quellen. Keine Wettbewerberseite nennt Bodenrichtwerte, §§ 656a–d BGB, Grunderwerbsteuer oder Grundsteuer-Hebesätze.
-
-KANNIBALISIERUNG: artikel/2026-05-18_immobilienmakler-bitburg.md hat dasselbe Haupt-Keyword und denselben Slug. Empfehlung: Blogartikel auf informationelle Keywords umstellen („Immobilien Bitburg“, „Wohnen in Bitburg“, „Immobilienmarkt Bitburg“), Slug ändern (z. B. /ratgeber/immobilien-bitburg/) mit 301 von der alten Blog-URL, H1/Title anpassen und auf diese Regionsseite verlinken (Anker „Immobilienmakler Bitburg“).
-
-Rückverlinkung auf diese Seite (nachziehen):
-- Art. 1 (Blogartikel Bitburg, nach Umstellung) → Regionsseite, wichtigster Link
-- Art. 8 Wohnung kaufen Bitburg → Regionsseite (Einleitung/Kontakt)
-- Art. 7 Haus kaufen Eifel → Regionsseite (Abschnitt Bitburger Land)
-- Art. 18 Luxemburg-Pendler → Regionsseite (Wohnorte-Abschnitt)
-- Art. 19 Was kostet Makler RLP → Regionsseite (regionales Beispiel)
-- Art. 43 Zwangsversteigerung Eifel → Regionsseite (AG Bitburg)
-
-VOR VERÖFFENTLICHUNG PRÜFEN:
-- Das Gebäudeenergiegesetz wird laut Recherche auf gesetze-im-internet.de inzwischen als „Gebäudemodernisierungsgesetz (GModG)“ geführt (Änderung 23.07.2026); §§ 80, 87, 108 unverändert. Bezeichnung im Text ggf. anpassen.
-- Grundsteuer-Hebesätze 2026 (laut Bekanntmachung 07.01.2026 wie 2025) jährlich prüfen.
-- Air-Base-Abzug: Stand vor Veröffentlichung prüfen.
-- Housing: städtebauliches Konzept für 10/2026 angekündigt – Status aktualisieren.
-- Fallbeispiele durch echte Fälle ersetzen (TODO oben).
-- Entfernung Bitburg–Spangdahlem (ca. 15 km) nicht aus Primärquelle belegt.
--->

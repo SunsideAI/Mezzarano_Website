@@ -360,12 +360,9 @@ Wie viel die Mikrolage ausmacht, hat mir ein Verkauf in Beurig gezeigt. Zwei Rei
 
 Am häufigsten sehe ich in Saarburg einen Fehler: Das Haus startet mit einem Preis, der sich an den besten Verkäufen von 2021 und 2022 orientiert. Nach drei Monaten ohne ernsthafte Anfrage wird reduziert, und Interessenten fragen sich, was mit dem Objekt nicht stimmt. Häuser, die mit einem realistischen Preis starten, verkaufen sich im Raum Trier-Saarburg in der Regel innerhalb von drei bis sechs Monaten.
 
-<!-- TODO Fallstudie: Konkreten Verkaufsfall aus Saarburg/Beurig/Kahren von Sandro ergänzen (Objekttyp, Ausgangslage, Vermarktungsdauer, Ergebnis ohne Kaufpreis). fallstudien-mezzarano.md enthält derzeit keinen Saarburg-Fall. -->
-
 ### Energieklasse als Preisfaktor
 
 Bei Häusern aus den 1960er- und 1970er-Jahren in Beurig und Niederleuken fragen Käufer heute als Erstes nach Heizung und Energieausweis. Ich empfehle Verkäufern deshalb, vor der Vermarktung eine grobe Sanierungsschätzung einzuholen. Wer die Kosten kennt, verhandelt sachlich statt über pauschale Abschläge.
-
 
 ## Häufig gestellte Fragen zu Immobilien in Saarburg
 
@@ -506,14 +503,3 @@ Sandro Mezzarano, Wüstenrot Immobilien, Saarstraße 1, 54411 Hermeskeil.
 [43] Ministerium der Finanzen Rheinland-Pfalz: Liste aufkommensneutraler Hebesätze, https://fm.rlp.de/fileadmin/04/Themen/Finanzen/Kommunale_Finanzen/Grundsteuerreform_-_Hebesaetze/Disclaimer_und_Liste.pdf, Stand 15.10.2024, abgerufen am 2026-09-30
 
 [44] STATEC Luxembourg: Emploi salarié, 3e trimestre 2025, https://statistiques.public.lu/fr/actualites/2026/stn02-26-emploi-salarie.html, Stand Q3/2025, abgerufen am 2026-09-30
-
-<!--
-SEO-Notizen:
-- Haupt-Keyword: immobilienmakler saarburg (SV 40, KD 5)
-- Neben-Keywords: makler saarburg (20, KD 3), immobilien saarburg (320, KD 8), saarburg immobilien (320, KD 8), immobilienmakler trier-saarburg (50, KD 18), immobilienmakler trier saarburg (50, KD 12)
-- Wettbewerber-Positionen "immobilienmakler saarburg" (Export 05/2026): Gilbers & Baasch Pos. 6, Eifel-Mosel-Makler Pos. 7; bei "immobilienmakler trier-saarburg" Gilbers & Baasch Pos. 2-3, Eifel-Mosel-Makler Pos. 5
-- Wettbewerber-Tiefe: Gilbers & Baasch ca. 800-1.000 Wörter, ohne Preise/Bodenrichtwerte/FAQ; Eifel-Mosel-Makler ca. 3.500-4.200 Wörter, 8 FAQ, keine Bodenrichtwerte
-- Kannibalisierung: Blogartikel 2026-05-18_haus-kaufen-saarburg führt "Immobilien Saarburg" als Nebenkeyword → dort entfernen, Blogartikel auf "Haus kaufen Saarburg" (informationell) fokussieren und auf diese Regionsseite verlinken. Außerdem dort "rund 7.700 Einwohner" auf 7.504 (31.12.2024) korrigieren.
-- Rückverlinkungsvorschläge: haus-kaufen-saarburg, immobilie-kaufen-luxemburg-pendler, haus-kaufen-hermeskeil (Abschnitt Vergleich), immobilienpreise-trier, bodenrichtwert-rheinland-pfalz, was-kostet-immobilienmakler-rheinland-pfalz → Anker "Immobilienmakler Saarburg"
-- Offene Punkte: TODO Fallstudien (2x); Grundsteuer-Hebesatz 2025/2026 bei VG erfragen; Bodenrichtwert-Zonen je Stadtteil nicht amtlich zugeordnet (nur Gemarkung)
--->

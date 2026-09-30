@@ -297,8 +297,6 @@ Bei Wohnimmobilien, also Einfamilienhäusern und Eigentumswohnungen, gilt seit d
 | Geteilt, höheres Segment | 2,975 % | 2,975 % | 5,95 % |
 | Geteilt, Standard | 3,57 % | 3,57 % | 7,14 % |
 
-<!-- TODO User: Mit Sandro abstimmen, welche Sätze bei Wüstenrot Immobilien für Trier konkret gelten. -->
-
 ### Rechenbeispiel für ein Haus in Trier
 
 Nehmen wir als Beispielwert ein Einfamilienhaus für 400.000 Euro. Bei 7,14 Prozent Gesamtprovision zahlen Verkäufer und Käufer je 14.280 Euro. Bei 5,95 Prozent sind es je 11.900 Euro. Mehr zu Leistung und Gegenleistung lesen Sie im Ratgeber [Was kostet ein Immobilienmakler in Rheinland-Pfalz?](https://mezzarano-wuestenrot-immobilien.de/was-kostet-immobilienmakler-rheinland-pfalz).
@@ -369,8 +367,6 @@ Sie sprechen mit mir, nicht mit einem Callcenter. Mein Büro ist in Hermeskeil i
 Ich arbeite als selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH. Sie haben also einen festen Ansprechpartner, und im Hintergrund stehen Verträge und Abläufe eines großen Hauses. Auf ProvenExpert habe ich eine Durchschnittsnote von 4,86 von 5 aus 54 Bewertungen (Stand 30.09.2026) [38]. Focus Money und Handelsblatt haben 2025 die Beratung ausgezeichnet.
 
 ## Aus der Praxis: Immobilienverkauf in Trier
-
-<!-- TODO Fallstudie: In fallstudien-mezzarano.md gibt es noch keinen konkreten Trierer Verkaufsfall. Bitte 1–2 freigegebene Fälle von Sandro ergänzen (Stadtteil, Objektart, Ausgangslage, Vorgehen, Ergebnis in Wochen – ohne Kaufpreis). Vorschlag: ein Einfamilienhaus aus dem Generationswechsel in Tarforst/Mariahof und eine vermietete Wohnung in Uni-Nähe. -->
 
 ### Was ich in Trier immer wieder erlebe
 
@@ -454,7 +450,7 @@ Mein Leitsatz lautet: Ehrlichkeit hat ein Zuhause. Daran können Sie mich messen
 6. Stadt Trier / Gutachterausschuss: Aktuelle Marktübersicht durch neuen Bodenrichtwertbericht, https://www.trier.de/aktuelles/nachrichten/17938.Aktuelle-Marktuebersicht-durch-neuen-Bodenrichtwertbericht.html, Stichtag 01.01.2026, abgerufen am 2026-09-30
 7. Stadt Trier: Neuer Mietspiegel bietet aktuelle Marktübersicht, https://www.trier.de/aktuelles/nachrichten/19440.Neuer-Mietspiegel-bietet-aktuelle-Marktuebersicht.html, gültig ab 01.07.2026, abgerufen am 2026-09-30
 8. Stadt Trier: Trier – Luxemburg (Bahnverbindung), https://www.trier.de/leben-in-trier/verkehr-mobilitaet/oeffentlicher-verkehr/2285.Trier---Luxemburg.html, abgerufen am 2026-09-30
-9. Landesgesetz über die Bestimmung des Steuersatzes bei der Grunderwerbsteuer (RLP) vom 31.01.2012, Steuersatz 5,0 % seit 01.03.2012 <!-- TODO Quelle: Primär-URL (landesrecht.rlp.de oder fm.rlp.de) ergänzen, bislang nur über Sekundärquellen bestätigt -->, abgerufen am 2026-09-30
+9. Landesgesetz über die Bestimmung des Steuersatzes bei der Grunderwerbsteuer (RLP) vom 31.01.2012, Steuersatz 5,0 % seit 01.03.2012 , abgerufen am 2026-09-30
 10. Immoportal: Immobilienpreise Trier, https://www.immoportal.com/immobilienpreise/trier, Stand 01.09.2026, abgerufen am 2026-09-30
 11. Ministerium des Innern Rheinland-Pfalz: Landesgrundstücksmarktbericht 2025 (Pressemitteilung), https://mdi.rlp.de/service/pressemitteilungen/detail/ebling-globale-entwicklungen-praegen-immobilienmarkt-in-rheinland-pfalz, Stand 20.03.2025, abgerufen am 2026-09-30
 12. Engel & Völkers: Mietspiegel Trier, https://www.engelvoelkers.com/de-de/mietspiegel/rheinland-pfalz/trier/, Stand 01.09.2026, abgerufen am 2026-09-30
@@ -484,30 +480,3 @@ Mein Leitsatz lautet: Ehrlichkeit hat ein Zuhause. Daran können Sie mich messen
 36. STATEC Luxemburg: Emploi salarié, https://statistiques.public.lu/fr/actualites/2026/stn02-26-emploi-salarie.html, Stand Q3/2025, abgerufen am 2026-09-30
 37. Landesamt für Umwelt RLP: Sturzflutgefahrenkarten, https://wasserportal.rlp-umwelt.de/auskunftssysteme/sturzflutgefahrenkarten, abgerufen am 2026-09-30
 38. ProvenExpert: Sandro Mezzarano, https://www.provenexpert.com/de-de/mezzarano-sandro/, Stand 30.09.2026, abgerufen am 2026-09-30
-
-<!--
-INTERNER HINWEIS (nicht veröffentlichen)
-
-Keywords (Wettbewerber-Exporte 2026-05):
-- makler trier: 260/Monat, KD 32 — Gilbers & Baasch Pos. 2–4, Volksbank Pos. 19, Eifel-Mosel-Makler Pos. 30+
-- trier makler: 260/Monat, KD 30 — Gilbers & Baasch Pos. 1–4, Eifel-Mosel-Makler Pos. 22
-- immobilienmakler in trier: 50, KD 22 — Gilbers & Baasch Pos. 2–4, Volksbank Pos. 14
-- trier immobilienmakler: 40, KD 22
-- immobilienmakler trier und umgebung: 30, KD 22
-- immobilienmakler trier: 10, KD 23 (Export-Wert vermutlich unterschätzt)
-- Wettbewerber-Regionsseiten: eifelmoselmakler.de/immobilienmakler-trier/ (+ Unterseiten Tarforst, Petrisberg, Pfalzel)
-
-Kannibalisierung:
-- „Immobilien in Trier" (artikel/2026-05-18_immobilien-trier.md) führt „Immobilienmakler Trier" als Neben-Keyword. Empfehlung: dort entfernen, Artikel auf „Immobilien Trier / Immobilienmarkt Trier" fokussieren und mit Anker „Immobilienmakler Trier" auf diese Seite verlinken.
-
-Rückverlinkungsvorschläge (auf diese Seite):
-- immobilien-trier, immobilienpreise-trier, immobilienbewertung-trier, wohnen-in-trier, immobilie-kaufen-luxemburg-pendler, was-kostet-immobilienmakler-rheinland-pfalz
-
-Offene TODOs:
-- Fallstudie(n) Trier ergänzen
-- Provisionssätze Wüstenrot Trier bestätigen
-- Primär-URL Landesgesetz Grunderwerbsteuer RLP ergänzen
-- Brubacher Hof: aktuellen Planungsstand prüfen, bevor er erwähnt wird
-
-Citation Capsules: 5 (Marktdaten 2025, Bodenrichtwerte, Pendler, Bewertung, Kaufnebenkosten)
--->

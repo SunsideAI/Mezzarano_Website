@@ -348,8 +348,6 @@ Sie sprechen mit mir, nicht mit einem Callcenter. Auf ProvenExpert haben mir Kun
 
 ## Aus der Praxis in Konz
 
-<!-- TODO Fallstudie: Konkretes, von Sandro freigegebenes Verkaufsbeispiel aus Konz oder der VG Konz ergänzen (Objektart, Ortsteil, Ausgangslage, Vorgehen, Ergebnis ohne Kaufpreis). Aktuell liegen in fallstudien-mezzarano.md keine Konz-Fälle vor. -->
-
 ### Wenn der Angebotspreis zu hoch startet
 
 Das sehe ich in meiner Arbeit zwischen Hermeskeil und der Saar regelmäßig: Ein Eigentümer orientiert sich am höchsten Preis, den er in einem Portal gesehen hat, und startet 10 oder 15 Prozent über Markt. Nach acht Wochen ohne ernsthaftes Angebot wird reduziert, und Interessenten fragen sich, was mit dem Haus nicht stimmt. Immobilien mit realistischem Startpreis verkaufen sich im Raum Trier-Saarburg nach meiner Erfahrung typischerweise innerhalb von drei bis sechs Monaten.
@@ -477,34 +475,3 @@ Sandro Mezzarano, Wüstenrot Immobilien, Saarstraße 1, 54411 Hermeskeil
 [27] ProvenExpert: Bewertungsprofil Sandro Mezzarano, https://www.provenexpert.com/de-de/mezzarano-sandro/, Stand 27.09.2026, abgerufen am 2026-09-30
 
 [28] Aufsichts- und Dienstleistungsdirektion Rheinland-Pfalz: Grundstückverkehrsgesetz, https://add.rlp.de/themen/landwirtschaft-und-weinbau/landwirtschafter-grundstuecksverkehr/grundstuecksverkehrsgesetz, ohne Datum, abgerufen am 2026-09-30
-
-<!--
-SEO-NOTIZEN (nicht veröffentlichen)
-
-Keywords (Semrush-Wettbewerberexporte, 2026-05):
-- konz immobilienmakler: SV 170, KD 5 (Local Pack)
-- immobilien konz / konz immobilien: SV 170, KD 7
-- immobilienmakler konz: SV 50, KD 4
-- makler konz: SV 20, KD 4
-- immobilien konz kaufen: SV 20, KD 10
-Wettbewerber-Positionen: gilbers-baasch.de „konz immobilienmakler“ Pos. 6, „immobilienmakler konz“ Pos. 7; volksbank.immobilien „immobilienmakler konz“ Pos. 6, „konz immobilienmakler“ Pos. 8; eifelmoselmakler.de „immobilienmakler konz“ Pos. 19.
-Wettbewerberseiten ohne amtliche Quellen, größte FAQ 9 Fragen (Volksbank). Diese Seite: 12 FAQ, amtliche BRW je Ort.
-
-URL: Die Seite ersetzt die bestehende https://mezzarano-wuestenrot-immobilien.de/regionen/konz. Empfehlung: bestehende URL beibehalten (keine Umleitung nötig), der Slug im Frontmatter dient nur der Ablage.
-Korrektur gegenüber Original: Wincheringen gehört zur VG Saarburg-Kell, nicht zur VG Konz. Entfernung Trier laut Stadt ca. 8 km (Original: 10 km). Preisspanne 280.000–600.000 € aus dem Original entfernt (nicht belegbar).
-
-Kannibalisierung: Kein Blogartikel zu Konz vorhanden. Content-Map Art. 32 „Haus kaufen Konz“ (haus-kaufen-konz) bleibt laut Nutzerentscheidung separat. Diese Seite zielt transaktional auf „Immobilienmakler Konz“ mit Verkäuferfokus; Kauf-Keywords („haus kaufen konz“, „wohnung kaufen konz“, „haus kaufen konz roscheid“) bewusst NICHT als Keywords gesetzt. Art. 32 soll auf diese Seite verlinken.
-
-Rückverlinkungsvorschläge (auf /regionen/konz):
-- /ratgeber/immobilie-kaufen-luxemburg-pendler/ (Abschnitt Wohnorte/Grenzregion)
-- /ratgeber/haus-kaufen-saarburg/ (Nachbarregion)
-- /ratgeber/haus-kaufen-mosel/ (Obermosel, Nittel)
-- /ratgeber/bodenrichtwert-rheinland-pfalz/ (Beispielregionen)
-- /ratgeber/elementarschadenversicherung-wittlich/ (Verweis Saar/Mosel)
-- /regionen/saarburg und /regionen/trier (Nachbarregionen)
-- künftiger Art. 32 haus-kaufen-konz
-
-Offen für Sandro:
-- Freigegebenes Konz-Verkaufsbeispiel für „Aus der Praxis“
-- Bestätigung Provisionssatz (7,14 % / 5,95 %)
--->

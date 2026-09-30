@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Home, Grape, Mountain, CheckCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, Grape, Mountain } from 'lucide-react'
 import RegionMarkdownContent from '@/components/RegionMarkdownContent'
 
 export const metadata: Metadata = {
@@ -16,46 +16,9 @@ export const metadata: Metadata = {
   },
 }
 
-const highlights = [
-  {
-    icon: Grape,
-    title: 'Weinregion Mosel',
-    description: 'Spezialisiert auf Immobilien in der weltbekannten Mosel-Weinregion mit einzigartigen Objekten.'
-  },
-  {
-    icon: Mountain,
-    title: 'Traumhafte Lagen',
-    description: 'Häuser und Wohnungen mit Weinbergsblick und direktem Zugang zur Mosel.'
-  },
-  {
-    icon: Home,
-    title: 'Vielfältiges Angebot',
-    description: 'Von der Ferienwohnung über das Fachwerkhaus bis zum Weingut – für jeden Anspruch.'
-  },
-]
-
 const orte = [
   'Bernkastel-Kues', 'Graach', 'Wehlen', 'Zeltingen-Rachtig', 'Ürzig',
   'Traben-Trarbach', 'Kröv', 'Wittlich', 'Mülheim', 'Brauneberg'
-]
-
-const faqItems = [
-  {
-    question: 'Sind Immobilien an der Mosel eine gute Investition?',
-    answer: 'Die Moselregion profitiert von stabilem Tourismus und wachsender Beliebtheit als Wohn- und Ferienstandort. Besonders Objekte mit Moselblick oder in den historischen Ortskernen wie Bernkastel-Kues sind wertstabil. Ferienimmobilien können zudem attraktive Mieteinnahmen generieren.'
-  },
-  {
-    question: 'Was kosten Immobilien in Bernkastel-Kues?',
-    answer: 'Die Preise variieren stark je nach Lage und Zustand. Renovierte Fachwerkhäuser in der Altstadt beginnen bei ca. 300.000 €, während exklusive Mosellagen mit Weinbergsblick deutlich teurer sind. Eigentumswohnungen sind ab ca. 150.000 € erhältlich.'
-  },
-  {
-    question: 'Gibt es Weingüter zum Verkauf?',
-    answer: 'Vereinzelt kommen Weingüter oder ehemalige Winzerhöfe auf den Markt. Diese eignen sich sowohl als Wohnimmobilie mit besonderem Charme als auch für Investoren, die in den Weinbau einsteigen möchten. Sprechen Sie mich für aktuelle Angebote an.'
-  },
-  {
-    question: 'Wie ist die Infrastruktur in Bernkastel-Kues?',
-    answer: 'Als Mittelzentrum bietet Bernkastel-Kues alle wichtigen Einrichtungen: Schulen, Ärzte, Einkaufsmöglichkeiten und Krankenhaus. Die Anbindung über die B50 nach Trier (ca. 30 Min.) und zur Autobahn ist gut. Im Sommer verkehren Ausflugsschiffe auf der Mosel.'
-  },
 ]
 
 export default function BernkastelKuesPage() {
@@ -142,55 +105,7 @@ export default function BernkastelKuesPage() {
       {/* Ausführlicher SEO-Content aus src/content/regionen/bernkastel-kues.md */}
       <RegionMarkdownContent slug="bernkastel-kues" />
 
-      {/* Introduction */}
-      <section className="py-10 md:py-16 bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
-              Immobilien an der Mosel – Einzigartig schön
-            </h2>
-            <div className="prose prose-lg max-w-none text-secondary-700">
-              <p>
-                Bernkastel-Kues ist das Herz der Mittelmosel und einer der malerischsten
-                Orte Deutschlands. Die historische Fachwerk-Altstadt, die steilen Weinberge und der Fluss
-                machen diese Region zu einem begehrten Wohn- und Ferienstandort.
-              </p>
-              <p>
-                Der Immobilienmarkt an der Mosel bietet einzigartige Möglichkeiten: liebevoll restaurierte
-                Fachwerkhäuser, moderne Wohnungen mit Moselblick, ehemalige Winzerhöfe und sogar komplette
-                Weingüter. Ob als Hauptwohnsitz, Feriendomizil oder Kapitalanlage – die Moselregion
-                begeistert durch Charme und Lebensqualität.
-              </p>
-              <p>
-                Als Ihr Wüstenrot Immobilienpartner mit Sitz in Hermeskeil (nur 30 Minuten entfernt)
-                kenne ich den lokalen Markt und begleite Sie kompetent bei Kauf oder Verkauf.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Warum Immobilien an der Mosel?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {highlights.map((item, index) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="h-7 w-7 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
-                <p className="text-secondary-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Property Types */}
+                  {/* Property Types */}
       <section className="py-10 md:py-16 bg-white">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
@@ -254,26 +169,7 @@ export default function BernkastelKuesPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Häufige Fragen zu Mosel-Immobilien
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-3">
-                  {item.question}
-                </h3>
-                <p className="text-secondary-600">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+            {/* CTA */}
       <section className="py-10 md:py-16 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">

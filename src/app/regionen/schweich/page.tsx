@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Home, Car, Building, CheckCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, Car, Building, CheckCircle } from 'lucide-react'
 import RegionMarkdownContent from '@/components/RegionMarkdownContent'
 
 export const metadata: Metadata = {
@@ -16,46 +16,9 @@ export const metadata: Metadata = {
   },
 }
 
-const highlights = [
-  {
-    icon: Car,
-    title: 'Ideale Lage',
-    description: 'Perfekte Verkehrsanbindung: 10 Min. nach Trier, 20 Min. nach Luxemburg.'
-  },
-  {
-    icon: Home,
-    title: 'Familienfreundlich',
-    description: 'Ausgezeichnete Infrastruktur mit Schulen, Kitas und Freizeitmöglichkeiten.'
-  },
-  {
-    icon: Building,
-    title: 'Wachstumsregion',
-    description: 'Attraktiver Immobilienmarkt durch Nähe zu Luxemburg und Trier.'
-  },
-]
-
 const gemeinden = [
   'Schweich', 'Longuich', 'Mehring', 'Leiwen', 'Detzem',
   'Fell', 'Bekond', 'Föhren', 'Naurath', 'Kenn'
-]
-
-const faqItems = [
-  {
-    question: 'Warum ist Schweich als Wohnort so beliebt?',
-    answer: 'Schweich kombiniert ländliche Idylle mit städtischer Nähe. Die exzellente Verkehrsanbindung (A1, B53) ermöglicht schnelles Pendeln nach Trier (10 Min.) und Luxemburg (20 Min.). Gleichzeitig bietet die Stadt alle wichtigen Einrichtungen, eine lebendige Innenstadt und die Mosel vor der Haustür.'
-  },
-  {
-    question: 'Wie entwickeln sich die Immobilienpreise in Schweich?',
-    answer: 'Der Immobilienmarkt in Schweich ist durch die Nähe zu Luxemburg und Trier sehr dynamisch. Die Preise sind in den letzten Jahren gestiegen, bieten aber im Vergleich zu Trier noch ein besseres Preis-Leistungs-Verhältnis. Besonders Neubaugebiete und Objekte mit guter Anbindung sind gefragt.'
-  },
-  {
-    question: 'Gibt es Neubaugebiete in Schweich?',
-    answer: 'Ja, Schweich und die umliegenden Gemeinden weisen regelmäßig neue Baugebiete aus. Die Nachfrage ist hoch, daher empfehle ich frühzeitige Kontaktaufnahme, wenn Sie an einem Baugrundstück interessiert sind. Ich informiere Sie gerne über aktuelle und geplante Projekte.'
-  },
-  {
-    question: 'Ist Schweich gut für Pendler nach Luxemburg geeignet?',
-    answer: 'Hervorragend. Über die A1 erreichen Sie Luxemburg-Stadt in etwa 25-30 Minuten. Viele Luxemburg-Pendler wählen Schweich und Umgebung als Wohnort, da hier die Immobilienpreise deutlich günstiger sind als in Luxemburg selbst, bei guter Lebensqualität.'
-  },
 ]
 
 export default function SchweichPage() {
@@ -142,55 +105,7 @@ export default function SchweichPage() {
       {/* Ausführlicher SEO-Content aus src/content/regionen/schweich.md */}
       <RegionMarkdownContent slug="schweich" />
 
-      {/* Introduction */}
-      <section className="py-10 md:py-16 bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
-              Schweich – Wohnen mit Mosel-Flair und Top-Anbindung
-            </h2>
-            <div className="prose prose-lg max-w-none text-secondary-700">
-              <p>
-                Schweich ist die perfekte Verbindung aus ländlicher Lebensqualität
-                und städtischer Erreichbarkeit. Als Verwaltungssitz der Verbandsgemeinde bietet die
-                Stadt an der Mosel alle wichtigen Einrichtungen, während Trier und Luxemburg
-                schnell erreichbar bleiben.
-              </p>
-              <p>
-                Der Immobilienmarkt in Schweich ist besonders bei Familien und Luxemburg-Pendlern
-                gefragt. Die Stadt bietet ein vielfältiges Angebot: von Einfamilienhäusern in
-                gewachsenen Wohngebieten über moderne Neubauten bis zu Eigentumswohnungen mit Moselblick.
-              </p>
-              <p>
-                Als Ihr Wüstenrot Immobilienpartner mit Sitz in Hermeskeil unterstütze ich Sie
-                bei der Suche nach Ihrer Traumimmobilie in Schweich oder beim Verkauf Ihres Objekts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Warum Schweich?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {highlights.map((item, index) => (
-              <div key={item.title} className="bg-white p-8 rounded-xl shadow-lg smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="h-7 w-7 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{item.title}</h3>
-                <p className="text-secondary-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Vorteile für Pendler */}
+                  {/* Vorteile für Pendler */}
       <section className="py-10 md:py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -255,26 +170,7 @@ export default function SchweichPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Häufige Fragen zu Immobilien in Schweich
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-3">
-                  {item.question}
-                </h3>
-                <p className="text-secondary-600">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Weitere Regionen */}
+            {/* Weitere Regionen */}
       <section className="py-10 md:py-16 bg-white">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-secondary-900 mb-8">

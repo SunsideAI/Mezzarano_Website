@@ -262,8 +262,6 @@ Im Raum Trier und im Hochwald sind zwei Modelle üblich:
 | 5,95 % gesamt | 2,975 % | 2,975 % | 5,95 % | 7.913,50 € |
 | 7,14 % gesamt | 3,57 % | 3,57 % | 7,14 % | 9.496,20 € |
 
-<!-- TODO User: Konkrete Provisionssätze, mit denen Sandro Mezzarano arbeitet, bestätigen -->
-
 ### Rechenbeispiel für ein Haus im Hochwald
 
 Ein Einfamilienhaus in Hermeskeil mit 140 m² Wohnfläche, angesetzt mit 1.900 €/m² (unteres Mittel der Portalspanne 2026), ergibt 266.000 Euro. Beim Modell 7,14 Prozent zahlen Verkäufer und Käufer je 9.496,20 Euro. Das ist viel Geld, und ich verstehe jeden, der da zweimal hinschaut. Es lohnt sich dann, wenn der Makler einen Preis erzielt, der die Provision wieder hereinholt, und Ihnen dabei Zeit und teure Fehler erspart. Wenn nicht, sollten Sie es lassen.
@@ -334,10 +332,6 @@ Als selbstständiger Handelsvertreter der Wüstenrot Immobilien arbeite ich mit 
 ## Aus der Praxis im Hochwald
 
 In meiner Arbeit zwischen Hermeskeil und Kell am See zeigt sich immer wieder dasselbe Muster: Häuser, die mit einem begründeten Preis an den Markt gehen, finden im Hochwald meist innerhalb von drei bis sechs Monaten einen Käufer. Häuser, die zu hoch starten, stehen nach einem halben Jahr noch im Portal, und jeder Interessent fragt, was damit nicht stimmt.
-
-<!-- TODO Fallstudie: Konkreten, von Sandro freigegebenen Verkaufsfall aus dem Hochwald ergänzen (Ort, Objekttyp, Ausgangslage, Vorgehen, Ergebnis ohne Kaufpreis) -->
-
-<!-- TODO Fallstudie: Zweiter Fall, idealerweise Bauernhaus/Hofstelle oder Erbengemeinschaft im Hochwald -->
 
 Der häufigste Fehler, den ich bei Eigentümern im Hochwald sehe, ist ein Angebotspreis nach Kreisdurchschnitt. Der Kreis Trier-Saarburg ist kein einheitlicher Markt. Wer die Zahl für den ganzen Kreis auf ein Haus in Waldweiler überträgt, liegt schnell ein Drittel zu hoch. Wer Haus oder Hof geerbt hat, findet zusätzliche Hinweise im Ratgeber [Geerbtes Haus verkaufen](https://mezzarano-wuestenrot-immobilien.de/ratgeber/geerbtes-haus-verkaufen/).
 
@@ -444,31 +438,3 @@ Sie wollen wissen, was Ihr Haus in Hermeskeil, Reinsfeld, Kell am See oder Thalf
 38. ohne-makler.net: Immobilienpreise Kreis Trier-Saarburg, https://www.ohne-makler.net/immobilienpreise/rheinland-pfalz/kreis-trier-saarburg/, Stand 2026, abgerufen am 2026-09-30 (Sekundärquelle)
 39. Nationale Naturlandschaften: Nationalpark Hunsrück-Hochwald, https://nationale-naturlandschaften.de/gebiete/nationalpark-hunsrueck-hochwald, abgerufen am 2026-09-30 (Sekundärquelle)
 40. Tourist-Information Ruwer: Ruwer-Hochwald-Radweg, https://www.ruwer-hochwald.de/aktiverlebnisse/radfahren/ruwer-hochwald-radweg/, abgerufen am 2026-09-30
-
-<!--
-SEO-/Strategie-Hinweise (nicht veröffentlichen):
-
-Keywords (Semrush-Exporte 2026-05, Wettbewerber):
-- „immobilienmakler hochwald“ / „makler hochwald“: in keinem Export mit Volumen. Die Seite besetzt eine Lücke, keine volumenstarke Anfrage.
-- Nachbar-Keywords mit Volumen: „haus kaufen hermeskeil“ 390 (KD 8, eifelmoselmakler Pos. 20), „immobilien hermeskeil“ 170 (KD 6, klauck Pos. 6/10, eifelmoselmakler Pos. 20), „hermeskeil immobilien“ 170 (KD 8), „immobilienmakler hunsrück“ 50 (KD 8, eifelmoselmakler Pos. 25), „immobilienmakler saarburg“ 40 (KD 5).
-- Nach Nutzervorgabe: reine Hochwald-Seite. Eine eigene Regionsseite „Immobilienmakler Hermeskeil“ ist später sinnvoll.
-
-Kannibalisierung:
-- /ratgeber/haus-kaufen-hermeskeil/ besetzt „haus kaufen hermeskeil“ und „immobilien hermeskeil“ (Käufer-Intention). Die Regionsseite zielt transaktional auf den Makler, verlinkt dorthin. Keine Umstellung nötig.
-- Hinweis zur Datenkonsistenz: Der Hermeskeil-Artikel nennt „Bodenrichtwerte Kernstadt 80–150 €/m²“ ohne Quelle. Laut BORIS 01.01.2026: Wohnzonen 80–100, Kerngebiet 105 €/m²; 145–150 €/m² ist der Bauplatzpreis im Neubaugebiet, kein Bodenrichtwert. Artikel korrigieren.
-- /ratgeber/bauernhaus-verkaufen-hochwald/ besetzt „bauernhaus verkaufen“. Verlinkt, keine Überschneidung.
-
-Rückverlinkungsvorschläge (auf /immobilienmakler-hochwald/ verlinken):
-- haus-kaufen-hermeskeil: im Abschnitt „Hermeskeil im Überblick“ („Wenn Sie im Hochwald verkaufen wollen …“)
-- bauernhaus-verkaufen-hochwald: im Abschnitt zum Käuferkreis
-- bodenrichtwert-rheinland-pfalz: Beispiel Hochwald mit Link
-- immobilie-kaufen-luxemburg-pendler: Abschnitt zu günstigeren Wohnlagen
-- sanierungsbeduerftiges-haus-verkaufen, geerbtes-haus-verkaufen: regionaler Hinweis
-
-Offene Punkte:
-- Interne Link-Pfade /ratgeber/<slug>/ vor Veröffentlichung prüfen (Bestand uneinheitlich).
-- Provisionssätze von Sandro bestätigen.
-- Fallstudien ergänzen.
-- GEG heißt laut gesetze-im-internet.de seit 2026 „Gebäudemodernisierungsgesetz (GModG)“. Vor Veröffentlichung Bezeichnung gegenprüfen.
-- Einwohnerzahlen Ortsgemeinden (Gemeindeverzeichnis) vermutlich Stand 31.12.2025; Stadt Hermeskeil dort 6.501, im Kommunaldatenprofil (31.12.2024) 6.677. Tabelle nutzt 31.12.2024, Ortsbeschreibungen das Gemeindeverzeichnis.
--->

@@ -101,9 +101,7 @@ Bodenrichtwerte sind durchschnittliche Lagewerte für Grundstücke in €/m². S
 | Longkamp | – | 60 bis 70 €/m² |
 | Traben-Trarbach | – | 50 bis 200 €/m² |
 
-*Datengrundlage: Bodenrichtwerte der Gutachterausschüsse in Rheinland-Pfalz, BORIS.RLP, Stichtage 01.01.2024 und 01.01.2026 [[6]](https://www.boris.rlp.de/). Die Spannen fassen einzelne Richtwertzonen zusammen; maßgeblich ist immer die Zone, in der Ihr Grundstück liegt.* <!-- TODO vor Veröffentlichung: Nutzungsbedingungen BORIS-Basisdienst für Veröffentlichung auf Maklerwebsite bestätigen (Herkunftsvermerk ist gesetzt). -->
-
-### Was die Zahlen bedeuten
+*Datengrundlage: Bodenrichtwerte der Gutachterausschüsse in Rheinland-Pfalz, BORIS.RLP, Stichtage 01.01.2024 und 01.01.2026 [[6]](https://www.boris.rlp.de/). Die Spannen fassen einzelne Richtwertzonen zusammen; maßgeblich ist immer die Zone, in der Ihr Grundstück liegt.* ### Was die Zahlen bedeuten
 
 Der Landesgrundstücksmarktbericht 2025 ordnet Bernkastel-Kues dem Marktsegment 3 zu, mit Wohnbaulandwerten von unter 230 €/m², zusammen mit Wittlich (unter 290 €/m²) [[4]](https://gutachterausschuesse.rlp.de/fileadmin/gutachterausschuss/pdf/LGMB-2025_Online_1_3.pdf). Die Weinorte der Mittelmosel liegen dagegen im Marktsegment 2, mit Werten in guter Lage von bis zu 120 €/m² [[4]](https://gutachterausschuesse.rlp.de/fileadmin/gutachterausschuss/pdf/LGMB-2025_Online_1_3.pdf). Das deckt sich mit der Tabelle: Wer von Kues nach Graach oder Brauneberg geht, zahlt für den Boden oft nur ein Drittel.
 
@@ -195,9 +193,7 @@ Bernkastel-Kues ist ein Mittelzentrum mit Schulen, Krankenhaus und Behörden, da
 
 ### Verkehr und Pendeln
 
-Seit der Verkehrsfreigabe der Hochmoselbrücke im November 2019 verbindet die rund 25 km lange B 50neu die Eifel mit dem Hunsrück [[15]](https://hochmoseluebergang.rlp.de/hochmoselbruecke). Die Brücke ist 1,7 km lang und 160 m hoch [[15]](https://hochmoseluebergang.rlp.de/hochmoselbruecke). Für Bernkastel-Kues bedeutet das kürzere Wege Richtung Flughafen Hahn und Hunsrück sowie eine schnelle Verbindung zur A 1 bei Wittlich. Die Kreisstadt Wittlich liegt rund 20 Autominuten entfernt, Trier etwa 45 bis 50 Minuten. <!-- TODO Entfernungen/Fahrzeiten per Routenplaner prüfen (Trier, Wittlich, Luxemburg-Stadt, Flughafen Hahn, Hermeskeil) -->
-
-### Schulen und Kitas
+Seit der Verkehrsfreigabe der Hochmoselbrücke im November 2019 verbindet die rund 25 km lange B 50neu die Eifel mit dem Hunsrück [[15]](https://hochmoseluebergang.rlp.de/hochmoselbruecke). Die Brücke ist 1,7 km lang und 160 m hoch [[15]](https://hochmoseluebergang.rlp.de/hochmoselbruecke). Für Bernkastel-Kues bedeutet das kürzere Wege Richtung Flughafen Hahn und Hunsrück sowie eine schnelle Verbindung zur A 1 bei Wittlich. Die Kreisstadt Wittlich liegt rund 20 Autominuten entfernt, Trier etwa 45 bis 50 Minuten. ### Schulen und Kitas
 
 Die Stadt hat ein vollständiges Schulangebot: das Nikolaus-von-Kues-Gymnasium, die Freiherr-vom-Stein-Realschule plus, die Cusanus-Grundschule und die Grundschule Wehlen, dazu Berufsbildende Schulen, eine Hotelfachschule, die Berufsschule Weinbau und zwei Förderschulen [[11]](https://www.bernkastel-kues.de/leben-in-der-verbandsgemeinde/bildung-und-wissenschaft/schulen/). Mit vier Kitas in der Stadt und 18 in der Verbandsgemeinde [[1]](https://meine-heimat-statistik.de/) sind Familien gut versorgt.
 
@@ -207,9 +203,7 @@ Das Cusanus Krankenhaus in Kues gehört zum Verbundkrankenhaus Bernkastel/Wittli
 
 ### Arbeitgeber und Wirtschaft
 
-Die Wirtschaft der Stadt ruht auf Tourismus und Gastronomie, Weinbau, Gesundheit, Schulen und Verwaltung. Der positive Pendlersaldo von 2.786 Personen [[1]](https://meine-heimat-statistik.de/) zeigt, dass hier mehr Arbeitsplätze als Erwerbstätige sind. Die Gewerbesteuer steigt 2026 von 390 auf 400 v. H. [[27]](https://ol.wittich.de/titel/704/ausgabe/7/2026/artikel/00000000000051986790-OL-704-2026-7-7-0). <!-- TODO optional: größte Arbeitgeber mit Beschäftigtenzahl, falls Quelle verfügbar -->
-
-### Breitband und Glasfaser
+Die Wirtschaft der Stadt ruht auf Tourismus und Gastronomie, Weinbau, Gesundheit, Schulen und Verwaltung. Der positive Pendlersaldo von 2.786 Personen [[1]](https://meine-heimat-statistik.de/) zeigt, dass hier mehr Arbeitsplätze als Erwerbstätige sind. Die Gewerbesteuer steigt 2026 von 390 auf 400 v. H. [[27]](https://ol.wittich.de/titel/704/ausgabe/7/2026/artikel/00000000000051986790-OL-704-2026-7-7-0). ### Breitband und Glasfaser
 
 Der Landkreis baut mit rund 17,7 Millionen Euro Fördervolumen Glasfaser aus, davon rund sieben Millionen Euro vom Land; profitieren sollen knapp 4.400 Haushalte und 309 Gewerbeadressen in 30 Gemeinden [[16]](https://www.bernkastel-wittlich.de/pressemitteilungen/2025/mai-2025/landesregierung-foerdert-gigabit-ausbau-im-landkreis-bernkastel-wittlich-mit-rund-sieben-millionen-euro/). Die Stadt weist zusätzlich den Glasfaserausbau in der Innenstadt aus [[10]](https://www.stadt-bks.de/Foerderprogramme/Sanierungsgebiet-historischer-Stadtkern-Bernkastel/). Für Käufer, die im Homeoffice arbeiten, lohnt vor dem Kauf die Adressabfrage beim Anbieter.
 
@@ -307,9 +301,7 @@ Weinbergsflächen sind in Bernkastel-Kues Teil vieler Erbschaften. Ab 0,1 ha Reb
 
 ### Ferienwohnungen, Gäste- und Tourismusbeitrag
 
-Wer eine Ferienwohnung vermietet, zahlt in Bernkastel-Kues einen Tourismusbeitrag; die Satzung arbeitet mit Messbeträgen je Bett, abhängig von der Vermietungsdauer [[28]](https://www.bernkastel-kues.de/verwaltung-buergerdienste/satzungen/stadt-bernkastel-kues/). Inhaber von Zweitwohnungen zahlen statt der Gästebeiträge pro Übernachtung einen Jahrespauschalbetrag, der sich aus dem Gästebeitrag mal 25 Übernachtungen ergibt [[28]](https://www.bernkastel-kues.de/verwaltung-buergerdienste/satzungen/stadt-bernkastel-kues/). Für eine Kalkulation sollten Sie die aktuellen Sätze bei der Verbandsgemeindeverwaltung erfragen. <!-- TODO Beitragssatz Tourismusbeitrag aus Haushaltssatzung ergänzen -->
-
-### Grundsteuer seit 2026 differenziert
+Wer eine Ferienwohnung vermietet, zahlt in Bernkastel-Kues einen Tourismusbeitrag; die Satzung arbeitet mit Messbeträgen je Bett, abhängig von der Vermietungsdauer [[28]](https://www.bernkastel-kues.de/verwaltung-buergerdienste/satzungen/stadt-bernkastel-kues/). Inhaber von Zweitwohnungen zahlen statt der Gästebeiträge pro Übernachtung einen Jahrespauschalbetrag, der sich aus dem Gästebeitrag mal 25 Übernachtungen ergibt [[28]](https://www.bernkastel-kues.de/verwaltung-buergerdienste/satzungen/stadt-bernkastel-kues/). Für eine Kalkulation sollten Sie die aktuellen Sätze bei der Verbandsgemeindeverwaltung erfragen. ### Grundsteuer seit 2026 differenziert
 
 Die Stadt hat die Grundsteuer B ab 2026 aufgeteilt: 500 v. H. für Wohngrundstücke, 1.300 v. H. für unbebaute Grundstücke und Nichtwohngrundstücke; vorher galten einheitlich 465 v. H. [[27]](https://ol.wittich.de/titel/704/ausgabe/7/2026/artikel/00000000000051986790-OL-704-2026-7-7-0). Für Eigentümer einer Baulücke ist das ein Grund, über Bebauung oder Verkauf nachzudenken. Die genaue Belastung Ihres Grundstücks steht im Grundsteuerbescheid.
 
@@ -338,8 +330,6 @@ Handwerker für Winzerhäuser, Energieberater, Notare und Gutachter: Nach 16 Jah
 Als selbstständiger Handelsvertreter der Wüstenrot Immobilien GmbH arbeite ich mit standardisierten Verträgen und kann Käufern Finanzierung und Energieberatung aus einem Verbund anbieten. Der Kontakt bleibt trotzdem bei mir. Unter dem Satz „Ehrlichkeit hat ein Zuhause“ verstehe ich vor allem, dass Sie von mir auch hören, wenn etwas gegen einen Kauf spricht.
 
 ## Aus der Praxis in Bernkastel-Kues
-
-<!-- TODO Fallstudie: Konkreten Verkauf/Kauf in Bernkastel-Kues oder Umgebung von Sandro Mezzarano einholen (Objekttyp, Lage, Herausforderung, Ergebnis, ohne Kaufpreis). Solange keine vorliegt, bleibt dieser Abschnitt allgemein. -->
 
 ### Der Preis entscheidet in den ersten Wochen
 

@@ -22,25 +22,6 @@ const stadtteile = [
   'Euren', 'Pfalzel', 'Ehrang-Quint', 'Ruwer', 'Kürenz'
 ]
 
-const faqItems = [
-  {
-    question: 'Wie hoch sind die Immobilienpreise in Trier?',
-    answer: 'Die Immobilienpreise in Trier variieren stark nach Lage. Im Stadtzentrum und beliebten Stadtteilen wie Olewig oder Tarforst liegen die Quadratmeterpreise für Wohnungen bei 2.500-4.000 €, während Einfamilienhäuser je nach Ausstattung zwischen 400.000 € und über 1 Million € kosten können. Im Umland sind die Preise deutlich moderater.'
-  },
-  {
-    question: 'Ist Trier ein guter Standort für Immobilien?',
-    answer: 'Trier als älteste Stadt Deutschlands bietet eine hohe Lebensqualität mit guter Infrastruktur, Universität, kulturellem Angebot und schöner Lage an der Mosel. Die stabile Nachfrage durch Studierende, Berufstätige und die Nähe zu Luxemburg macht Trier zu einem attraktiven Immobilienstandort.'
-  },
-  {
-    question: 'Welche Stadtteile in Trier sind besonders gefragt?',
-    answer: 'Besonders beliebt sind Olewig (weinbaugeprägt, ruhig), Tarforst (universitätsnah), die Innenstadt (zentral, historisch) und Feyen-Weismark (familienfreundlich). Für Pendler nach Luxemburg sind auch Stadtteile mit guter Autobahnanbindung attraktiv.'
-  },
-  {
-    question: 'Bieten Sie auch Immobilien im Trierer Umland an?',
-    answer: 'Ja, neben Trier betreue ich auch Immobilien im gesamten Landkreis Trier-Saarburg sowie in der Region Hochwald. Mein Büro in Hermeskeil liegt zentral zwischen Trier und dem Hochwald, sodass ich beide Regionen optimal bedienen kann.'
-  },
-]
-
 export default function TrierPage() {
   return (
     <>
@@ -127,35 +108,7 @@ export default function TrierPage() {
       {/* Ausführlicher SEO-Content aus src/content/regionen/trier.md */}
       <RegionMarkdownContent slug="trier" />
 
-      {/* Introduction */}
-      <section className="py-10 md:py-16 bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-6 text-center">
-              Immobilienmarkt Trier – Tradition trifft Moderne
-            </h2>
-            <div className="prose prose-lg max-w-none text-secondary-700">
-              <p>
-                Trier, die älteste Stadt Deutschlands, vereint römisches Erbe mit modernem
-                Stadtleben. Als Oberzentrum der Region bietet Trier exzellente Infrastruktur, eine renommierte
-                Universität, vielfältige Kulturangebote und eine traumhafte Lage an der Mosel.
-              </p>
-              <p>
-                Der Trierer Immobilienmarkt profitiert von der stabilen Nachfrage durch Studierende, Berufstätige
-                und die Nähe zum Wirtschaftsstandort Luxemburg. Ob Sie eine Eigentumswohnung in der historischen
-                Innenstadt suchen, ein Einfamilienhaus in den grünen Stadtteilen oder eine Kapitalanlage in
-                Universitätsnähe – ich unterstütze Sie mit lokaler Marktkenntnis.
-              </p>
-              <p>
-                Als Wüstenrot Immobilienpartner biete ich Ihnen nicht nur Maklerdienste, sondern auch die
-                Vermittlung attraktiver Finanzierungslösungen aus einer Hand.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stadtteile */}
+            {/* Stadtteile */}
       <section className="py-10 md:py-16 bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-secondary-900 mb-8 text-center" data-aos="fade-up">
@@ -289,26 +242,7 @@ export default function TrierPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-10 md:py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-secondary-900 mb-12 text-center" data-aos="fade-up">
-            Häufige Fragen zum Immobilienmarkt Trier
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md smooth-hover" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-3">
-                  {item.question}
-                </h3>
-                <p className="text-secondary-600">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+            {/* CTA */}
       <section className="py-10 md:py-16 bg-primary-500">
         <div className="container-custom text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-6">
