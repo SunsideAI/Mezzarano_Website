@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Home, Car, Building, CheckCircle } from 'lucide-react'
+import RegionMarkdownContent from '@/components/RegionMarkdownContent'
 
 export const metadata: Metadata = {
   title: 'Immobilienmakler Schweich | Wüstenrot Immobilien Trier-Saarburg',
@@ -137,6 +138,9 @@ export default function SchweichPage() {
           </div>
         </div>
       </section>
+
+      {/* Ausführlicher SEO-Content aus src/content/regionen/schweich.md */}
+      <RegionMarkdownContent slug="schweich" />
 
       {/* Introduction */}
       <section className="py-10 md:py-16 bg-white">

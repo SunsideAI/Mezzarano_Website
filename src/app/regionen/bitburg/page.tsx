@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Home, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
 import SchemaMarkup, { generateFAQSchema } from '@/components/SchemaMarkup'
+import RegionMarkdownContent from '@/components/RegionMarkdownContent'
 
 export const metadata: Metadata = {
   title: 'Immobilienmakler Bitburg | Sandro Mezzarano | Wüstenrot Immobilien',
@@ -137,6 +138,9 @@ export default function BitburgPage() {
           </div>
         </div>
       </section>
+
+      {/* Ausführlicher SEO-Content aus src/content/regionen/bitburg.md */}
+      <RegionMarkdownContent slug="bitburg" />
 
       {/* Introduction */}
       <section className="py-10 md:py-16 bg-white">

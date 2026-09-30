@@ -8,12 +8,28 @@ interface PropertyInquiryFormProps {
   isRent?: boolean
 }
 
+interface FormState {
+  vorname: string
+  nachname: string
+  strasse: string
+  plz: string
+  ort: string
+  email: string
+  phone: string
+  message: string
+}
+
 export default function PropertyInquiryForm({ propertyId, propertyTitle, isRent }: PropertyInquiryFormProps) {
-  const [formData, setFormData] = useState({
-    name: '',
+  const defaultMessage = `Ich interessiere mich für "${propertyTitle}" und bitte um weitere Informationen.`
+  const [formData, setFormData] = useState<FormState>({
+    vorname: '',
+    nachname: '',
+    strasse: '',
+    plz: '',
+    ort: '',
     email: '',
     phone: '',
-    message: `Ich interessiere mich für "${propertyTitle}" und bitte um weitere Informationen.`,
+    message: defaultMessage,
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -35,9 +51,14 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle, isRent 
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: formData.name,
+          vorname: formData.vorname,
+          nachname: formData.nachname,
+          name: `${formData.vorname} ${formData.nachname}`.trim(),
           email: formData.email,
           phone: formData.phone,
+          strasse: formData.strasse,
+          plz: formData.plz,
+          ort: formData.ort,
           message: formData.message,
           inquiryType: 'immobilie',
           propertyId,
@@ -52,10 +73,14 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle, isRent 
       if (result.success) {
         setStatus('success')
         setFormData({
-          name: '',
+          vorname: '',
+          nachname: '',
+          strasse: '',
+          plz: '',
+          ort: '',
           email: '',
           phone: '',
-          message: `Ich interessiere mich für "${propertyTitle}" und bitte um weitere Informationen.`,
+          message: defaultMessage,
         })
       } else {
         setStatus('error')
@@ -85,6 +110,9 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle, isRent 
     )
   }
 
+  const inputCls =
+    'w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed'
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {status === 'error' && (
@@ -93,61 +121,118 @@ export default function PropertyInquiryForm({ propertyId, propertyTitle, isRent 
         </div>
       )}
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Vorname *</label>
+          <input
+            type="text"
+            name="vorname"
+            required
+            autoComplete="given-name"
+            value={formData.vorname}
+            onChange={handleChange}
+            disabled={status === 'loading'}
+            className={inputCls}
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Nachname *</label>
+          <input
+            type="text"
+            name="nachname"
+            required
+            autoComplete="family-name"
+            value={formData.nachname}
+            onChange={handleChange}
+            disabled={status === 'loading'}
+            className={inputCls}
+          />
+        </div>
+      </div>
+
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Name *
-        </label>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Straße &amp; Hausnr. *</label>
         <input
           type="text"
-          name="name"
+          name="strasse"
           required
-          value={formData.name}
+          autoComplete="street-address"
+          value={formData.strasse}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+          className={inputCls}
         />
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          E-Mail *
-        </label>
-        <input
-          type="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          disabled={status === 'loading'}
-          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-        />
+      <div className="grid grid-cols-3 gap-4">
+        <div className="col-span-1">
+          <label className="block text-sm font-medium text-gray-700 mb-1">PLZ *</label>
+          <input
+            type="text"
+            name="plz"
+            required
+            inputMode="numeric"
+            pattern="\d{5}"
+            autoComplete="postal-code"
+            value={formData.plz}
+            onChange={handleChange}
+            disabled={status === 'loading'}
+            className={inputCls}
+          />
+        </div>
+        <div className="col-span-2">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Ort *</label>
+          <input
+            type="text"
+            name="ort"
+            required
+            autoComplete="address-level2"
+            value={formData.ort}
+            onChange={handleChange}
+            disabled={status === 'loading'}
+            className={inputCls}
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">E-Mail *</label>
+          <input
+            type="email"
+            name="email"
+            required
+            autoComplete="email"
+            value={formData.email}
+            onChange={handleChange}
+            disabled={status === 'loading'}
+            className={inputCls}
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Telefon *</label>
+          <input
+            type="tel"
+            name="phone"
+            required
+            autoComplete="tel"
+            value={formData.phone}
+            onChange={handleChange}
+            disabled={status === 'loading'}
+            className={inputCls}
+          />
+        </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Telefon
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          disabled={status === 'loading'}
-          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Nachricht
-        </label>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
         <textarea
           name="message"
           rows={4}
           value={formData.message}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+          className={`${inputCls} resize-none`}
         />
       </div>
 

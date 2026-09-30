@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { MapPin, Phone, Mail, Home, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
 import SchemaMarkup, { generateFAQSchema } from '@/components/SchemaMarkup'
 import PageHero from '@/components/PageHero'
+import RegionMarkdownContent from '@/components/RegionMarkdownContent'
 
 export const metadata: Metadata = {
   title: 'Immobilienmakler Hermeskeil | Sandro Mezzarano | Wüstenrot Immobilien',
@@ -141,6 +142,9 @@ export default function HermeskeilPage() {
           </div>
         </div>
       </section>
+
+      {/* Ausführlicher SEO-Content aus src/content/regionen/hermeskeil.md */}
+      <RegionMarkdownContent slug="hermeskeil" />
 
       {/* Introduction */}
       <section className="py-10 md:py-16 bg-white">

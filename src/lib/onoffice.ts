@@ -155,8 +155,15 @@ export function createOnOfficeClient(config?: OnOfficeConfig) {
 
 export interface ContactFormData {
   name: string
+  /** Optional structured names — if provided, used verbatim instead of splitting `name` */
+  vorname?: string
+  nachname?: string
   email: string
   phone?: string
+  /** Optional postal address */
+  strasse?: string
+  plz?: string
+  ort?: string
   inquiryType?: string
   message: string
   source?: string
@@ -231,23 +238,34 @@ export async function createContact(data: ContactFormData): Promise<{ success: b
   try {
     const client = createOnOfficeClient()
 
-    // Split name into first and last name
-    const nameParts = data.name.trim().split(/\s+/)
-    const vorname = nameParts[0] || ''
-    const nachname = nameParts.slice(1).join(' ') || vorname
+    // Prefer explicit vorname/nachname from the form; fall back to splitting `name`
+    let vorname = data.vorname?.trim() || ''
+    let nachname = data.nachname?.trim() || ''
+    if (!vorname && !nachname) {
+      const nameParts = data.name.trim().split(/\s+/)
+      vorname = nameParts[0] || ''
+      nachname = nameParts.slice(1).join(' ') || vorname
+    } else if (!nachname) {
+      nachname = vorname
+    }
+
+    const addressParams: Record<string, string | number> = {
+      Vorname: vorname,
+      Name: nachname,
+      Email: data.email,
+      Telefon1: data.phone || '',
+      Bemerkung: `[${data.inquiryType || 'Allgemein'}] ${data.message}`,
+      Status: 1, // Active
+    }
+    if (data.strasse) addressParams.Strasse = data.strasse
+    if (data.plz) addressParams.Plz = data.plz
+    if (data.ort) addressParams.Ort = data.ort
 
     const response = await client.request([
       {
         actionid: client.ACTION_ID.CREATE,
         resourcetype: client.RESOURCE_TYPE.ADDRESS,
-        parameters: {
-          Vorname: vorname,
-          Name: nachname,
-          Email: data.email,
-          Telefon1: data.phone || '',
-          Bemerkung: `[${data.inquiryType || 'Allgemein'}] ${data.message}`,
-          Status: 1, // Active
-        },
+        parameters: addressParams,
       },
     ])
 

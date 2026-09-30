@@ -6,8 +6,16 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
 
-    // Validate required fields
-    const { name, email, message } = body as ContactFormData
+    // Extract structured fields (new form) with fallbacks for legacy `name` payload
+    const vorname: string = body.vorname || ''
+    const nachname: string = body.nachname || ''
+    const composedName = `${vorname} ${nachname}`.trim()
+    const name: string = body.name || composedName
+    const email: string = body.email
+    const message: string = body.message
+    const strasse: string | undefined = body.strasse
+    const plz: string | undefined = body.plz
+    const ort: string | undefined = body.ort
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -35,34 +43,32 @@ export async function POST(request: NextRequest) {
     // Determine source
     const source = customSource || (propertyId ? `Immobilien-Anfrage: ${propertyId}` : 'Website Kontaktformular')
 
+    const notificationPayload = {
+      name,
+      vorname,
+      nachname,
+      email,
+      phone: body.phone,
+      strasse,
+      plz,
+      ort,
+      inquiryType: body.inquiryType,
+      message: finalMessage,
+      propertyId,
+      propertyTitle,
+      kategorie: body.kategorie as 'kauf' | 'miete' | undefined,
+      source,
+    }
+
     // Check if onOffice is configured
     if (!isOnOfficeConfigured()) {
       console.warn('onOffice API not configured - contact form submission logged only')
-      // In development/test mode, just log the submission
       console.log('Contact form submission:', {
-        name,
-        email,
-        phone: body.phone,
-        inquiryType: body.inquiryType,
-        propertyId,
-        propertyTitle,
-        message: finalMessage,
-        source,
+        ...notificationPayload,
         timestamp: new Date().toISOString(),
       })
 
-      // Send email notification (await to ensure it completes in serverless)
-      const emailResult = await sendContactNotification({
-        name,
-        email,
-        phone: body.phone,
-        inquiryType: body.inquiryType,
-        message: finalMessage,
-        propertyId,
-        propertyTitle,
-        kategorie: body.kategorie,
-        source,
-      })
+      const emailResult = await sendContactNotification(notificationPayload)
       if (!emailResult.success) {
         console.warn('Email notification failed:', emailResult.error)
       }
@@ -77,26 +83,20 @@ export async function POST(request: NextRequest) {
     // Send to onOffice CRM
     const result = await createContact({
       name,
+      vorname,
+      nachname,
       email,
       phone: body.phone,
+      strasse,
+      plz,
+      ort,
       inquiryType: body.inquiryType,
       message: finalMessage,
       source,
     })
 
     if (result.success) {
-      // Send email notification (await to ensure it completes in serverless)
-      const emailResult = await sendContactNotification({
-        name,
-        email,
-        phone: body.phone,
-        inquiryType: body.inquiryType,
-        message: finalMessage,
-        propertyId,
-        propertyTitle,
-        kategorie: body.kategorie,
-        source,
-      })
+      const emailResult = await sendContactNotification(notificationPayload)
       if (!emailResult.success) {
         console.warn('Email notification failed:', emailResult.error)
       }

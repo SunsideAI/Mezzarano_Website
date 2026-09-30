@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Home, Grape, Mountain, CheckCircle } from 'lucide-react'
+import RegionMarkdownContent from '@/components/RegionMarkdownContent'
 
 export const metadata: Metadata = {
   title: 'Immobilienmakler Bernkastel-Kues | Wüstenrot Immobilien Mosel',
@@ -137,6 +138,9 @@ export default function BernkastelKuesPage() {
           </div>
         </div>
       </section>
+
+      {/* Ausführlicher SEO-Content aus src/content/regionen/bernkastel-kues.md */}
+      <RegionMarkdownContent slug="bernkastel-kues" />
 
       {/* Introduction */}
       <section className="py-10 md:py-16 bg-white">

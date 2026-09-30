@@ -123,8 +123,15 @@ export function isEmailConfigured(): boolean {
 
 export interface ContactLeadData {
   name: string
+  /** Optional structured names — if provided, used verbatim instead of splitting `name` */
+  vorname?: string
+  nachname?: string
   email: string
   phone?: string
+  /** Optional postal address */
+  strasse?: string
+  plz?: string
+  ort?: string
   inquiryType?: string
   message: string
   propertyId?: string
@@ -512,7 +519,8 @@ export async function sendContactNotification(data: ContactLeadData): Promise<{ 
   const isPropertyInquiry = !!(data.propertyId && data.kategorie)
 
   if (isPropertyInquiry) {
-    const { vorname, nachname } = splitName(data.name)
+    const vorname = data.vorname?.trim() || splitName(data.name).vorname
+    const nachname = data.nachname?.trim() || splitName(data.name).nachname
     const xml = buildOpenImmoFeedbackXml({
       objektnummer: data.propertyId!,
       bezeichnung: data.propertyTitle || '',
@@ -521,6 +529,9 @@ export async function sendContactNotification(data: ContactLeadData): Promise<{ 
       nachname,
       email: data.email,
       telefon: data.phone,
+      strasse: data.strasse,
+      plz: data.plz,
+      ort: data.ort,
       message: data.message,
     })
 
@@ -579,6 +590,9 @@ interface OpenImmoInput {
   nachname: string
   email: string
   telefon?: string
+  strasse?: string
+  plz?: string
+  ort?: string
   message: string
 }
 
@@ -603,6 +617,9 @@ function buildOpenImmoFeedbackXml(input: OpenImmoInput): string {
       <anrede></anrede>
       <vorname>${xmlEscape(input.vorname)}</vorname>
       <nachname>${xmlEscape(input.nachname)}</nachname>
+      <strasse>${xmlEscape(input.strasse)}</strasse>
+      <plz>${xmlEscape(input.plz)}</plz>
+      <ort>${xmlEscape(input.ort)}</ort>
       <tel>${xmlEscape(input.telefon)}</tel>
       <email>${xmlEscape(input.email)}</email>
       <anfrage>${xmlEscape(anfrage)}</anfrage>
