@@ -3,6 +3,18 @@ import { HelpCircle, BookOpen } from 'lucide-react'
 import { getRegionContent } from '@/lib/regionen'
 import RegionFAQAccordion from './RegionFAQAccordion'
 import SchemaMarkup, { generateFAQSchema } from './SchemaMarkup'
+import {
+  AufEinenBlickRenderer,
+  BodenrichtwerteRenderer,
+  StadtteileRenderer,
+  AblaufRenderer,
+  WarumLokalRenderer,
+  isAufEinenBlick,
+  isBodenrichtwerte,
+  isStadtteile,
+  isAblaufMitMakler,
+  isWarumLokal,
+} from './RegionSectionRenderers'
 
 interface Props {
   slug: string
@@ -10,7 +22,6 @@ interface Props {
 
 interface Section {
   heading: string
-  headingId: string
   body: string
 }
 
@@ -19,31 +30,18 @@ interface FAQItem {
   answer: string
 }
 
-const FAQ_HEADING_RE = /häufig\s+gestellte\s+fragen|^faq$/i
+const FAQ_HEADING_RE = /häufig\s+gestellte\s+fragen|häufige\s+fragen|^faq$/i
 const QUELLEN_HEADING_RE = /^quellen$|^quellenverzeichnis$/i
 
-function slugifyHeading(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
-
-/**
- * Split markdown into ordered H2 sections.
- * Everything before the first H2 becomes an "intro" section with heading = ''.
- */
 function splitByH2(markdown: string): Section[] {
   const lines = markdown.split('\n')
   const sections: Section[] = []
-  let current: Section = { heading: '', headingId: '', body: '' }
-
+  let current: Section = { heading: '', body: '' }
   for (const line of lines) {
     const m = line.match(/^##\s+(.+?)\s*$/)
     if (m) {
       if (current.heading || current.body.trim()) sections.push(current)
-      current = { heading: m[1], headingId: slugifyHeading(m[1]), body: '' }
+      current = { heading: m[1], body: '' }
     } else {
       current.body += line + '\n'
     }
@@ -52,22 +50,14 @@ function splitByH2(markdown: string): Section[] {
   return sections
 }
 
-/**
- * Given the body of the FAQ H2 section, extract Q/A pairs from ### headings.
- * The answer is all text between one H3 and the next.
- */
 function parseFAQs(body: string): FAQItem[] {
   const lines = body.split('\n')
   const faqs: FAQItem[] = []
   let currentQ = ''
   let currentA = ''
-
   const flush = () => {
-    if (currentQ) {
-      faqs.push({ question: currentQ.trim(), answer: currentA.trim() })
-    }
+    if (currentQ) faqs.push({ question: currentQ.trim(), answer: currentA.trim() })
   }
-
   for (const line of lines) {
     const m = line.match(/^###\s+(.+?)\s*$/)
     if (m) {
@@ -87,11 +77,30 @@ function renderMd(md: string): string {
 }
 
 /**
- * Reassemble ordinary sections (non-FAQ, non-Quellen) back to markdown.
+ * Render a single section — pick the specialised renderer if the heading matches
+ * a known pattern, otherwise render as plain prose.
  */
-function sectionToMarkdown(s: Section): string {
-  const head = s.heading ? `## ${s.heading}\n\n` : ''
-  return head + s.body.trim() + '\n'
+function SectionRouter({ section, alternate }: { section: Section; alternate: boolean }) {
+  const { heading, body } = section
+
+  if (isAufEinenBlick(heading)) return <AufEinenBlickRenderer heading={heading} body={body} />
+  if (isBodenrichtwerte(heading)) return <BodenrichtwerteRenderer heading={heading} body={body} />
+  if (isStadtteile(heading)) return <StadtteileRenderer heading={heading} body={body} />
+  if (isAblaufMitMakler(heading)) return <AblaufRenderer heading={heading} body={body} />
+  if (isWarumLokal(heading)) return <WarumLokalRenderer heading={heading} body={body} />
+
+  // Fallback: plain prose. Alternate section backgrounds for rhythm.
+  const bg = alternate ? 'bg-gray-50' : 'bg-white'
+  const md = heading ? `## ${heading}\n\n${body.trim()}\n` : body
+  return (
+    <section className={`py-10 md:py-16 ${bg}`}>
+      <div className="container-custom">
+        <div className="max-w-4xl mx-auto">
+          <div className="prose-blog" dangerouslySetInnerHTML={{ __html: renderMd(md) }} />
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default function RegionMarkdownContent({ slug }: Props) {
@@ -99,58 +108,37 @@ export default function RegionMarkdownContent({ slug }: Props) {
   if (!region) return null
 
   const sections = splitByH2(region.content)
-
-  // Isolate special sections
   const faqSection = sections.find((s) => FAQ_HEADING_RE.test(s.heading))
   const quellenSection = sections.find((s) => QUELLEN_HEADING_RE.test(s.heading))
-  const proseSections = sections.filter((s) => s !== faqSection && s !== quellenSection)
-
-  // Split prose around FAQ so the FAQ can sit in its own visual block
-  const faqIndex = faqSection ? sections.indexOf(faqSection) : -1
-  const proseBeforeFaq =
-    faqIndex >= 0
-      ? proseSections.filter((s) => sections.indexOf(s) < faqIndex)
-      : proseSections.filter((s) => s !== quellenSection)
-  const proseAfterFaq =
-    faqIndex >= 0
-      ? proseSections.filter((s) => sections.indexOf(s) > faqIndex && s !== quellenSection)
-      : []
-
-  const beforeHtml = renderMd(proseBeforeFaq.map(sectionToMarkdown).join('\n'))
-  const afterHtml = renderMd(proseAfterFaq.map(sectionToMarkdown).join('\n'))
-  const quellenHtml = quellenSection ? renderMd(quellenSection.body) : ''
+  const contentSections = sections.filter((s) => s !== faqSection && s !== quellenSection)
 
   const faqs: FAQItem[] = faqSection ? parseFAQs(faqSection.body) : []
-  // Render each FAQ answer to HTML so the accordion can display links, lists, etc.
-  const faqsHtml = faqs.map((f) => ({
-    question: f.question,
-    answer: renderMd(f.answer),
-  }))
-  // Plain-text version for JSON-LD FAQPage schema (strip HTML tags)
+  const faqsHtml = faqs.map((f) => ({ question: f.question, answer: renderMd(f.answer) }))
   const faqsForSchema = faqs.map((f) => ({
     question: f.question,
-    answer: f.answer.replace(/\[\[([^\]]+)\]\]\([^)]+\)/g, '[$1]'), // shorten [[n]](url) → [n]
+    answer: f.answer.replace(/\[\[([^\]]+)\]\]\([^)]+\)/g, '[$1]'),
   }))
+
+  const quellenHtml = quellenSection ? renderMd(quellenSection.body) : ''
+
+  // Alternate prose section backgrounds only among plain-prose sections
+  let plainProseIndex = 0
 
   return (
     <>
       {faqs.length > 0 && <SchemaMarkup data={generateFAQSchema(faqsForSchema)} />}
 
-      {/* Long-form prose (part 1) */}
-      {beforeHtml && (
-        <section className="py-10 md:py-16 bg-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <div
-                className="prose-blog"
-                dangerouslySetInnerHTML={{ __html: beforeHtml }}
-              />
-            </div>
-          </div>
-        </section>
-      )}
+      {contentSections.map((section, i) => {
+        const isPlainProse =
+          !isAufEinenBlick(section.heading) &&
+          !isBodenrichtwerte(section.heading) &&
+          !isStadtteile(section.heading) &&
+          !isAblaufMitMakler(section.heading) &&
+          !isWarumLokal(section.heading)
+        const alt = isPlainProse ? plainProseIndex++ % 2 === 1 : false
+        return <SectionRouter key={i} section={section} alternate={alt} />
+      })}
 
-      {/* FAQ as accordion — reuses the site's existing FAQ visual language */}
       {faqs.length > 0 && (
         <section className="py-16 md:py-20 bg-warmgrau">
           <div className="container-custom">
@@ -168,21 +156,6 @@ export default function RegionMarkdownContent({ slug }: Props) {
         </section>
       )}
 
-      {/* Long-form prose (part 2) — anything between FAQ and Quellen */}
-      {afterHtml && (
-        <section className="py-10 md:py-16 bg-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <div
-                className="prose-blog"
-                dangerouslySetInnerHTML={{ __html: afterHtml }}
-              />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Quellen — collapsed by default to save space */}
       {quellenHtml && (
         <section className="py-10 md:py-14 bg-gray-50">
           <div className="container-custom">
