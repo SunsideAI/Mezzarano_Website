@@ -247,8 +247,7 @@ export function AblaufRenderer({ heading, body }: { heading: string; body: strin
 
           {intro && (
             <div
-              className="prose-blog prose-invert max-w-3xl mx-auto mb-12 text-white/80
-                [&_a]:text-wuestenrot-light [&_a]:no-underline hover:[&_a]:underline"
+              className="prose-blog prose-on-dark max-w-3xl mx-auto mb-12"
               dangerouslySetInnerHTML={{ __html: renderMd(intro) }}
             />
           )}
@@ -264,9 +263,7 @@ export function AblaufRenderer({ heading, body }: { heading: string; body: strin
                 <div className="flex-1 pt-1">
                   <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">{s.title}</h3>
                   <div
-                    className="prose-blog prose-invert text-white/85
-                      [&_a]:text-wuestenrot-light [&_a]:no-underline hover:[&_a]:underline
-                      [&_p]:leading-relaxed"
+                    className="prose-blog prose-on-dark [&_p]:leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: renderMd(s.body) }}
                   />
                 </div>

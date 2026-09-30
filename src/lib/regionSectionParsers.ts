@@ -87,13 +87,20 @@ export function stripMdInlineForCell(s: string): string {
  * Try to split a Kennzahl value into a big number + a unit/qualifier.
  * "85 €/m²" → { primary: "85 €/m²", secondary: "" }
  * "1.765–2.198 €/m² je nach Portal" → { primary: "1.765–2.198 €/m²", secondary: "je nach Portal" }
- * If no clean split, put whole string in `primary`.
+ * "5,0 %" → { primary: "5,0 %", secondary: "" }  (decimal comma NOT a split point)
+ * "6.501, 31.12.2025" → { primary: "6.501", secondary: "31.12.2025" }
+ *
+ * Rule: split on ",;—" only when followed by a WORD (letter) — not by a digit
+ * (so we never break decimal numbers like "5,0"). Additionally split on " je …".
  */
 export function splitKennzahlValue(v: string): { primary: string; secondary: string } {
   const clean = stripMdInlineForCell(v)
-  // Split on first comma, semicolon, or " je " qualifier
-  const m = clean.match(/^([^,;]+?)(?:\s*(?:,|;|—|–\s|-\s)\s*|\s+(?=je\s))(.+)$/)
-  if (m) return { primary: m[1].trim(), secondary: m[2].trim() }
+  // 1. " je …" qualifier (highest priority)
+  const jeMatch = clean.match(/^(.+?)\s+(je\s+.+)$/)
+  if (jeMatch) return { primary: jeMatch[1].trim(), secondary: jeMatch[2].trim() }
+  // 2. Punctuation split only if next char is a letter (so we don't break "5,0 %")
+  const punctMatch = clean.match(/^(.+?)(?:\s*[,;—]\s+)(?=[A-Za-zÄÖÜäöüß])(.+)$/)
+  if (punctMatch) return { primary: punctMatch[1].trim(), secondary: punctMatch[2].trim() }
   return { primary: clean, secondary: '' }
 }
 

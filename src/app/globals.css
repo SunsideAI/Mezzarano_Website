@@ -428,6 +428,45 @@
     border-radius: 0 var(--radius-fenster) var(--radius-fenster) 0;
   }
 
+  /*
+   * Variant of prose-blog for use on dark (wüstennacht) backgrounds.
+   * Overrides the default dark-on-light colours from `.prose-blog` so
+   * paragraphs, lists, headings, links and citations stay readable.
+   */
+  .prose-on-dark,
+  .prose-on-dark p,
+  .prose-on-dark li,
+  .prose-on-dark ul,
+  .prose-on-dark ol,
+  .prose-on-dark blockquote {
+    color: rgba(255, 255, 255, 0.88);
+  }
+  .prose-on-dark h1,
+  .prose-on-dark h2,
+  .prose-on-dark h3,
+  .prose-on-dark h4,
+  .prose-on-dark strong {
+    color: #ffffff;
+  }
+  .prose-on-dark a {
+    color: #fc7e51; /* wüstenrot-light */
+    text-decoration: none;
+  }
+  .prose-on-dark a:hover {
+    text-decoration: underline;
+  }
+  .prose-on-dark blockquote {
+    border-left-color: #f84914; /* wüstenrot */
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .prose-on-dark table th {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  .prose-on-dark table td {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
   /* Prevent wide tables / code / images inside blog content from causing
      horizontal page scroll on mobile. Wide tables become internally scrollable. */
   .prose-blog table {
